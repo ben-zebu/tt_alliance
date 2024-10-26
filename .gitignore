@@ -1,0 +1,5 @@
+# compiled objects
+*.o
+
+# sphinx doc
+docs/build/*
