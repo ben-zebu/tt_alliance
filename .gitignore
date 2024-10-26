@@ -1,9 +1,11 @@
 # compiled objects
 *.o
+release/*
+debug/*
 
 # sphinx doc
 docs/build/*
 
 # tinyxml2 library
-external/xml/docs/*
-external/xml/lib/*
+externals/xml/docs/*
+externals/xml/lib/*
