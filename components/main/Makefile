@@ -1,15 +1,14 @@
 # read compiler flags from config.mk
 include ../../config.mk
 
-# Library name and version
-LIB_NAME = libabase
-SONAME = $(LIB_NAME).so
+# program name
+PROG_NAME = alliance.exe
 
 # Directories
 SRC_DIR = src
 
 # Libraries
-LIBS = -ltinyxml2
+LIBS = -ltinyxml2 -labase
 
 # Source and object files
 SRCS = $(wildcard $(SRC_DIR)/*.cpp)
@@ -27,18 +26,18 @@ $(OBJ_DIR_DEBUG) $(OBJ_DIR_RELEASE):
 # Debug target
 debug: CXXFLAGS = $(CXXFLAGS_DEBUG)
 debug: LDFLAGS = -L$(DEBUG_LIB_DIR) 
-debug: $(DEBUG_LIB_DIR)/$(SONAME)
+debug: $(DEBUG_DIR)/$(PROG_NAME)
 
-$(DEBUG_LIB_DIR)/$(SONAME): $(OBJ_DIR_DEBUG) $(OBJS_DEBUG)
-	$(CXX) -shared -Wl,-soname,$(SONAME) -o $(DEBUG_LIB_DIR)/$(SONAME) $(OBJS_DEBUG) $(LDFLAGS) $(LIBS)
+$(DEBUG_DIR)/$(PROG_NAME): $(OBJ_DIR_DEBUG) $(OBJS_DEBUG)
+	$(CXX) -o $(DEBUG_DIR)/$(PROG_NAME) $(OBJS_DEBUG) $(LDFLAGS) $(LIBS) 
 
 # Release target
 release: CXXFLAGS = $(CXXFLAGS_RELEASE)
-release: LDFLAGS = -L$(RELEASE_LIB_DIR)
-release: $(RELEASE_LIB_DIR)/$(SONAME)
+release: LDFLAGS = -L$(RELEASE_LIB_DIR) 
+release: $(RELEASE_DIR)/$(PROG_NAME)
 
-$(RELEASE_LIB_DIR)/$(SONAME): $(OBJ_DIR_RELEASE) $(OBJS_RELEASE)
-	$(CXX) -shared -Wl,-soname,$(SONAME) -o $(RELEASE_LIB_DIR)/$(SONAME) $(OBJS_RELEASE)  $(LDFLAGS) $(LIBS)
+$(RELEASE_DIR)/$(PROG_NAME): $(OBJ_DIR_RELEASE) $(OBJS_RELEASE)
+	$(CXX) -o $(RELEASE_DIR)/$(PROG_NAME) $(OBJS_RELEASE) $(LDFLAGS) $(LIBS) 
 
 # Debug object files
 $(OBJ_DIR_DEBUG)/%.o: $(SRC_DIR)/%.cpp

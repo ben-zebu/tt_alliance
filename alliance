@@ -1,0 +1,481 @@
+#!/usr/bin/env python3
+# -*- coding: utf8 -*-
+#
+# ALLIANCE launch script
+#
+import sys
+import os
+import locale
+import argparse
+
+# APP CONSTANT
+PROG_NAME = "alliance.exe"
+CONFIGURATION_FILE = "alliance.conf"
+LANG = ""
+
+RELEASE_DIR = "release"
+DEBUG_DIR = "debug"
+LIB_DIR = "lib"
+
+EXTERNAL_LIBRAIRIES = ["lib-hdf5", "lib-med", "lib-mkl"]
+
+# PARSER MESSAGES
+PARSER_FILENAME_FR = "Nom de la mise en donnée"
+PARSER_FILENAME_EN = "File name of input data"
+PARSER_FILENAME = { 'fr' : PARSER_FILENAME_FR, 'en' : PARSER_FILENAME_EN }
+
+PARSER_EPILOG_FR = "Signaler les bugs à Benoit SERRE <benoit.serre@framatome.com>"
+PARSER_EPILOG_EN = "Send bugs to Benoit SERRE <benoit.serre@framatome.com>"
+PARSER_EPILOG = { 'fr' : PARSER_EPILOG_FR, 'en' : PARSER_EPILOG_EN }
+
+GROUP_ADVANCED_OPT_FR = "Options avancées"
+GROUP_ADVANCED_OPT_EN = "Advanced options"
+GROUP_ADVANCED_OPT = { 'fr' : GROUP_ADVANCED_OPT_FR, 'en' : GROUP_ADVANCED_OPT_EN }
+
+GROUP_COMPATIBILITY_FR = "Mode de compatibilité"
+GROUP_COMPATIBILITY_EN = "Compatibility mode"
+GROUP_COMPATIBILITY = { 'fr' : GROUP_COMPATIBILITY_FR, 'en' : GROUP_COMPATIBILITY_EN }
+
+GROUP_DEVEL_FR = "Options de débogage"
+GROUP_DEVEL_EN = "Debug options"
+GROUP_DEVEL = { 'fr' : GROUP_DEVEL_FR, 'en' : GROUP_DEVEL_EN }
+
+PARSER_BREAKPOINT_FR = "Ajoute un point d'arrêt dans le débogueur"
+PARSER_BREAKPOINT_EN = "Add breakpoint in debugger"
+PARSER_BREAKPOINT = { 'fr' : PARSER_BREAKPOINT_FR, 'en' : PARSER_BREAKPOINT_EN }
+
+PARSER_COMPATIBILITY_FR = "choix du mode de compatibilité pour le calcul du facteur d'usage"
+PARSER_COMPATIBILITY_EN = "choose compatibility mode for usage factor extraction"
+PARSER_COMPATIBILITY = { 'fr' : PARSER_COMPATIBILITY_FR, 'en' : PARSER_COMPATIBILITY_EN }
+
+PARSER_DEBUGGER_FR = "lance le programme dans un débogueur (GDB, IDB, IDBC)"
+PARSER_DEBUGGER_EN = "start program embedded in a debugger (GDB, IDB, IDBC)"
+PARSER_DEBUGGER = { 'fr' : PARSER_DEBUGGER_FR, 'en' : PARSER_DEBUGGER_EN }
+
+PARSER_DEBUG_FR = "active le mode pour le débogage"
+PARSER_DEBUG_EN = "use debug mode"
+PARSER_DEBUG = { 'fr' : PARSER_DEBUG_FR, 'en' : PARSER_DEBUG_EN }
+
+PARSER_LANGUAGE_FR = "langue pour l'affichage des résultats. La valeur par défaut est '{0}'"
+PARSER_LANGUAGE_EN = "output language. Default values is '{0}'"
+PARSER_LANGUAGE = { 'fr' : PARSER_LANGUAGE_FR, 'en' : PARSER_LANGUAGE_EN }
+
+PARSER_MPI_FR = "Utilisation de la parallélisation MPI pour le programme. L'option doit être suivie du nombre de sections traitées en parallèle. Ce nombre est au maximum, le nombre de sections d'analyse."
+PARSER_MPI_EN = "Use MPI parallelization. This options must be followed by the number of sections calculated in parallel. The maximum number is the number of sections."
+PARSER_MPI  = { 'fr' : PARSER_MPI_FR, 'en' : PARSER_MPI_EN }
+
+PARSER_MULTI_FR = "Utilisation du mode multi-threading pour le programme. L'option doit être suivie d'une valeur entière représentant le nombre de processus légers à lancer."
+PARSER_MULTI_EN = "Used multi-threading mode. This option must be followed by the number of thread used by the program."
+PARSER_MULTI = { 'fr' : PARSER_MULTI_FR, 'en' : PARSER_MULTI_EN }
+
+PARSER_MULTI_NESTED_FR = "Désactivation de l'imbrication de régions parallèles."
+PARSER_MULTI_NESTED_EN = "Deactivate nested parallelism mode"
+PARSER_MULTI_NESTED = { 'fr' : PARSER_MULTI_NESTED_FR, 'en' : PARSER_MULTI_NESTED_EN }
+
+PARSER_NUMBER_COMPONENTS_FR = "Nombre maximal de composantes de torseurs d'efforts en catégorie 2. La valeur par défaut est {0}."
+PARSER_NUMBER_COMPONENTS_EN = "Maximal number of load set components available in category 2. Default value is {0}."
+PARSER_NUMBER_COMPONENTS = { 'fr' : PARSER_NUMBER_COMPONENTS_FR, 'en' : PARSER_NUMBER_COMPONENTS_EN }
+
+PARSER_MINMAX_LOAD_FR = "choix des torseurs d'efforts extrémaux uniquement"
+PARSER_MINMAX_LOAD_EN = "use only maximal and minimal load torseur"
+PARSER_MINMAX_LOAD = { 'fr' : PARSER_MINMAX_LOAD_FR, 'en' : PARSER_MINMAX_LOAD_EN }
+
+PARSER_OPT_LEVEL_FR = "utilisation des algorithmes optimisés. La valeur 0 n'entraine pas d'optimisation. Le niveau 1 permet l'optimisation du choix des combinaisons des torseurs d'efforts. Le niveau 2 est lié à la sélection des instants prépondérants de transitoire, ce choix entraine l'optimisation de niveau 1. La valeur par défaut est {0}."
+PARSER_OPT_LEVEL_EN = "use optimized algorithm. Null value is without optimization. Level 1 allows use of optimal choice of torseur combination. Level 2 is for time step selection in transient, this level is linked to level 1. The default value is {0}."
+PARSER_OPT_LEVEL = { 'fr' : PARSER_OPT_LEVEL_FR, 'en' : PARSER_OPT_LEVEL_EN }
+
+PARSER_PLATE_COMPATIBILITY_FR = "choix du mode de compatibilité pour les calculs dans les plaques tubulaires perforées"
+PARSER_PLATE_COMPATIBILITY_EN = "choose compatibility mode for plate calculation."
+PARSER_PLATE_COMPATIBILITY = { 'fr' : PARSER_PLATE_COMPATIBILITY_FR, 'en' : PARSER_PLATE_COMPATIBILITY_EN }
+
+PARSER_VERBOSE_FR = "niveau d'affichage des résultats. La valeur doit être comprise entre 1 et 6. La valeur par défaut est {0}."
+PARSER_VERBOSE_EN = "output level for results details. Value must be included between 1 and 6. Default value is {0}."
+PARSER_VERBOSE = { 'fr' : PARSER_VERBOSE_FR, 'en' : PARSER_VERBOSE_EN }
+
+# ERROR MESSAGES
+ERR_CORRUPTED_INSTALLATION_FR = "Echec dans la recherche du programme principal. Votre installation est corrompue."
+ERR_CORRUPTED_INSTALLATION_EN = "Cannot find the main program. Your installation is corrupted."
+ERR_CORRUPTED_INSTALLATION = { 'fr' : ERR_CORRUPTED_INSTALLATION_FR, 'en' : ERR_CORRUPTED_INSTALLATION_EN }
+
+ERR_UNKNOW_FOLDER_FR = "Répertoire inconnu : {0}"
+ERR_UNKNOW_FOLDER_EN = "Cannot find directory: {0}"
+ERR_UNKNOW_FOLDER = { 'fr' : ERR_UNKNOW_FOLDER_FR, 'en' : ERR_UNKNOW_FOLDER_EN }
+
+ERR_UNKNOW_LIBRARY_FR = "Bibliothèque inconnue : {0}"
+ERR_UNKNOW_LIBRARY_EN = "Cannot find the library: {0}"
+ERR_UNKNOW_LIBRARY = { 'fr' : ERR_UNKNOW_LIBRARY_FR, 'en' : ERR_UNKNOW_LIBRARY_EN }
+
+ERR_UNKNOW_FILE_FR = "Fichier inconnu : {0}" 
+ERR_UNKNOW_FILE_EN = "Cannot find the file: {0}" 
+ERR_UNKNOW_FILE = { 'fr' : ERR_UNKNOW_FILE_FR, 'en' : ERR_UNKNOW_FILE_EN }
+
+ERR_FILE_OPEN_FR = "Erreur ouverture du fichier {0} !"
+ERR_FILE_OPEN_EN = "Cannot open the file {0} !"
+ERR_FILE_OPEN = { 'fr' : ERR_FILE_OPEN_FR, 'en' : ERR_FILE_OPEN_EN }
+
+ERR_FILE_READ_OPEN_FR = "Erreur d'ouverture du fichier{0} en mode lecture !"
+ERR_FILE_READ_OPEN_EN = "Cannot open the file {0} with read mode !"
+ERR_FILE_READ_OPEN = { 'fr' : ERR_FILE_READ_OPEN_FR, 'en' : ERR_FILE_READ_OPEN_EN }
+
+ERR_FILE_WRITE_OPEN_FR = "Erreur d'ouverture du fichier{0} en mode écriture !"
+ERR_FILE_WRITE_OPEN_EN = "Cannot open the file {0} with write mode !"
+ERR_FILE_WRITE_OPEN = { 'fr' : ERR_FILE_WRITE_OPEN_FR, 'en' : ERR_FILE_WRITE_OPEN_EN }
+
+ERR_FORMAT_CONF_FILE_FR = "Mauvais format pour la ligne suivante du fichier de configuration {0} : \n{1}"
+ERR_FORMAT_CONF_FILE_EN = "Wrong format for the following line in configuration file {0}: \n{1}"
+ERR_FORMAT_CONF_FILE = { 'fr' : ERR_FORMAT_CONF_FILE_FR, 'en' : ERR_FORMAT_CONF_FILE_EN }
+
+ERR_UNKNOWN_APP_VALUE_FR = "Détermination impossible de la valeur associée à la clé '{0}' dans le fichier de configuration '{1}' !"
+ERR_UNKNOWN_APP_VALUE_EN = "Cannot determine the value associated to the key '{0}' in the configuration file '{1}' !"
+ERR_UNKNOWN_APP_VALUE = { 'fr' : ERR_UNKNOWN_APP_VALUE_FR, 'en' : ERR_UNKNOWN_APP_VALUE_EN }
+
+ERR_UNKNOWN_CPUS_NUMBER_FR = "Echec de la détection du nombre de coeurs de calculs !"
+ERR_UNKNOWN_CPUS_NUMBER_EN = "Failed to determine number of CPUs !"
+ERR_UNKNOWN_CPUS_NUMBER = { 'fr' : ERR_UNKNOWN_CPUS_NUMBER_FR, 'en' : ERR_UNKNOWN_CPUS_NUMBER_EN }
+
+ERR_EXE_FR = "Erreur {0} au cours de l'exécution !"
+ERR_EXE_EN = "Error with code {0} during execution !"
+ERR_EXE = { 'fr' : ERR_EXE_FR, 'en' : ERR_EXE_EN }
+
+# 
+def get_application_path() :
+    """
+    Find main directory of ALLIANCE
+    """
+    (path, script) = os.path.split( sys.argv[0] )
+    return os.path.realpath( path )
+#
+
+#
+def control_open(filename, options = "r"):
+    """ Fonction ouverture d'un fichier avec création d'exception si nécessaire """
+    try:
+        fin = open(filename, options)
+    except:
+        if 'r' in options : raise SystemExit(ERR_FILE_READ_OPEN[LANG].format(filename))
+        if 'w' in options : raise SystemExit(ERR_FILE_WRITE_OPEN[LANG].format(filename))
+        raise SystemExit( ERR_FILE_OPEN.format(filename) )
+    return fin
+#
+
+#
+def find_binary_program(options) :
+    """
+    find binary program in release or debug directory
+    """
+    
+    app_path = get_application_path()
+    if options.debug or len(options.gdb) > 0 :
+        app_name = os.path.join(app_path, DEBUG_DIR, PROG_NAME)
+    else :
+        app_name = os.path.join(app_path, RELEASE_DIR, PROG_NAME)
+
+    if os.path.isfile(app_name) : return app_name
+    
+    # absence de binaire à utiliser
+    raise SystemExit( ERR_CORRUPTED_INSTALLATION[LANG] )
+    return 0
+#
+
+#
+def find_calculation_librairies(options) :
+    """
+    find path with calculation libraries
+    """
+    libs = ["libtinyxml2.so", "libabase.so"]
+    
+    # Get path of calculation libraries
+    app_path = get_application_path()
+    if options.debug : 
+        lib_dir = os.path.join(app_path, DEBUG_DIR, LIB_DIR)
+    else :
+        lib_dir = os.path.join(app_path, RELEASE_DIR, LIB_DIR)
+    
+    if not os.path.isdir(lib_dir) : 
+        raise SystemExit( ERR_UNKNOW_FOLDER[LANG].format(lib_dir) )
+        
+    # Check if all libraries are present
+    for lib in libs :
+        if not os.path.isfile( os.path.join(lib_dir, lib) ) : 
+            raise SystemExit( ERR_UNKNOW_LIBRARY[LANG].format( lib ) )
+    
+    return lib_dir
+#
+
+#
+def find_external_librairies() :
+   """
+   find path with externals librairies
+   """
+   external_lib = []
+   for lib in EXTERNAL_LIBRAIRIES :
+      libpath = os.path.join( get_application_path(), lib)
+      if not os.path.isdir(libpath) : 
+         raise SystemExit( ERR_UNKNOW_FOLDER[LANG].format(libpath) )
+      else :
+         if libpath not in external_lib : external_lib.append(libpath)
+   return external_lib
+#
+
+# 
+def find_librairies_path(options) :
+   """
+   Update LD_LIBRARY_PATH to add calculations and MKL librairies
+   """
+   std_lib_dir = find_calculation_librairies(options)
+#    external_lib_dir = find_external_librairies()
+   
+#    external_lib_dir.insert(0, std_lib_dir)
+#    lib_dir = ":".join(external_lib_dir)
+   
+   # surcharge de l'environnement python pour pouvoir accéder aux librairies de
+   # calcul
+   varname = 'LD_LIBRARY_PATH'
+   ld_library_path = os.getenv(varname)
+   if ld_library_path != None :
+      ld_library_path = std_lib_dir + ":" + ld_library_path
+   else :
+      ld_library_path = std_lib_dir
+   os.putenv(varname, ld_library_path)
+   
+   return std_lib_dir
+#
+
+#
+def read_configuration_dict() :
+    """
+    Function used to read the configuration file and return the value associated 
+    with the input key
+    """
+    
+    # construction du chemin vers le répertoire de base
+    etc_dir = os.path.join( get_application_path(), "etc")
+    if not os.path.isdir(etc_dir) : 
+        raise SystemExit( ERR_UNKNOW_FOLDER[LANG].format(etc_dir) )
+    
+    # chemin vers le fichier de configuration
+    conf_name = os.path.join(etc_dir, CONFIGURATION_FILE)
+    if not os.path.isfile(conf_name) : 
+        raise SystemExit( ERR_UNKNOW_FILE[LANG].format(conf_name) )
+    
+    # lecture du fichier de configuration pour déterminer le numéro de version
+    config_dict = {}
+    config_dict['conf_name'] = conf_name
+    with control_open(conf_name, 'r') as fconf :
+        for line in fconf :
+            line = line.strip()
+            if len(line) == 0 : continue
+            if line.startswith("#") : continue
+            
+            words = line.strip().split("=")
+            if len(words) > 0 :
+                if len(words) != 2 : 
+                    raise SystemExit( ERR_FORMAT_CONF_FILE[LANG].format(conf_name, linr) )
+                
+                key = words[0].strip().lower()
+                value = words[1].replace('"','')
+                value = value.replace("'","")
+                config_dict[key] = value.strip()
+                
+                # contrôle de la lecture du numéro de version
+                if len(value) == 0 : 
+                    raise SystemExit(ERR_UNKNOWN_APP_VALUE[LANG].format(input_key, conf_name))
+    
+    return config_dict
+#
+
+#
+def get_configuration_value(config_dict, input_key) :
+    """
+    Function used to read the configuration file and return the value associated 
+    with the input key
+    """
+    if input_key.lower() not in config_dict.keys() :
+        raise SystemExit(ERR_UNKNOWN_APP_VALUE[LANG].format(input_key, config_dict['conf_name']))
+    return config_dict[input_key.lower()]
+#
+
+#
+def nb_available_cpus() :
+    """
+    Return number of available cpus on POSIX platform
+    """
+    try :
+        nb_cpu = os.sysconf("SC_NPROCESSORS_ONLN")
+    except :
+        print("Warning: cannot determine number of CPUs !")
+        nb_cpu = 1
+
+    try :
+        nb_cpu = int(nb_cpu)
+    except :
+        raise SystemExit(ERR_UNKNOWN_CPUS_NUMBER[LANG])
+
+    return nb_cpu
+#
+
+#
+def update_openmp_env(options) :
+    """
+    Update OS environment for OpenMP process
+    """
+    nb_max_cpu = nb_available_cpus()
+    if options.multi > nb_max_cpu :
+        print("Warning: fixed CPU number to " + str(nb_max_cpu) + " !")
+        options.multi = nb_max_cpu
+        
+    if options.multi < 1 :
+        raise SystemExit("Wrong CPU definition, see -m or --multi option !")
+
+    os.putenv('OMP_NUM_THREADS', str(options.multi))
+    os.putenv('KMP_DEVICE_THREAD_LIMIT', str(nb_max_cpu))
+    
+    if options.not_nested == True :
+        os.putenv('OMP_NESTED','false')
+    else :
+        os.putenv('OMP_NESTED','true')
+    
+    return 0
+#
+
+#
+def debugger_cmd(options, cmd) :
+    """
+    Create a tempory file for debugger and update command line to start program
+    in debugger
+    """
+    gdbname = ".alliance_debugger"
+    with control_open(gdbname, "w") as fout :
+        if len(options.breakpoint) == 0:
+            fout.write("break alliance\n")
+        elif len(options.breakpoint) > 0 :
+            fout.write("set breakpoint pending on\n")
+            fout.write("break " + options.breakpoint + "\n")
+        fout.write("run")
+    
+    cmd = options.gdb + " -x " + gdbname + " -args " + cmd
+    return (cmd, gdbname)
+#
+
+#
+def mpi_cmd(options) :
+    """ Set MPI command line """
+    cmd_mpi = ""
+    if options.mpi_size > 1: 
+        cmd_mpi += "mpirun -n {0} ".format(options.mpi_size)
+        # Debug execution in several terminals
+        if options.gdb != "": 
+            cmd_mpi += "xterm -hold -e "
+    return cmd_mpi
+#
+
+# 
+def cmd_parser() :
+    """
+    Choose between english of french options parser
+    """
+    
+    # get default values from configuration file
+    config_dict = read_configuration_dict()
+    version = get_configuration_value(config_dict, "version")
+    opt_level = get_configuration_value(config_dict, "optimize")
+    max_load = get_configuration_value(config_dict, "max_load_set_cat2")
+    verbose_level = get_configuration_value(config_dict, "verbose")
+    
+    parser = argparse.ArgumentParser(epilog=PARSER_EPILOG[LANG])
+    
+    parser.add_argument('filename', nargs=1, help=PARSER_FILENAME[LANG])
+    
+    # standard options
+    parser.add_argument('--version', action='version', version='%(prog)s ' + version)
+    parser.add_argument("-l", "--language", default=LANG, choices=['fr', 'en'], help=PARSER_LANGUAGE[LANG].format(LANG))
+    parser.add_argument("-m", "--multi", type=int, default=1, help=PARSER_MULTI[LANG])
+    parser.add_argument("-n", "--mpi", type=int, default=1, dest ="mpi_size", help=PARSER_MPI[LANG])
+    
+    parser.add_argument("-o", "--optimize", type=int, default=int(opt_level), help=PARSER_OPT_LEVEL[LANG].format(opt_level))
+    parser.add_argument("-v", "--verbose", type=int, default=int(verbose_level), help=PARSER_VERBOSE[LANG].format(verbose_level))
+    
+    # advanced options
+    g0 = parser.add_argument_group( GROUP_ADVANCED_OPT[LANG] )
+    g0.add_argument("--max_load_set_cat2", type=int, default=int(max_load), dest="max_load_set_cat2", help=PARSER_NUMBER_COMPONENTS[LANG].format(max_load))
+    g0.add_argument("--no_omp_nested", action="store_true", dest="not_nested", help=PARSER_MULTI_NESTED[LANG])
+    g0.add_argument("--only_min_max_torseur", action="store_true", dest="torseur", help=PARSER_MINMAX_LOAD[LANG])
+    
+    # compatibility group
+    g1 = parser.add_argument_group( GROUP_COMPATIBILITY[LANG] )
+    g1.add_argument("-c", "--compatibility", action="store_true", help=PARSER_COMPATIBILITY[LANG])
+    g1.add_argument("-p", "--plate_compatibility", action="store_true", help=PARSER_PLATE_COMPATIBILITY[LANG])
+    
+    # developpement group
+    g2 = parser.add_argument_group( GROUP_DEVEL[LANG] )
+    g2.add_argument("--gdb", default='', help=PARSER_DEBUGGER[LANG])
+    g2.add_argument("-g", "--debug", action="store_true", help=PARSER_DEBUG[LANG])
+    g2.add_argument('-b', '--breakpoint', action='store', default='', help=PARSER_BREAKPOINT[LANG])
+    
+    options = parser.parse_args()
+    options.filename = options.filename[0]
+    
+    if not os.path.isfile(options.filename) :
+        raise SystemExit( ERR_UNKNOW_FILE[LANG].format(options.filename) )
+    
+    return options
+#
+
+# Lancement du programme fortran
+def main() :
+    "Start binary program with standard options"
+    global LANG
+    
+    # détermination de la langue de l'utilisateur
+    (language, encoding) = locale.getdefaultlocale()
+    if language == "fr_FR" :
+        LANG = 'fr'
+    else :
+        LANG = 'en'
+
+    # lecture de la ligne de commande
+    options = cmd_parser()
+    
+    # recherche de l'éxecutable compilé et des bibliothèques de calcul
+    cmd = find_binary_program(options)
+    libdir = find_librairies_path(options)
+
+    # mise à jours de l'environnement pour le support OpenMP
+    # update_openmp_env(options)
+    
+    # construction de la commande pour l'éxécutable
+    cmd += " --language " + options.language
+    if options.compatibility : 
+        cmd += " --compatibility"
+    if options.plate_compatibility :
+        cmd += "  --plate_compatibility"
+    if options.max_load_set_cat2 > 0 :
+        cmd += " --max_load_set_cat2 " + str(options.max_load_set_cat2)
+    if options.torseur : 
+        cmd += " --only_min_max_torseur"
+    if options.optimize != None:
+        cmd += " --optimize " + str(options.optimize)
+    if options.verbose > 1 : 
+        cmd += " --verbose " + str(options.verbose)
+    if options.mpi_size > 1:
+        cmd += " --mpi"
+    cmd += " " + options.filename
+    
+    if options.debug : print(cmd)
+    if len(options.gdb) > 0 :
+        (cmd, gdbname) = debugger_cmd(options, cmd)
+    
+    # Ajout de la couche mpi à la commande pour l'executable
+    cmd = mpi_cmd(options) + cmd
+    
+    # lancement application
+    err = os.system(cmd)
+    
+    if len(options.gdb) > 0 :  os.remove(gdbname)
+    if err > 0  :
+        raise SystemExit( ERR_EXE[LANG].format(err) )
+# 
+
+# programme principal
+if __name__=="__main__":
+  main()

@@ -26,7 +26,7 @@ OBJ_DIR_DEBUG = og_build
 
 # Standard shell commands
 MKDIR = mkdir -p
-RM = rm -f
+RM = rm -rf
 CP = cp -f
 MV = mv
 LN = ln -sf

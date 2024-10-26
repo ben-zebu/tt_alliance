@@ -27,7 +27,6 @@ debug: $(DEBUG_LIB_DIR)/$(SONAME)
 
 $(DEBUG_LIB_DIR)/$(SONAME): $(OBJ_DIR_DEBUG) $(OBJS_DEBUG)
 	$(CXX) -shared -Wl,-soname,$(SONAME) -o $(DEBUG_LIB_DIR)/$(SONAME) $(OBJS_DEBUG)
-	$(CP) $(HEADERS) $(DEBUG_INC_DIR)
 
 # Release target
 release: CXXFLAGS = $(CXXFLAGS_RELEASE)
@@ -35,15 +34,14 @@ release: $(RELEASE_LIB_DIR)/$(SONAME)
 
 $(RELEASE_LIB_DIR)/$(SONAME): $(OBJ_DIR_RELEASE) $(OBJS_RELEASE)
 	$(CXX) -shared -Wl,-soname,$(SONAME) -o $(RELEASE_LIB_DIR)/$(SONAME) $(OBJS_RELEASE)
-	$(CP) $(HEADERS) $(RELEASE_INC_DIR)
 
 # Debug object files
 $(OBJ_DIR_DEBUG)/%.o: $(SRC_DIR)/%.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -c $< -o $@ && $(CP) ${<:.cpp=.h} $(DEBUG_INC_DIR) || true
 
 # Release object files
 $(OBJ_DIR_RELEASE)/%.o: $(SRC_DIR)/%.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -c $< -o $@  && $(CP) ${<:.cpp=.h} $(RELEASE_INC_DIR) || true
 
 # Clean target
 clean:
