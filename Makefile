@@ -1,0 +1,35 @@
+#
+# Main Makefile for ALLIANCE project
+# 
+include config.mk
+
+XML_DIR = $(PROJECT_DIR)/externals/xml
+ABASE_DIR = $(PROJECT_DIR)/components/abase
+
+
+release: $(RELEASE_DIR) $(RELEASE_LIB_DIR) $(RELEASE_INC_DIR)
+	@(cd $(XML_DIR) && $(MAKE) release)
+	@(cd $(ABASE_DIR) && $(MAKE) release)
+
+debug: $(DEBUG_DIR) $(DEBUG_LIB_DIR) $(DEBUG_INC_DIR)
+	@(cd $(XML_DIR) && $(MAKE) debug)
+	@(cd $(ABASE_DIR) && $(MAKE) debug)
+
+
+$(RELEASE_DIR):
+	$(MKDIR) $(RELEASE_DIR)
+
+$(RELEASE_LIB_DIR): $(RELEASE_DIR)
+	$(MKDIR) $(RELEASE_LIB_DIR)
+
+$(RELEASE_INC_DIR): $(RELEASE_DIR)
+	$(MKDIR) $(RELEASE_INC_DIR)
+
+$(DEBUG_DIR):
+	$(MKDIR) $(DEBUG_DIR)
+
+$(DEBUG_LIB_DIR): $(DEBUG_DIR)
+	$(MKDIR) $(DEBUG_LIB_DIR)
+
+$(DEBUG_INC_DIR): $(DEBUG_DIR)
+	$(MKDIR) $(DEBUG_INC_DIR)

@@ -2,7 +2,7 @@
 include ../../config.mk
 
 # Library name and version
-LIB_NAME = libtinyxml2
+LIB_NAME = libabase
 SONAME = $(LIB_NAME).so
 
 # Directories
