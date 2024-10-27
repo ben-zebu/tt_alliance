@@ -10,8 +10,10 @@
 #include <string>
 #include <utility>
 
-
+#include "ConfigParser.h"
 #include "TranslationManager.h"
+
+
 
 // Function to get current date
 std::string getCurrentDate() {
@@ -77,10 +79,16 @@ int main(int argc, char* argv[]) {
     std::cout << "Path: " << path << std::endl;
     std::cout << "Executable: " << exe << std::endl;
 
-    std::string ressourcesPath = path + "/../ressources";
+    std::string configFile = path + "/../etc/alliance.conf";
+    globalConfigParser.loadFromFile(configFile);
+    std::cout << "number of keys: " << globalConfigParser.getKeyCount() << std::endl;
+    //globalConfigParser.printConfig();
 
+    std::string ressourcesPath = path + "/../ressources";
     globalTranslationManager.loadAllTranslations(ressourcesPath);
     globalTranslationManager.setCurrentLanguage("fr");
+
+    float version = get_parser_value<float>("project");
 
     greetUser();
     showTemperature();

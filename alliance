@@ -347,7 +347,7 @@ def debugger_cmd(options, cmd) :
     gdbname = ".alliance_debugger"
     with control_open(gdbname, "w") as fout :
         if len(options.breakpoint) == 0:
-            fout.write("break alliance\n")
+            fout.write("break main\n")
         elif len(options.breakpoint) > 0 :
             fout.write("set breakpoint pending on\n")
             fout.write("break " + options.breakpoint + "\n")

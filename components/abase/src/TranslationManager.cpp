@@ -76,6 +76,9 @@ std::string TranslationManager::replacePlaceholders(const std::string& message, 
 }
 
 std::string TranslationManager::translate(const std::string& key) const {
+    if (translations.empty()) {
+        return key;
+    }
     auto it = translations.at(currentLanguage).find(key);
     return it != translations.at(currentLanguage).end() ? it->second : key;
 }
@@ -85,6 +88,10 @@ std::string TranslationManager::translate(const std::string& key, const std::str
 }
 
 std::string TranslationManager::translate(const std::string& key, const std::vector<std::string>& values) const {
+    if (translations.empty()) {
+        return key;
+    }
+
     auto it = translations.at(currentLanguage).find(key);
     if (it != translations.at(currentLanguage).end()) {
         return replacePlaceholders(it->second, values);
