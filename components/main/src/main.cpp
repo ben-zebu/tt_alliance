@@ -12,7 +12,7 @@
 
 #include "ConfigParser.h"
 #include "TranslationManager.h"
-
+#include "GlobalTimer.h"
 
 
 // Function to get current date
@@ -74,6 +74,7 @@ std::pair<std::string, std::string> splitExecutablePath(char* argv0) {
 
 
 int main(int argc, char* argv[]) {
+    start_timer("main");
 
     auto [path, exe] = splitExecutablePath(argv[0]);
     std::cout << "Path: " << path << std::endl;
@@ -88,11 +89,14 @@ int main(int argc, char* argv[]) {
     globalTranslationManager.loadAllTranslations(ressourcesPath);
     globalTranslationManager.setCurrentLanguage("fr");
 
-    float version = get_parser_value<float>("project");
+    //float version = get_parser_value<float>("project");
 
     greetUser();
     showTemperature();
     sayFarewell();
 
+    stop_timer("main");
+    print_timer("main");
+    
     return 0;
 }
