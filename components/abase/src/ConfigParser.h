@@ -43,8 +43,10 @@ namespace abase {
     };
 
     // Global instance of ConfigParser
-    extern ConfigParser globalConfigParser;
+    extern abase::ConfigParser globalConfigParser;
+
 } //  namespace abase
+
 
 template<typename T>
 inline T get_parser_value(const std::string& key) {

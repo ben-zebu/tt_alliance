@@ -37,19 +37,20 @@ namespace abase {
 
 } // namespace abase
 
+
 //
 // Short aliases for timer functions
 //
 
-void start_timer(const std::string& name) {
+inline void start_timer(const std::string& name) {
     abase::globalTimer.start(name);
 }
 
-void stop_timer(const std::string& name) {
+inline void stop_timer(const std::string& name) {
     abase::globalTimer.stop(name);
 }
 
-void print_timer(const std::string& name) {
+inline void print_timer(const std::string& name) {
     abase::globalTimer.print(name);
 }
 

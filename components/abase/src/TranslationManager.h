@@ -27,6 +27,8 @@ namespace abase {
 
 } // namespace abase
 
+
+
 // Short alias for translate function
 inline std::string translate(const std::string& key) {
     return abase::globalTranslationManager.translate(key);

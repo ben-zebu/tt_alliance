@@ -81,13 +81,13 @@ int main(int argc, char* argv[]) {
     std::cout << "Executable: " << exe << std::endl;
 
     std::string configFile = path + "/../etc/alliance.conf";
-    globalConfigParser.loadFromFile(configFile);
-    std::cout << "number of keys: " << globalConfigParser.getKeyCount() << std::endl;
+    abase::globalConfigParser.loadFromFile(configFile);
+    std::cout << "number of keys: " << abase::globalConfigParser.getKeyCount() << std::endl;
     //globalConfigParser.printConfig();
 
     std::string ressourcesPath = path + "/../ressources";
-    globalTranslationManager.loadAllTranslations(ressourcesPath);
-    globalTranslationManager.setCurrentLanguage("fr");
+    abase::globalTranslationManager.loadAllTranslations(ressourcesPath);
+    abase::globalTranslationManager.setCurrentLanguage("fr");
 
     //float version = get_parser_value<float>("project");
 

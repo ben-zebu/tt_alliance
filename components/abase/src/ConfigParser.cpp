@@ -14,7 +14,9 @@
 using namespace abase;
 
 // Initialize global instance
-ConfigParser globalConfigParser;
+namespace abase {
+    ConfigParser globalConfigParser;
+}
 
 //
 // Private methods
