@@ -2,6 +2,8 @@
 #include <stdexcept>
 #include <iostream>
 
+using namespace abase;
+
 GlobalTimer globalTimer;
 
 void GlobalTimer::start(const std::string& name) {

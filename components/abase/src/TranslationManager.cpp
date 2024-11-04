@@ -6,6 +6,7 @@
 #include "tinyxml2.h"
 
 namespace fs = std::filesystem;
+using namespace abase;
 
 // Initialize global instance
 TranslationManager globalTranslationManager;
