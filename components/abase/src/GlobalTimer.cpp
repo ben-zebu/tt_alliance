@@ -2,7 +2,11 @@
 #include <stdexcept>
 #include <iostream>
 
-GlobalTimer globalTimer;
+using namespace abase;
+
+namespace abase {
+    GlobalTimer globalTimer;
+}
 
 void GlobalTimer::start(const std::string& name) {
     auto& timer = timers[name];

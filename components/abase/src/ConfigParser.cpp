@@ -11,8 +11,12 @@
 #define COMMENT_DELIMITER "#;"
 #define QUOTATION_DELIMITER "'\""
 
+using namespace abase;
+
 // Initialize global instance
-ConfigParser globalConfigParser;
+namespace abase {
+    ConfigParser globalConfigParser;
+}
 
 //
 // Private methods
