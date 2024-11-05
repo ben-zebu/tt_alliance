@@ -13,7 +13,7 @@
 #include "ConfigParser.h"
 #include "TranslationManager.h"
 #include "GlobalTimer.h"
-
+#include "StressStates.h"
 
 // Function to get current date
 std::string getCurrentDate() {
@@ -72,31 +72,96 @@ std::pair<std::string, std::string> splitExecutablePath(char* argv0) {
     return {path, exe};
 }
 
+StressStates generateStressStates(int numStates) {
+    // Seed the random number generator
+    srand(static_cast<unsigned int>(time(nullptr)));
+
+    // Define the range for the random values
+    const double maxValue = 300.0;
+    const double minValue = -1.*maxValue;
+
+    StressStates states = StressStates();
+
+    for (int i = 0; i < numStates; ++i) {
+        std::vector<double> components(6);
+        for (int j = 0; j < 6; ++j) {
+            components[j] = minValue + (static_cast<double>(rand()) / RAND_MAX) * (maxValue - minValue);
+        }
+        states.addState(components);
+    }
+
+    return states;
+}
+
+double computeStressIntensity(const StressStates& states, const std::string& method, const int interations) {
+    double Smax = 0.0;
+    for (int iter = 0; iter < interations; ++iter) {
+        for (int i = 0; i < states.size(); ++i) {
+            if (method == "tresca") {
+                Smax = std::max(Smax, states.tresca(i));
+            } else if (method == "trescaFast") {
+                Smax = std::max(Smax, states.trescaFast(i));
+            } else if (method == "trescaWithCardan") {
+                Smax = std::max(Smax, states.trescaWithCardan(i));
+            } else if (method == "mises") {
+                Smax = std::max(Smax, states.mises(i));
+            } else if (method == "misesReduced") {
+                if (states.misesReduced(i)> Smax) {
+                    Smax = std::max(Smax, states.tresca(i));
+                }
+            }
+        }
+    }
+    return Smax;
+}
+
+void performBenchmark(const StressStates& states, const std::string& method, const int interations) {
+    start_timer(method);
+    std::cout << "Benchmarking " << method << " method..." << std::endl;
+    double Smax = computeStressIntensity(states, method, interations);
+    std::cout << "Max stress intensity for " << method << ": " << Smax << std::endl;
+    stop_timer(method);
+    print_timer(method);
+    std::cout << std::endl;
+}
+
 
 int main(int argc, char* argv[]) {
-    start_timer("main");
+    //start_timer("main");
 
-    auto [path, exe] = splitExecutablePath(argv[0]);
-    std::cout << "Path: " << path << std::endl;
-    std::cout << "Executable: " << exe << std::endl;
+    // auto [path, exe] = splitExecutablePath(argv[0]);
+    // std::cout << "Path: " << path << std::endl;
+    // std::cout << "Executable: " << exe << std::endl;
 
-    std::string configFile = path + "/../etc/alliance.conf";
-    abase::globalConfigParser.loadFromFile(configFile);
-    std::cout << "number of keys: " << abase::globalConfigParser.getKeyCount() << std::endl;
-    //globalConfigParser.printConfig();
+    // std::string configFile = path + "/../etc/alliance.conf";
+    // abase::globalConfigParser.loadFromFile(configFile);
+    // std::cout << "number of keys: " << abase::globalConfigParser.getKeyCount() << std::endl;
+    // //globalConfigParser.printConfig();
 
-    std::string ressourcesPath = path + "/../ressources";
-    abase::globalTranslationManager.loadAllTranslations(ressourcesPath);
-    abase::globalTranslationManager.setCurrentLanguage("fr");
+    // std::string ressourcesPath = path + "/../ressources";
+    // abase::globalTranslationManager.loadAllTranslations(ressourcesPath);
+    // abase::globalTranslationManager.setCurrentLanguage("fr");
 
     //float version = get_parser_value<float>("project");
 
-    greetUser();
-    showTemperature();
-    sayFarewell();
+    //greetUser();
+    //showTemperature();
+    //sayFarewell();
 
-    stop_timer("main");
-    print_timer("main");
+    //stop_timer("main");
+    //print_timer("main");
+
+    const int numStates = 1E5;
+    const int iterations = 100;
+    std::cout << "Number of operations = " << numStates * iterations << std::endl;
+    std::cout << std::endl;
+
+    auto stressStates = generateStressStates(numStates);
     
+    std::vector<std::string> methods = {"tresca", "trescaFast", "trescaWithCardan", "mises", "misesReduced"};
+    for (const auto& method : methods) {
+        performBenchmark(stressStates, method, iterations);
+    }
+
     return 0;
 }

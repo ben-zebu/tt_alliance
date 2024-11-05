@@ -7,6 +7,9 @@ PROG_NAME = alliance.exe
 # Directories
 SRC_DIR = src
 
+# Eigen header files
+EIGEN_INCLUDE = -I$(PROJECT_DIR)/externals/eigen
+
 # Libraries
 LIBS = -ltinyxml2 -labase
 
@@ -24,7 +27,7 @@ $(OBJ_DIR_DEBUG) $(OBJ_DIR_RELEASE):
 	$(MKDIR) $@
 
 # Debug target
-debug: CXXFLAGS = $(CXXFLAGS_DEBUG)
+debug: CXXFLAGS = $(CXXFLAGS_DEBUG) $(EIGEN_INCLUDE)
 debug: LDFLAGS = -L$(DEBUG_LIB_DIR) 
 debug: $(DEBUG_DIR)/$(PROG_NAME)
 
@@ -32,7 +35,7 @@ $(DEBUG_DIR)/$(PROG_NAME): $(OBJ_DIR_DEBUG) $(OBJS_DEBUG)
 	$(CXX) -o $(DEBUG_DIR)/$(PROG_NAME) $(OBJS_DEBUG) $(LDFLAGS) $(LIBS) 
 
 # Release target
-release: CXXFLAGS = $(CXXFLAGS_RELEASE)
+release: CXXFLAGS = $(CXXFLAGS_RELEASE) $(EIGEN_INCLUDE)
 release: LDFLAGS = -L$(RELEASE_LIB_DIR) 
 release: $(RELEASE_DIR)/$(PROG_NAME)
 
