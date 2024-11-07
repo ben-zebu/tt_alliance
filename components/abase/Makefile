@@ -38,7 +38,7 @@ release: LDFLAGS = -L$(RELEASE_LIB_DIR)
 release: $(RELEASE_LIB_DIR)/$(SONAME)
 
 $(RELEASE_LIB_DIR)/$(SONAME): $(OBJ_DIR_RELEASE) $(OBJS_RELEASE)
-	$(CXX) -shared -Wl,-soname,$(SONAME) -o $(RELEASE_LIB_DIR)/$(SONAME) $(OBJS_RELEASE)  $(LDFLAGS) $(LIBS)
+	$(CXX) -shared -Wl,-soname,$(SONAME) -o $(RELEASE_LIB_DIR)/$(SONAME) $(OBJS_RELEASE) $(LDFLAGS) $(LIBS)
 
 # Debug object files
 $(OBJ_DIR_DEBUG)/%.o: $(SRC_DIR)/%.cpp
