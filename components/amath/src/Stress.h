@@ -13,6 +13,13 @@ namespace amath {
             // Stress components (s11, s22, s33, s12, s13, s23)
             Vector6d components = Vector6d::Zero();
 
+            static constexpr double VM_FACTOR = 1.1547005383792517; // 2/sqrt(3)
+
+            void getPrincipalStresses(double& a, double& b, double& c) const;
+            static void sortEigenvalues(double& a, double& b, double& c);
+            static void solveCardan(const double p, const double q, const double r,
+                                    double& x1, double& x2, double& x3);
+
         public:
             // Constructors and copy constructor
             Stress() = default;
@@ -24,9 +31,8 @@ namespace amath {
             // Utility
             bool is_diag() const;
             size_t size() const { return components.cols(); }
-            //Eigen::Matrix3d getMatrix() const;
+            Eigen::Vector3d principal_stresses() const;
 
-            //void set_components(const Eigen::Vector<double,STRESS_SIZE>& components);
             const Vector6d& get_components() const { return components; }
 
             // Operators overloading
@@ -35,6 +41,11 @@ namespace amath {
             Stress& operator*=(const double& scalar); 
             bool operator==(const Stress& other);
             bool operator!=(const Stress& other);
+
+            // Stress invariants
+            double tresca() const;
+            double mises() const;
+            double reduced_mises() const;
 
     };
 

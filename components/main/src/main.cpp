@@ -170,7 +170,8 @@ int main(int argc, char* argv[]) {
 
     std::cout << "s1 = " << s1.get_components() << std::endl;
     std::cout << "s2 = " << s2.get_components() << std::endl;
-    s3 = {10.0, 20.0, 30.0, 40.0, 50.0};
+    s3 = {100.0, 200.0, 50.0, -20.0, 10.0, 5.0};
     std::cout << "s3 = " << s3.get_components() << std::endl;
+    std::cout << "tresca(s3) = " << s3.tresca() << " mises(s3) = " << s3.mises() << std::endl;
     return 0;
 }
