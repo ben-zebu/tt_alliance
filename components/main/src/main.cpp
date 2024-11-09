@@ -15,6 +15,7 @@
 #include "GlobalTimer.h"
 #include "StressStates.h"
 #include "Stress.h"
+#include "Table.h"
 
 // Function to get current date
 std::string getCurrentDate() {
@@ -173,5 +174,23 @@ int main(int argc, char* argv[]) {
     s3 = {100.0, 200.0, 50.0, -20.0, 10.0, 5.0};
     std::cout << "s3 = " << s3.get_components() << std::endl;
     std::cout << "tresca(s3) = " << s3.tresca() << " mises(s3) = " << s3.mises() << std::endl;
+
+    std::vector<double> x = {0.0, 10.,  100.0};
+    std::vector<double> y = {0.0, 100., 200.0};
+    amath::Table table(x, y);
+    amath::Table table2;
+    std::cout << "table.get_xrange() = ";
+    for (auto val : table.get_xrange() ) {  std::cout << val << " "; }
+    std::cout << std::endl;
+    std::cout << "table.get_yrange() = ";
+    for (auto val : table.get_yrange() ) {  std::cout << val << " "; }
+    std::cout << std::endl;
+    std::cout << "table.get_yvalue(5.0) = " << table.get_yvalue(5.0, "linear") << std::endl;
+    std::cout << "table.get_yvalue(50.0) = " << table.get_yvalue(50.0, "linear") << std::endl;
+
+    table2 = table;
+    std::cout << "table2 = table" << std::endl;
+    std::cout << "table2.get_xamx() = " << table2.get_xmax() << std::endl;
+
     return 0;
 }
