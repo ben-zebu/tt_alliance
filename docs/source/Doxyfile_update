@@ -1,0 +1,133 @@
+#!/usr/bin/env python3
+# -*- coding: utf8 -*-
+
+"""
+Documentation script used to update parameters in Doxyfile based
+on informations stored in <MAIN_PROJECT_DIR>/etc/alliance.conf
+"""
+import sys
+import codecs
+import os
+import locale
+import argparse
+
+# APP CONSTANT
+CONFIGURATION_FILE = "etc/alliance.conf"
+DOCS_SRC_DIR = "docs_2/source"
+
+DOXYFILE_REF = "Doxyfile.ref"
+DOXYFILE_OUT = "Doxyfile"
+
+DOXYGEN_PARAMETERS = { "PROJECT_NAME" : "project", "PROJECT_NUMBER" : "version" }
+
+# ERROR MESSAGES
+ERR_UNKNOW_FILE = "Cannot find the file: {0}" 
+ERR_FILE_OPEN = "Cannot open the file {0} !"
+
+ERR_FORMAT_CONF_FILE = "Wrong format for the following line in configuration file {0}: \n{1}"
+ERR_UNKNOWN_APP_VALUE = "Cannot determine the value associated to the key '{0}' in the configuration file '{1}' !"
+
+
+# 
+def get_project_path() :
+    """
+    Find main project directory
+    """
+    (path, script) = os.path.split( sys.argv[0] )
+    path = os.path.realpath( path )
+    path = path.replace(DOCS_SRC_DIR, "")
+    print(path)
+    return path
+#
+
+#
+def control_open(filename, options = "r"):
+    """ Safe file openning """
+    try:
+        fin = codecs.open(filename, options)
+    except:
+        raise SystemExit( ERR_FILE_OPEN.format(filename) )
+    return fin
+#
+
+#
+def read_configuration_dict() :
+    """
+    Function used to read the configuration file and return the value associated 
+    with the input key
+    """
+    
+    # path for configuration file
+    conf_name = os.path.join(get_project_path(), CONFIGURATION_FILE)
+    if not os.path.isfile(conf_name) : 
+        raise SystemExit( ERR_UNKNOW_FILE.format(conf_name) )
+    
+    # lecture du fichier de configuration pour déterminer le numéro de version
+    config_dict = {}
+    config_dict['conf_name'] = conf_name
+    with control_open(conf_name, 'r') as fconf :
+        for line in fconf :
+            line = line.strip()
+            if len(line) == 0 : continue
+            if line.startswith("#") : continue
+            
+            words = line.strip().split("=")
+            if len(words) > 0 :
+                if len(words) != 2 : 
+                    raise SystemExit( ERR_FORMAT_CONF_FILE.format(conf_name, linr) )
+                
+                key = words[0].strip().lower()
+                value = words[1].replace('"','')
+                value = value.replace("'","")
+                config_dict[key] = value.strip()
+                
+                # contrôle de la lecture du numéro de version
+                if len(value) == 0 : 
+                    raise SystemExit(ERR_UNKNOWN_APP_VALUE.format(input_key, conf_name))
+    
+    return config_dict
+#
+
+#
+def get_configuration_value(config_dict, input_key) :
+    """
+    Function used to read the configuration file and return the value 
+    associated with the input key
+    """
+    if input_key.lower() not in config_dict.keys() :
+        raise SystemExit(ERR_UNKNOWN_APP_VALUE[LANG].format(input_key, config_dict['conf_name']))
+    return config_dict[input_key.lower()]
+#
+
+#
+def get_doxyfile_key(line) :
+    """ Get key definition from a line """
+    if len(line) == 0 : return ""
+    if line.startswith("#") : return ""
+            
+    words = line.strip().split("=")
+    if len(words) == 2 :
+        return words[0].strip()
+    return ""
+#
+
+
+# 
+def main() :
+    config_dict = read_configuration_dict()
+    
+    with control_open(DOXYFILE_REF, 'r') as fin, \
+         control_open(DOXYFILE_OUT, 'w') as fout:
+        for line in fin :
+            key = get_doxyfile_key(line.strip())
+            if key in DOXYGEN_PARAMETERS.keys() :
+                value = get_configuration_value(config_dict, DOXYGEN_PARAMETERS[key])
+                idx = line.find("=")
+                line = line.replace(line[idx+1:], ' "{0}"\n'.format(value))
+            fout.write(line)
+
+# 
+
+# programme principal
+if __name__=="__main__":
+    main()
