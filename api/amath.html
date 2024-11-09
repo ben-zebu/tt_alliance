@@ -54,6 +54,10 @@
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv45amath"><code class="docutils literal notranslate"><span class="pre">amath</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#table">Table</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5amath5TableE"><code class="docutils literal notranslate"><span class="pre">amath::Table</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -295,6 +299,277 @@
 <dt class="sig sig-object cpp" id="_CPPv4N5amath6Stress9VM_FACTORE">
 <span id="_CPPv3N5amath6Stress9VM_FACTORE"></span><span id="_CPPv2N5amath6Stress9VM_FACTORE"></span><span id="amath::Stress::VM_FACTOR__double"></span><span class="target" id="classamath_1_1Stress_1a4e80f61bbcdfd263ef49f314bf096f2c"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">VM_FACTOR</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1.1547005383792517</span></span><a class="headerlink" href="#_CPPv4N5amath6Stress9VM_FACTORE" title="Link to this definition"></a><br /></dt>
 <dd><p>Constant factor used in the calculation of an equivalent stress based on an homothecy from von Mises stress. The von Mises stress is calculated as <span class="math notranslate nohighlight">\(\sigma_\text{VM} = \sqrt{\frac{2}{3}\left(\sigma_1^2 + \sigma_2^2 + \sigma_3^2\right)}\)</span>, where <span class="math notranslate nohighlight">\(\sigma_1\)</span>, <span class="math notranslate nohighlight">\(\sigma_2\)</span>, and <span class="math notranslate nohighlight">\(\sigma_3\)</span> are the principal stresses. This constant factor is equal to <span class="math notranslate nohighlight">\(\frac{2}{\sqrt{3}}\)</span>. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="table">
+<h2>Table<a class="headerlink" href="#table" title="Link to this heading"></a></h2>
+<dl class="cpp type">
+<dt class="sig sig-object cpp">
+<span class="target" id="namespaceamath"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">amath</span></span></span><br /></dt>
+<dd><dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath5TableE">
+<span id="_CPPv3N5amath5TableE"></span><span id="_CPPv2N5amath5TableE"></span><span id="amath::Table"></span><span class="target" id="classamath_1_1Table"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Table</span></span></span><a class="headerlink" href="#_CPPv4N5amath5TableE" title="Link to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;Table.h&gt;</em></div>
+<p>Represents a 2D table of double values. </p>
+<p>The <a class="reference internal" href="#classamath_1_1Table"><span class="std std-ref">Table</span></a> class provides a 2D table of double values. It is implemented using a 2D vector of vectors. The table can be initialized with a size and filled with zeros or with a given value. It also supports various operations such as adding, subtracting, multiplying, and dividing tables. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath5Table5TableEv">
+<span id="_CPPv3N5amath5Table5TableEv"></span><span id="_CPPv2N5amath5Table5TableEv"></span><span id="amath::Table::Table"></span><span class="target" id="classamath_1_1Table_1ae24b73cd3fbc3b5628809b87e018a1d9"></span><span class="sig-name descname"><span class="n"><span class="pre">Table</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5amath5Table5TableEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Default constructor for the <a class="reference internal" href="#classamath_1_1Table"><span class="std std-ref">Table</span></a> class. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath5Table5TableE6size_t">
+<span id="_CPPv3N5amath5Table5TableE6size_t"></span><span id="_CPPv2N5amath5Table5TableE6size_t"></span><span id="amath::Table::Table__s"></span><span class="target" id="classamath_1_1Table_1a2728694f4f08a538fd117388bb7fd914"></span><span class="sig-name descname"><span class="n"><span class="pre">Table</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">size</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath5Table5TableE6size_t" title="Link to this definition"></a><br /></dt>
+<dd><p>Constructor for the <a class="reference internal" href="#classamath_1_1Table"><span class="std std-ref">Table</span></a> class with a given size. All values are initialized to zero. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>size</strong> – <strong>[in]</strong> The size of the table. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath5Table5TableERKNSt6vectorIdEERKNSt6vectorIdEE">
+<span id="_CPPv3N5amath5Table5TableERKNSt6vectorIdEERKNSt6vectorIdEE"></span><span id="_CPPv2N5amath5Table5TableERKNSt6vectorIdEERKNSt6vectorIdEE"></span><span id="amath::Table::Table__std::vector:double:CR.std::vector:double:CR"></span><span class="target" id="classamath_1_1Table_1a7155d78a57a3f3cd8b636a5fc405c846"></span><span class="sig-name descname"><span class="n"><span class="pre">Table</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">abciss</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">ordinates</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath5Table5TableERKNSt6vectorIdEERKNSt6vectorIdEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Constructor for the <a class="reference internal" href="#classamath_1_1Table"><span class="std std-ref">Table</span></a> class based on abciss values and ordinates values. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>abciss</strong> – <strong>[in]</strong> The abciss values. </p></li>
+<li><p><strong>ordinates</strong> – <strong>[in]</strong> The ordinates values. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath5Table5TableERK5Table">
+<span id="_CPPv3N5amath5Table5TableERK5Table"></span><span id="_CPPv2N5amath5Table5TableERK5Table"></span><span id="amath::Table::Table__TableCR"></span><span class="target" id="classamath_1_1Table_1a829d7707f61ceabdd5a87510856ac1d9"></span><span class="sig-name descname"><span class="n"><span class="pre">Table</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath5Table5TableERK5Table" title="amath::Table::Table"><span class="n"><span class="pre">Table</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">table</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath5Table5TableERK5Table" title="Link to this definition"></a><br /></dt>
+<dd><p>Copy Constructor for the <a class="reference internal" href="#classamath_1_1Table"><span class="std std-ref">Table</span></a> class. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>table</strong> – <strong>[in]</strong> The object copy from <a class="reference internal" href="#classamath_1_1Table"><span class="std std-ref">Table</span></a> class. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath5TableaSERK5Table">
+<span id="_CPPv3N5amath5TableaSERK5Table"></span><span id="_CPPv2N5amath5TableaSERK5Table"></span><span id="amath::Table::assign-operator__TableCR"></span><span class="target" id="classamath_1_1Table_1a48debffc85d84cf4544dc297bb00b350"></span><a class="reference internal" href="#_CPPv4N5amath5TableE" title="amath::Table"><span class="n"><span class="pre">Table</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath5TableE" title="amath::Table"><span class="n"><span class="pre">Table</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">table</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath5TableaSERK5Table" title="Link to this definition"></a><br /></dt>
+<dd><p>Copy constructor for the <a class="reference internal" href="#classamath_1_1Table"><span class="std std-ref">Table</span></a> class with = operator. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath5Table4sizeEv">
+<span id="_CPPv3NK5amath5Table4sizeEv"></span><span id="_CPPv2NK5amath5Table4sizeEv"></span><span id="amath::Table::sizeC"></span><span class="target" id="classamath_1_1Table_1a9769ac600dcb444525142cfeca48602c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">size</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath5Table4sizeEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Return the size of the table. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The size of the table. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath5Table8get_xmaxEv">
+<span id="_CPPv3NK5amath5Table8get_xmaxEv"></span><span id="_CPPv2NK5amath5Table8get_xmaxEv"></span><span id="amath::Table::get_xmaxC"></span><span class="target" id="classamath_1_1Table_1ae2e3852ecd385a3ccd7c8c2e4d3f6476"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_xmax</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath5Table8get_xmaxEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Return the maximum abciss value. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The maximum abciss value. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath5Table8get_xminEv">
+<span id="_CPPv3NK5amath5Table8get_xminEv"></span><span id="_CPPv2NK5amath5Table8get_xminEv"></span><span id="amath::Table::get_xminC"></span><span class="target" id="classamath_1_1Table_1af8ae740719a43d1af2a1cb00ba1cdc9a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_xmin</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath5Table8get_xminEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Return the minimum abciss value. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The minimum abciss value. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath5Table8get_ymaxEv">
+<span id="_CPPv3NK5amath5Table8get_ymaxEv"></span><span id="_CPPv2NK5amath5Table8get_ymaxEv"></span><span id="amath::Table::get_ymaxC"></span><span class="target" id="classamath_1_1Table_1a42d5ec74de70292f348f29f8b90d1a62"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_ymax</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath5Table8get_ymaxEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Return the maximum ordinates value. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The maximum ordinates value. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath5Table8get_yminEv">
+<span id="_CPPv3NK5amath5Table8get_yminEv"></span><span id="_CPPv2NK5amath5Table8get_yminEv"></span><span id="amath::Table::get_yminC"></span><span class="target" id="classamath_1_1Table_1af5e7a32f4e0410f376072b643cbd71ea"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_ymin</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath5Table8get_yminEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Return the minimum ordinates value. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The minimum ordinates value. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath5Table10get_xrangeEv">
+<span id="_CPPv3NK5amath5Table10get_xrangeEv"></span><span id="_CPPv2NK5amath5Table10get_xrangeEv"></span><span id="amath::Table::get_xrangeC"></span><span class="target" id="classamath_1_1Table_1a988f91d7487a5a191686d4b106f8d912"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_xrange</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath5Table10get_xrangeEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Return the range abciss value. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The range abciss value. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath5Table10get_yrangeEv">
+<span id="_CPPv3NK5amath5Table10get_yrangeEv"></span><span id="_CPPv2NK5amath5Table10get_yrangeEv"></span><span id="amath::Table::get_yrangeC"></span><span class="target" id="classamath_1_1Table_1a3f07d84b8fa999659bcb7229fba15d7b"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_yrange</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath5Table10get_yrangeEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Return the range ordinates value. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The range ordinates value. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath5Table10get_yvalueEdRKNSt6stringE">
+<span id="_CPPv3NK5amath5Table10get_yvalueEdRKNSt6stringE"></span><span id="_CPPv2NK5amath5Table10get_yvalueEdRKNSt6stringE"></span><span id="amath::Table::get_yvalue__double.ssCRC"></span><span class="target" id="classamath_1_1Table_1a89816891110bd1b0ea4c4ee09afb84cf"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_yvalue</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">x</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">method</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath5Table10get_yvalueEdRKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Return the interpolated ordinate at a given abciss value. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – <strong>[in]</strong> The abciss value. </p></li>
+<li><p><strong>method</strong> – <strong>[in]</strong> The interpolation method. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The interpolated ordinate value. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath5Table10get_xvalueEdRKNSt6stringE">
+<span id="_CPPv3NK5amath5Table10get_xvalueEdRKNSt6stringE"></span><span id="_CPPv2NK5amath5Table10get_xvalueEdRKNSt6stringE"></span><span id="amath::Table::get_xvalue__double.ssCRC"></span><span class="target" id="classamath_1_1Table_1a87437dce528fc6901462215227bc6603"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_xvalue</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">y</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">method</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath5Table10get_xvalueEdRKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Return the interpolated abciss at a given ordinate value. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>y</strong> – <strong>[in]</strong> The ordinate value. </p></li>
+<li><p><strong>method</strong> – <strong>[in]</strong> The interpolation method. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The interpolated abciss value. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-functions">Private Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath5Table13get_max_valueERKNSt6vectorIdEE">
+<span id="_CPPv3NK5amath5Table13get_max_valueERKNSt6vectorIdEE"></span><span id="_CPPv2NK5amath5Table13get_max_valueERKNSt6vectorIdEE"></span><span id="amath::Table::get_max_value__std::vector:double:CRC"></span><span class="target" id="classamath_1_1Table_1a50b2f512bb9fd5259c2f6deaa608ae25"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_max_value</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">values</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath5Table13get_max_valueERKNSt6vectorIdEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Return the maximum value in a vector of values. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath5Table13get_min_valueERKNSt6vectorIdEE">
+<span id="_CPPv3NK5amath5Table13get_min_valueERKNSt6vectorIdEE"></span><span id="_CPPv2NK5amath5Table13get_min_valueERKNSt6vectorIdEE"></span><span id="amath::Table::get_min_value__std::vector:double:CRC"></span><span class="target" id="classamath_1_1Table_1a2a5d7079d93cdfc475d588c1babae768"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_min_value</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">values</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath5Table13get_min_valueERKNSt6vectorIdEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Return the minimum value in a vector of values. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath5Table17get_linear_yvalueEd">
+<span id="_CPPv3NK5amath5Table17get_linear_yvalueEd"></span><span id="_CPPv2NK5amath5Table17get_linear_yvalueEd"></span><span id="amath::Table::get_linear_yvalue__doubleC"></span><span class="target" id="classamath_1_1Table_1a182d41a27a8962a06ebf25116fffa04c"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_linear_yvalue</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">x</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath5Table17get_linear_yvalueEd" title="Link to this definition"></a><br /></dt>
+<dd><p>Return the linear interpolated ordinate at a given abciss value. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> – <strong>[in]</strong> The abciss value. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The interpolated ordinate value. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath5Table17get_linear_xvalueEd">
+<span id="_CPPv3NK5amath5Table17get_linear_xvalueEd"></span><span id="_CPPv2NK5amath5Table17get_linear_xvalueEd"></span><span id="amath::Table::get_linear_xvalue__doubleC"></span><span class="target" id="classamath_1_1Table_1a476982709f25c8f03939daf2063e7634"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_linear_xvalue</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">y</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath5Table17get_linear_xvalueEd" title="Link to this definition"></a><br /></dt>
+<dd><p>Return the linear interpolated abciss at a given ordinate value. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>y</strong> – <strong>[in]</strong> The ordinate value. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The interpolated abciss value. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath5Table22get_logarithmic_yvalueEd">
+<span id="_CPPv3NK5amath5Table22get_logarithmic_yvalueEd"></span><span id="_CPPv2NK5amath5Table22get_logarithmic_yvalueEd"></span><span id="amath::Table::get_logarithmic_yvalue__doubleC"></span><span class="target" id="classamath_1_1Table_1a17968afad3d35a1432cc3fd55c99e494"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_logarithmic_yvalue</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">x</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath5Table22get_logarithmic_yvalueEd" title="Link to this definition"></a><br /></dt>
+<dd><p>Return the logarithmic interpolated ordinate at a given abciss value. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> – <strong>[in]</strong> The abciss value. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The interpolated ordinate value. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath5Table22get_logarithmic_xvalueEd">
+<span id="_CPPv3NK5amath5Table22get_logarithmic_xvalueEd"></span><span id="_CPPv2NK5amath5Table22get_logarithmic_xvalueEd"></span><span id="amath::Table::get_logarithmic_xvalue__doubleC"></span><span class="target" id="classamath_1_1Table_1a92e2a3f8ae85ee9eff03793665ead6a3"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_logarithmic_xvalue</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">y</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath5Table22get_logarithmic_xvalueEd" title="Link to this definition"></a><br /></dt>
+<dd><p>Return the logarithmic interpolated abciss at a given ordinate value. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>y</strong> – <strong>[in]</strong> The ordinate value. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The interpolated abciss value. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath5Table7_check_Ev">
+<span id="_CPPv3NK5amath5Table7_check_Ev"></span><span id="_CPPv2NK5amath5Table7_check_Ev"></span><span id="amath::Table::_check_C"></span><span class="target" id="classamath_1_1Table_1a7d3bb9375a096ff7e526113b6b54c255"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_check_</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath5Table7_check_Ev" title="Link to this definition"></a><br /></dt>
+<dd><p>Check if the table is valid. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath5Table7xvaluesE">
+<span id="_CPPv3N5amath5Table7xvaluesE"></span><span id="_CPPv2N5amath5Table7xvaluesE"></span><span id="amath::Table::xvalues__std::vector:double:"></span><span class="target" id="classamath_1_1Table_1a27a84ce797d5b5f0ab6c4f6f39859c17"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">xvalues</span></span></span><a class="headerlink" href="#_CPPv4N5amath5Table7xvaluesE" title="Link to this definition"></a><br /></dt>
+<dd><p>The vector of abciss values. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath5Table7yvaluesE">
+<span id="_CPPv3N5amath5Table7yvaluesE"></span><span id="_CPPv2N5amath5Table7yvaluesE"></span><span id="amath::Table::yvalues__std::vector:double:"></span><span class="target" id="classamath_1_1Table_1ad14d462fd5fe2048833c503861509954"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">yvalues</span></span></span><a class="headerlink" href="#_CPPv4N5amath5Table7yvaluesE" title="Link to this definition"></a><br /></dt>
+<dd><p>The vector of ordinate values. </p>
 </dd></dl>
 
 </div>
