@@ -8,6 +8,9 @@ ABASE_DIR = $(PROJECT_DIR)/components/abase
 AMATH_DIR = $(PROJECT_DIR)/components/amath
 MAIN_DIR = $(PROJECT_DIR)/components/main
 
+# Documentation directory
+DOC_DIR = $(PROJECT_DIR)/docs
+
 # Default target
 all: release debug
 
@@ -28,6 +31,12 @@ clean:
 	@(cd $(ABASE_DIR) && $(MAKE) clean)
 	@(cd $(AMATH_DIR) && $(MAKE) clean)
 	$(RM) $(DEBUG_DIR) $(RELEASE_DIR)
+
+docs:
+	@(cd $(DOC_DIR) && $(MAKE) html)
+
+docs-clean:
+	@(cd $(DOC_DIR) && $(MAKE) clean)	
 
 # Create necessary directories
 $(RELEASE_DIR):
