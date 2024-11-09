@@ -14,6 +14,7 @@
 #include "TranslationManager.h"
 #include "GlobalTimer.h"
 #include "StressStates.h"
+#include "Stress.h"
 
 // Function to get current date
 std::string getCurrentDate() {
@@ -93,10 +94,10 @@ StressStates generateStressStates(int numStates) {
     return states;
 }
 
-double computeStressIntensity(const StressStates& states, const std::string& method, const int interations) {
+double computeStressIntensity(const StressStates& states, const std::string& method, const size_t interations) {
     double Smax = 0.0;
-    for (int iter = 0; iter < interations; ++iter) {
-        for (int i = 0; i < states.size(); ++i) {
+    for (size_t iter = 0; iter < interations; ++iter) {
+        for (size_t i = 0; i < states.size(); ++i) {
             if (method == "tresca") {
                 Smax = std::max(Smax, states.tresca(i));
             } else if (method == "trescaFast") {
@@ -125,6 +126,19 @@ void performBenchmark(const StressStates& states, const std::string& method, con
     std::cout << std::endl;
 }
 
+void benchmark() {
+    const size_t numStates = 1E5;
+    const size_t iterations = 100;
+    std::cout << "Number of operations = " << numStates * iterations << std::endl;
+    std::cout << std::endl;
+
+    auto stressStates = generateStressStates(numStates);
+    
+    std::vector<std::string> methods = {"tresca", "trescaFast", "trescaWithCardan", "mises", "misesReduced"};
+    for (const auto& method : methods) {
+        performBenchmark(stressStates, method, iterations);
+    }
+}
 
 int main(int argc, char* argv[]) {
     //start_timer("main");
@@ -150,18 +164,14 @@ int main(int argc, char* argv[]) {
 
     //stop_timer("main");
     //print_timer("main");
+    amath::Stress s1({1.0, 2.0, 3.0, 4.0, 5.0, 6.0});
+    amath::Stress s2(2*s1);
+    amath::Stress s3;
 
-    const int numStates = 1E5;
-    const int iterations = 100;
-    std::cout << "Number of operations = " << numStates * iterations << std::endl;
-    std::cout << std::endl;
-
-    auto stressStates = generateStressStates(numStates);
-    
-    std::vector<std::string> methods = {"tresca", "trescaFast", "trescaWithCardan", "mises", "misesReduced"};
-    for (const auto& method : methods) {
-        performBenchmark(stressStates, method, iterations);
-    }
-
+    std::cout << "s1 = " << s1.get_components() << std::endl;
+    std::cout << "s2 = " << s2.get_components() << std::endl;
+    s3 = {100.0, 200.0, 50.0, -20.0, 10.0, 5.0};
+    std::cout << "s3 = " << s3.get_components() << std::endl;
+    std::cout << "tresca(s3) = " << s3.tresca() << " mises(s3) = " << s3.mises() << std::endl;
     return 0;
 }

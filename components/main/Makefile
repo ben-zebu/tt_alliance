@@ -11,7 +11,7 @@ SRC_DIR = src
 EIGEN_INCLUDE = -I$(PROJECT_DIR)/externals/eigen
 
 # Libraries
-LIBS = -ltinyxml2 -labase
+LIBS = -ltinyxml2 -labase -lamath
 
 # Source and object files
 SRCS = $(wildcard $(SRC_DIR)/*.cpp)

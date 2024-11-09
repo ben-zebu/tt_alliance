@@ -2,14 +2,17 @@
 include ../../config.mk
 
 # Library name and version
-LIB_NAME = libabase
+LIB_NAME = libamath
 SONAME = $(LIB_NAME).so
 
 # Directories
 SRC_DIR = src
 
+# Eigen header files
+EIGEN_INCLUDE = -I$(PROJECT_DIR)/externals/eigen
+
 # Libraries
-LIBS = -ltinyxml2
+LIBS = -labase
 
 # Source and object files
 SRCS = $(wildcard $(SRC_DIR)/*.cpp)
@@ -25,7 +28,7 @@ $(OBJ_DIR_DEBUG) $(OBJ_DIR_RELEASE):
 	$(MKDIR) $@
 
 # Debug target
-debug: CXXFLAGS = $(CXXFLAGS_DEBUG)
+debug: CXXFLAGS = $(CXXFLAGS_DEBUG) $(EIGEN_INCLUDE)
 debug: LDFLAGS = -L$(DEBUG_LIB_DIR) 
 debug: $(DEBUG_LIB_DIR)/$(SONAME)
 
@@ -33,7 +36,7 @@ $(DEBUG_LIB_DIR)/$(SONAME): $(OBJ_DIR_DEBUG) $(OBJS_DEBUG)
 	$(CXX) -shared -Wl,-soname,$(SONAME) -o $(DEBUG_LIB_DIR)/$(SONAME) $(OBJS_DEBUG) $(LDFLAGS) $(LIBS)
 
 # Release target
-release: CXXFLAGS = $(CXXFLAGS_RELEASE)
+release: CXXFLAGS = $(CXXFLAGS_RELEASE) $(EIGEN_INCLUDE)
 release: LDFLAGS = -L$(RELEASE_LIB_DIR)
 release: $(RELEASE_LIB_DIR)/$(SONAME)
 
