@@ -1,0 +1,455 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>abase components &mdash; tt_alliance 0.0.1-cpp documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+
+  
+    <link rel="canonical" href="https://example.com/docs/api/abase.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=347b672c"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="amath components" href="amath.html" />
+    <link rel="prev" title="API" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            tt_alliance
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">tt_alliance documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">abase components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#configuration-parser">Configuration Parser</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4I0E16get_parser_value1TRKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">get_parser_value()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4I0E16set_parser_valuevRKNSt6stringERK1T"><code class="docutils literal notranslate"><span class="pre">set_parser_value()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv45abase"><code class="docutils literal notranslate"><span class="pre">abase</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#global-timer">Global Timer</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv411start_timerRKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">start_timer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv410stop_timerRKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">stop_timer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv411print_timerRKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">print_timer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5abase11GlobalTimerE"><code class="docutils literal notranslate"><span class="pre">abase::GlobalTimer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#translation-manager">Translation Manager</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv49translateRKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">translate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv49translateRKNSt6stringERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">translate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv49translateRKNSt6stringERKNSt6vectorINSt6stringEEE"><code class="docutils literal notranslate"><span class="pre">translate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5abase18TranslationManagerE"><code class="docutils literal notranslate"><span class="pre">abase::TranslationManager</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="amath.html">amath components</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">tt_alliance</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">API</a></li>
+      <li class="breadcrumb-item active">abase components</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/abase.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="abase-components">
+<span id="abase"></span><h1>abase components<a class="headerlink" href="#abase-components" title="Link to this heading"></a></h1>
+<section id="configuration-parser">
+<h2>Configuration Parser<a class="headerlink" href="#configuration-parser" title="Link to this heading"></a></h2>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0E16get_parser_value1TRKNSt6stringE">
+<span id="_CPPv3I0E16get_parser_valueRKNSt6stringE"></span><span id="_CPPv2I0E16get_parser_valueRKNSt6stringE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="ConfigParser_8h_1ab6fb720faff585f12fcfa01d8539fd3f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0E16get_parser_value1TRKNSt6stringE" title="get_parser_value::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_parser_value</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">key</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0E16get_parser_value1TRKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0E16set_parser_valuevRKNSt6stringERK1T">
+<span id="_CPPv3I0E16set_parser_valueRKNSt6stringERK1T"></span><span id="_CPPv2I0E16set_parser_valueRKNSt6stringERK1T"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="ConfigParser_8h_1ac5dbd5dcc75e8a195d88aeb7a3c4013f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_parser_value</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">key</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0E16set_parser_valuevRKNSt6stringERK1T" title="set_parser_value::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0E16set_parser_valuevRKNSt6stringERK1T" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv45abase">
+<span id="_CPPv35abase"></span><span id="_CPPv25abase"></span><span class="target" id="namespaceabase"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">abase</span></span></span><a class="headerlink" href="#_CPPv45abase" title="Link to this definition"></a><br /></dt>
+<dd><dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase12ConfigParserE">
+<span id="_CPPv3N5abase12ConfigParserE"></span><span id="_CPPv2N5abase12ConfigParserE"></span><span id="abase::ConfigParser"></span><span class="target" id="classabase_1_1ConfigParser"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ConfigParser</span></span></span><a class="headerlink" href="#_CPPv4N5abase12ConfigParserE" title="Link to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;ConfigParser.h&gt;</em></div>
+<p>A class for parsing and managing configuration settings. </p>
+<p><a class="reference internal" href="#classabase_1_1ConfigParser"><span class="std std-ref">ConfigParser</span></a> provides functionality to load, store, and retrieve configuration values from files and memory. It supports various data types through templated methods.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This class is not thread-safe. </p>
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase12ConfigParser12ConfigParserEv">
+<span id="_CPPv3N5abase12ConfigParser12ConfigParserEv"></span><span id="_CPPv2N5abase12ConfigParser12ConfigParserEv"></span><span id="abase::ConfigParser::ConfigParser"></span><span class="target" id="classabase_1_1ConfigParser_1a3494cbc7b5c8e9d44660a16e9634fe6d"></span><span class="sig-name descname"><span class="n"><span class="pre">ConfigParser</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5abase12ConfigParser12ConfigParserEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase12ConfigParser12loadFromFileERKNSt6stringE">
+<span id="_CPPv3N5abase12ConfigParser12loadFromFileERKNSt6stringE"></span><span id="_CPPv2N5abase12ConfigParser12loadFromFileERKNSt6stringE"></span><span id="abase::ConfigParser::loadFromFile__ssCR"></span><span class="target" id="classabase_1_1ConfigParser_1a3dfc629d26291e728856ccb741ff6d18"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">loadFromFile</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filename</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase12ConfigParser12loadFromFileERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0ENK5abase12ConfigParser8getValueE1TRKNSt6stringE">
+<span id="_CPPv3I0ENK5abase12ConfigParser8getValueERKNSt6stringE"></span><span id="_CPPv2I0ENK5abase12ConfigParser8getValueERKNSt6stringE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classabase_1_1ConfigParser_1a93726caafeafa67547dd56da28a744f0"></span><a class="reference internal" href="#_CPPv4I0ENK5abase12ConfigParser8getValueE1TRKNSt6stringE" title="abase::ConfigParser::getValue::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getValue</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">key</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4I0ENK5abase12ConfigParser8getValueE1TRKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase12ConfigParser8setValueERKNSt6stringERKNSt6stringE">
+<span id="_CPPv3N5abase12ConfigParser8setValueERKNSt6stringERKNSt6stringE"></span><span id="_CPPv2N5abase12ConfigParser8setValueERKNSt6stringERKNSt6stringE"></span><span id="abase::ConfigParser::setValue__ssCR.ssCR"></span><span class="target" id="classabase_1_1ConfigParser_1ab57880e90d2cddb57d0996af30ff08b4"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setValue</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">key</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase12ConfigParser8setValueERKNSt6stringERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5abase12ConfigParser11getKeyCountEv">
+<span id="_CPPv3NK5abase12ConfigParser11getKeyCountEv"></span><span id="_CPPv2NK5abase12ConfigParser11getKeyCountEv"></span><span id="abase::ConfigParser::getKeyCountC"></span><span class="target" id="classabase_1_1ConfigParser_1a7b56a9fe8deb346666458a5f05bc3779"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getKeyCount</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5abase12ConfigParser11getKeyCountEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5abase12ConfigParser11printConfigEv">
+<span id="_CPPv3NK5abase12ConfigParser11printConfigEv"></span><span id="_CPPv2NK5abase12ConfigParser11printConfigEv"></span><span id="abase::ConfigParser::printConfigC"></span><span class="target" id="classabase_1_1ConfigParser_1a5bffdaf16ffcb580b21961db10b8ca65"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">printConfig</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5abase12ConfigParser11printConfigEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-functions">Private Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0ENK5abase12ConfigParser14_convertValue_E1TRKNSt6stringE">
+<span id="_CPPv3I0ENK5abase12ConfigParser14_convertValue_ERKNSt6stringE"></span><span id="_CPPv2I0ENK5abase12ConfigParser14_convertValue_ERKNSt6stringE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classabase_1_1ConfigParser_1add4cc40f11cbfa9319b9911303b01432"></span><a class="reference internal" href="#_CPPv4I0ENK5abase12ConfigParser14_convertValue_E1TRKNSt6stringE" title="abase::ConfigParser::_convertValue_::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_convertValue_</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4I0ENK5abase12ConfigParser14_convertValue_E1TRKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5abase12ConfigParser11_findValue_ERKNSt6stringE">
+<span id="_CPPv3NK5abase12ConfigParser11_findValue_ERKNSt6stringE"></span><span id="_CPPv2NK5abase12ConfigParser11_findValue_ERKNSt6stringE"></span><span id="abase::ConfigParser::_findValue___ssCRC"></span><span class="target" id="classabase_1_1ConfigParser_1a9cbf22d7a0c11a1f21bbfc9cf51f8c34"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_findValue_</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">key</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5abase12ConfigParser11_findValue_ERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5abase12ConfigParser4trimERKNSt6stringE">
+<span id="_CPPv3NK5abase12ConfigParser4trimERKNSt6stringE"></span><span id="_CPPv2NK5abase12ConfigParser4trimERKNSt6stringE"></span><span id="abase::ConfigParser::trim__ssCRC"></span><span class="target" id="classabase_1_1ConfigParser_1a8e66d1d95887174dcb1ba0a6b2b5da19"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">trim</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">str</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5abase12ConfigParser4trimERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase12ConfigParser10config_mapE">
+<span id="_CPPv3N5abase12ConfigParser10config_mapE"></span><span id="_CPPv2N5abase12ConfigParser10config_mapE"></span><span id="abase::ConfigParser::config_map__std::unordered_map:ss.ss:"></span><span class="target" id="classabase_1_1ConfigParser_1ac08ddcc629a6b1684bb24b74d9bc749a"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unordered_map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">config_map</span></span></span><a class="headerlink" href="#_CPPv4N5abase12ConfigParser10config_mapE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="global-timer">
+<h2>Global Timer<a class="headerlink" href="#global-timer" title="Link to this heading"></a></h2>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv411start_timerRKNSt6stringE">
+<span id="_CPPv311start_timerRKNSt6stringE"></span><span id="_CPPv211start_timerRKNSt6stringE"></span><span id="start_timer__ssCR"></span><span class="target" id="GlobalTimer_8h_1aa9af3608d31f30da293a5f43f8ba44f5"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">start_timer</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv411start_timerRKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv410stop_timerRKNSt6stringE">
+<span id="_CPPv310stop_timerRKNSt6stringE"></span><span id="_CPPv210stop_timerRKNSt6stringE"></span><span id="stop_timer__ssCR"></span><span class="target" id="GlobalTimer_8h_1a4a124891200e6819c184efab583c4481"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stop_timer</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410stop_timerRKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv411print_timerRKNSt6stringE">
+<span id="_CPPv311print_timerRKNSt6stringE"></span><span id="_CPPv211print_timerRKNSt6stringE"></span><span id="print_timer__ssCR"></span><span class="target" id="GlobalTimer_8h_1a70b288a41846aa921b1204efd39b2922"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">print_timer</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv411print_timerRKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="cpp type">
+<dt class="sig sig-object cpp">
+<span class="target" id="namespaceabase"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">abase</span></span></span><br /></dt>
+<dd><dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase11GlobalTimerE">
+<span id="_CPPv3N5abase11GlobalTimerE"></span><span id="_CPPv2N5abase11GlobalTimerE"></span><span id="abase::GlobalTimer"></span><span class="target" id="classabase_1_1GlobalTimer"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GlobalTimer</span></span></span><a class="headerlink" href="#_CPPv4N5abase11GlobalTimerE" title="Link to this definition"></a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase11GlobalTimer5startERKNSt6stringE">
+<span id="_CPPv3N5abase11GlobalTimer5startERKNSt6stringE"></span><span id="_CPPv2N5abase11GlobalTimer5startERKNSt6stringE"></span><span id="abase::GlobalTimer::start__ssCR"></span><span class="target" id="classabase_1_1GlobalTimer_1ada7616e7e72685ffb35f0de7acb9b293"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">start</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase11GlobalTimer5startERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase11GlobalTimer4stopERKNSt6stringE">
+<span id="_CPPv3N5abase11GlobalTimer4stopERKNSt6stringE"></span><span id="_CPPv2N5abase11GlobalTimer4stopERKNSt6stringE"></span><span id="abase::GlobalTimer::stop__ssCR"></span><span class="target" id="classabase_1_1GlobalTimer_1a052b058f480730cfa7eaafb1e19d9337"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stop</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase11GlobalTimer4stopERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5abase11GlobalTimer11getWallTimeERKNSt6stringE">
+<span id="_CPPv3NK5abase11GlobalTimer11getWallTimeERKNSt6stringE"></span><span id="_CPPv2NK5abase11GlobalTimer11getWallTimeERKNSt6stringE"></span><span id="abase::GlobalTimer::getWallTime__ssCRC"></span><span class="target" id="classabase_1_1GlobalTimer_1a6c97ec8810a7847d0dd5e6d1cafeff71"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getWallTime</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5abase11GlobalTimer11getWallTimeERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5abase11GlobalTimer10getCPUTimeERKNSt6stringE">
+<span id="_CPPv3NK5abase11GlobalTimer10getCPUTimeERKNSt6stringE"></span><span id="_CPPv2NK5abase11GlobalTimer10getCPUTimeERKNSt6stringE"></span><span id="abase::GlobalTimer::getCPUTime__ssCRC"></span><span class="target" id="classabase_1_1GlobalTimer_1a80df5a90ec130fb3fdaf27bdb5ca503c"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getCPUTime</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5abase11GlobalTimer10getCPUTimeERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase11GlobalTimer5resetERKNSt6stringE">
+<span id="_CPPv3N5abase11GlobalTimer5resetERKNSt6stringE"></span><span id="_CPPv2N5abase11GlobalTimer5resetERKNSt6stringE"></span><span id="abase::GlobalTimer::reset__ssCR"></span><span class="target" id="classabase_1_1GlobalTimer_1a4b183cdfd97d8cfa70b7d3192c46eff8"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reset</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase11GlobalTimer5resetERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase11GlobalTimer8resetAllEv">
+<span id="_CPPv3N5abase11GlobalTimer8resetAllEv"></span><span id="_CPPv2N5abase11GlobalTimer8resetAllEv"></span><span id="abase::GlobalTimer::resetAll"></span><span class="target" id="classabase_1_1GlobalTimer_1ac112911e06fd8bd188d5329c474f02ab"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">resetAll</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase11GlobalTimer8resetAllEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase11GlobalTimer5printERKNSt6stringE">
+<span id="_CPPv3N5abase11GlobalTimer5printERKNSt6stringE"></span><span id="_CPPv2N5abase11GlobalTimer5printERKNSt6stringE"></span><span id="abase::GlobalTimer::print__ssCR"></span><span class="target" id="classabase_1_1GlobalTimer_1a678c42761da808fc3e9c526ae11beb85"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">print</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase11GlobalTimer5printERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-types">Private Types</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase11GlobalTimer9WallClockE">
+<span id="_CPPv3N5abase11GlobalTimer9WallClockE"></span><span id="_CPPv2N5abase11GlobalTimer9WallClockE"></span><span class="target" id="classabase_1_1GlobalTimer_1ad2ed2bb4572750f377257b11578e8d62"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">WallClock</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">chrono</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">high_resolution_clock</span></span><a class="headerlink" href="#_CPPv4N5abase11GlobalTimer9WallClockE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase11GlobalTimer9TimePointE">
+<span id="_CPPv3N5abase11GlobalTimer9TimePointE"></span><span id="_CPPv2N5abase11GlobalTimer9TimePointE"></span><span class="target" id="classabase_1_1GlobalTimer_1a359f3d0d3669b27f0d403ac62f19bfc6"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TimePoint</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5abase11GlobalTimer9WallClockE" title="abase::GlobalTimer::WallClock"><span class="n"><span class="pre">WallClock</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">time_point</span></span><a class="headerlink" href="#_CPPv4N5abase11GlobalTimer9TimePointE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase11GlobalTimer8DurationE">
+<span id="_CPPv3N5abase11GlobalTimer8DurationE"></span><span id="_CPPv2N5abase11GlobalTimer8DurationE"></span><span class="target" id="classabase_1_1GlobalTimer_1a4eecf7943544e542b9064c83f5b8c9f1"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Duration</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">chrono</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">duration</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N5abase11GlobalTimer8DurationE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase11GlobalTimer6timersE">
+<span id="_CPPv3N5abase11GlobalTimer6timersE"></span><span id="_CPPv2N5abase11GlobalTimer6timersE"></span><span id="abase::GlobalTimer::timers__std::unordered_map:ss.TimerData:"></span><span class="target" id="classabase_1_1GlobalTimer_1a0da9911cb1194fd4bec26cb693db8c7b"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unordered_map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5abase11GlobalTimer9TimerDataE" title="abase::GlobalTimer::TimerData"><span class="n"><span class="pre">TimerData</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">timers</span></span></span><a class="headerlink" href="#_CPPv4N5abase11GlobalTimer6timersE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase11GlobalTimer9TimerDataE">
+<span id="_CPPv3N5abase11GlobalTimer9TimerDataE"></span><span id="_CPPv2N5abase11GlobalTimer9TimerDataE"></span><span id="abase::GlobalTimer::TimerData"></span><span class="target" id="structabase_1_1GlobalTimer_1_1TimerData"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TimerData</span></span></span><a class="headerlink" href="#_CPPv4N5abase11GlobalTimer9TimerDataE" title="Link to this definition"></a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase11GlobalTimer9TimerData9wallStartE">
+<span id="_CPPv3N5abase11GlobalTimer9TimerData9wallStartE"></span><span id="_CPPv2N5abase11GlobalTimer9TimerData9wallStartE"></span><span id="abase::GlobalTimer::TimerData::wallStart__TimePoint"></span><span class="target" id="structabase_1_1GlobalTimer_1_1TimerData_1a48b39d7e359bef44b97a18548d1728fc"></span><a class="reference internal" href="#_CPPv4N5abase11GlobalTimer9TimePointE" title="abase::GlobalTimer::TimePoint"><span class="n"><span class="pre">TimePoint</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">wallStart</span></span></span><a class="headerlink" href="#_CPPv4N5abase11GlobalTimer9TimerData9wallStartE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase11GlobalTimer9TimerData8cpuStartE">
+<span id="_CPPv3N5abase11GlobalTimer9TimerData8cpuStartE"></span><span id="_CPPv2N5abase11GlobalTimer9TimerData8cpuStartE"></span><span id="abase::GlobalTimer::TimerData::cpuStart__std::chrono::time_point:std::chrono::steady_clock:"></span><span class="target" id="structabase_1_1GlobalTimer_1_1TimerData_1a9934fe7659b5b64e9b0fb4ae0cf1ffb6"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">chrono</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">time_point</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">chrono</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">steady_clock</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cpuStart</span></span></span><a class="headerlink" href="#_CPPv4N5abase11GlobalTimer9TimerData8cpuStartE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase11GlobalTimer9TimerData9wallTotalE">
+<span id="_CPPv3N5abase11GlobalTimer9TimerData9wallTotalE"></span><span id="_CPPv2N5abase11GlobalTimer9TimerData9wallTotalE"></span><span id="abase::GlobalTimer::TimerData::wallTotal__Duration"></span><span class="target" id="structabase_1_1GlobalTimer_1_1TimerData_1a63a4fb429686addf6f12861fe50dd474"></span><a class="reference internal" href="#_CPPv4N5abase11GlobalTimer8DurationE" title="abase::GlobalTimer::Duration"><span class="n"><span class="pre">Duration</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">wallTotal</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N5abase11GlobalTimer9TimerData9wallTotalE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase11GlobalTimer9TimerData8cpuTotalE">
+<span id="_CPPv3N5abase11GlobalTimer9TimerData8cpuTotalE"></span><span id="_CPPv2N5abase11GlobalTimer9TimerData8cpuTotalE"></span><span id="abase::GlobalTimer::TimerData::cpuTotal__Duration"></span><span class="target" id="structabase_1_1GlobalTimer_1_1TimerData_1a2741163a7a3c4114b43e727136e90840"></span><a class="reference internal" href="#_CPPv4N5abase11GlobalTimer8DurationE" title="abase::GlobalTimer::Duration"><span class="n"><span class="pre">Duration</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cpuTotal</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N5abase11GlobalTimer9TimerData8cpuTotalE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase11GlobalTimer9TimerData7runningE">
+<span id="_CPPv3N5abase11GlobalTimer9TimerData7runningE"></span><span id="_CPPv2N5abase11GlobalTimer9TimerData7runningE"></span><span id="abase::GlobalTimer::TimerData::running__b"></span><span class="target" id="structabase_1_1GlobalTimer_1_1TimerData_1ad83c04ffd41ae47a26c1c280ed658b1a"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">running</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="k"><span class="pre">false</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N5abase11GlobalTimer9TimerData7runningE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="translation-manager">
+<h2>Translation Manager<a class="headerlink" href="#translation-manager" title="Link to this heading"></a></h2>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv49translateRKNSt6stringE">
+<span id="_CPPv39translateRKNSt6stringE"></span><span id="_CPPv29translateRKNSt6stringE"></span><span id="translate__ssCR"></span><span class="target" id="TranslationManager_8h_1a1226cea4285d3b70b781ef4a0cf9a92d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">translate</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">key</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49translateRKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv49translateRKNSt6stringERKNSt6stringE">
+<span id="_CPPv39translateRKNSt6stringERKNSt6stringE"></span><span id="_CPPv29translateRKNSt6stringERKNSt6stringE"></span><span id="translate__ssCR.ssCR"></span><span class="target" id="TranslationManager_8h_1adc9cbdbc51a2ab76924c42d647594139"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">translate</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">key</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49translateRKNSt6stringERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv49translateRKNSt6stringERKNSt6vectorINSt6stringEEE">
+<span id="_CPPv39translateRKNSt6stringERKNSt6vectorINSt6stringEEE"></span><span id="_CPPv29translateRKNSt6stringERKNSt6vectorINSt6stringEEE"></span><span id="translate__ssCR.std::vector:ss:CR"></span><span class="target" id="TranslationManager_8h_1a429cb375d55d41925f0c97ecccbc6d27"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">translate</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">key</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">values</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49translateRKNSt6stringERKNSt6vectorINSt6stringEEE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="cpp type">
+<dt class="sig sig-object cpp">
+<span class="target" id="namespaceabase"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">abase</span></span></span><br /></dt>
+<dd><dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase18TranslationManagerE">
+<span id="_CPPv3N5abase18TranslationManagerE"></span><span id="_CPPv2N5abase18TranslationManagerE"></span><span id="abase::TranslationManager"></span><span class="target" id="classabase_1_1TranslationManager"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TranslationManager</span></span></span><a class="headerlink" href="#_CPPv4N5abase18TranslationManagerE" title="Link to this definition"></a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase18TranslationManager18TranslationManagerEv">
+<span id="_CPPv3N5abase18TranslationManager18TranslationManagerEv"></span><span id="_CPPv2N5abase18TranslationManager18TranslationManagerEv"></span><span id="abase::TranslationManager::TranslationManager"></span><span class="target" id="classabase_1_1TranslationManager_1a036cd9f4d0b1e3fd2288b29e3625c4a8"></span><span class="sig-name descname"><span class="n"><span class="pre">TranslationManager</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5abase18TranslationManager18TranslationManagerEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase18TranslationManager24loadTranslationsFromFileERKNSt6stringE">
+<span id="_CPPv3N5abase18TranslationManager24loadTranslationsFromFileERKNSt6stringE"></span><span id="_CPPv2N5abase18TranslationManager24loadTranslationsFromFileERKNSt6stringE"></span><span id="abase::TranslationManager::loadTranslationsFromFile__ssCR"></span><span class="target" id="classabase_1_1TranslationManager_1ab0e6ba050ea9e3a666cfb8cee69e45c9"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">loadTranslationsFromFile</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filename</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase18TranslationManager24loadTranslationsFromFileERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase18TranslationManager19loadAllTranslationsERKNSt6stringE">
+<span id="_CPPv3N5abase18TranslationManager19loadAllTranslationsERKNSt6stringE"></span><span id="_CPPv2N5abase18TranslationManager19loadAllTranslationsERKNSt6stringE"></span><span id="abase::TranslationManager::loadAllTranslations__ssCR"></span><span class="target" id="classabase_1_1TranslationManager_1a946cc2bafbd77eb6edaae1db5bce0b2f"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">loadAllTranslations</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">directory</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase18TranslationManager19loadAllTranslationsERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase18TranslationManager18setCurrentLanguageERKNSt6stringE">
+<span id="_CPPv3N5abase18TranslationManager18setCurrentLanguageERKNSt6stringE"></span><span id="_CPPv2N5abase18TranslationManager18setCurrentLanguageERKNSt6stringE"></span><span id="abase::TranslationManager::setCurrentLanguage__ssCR"></span><span class="target" id="classabase_1_1TranslationManager_1aaf6201ca377f562ce0b5d1f9d120d810"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setCurrentLanguage</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">langCode</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase18TranslationManager18setCurrentLanguageERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5abase18TranslationManager9translateERKNSt6stringE">
+<span id="_CPPv3NK5abase18TranslationManager9translateERKNSt6stringE"></span><span id="_CPPv2NK5abase18TranslationManager9translateERKNSt6stringE"></span><span id="abase::TranslationManager::translate__ssCRC"></span><span class="target" id="classabase_1_1TranslationManager_1adb31f4b2a55509de6417d828c1861cbf"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">translate</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">key</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5abase18TranslationManager9translateERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5abase18TranslationManager9translateERKNSt6stringERKNSt6stringE">
+<span id="_CPPv3NK5abase18TranslationManager9translateERKNSt6stringERKNSt6stringE"></span><span id="_CPPv2NK5abase18TranslationManager9translateERKNSt6stringERKNSt6stringE"></span><span id="abase::TranslationManager::translate__ssCR.ssCRC"></span><span class="target" id="classabase_1_1TranslationManager_1ae64fa0f35708407deb6d78ae0cb5be79"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">translate</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">key</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5abase18TranslationManager9translateERKNSt6stringERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5abase18TranslationManager9translateERKNSt6stringERKNSt6vectorINSt6stringEEE">
+<span id="_CPPv3NK5abase18TranslationManager9translateERKNSt6stringERKNSt6vectorINSt6stringEEE"></span><span id="_CPPv2NK5abase18TranslationManager9translateERKNSt6stringERKNSt6vectorINSt6stringEEE"></span><span id="abase::TranslationManager::translate__ssCR.std::vector:ss:CRC"></span><span class="target" id="classabase_1_1TranslationManager_1a0634389251be89c0d8ba7bbd88b505a6"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">translate</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">key</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">values</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5abase18TranslationManager9translateERKNSt6stringERKNSt6vectorINSt6stringEEE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-functions">Private Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase18TranslationManager14searchXmlFilesERKNSt6stringERNSt6vectorINSt6stringEEE">
+<span id="_CPPv3N5abase18TranslationManager14searchXmlFilesERKNSt6stringERNSt6vectorINSt6stringEEE"></span><span id="_CPPv2N5abase18TranslationManager14searchXmlFilesERKNSt6stringERNSt6vectorINSt6stringEEE"></span><span id="abase::TranslationManager::searchXmlFiles__ssCR.std::vector:ss:R"></span><span class="target" id="classabase_1_1TranslationManager_1a66ef971efbc4cf50b93485eefcc9eff6"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">searchXmlFiles</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">directory</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filePaths</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase18TranslationManager14searchXmlFilesERKNSt6stringERNSt6vectorINSt6stringEEE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5abase18TranslationManager19replacePlaceholdersERKNSt6stringERKNSt6vectorINSt6stringEEE">
+<span id="_CPPv3NK5abase18TranslationManager19replacePlaceholdersERKNSt6stringERKNSt6vectorINSt6stringEEE"></span><span id="_CPPv2NK5abase18TranslationManager19replacePlaceholdersERKNSt6stringERKNSt6vectorINSt6stringEEE"></span><span id="abase::TranslationManager::replacePlaceholders__ssCR.std::vector:ss:CRC"></span><span class="target" id="classabase_1_1TranslationManager_1a5766d0fad23885f00bca5632b89d8b10"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">replacePlaceholders</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">message</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">values</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5abase18TranslationManager19replacePlaceholdersERKNSt6stringERKNSt6vectorINSt6stringEEE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase18TranslationManager12translationsE">
+<span id="_CPPv3N5abase18TranslationManager12translationsE"></span><span id="_CPPv2N5abase18TranslationManager12translationsE"></span><span id="abase::TranslationManager::translations__std::unordered_map:ss.std::unordered_map:ss.ss::"></span><span class="target" id="classabase_1_1TranslationManager_1a63f38649367969a8fd770aa69c39887c"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unordered_map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unordered_map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">translations</span></span></span><a class="headerlink" href="#_CPPv4N5abase18TranslationManager12translationsE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase18TranslationManager15currentLanguageE">
+<span id="_CPPv3N5abase18TranslationManager15currentLanguageE"></span><span id="_CPPv2N5abase18TranslationManager15currentLanguageE"></span><span id="abase::TranslationManager::currentLanguage__ss"></span><span class="target" id="classabase_1_1TranslationManager_1acea79034b0a60c19af7a337ae6738285"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">currentLanguage</span></span></span><a class="headerlink" href="#_CPPv4N5abase18TranslationManager15currentLanguageE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="amath.html" class="btn btn-neutral float-right" title="amath components" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Benoit Serre.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
