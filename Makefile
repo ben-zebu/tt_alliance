@@ -32,7 +32,7 @@ clean:
 	@(cd $(AMATH_DIR) && $(MAKE) clean)
 	$(RM) $(DEBUG_DIR) $(RELEASE_DIR)
 
-docs:
+docs: docs-clean
 	@(cd $(DOC_DIR) && $(MAKE) html)
 
 docs-clean:
