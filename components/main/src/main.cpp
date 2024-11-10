@@ -75,7 +75,7 @@ std::pair<std::string, std::string> splitExecutablePath(char* argv0) {
     return {path, exe};
 }
 
-StressStates generateStressStates(int numStates) {
+amath::StressStates generateStressStates(int numStates) {
     // Seed the random number generator
     srand(static_cast<unsigned int>(time(nullptr)));
 
@@ -83,60 +83,49 @@ StressStates generateStressStates(int numStates) {
     const double maxValue = 300.0;
     const double minValue = -1.*maxValue;
 
-    StressStates states = StressStates();
+    amath::StressStates states = amath::StressStates();
 
     for (int i = 0; i < numStates; ++i) {
-        std::vector<double> components(6);
-        for (int j = 0; j < 6; ++j) {
+        amath::Vector6d components;
+        for (int j = 0; j < components.size(); ++j) {
             components[j] = minValue + (static_cast<double>(rand()) / RAND_MAX) * (maxValue - minValue);
         }
-        states.addState(components);
+        states.add_stress( amath::Stress(components) );
     }
 
     return states;
 }
 
-double computeStressIntensity(const StressStates& states, const std::string& method, const size_t interations) {
-    double Smax = 0.0;
-    for (size_t iter = 0; iter < interations; ++iter) {
-        for (size_t i = 0; i < states.size(); ++i) {
-            if (method == "tresca") {
-                Smax = std::max(Smax, states.tresca(i));
-            } else if (method == "trescaFast") {
-                Smax = std::max(Smax, states.trescaFast(i));
-            } else if (method == "trescaWithCardan") {
-                Smax = std::max(Smax, states.trescaWithCardan(i));
-            } else if (method == "mises") {
-                Smax = std::max(Smax, states.mises(i));
-            } else if (method == "misesReduced") {
-                if (states.misesReduced(i)> Smax) {
-                    Smax = std::max(Smax, states.tresca(i));
-                }
-            }
-        }
-    }
-    return Smax;
-}
 
-void performBenchmark(const StressStates& states, const std::string& method, const int interations) {
+void performBenchmark(amath::StressStates& states, const std::string& method, const int interations) {
+    std::vector<size_t> states_ids;
+    for (size_t i = 0; i < states.size(); ++i) { states_ids.push_back(i); }
+
+    states.set_equivalent_stress_method(method);
+
     start_timer(method);
     std::cout << "Benchmarking " << method << " method..." << std::endl;
-    double Smax = computeStressIntensity(states, method, interations);
-    std::cout << "Max stress intensity for " << method << ": " << Smax << std::endl;
+    for (int i = 0; i < interations; ++i) {
+        auto Smax = states.stress_range(states_ids);
+        if (i == interations - 1) {
+            std::cout << "Max stress intensity for " << method << ": " << Smax.Sr << std::endl;
+        }
+    }
     stop_timer(method);
     print_timer(method);
     std::cout << std::endl;
 }
 
 void benchmark() {
-    const size_t numStates = 1E5;
-    const size_t iterations = 100;
-    std::cout << "Number of operations = " << numStates * iterations << std::endl;
+    const size_t numStates = 2E4;
+    const size_t iterations = 1;
+    double numOperations = numStates*(numStates-1) / 2 * iterations;
+    std::cout << "Number of operations = " << numOperations << std::endl;
     std::cout << std::endl;
 
     auto stressStates = generateStressStates(numStates);
     
-    std::vector<std::string> methods = {"tresca", "trescaFast", "trescaWithCardan", "mises", "misesReduced"};
+    std::vector<std::string> methods = {"tresca", "mises", "reduced_mises"};
     for (const auto& method : methods) {
         performBenchmark(stressStates, method, iterations);
     }
@@ -166,9 +155,11 @@ int main(int argc, char* argv[]) {
 
     //stop_timer("main");
     //print_timer("main");
-    amath::Stress s1({1.0, 2.0, 3.0, 4.0, 5.0, 6.0});
-    amath::Stress s2(2*s1);
-    amath::Stress s3;
+    using namespace amath;
+
+    Stress s1({1.0, 2.0, 3.0, 4.0, 5.0, 6.0});
+    Stress s2(2*s1);
+    Stress s3;
 
     std::cout << "s1 = " << s1.get_components() << std::endl;
     std::cout << "s2 = " << s2.get_components() << std::endl;
@@ -178,8 +169,8 @@ int main(int argc, char* argv[]) {
 
     std::vector<double> x = {0.0, 10.,  100.0};
     std::vector<double> y = {0.0, 100., 200.0};
-    amath::Table table(x, y);
-    amath::Table table2;
+    Table table(x, y);
+    Table table2;
     std::cout << "table.get_xrange() = ";
     for (auto val : table.get_xrange() ) {  std::cout << val << " "; }
     std::cout << std::endl;
@@ -193,13 +184,15 @@ int main(int argc, char* argv[]) {
     std::cout << "table2 = table" << std::endl;
     std::cout << "table2.get_xmax() = " << table2.get_xmax() << std::endl;
 
-    amath::LinearCoefficient Sm(table);
+    LinearCoefficient Sm(table);
     std::cout << "Sm(5.0) = " << Sm.get_yvalue(5.0) << std::endl;
-    amath::LogarithmicCoefficient Law(table);
+    LogarithmicCoefficient Law(table);
     std::cout << "Law(50.0) = " << Law.get_yvalue(50.0) << std::endl;
-    amath::ConstantCoefficient Cm(145.0);
+    ConstantCoefficient Cm(145.0);
     std::cout << "Cm = " << Cm.get() << std::endl;
 
+    std::cout << std::endl;
+    benchmark();
 
     return 0;
 }
