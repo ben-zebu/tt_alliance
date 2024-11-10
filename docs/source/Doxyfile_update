@@ -13,7 +13,7 @@ import argparse
 
 # APP CONSTANT
 CONFIGURATION_FILE = "etc/alliance.conf"
-DOCS_SRC_DIR = "docs_2/source"
+DOCS_SRC_DIR = "docs/source"
 
 DOXYFILE_REF = "Doxyfile.ref"
 DOXYFILE_OUT = "Doxyfile"
@@ -36,7 +36,6 @@ def get_project_path() :
     (path, script) = os.path.split( sys.argv[0] )
     path = os.path.realpath( path )
     path = path.replace(DOCS_SRC_DIR, "")
-    print(path)
     return path
 #
 

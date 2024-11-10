@@ -3,8 +3,9 @@
 release/*
 debug/*
 
-# sphinx doc
+# doxygen + breathe + sphinx documentation
 docs/build/*
+docs/source/Doxyfile
 
 # tinyxml2 library
 externals/xml/docs/*

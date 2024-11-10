@@ -32,7 +32,7 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx_sitemap',
     'sphinx.ext.inheritance_diagram',
-    'breathe'
+    'breathe',
 ]
 
 templates_path = ['_templates']
@@ -64,7 +64,7 @@ html_theme_options = {
 }
 
 # Base URL for the sitemap 
-html_baseurl = 'https://example.com/docs/'
+html_baseurl = 'https://ben-zebu.github.io/tt_alliance'
 
 # Remove or comment out the display_version option if your theme does not support it 
 html_theme_options = { 
@@ -78,3 +78,4 @@ breathe_projects = {
 }
 breathe_default_project = project
 breathe_default_members = ('members', 'undoc-members')
+
