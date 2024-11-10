@@ -19,11 +19,12 @@ namespace amath {
     /// This class provides various operations and utility functions for working with stress tensors,
     /// such as calculating principal stresses, von Mises stress, and Tresca stress.
     class Stress {
-        private:
+        protected:
             /// \brief Stress components stored as a vector: 
             //// \f$(s_{11}, s_{22}, s_{33}, s_{12}, s_{13}, s_{23})\f$
             Vector6d components = Vector6d::Zero();
-            
+        
+        private:
             /// \brief Constant factor used in the calculation of an equivalent stress based on
             /// an homothecy from von Mises stress. The von Mises stress is calculated as
             /// \f$\sigma_\text{VM} = \sqrt{\frac{2}{3}\left(\sigma_1^2 + \sigma_2^2 + \sigma_3^2\right)}\f$, 
@@ -112,10 +113,11 @@ namespace amath {
             double reduced_mises() const;
 
     };
+}
 
-    amath::Stress operator+(const amath::Stress& s1, const amath::Stress& s2);
-    amath::Stress operator-(const amath::Stress& s1, const amath::Stress& s2);
-    amath::Stress operator*(const double& scalar, const amath::Stress& s) { return amath::Stress(scalar * s.get_components()); }
-
+namespace amath {
+    Stress operator+(const Stress& s1, const Stress& s2);
+    Stress operator-(const Stress& s1, const Stress& s2);
+    Stress operator*(const double& scalar, const Stress& s);
 }
 

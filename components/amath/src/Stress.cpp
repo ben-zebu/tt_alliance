@@ -32,13 +32,19 @@ Stress::Stress(const std::initializer_list<double>& components) {
 //
 // Operators overloading
 //
-Stress operator+(const Stress& s1, const Stress& s2) {
-    return Stress(s1.get_components() + s2.get_components());
-}      
 
-Stress operator-(const Stress& s1, const Stress& s2) {
-    return Stress(s1.get_components() - s2.get_components());
+namespace amath {
+    Stress operator+(const Stress& s1, const Stress& s2) { 
+        return Stress(s1.get_components() + s2.get_components()); 
+    }
+    Stress operator-(const Stress& s1, const Stress& s2) { 
+        return Stress(s1.get_components() - s2.get_components()); 
+    }
+    Stress operator*(const double& scalar, const Stress& s) { 
+        return Stress(scalar * s.get_components()); 
+    }
 }
+
 
 Stress& Stress::operator+=(const Stress& other) {
     this->components += other.components;

@@ -10,6 +10,7 @@ MAIN_DIR = $(PROJECT_DIR)/components/main
 
 # Documentation directory
 DOC_DIR = $(PROJECT_DIR)/docs
+DOC_DEPLOYMENT_DIR = /mnt/c/Users/benoit/Documents/tt_alliance
 
 # Default target
 all: release debug
@@ -31,6 +32,9 @@ clean:
 	@(cd $(ABASE_DIR) && $(MAKE) clean)
 	@(cd $(AMATH_DIR) && $(MAKE) clean)
 	$(RM) $(DEBUG_DIR) $(RELEASE_DIR)
+
+html: docs
+	@(cd $(DOC_DIR) && $(CP) -r build/html $(DOC_DEPLOYMENT_DIR)/.)
 
 docs: docs-clean
 	@(cd $(DOC_DIR) && $(MAKE) html)
