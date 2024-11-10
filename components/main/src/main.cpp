@@ -16,6 +16,7 @@
 #include "StressStates.h"
 #include "Stress.h"
 #include "Table.h"
+#include "Coefficient.h"
 
 // Function to get current date
 std::string getCurrentDate() {
@@ -190,7 +191,15 @@ int main(int argc, char* argv[]) {
 
     table2 = table;
     std::cout << "table2 = table" << std::endl;
-    std::cout << "table2.get_xamx() = " << table2.get_xmax() << std::endl;
+    std::cout << "table2.get_xmax() = " << table2.get_xmax() << std::endl;
+
+    amath::LinearCoefficient Sm(table);
+    std::cout << "Sm(5.0) = " << Sm.get_yvalue(5.0) << std::endl;
+    amath::LogarithmicCoefficient Law(table);
+    std::cout << "Law(50.0) = " << Law.get_yvalue(50.0) << std::endl;
+    amath::ConstantCoefficient Cm(145.0);
+    std::cout << "Cm = " << Cm.get() << std::endl;
+
 
     return 0;
 }
