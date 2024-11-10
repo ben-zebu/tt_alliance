@@ -50,8 +50,18 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">API</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="abase.html">abase components</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">amath components</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#stress">Stress</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#coefficient">Coefficient</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv45amath"><code class="docutils literal notranslate"><span class="pre">amath</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#stress">Stress</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5amath8Vector6dE"><code class="docutils literal notranslate"><span class="pre">amath::Vector6d</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5amathplERKN5amath6StressERKN5amath6StressE"><code class="docutils literal notranslate"><span class="pre">amath::operator+()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5amathmiERKN5amath6StressERKN5amath6StressE"><code class="docutils literal notranslate"><span class="pre">amath::operator-()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5amathmlERKdRKN5amath6StressE"><code class="docutils literal notranslate"><span class="pre">amath::operator*()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5amath11STRESS_SIZEE"><code class="docutils literal notranslate"><span class="pre">amath::STRESS_SIZE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5amath16STRESS_TOLERANCEE"><code class="docutils literal notranslate"><span class="pre">amath::STRESS_TOLERANCE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5amath6StressE"><code class="docutils literal notranslate"><span class="pre">amath::Stress</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#table">Table</a><ul>
@@ -91,11 +101,219 @@
              
   <section id="amath-components">
 <span id="amath"></span><h1>amath components<a class="headerlink" href="#amath-components" title="Link to this heading"></a></h1>
-<section id="stress">
-<h2>Stress<a class="headerlink" href="#stress" title="Link to this heading"></a></h2>
+<section id="coefficient">
+<h2>Coefficient<a class="headerlink" href="#coefficient" title="Link to this heading"></a></h2>
 <dl class="cpp type">
 <dt class="sig sig-object cpp" id="_CPPv45amath">
 <span id="_CPPv35amath"></span><span id="_CPPv25amath"></span><span class="target" id="namespaceamath"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">amath</span></span></span><a class="headerlink" href="#_CPPv45amath" title="Link to this definition"></a><br /></dt>
+<dd><dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath11CoefficientE">
+<span id="_CPPv3N5amath11CoefficientE"></span><span id="_CPPv2N5amath11CoefficientE"></span><span id="amath::Coefficient"></span><span class="target" id="classamath_1_1Coefficient"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Coefficient</span></span></span><a class="headerlink" href="#_CPPv4N5amath11CoefficientE" title="Link to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;Coefficient.h&gt;</em></div>
+<p>Represents a coefficient that can depend on a parameter. </p>
+<p>This class represents a physical coefficient that can depend on a parameter. It provvides functions used to interpolate table. </p>
+<p>Subclassed by <a class="reference internal" href="#classamath_1_1LinearCoefficient"><span class="std std-ref">amath::LinearCoefficient</span></a>, <a class="reference internal" href="#classamath_1_1LogarithmicCoefficient"><span class="std std-ref">amath::LogarithmicCoefficient</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath11Coefficient11CoefficientEv">
+<span id="_CPPv3N5amath11Coefficient11CoefficientEv"></span><span id="_CPPv2N5amath11Coefficient11CoefficientEv"></span><span id="amath::Coefficient::Coefficient"></span><span class="target" id="classamath_1_1Coefficient_1a9fec3118a7d0138f7bcc43b6398e0767"></span><span class="sig-name descname"><span class="n"><span class="pre">Coefficient</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5amath11Coefficient11CoefficientEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Default constructor for the <a class="reference internal" href="#classamath_1_1Coefficient"><span class="std std-ref">Coefficient</span></a> class. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath11Coefficient11CoefficientERK5Table">
+<span id="_CPPv3N5amath11Coefficient11CoefficientERK5Table"></span><span id="_CPPv2N5amath11Coefficient11CoefficientERK5Table"></span><span id="amath::Coefficient::Coefficient__TableCR"></span><span class="target" id="classamath_1_1Coefficient_1a53c01c8a6f2c9fc6ab914fe60c3386a8"></span><span class="sig-name descname"><span class="n"><span class="pre">Coefficient</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath5TableE" title="amath::Table"><span class="n"><span class="pre">Table</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">table</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath11Coefficient11CoefficientERK5Table" title="Link to this definition"></a><br /></dt>
+<dd><p>Constructor for the <a class="reference internal" href="#classamath_1_1Coefficient"><span class="std std-ref">Coefficient</span></a> class with a given table. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath11Coefficient11CoefficientERK11Coefficient">
+<span id="_CPPv3N5amath11Coefficient11CoefficientERK11Coefficient"></span><span id="_CPPv2N5amath11Coefficient11CoefficientERK11Coefficient"></span><span id="amath::Coefficient::Coefficient__CoefficientCR"></span><span class="target" id="classamath_1_1Coefficient_1a0e4b3594d3b36c3c4c313b7479e67399"></span><span class="sig-name descname"><span class="n"><span class="pre">Coefficient</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath11Coefficient11CoefficientERK11Coefficient" title="amath::Coefficient::Coefficient"><span class="n"><span class="pre">Coefficient</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">coefficient</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath11Coefficient11CoefficientERK11Coefficient" title="Link to this definition"></a><br /></dt>
+<dd><p>Copy constructor for the <a class="reference internal" href="#classamath_1_1Coefficient"><span class="std std-ref">Coefficient</span></a> class. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath11CoefficientaSERK11Coefficient">
+<span id="_CPPv3N5amath11CoefficientaSERK11Coefficient"></span><span id="_CPPv2N5amath11CoefficientaSERK11Coefficient"></span><span id="amath::Coefficient::assign-operator__CoefficientCR"></span><span class="target" id="classamath_1_1Coefficient_1aa37ee81c9ed2b0303e4a58823ca1513b"></span><a class="reference internal" href="#_CPPv4N5amath11CoefficientE" title="amath::Coefficient"><span class="n"><span class="pre">Coefficient</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath11CoefficientE" title="amath::Coefficient"><span class="n"><span class="pre">Coefficient</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">coefficient</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath11CoefficientaSERK11Coefficient" title="Link to this definition"></a><br /></dt>
+<dd><p>Copy assignment operator for the <a class="reference internal" href="#classamath_1_1Coefficient"><span class="std std-ref">Coefficient</span></a> class. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath11Coefficient10get_yvalueEd">
+<span id="_CPPv3NK5amath11Coefficient10get_yvalueEd"></span><span id="_CPPv2NK5amath11Coefficient10get_yvalueEd"></span><span id="amath::Coefficient::get_yvalue__doubleC"></span><span class="target" id="classamath_1_1Coefficient_1a51661692030177874b0338d3cfe8331b"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_yvalue</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">x</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK5amath11Coefficient10get_yvalueEd" title="Link to this definition"></a><br /></dt>
+<dd><p>Pure virtual function used to return the y-value of the coefficient at a given x-value. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath11Coefficient10get_xvalueEd">
+<span id="_CPPv3NK5amath11Coefficient10get_xvalueEd"></span><span id="_CPPv2NK5amath11Coefficient10get_xvalueEd"></span><span id="amath::Coefficient::get_xvalue__doubleC"></span><span class="target" id="classamath_1_1Coefficient_1ac06e1d3d5a9b3200904e010d6f82c98a"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_xvalue</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">y</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK5amath11Coefficient10get_xvalueEd" title="Link to this definition"></a><br /></dt>
+<dd><p>Pure virtual function used to return the x-value of the coefficient at a given y-value. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath11Coefficient7_table_E">
+<span id="_CPPv3N5amath11Coefficient7_table_E"></span><span id="_CPPv2N5amath11Coefficient7_table_E"></span><span id="amath::Coefficient::_table___Table"></span><span class="target" id="classamath_1_1Coefficient_1afb30e1126bb8e79eeac31ef2a9e42713"></span><a class="reference internal" href="#_CPPv4N5amath5TableE" title="amath::Table"><span class="n"><span class="pre">Table</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_table_</span></span></span><a class="headerlink" href="#_CPPv4N5amath11Coefficient7_table_E" title="Link to this definition"></a><br /></dt>
+<dd><p>Internal table used to store data associated to the coefficient. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath17LinearCoefficientE">
+<span id="_CPPv3N5amath17LinearCoefficientE"></span><span id="_CPPv2N5amath17LinearCoefficientE"></span><span id="amath::LinearCoefficient"></span><span class="target" id="classamath_1_1LinearCoefficient"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LinearCoefficient</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv45amath" title="amath"><span class="n"><span class="pre">amath</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5amath11CoefficientE" title="amath::Coefficient"><span class="n"><span class="pre">Coefficient</span></span></a><a class="headerlink" href="#_CPPv4N5amath17LinearCoefficientE" title="Link to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;Coefficient.h&gt;</em></div>
+<p>Represents a coefficient depending on a parameter. A linear interpolation is used to compute the coefficient for a given parameter. </p>
+<p>Subclassed by <a class="reference internal" href="#classamath_1_1ConstantCoefficient"><span class="std std-ref">amath::ConstantCoefficient</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath17LinearCoefficient17LinearCoefficientEv">
+<span id="_CPPv3N5amath17LinearCoefficient17LinearCoefficientEv"></span><span id="_CPPv2N5amath17LinearCoefficient17LinearCoefficientEv"></span><span id="amath::LinearCoefficient::LinearCoefficient"></span><span class="target" id="classamath_1_1LinearCoefficient_1af7a02a0cf3460ae0ef4c89bf642c2665"></span><span class="sig-name descname"><span class="n"><span class="pre">LinearCoefficient</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5amath17LinearCoefficient17LinearCoefficientEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Default constructor for the <a class="reference internal" href="#classamath_1_1LinearCoefficient"><span class="std std-ref">LinearCoefficient</span></a> class. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath17LinearCoefficient17LinearCoefficientERK5Table">
+<span id="_CPPv3N5amath17LinearCoefficient17LinearCoefficientERK5Table"></span><span id="_CPPv2N5amath17LinearCoefficient17LinearCoefficientERK5Table"></span><span id="amath::LinearCoefficient::LinearCoefficient__TableCR"></span><span class="target" id="classamath_1_1LinearCoefficient_1aaee86ca425bb3454017d6351958d69f2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LinearCoefficient</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath5TableE" title="amath::Table"><span class="n"><span class="pre">Table</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">table</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath17LinearCoefficient17LinearCoefficientERK5Table" title="Link to this definition"></a><br /></dt>
+<dd><p>Constructor for the <a class="reference internal" href="#classamath_1_1LinearCoefficient"><span class="std std-ref">LinearCoefficient</span></a> class with a given table. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath17LinearCoefficient17LinearCoefficientERK11Coefficient">
+<span id="_CPPv3N5amath17LinearCoefficient17LinearCoefficientERK11Coefficient"></span><span id="_CPPv2N5amath17LinearCoefficient17LinearCoefficientERK11Coefficient"></span><span id="amath::LinearCoefficient::LinearCoefficient__CoefficientCR"></span><span class="target" id="classamath_1_1LinearCoefficient_1a1d3f9262894bb91c8b5a07d9e857725f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LinearCoefficient</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath11CoefficientE" title="amath::Coefficient"><span class="n"><span class="pre">Coefficient</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">coefficient</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath17LinearCoefficient17LinearCoefficientERK11Coefficient" title="Link to this definition"></a><br /></dt>
+<dd><p>Copy constructor for the <a class="reference internal" href="#classamath_1_1LinearCoefficient"><span class="std std-ref">LinearCoefficient</span></a> class. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath17LinearCoefficientaSERK17LinearCoefficient">
+<span id="_CPPv3N5amath17LinearCoefficientaSERK17LinearCoefficient"></span><span id="_CPPv2N5amath17LinearCoefficientaSERK17LinearCoefficient"></span><span id="amath::LinearCoefficient::assign-operator__LinearCoefficientCR"></span><span class="target" id="classamath_1_1LinearCoefficient_1a2f31ca614db6bb9742bac462a12e2fcb"></span><a class="reference internal" href="#_CPPv4N5amath17LinearCoefficientE" title="amath::LinearCoefficient"><span class="n"><span class="pre">LinearCoefficient</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath17LinearCoefficientE" title="amath::LinearCoefficient"><span class="n"><span class="pre">LinearCoefficient</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath17LinearCoefficientaSERK17LinearCoefficient" title="Link to this definition"></a><br /></dt>
+<dd><p>Copy assignment operator for the <a class="reference internal" href="#classamath_1_1LinearCoefficient"><span class="std std-ref">LinearCoefficient</span></a> class. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath17LinearCoefficient10get_yvalueEd">
+<span id="_CPPv3NK5amath17LinearCoefficient10get_yvalueEd"></span><span id="_CPPv2NK5amath17LinearCoefficient10get_yvalueEd"></span><span id="amath::LinearCoefficient::get_yvalue__doubleC"></span><span class="target" id="classamath_1_1LinearCoefficient_1a9de069bd1067aed60b8aefbdcc05f485"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_yvalue</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">x</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK5amath17LinearCoefficient10get_yvalueEd" title="Link to this definition"></a><br /></dt>
+<dd><p>Pure virtual function used to return the y-value of the coefficient at a given x-value. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath17LinearCoefficient10get_xvalueEd">
+<span id="_CPPv3NK5amath17LinearCoefficient10get_xvalueEd"></span><span id="_CPPv2NK5amath17LinearCoefficient10get_xvalueEd"></span><span id="amath::LinearCoefficient::get_xvalue__doubleC"></span><span class="target" id="classamath_1_1LinearCoefficient_1a1ae418dc1155fa538dde75fb2f19d45f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_xvalue</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">y</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK5amath17LinearCoefficient10get_xvalueEd" title="Link to this definition"></a><br /></dt>
+<dd><p>Pure virtual function used to return the x-value of the coefficient at a given y-value. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath22LogarithmicCoefficientE">
+<span id="_CPPv3N5amath22LogarithmicCoefficientE"></span><span id="_CPPv2N5amath22LogarithmicCoefficientE"></span><span id="amath::LogarithmicCoefficient"></span><span class="target" id="classamath_1_1LogarithmicCoefficient"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LogarithmicCoefficient</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv45amath" title="amath"><span class="n"><span class="pre">amath</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5amath11CoefficientE" title="amath::Coefficient"><span class="n"><span class="pre">Coefficient</span></span></a><a class="headerlink" href="#_CPPv4N5amath22LogarithmicCoefficientE" title="Link to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;Coefficient.h&gt;</em></div>
+<p>Represents a coefficient depending on a parameter. A logarithmic interpolation is used to compute the coefficient for a given parameter. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath22LogarithmicCoefficient22LogarithmicCoefficientEv">
+<span id="_CPPv3N5amath22LogarithmicCoefficient22LogarithmicCoefficientEv"></span><span id="_CPPv2N5amath22LogarithmicCoefficient22LogarithmicCoefficientEv"></span><span id="amath::LogarithmicCoefficient::LogarithmicCoefficient"></span><span class="target" id="classamath_1_1LogarithmicCoefficient_1a18bb975885a8f7afdd59eda4b546bc5d"></span><span class="sig-name descname"><span class="n"><span class="pre">LogarithmicCoefficient</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5amath22LogarithmicCoefficient22LogarithmicCoefficientEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Default constructor for the <a class="reference internal" href="#classamath_1_1LogarithmicCoefficient"><span class="std std-ref">LogarithmicCoefficient</span></a> class. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath22LogarithmicCoefficient22LogarithmicCoefficientERK5Table">
+<span id="_CPPv3N5amath22LogarithmicCoefficient22LogarithmicCoefficientERK5Table"></span><span id="_CPPv2N5amath22LogarithmicCoefficient22LogarithmicCoefficientERK5Table"></span><span id="amath::LogarithmicCoefficient::LogarithmicCoefficient__TableCR"></span><span class="target" id="classamath_1_1LogarithmicCoefficient_1a0d8c2bd4c20a02368ef7b9ddf44ecdfd"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LogarithmicCoefficient</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath5TableE" title="amath::Table"><span class="n"><span class="pre">Table</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">table</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath22LogarithmicCoefficient22LogarithmicCoefficientERK5Table" title="Link to this definition"></a><br /></dt>
+<dd><p>Constructor for the <a class="reference internal" href="#classamath_1_1LogarithmicCoefficient"><span class="std std-ref">LogarithmicCoefficient</span></a> class with a given table. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath22LogarithmicCoefficient22LogarithmicCoefficientERK11Coefficient">
+<span id="_CPPv3N5amath22LogarithmicCoefficient22LogarithmicCoefficientERK11Coefficient"></span><span id="_CPPv2N5amath22LogarithmicCoefficient22LogarithmicCoefficientERK11Coefficient"></span><span id="amath::LogarithmicCoefficient::LogarithmicCoefficient__CoefficientCR"></span><span class="target" id="classamath_1_1LogarithmicCoefficient_1ac634e18f39ec540ac921a68c0432fbb9"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LogarithmicCoefficient</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath11CoefficientE" title="amath::Coefficient"><span class="n"><span class="pre">Coefficient</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">coefficient</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath22LogarithmicCoefficient22LogarithmicCoefficientERK11Coefficient" title="Link to this definition"></a><br /></dt>
+<dd><p>Copy constructor for the <a class="reference internal" href="#classamath_1_1LogarithmicCoefficient"><span class="std std-ref">LogarithmicCoefficient</span></a> class. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath22LogarithmicCoefficientaSERK22LogarithmicCoefficient">
+<span id="_CPPv3N5amath22LogarithmicCoefficientaSERK22LogarithmicCoefficient"></span><span id="_CPPv2N5amath22LogarithmicCoefficientaSERK22LogarithmicCoefficient"></span><span id="amath::LogarithmicCoefficient::assign-operator__LogarithmicCoefficientCR"></span><span class="target" id="classamath_1_1LogarithmicCoefficient_1a561334af090ea95bfd7dac7993370b56"></span><a class="reference internal" href="#_CPPv4N5amath22LogarithmicCoefficientE" title="amath::LogarithmicCoefficient"><span class="n"><span class="pre">LogarithmicCoefficient</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath22LogarithmicCoefficientE" title="amath::LogarithmicCoefficient"><span class="n"><span class="pre">LogarithmicCoefficient</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath22LogarithmicCoefficientaSERK22LogarithmicCoefficient" title="Link to this definition"></a><br /></dt>
+<dd><p>Copy assignment operator for the <a class="reference internal" href="#classamath_1_1LogarithmicCoefficient"><span class="std std-ref">LogarithmicCoefficient</span></a> class. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath22LogarithmicCoefficient10get_yvalueEd">
+<span id="_CPPv3NK5amath22LogarithmicCoefficient10get_yvalueEd"></span><span id="_CPPv2NK5amath22LogarithmicCoefficient10get_yvalueEd"></span><span id="amath::LogarithmicCoefficient::get_yvalue__doubleC"></span><span class="target" id="classamath_1_1LogarithmicCoefficient_1a601fd24f94f71e23e7a49ad3505a5956"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_yvalue</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">x</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK5amath22LogarithmicCoefficient10get_yvalueEd" title="Link to this definition"></a><br /></dt>
+<dd><p>Pure virtual function used to return the y-value of the coefficient at a given x-value. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath22LogarithmicCoefficient10get_xvalueEd">
+<span id="_CPPv3NK5amath22LogarithmicCoefficient10get_xvalueEd"></span><span id="_CPPv2NK5amath22LogarithmicCoefficient10get_xvalueEd"></span><span id="amath::LogarithmicCoefficient::get_xvalue__doubleC"></span><span class="target" id="classamath_1_1LogarithmicCoefficient_1a34edf620d6dd177eda3db8bc0ccf7f51"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_xvalue</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">y</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK5amath22LogarithmicCoefficient10get_xvalueEd" title="Link to this definition"></a><br /></dt>
+<dd><p>Pure virtual function used to return the x-value of the coefficient at a given y-value. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath19ConstantCoefficientE">
+<span id="_CPPv3N5amath19ConstantCoefficientE"></span><span id="_CPPv2N5amath19ConstantCoefficientE"></span><span id="amath::ConstantCoefficient"></span><span class="target" id="classamath_1_1ConstantCoefficient"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ConstantCoefficient</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv45amath" title="amath"><span class="n"><span class="pre">amath</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5amath17LinearCoefficientE" title="amath::LinearCoefficient"><span class="n"><span class="pre">LinearCoefficient</span></span></a><a class="headerlink" href="#_CPPv4N5amath19ConstantCoefficientE" title="Link to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;Coefficient.h&gt;</em></div>
+<p>Represents a constant coefficient. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath19ConstantCoefficient19ConstantCoefficientEv">
+<span id="_CPPv3N5amath19ConstantCoefficient19ConstantCoefficientEv"></span><span id="_CPPv2N5amath19ConstantCoefficient19ConstantCoefficientEv"></span><span id="amath::ConstantCoefficient::ConstantCoefficient"></span><span class="target" id="classamath_1_1ConstantCoefficient_1adc09423ce36bd6d61f99c088b8b20c8c"></span><span class="sig-name descname"><span class="n"><span class="pre">ConstantCoefficient</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5amath19ConstantCoefficient19ConstantCoefficientEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Default constructor for the <a class="reference internal" href="#classamath_1_1ConstantCoefficient"><span class="std std-ref">ConstantCoefficient</span></a> class. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath19ConstantCoefficient19ConstantCoefficientERK5Table">
+<span id="_CPPv3N5amath19ConstantCoefficient19ConstantCoefficientERK5Table"></span><span id="_CPPv2N5amath19ConstantCoefficient19ConstantCoefficientERK5Table"></span><span id="amath::ConstantCoefficient::ConstantCoefficient__TableCR"></span><span class="target" id="classamath_1_1ConstantCoefficient_1af31924c10e4744f58299c7665e400690"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ConstantCoefficient</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath5TableE" title="amath::Table"><span class="n"><span class="pre">Table</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">table</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath19ConstantCoefficient19ConstantCoefficientERK5Table" title="Link to this definition"></a><br /></dt>
+<dd><p>Constructor for the <a class="reference internal" href="#classamath_1_1ConstantCoefficient"><span class="std std-ref">ConstantCoefficient</span></a> class with a given table. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath19ConstantCoefficient19ConstantCoefficientERK11Coefficient">
+<span id="_CPPv3N5amath19ConstantCoefficient19ConstantCoefficientERK11Coefficient"></span><span id="_CPPv2N5amath19ConstantCoefficient19ConstantCoefficientERK11Coefficient"></span><span id="amath::ConstantCoefficient::ConstantCoefficient__CoefficientCR"></span><span class="target" id="classamath_1_1ConstantCoefficient_1aa14d441b705e40abc23ff56c3167c540"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ConstantCoefficient</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath11CoefficientE" title="amath::Coefficient"><span class="n"><span class="pre">Coefficient</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">coefficient</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath19ConstantCoefficient19ConstantCoefficientERK11Coefficient" title="Link to this definition"></a><br /></dt>
+<dd><p>Copy constructor for the <a class="reference internal" href="#classamath_1_1Coefficient"><span class="std std-ref">Coefficient</span></a> class. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath19ConstantCoefficientaSERK19ConstantCoefficient">
+<span id="_CPPv3N5amath19ConstantCoefficientaSERK19ConstantCoefficient"></span><span id="_CPPv2N5amath19ConstantCoefficientaSERK19ConstantCoefficient"></span><span id="amath::ConstantCoefficient::assign-operator__ConstantCoefficientCR"></span><span class="target" id="classamath_1_1ConstantCoefficient_1af8aa68289ce225e40e4bb7ebe5e2c14a"></span><a class="reference internal" href="#_CPPv4N5amath19ConstantCoefficientE" title="amath::ConstantCoefficient"><span class="n"><span class="pre">ConstantCoefficient</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath19ConstantCoefficientE" title="amath::ConstantCoefficient"><span class="n"><span class="pre">ConstantCoefficient</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath19ConstantCoefficientaSERK19ConstantCoefficient" title="Link to this definition"></a><br /></dt>
+<dd><p>Copy assignment operator for the <a class="reference internal" href="#classamath_1_1Coefficient"><span class="std std-ref">Coefficient</span></a> class. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath19ConstantCoefficient19ConstantCoefficientEd">
+<span id="_CPPv3N5amath19ConstantCoefficient19ConstantCoefficientEd"></span><span id="_CPPv2N5amath19ConstantCoefficient19ConstantCoefficientEd"></span><span id="amath::ConstantCoefficient::ConstantCoefficient__double"></span><span class="target" id="classamath_1_1ConstantCoefficient_1a4d07d2dca38183ab75fb86a1892c27df"></span><span class="sig-name descname"><span class="n"><span class="pre">ConstantCoefficient</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath19ConstantCoefficient19ConstantCoefficientEd" title="Link to this definition"></a><br /></dt>
+<dd><p>Constructor for the <a class="reference internal" href="#classamath_1_1ConstantCoefficient"><span class="std std-ref">ConstantCoefficient</span></a> class based on a given value. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath19ConstantCoefficient3getEv">
+<span id="_CPPv3NK5amath19ConstantCoefficient3getEv"></span><span id="_CPPv2NK5amath19ConstantCoefficient3getEv"></span><span id="amath::ConstantCoefficient::getC"></span><span class="target" id="classamath_1_1ConstantCoefficient_1a7ea9e440595a63b53642092ae071d5d2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath19ConstantCoefficient3getEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Return the value of the coefficient. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="stress">
+<h2>Stress<a class="headerlink" href="#stress" title="Link to this heading"></a></h2>
+<dl class="cpp type">
+<dt class="sig sig-object cpp">
+<span class="target" id="namespaceamath"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">amath</span></span></span><br /></dt>
 <dd><div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-typedefs">Typedefs</p>
 <dl class="cpp type">
