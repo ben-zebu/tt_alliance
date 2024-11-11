@@ -36,18 +36,18 @@ namespace amath {
 
             /// \brief Return the number of combinations.
             /// \return Number of combinations.
-            virtual std::size_t size() const;
+            virtual std::size_t size() const = 0;
 
             /// \brief Return the combination associated to the given indices.
             /// \param row Row index.
             /// \param column Column index.
             /// \return Combination associated to the given indices.
-            virtual std::size_t operator()(const std::size_t& row, const std::size_t& column) const;
+            virtual std::size_t operator()(const std::size_t& row, const std::size_t& column) const = 0;
 
             /// \brief Return the row and column indices associated to a combination.
             /// \param combination Combination.
             /// \return indices associated to the given combination.
-            virtual std::vector<std::size_t> get_ranks(const std::size_t& combination) const;
+            virtual std::vector<std::size_t> get_ranks(const std::size_t& combination) const = 0;
             
     };
 
@@ -57,9 +57,9 @@ namespace amath {
     /// Its representation is the following matrix:
     ///     \f{eqnarray*}{  
     ///         \left [ \begin{array}{cccc}
-    ///             (0,0)   & (0,1)   &  ...    & (0,n-1) \\
-    ///             (1,0)   & (1,1)   &  ...    & (1,n-1) \\
-    ///             (2,0)   & (2,1)   & (2,2)   & (2,n-1) \\ 
+    ///             (0,0)   & (0,1)   &  ...    & (0,n-1)
+    ///             (1,0)   & (1,1)   &  ...    & (1,n-1)
+    ///             (2,0)   & (2,1)   & (2,2)   & (2,n-1)
     ///             (n-1,0) & (n-1,1) & (n-1,2) & (n-1,n-1) 
     ///         \end{array} \right ] 
     ///     \f} 
@@ -97,9 +97,9 @@ namespace amath {
     /// of ranks. Its representation is the following matrix:
     ///     \f{eqnarray*}{  
     ///         \left [ \begin{array}{cccc}
-    ///             (0,0) & (0,1) &  ...  & (0,n-1) \\
-    ///              na   & (1,1) &  ...  & (1,n-1) \\
-    ///              na   &  na   & (2,2) & (2,n-1) \\ 
+    ///             (0,0) & (0,1) &  ...  & (0,n-1)
+    ///              na   & (1,1) &  ...  & (1,n-1)
+    ///              na   &  na   & (2,2) & (2,n-1)
     ///              na   &  na   &  na   & (n-1,n-1) 
     ///         \end{array} \right ] 
     ///     \f} 
@@ -132,7 +132,7 @@ namespace amath {
             TriangularCombination(const std::vector<std::size_t>& ranks) : Combination(ranks) {};
             /// \brief Copy constructor.
             /// \param combination Combination to copy.
-            TriangularCombination(const TriangularCombination& combination) : Combination(ranks) {};
+            TriangularCombination(const TriangularCombination& combination) : Combination(combination) {};
             /// \brief Copy constructor.
             /// \param combination Combination to copy.
             TriangularCombination& operator=(const TriangularCombination& combination);
@@ -150,7 +150,7 @@ namespace amath {
             /// \brief Return the row and column indices associated to a combination.
             /// \param combination Combination.
             /// \return indices associated to the given combination.
-            std::vector<std::size_t> get_ranks(const std::size_t& combination) const;           
+            virtual std::vector<std::size_t> get_ranks(const std::size_t& combination) const;           
     };
 
     /// \brief Class used to manage all possible ranks' combinations given by a vector of ranks.
@@ -159,9 +159,9 @@ namespace amath {
     /// of ranks. The diagonnals terms are excluded. Its representation is the following matrix:
     ///     \f{eqnarray*}{  
     ///         \left [ \begin{array}{cccc}
-    ///              na   & (0,1) &  ...  & (0,n-1) \\
-    ///              na   &  na   &  ...  & (1,n-1) \\
-    ///              na   &  na   &  na   & (2,n-1) \\ 
+    ///              na   & (0,1) &  ...  & (0,n-1)
+    ///              na   &  na   &  ...  & (1,n-1)
+    ///              na   &  na   &  na   & (2,n-1)
     ///              na   &  na   &  na   &  na 
     ///         \end{array} \right ] 
     ///     \f} 
@@ -193,7 +193,7 @@ namespace amath {
             SuperiorTriangularCombination(const std::vector<std::size_t>& ranks) : Combination(ranks) {};
             /// \brief Copy constructor.
             /// \param combination Combination to copy.
-            SuperiorTriangularCombination(const SuperiorTriangularCombination& combination) : Combination(ranks) {};
+            SuperiorTriangularCombination(const SuperiorTriangularCombination& combination) : Combination(combination) {};
             /// \brief Copy constructor.
             /// \param combination Combination to copy.
             SuperiorTriangularCombination& operator=(const SuperiorTriangularCombination& combination);
