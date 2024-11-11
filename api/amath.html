@@ -54,6 +54,13 @@
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv45amath"><code class="docutils literal notranslate"><span class="pre">amath</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#combination">Combination</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5amath11CombinationE"><code class="docutils literal notranslate"><span class="pre">amath::Combination</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5amath17SquareCombinationE"><code class="docutils literal notranslate"><span class="pre">amath::SquareCombination</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5amath21TriangularCombinationE"><code class="docutils literal notranslate"><span class="pre">amath::TriangularCombination</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5amath29SuperiorTriangularCombinationE"><code class="docutils literal notranslate"><span class="pre">amath::SuperiorTriangularCombination</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#stress">Stress</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5amath8Vector6dE"><code class="docutils literal notranslate"><span class="pre">amath::Vector6d</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5amath11STRESS_SIZEE"><code class="docutils literal notranslate"><span class="pre">amath::STRESS_SIZE</span></code></a></li>
@@ -304,6 +311,466 @@
 <dt class="sig sig-object cpp" id="_CPPv4NK5amath19ConstantCoefficient3getEv">
 <span id="_CPPv3NK5amath19ConstantCoefficient3getEv"></span><span id="_CPPv2NK5amath19ConstantCoefficient3getEv"></span><span id="amath::ConstantCoefficient::getC"></span><span class="target" id="classamath_1_1ConstantCoefficient_1a7ea9e440595a63b53642092ae071d5d2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath19ConstantCoefficient3getEv" title="Link to this definition"></a><br /></dt>
 <dd><p>Return the value of the coefficient. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="combination">
+<h2>Combination<a class="headerlink" href="#combination" title="Link to this heading"></a></h2>
+<dl class="cpp type">
+<dt class="sig sig-object cpp">
+<span class="target" id="namespaceamath"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">amath</span></span></span><br /></dt>
+<dd><dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath11CombinationE">
+<span id="_CPPv3N5amath11CombinationE"></span><span id="_CPPv2N5amath11CombinationE"></span><span id="amath::Combination"></span><span class="target" id="classamath_1_1Combination"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Combination</span></span></span><a class="headerlink" href="#_CPPv4N5amath11CombinationE" title="Link to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;Combination.h&gt;</em></div>
+<p>Class used to manage all possible ranks’ combinations given by a vector of ranks. </p>
+<p>This class is used to manage the ranks’ combination identification given by a vector of ranks. The naive represention of all combinations is a square matrix storage with a size equal to vector of ranks. Each element of the matrix represents a combination of ranks. The associated ranks to a combination is identified by the row and column indices. Several cases are possible:<ul class="simple">
+<li><p>The total square matrix if the expected results between (i, j) ranks is different than (j, i) ranks.</p></li>
+<li><p>the triangular matrix if the expected results between (i, j) ranks is equal to (j, i) ranks.</p></li>
+<li><p>The superior triangular matrix if the expected results between (i, j) ranks is equal to (j, i) ranks and the the combination (i, i) is excluded. </p></li>
+</ul>
+</p>
+<p>Subclassed by <a class="reference internal" href="#classamath_1_1SquareCombination"><span class="std std-ref">amath::SquareCombination</span></a>, <a class="reference internal" href="#classamath_1_1SuperiorTriangularCombination"><span class="std std-ref">amath::SuperiorTriangularCombination</span></a>, <a class="reference internal" href="#classamath_1_1TriangularCombination"><span class="std std-ref">amath::TriangularCombination</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath11Combination11CombinationERKNSt6vectorINSt6size_tEEE">
+<span id="_CPPv3N5amath11Combination11CombinationERKNSt6vectorINSt6size_tEEE"></span><span id="_CPPv2N5amath11Combination11CombinationERKNSt6vectorINSt6size_tEEE"></span><span id="amath::Combination::Combination__std::vector:std::s:CR"></span><span class="target" id="classamath_1_1Combination_1a29e1b0ce27dc2dbb370aaad74ccc5c16"></span><span class="sig-name descname"><span class="n"><span class="pre">Combination</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">ranks</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath11Combination11CombinationERKNSt6vectorINSt6size_tEEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Constructor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ranks</strong> – Vector of ranks. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath11Combination11CombinationERK11Combination">
+<span id="_CPPv3N5amath11Combination11CombinationERK11Combination"></span><span id="_CPPv2N5amath11Combination11CombinationERK11Combination"></span><span id="amath::Combination::Combination__CombinationCR"></span><span class="target" id="classamath_1_1Combination_1a277db2d419e96cd8a68a4b14498ed7fa"></span><span class="sig-name descname"><span class="n"><span class="pre">Combination</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath11Combination11CombinationERK11Combination" title="amath::Combination::Combination"><span class="n"><span class="pre">Combination</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">combination</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath11Combination11CombinationERK11Combination" title="Link to this definition"></a><br /></dt>
+<dd><p>Copy constructor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>combination</strong> – <a class="reference internal" href="#classamath_1_1Combination"><span class="std std-ref">Combination</span></a> to copy. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath11CombinationaSERK11Combination">
+<span id="_CPPv3N5amath11CombinationaSERK11Combination"></span><span id="_CPPv2N5amath11CombinationaSERK11Combination"></span><span id="amath::Combination::assign-operator__CombinationCR"></span><span class="target" id="classamath_1_1Combination_1a83c1d972b778742f3138657d482a47a5"></span><a class="reference internal" href="#_CPPv4N5amath11CombinationE" title="amath::Combination"><span class="n"><span class="pre">Combination</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath11CombinationE" title="amath::Combination"><span class="n"><span class="pre">Combination</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">combination</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath11CombinationaSERK11Combination" title="Link to this definition"></a><br /></dt>
+<dd><p>Copy constructor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>combination</strong> – <a class="reference internal" href="#classamath_1_1Combination"><span class="std std-ref">Combination</span></a> to copy. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath11Combination4sizeEv">
+<span id="_CPPv3NK5amath11Combination4sizeEv"></span><span id="_CPPv2NK5amath11Combination4sizeEv"></span><span id="amath::Combination::sizeC"></span><span class="target" id="classamath_1_1Combination_1aec9e2a764c1f662e22a051787060f20c"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">size</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK5amath11Combination4sizeEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Return the number of combinations. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Number of combinations. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath11CombinationclERKNSt6size_tERKNSt6size_tE">
+<span id="_CPPv3NK5amath11CombinationclERKNSt6size_tERKNSt6size_tE"></span><span id="_CPPv2NK5amath11CombinationclERKNSt6size_tERKNSt6size_tE"></span><span id="amath::Combination::call-operator__std::sCR.std::sCRC"></span><span class="target" id="classamath_1_1Combination_1a96d4f945c76027c913cc95a8b0f918a1"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">()</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">row</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">column</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK5amath11CombinationclERKNSt6size_tERKNSt6size_tE" title="Link to this definition"></a><br /></dt>
+<dd><p>Return the combination associated to the given indices. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>row</strong> – Row index. </p></li>
+<li><p><strong>column</strong> – Column index. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#classamath_1_1Combination"><span class="std std-ref">Combination</span></a> associated to the given indices. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath11Combination9get_ranksERKNSt6size_tE">
+<span id="_CPPv3NK5amath11Combination9get_ranksERKNSt6size_tE"></span><span id="_CPPv2NK5amath11Combination9get_ranksERKNSt6size_tE"></span><span id="amath::Combination::get_ranks__std::sCRC"></span><span class="target" id="classamath_1_1Combination_1aaab67c41a1e747e1198d696718ce4d5f"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_ranks</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">combination</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK5amath11Combination9get_ranksERKNSt6size_tE" title="Link to this definition"></a><br /></dt>
+<dd><p>Return the row and column indices associated to a combination. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>combination</strong> – <a class="reference internal" href="#classamath_1_1Combination"><span class="std std-ref">Combination</span></a>. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>indices associated to the given combination. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath11Combination5ranksE">
+<span id="_CPPv3N5amath11Combination5ranksE"></span><span id="_CPPv2N5amath11Combination5ranksE"></span><span id="amath::Combination::ranks__std::vector:std::s:"></span><span class="target" id="classamath_1_1Combination_1ae0bbe9d6471bcc8ad8308b2a85fdfcc3"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ranks</span></span></span><a class="headerlink" href="#_CPPv4N5amath11Combination5ranksE" title="Link to this definition"></a><br /></dt>
+<dd><p>Vector of ranks. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-functions">Private Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath11Combination10sort_ranksEv">
+<span id="_CPPv3N5amath11Combination10sort_ranksEv"></span><span id="_CPPv2N5amath11Combination10sort_ranksEv"></span><span id="amath::Combination::sort_ranks"></span><span class="target" id="classamath_1_1Combination_1a29e501a2bd4d548bf868b7f5ca9bd4b1"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sort_ranks</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath11Combination10sort_ranksEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Function used to order ranks and suppress duplicates. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath17SquareCombinationE">
+<span id="_CPPv3N5amath17SquareCombinationE"></span><span id="_CPPv2N5amath17SquareCombinationE"></span><span id="amath::SquareCombination"></span><span class="target" id="classamath_1_1SquareCombination"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SquareCombination</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv45amath" title="amath"><span class="n"><span class="pre">amath</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5amath11CombinationE" title="amath::Combination"><span class="n"><span class="pre">Combination</span></span></a><a class="headerlink" href="#_CPPv4N5amath17SquareCombinationE" title="Link to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;Combination.h&gt;</em></div>
+<p>Class used to manage all possible ranks’ combinations given by a vector of ranks. </p>
+<p>All combination are given by a matrix representation with a size equal to vector of ranks. Its representation is the following matrix: <div class="math notranslate nohighlight">
+\[\begin{split}\begin{eqnarray*} \left [ \begin{array}{cccc} (0,0) &amp; (0,1) &amp; ... &amp; (0,n-1) \\ (1,0) &amp; (1,1) &amp; ... &amp; (1,n-1) \\ (2,0) &amp; (2,1) &amp; (2,2) &amp; (2,n-1) \\ (n-1,0) &amp; (n-1,1) &amp; (n-1,2) &amp; (n-1,n-1) \end{array} \right ] \end{eqnarray*}\end{split}\]</div>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath17SquareCombination17SquareCombinationERKNSt6vectorINSt6size_tEEE">
+<span id="_CPPv3N5amath17SquareCombination17SquareCombinationERKNSt6vectorINSt6size_tEEE"></span><span id="_CPPv2N5amath17SquareCombination17SquareCombinationERKNSt6vectorINSt6size_tEEE"></span><span id="amath::SquareCombination::SquareCombination__std::vector:std::s:CR"></span><span class="target" id="classamath_1_1SquareCombination_1a612808902df521b7f2e6356a69d54ce9"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SquareCombination</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">ranks</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath17SquareCombination17SquareCombinationERKNSt6vectorINSt6size_tEEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Constructor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ranks</strong> – Vector of ranks. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath17SquareCombination17SquareCombinationERK17SquareCombination">
+<span id="_CPPv3N5amath17SquareCombination17SquareCombinationERK17SquareCombination"></span><span id="_CPPv2N5amath17SquareCombination17SquareCombinationERK17SquareCombination"></span><span id="amath::SquareCombination::SquareCombination__SquareCombinationCR"></span><span class="target" id="classamath_1_1SquareCombination_1aab69790625deb6a0203e0c4c6d849d98"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SquareCombination</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath17SquareCombination17SquareCombinationERK17SquareCombination" title="amath::SquareCombination::SquareCombination"><span class="n"><span class="pre">SquareCombination</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">combination</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath17SquareCombination17SquareCombinationERK17SquareCombination" title="Link to this definition"></a><br /></dt>
+<dd><p>Copy constructor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>combination</strong> – <a class="reference internal" href="#classamath_1_1Combination"><span class="std std-ref">Combination</span></a> to copy. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath17SquareCombinationaSERK17SquareCombination">
+<span id="_CPPv3N5amath17SquareCombinationaSERK17SquareCombination"></span><span id="_CPPv2N5amath17SquareCombinationaSERK17SquareCombination"></span><span id="amath::SquareCombination::assign-operator__SquareCombinationCR"></span><span class="target" id="classamath_1_1SquareCombination_1ae4207923165ea6dd1ae136a290fa6f8f"></span><a class="reference internal" href="#_CPPv4N5amath17SquareCombinationE" title="amath::SquareCombination"><span class="n"><span class="pre">SquareCombination</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath17SquareCombinationE" title="amath::SquareCombination"><span class="n"><span class="pre">SquareCombination</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">combination</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath17SquareCombinationaSERK17SquareCombination" title="Link to this definition"></a><br /></dt>
+<dd><p>Copy constructor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>combination</strong> – <a class="reference internal" href="#classamath_1_1Combination"><span class="std std-ref">Combination</span></a> to copy. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath17SquareCombination4sizeEv">
+<span id="_CPPv3NK5amath17SquareCombination4sizeEv"></span><span id="_CPPv2NK5amath17SquareCombination4sizeEv"></span><span id="amath::SquareCombination::sizeC"></span><span class="target" id="classamath_1_1SquareCombination_1a92793628d82680711c35ad4b1e8ee88c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">size</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath17SquareCombination4sizeEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Return the number of combinations. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Number of combinations. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath17SquareCombinationclERKNSt6size_tERKNSt6size_tE">
+<span id="_CPPv3NK5amath17SquareCombinationclERKNSt6size_tERKNSt6size_tE"></span><span id="_CPPv2NK5amath17SquareCombinationclERKNSt6size_tERKNSt6size_tE"></span><span id="amath::SquareCombination::call-operator__std::sCR.std::sCRC"></span><span class="target" id="classamath_1_1SquareCombination_1a3c1cd3e5419fbb4d6fcbebe302f8c303"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">()</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">row</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">column</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath17SquareCombinationclERKNSt6size_tERKNSt6size_tE" title="Link to this definition"></a><br /></dt>
+<dd><p>Return the combination associated to the given indices. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>row</strong> – Row index. </p></li>
+<li><p><strong>column</strong> – Column index. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#classamath_1_1Combination"><span class="std std-ref">Combination</span></a> associated to the given indices. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath17SquareCombination9get_ranksERKNSt6size_tE">
+<span id="_CPPv3NK5amath17SquareCombination9get_ranksERKNSt6size_tE"></span><span id="_CPPv2NK5amath17SquareCombination9get_ranksERKNSt6size_tE"></span><span id="amath::SquareCombination::get_ranks__std::sCRC"></span><span class="target" id="classamath_1_1SquareCombination_1a8d3dbfb8d6a51af960eebdf3bc5b2363"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_ranks</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">combination</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath17SquareCombination9get_ranksERKNSt6size_tE" title="Link to this definition"></a><br /></dt>
+<dd><p>Return the row and column indices associated to a combination. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>combination</strong> – <a class="reference internal" href="#classamath_1_1Combination"><span class="std std-ref">Combination</span></a>. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>indices associated to the given combination. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath21TriangularCombinationE">
+<span id="_CPPv3N5amath21TriangularCombinationE"></span><span id="_CPPv2N5amath21TriangularCombinationE"></span><span id="amath::TriangularCombination"></span><span class="target" id="classamath_1_1TriangularCombination"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TriangularCombination</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv45amath" title="amath"><span class="n"><span class="pre">amath</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5amath11CombinationE" title="amath::Combination"><span class="n"><span class="pre">Combination</span></span></a><a class="headerlink" href="#_CPPv4N5amath21TriangularCombinationE" title="Link to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;Combination.h&gt;</em></div>
+<p>Class used to manage all possible ranks’ combinations given by a vector of ranks. </p>
+<p>All combination are given by a superior triangular matrix representation with a size equal to vector of ranks. Its representation is the following matrix: <div class="math notranslate nohighlight">
+\[\begin{split}\begin{eqnarray*} \left [ \begin{array}{cccc} (0,0) &amp; (0,1) &amp; ... &amp; (0,n-1) \\ na &amp; (1,1) &amp; ... &amp; (1,n-1) \\ na &amp; na &amp; (2,2) &amp; (2,n-1) \\ na &amp; na &amp; na &amp; (n-1,n-1) \end{array} \right ] \end{eqnarray*}\end{split}\]</div>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath21TriangularCombination21TriangularCombinationERKNSt6vectorINSt6size_tEEE">
+<span id="_CPPv3N5amath21TriangularCombination21TriangularCombinationERKNSt6vectorINSt6size_tEEE"></span><span id="_CPPv2N5amath21TriangularCombination21TriangularCombinationERKNSt6vectorINSt6size_tEEE"></span><span id="amath::TriangularCombination::TriangularCombination__std::vector:std::s:CR"></span><span class="target" id="classamath_1_1TriangularCombination_1a94e6a262c6acbd68e79c0c9350eb8a2e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TriangularCombination</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">ranks</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath21TriangularCombination21TriangularCombinationERKNSt6vectorINSt6size_tEEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Constructor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ranks</strong> – Vector of ranks. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath21TriangularCombination21TriangularCombinationERK21TriangularCombination">
+<span id="_CPPv3N5amath21TriangularCombination21TriangularCombinationERK21TriangularCombination"></span><span id="_CPPv2N5amath21TriangularCombination21TriangularCombinationERK21TriangularCombination"></span><span id="amath::TriangularCombination::TriangularCombination__TriangularCombinationCR"></span><span class="target" id="classamath_1_1TriangularCombination_1aae5b491afaf38c1506cae8c712487fe9"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TriangularCombination</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath21TriangularCombination21TriangularCombinationERK21TriangularCombination" title="amath::TriangularCombination::TriangularCombination"><span class="n"><span class="pre">TriangularCombination</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">combination</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath21TriangularCombination21TriangularCombinationERK21TriangularCombination" title="Link to this definition"></a><br /></dt>
+<dd><p>Copy constructor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>combination</strong> – <a class="reference internal" href="#classamath_1_1Combination"><span class="std std-ref">Combination</span></a> to copy. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath21TriangularCombinationaSERK21TriangularCombination">
+<span id="_CPPv3N5amath21TriangularCombinationaSERK21TriangularCombination"></span><span id="_CPPv2N5amath21TriangularCombinationaSERK21TriangularCombination"></span><span id="amath::TriangularCombination::assign-operator__TriangularCombinationCR"></span><span class="target" id="classamath_1_1TriangularCombination_1a9a3cb679eaafea4b8a2789fcd412a57f"></span><a class="reference internal" href="#_CPPv4N5amath21TriangularCombinationE" title="amath::TriangularCombination"><span class="n"><span class="pre">TriangularCombination</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath21TriangularCombinationE" title="amath::TriangularCombination"><span class="n"><span class="pre">TriangularCombination</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">combination</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath21TriangularCombinationaSERK21TriangularCombination" title="Link to this definition"></a><br /></dt>
+<dd><p>Copy constructor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>combination</strong> – <a class="reference internal" href="#classamath_1_1Combination"><span class="std std-ref">Combination</span></a> to copy. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath21TriangularCombination4sizeEv">
+<span id="_CPPv3NK5amath21TriangularCombination4sizeEv"></span><span id="_CPPv2NK5amath21TriangularCombination4sizeEv"></span><span id="amath::TriangularCombination::sizeC"></span><span class="target" id="classamath_1_1TriangularCombination_1a8de82d297f4093d09298d92664e39195"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">size</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath21TriangularCombination4sizeEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Return the number of combinations. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Number of combinations. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath21TriangularCombinationclERKNSt6size_tERKNSt6size_tE">
+<span id="_CPPv3NK5amath21TriangularCombinationclERKNSt6size_tERKNSt6size_tE"></span><span id="_CPPv2NK5amath21TriangularCombinationclERKNSt6size_tERKNSt6size_tE"></span><span id="amath::TriangularCombination::call-operator__std::sCR.std::sCRC"></span><span class="target" id="classamath_1_1TriangularCombination_1acb1b501fe1cc1c065d199b644ded2182"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">()</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">row</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">column</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath21TriangularCombinationclERKNSt6size_tERKNSt6size_tE" title="Link to this definition"></a><br /></dt>
+<dd><p>Return the combination associated to the given indices. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>row</strong> – Row index. </p></li>
+<li><p><strong>column</strong> – Column index. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#classamath_1_1Combination"><span class="std std-ref">Combination</span></a> associated to the given indices. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath21TriangularCombination9get_ranksERKNSt6size_tE">
+<span id="_CPPv3NK5amath21TriangularCombination9get_ranksERKNSt6size_tE"></span><span id="_CPPv2NK5amath21TriangularCombination9get_ranksERKNSt6size_tE"></span><span id="amath::TriangularCombination::get_ranks__std::sCRC"></span><span class="target" id="classamath_1_1TriangularCombination_1a3bed9b589df53d148abffcc0e01f3190"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_ranks</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">combination</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath21TriangularCombination9get_ranksERKNSt6size_tE" title="Link to this definition"></a><br /></dt>
+<dd><p>Return the row and column indices associated to a combination. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>combination</strong> – <a class="reference internal" href="#classamath_1_1Combination"><span class="std std-ref">Combination</span></a>. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>indices associated to the given combination. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-functions">Private Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath21TriangularCombination20combination_for_lineERKNSt6size_tE">
+<span id="_CPPv3NK5amath21TriangularCombination20combination_for_lineERKNSt6size_tE"></span><span id="_CPPv2NK5amath21TriangularCombination20combination_for_lineERKNSt6size_tE"></span><span id="amath::TriangularCombination::combination_for_line__std::sCRC"></span><span class="target" id="classamath_1_1TriangularCombination_1a8f837122506700f0352bdbbec0231a40"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">combination_for_line</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath21TriangularCombination20combination_for_lineERKNSt6size_tE" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine the first combination represented on the p line. </p>
+<p>Return the first combination represented on the p line and based on the following formula: <div class="math notranslate nohighlight">
+\[ S = \sum_{i=1}^{p} sz +1 - i = \sum_{j=sz+1-p}^{sz} j = \frac{1}{2} p (2sz+1-p) \]</div>
+ with <span class="math notranslate nohighlight">\( sz \)</span> the size of the vector of ranks. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p</strong> – Number of lines. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>First combination represented on the p line. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath21TriangularCombination20line_for_combinationERKNSt6size_tE">
+<span id="_CPPv3NK5amath21TriangularCombination20line_for_combinationERKNSt6size_tE"></span><span id="_CPPv2NK5amath21TriangularCombination20line_for_combinationERKNSt6size_tE"></span><span id="amath::TriangularCombination::line_for_combination__std::sCRC"></span><span class="target" id="classamath_1_1TriangularCombination_1a74e4888e45b5cf9f7a49f32aaaa09da7"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">line_for_combination</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath21TriangularCombination20line_for_combinationERKNSt6size_tE" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine the line associated to a combination. </p>
+<p>Return the <span class="math notranslate nohighlight">\( p \)</span> line associated to the combination <span class="math notranslate nohighlight">\( c \)</span> such as: <span class="math notranslate nohighlight">\( S(p) \leq c \leq S(p+1) \)</span> where <span class="math notranslate nohighlight">\( S(p) \)</span> is the first combination represented on the <span class="math notranslate nohighlight">\( p \)</span> line (see combination_for_line). The <span class="math notranslate nohighlight">\( p \)</span> line is the floor integer associated to the lower root of the following polynom: <div class="math notranslate nohighlight">
+\[ p^2 - b.p + 2 c \]</div>
+ with <span class="math notranslate nohighlight">\( b = 2 sz + 1 \)</span> and <span class="math notranslate nohighlight">\( sz \)</span> the size of the vector of ranks. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>c</strong> – combination number. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>line number associated to the combination c. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath29SuperiorTriangularCombinationE">
+<span id="_CPPv3N5amath29SuperiorTriangularCombinationE"></span><span id="_CPPv2N5amath29SuperiorTriangularCombinationE"></span><span id="amath::SuperiorTriangularCombination"></span><span class="target" id="classamath_1_1SuperiorTriangularCombination"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SuperiorTriangularCombination</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv45amath" title="amath"><span class="n"><span class="pre">amath</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5amath11CombinationE" title="amath::Combination"><span class="n"><span class="pre">Combination</span></span></a><a class="headerlink" href="#_CPPv4N5amath29SuperiorTriangularCombinationE" title="Link to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;Combination.h&gt;</em></div>
+<p>Class used to manage all possible ranks’ combinations given by a vector of ranks. </p>
+<p>All combination are given by a superior triangular matrix representation with a size equal to vector of ranks. The diagonnals terms are excluded. Its representation is the following matrix: <div class="math notranslate nohighlight">
+\[\begin{split}\begin{eqnarray*} \left [ \begin{array}{cccc} na &amp; (0,1) &amp; ... &amp; (0,n-1) \\ na &amp; na &amp; ... &amp; (1,n-1) \\ na &amp; na &amp; na &amp; (2,n-1) \\ na &amp; na &amp; na &amp; na \end{array} \right ] \end{eqnarray*}\end{split}\]</div>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath29SuperiorTriangularCombination29SuperiorTriangularCombinationERKNSt6vectorINSt6size_tEEE">
+<span id="_CPPv3N5amath29SuperiorTriangularCombination29SuperiorTriangularCombinationERKNSt6vectorINSt6size_tEEE"></span><span id="_CPPv2N5amath29SuperiorTriangularCombination29SuperiorTriangularCombinationERKNSt6vectorINSt6size_tEEE"></span><span id="amath::SuperiorTriangularCombination::SuperiorTriangularCombination__std::vector:std::s:CR"></span><span class="target" id="classamath_1_1SuperiorTriangularCombination_1a648ac358f5d90d6ecec2277d3dca2577"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SuperiorTriangularCombination</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">ranks</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath29SuperiorTriangularCombination29SuperiorTriangularCombinationERKNSt6vectorINSt6size_tEEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Constructor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ranks</strong> – Vector of ranks. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath29SuperiorTriangularCombination29SuperiorTriangularCombinationERK29SuperiorTriangularCombination">
+<span id="_CPPv3N5amath29SuperiorTriangularCombination29SuperiorTriangularCombinationERK29SuperiorTriangularCombination"></span><span id="_CPPv2N5amath29SuperiorTriangularCombination29SuperiorTriangularCombinationERK29SuperiorTriangularCombination"></span><span id="amath::SuperiorTriangularCombination::SuperiorTriangularCombination__SuperiorTriangularCombinationCR"></span><span class="target" id="classamath_1_1SuperiorTriangularCombination_1ace87a3eb21fd147bfa0b707f05a3b969"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SuperiorTriangularCombination</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath29SuperiorTriangularCombination29SuperiorTriangularCombinationERK29SuperiorTriangularCombination" title="amath::SuperiorTriangularCombination::SuperiorTriangularCombination"><span class="n"><span class="pre">SuperiorTriangularCombination</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">combination</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath29SuperiorTriangularCombination29SuperiorTriangularCombinationERK29SuperiorTriangularCombination" title="Link to this definition"></a><br /></dt>
+<dd><p>Copy constructor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>combination</strong> – <a class="reference internal" href="#classamath_1_1Combination"><span class="std std-ref">Combination</span></a> to copy. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath29SuperiorTriangularCombinationaSERK29SuperiorTriangularCombination">
+<span id="_CPPv3N5amath29SuperiorTriangularCombinationaSERK29SuperiorTriangularCombination"></span><span id="_CPPv2N5amath29SuperiorTriangularCombinationaSERK29SuperiorTriangularCombination"></span><span id="amath::SuperiorTriangularCombination::assign-operator__SuperiorTriangularCombinationCR"></span><span class="target" id="classamath_1_1SuperiorTriangularCombination_1a2f88f87761c6db6d7d699b798192dca5"></span><a class="reference internal" href="#_CPPv4N5amath29SuperiorTriangularCombinationE" title="amath::SuperiorTriangularCombination"><span class="n"><span class="pre">SuperiorTriangularCombination</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath29SuperiorTriangularCombinationE" title="amath::SuperiorTriangularCombination"><span class="n"><span class="pre">SuperiorTriangularCombination</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">combination</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath29SuperiorTriangularCombinationaSERK29SuperiorTriangularCombination" title="Link to this definition"></a><br /></dt>
+<dd><p>Copy constructor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>combination</strong> – <a class="reference internal" href="#classamath_1_1Combination"><span class="std std-ref">Combination</span></a> to copy. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath29SuperiorTriangularCombination4sizeEv">
+<span id="_CPPv3NK5amath29SuperiorTriangularCombination4sizeEv"></span><span id="_CPPv2NK5amath29SuperiorTriangularCombination4sizeEv"></span><span id="amath::SuperiorTriangularCombination::sizeC"></span><span class="target" id="classamath_1_1SuperiorTriangularCombination_1ab23b6d9805e4419e9afec6b0db56c3da"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">size</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath29SuperiorTriangularCombination4sizeEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Return the number of combinations. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Number of combinations. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath29SuperiorTriangularCombinationclERKNSt6size_tERKNSt6size_tE">
+<span id="_CPPv3NK5amath29SuperiorTriangularCombinationclERKNSt6size_tERKNSt6size_tE"></span><span id="_CPPv2NK5amath29SuperiorTriangularCombinationclERKNSt6size_tERKNSt6size_tE"></span><span id="amath::SuperiorTriangularCombination::call-operator__std::sCR.std::sCRC"></span><span class="target" id="classamath_1_1SuperiorTriangularCombination_1a19432b822f82c8d0f6d0ef01c0c6acae"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">()</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">row</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">column</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath29SuperiorTriangularCombinationclERKNSt6size_tERKNSt6size_tE" title="Link to this definition"></a><br /></dt>
+<dd><p>Return the combination associated to the given indices. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>row</strong> – Row index. </p></li>
+<li><p><strong>column</strong> – Column index. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#classamath_1_1Combination"><span class="std std-ref">Combination</span></a> associated to the given indices. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath29SuperiorTriangularCombination9get_ranksERKNSt6size_tE">
+<span id="_CPPv3NK5amath29SuperiorTriangularCombination9get_ranksERKNSt6size_tE"></span><span id="_CPPv2NK5amath29SuperiorTriangularCombination9get_ranksERKNSt6size_tE"></span><span id="amath::SuperiorTriangularCombination::get_ranks__std::sCRC"></span><span class="target" id="classamath_1_1SuperiorTriangularCombination_1ac32068b393c40887b6dd29062395da26"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_ranks</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">combination</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath29SuperiorTriangularCombination9get_ranksERKNSt6size_tE" title="Link to this definition"></a><br /></dt>
+<dd><p>Return the row and column indices associated to a combination. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>combination</strong> – <a class="reference internal" href="#classamath_1_1Combination"><span class="std std-ref">Combination</span></a>. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>indices associated to the given combination. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-functions">Private Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath29SuperiorTriangularCombination20combination_for_lineERKNSt6size_tE">
+<span id="_CPPv3NK5amath29SuperiorTriangularCombination20combination_for_lineERKNSt6size_tE"></span><span id="_CPPv2NK5amath29SuperiorTriangularCombination20combination_for_lineERKNSt6size_tE"></span><span id="amath::SuperiorTriangularCombination::combination_for_line__std::sCRC"></span><span class="target" id="classamath_1_1SuperiorTriangularCombination_1a77e95c14834eec90a8cc4ec74b8c319d"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">combination_for_line</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath29SuperiorTriangularCombination20combination_for_lineERKNSt6size_tE" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine the first combination represented on the p line. </p>
+<p>Determine the number of combination for <span class="math notranslate nohighlight">\( p \)</span> lines based on the following formula: <div class="math notranslate nohighlight">
+\[ S = \sum_{i=1}^{p} sz - i = \sum_{j=sz-p}^{sz} j = \frac{1}{2} p (2sz-1-p) \]</div>
+ with <span class="math notranslate nohighlight">\( sz \)</span> the size of the vector of ranks. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p</strong> – Number of lines. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>First combination represented on the p line. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath29SuperiorTriangularCombination20line_for_combinationERKNSt6size_tE">
+<span id="_CPPv3NK5amath29SuperiorTriangularCombination20line_for_combinationERKNSt6size_tE"></span><span id="_CPPv2NK5amath29SuperiorTriangularCombination20line_for_combinationERKNSt6size_tE"></span><span id="amath::SuperiorTriangularCombination::line_for_combination__std::sCRC"></span><span class="target" id="classamath_1_1SuperiorTriangularCombination_1a73244cd40672c36199aca0c88ea7a3bf"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">line_for_combination</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath29SuperiorTriangularCombination20line_for_combinationERKNSt6size_tE" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine the line associated to a combination. </p>
+<p>Return the <span class="math notranslate nohighlight">\( p \)</span> line associated to the combination <span class="math notranslate nohighlight">\( c \)</span> such as: <span class="math notranslate nohighlight">\( S(p) \leq c \leq S(p+1) \)</span> where <span class="math notranslate nohighlight">\( S(p) \)</span> is the first combination represented on the <span class="math notranslate nohighlight">\( p \)</span> line (see combination_for_line). The <span class="math notranslate nohighlight">\( p \)</span> line is the floor integer associated to the lower root of the following polynom: <div class="math notranslate nohighlight">
+\[ p^2 - b.p + 2 c \]</div>
+ with <span class="math notranslate nohighlight">\( b = 2 sz - 1 \)</span> and <span class="math notranslate nohighlight">\( sz \)</span> the size of the vector of ranks. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>c</strong> – combination number. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>line number associated to the combination c. </p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>

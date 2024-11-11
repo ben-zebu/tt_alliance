@@ -8,6 +8,11 @@ Coefficient
 .. doxygenfile:: Coefficient.h
     :project: tt_alliance
 
+Combination
+-----------
+.. doxygenfile:: Combination.h
+    :project: tt_alliance
+
 Stress
 ------
 .. doxygenfile:: Stress.h
