@@ -4,16 +4,18 @@
 
 namespace amath {
 
-    /// \brief Class used to manage all possible ranks' combinations given by a vector of ranks.
-    ///
-    /// \details This class is used to manage the ranks' combination identification given by a vector of ranks. The naive 
-    /// represention of all combinations is a square matrix storage with a size equal to vector of ranks. Each element
-    /// of the matrix represents a combination of ranks. The associated ranks to a combination is identified by the 
-    /// row and column indices. Several cases are possible:
-    ///  - The total square matrix if the expected results between (i, j) ranks is different than (j, i) ranks.
-    ///  - the triangular matrix if the expected results between (i, j) ranks is equal to (j, i) ranks.
-    ///  - The superior triangular matrix if the expected results between (i, j) ranks is equal to (j, i) ranks and the
-    ///    the combination (i, i) is excluded.
+    /*!
+     * \brief Class used to manage all possible ranks' combinations given by a vector of ranks.
+     *
+     * \details This class is used to manage the ranks' combination identification given by a vector of ranks. The naive 
+     * represention of all combinations is a square matrix storage with a size equal to vector of ranks. Each element
+     * of the matrix represents a combination of ranks. The associated ranks to a combination is identified by the 
+     * row and column indices. Several cases are possible:
+     *  - The total square matrix if the expected results between (i, j) ranks is different than (j, i) ranks.
+     *  - the triangular matrix if the expected results between (i, j) ranks is equal to (j, i) ranks.
+     *  - The superior triangular matrix if the expected results between (i, j) ranks is equal to (j, i) ranks and the
+     *    the combination (i, i) is excluded.
+     */
     class Combination {
         protected:
             /// \brief Vector of ranks.
@@ -51,18 +53,19 @@ namespace amath {
             
     };
 
-    /// \brief Class used to manage all possible ranks' combinations given by a vector of ranks.
-    ///
-    /// \details All combination are given by a matrix representation with a size equal to vector of ranks.
-    /// Its representation is the following matrix:
-    ///     \f{eqnarray*}{  
-    ///         \left [ \begin{array}{cccc}
-    ///             (0,0)   & (0,1)   &  ...    & (0,n-1)
-    ///             (1,0)   & (1,1)   &  ...    & (1,n-1)
-    ///             (2,0)   & (2,1)   & (2,2)   & (2,n-1)
-    ///             (n-1,0) & (n-1,1) & (n-1,2) & (n-1,n-1) 
-    ///         \end{array} \right ] 
-    ///     \f} 
+    /** \brief Class used to manage all possible ranks' combinations given by a vector of ranks.
+     *
+     * \details All combination are given by a matrix representation with a size equal to vector of ranks.
+     * Its representation is the following matrix:
+     *     \f{eqnarray*}{  
+     *         \left [ \begin{array}{cccc}
+     *             (0,0)   & (0,1)   &  ...    & (0,n-1) \\
+     *             (1,0)   & (1,1)   &  ...    & (1,n-1) \\
+     *             (2,0)   & (2,1)   & (2,2)   & (2,n-1) \\
+     *             (n-1,0) & (n-1,1) & (n-1,2) & (n-1,n-1) 
+     *          \end{array} \right ] 
+     *     \f} 
+     */
     class SquareCombination : public Combination {
        public:
             /// \brief Constructor.
@@ -91,18 +94,20 @@ namespace amath {
             virtual std::vector<std::size_t> get_ranks(const std::size_t& combination) const;        
     };
 
-    /// \brief Class used to manage all possible ranks' combinations given by a vector of ranks.
-    ///
-    /// \details All combination are given by a superior triangular matrix representation with a size equal to vector
-    /// of ranks. Its representation is the following matrix:
-    ///     \f{eqnarray*}{  
-    ///         \left [ \begin{array}{cccc}
-    ///             (0,0) & (0,1) &  ...  & (0,n-1)
-    ///              na   & (1,1) &  ...  & (1,n-1)
-    ///              na   &  na   & (2,2) & (2,n-1)
-    ///              na   &  na   &  na   & (n-1,n-1) 
-    ///         \end{array} \right ] 
-    ///     \f} 
+    /*!
+     *  \brief Class used to manage all possible ranks' combinations given by a vector of ranks.
+     * 
+     *  \details All combination are given by a superior triangular matrix representation with a size equal to vector
+     *  of ranks. Its representation is the following matrix:
+     *      \f{eqnarray*}{  
+     *          \left [ \begin{array}{cccc}
+     *              (0,0) & (0,1) &  ...  & (0,n-1) \\
+     *               na   & (1,1) &  ...  & (1,n-1) \\
+     *               na   &  na   & (2,2) & (2,n-1) \\
+     *               na   &  na   &  na   & (n-1,n-1) 
+     *          \end{array} \right ] 
+     *      \f}
+     */
     class TriangularCombination : public Combination {
 
         private:
@@ -153,18 +158,20 @@ namespace amath {
             virtual std::vector<std::size_t> get_ranks(const std::size_t& combination) const;           
     };
 
-    /// \brief Class used to manage all possible ranks' combinations given by a vector of ranks.
-    ///
-    /// \details All combination are given by a superior triangular matrix representation with a size equal to vector
-    /// of ranks. The diagonnals terms are excluded. Its representation is the following matrix:
-    ///     \f{eqnarray*}{  
-    ///         \left [ \begin{array}{cccc}
-    ///              na   & (0,1) &  ...  & (0,n-1)
-    ///              na   &  na   &  ...  & (1,n-1)
-    ///              na   &  na   &  na   & (2,n-1)
-    ///              na   &  na   &  na   &  na 
-    ///         \end{array} \right ] 
-    ///     \f} 
+    /*!
+     *  \brief Class used to manage all possible ranks' combinations given by a vector of ranks.
+     * 
+     *  \details All combination are given by a superior triangular matrix representation with a size equal to vector
+     *  of ranks. The diagonnals terms are excluded. Its representation is the following matrix:
+     *      \f{eqnarray*}{  
+     *          \left [ \begin{array}{cccc}
+     *               na   & (0,1) &  ...  & (0,n-1) \\
+     *               na   &  na   &  ...  & (1,n-1) \\
+     *               na   &  na   &  na   & (2,n-1) \\
+     *               na   &  na   &  na   &  na 
+     *          \end{array} \right ] 
+     *      \f}
+     */
     class SuperiorTriangularCombination : public Combination {
         private:
             /// \brief Determine the first combination represented on the p line.
@@ -213,6 +220,5 @@ namespace amath {
             /// \return indices associated to the given combination.
             virtual std::vector<std::size_t> get_ranks(const std::size_t& combination) const;            
     };
-
 
 };
