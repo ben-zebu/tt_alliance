@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <cassert>
 #include <cmath>
 
 #include <iostream>
@@ -71,6 +72,14 @@ void TriangularCombination::set_type(bool on_diag) {
 
 void TriangularCombination::set_cached_size() {
     std::size_t n = ranks.size();
+    
+    // check maximum number represented by std::size_t and compare it to the number of combinations
+    double max_comb = get_type() ? n * (n + 1) / 2 : n * (n - 1) / 2;
+    std::size_t size_max = std::numeric_limits<std::size_t>::max();
+    if (max_comb > size_max) {
+        throw std::runtime_error("Outbound for maximum rank " + std::to_string(n));
+    }
+    
     cached_size = get_type() ? n * (n + 1) / 2 : n * (n - 1) / 2;
 } 
 
@@ -113,6 +122,8 @@ void TriangularCombination::ranks_by_ptr(const std::size_t& combination, combi_r
     std::size_t n = ranks.size();
     std::size_t p = line_for_combination(combination, n);
     std::size_t q = n + combination - combination_for_line(p, n);
-    //std::cout << "p: " << p << " q: " << q << std::endl;
+    if (p >= n || q >= n) {
+        throw std::runtime_error("Undetermined ranks associated to a combination !");
+    }
     oranks = {p, q};
 }
