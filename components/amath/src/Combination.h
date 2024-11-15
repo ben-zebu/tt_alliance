@@ -5,6 +5,7 @@
 
 namespace amath {
 
+    /// \brief Pair of ranks
     using combi_ranks = std::pair<std::size_t, std::size_t>;
 
     /*!
@@ -23,12 +24,13 @@ namespace amath {
         protected:
             /// \brief Vector of ranks.
             std::vector<std::size_t> ranks;
+            /// \brief  The number of possible combinations
             std::size_t cached_size;        
         private:
             /// \brief Function used to order ranks and suppress duplicates.
             void sort_ranks();
-
-            virtual void set_cached_size() { cached_size = ranks.size() * ranks.size(); }
+            /// \brief  Store the number of combinations
+            virtual void set_cached_size() = 0;
 
         public:
             /// \brief Constructor.
@@ -74,6 +76,7 @@ namespace amath {
      */
     class SquareCombination : public Combination {
         private:
+            /// \brief  Store the number of combinations
             virtual void set_cached_size() { cached_size = ranks.size() * ranks.size(); };
 
         public:
@@ -87,11 +90,7 @@ namespace amath {
             /// \param combination Combination to copy.
             SquareCombination& operator=(const SquareCombination& combination);
 
-            /// \brief Return the number of combinations.
-            /// \return Number of combinations.
-            virtual std::size_t size() const { return ranks.size() * ranks.size(); };
-
-            /// \brief Return the combination associated to the given indices.
+            /// \brief Return the combination associated to the given indices..
             /// \param row Row index.
             /// \param column Column index.
             /// \return Combination associated to the given indices.
@@ -106,8 +105,18 @@ namespace amath {
     /*!
      *  \brief Class used to manage all possible ranks' combinations given by a vector of ranks.
      * 
-     *  \details All combination are given by a superior triangular matrix representation with a size equal to vector
-     *  of ranks. Its representation is the following matrix:
+     *  \details All combination are given by a triangular matrix representation with a size equal to vector
+     *  of ranks. The allowed cases are:
+     *   - without diagonnal terms and the following matrix:
+     *      \f{eqnarray*}{  
+     *          \left [ \begin{array}{cccc}
+     *               na   & (0,1) &  ...  & (0,n-1) \\
+     *               na   &  na   &  ...  & (1,n-1) \\
+     *               na   &  na   &  na   & (2,n-1) \\
+     *               na   &  na   &  na   &  na 
+     *          \end{array} \right ] 
+     *      \f}
+     *   - with diagonnal terms and the following matrix:
      *      \f{eqnarray*}{  
      *          \left [ \begin{array}{cccc}
      *              (0,0) & (0,1) &  ...  & (0,n-1) \\
@@ -118,110 +127,57 @@ namespace amath {
      *      \f}
      */
     class TriangularCombination : public Combination {
-
         private:
+            /// \brief  Store the number of combinations
+            void set_cached_size();
 
-            virtual void set_cached_size() { cached_size = ranks.size() * (ranks.size() + 1) / 2; };
-
-            /// \brief Determine the first combination represented on the p line.
+            /// \brief Determine the number of combinations stored in the first \f$ p \f$ lines.
             ///
-            /// \details Return the first combination represented on the p line and based on the following formula:
-            /// \f[ S = \sum_{i=1}^{p} sz +1 - i = \sum_{j=sz+1-p}^{sz} j = \frac{1}{2} p (2sz+1-p) \f]
-            /// with \f$ sz \f$ the size of the vector of ranks.
+            /// \details Determine the number of combinations stored in the first \f$ p \f$ lines based on the 
+            /// following formula:
+            /// \f[ S(p,n) = \sum_{i=0}^{p} d(n) - i = \sum_{j=d(n)-p}^{d(n)} j = \frac{1}{2} (p+1)(2d(n)-p) \f]
+            /// with :
+            ///  - \f$ d(n) = n \f$ if diagonal is set,
+            ///  - \f$ d(n) = n - 1\f$ if diagonal is not set.
+            /// The \f$ d(n) \f$ result is given by function \ref diag_shift()
             /// \param p Number of lines.
-            /// \return First combination represented on the p line.
-            std::size_t combination_for_line(const std::size_t& p) const;
-            /// \brief Determine the line associated to a combination.
-            ///
-            /// \details Return the \f$ p \f$ line associated to the combination \f$ c \f$ such as:
-            /// \f$ S(p) \leq c \leq S(p+1) \f$ where \f$ S(p) \f$ is the first combination represented on the \f$ p \f$ 
-            /// line (see \ref combination_for_line).
-            /// The \f$ p \f$ line is the floor integer associated to the lower root of the following polynom:
-            ///     \f[ p^2 - b.p + 2 c \f]
-            /// with \f$ b = 2 sz + 1 \f$ and \f$ sz \f$ the size of the vector of ranks.
-            /// \param c combination number.
-            /// \return line number associated to the combination c.
-            std::size_t line_for_combination(const std::size_t& c) const;
-
-        public:
-            /// \brief Constructor.
-            /// \param ranks Vector of ranks.
-            TriangularCombination(const std::vector<std::size_t>& ranks) : Combination(ranks) {};
-            /// \brief Copy constructor.
-            /// \param combination Combination to copy.
-            TriangularCombination(const TriangularCombination& combination) : Combination(combination) {};
-            /// \brief Copy constructor.
-            /// \param combination Combination to copy.
-            TriangularCombination& operator=(const TriangularCombination& combination);
-
-            /// \brief Return the number of combinations.
-            /// \return Number of combinations.
-            //virtual std::size_t size() const { return ranks.size() * (ranks.size() + 1) / 2; };
-
-            /// \brief Return the combination associated to the given indices.
-            /// \param row Row index.
-            /// \param column Column index.
-            /// \return Combination associated to the given indices.
-            virtual std::size_t operator()(const std::size_t& row, const std::size_t& column) const;
-
-            /// \brief Return the row and column indices associated to a combination.
-            /// \param combination Combination.
-            /// \return indices associated to the given combination.
-            virtual std::vector<std::size_t> get_ranks(const std::size_t& combination) const;           
-    };
-
-    /*!
-     *  \brief Class used to manage all possible ranks' combinations given by a vector of ranks.
-     * 
-     *  \details All combination are given by a superior triangular matrix representation with a size equal to vector
-     *  of ranks. The diagonnals terms are excluded. Its representation is the following matrix:
-     *      \f{eqnarray*}{  
-     *          \left [ \begin{array}{cccc}
-     *               na   & (0,1) &  ...  & (0,n-1) \\
-     *               na   &  na   &  ...  & (1,n-1) \\
-     *               na   &  na   &  na   & (2,n-1) \\
-     *               na   &  na   &  na   &  na 
-     *          \end{array} \right ] 
-     *      \f}
-     */
-    class SuperiorTriangularCombination : public Combination {
-        private:
-            virtual void set_cached_size() { cached_size = ranks.size() * (ranks.size() - 1) / 2; };
-
-            /// \brief Determine the first combination represented on the p line.
-            ///
-            /// \details Determine the number of combination for \f$ p \f$ lines based on the following formula:
-            /// \f[ S = \sum_{i=1}^{p} sz - i = \sum_{j=sz-p}^{sz} j = \frac{1}{2} p (2sz-1-p) \f]
-            /// with \f$ sz \f$ the size of the vector of ranks.
-            /// \param p Number of lines.
+            /// \param n Number of ranks.
             /// \return First combination represented on the p line.
             constexpr std::size_t combination_for_line(const std::size_t& p, const std::size_t n) const;
             /// \brief Determine the line associated to a combination.
             ///
             /// \details Return the \f$ p \f$ line associated to the combination \f$ c \f$ such as:
-            /// \f$ S(p) \leq c \leq S(p+1) \f$ where \f$ S(p) \f$ is the first combination represented on the \f$ p \f$ 
-            /// line (see \ref combination_for_line).
-            /// The \f$ p \f$ line is the floor integer associated to the lower root of the following polynom:
-            ///     \f[ p^2 - b.p + 2 c \f]
-            /// with \f$ b = 2 sz - 1 \f$ and \f$ sz \f$ the size of the vector of ranks.
+            /// \f$ S(p-1,n) \leq c \leq S(p,n) \f$ where \f$ S(p,n) \f$ gives the number of combination stored in the
+            /// \f$ p \f$ lines (see \ref combination_for_line()).
+            /// The \f$ p \f$ line is the upper integer associated to the lower root of the following polynom:
+            ///     \f[ p^2 + b.p + 2(c+1) \f]
+            /// with \f$ b = 1 +2 d(n) \f$ and \f$ d(n) \f$ the result is given by function \ref diag_shift()
             /// \param c combination number.
+            /// \param n Number of ranks.
             /// \return line number associated to the combination c.
             constexpr std::size_t line_for_combination(const std::size_t& c, const std::size_t n) const;
+
+            /// \brief Booleen parameter used to check if elements are stored on the diagonal of the matrix representation.
+            bool _on_diag_ = false;
+            /// \brief Return the number of elements for the first line in the matrix representation.
+            constexpr std::size_t diag_shift(const std::size_t& n) const { return _on_diag_ ? n : n - 1; }
 
         public:
             /// \brief Constructor.
             /// \param ranks Vector of ranks.
-            SuperiorTriangularCombination(const std::vector<std::size_t>& ranks) : Combination(ranks) {};
+            /// \param on_diag boolean for use or not of the diagonal
+            TriangularCombination(const std::vector<std::size_t>& ranks, bool on_diag = false);
             /// \brief Copy constructor.
             /// \param combination Combination to copy.
-            SuperiorTriangularCombination(const SuperiorTriangularCombination& combination) : Combination(combination) {};
+            /// \param on_diag boolean for use or not of the diagonal
+            TriangularCombination(const TriangularCombination& combination, bool on_diag = false);
             /// \brief Copy constructor.
             /// \param combination Combination to copy.
-            SuperiorTriangularCombination& operator=(const SuperiorTriangularCombination& combination);
-
-            /// \brief Return the number of combinations.
-            /// \return Number of combinations.
-            //virtual std::size_t size() const { return ranks.size() * (ranks.size() - 1) / 2; };
+            TriangularCombination& operator=(const TriangularCombination& combination);
+            /// \brief Set if combinations with same indices for row and column are possible
+            void set_type(bool on_diag);
+            /// \brief Return if combinations with same indices for row and column are possible
+            bool get_type() const { return _on_diag_; }
 
             /// \brief Return the combination associated to the given indices.
             /// \param row Row index.
@@ -233,7 +189,9 @@ namespace amath {
             /// \param combination Combination.
             /// \return indices associated to the given combination.
             virtual std::vector<std::size_t> get_ranks(const std::size_t& combination) const;
-
+            /// \brief Return by pointer the row and column indices associated to a combination.
+            /// \param combination Combination.
+            /// \return indices associated to the given combination.
             void ranks_by_ptr(const std::size_t& combination, combi_ranks& ranks) const;
     };
 

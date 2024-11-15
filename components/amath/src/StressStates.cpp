@@ -1,5 +1,6 @@
 #include <iostream>
 
+#include "GlobalTimer.h"
 #include "StressStates.h"
 
 using namespace amath;
@@ -166,19 +167,16 @@ StressRange CombStressStates::comb_stress_range_ratio(const Combination& explore
     combi_ranks ranks;
     double c1, c2;
     double coef = 1.;
-    //Stress Sr;
+    Stress Sr;
     for (size_t i = 0; i < explorer.size(); i++) {
         explorer.ranks_by_ptr(i, ranks);
-        //std::cout << "comb: " << i << " -> ranks: " << ranks[0] << ", " << ranks[1] << std::endl;
         if (!Temperatures.empty()) {
             c1 = coefficient.get_yvalue(Temperatures[ranks.first]);
             c2 = coefficient.get_yvalue(Temperatures[ranks.second]);
             coef = std::max(c1, c2);
         }
-        // Sr.zero();
-        // Sr += PrimaryStresses[ranks[0]];
-        // Sr -= PrimaryStresses[ranks[1]];
-        Stress Sr = PrimaryStresses[ranks.first] - PrimaryStresses[ranks.second];
+        Sr = PrimaryStresses[ranks.first] - PrimaryStresses[ranks.second];
+        //Stress Sr = PrimaryStresses[ranks.first] - PrimaryStresses[ranks.second];
         _maximum_equivalent_stress_(Sr_max, Sr, coef, ranks);
 
     }
