@@ -55,14 +55,13 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#combination">Combination</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5amath11combi_ranksE"><code class="docutils literal notranslate"><span class="pre">amath::combi_ranks</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5amath11CombinationE"><code class="docutils literal notranslate"><span class="pre">amath::Combination</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5amath17SquareCombinationE"><code class="docutils literal notranslate"><span class="pre">amath::SquareCombination</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5amath21TriangularCombinationE"><code class="docutils literal notranslate"><span class="pre">amath::TriangularCombination</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5amath29SuperiorTriangularCombinationE"><code class="docutils literal notranslate"><span class="pre">amath::SuperiorTriangularCombination</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#stress">Stress</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5amath8Vector6dE"><code class="docutils literal notranslate"><span class="pre">amath::Vector6d</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5amath11STRESS_SIZEE"><code class="docutils literal notranslate"><span class="pre">amath::STRESS_SIZE</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5amath16STRESS_TOLERANCEE"><code class="docutils literal notranslate"><span class="pre">amath::STRESS_TOLERANCE</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5amath6StressE"><code class="docutils literal notranslate"><span class="pre">amath::Stress</span></code></a></li>
@@ -324,7 +323,16 @@
 <dl class="cpp type">
 <dt class="sig sig-object cpp">
 <span class="target" id="namespaceamath"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">amath</span></span></span><br /></dt>
-<dd><dl class="cpp class">
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-typedefs">Typedefs</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath11combi_ranksE">
+<span id="_CPPv3N5amath11combi_ranksE"></span><span id="_CPPv2N5amath11combi_ranksE"></span><span class="target" id="Combination_8h_1a66dac54a02c782d8c7540351f06b2dc3"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">combi_ranks</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N5amath11combi_ranksE" title="Link to this definition"></a><br /></dt>
+<dd><p>Pair of ranks. </p>
+</dd></dl>
+
+</div>
+<dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N5amath11CombinationE">
 <span id="_CPPv3N5amath11CombinationE"></span><span id="_CPPv2N5amath11CombinationE"></span><span id="amath::Combination"></span><span class="target" id="classamath_1_1Combination"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Combination</span></span></span><a class="headerlink" href="#_CPPv4N5amath11CombinationE" title="Link to this definition"></a><br /></dt>
 <dd><div class="docutils container">
@@ -336,7 +344,7 @@
 <li><p>The superior triangular matrix if the expected results between (i, j) ranks is equal to (j, i) ranks and the the combination (i, i) is excluded. </p></li>
 </ul>
 </p>
-<p>Subclassed by <a class="reference internal" href="#classamath_1_1SquareCombination"><span class="std std-ref">amath::SquareCombination</span></a>, <a class="reference internal" href="#classamath_1_1SuperiorTriangularCombination"><span class="std std-ref">amath::SuperiorTriangularCombination</span></a>, <a class="reference internal" href="#classamath_1_1TriangularCombination"><span class="std std-ref">amath::TriangularCombination</span></a></p>
+<p>Subclassed by <a class="reference internal" href="#classamath_1_1SquareCombination"><span class="std std-ref">amath::SquareCombination</span></a>, <a class="reference internal" href="#classamath_1_1TriangularCombination"><span class="std std-ref">amath::TriangularCombination</span></a></p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
@@ -374,7 +382,7 @@
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK5amath11Combination4sizeEv">
-<span id="_CPPv3NK5amath11Combination4sizeEv"></span><span id="_CPPv2NK5amath11Combination4sizeEv"></span><span id="amath::Combination::sizeC"></span><span class="target" id="classamath_1_1Combination_1aec9e2a764c1f662e22a051787060f20c"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">size</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK5amath11Combination4sizeEv" title="Link to this definition"></a><br /></dt>
+<span id="_CPPv3NK5amath11Combination4sizeEv"></span><span id="_CPPv2NK5amath11Combination4sizeEv"></span><span id="amath::Combination::sizeC"></span><span class="target" id="classamath_1_1Combination_1a673aba4351a69d26fafb9001b2b63870"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">size</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath11Combination4sizeEv" title="Link to this definition"></a><br /></dt>
 <dd><p>Return the number of combinations. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -414,6 +422,11 @@
 </dl>
 </dd></dl>
 
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath11Combination12ranks_by_ptrERKNSt6size_tER11combi_ranks">
+<span id="_CPPv3NK5amath11Combination12ranks_by_ptrERKNSt6size_tER11combi_ranks"></span><span id="_CPPv2NK5amath11Combination12ranks_by_ptrERKNSt6size_tER11combi_ranks"></span><span id="amath::Combination::ranks_by_ptr__std::sCR.combi_ranksRC"></span><span class="target" id="classamath_1_1Combination_1a1421952535516c159cb2a141be4c7af8"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ranks_by_ptr</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">combination</span></span>, <a class="reference internal" href="#_CPPv4N5amath11combi_ranksE" title="amath::combi_ranks"><span class="n"><span class="pre">combi_ranks</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">ranks</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK5amath11Combination12ranks_by_ptrERKNSt6size_tER11combi_ranks" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
@@ -423,6 +436,12 @@
 <dd><p>Vector of ranks. </p>
 </dd></dl>
 
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath11Combination11cached_sizeE">
+<span id="_CPPv3N5amath11Combination11cached_sizeE"></span><span id="_CPPv2N5amath11Combination11cached_sizeE"></span><span id="amath::Combination::cached_size__std::s"></span><span class="target" id="classamath_1_1Combination_1ad781e1cea561fe3e85bab840e7bb6b60"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cached_size</span></span></span><a class="headerlink" href="#_CPPv4N5amath11Combination11cached_sizeE" title="Link to this definition"></a><br /></dt>
+<dd><p>The number of possible combinations. </p>
+</dd></dl>
+
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-functions">Private Functions</p>
@@ -430,6 +449,12 @@
 <dt class="sig sig-object cpp" id="_CPPv4N5amath11Combination10sort_ranksEv">
 <span id="_CPPv3N5amath11Combination10sort_ranksEv"></span><span id="_CPPv2N5amath11Combination10sort_ranksEv"></span><span id="amath::Combination::sort_ranks"></span><span class="target" id="classamath_1_1Combination_1a29e501a2bd4d548bf868b7f5ca9bd4b1"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sort_ranks</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath11Combination10sort_ranksEv" title="Link to this definition"></a><br /></dt>
 <dd><p>Function used to order ranks and suppress duplicates. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath11Combination15set_cached_sizeEv">
+<span id="_CPPv3N5amath11Combination15set_cached_sizeEv"></span><span id="_CPPv2N5amath11Combination15set_cached_sizeEv"></span><span id="amath::Combination::set_cached_size"></span><span class="target" id="classamath_1_1Combination_1a2c77f2864535e931ee05250dfc349820"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_cached_size</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5amath11Combination15set_cached_sizeEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Store the number of combinations. </p>
 </dd></dl>
 
 </div>
@@ -480,20 +505,9 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK5amath17SquareCombination4sizeEv">
-<span id="_CPPv3NK5amath17SquareCombination4sizeEv"></span><span id="_CPPv2NK5amath17SquareCombination4sizeEv"></span><span id="amath::SquareCombination::sizeC"></span><span class="target" id="classamath_1_1SquareCombination_1a92793628d82680711c35ad4b1e8ee88c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">size</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath17SquareCombination4sizeEv" title="Link to this definition"></a><br /></dt>
-<dd><p>Return the number of combinations. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Number of combinations. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK5amath17SquareCombinationclERKNSt6size_tERKNSt6size_tE">
 <span id="_CPPv3NK5amath17SquareCombinationclERKNSt6size_tERKNSt6size_tE"></span><span id="_CPPv2NK5amath17SquareCombinationclERKNSt6size_tERKNSt6size_tE"></span><span id="amath::SquareCombination::call-operator__std::sCR.std::sCRC"></span><span class="target" id="classamath_1_1SquareCombination_1a3c1cd3e5419fbb4d6fcbebe302f8c303"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">()</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">row</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">column</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath17SquareCombinationclERKNSt6size_tERKNSt6size_tE" title="Link to this definition"></a><br /></dt>
-<dd><p>Return the combination associated to the given indices. </p>
+<dd><p>Return the combination associated to the given indices.. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -522,6 +536,15 @@
 </dd></dl>
 
 </div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-functions">Private Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath17SquareCombination15set_cached_sizeEv">
+<span id="_CPPv3N5amath17SquareCombination15set_cached_sizeEv"></span><span id="_CPPv2N5amath17SquareCombination15set_cached_sizeEv"></span><span id="amath::SquareCombination::set_cached_size"></span><span class="target" id="classamath_1_1SquareCombination_1a9c290e25754988ef2ac56fe92f799c18"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_cached_size</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath17SquareCombination15set_cached_sizeEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Store the number of combinations. </p>
+</dd></dl>
+
+</div>
 </dd></dl>
 
 <dl class="cpp class">
@@ -530,29 +553,41 @@
 <dd><div class="docutils container">
 <em>#include &lt;Combination.h&gt;</em></div>
 <p>Class used to manage all possible ranks’ combinations given by a vector of ranks. </p>
-<p>All combination are given by a superior triangular matrix representation with a size equal to vector of ranks. Its representation is the following matrix: <div class="math notranslate nohighlight">
+<p>All combination are given by a triangular matrix representation with a size equal to vector of ranks. The allowed cases are:<ul class="simple">
+<li><p>without diagonnal terms and the following matrix: <div class="math notranslate nohighlight">
+\[\begin{split}\begin{eqnarray*} \left [ \begin{array}{cccc} na &amp; (0,1) &amp; ... &amp; (0,n-1) \\ na &amp; na &amp; ... &amp; (1,n-1) \\ na &amp; na &amp; na &amp; (2,n-1) \\ na &amp; na &amp; na &amp; na \end{array} \right ] \end{eqnarray*}\end{split}\]</div>
+</p></li>
+<li><p>with diagonnal terms and the following matrix: <div class="math notranslate nohighlight">
 \[\begin{split}\begin{eqnarray*} \left [ \begin{array}{cccc} (0,0) &amp; (0,1) &amp; ... &amp; (0,n-1) \\ na &amp; (1,1) &amp; ... &amp; (1,n-1) \\ na &amp; na &amp; (2,2) &amp; (2,n-1) \\ na &amp; na &amp; na &amp; (n-1,n-1) \end{array} \right ] \end{eqnarray*}\end{split}\]</div>
+</p></li>
+</ul>
 </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N5amath21TriangularCombination21TriangularCombinationERKNSt6vectorINSt6size_tEEE">
-<span id="_CPPv3N5amath21TriangularCombination21TriangularCombinationERKNSt6vectorINSt6size_tEEE"></span><span id="_CPPv2N5amath21TriangularCombination21TriangularCombinationERKNSt6vectorINSt6size_tEEE"></span><span id="amath::TriangularCombination::TriangularCombination__std::vector:std::s:CR"></span><span class="target" id="classamath_1_1TriangularCombination_1a94e6a262c6acbd68e79c0c9350eb8a2e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TriangularCombination</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">ranks</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath21TriangularCombination21TriangularCombinationERKNSt6vectorINSt6size_tEEE" title="Link to this definition"></a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N5amath21TriangularCombination21TriangularCombinationERKNSt6vectorINSt6size_tEEEb">
+<span id="_CPPv3N5amath21TriangularCombination21TriangularCombinationERKNSt6vectorINSt6size_tEEEb"></span><span id="_CPPv2N5amath21TriangularCombination21TriangularCombinationERKNSt6vectorINSt6size_tEEEb"></span><span id="amath::TriangularCombination::TriangularCombination__std::vector:std::s:CR.b"></span><span class="target" id="classamath_1_1TriangularCombination_1ae933260131030e9efc50205d3cc76502"></span><span class="sig-name descname"><span class="n"><span class="pre">TriangularCombination</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">ranks</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">on_diag</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath21TriangularCombination21TriangularCombinationERKNSt6vectorINSt6size_tEEEb" title="Link to this definition"></a><br /></dt>
 <dd><p>Constructor. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>ranks</strong> – Vector of ranks. </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ranks</strong> – Vector of ranks. </p></li>
+<li><p><strong>on_diag</strong> – boolean for use or not of the diagonal </p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N5amath21TriangularCombination21TriangularCombinationERK21TriangularCombination">
-<span id="_CPPv3N5amath21TriangularCombination21TriangularCombinationERK21TriangularCombination"></span><span id="_CPPv2N5amath21TriangularCombination21TriangularCombinationERK21TriangularCombination"></span><span id="amath::TriangularCombination::TriangularCombination__TriangularCombinationCR"></span><span class="target" id="classamath_1_1TriangularCombination_1aae5b491afaf38c1506cae8c712487fe9"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TriangularCombination</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath21TriangularCombination21TriangularCombinationERK21TriangularCombination" title="amath::TriangularCombination::TriangularCombination"><span class="n"><span class="pre">TriangularCombination</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">combination</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath21TriangularCombination21TriangularCombinationERK21TriangularCombination" title="Link to this definition"></a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N5amath21TriangularCombination21TriangularCombinationERK21TriangularCombinationb">
+<span id="_CPPv3N5amath21TriangularCombination21TriangularCombinationERK21TriangularCombinationb"></span><span id="_CPPv2N5amath21TriangularCombination21TriangularCombinationERK21TriangularCombinationb"></span><span id="amath::TriangularCombination::TriangularCombination__TriangularCombinationCR.b"></span><span class="target" id="classamath_1_1TriangularCombination_1ac9536e1f9ad506ecaabcfa79beb4cbd8"></span><span class="sig-name descname"><span class="n"><span class="pre">TriangularCombination</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath21TriangularCombination21TriangularCombinationERK21TriangularCombinationb" title="amath::TriangularCombination::TriangularCombination"><span class="n"><span class="pre">TriangularCombination</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">combination</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">on_diag</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath21TriangularCombination21TriangularCombinationERK21TriangularCombinationb" title="Link to this definition"></a><br /></dt>
 <dd><p>Copy constructor. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>combination</strong> – <a class="reference internal" href="#classamath_1_1Combination"><span class="std std-ref">Combination</span></a> to copy. </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>combination</strong> – <a class="reference internal" href="#classamath_1_1Combination"><span class="std std-ref">Combination</span></a> to copy. </p></li>
+<li><p><strong>on_diag</strong> – boolean for use or not of the diagonal </p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -569,14 +604,15 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK5amath21TriangularCombination4sizeEv">
-<span id="_CPPv3NK5amath21TriangularCombination4sizeEv"></span><span id="_CPPv2NK5amath21TriangularCombination4sizeEv"></span><span id="amath::TriangularCombination::sizeC"></span><span class="target" id="classamath_1_1TriangularCombination_1a8de82d297f4093d09298d92664e39195"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">size</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath21TriangularCombination4sizeEv" title="Link to this definition"></a><br /></dt>
-<dd><p>Return the number of combinations. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Number of combinations. </p>
-</dd>
-</dl>
+<dt class="sig sig-object cpp" id="_CPPv4N5amath21TriangularCombination8set_typeEb">
+<span id="_CPPv3N5amath21TriangularCombination8set_typeEb"></span><span id="_CPPv2N5amath21TriangularCombination8set_typeEb"></span><span id="amath::TriangularCombination::set_type__b"></span><span class="target" id="classamath_1_1TriangularCombination_1a28b25d11617a8ad75ebbad8b8a49e677"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_type</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">on_diag</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath21TriangularCombination8set_typeEb" title="Link to this definition"></a><br /></dt>
+<dd><p>Set if combinations with same indices for row and column are possible. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath21TriangularCombination8get_typeEv">
+<span id="_CPPv3NK5amath21TriangularCombination8get_typeEv"></span><span id="_CPPv2NK5amath21TriangularCombination8get_typeEv"></span><span id="amath::TriangularCombination::get_typeC"></span><span class="target" id="classamath_1_1TriangularCombination_1a29add926fcff598cb2cc97084a9e6d4d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_type</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath21TriangularCombination8get_typeEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Return if combinations with same indices for row and column are possible. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -610,122 +646,10 @@
 </dl>
 </dd></dl>
 
-</div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-functions">Private Functions</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK5amath21TriangularCombination20combination_for_lineERKNSt6size_tE">
-<span id="_CPPv3NK5amath21TriangularCombination20combination_for_lineERKNSt6size_tE"></span><span id="_CPPv2NK5amath21TriangularCombination20combination_for_lineERKNSt6size_tE"></span><span id="amath::TriangularCombination::combination_for_line__std::sCRC"></span><span class="target" id="classamath_1_1TriangularCombination_1a8f837122506700f0352bdbbec0231a40"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">combination_for_line</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath21TriangularCombination20combination_for_lineERKNSt6size_tE" title="Link to this definition"></a><br /></dt>
-<dd><p>Determine the first combination represented on the p line. </p>
-<p>Return the first combination represented on the p line and based on the following formula: <div class="math notranslate nohighlight">
-\[ S = \sum_{i=1}^{p} sz +1 - i = \sum_{j=sz+1-p}^{sz} j = \frac{1}{2} p (2sz+1-p) \]</div>
- with <span class="math notranslate nohighlight">\( sz \)</span> the size of the vector of ranks. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>p</strong> – Number of lines. </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>First combination represented on the p line. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK5amath21TriangularCombination20line_for_combinationERKNSt6size_tE">
-<span id="_CPPv3NK5amath21TriangularCombination20line_for_combinationERKNSt6size_tE"></span><span id="_CPPv2NK5amath21TriangularCombination20line_for_combinationERKNSt6size_tE"></span><span id="amath::TriangularCombination::line_for_combination__std::sCRC"></span><span class="target" id="classamath_1_1TriangularCombination_1a74e4888e45b5cf9f7a49f32aaaa09da7"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">line_for_combination</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath21TriangularCombination20line_for_combinationERKNSt6size_tE" title="Link to this definition"></a><br /></dt>
-<dd><p>Determine the line associated to a combination. </p>
-<p>Return the <span class="math notranslate nohighlight">\( p \)</span> line associated to the combination <span class="math notranslate nohighlight">\( c \)</span> such as: <span class="math notranslate nohighlight">\( S(p) \leq c \leq S(p+1) \)</span> where <span class="math notranslate nohighlight">\( S(p) \)</span> is the first combination represented on the <span class="math notranslate nohighlight">\( p \)</span> line (see combination_for_line). The <span class="math notranslate nohighlight">\( p \)</span> line is the floor integer associated to the lower root of the following polynom: <div class="math notranslate nohighlight">
-\[ p^2 - b.p + 2 c \]</div>
- with <span class="math notranslate nohighlight">\( b = 2 sz + 1 \)</span> and <span class="math notranslate nohighlight">\( sz \)</span> the size of the vector of ranks. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>c</strong> – combination number. </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>line number associated to the combination c. </p>
-</dd>
-</dl>
-</dd></dl>
-
-</div>
-</dd></dl>
-
-<dl class="cpp class">
-<dt class="sig sig-object cpp" id="_CPPv4N5amath29SuperiorTriangularCombinationE">
-<span id="_CPPv3N5amath29SuperiorTriangularCombinationE"></span><span id="_CPPv2N5amath29SuperiorTriangularCombinationE"></span><span id="amath::SuperiorTriangularCombination"></span><span class="target" id="classamath_1_1SuperiorTriangularCombination"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SuperiorTriangularCombination</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv45amath" title="amath"><span class="n"><span class="pre">amath</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5amath11CombinationE" title="amath::Combination"><span class="n"><span class="pre">Combination</span></span></a><a class="headerlink" href="#_CPPv4N5amath29SuperiorTriangularCombinationE" title="Link to this definition"></a><br /></dt>
-<dd><div class="docutils container">
-<em>#include &lt;Combination.h&gt;</em></div>
-<p>Class used to manage all possible ranks’ combinations given by a vector of ranks. </p>
-<p>All combination are given by a superior triangular matrix representation with a size equal to vector of ranks. The diagonnals terms are excluded. Its representation is the following matrix: <div class="math notranslate nohighlight">
-\[\begin{split}\begin{eqnarray*} \left [ \begin{array}{cccc} na &amp; (0,1) &amp; ... &amp; (0,n-1) \\ na &amp; na &amp; ... &amp; (1,n-1) \\ na &amp; na &amp; na &amp; (2,n-1) \\ na &amp; na &amp; na &amp; na \end{array} \right ] \end{eqnarray*}\end{split}\]</div>
-</p>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N5amath29SuperiorTriangularCombination29SuperiorTriangularCombinationERKNSt6vectorINSt6size_tEEE">
-<span id="_CPPv3N5amath29SuperiorTriangularCombination29SuperiorTriangularCombinationERKNSt6vectorINSt6size_tEEE"></span><span id="_CPPv2N5amath29SuperiorTriangularCombination29SuperiorTriangularCombinationERKNSt6vectorINSt6size_tEEE"></span><span id="amath::SuperiorTriangularCombination::SuperiorTriangularCombination__std::vector:std::s:CR"></span><span class="target" id="classamath_1_1SuperiorTriangularCombination_1a648ac358f5d90d6ecec2277d3dca2577"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SuperiorTriangularCombination</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">ranks</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath29SuperiorTriangularCombination29SuperiorTriangularCombinationERKNSt6vectorINSt6size_tEEE" title="Link to this definition"></a><br /></dt>
-<dd><p>Constructor. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>ranks</strong> – Vector of ranks. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N5amath29SuperiorTriangularCombination29SuperiorTriangularCombinationERK29SuperiorTriangularCombination">
-<span id="_CPPv3N5amath29SuperiorTriangularCombination29SuperiorTriangularCombinationERK29SuperiorTriangularCombination"></span><span id="_CPPv2N5amath29SuperiorTriangularCombination29SuperiorTriangularCombinationERK29SuperiorTriangularCombination"></span><span id="amath::SuperiorTriangularCombination::SuperiorTriangularCombination__SuperiorTriangularCombinationCR"></span><span class="target" id="classamath_1_1SuperiorTriangularCombination_1ace87a3eb21fd147bfa0b707f05a3b969"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SuperiorTriangularCombination</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath29SuperiorTriangularCombination29SuperiorTriangularCombinationERK29SuperiorTriangularCombination" title="amath::SuperiorTriangularCombination::SuperiorTriangularCombination"><span class="n"><span class="pre">SuperiorTriangularCombination</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">combination</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath29SuperiorTriangularCombination29SuperiorTriangularCombinationERK29SuperiorTriangularCombination" title="Link to this definition"></a><br /></dt>
-<dd><p>Copy constructor. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>combination</strong> – <a class="reference internal" href="#classamath_1_1Combination"><span class="std std-ref">Combination</span></a> to copy. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N5amath29SuperiorTriangularCombinationaSERK29SuperiorTriangularCombination">
-<span id="_CPPv3N5amath29SuperiorTriangularCombinationaSERK29SuperiorTriangularCombination"></span><span id="_CPPv2N5amath29SuperiorTriangularCombinationaSERK29SuperiorTriangularCombination"></span><span id="amath::SuperiorTriangularCombination::assign-operator__SuperiorTriangularCombinationCR"></span><span class="target" id="classamath_1_1SuperiorTriangularCombination_1a2f88f87761c6db6d7d699b798192dca5"></span><a class="reference internal" href="#_CPPv4N5amath29SuperiorTriangularCombinationE" title="amath::SuperiorTriangularCombination"><span class="n"><span class="pre">SuperiorTriangularCombination</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath29SuperiorTriangularCombinationE" title="amath::SuperiorTriangularCombination"><span class="n"><span class="pre">SuperiorTriangularCombination</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">combination</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath29SuperiorTriangularCombinationaSERK29SuperiorTriangularCombination" title="Link to this definition"></a><br /></dt>
-<dd><p>Copy constructor. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>combination</strong> – <a class="reference internal" href="#classamath_1_1Combination"><span class="std std-ref">Combination</span></a> to copy. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK5amath29SuperiorTriangularCombination4sizeEv">
-<span id="_CPPv3NK5amath29SuperiorTriangularCombination4sizeEv"></span><span id="_CPPv2NK5amath29SuperiorTriangularCombination4sizeEv"></span><span id="amath::SuperiorTriangularCombination::sizeC"></span><span class="target" id="classamath_1_1SuperiorTriangularCombination_1ab23b6d9805e4419e9afec6b0db56c3da"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">size</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath29SuperiorTriangularCombination4sizeEv" title="Link to this definition"></a><br /></dt>
-<dd><p>Return the number of combinations. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Number of combinations. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK5amath29SuperiorTriangularCombinationclERKNSt6size_tERKNSt6size_tE">
-<span id="_CPPv3NK5amath29SuperiorTriangularCombinationclERKNSt6size_tERKNSt6size_tE"></span><span id="_CPPv2NK5amath29SuperiorTriangularCombinationclERKNSt6size_tERKNSt6size_tE"></span><span id="amath::SuperiorTriangularCombination::call-operator__std::sCR.std::sCRC"></span><span class="target" id="classamath_1_1SuperiorTriangularCombination_1a19432b822f82c8d0f6d0ef01c0c6acae"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">()</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">row</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">column</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath29SuperiorTriangularCombinationclERKNSt6size_tERKNSt6size_tE" title="Link to this definition"></a><br /></dt>
-<dd><p>Return the combination associated to the given indices. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>row</strong> – Row index. </p></li>
-<li><p><strong>column</strong> – Column index. </p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#classamath_1_1Combination"><span class="std std-ref">Combination</span></a> associated to the given indices. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK5amath29SuperiorTriangularCombination9get_ranksERKNSt6size_tE">
-<span id="_CPPv3NK5amath29SuperiorTriangularCombination9get_ranksERKNSt6size_tE"></span><span id="_CPPv2NK5amath29SuperiorTriangularCombination9get_ranksERKNSt6size_tE"></span><span id="amath::SuperiorTriangularCombination::get_ranks__std::sCRC"></span><span class="target" id="classamath_1_1SuperiorTriangularCombination_1ac32068b393c40887b6dd29062395da26"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_ranks</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">combination</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath29SuperiorTriangularCombination9get_ranksERKNSt6size_tE" title="Link to this definition"></a><br /></dt>
-<dd><p>Return the row and column indices associated to a combination. </p>
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath21TriangularCombination12ranks_by_ptrERKNSt6size_tER11combi_ranks">
+<span id="_CPPv3NK5amath21TriangularCombination12ranks_by_ptrERKNSt6size_tER11combi_ranks"></span><span id="_CPPv2NK5amath21TriangularCombination12ranks_by_ptrERKNSt6size_tER11combi_ranks"></span><span id="amath::TriangularCombination::ranks_by_ptr__std::sCR.combi_ranksRC"></span><span class="target" id="classamath_1_1TriangularCombination_1a50b0d3f1c4197ed225edef9fde2acbf6"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ranks_by_ptr</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">combination</span></span>, <a class="reference internal" href="#_CPPv4N5amath11combi_ranksE" title="amath::combi_ranks"><span class="n"><span class="pre">combi_ranks</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">ranks</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath21TriangularCombination12ranks_by_ptrERKNSt6size_tER11combi_ranks" title="Link to this definition"></a><br /></dt>
+<dd><p>Return by pointer the row and column indices associated to a combination. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>combination</strong> – <a class="reference internal" href="#classamath_1_1Combination"><span class="std std-ref">Combination</span></a>. </p>
@@ -740,15 +664,28 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-functions">Private Functions</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK5amath29SuperiorTriangularCombination20combination_for_lineERKNSt6size_tE">
-<span id="_CPPv3NK5amath29SuperiorTriangularCombination20combination_for_lineERKNSt6size_tE"></span><span id="_CPPv2NK5amath29SuperiorTriangularCombination20combination_for_lineERKNSt6size_tE"></span><span id="amath::SuperiorTriangularCombination::combination_for_line__std::sCRC"></span><span class="target" id="classamath_1_1SuperiorTriangularCombination_1a77e95c14834eec90a8cc4ec74b8c319d"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">combination_for_line</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath29SuperiorTriangularCombination20combination_for_lineERKNSt6size_tE" title="Link to this definition"></a><br /></dt>
-<dd><p>Determine the first combination represented on the p line. </p>
-<p>Determine the number of combination for <span class="math notranslate nohighlight">\( p \)</span> lines based on the following formula: <div class="math notranslate nohighlight">
-\[ S = \sum_{i=1}^{p} sz - i = \sum_{j=sz-p}^{sz} j = \frac{1}{2} p (2sz-1-p) \]</div>
- with <span class="math notranslate nohighlight">\( sz \)</span> the size of the vector of ranks. </p>
+<dt class="sig sig-object cpp" id="_CPPv4N5amath21TriangularCombination15set_cached_sizeEv">
+<span id="_CPPv3N5amath21TriangularCombination15set_cached_sizeEv"></span><span id="_CPPv2N5amath21TriangularCombination15set_cached_sizeEv"></span><span id="amath::TriangularCombination::set_cached_size"></span><span class="target" id="classamath_1_1TriangularCombination_1a63d53d30613c0ec2b44f9ad5b5632c66"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_cached_size</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath21TriangularCombination15set_cached_sizeEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Store the number of combinations. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath21TriangularCombination20combination_for_lineERKNSt6size_tEKNSt6size_tE">
+<span id="_CPPv3NK5amath21TriangularCombination20combination_for_lineERKNSt6size_tEKNSt6size_tE"></span><span id="_CPPv2NK5amath21TriangularCombination20combination_for_lineERKNSt6size_tEKNSt6size_tE"></span><span id="amath::TriangularCombination::combination_for_line__std::sCR.std::sCCCE"></span><span class="target" id="classamath_1_1TriangularCombination_1a23c20eadd8be0471f3e748fe4efc20a8"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">combination_for_line</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">n</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath21TriangularCombination20combination_for_lineERKNSt6size_tEKNSt6size_tE" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine the number of combinations stored in the first <span class="math notranslate nohighlight">\( p \)</span> lines. </p>
+<p>Determine the number of combinations stored in the first <span class="math notranslate nohighlight">\( p \)</span> lines based on the following formula: <div class="math notranslate nohighlight">
+\[ S(p,n) = \sum_{i=0}^{p} d(n) - i = \sum_{j=d(n)-p}^{d(n)} j = \frac{1}{2} (p+1)(2d(n)-p) \]</div>
+ with :<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( d(n) = n \)</span> if diagonal is set,</p></li>
+<li><p><span class="math notranslate nohighlight">\( d(n) = n - 1\)</span> if diagonal is not set. The <span class="math notranslate nohighlight">\( d(n) \)</span> result is given by function diag_shift() </p></li>
+</ul>
+</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>p</strong> – Number of lines. </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> – Number of lines. </p></li>
+<li><p><strong>n</strong> – Number of ranks. </p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>First combination represented on the p line. </p>
@@ -757,20 +694,38 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK5amath29SuperiorTriangularCombination20line_for_combinationERKNSt6size_tE">
-<span id="_CPPv3NK5amath29SuperiorTriangularCombination20line_for_combinationERKNSt6size_tE"></span><span id="_CPPv2NK5amath29SuperiorTriangularCombination20line_for_combinationERKNSt6size_tE"></span><span id="amath::SuperiorTriangularCombination::line_for_combination__std::sCRC"></span><span class="target" id="classamath_1_1SuperiorTriangularCombination_1a73244cd40672c36199aca0c88ea7a3bf"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">line_for_combination</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath29SuperiorTriangularCombination20line_for_combinationERKNSt6size_tE" title="Link to this definition"></a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath21TriangularCombination20line_for_combinationERKNSt6size_tEKNSt6size_tE">
+<span id="_CPPv3NK5amath21TriangularCombination20line_for_combinationERKNSt6size_tEKNSt6size_tE"></span><span id="_CPPv2NK5amath21TriangularCombination20line_for_combinationERKNSt6size_tEKNSt6size_tE"></span><span id="amath::TriangularCombination::line_for_combination__std::sCR.std::sCCCE"></span><span class="target" id="classamath_1_1TriangularCombination_1a8c03b44e4e11fd8466746c62e59cdce6"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">line_for_combination</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">n</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath21TriangularCombination20line_for_combinationERKNSt6size_tEKNSt6size_tE" title="Link to this definition"></a><br /></dt>
 <dd><p>Determine the line associated to a combination. </p>
-<p>Return the <span class="math notranslate nohighlight">\( p \)</span> line associated to the combination <span class="math notranslate nohighlight">\( c \)</span> such as: <span class="math notranslate nohighlight">\( S(p) \leq c \leq S(p+1) \)</span> where <span class="math notranslate nohighlight">\( S(p) \)</span> is the first combination represented on the <span class="math notranslate nohighlight">\( p \)</span> line (see combination_for_line). The <span class="math notranslate nohighlight">\( p \)</span> line is the floor integer associated to the lower root of the following polynom: <div class="math notranslate nohighlight">
-\[ p^2 - b.p + 2 c \]</div>
- with <span class="math notranslate nohighlight">\( b = 2 sz - 1 \)</span> and <span class="math notranslate nohighlight">\( sz \)</span> the size of the vector of ranks. </p>
+<p>Return the <span class="math notranslate nohighlight">\( p \)</span> line associated to the combination <span class="math notranslate nohighlight">\( c \)</span> such as: <span class="math notranslate nohighlight">\( S(p-1,n) \leq c \leq S(p,n) \)</span> where <span class="math notranslate nohighlight">\( S(p,n) \)</span> gives the number of combination stored in the <span class="math notranslate nohighlight">\( p \)</span> lines (see combination_for_line()). The <span class="math notranslate nohighlight">\( p \)</span> line is the upper integer associated to the lower root of the following polynom: <div class="math notranslate nohighlight">
+\[ p^2 + b.p + 2(c+1) \]</div>
+ with <span class="math notranslate nohighlight">\( b = 1 +2 d(n) \)</span> and <span class="math notranslate nohighlight">\( d(n) \)</span> the result is given by function diag_shift() </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>c</strong> – combination number. </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>c</strong> – combination number. </p></li>
+<li><p><strong>n</strong> – Number of ranks. </p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>line number associated to the combination c. </p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath21TriangularCombination10diag_shiftERKNSt6size_tE">
+<span id="_CPPv3NK5amath21TriangularCombination10diag_shiftERKNSt6size_tE"></span><span id="_CPPv2NK5amath21TriangularCombination10diag_shiftERKNSt6size_tE"></span><span id="amath::TriangularCombination::diag_shift__std::sCRCCE"></span><span class="target" id="classamath_1_1TriangularCombination_1a1eddd83aac1483450f0eb6f11fc49438"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">diag_shift</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">n</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath21TriangularCombination10diag_shiftERKNSt6size_tE" title="Link to this definition"></a><br /></dt>
+<dd><p>Return the number of elements for the first line in the matrix representation. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath21TriangularCombination9_on_diag_E">
+<span id="_CPPv3N5amath21TriangularCombination9_on_diag_E"></span><span id="_CPPv2N5amath21TriangularCombination9_on_diag_E"></span><span id="amath::TriangularCombination::_on_diag___b"></span><span class="target" id="classamath_1_1TriangularCombination_1acecb1ffd692c0d70ed5a70738e1b7366"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_on_diag_</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N5amath21TriangularCombination9_on_diag_E" title="Link to this definition"></a><br /></dt>
+<dd><p>Booleen parameter used to check if elements are stored on the diagonal of the matrix representation. </p>
 </dd></dl>
 
 </div>
@@ -785,19 +740,10 @@
 <dt class="sig sig-object cpp">
 <span class="target" id="namespaceamath"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">amath</span></span></span><br /></dt>
 <dd><div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric" id="breathe-section-title-typedefs">Typedefs</p>
-<dl class="cpp type">
-<dt class="sig sig-object cpp" id="_CPPv4N5amath8Vector6dE">
-<span id="_CPPv3N5amath8Vector6dE"></span><span id="_CPPv2N5amath8Vector6dE"></span><span class="target" id="Stress_8h_1a1cae30683f5843bb1c870838505fcc9b"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Vector6d</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Matrix</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath11STRESS_SIZEE" title="amath::STRESS_SIZE"><span class="n"><span class="pre">STRESS_SIZE</span></span></a><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N5amath8Vector6dE" title="Link to this definition"></a><br /></dt>
-<dd><p>Represents a 6-dimensional vector of double values based on Eigen library. </p>
-</dd></dl>
-
-</div>
-<div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-variables">Variables</p>
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N5amath11STRESS_SIZEE">
-<span id="_CPPv3N5amath11STRESS_SIZEE"></span><span id="_CPPv2N5amath11STRESS_SIZEE"></span><span id="amath::STRESS_SIZE__s"></span><span class="target" id="Stress_8h_1a8400898851ca5db82c4374dbc6fcaa93"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">STRESS_SIZE</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">6</span></span><a class="headerlink" href="#_CPPv4N5amath11STRESS_SIZEE" title="Link to this definition"></a><br /></dt>
+<span id="_CPPv3N5amath11STRESS_SIZEE"></span><span id="_CPPv2N5amath11STRESS_SIZEE"></span><span id="amath::STRESS_SIZE__std::s"></span><span class="target" id="Stress_8h_1a0c63c3aad0eab4422a2a196f671cd76f"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">STRESS_SIZE</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">6</span></span><a class="headerlink" href="#_CPPv4N5amath11STRESS_SIZEE" title="Link to this definition"></a><br /></dt>
 <dd><p><a class="reference internal" href="#classamath_1_1Stress"><span class="std std-ref">Stress</span></a> tensor size: 6 components (3D tensor) are stored in a vector. </p>
 </dd></dl>
 
@@ -824,8 +770,8 @@
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N5amath6Stress6StressERK8Vector6d">
-<span id="_CPPv3N5amath6Stress6StressERK8Vector6d"></span><span id="_CPPv2N5amath6Stress6StressERK8Vector6d"></span><span id="amath::Stress::Stress__Vector6dCR"></span><span class="target" id="classamath_1_1Stress_1a54171a941862f3b49fdccf1d2078737c"></span><span class="sig-name descname"><span class="n"><span class="pre">Stress</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath8Vector6dE" title="amath::Vector6d"><span class="n"><span class="pre">Vector6d</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">components</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath6Stress6StressERK8Vector6d" title="Link to this definition"></a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N5amath6Stress6StressERKNSt5arrayId11STRESS_SIZEEE">
+<span id="_CPPv3N5amath6Stress6StressERKNSt5arrayId11STRESS_SIZEEE"></span><span id="_CPPv2N5amath6Stress6StressERKNSt5arrayId11STRESS_SIZEEE"></span><span id="amath::Stress::Stress__std::array:double.STRESS_SIZE:CR"></span><span class="target" id="classamath_1_1Stress_1af39318e9d77608dfbbcfc311a135b808"></span><span class="sig-name descname"><span class="n"><span class="pre">Stress</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath11STRESS_SIZEE" title="amath::STRESS_SIZE"><span class="n"><span class="pre">STRESS_SIZE</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">components</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath6Stress6StressERKNSt5arrayId11STRESS_SIZEEE" title="Link to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
@@ -834,8 +780,8 @@
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N5amath6Stress6StressERKNSt16initializer_listIdEE">
-<span id="_CPPv3N5amath6Stress6StressERKNSt16initializer_listIdEE"></span><span id="_CPPv2N5amath6Stress6StressERKNSt16initializer_listIdEE"></span><span id="amath::Stress::Stress__std::initializer_list:double:CR"></span><span class="target" id="classamath_1_1Stress_1ae3f636b671f3818aa10e8cddd3779a9c"></span><span class="sig-name descname"><span class="n"><span class="pre">Stress</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">initializer_list</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">components</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath6Stress6StressERKNSt16initializer_listIdEE" title="Link to this definition"></a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N5amath6Stress6StressERKNSt6vectorIdEE">
+<span id="_CPPv3N5amath6Stress6StressERKNSt6vectorIdEE"></span><span id="_CPPv2N5amath6Stress6StressERKNSt6vectorIdEE"></span><span id="amath::Stress::Stress__std::vector:double:CR"></span><span class="target" id="classamath_1_1Stress_1ab27749a973315feb9b42c75e6f6bbf20"></span><span class="sig-name descname"><span class="n"><span class="pre">Stress</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">components</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath6Stress6StressERKNSt6vectorIdEE" title="Link to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
@@ -856,18 +802,34 @@
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath6Stress4zeroEv">
+<span id="_CPPv3N5amath6Stress4zeroEv"></span><span id="_CPPv2N5amath6Stress4zeroEv"></span><span id="amath::Stress::zero"></span><span class="target" id="classamath_1_1Stress_1a8df65b29a5975250633173a880bca47a"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">zero</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath6Stress4zeroEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Set all stress components to zero. </p>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK5amath6Stress18principal_stressesEv">
-<span id="_CPPv3NK5amath6Stress18principal_stressesEv"></span><span id="_CPPv2NK5amath6Stress18principal_stressesEv"></span><span id="amath::Stress::principal_stressesC"></span><span class="target" id="classamath_1_1Stress_1ac100870654701ce0cc30f44c43cc68b3"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">principal_stresses</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath6Stress18principal_stressesEv" title="Link to this definition"></a><br /></dt>
+<span id="_CPPv3NK5amath6Stress18principal_stressesEv"></span><span id="_CPPv2NK5amath6Stress18principal_stressesEv"></span><span id="amath::Stress::principal_stressesC"></span><span class="target" id="classamath_1_1Stress_1a18a8dcac25dd9c018e514ac2c0fefb5e"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath11STRESS_SIZEE" title="amath::STRESS_SIZE"><span class="n"><span class="pre">STRESS_SIZE</span></span></a><span class="w"> </span><span class="o"><span class="pre">/</span></span><span class="w"> </span><span class="m"><span class="pre">2</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">principal_stresses</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath6Stress18principal_stressesEv" title="Link to this definition"></a><br /></dt>
 <dd><p>Calculates the three principal stresses from the stress tensor components. </p>
 <p>This function computes the three principal stresses from the stress tensor components stored in the <code class="docutils literal notranslate"><span class="pre">components</span></code> vector. The principal stresses are returned in descending order. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK5amath6Stress14get_componentsEv">
-<span id="_CPPv3NK5amath6Stress14get_componentsEv"></span><span id="_CPPv2NK5amath6Stress14get_componentsEv"></span><span id="amath::Stress::get_componentsC"></span><span class="target" id="classamath_1_1Stress_1a3be028301f1826a9bffe9fb96f85b1d1"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath8Vector6dE" title="amath::Vector6d"><span class="n"><span class="pre">Vector6d</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">get_components</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath6Stress14get_componentsEv" title="Link to this definition"></a><br /></dt>
+<span id="_CPPv3NK5amath6Stress14get_componentsEv"></span><span id="_CPPv2NK5amath6Stress14get_componentsEv"></span><span id="amath::Stress::get_componentsC"></span><span class="target" id="classamath_1_1Stress_1a2e670c241e0cef32963fc904f8ecb9be"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_components</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath6Stress14get_componentsEv" title="Link to this definition"></a><br /></dt>
 <dd><p>Returns a reference to the vector of stress tensor components. </p>
 <p>This function returns a constant reference to the <code class="docutils literal notranslate"><span class="pre">components</span></code> vector, which stores the six independent components of the stress tensor. </p>
 </dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath6StressixERK6size_t">
+<span id="_CPPv3N5amath6StressixERK6size_t"></span><span id="_CPPv2N5amath6StressixERK6size_t"></span><span id="amath::Stress::subscript-operator__sCR"></span><span class="target" id="classamath_1_1Stress_1a81b6873e67ec78ee99df170906c4e316"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">[]</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath6StressixERK6size_t" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath6StressixERK6size_t">
+<span id="_CPPv3NK5amath6StressixERK6size_t"></span><span id="_CPPv2NK5amath6StressixERK6size_t"></span><span id="amath::Stress::subscript-operator__sCRC"></span><span class="target" id="classamath_1_1Stress_1a5b0c56828b0bf287124e50be29ebefdf"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">[]</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath6StressixERK6size_t" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5amath6StresspLERK6Stress">
@@ -895,6 +857,11 @@
 <dd></dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath6Stress5printERNSt7ostreamE">
+<span id="_CPPv3NK5amath6Stress5printERNSt7ostreamE"></span><span id="_CPPv2NK5amath6Stress5printERNSt7ostreamE"></span><span id="amath::Stress::print__osRC"></span><span class="target" id="classamath_1_1Stress_1a4c6d28aaf2713d267b682ae60e14eec8"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">print</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">flux</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath6Stress5printERNSt7ostreamE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK5amath6Stress6trescaEv">
 <span id="_CPPv3NK5amath6Stress6trescaEv"></span><span id="_CPPv2NK5amath6Stress6trescaEv"></span><span id="amath::Stress::trescaC"></span><span class="target" id="classamath_1_1Stress_1a2d45938ce7b5797ead56976d51472076"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tresca</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath6Stress6trescaEv" title="Link to this definition"></a><br /></dt>
 <dd><p>Calculates the Tresca stress, also known as the maximum shear stress. </p>
@@ -919,7 +886,7 @@
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N5amath6Stress10componentsE">
-<span id="_CPPv3N5amath6Stress10componentsE"></span><span id="_CPPv2N5amath6Stress10componentsE"></span><span id="amath::Stress::components__Vector6d"></span><span class="target" id="classamath_1_1Stress_1aca4fa6185ee048829cc8de6c06f9e1ae"></span><a class="reference internal" href="#_CPPv4N5amath8Vector6dE" title="amath::Vector6d"><span class="n"><span class="pre">Vector6d</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">components</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath8Vector6dE" title="amath::Vector6d"><span class="n"><span class="pre">Vector6d</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Zero</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv4N5amath6Stress10componentsE" title="Link to this definition"></a><br /></dt>
+<span id="_CPPv3N5amath6Stress10componentsE"></span><span id="_CPPv2N5amath6Stress10componentsE"></span><span id="amath::Stress::components__doubleA"></span><span class="target" id="classamath_1_1Stress_1aca3e7f7bffe741af1d1da17d3fab1d34"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">components</span></span></span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#_CPPv4N5amath11STRESS_SIZEE" title="amath::STRESS_SIZE"><span class="n"><span class="pre">STRESS_SIZE</span></span></a><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#_CPPv4N5amath6Stress10componentsE" title="Link to this definition"></a><br /></dt>
 <dd><p><a class="reference internal" href="#classamath_1_1Stress"><span class="std std-ref">Stress</span></a> components stored as a vector: / <span class="math notranslate nohighlight">\((s_{11}, s_{22}, s_{33}, s_{12}, s_{13}, s_{23})\)</span>. </p>
 </dd></dl>
 
@@ -998,13 +965,13 @@
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N5amath15StressIntensity4loadE">
-<span id="_CPPv3N5amath15StressIntensity4loadE"></span><span id="_CPPv2N5amath15StressIntensity4loadE"></span><span id="amath::StressIntensity::load__i"></span><span class="target" id="structamath_1_1StressIntensity_1affecac0f900de756d2e1d317cfbcdbcd"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">load</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5amath15StressIntensity4loadE" title="Link to this definition"></a><br /></dt>
+<span id="_CPPv3N5amath15StressIntensity4loadE"></span><span id="_CPPv2N5amath15StressIntensity4loadE"></span><span id="amath::StressIntensity::load__std::s"></span><span class="target" id="structamath_1_1StressIntensity_1aac6c53924b151b39de3ba70b9a3f47a9"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">load</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5amath15StressIntensity4loadE" title="Link to this definition"></a><br /></dt>
 <dd><p>The load number associated with the stress intensity. </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N5amath15StressIntensity6torsorE">
-<span id="_CPPv3N5amath15StressIntensity6torsorE"></span><span id="_CPPv2N5amath15StressIntensity6torsorE"></span><span id="amath::StressIntensity::torsor__i"></span><span class="target" id="structamath_1_1StressIntensity_1a894c5961b414739f3a08c072310b2e33"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">torsor</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5amath15StressIntensity6torsorE" title="Link to this definition"></a><br /></dt>
+<span id="_CPPv3N5amath15StressIntensity6torsorE"></span><span id="_CPPv2N5amath15StressIntensity6torsorE"></span><span id="amath::StressIntensity::torsor__std::s"></span><span class="target" id="structamath_1_1StressIntensity_1aefae0597c723d826044ef9f94b28558e"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">torsor</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5amath15StressIntensity6torsorE" title="Link to this definition"></a><br /></dt>
 <dd><p>The torsor combination number associated with the stress intensity. </p>
 </dd></dl>
 
@@ -1039,13 +1006,13 @@
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N5amath11StressRange5loadsE">
-<span id="_CPPv3N5amath11StressRange5loadsE"></span><span id="_CPPv2N5amath11StressRange5loadsE"></span><span id="amath::StressRange::loads__iA"></span><span class="target" id="structamath_1_1StressRange_1a77866ab44577d8d2107d7ec5144e4d35"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">loads</span></span></span><span class="p"><span class="pre">[</span></span><span class="m"><span class="pre">2</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N5amath11StressRange5loadsE" title="Link to this definition"></a><br /></dt>
+<span id="_CPPv3N5amath11StressRange5loadsE"></span><span id="_CPPv2N5amath11StressRange5loadsE"></span><span id="amath::StressRange::loads__std::sA"></span><span class="target" id="structamath_1_1StressRange_1a9068d99bf4d984fbbb145b3ce046a888"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">loads</span></span></span><span class="p"><span class="pre">[</span></span><span class="m"><span class="pre">2</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N5amath11StressRange5loadsE" title="Link to this definition"></a><br /></dt>
 <dd><p>The load numbers associated with the stress range and the mean stress. </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N5amath11StressRange7torsorsE">
-<span id="_CPPv3N5amath11StressRange7torsorsE"></span><span id="_CPPv2N5amath11StressRange7torsorsE"></span><span id="amath::StressRange::torsors__iA"></span><span class="target" id="structamath_1_1StressRange_1a98448632cf0313af75e428c1c703139d"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">torsors</span></span></span><span class="p"><span class="pre">[</span></span><span class="m"><span class="pre">2</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N5amath11StressRange7torsorsE" title="Link to this definition"></a><br /></dt>
+<span id="_CPPv3N5amath11StressRange7torsorsE"></span><span id="_CPPv2N5amath11StressRange7torsorsE"></span><span id="amath::StressRange::torsors__std::sA"></span><span class="target" id="structamath_1_1StressRange_1aa37a985d9424362df4c7fe2052d7d604"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">torsors</span></span></span><span class="p"><span class="pre">[</span></span><span class="m"><span class="pre">2</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N5amath11StressRange7torsorsE" title="Link to this definition"></a><br /></dt>
 <dd><p>The torsor combination numbers associated with the stress range and the mean stress. </p>
 </dd></dl>
 
@@ -1061,6 +1028,22 @@
 <p>This class provides methods to add stress states, calculate stress intensities, and perform various stress calculations. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath12StressStates27_maximum_equivalent_stress_ER11StressRangeRK6StressKdRK11combi_ranks">
+<span id="_CPPv3N5amath12StressStates27_maximum_equivalent_stress_ER11StressRangeRK6StressKdRK11combi_ranks"></span><span id="_CPPv2N5amath12StressStates27_maximum_equivalent_stress_ER11StressRangeRK6StressKdRK11combi_ranks"></span><span id="amath::StressStates::_maximum_equivalent_stress___StressRangeR.StressCR.doubleC.combi_ranksCR"></span><span class="target" id="classamath_1_1StressStates_1a60c547bf98c9e82f5ee13d2b009fdf7c"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_maximum_equivalent_stress_</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N5amath11StressRangeE" title="amath::StressRange"><span class="n"><span class="pre">StressRange</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">Sr_max</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath6StressE" title="amath::Stress"><span class="n"><span class="pre">Stress</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">stress</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">coef</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath11combi_ranksE" title="amath::combi_ranks"><span class="n"><span class="pre">combi_ranks</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">loads</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath12StressStates27_maximum_equivalent_stress_ER11StressRangeRK6StressKdRK11combi_ranks" title="Link to this definition"></a><br /></dt>
+<dd><p>Maximum equivalent stress determination. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Sr_max</strong> – <strong>[out]</strong> The maximum stress range. </p></li>
+<li><p><strong>stress</strong> – The stress state. </p></li>
+<li><p><strong>coef</strong> – The coefficient used to compute the stress range ratio. </p></li>
+<li><p><strong>loads</strong> – The load numbers associated with the stress range. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5amath12StressStates5resetEv">
 <span id="_CPPv3N5amath12StressStates5resetEv"></span><span id="_CPPv2N5amath12StressStates5resetEv"></span><span id="amath::StressStates::reset"></span><span class="target" id="classamath_1_1StressStates_1a312ab623140f0bc3e50b0534f45dde59"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reset</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath12StressStates5resetEv" title="Link to this definition"></a><br /></dt>
@@ -1151,10 +1134,10 @@
 <dd><p>Calculate the maximum stress intensity. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>states_id</strong> – The states id used to calculate the stress intensity. </p></li>
-<li><p><strong>stress_intensity</strong> – <strong>[out]</strong> The stress intensity. </p></li>
-</ul>
+<dd class="field-odd"><p><strong>states_id</strong> – The states id used to calculate the stress intensity. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The maximum stress intensity. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -1165,10 +1148,10 @@
 <dd><p>Calculate the maximum stress range. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>states_id</strong> – The states id used to calculate the stress range. </p></li>
-<li><p><strong>stress_range</strong> – <strong>[out]</strong> The maximum stress range. </p></li>
-</ul>
+<dd class="field-odd"><p><strong>states_id</strong> – The states id used to calculate the stress range. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The maximum stress range. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -1182,8 +1165,38 @@
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>states_id</strong> – The states id used to calculate the stress range. </p></li>
 <li><p><strong>coefficient</strong> – The coefficient used to calculate the maximum ratio. </p></li>
-<li><p><strong>stress_range</strong> – <strong>[out]</strong> The maximum stress range. </p></li>
 </ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The maximum stress range. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath12StressStates12stress_rangeERK11Combination">
+<span id="_CPPv3N5amath12StressStates12stress_rangeERK11Combination"></span><span id="_CPPv2N5amath12StressStates12stress_rangeERK11Combination"></span><span id="amath::StressStates::stress_range__CombinationCR"></span><span class="target" id="classamath_1_1StressStates_1a0a2a67d83f2f396ef8052ece7f89d9d1"></span><a class="reference internal" href="#_CPPv4N5amath11StressRangeE" title="amath::StressRange"><span class="n"><span class="pre">StressRange</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stress_range</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath11CombinationE" title="amath::Combination"><span class="n"><span class="pre">Combination</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">explorer</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath12StressStates12stress_rangeERK11Combination" title="Link to this definition"></a><br /></dt>
+<dd><p>Calculate the maximum stress range. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>explorer</strong> – combinations’ explorer </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The maximum stress range. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath12StressStates18stress_range_ratioERK11CombinationRK11Coefficient">
+<span id="_CPPv3N5amath12StressStates18stress_range_ratioERK11CombinationRK11Coefficient"></span><span id="_CPPv2N5amath12StressStates18stress_range_ratioERK11CombinationRK11Coefficient"></span><span id="amath::StressStates::stress_range_ratio__CombinationCR.CoefficientCR"></span><span class="target" id="classamath_1_1StressStates_1a5ccab9033ecfb84f071ce9d375b19946"></span><a class="reference internal" href="#_CPPv4N5amath11StressRangeE" title="amath::StressRange"><span class="n"><span class="pre">StressRange</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stress_range_ratio</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath11CombinationE" title="amath::Combination"><span class="n"><span class="pre">Combination</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">explorer</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath11CoefficientE" title="amath::Coefficient"><span class="n"><span class="pre">Coefficient</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">coefficient</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath12StressStates18stress_range_ratioERK11CombinationRK11Coefficient" title="Link to this definition"></a><br /></dt>
+<dd><p>Calculate the maximum stress range. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>explorer</strong> – combinations’ explorer </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The maximum stress range. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -1248,22 +1261,6 @@
 <dt class="sig sig-object cpp" id="_CPPv4N5amath12StressStates7_check_Ev">
 <span id="_CPPv3N5amath12StressStates7_check_Ev"></span><span id="_CPPv2N5amath12StressStates7_check_Ev"></span><span id="amath::StressStates::_check_"></span><span class="target" id="classamath_1_1StressStates_1ad50f850c169d42a695855190f28f0305"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_check_</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath12StressStates7_check_Ev" title="Link to this definition"></a><br /></dt>
 <dd><p>Check the data integrety of the stress states. </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N5amath12StressStates27_maximum_equivalent_stress_ER11StressRangeRK6StressKdAL2E_Ki">
-<span id="_CPPv3N5amath12StressStates27_maximum_equivalent_stress_ER11StressRangeRK6StressKdAL2E_Ki"></span><span id="_CPPv2N5amath12StressStates27_maximum_equivalent_stress_ER11StressRangeRK6StressKdA2_Ki"></span><span id="amath::StressStates::_maximum_equivalent_stress___StressRangeR.StressCR.doubleC.iCA"></span><span class="target" id="classamath_1_1StressStates_1a8f26276c9f12e5f41731c72a49f84030"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_maximum_equivalent_stress_</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N5amath11StressRangeE" title="amath::StressRange"><span class="n"><span class="pre">StressRange</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">Sr_max</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath6StressE" title="amath::Stress"><span class="n"><span class="pre">Stress</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">stress</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">coef</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">loads</span></span><span class="p"><span class="pre">[</span></span><span class="m"><span class="pre">2</span></span><span class="p"><span class="pre">]</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath12StressStates27_maximum_equivalent_stress_ER11StressRangeRK6StressKdAL2E_Ki" title="Link to this definition"></a><br /></dt>
-<dd><p>Maximum equivalent stress determination. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>Sr_max</strong> – <strong>[out]</strong> The maximum stress range. </p></li>
-<li><p><strong>stress</strong> – The stress state. </p></li>
-<li><p><strong>coef</strong> – The coefficient used to compute the stress range ratio. </p></li>
-<li><p><strong>loads</strong> – The load numbers associated with the stress range. </p></li>
-</ul>
-</dd>
-</dl>
 </dd></dl>
 
 </div>
