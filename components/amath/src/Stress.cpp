@@ -1,3 +1,5 @@
+#include <stdexcept>
+
 #include "Stress.h"
 
 using namespace amath;
@@ -6,27 +8,39 @@ using namespace amath;
 // Constructors and copy constructor
 //
 
-Stress::Stress(const Vector6d& components) {
-    this->components = components;
+Stress::Stress(const std::array<double, STRESS_SIZE>& components) {
+    for (std::size_t i = 0; i < this->size(); i++) {
+        this->components[i] = components[i];
+    }
 };
 
 Stress::Stress(const Stress& other) {
-    this->components = other.components;
+    for (std::size_t i = 0; i < this->size(); i++) {
+        this->components[i] = other[i];
+    }
 };
             
 Stress& Stress::operator=(const Stress& other) {
-    this->components = other.components;
+    if (this != &other) {
+        for (std::size_t i = 0; i < this->size(); i++) {
+            this->components[i] = other[i];
+        }
+    }
     return *this;
 }
 
-Stress::Stress(const std::initializer_list<double>& components) {
-    if (components.size() != size()) {
-        throw std::invalid_argument("Stress constructor: wrong number of components");
-    }
+Stress::Stress(const std::vector<double>& components) {
+    assert(components.size() == STRESS_SIZE && "Stress constructor: wrong number of components");
     int i = 0;
     for (auto value : components) {
         this->components[i++] = value;
     }    
+}
+
+void Stress::zero() {
+    for (std::size_t i = 0; i < this->size(); i++) {
+        this->components[i] = 0.0;
+    }
 }
 
 //
@@ -35,29 +49,44 @@ Stress::Stress(const std::initializer_list<double>& components) {
 
 namespace amath {
     Stress operator+(const Stress& s1, const Stress& s2) { 
-        return Stress(s1.get_components() + s2.get_components()); 
+        Stress s(s1);
+        return s += s2;
     }
     Stress operator-(const Stress& s1, const Stress& s2) { 
-        return Stress(s1.get_components() - s2.get_components()); 
+        Stress s(s1);
+        return s -= s2;
     }
-    Stress operator*(const double& scalar, const Stress& s) { 
-        return Stress(scalar * s.get_components()); 
+    Stress operator*(const double& scalar, const Stress& s1) { 
+        Stress s(s1);
+        return s *= scalar;
     }
+
+    std::ostream& operator<<(std::ostream& flux, const Stress& stress) {
+        stress.print(flux);
+        return flux;
+    }
+
 }
 
 
 Stress& Stress::operator+=(const Stress& other) {
-    this->components += other.components;
+    for  (std::size_t i = 0; i < this->size(); i++) {
+        this->components[i] += other[i];
+    }
     return *this;
 }
 
 Stress& Stress::operator-=(const Stress& other) {
-    this->components -= other.components;
+    for  (std::size_t i = 0; i < this->size(); i++) {
+        this->components[i] -= other[i];
+    }
     return *this;
 }
 
 Stress& Stress::operator*=(const double& scalar) {
-    this->components *= scalar;
+    for (std::size_t i = 0; i < this->size(); i++) {
+        this->components[i] *= scalar;
+    }    
     return *this;
 }
 
@@ -83,13 +112,22 @@ bool Stress::is_diag() const {
     return true;
 }
 
+void Stress::print(std::ostream& flux) const {
+    std::string ss = "[ ";
+    for (std::size_t i=0; i < size(); i++) {
+        ss += std::to_string(components[i]);
+        if (i != size() - 1) ss += ", ";
+    }
+    flux << ss << " ]";
+}
+
 //
 // Stress invariants
 //
-Eigen::Vector3d Stress::principal_stresses() const {
+std::array<double, STRESS_SIZE/2> Stress::principal_stresses() const {
     double s1, s2, s3;
     getPrincipalStresses(s1, s2, s3);
-    return Eigen::Vector3d(s1, s2, s3);
+    return {s1, s2, s3};
 }
 
 double Stress::tresca() const {

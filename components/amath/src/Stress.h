@@ -1,15 +1,16 @@
 #pragma once
 
-#include <Eigen/Dense>
+#include <array>
+#include <cassert>
+#include <cmath>
+#include <iostream>
+#include <vector>
 
 namespace amath {
     /// \brief Stress tensor size: 6 components (3D tensor) are stored in a vector.
-    static constexpr size_t STRESS_SIZE = 6;
+    static constexpr std::size_t STRESS_SIZE = 6;
     /// \brief Tolerance for stress components comparisons.
     static constexpr double STRESS_TOLERANCE = 1e-10;
-
-    /// \brief Represents a 6-dimensional vector of double values based on Eigen library.
-    using Vector6d = Eigen::Matrix<double, 1, STRESS_SIZE>;
 
     /// \brief Represents a 3D stress tensor.
     ///
@@ -22,7 +23,7 @@ namespace amath {
         protected:
             /// \brief Stress components stored as a vector: 
             //// \f$(s_{11}, s_{22}, s_{33}, s_{12}, s_{13}, s_{23})\f$
-            Vector6d components = Vector6d::Zero();
+            double components[STRESS_SIZE];
         
         private:
             /// \brief Constant factor used in the calculation of an equivalent stress based on
@@ -58,12 +59,14 @@ namespace amath {
             static void solveCardan(const double p, const double q, const double r,
                                     double& x1, double& x2, double& x3);
 
+            
+
         public:
             // Constructors and copy constructor
-            Stress() = default;
-            Stress(const Vector6d& components);
+            Stress() = default ;
+            Stress(const std::array<double, STRESS_SIZE>& components);
             Stress(const Stress& other);
-            Stress(const std::initializer_list<double>& components);
+            Stress(const std::vector<double>& components);
             Stress& operator=(const Stress& other);
 
             // Utility
@@ -71,26 +74,41 @@ namespace amath {
             /// \brief Returns the number of stress components.
             ///
             /// This function returns the number of stress components stored in the `components` vector.
-            size_t size() const { return components.cols(); }
+            size_t size() const { return STRESS_SIZE; }
+            /// \brief  Set all stress components to zero.
+            void zero();
 
             /// \brief Calculates the three principal stresses from the stress tensor components.
             ///
             /// This function computes the three principal stresses from the stress tensor components stored in the 
             /// `components` vector. The principal stresses are returned in descending order.
-            Eigen::Vector3d principal_stresses() const;
+            std::array<double, STRESS_SIZE/2> principal_stresses() const;
 
             /// \brief Returns a reference to the vector of stress tensor components.
             ///
             /// This function returns a constant reference to the `components` vector, which stores the six independent
             /// components of the stress tensor.
-            const Vector6d& get_components() const { return components; }
+            std::vector<double> get_components() const { return std::vector<double>(std::begin(components), std::end(components)); }
+
+
 
             // Operators overloading
+            double& operator[](const size_t& i) { 
+                assert(i < STRESS_SIZE && "Index out of range");
+                return components[i];
+            }
+            const double& operator[](const size_t& i) const { 
+                assert(i < STRESS_SIZE && "Index out of range");
+                return components[i];
+            }
+
             Stress& operator+=(const Stress& other);
             Stress& operator-=(const Stress& other);
             Stress& operator*=(const double& scalar); 
             bool operator==(const Stress& other);
             bool operator!=(const Stress& other);
+            
+            void print(std::ostream& flux) const;
 
             /// \brief Calculates the Tresca stress, also known as the maximum shear stress.
             ///
@@ -119,5 +137,6 @@ namespace amath {
     Stress operator+(const Stress& s1, const Stress& s2);
     Stress operator-(const Stress& s1, const Stress& s2);
     Stress operator*(const double& scalar, const Stress& s);
+    std::ostream& operator<<(std::ostream& flux, const Stress& stress);
 }
 

@@ -1,8 +1,11 @@
 #pragma once
 
+#include <array>
 #include <vector>
 
 namespace amath {
+
+    using combi_ranks = std::pair<std::size_t, std::size_t>;
 
     /*!
      * \brief Class used to manage all possible ranks' combinations given by a vector of ranks.
@@ -20,10 +23,12 @@ namespace amath {
         protected:
             /// \brief Vector of ranks.
             std::vector<std::size_t> ranks;
-        
+            std::size_t cached_size;        
         private:
             /// \brief Function used to order ranks and suppress duplicates.
             void sort_ranks();
+
+            virtual void set_cached_size() { cached_size = ranks.size() * ranks.size(); }
 
         public:
             /// \brief Constructor.
@@ -38,7 +43,7 @@ namespace amath {
 
             /// \brief Return the number of combinations.
             /// \return Number of combinations.
-            virtual std::size_t size() const = 0;
+            virtual std::size_t size() const { return cached_size; };
 
             /// \brief Return the combination associated to the given indices.
             /// \param row Row index.
@@ -51,6 +56,7 @@ namespace amath {
             /// \return indices associated to the given combination.
             virtual std::vector<std::size_t> get_ranks(const std::size_t& combination) const = 0;
             
+            virtual void ranks_by_ptr(const std::size_t& combination, combi_ranks& ranks) const = 0;
     };
 
     /** \brief Class used to manage all possible ranks' combinations given by a vector of ranks.
@@ -67,10 +73,13 @@ namespace amath {
      *     \f} 
      */
     class SquareCombination : public Combination {
-       public:
+        private:
+            virtual void set_cached_size() { cached_size = ranks.size() * ranks.size(); };
+
+        public:
             /// \brief Constructor.
             /// \param ranks Vector of ranks.
-            SquareCombination(const std::vector<std::size_t>& ranks) : Combination(ranks) {};
+            SquareCombination(const std::vector<std::size_t>& ranks) : Combination(ranks) {}; 
             /// \brief Copy constructor.
             /// \param combination Combination to copy.
             SquareCombination(const SquareCombination& combination) : Combination(combination) {};
@@ -111,6 +120,9 @@ namespace amath {
     class TriangularCombination : public Combination {
 
         private:
+
+            virtual void set_cached_size() { cached_size = ranks.size() * (ranks.size() + 1) / 2; };
+
             /// \brief Determine the first combination represented on the p line.
             ///
             /// \details Return the first combination represented on the p line and based on the following formula:
@@ -144,7 +156,7 @@ namespace amath {
 
             /// \brief Return the number of combinations.
             /// \return Number of combinations.
-            virtual std::size_t size() const { return ranks.size() * (ranks.size() + 1) / 2; };
+            //virtual std::size_t size() const { return ranks.size() * (ranks.size() + 1) / 2; };
 
             /// \brief Return the combination associated to the given indices.
             /// \param row Row index.
@@ -174,6 +186,8 @@ namespace amath {
      */
     class SuperiorTriangularCombination : public Combination {
         private:
+            virtual void set_cached_size() { cached_size = ranks.size() * (ranks.size() - 1) / 2; };
+
             /// \brief Determine the first combination represented on the p line.
             ///
             /// \details Determine the number of combination for \f$ p \f$ lines based on the following formula:
@@ -181,7 +195,7 @@ namespace amath {
             /// with \f$ sz \f$ the size of the vector of ranks.
             /// \param p Number of lines.
             /// \return First combination represented on the p line.
-            std::size_t combination_for_line(const std::size_t& p) const;
+            constexpr std::size_t combination_for_line(const std::size_t& p, const std::size_t n) const;
             /// \brief Determine the line associated to a combination.
             ///
             /// \details Return the \f$ p \f$ line associated to the combination \f$ c \f$ such as:
@@ -192,7 +206,7 @@ namespace amath {
             /// with \f$ b = 2 sz - 1 \f$ and \f$ sz \f$ the size of the vector of ranks.
             /// \param c combination number.
             /// \return line number associated to the combination c.
-            std::size_t line_for_combination(const std::size_t& c) const;
+            constexpr std::size_t line_for_combination(const std::size_t& c, const std::size_t n) const;
 
         public:
             /// \brief Constructor.
@@ -207,7 +221,7 @@ namespace amath {
 
             /// \brief Return the number of combinations.
             /// \return Number of combinations.
-            virtual std::size_t size() const { return ranks.size() * (ranks.size() - 1) / 2; };
+            //virtual std::size_t size() const { return ranks.size() * (ranks.size() - 1) / 2; };
 
             /// \brief Return the combination associated to the given indices.
             /// \param row Row index.
@@ -218,7 +232,9 @@ namespace amath {
             /// \brief Return the row and column indices associated to a combination.
             /// \param combination Combination.
             /// \return indices associated to the given combination.
-            virtual std::vector<std::size_t> get_ranks(const std::size_t& combination) const;            
+            virtual std::vector<std::size_t> get_ranks(const std::size_t& combination) const;
+
+            void ranks_by_ptr(const std::size_t& combination, combi_ranks& ranks) const;
     };
 
 };
