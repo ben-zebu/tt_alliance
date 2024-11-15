@@ -114,22 +114,28 @@ namespace amath {
 
             /// \brief Calculate the maximum stress intensity.
             /// \param states_id The states id used to calculate the stress intensity.
-            /// \param[out] stress_intensity The stress intensity.
+            /// \return The maximum stress intensity.
             StressIntensity stress_intensity(const std::vector<size_t>& states_id);
+
             /// \brief Calculate the maximum stress range.
             /// \param states_id The states id used to calculate the stress range.
-            /// \param[out] stress_range The maximum stress range.
+            /// \return The maximum stress range.
             StressRange stress_range(const std::vector<size_t>& states_id);
             /// \brief Calculate the maximum ratio between stress range and a coefficient.
             /// \param states_id The states id used to calculate the stress range.
             /// \param coefficient The coefficient used to calculate the maximum ratio.
-            /// \param[out] stress_range The maximum stress range.
+            /// \return The maximum stress range.
             StressRange stress_range_ratio(const std::vector<size_t>& states_id, const Coefficient& coefficient);
+
+            /// \brief Calculate the maximum stress range.
+            /// \param explorer combinations' explorer
+            /// \return The maximum stress range.
+            StressRange stress_range(const Combination& explorer);
+            /// \brief Calculate the maximum stress range.
+            /// \param explorer combinations' explorer
+            /// \return The maximum stress range.
+            StressRange stress_range_ratio(const Combination& explorer, const Coefficient& coefficient);
+
     };
 
-    class CombStressStates : public StressStates {
-        public:
-            StressRange comb_stress_range(const Combination& explorer);
-            StressRange comb_stress_range_ratio(const Combination& explorer, const Coefficient& coefficient);
-    };
 }            

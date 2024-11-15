@@ -81,9 +81,33 @@ StressRange StressStates::stress_range_ratio(const std::vector<size_t>& states_i
     return Sr_max;
 }
 
+StressRange StressStates::stress_range(const Combination& explorer) {
+    return stress_range_ratio(explorer, ConstantCoefficient(1.));
+}
 
+StressRange StressStates::stress_range_ratio(const Combination& explorer, const Coefficient& coefficient) {
+    StressRange Sr_max;
+    combi_ranks ranks;
+    double c1, c2;
+    double coef = 1.;
+    Stress Sr;
+    for (size_t i = 0; i < explorer.size(); i++) {
+        explorer.ranks_by_ptr(i, ranks);
+        if (!Temperatures.empty()) {
+            c1 = coefficient.get_yvalue(Temperatures[ranks.first]);
+            c2 = coefficient.get_yvalue(Temperatures[ranks.second]);
+            coef = std::max(c1, c2);
+        }
+        Sr = PrimaryStresses[ranks.first] - PrimaryStresses[ranks.second];
+        _maximum_equivalent_stress_(Sr_max, Sr, coef, ranks);
+    }
 
-
+    // Determine the mean stress associated with the maximum stress range
+    /*
+        TODO:
+    */
+    return Sr_max;
+}
 
 //
 // PRIVATE METHODS
@@ -146,39 +170,4 @@ void StressStates::_maximum_equivalent_stress_(StressRange& Sr_max, const Stress
             Sr_max.loads[1] = loads.second;
         }
     }    
-}
-
-
-
-
-
-
-
-
-
-
-
-StressRange CombStressStates::comb_stress_range(const Combination& explorer) {
-    return comb_stress_range_ratio(explorer, ConstantCoefficient(1.));
-}
-
-StressRange CombStressStates::comb_stress_range_ratio(const Combination& explorer, const Coefficient& coefficient) {
-    StressRange Sr_max;
-    combi_ranks ranks;
-    double c1, c2;
-    double coef = 1.;
-    Stress Sr;
-    for (size_t i = 0; i < explorer.size(); i++) {
-        explorer.ranks_by_ptr(i, ranks);
-        if (!Temperatures.empty()) {
-            c1 = coefficient.get_yvalue(Temperatures[ranks.first]);
-            c2 = coefficient.get_yvalue(Temperatures[ranks.second]);
-            coef = std::max(c1, c2);
-        }
-        Sr = PrimaryStresses[ranks.first] - PrimaryStresses[ranks.second];
-        //Stress Sr = PrimaryStresses[ranks.first] - PrimaryStresses[ranks.second];
-        _maximum_equivalent_stress_(Sr_max, Sr, coef, ranks);
-
-    }
-    return Sr_max;
 }

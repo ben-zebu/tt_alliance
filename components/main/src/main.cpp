@@ -17,7 +17,7 @@
 #include "Coefficient.h"
 #include "Combination.h"
 
-amath::CombStressStates generateStressStates(int numStates) {
+amath::StressStates generateStressStates(int numStates) {
     // Seed the random number generator
     srand(static_cast<unsigned int>(time(nullptr)));
 
@@ -25,7 +25,7 @@ amath::CombStressStates generateStressStates(int numStates) {
     const double maxValue = 300.0;
     const double minValue = -1.*maxValue;
 
-    amath::CombStressStates states = amath::CombStressStates();
+    amath::StressStates states = amath::StressStates();
 
     for (int i = 0; i < numStates; ++i) {
         std::array<double, amath::STRESS_SIZE> components;
@@ -38,7 +38,7 @@ amath::CombStressStates generateStressStates(int numStates) {
     return states;
 }
 
-void performBenchmark(amath::CombStressStates& states, const std::string& method, const int interations) {
+void performBenchmark(amath::StressStates& states, const std::string& method, const int interations) {
     std::vector<size_t> states_ids;
     for (size_t i = 0; i < states.size(); ++i) { states_ids.push_back(i); }
     amath::TriangularCombination explorer(states_ids);
@@ -60,7 +60,7 @@ void performBenchmark(amath::CombStressStates& states, const std::string& method
     start_timer(method + " explorer");
     std::cout << "Benchmarking " << method << " method with explorer ..." << std::endl;
     for (int i = 0; i < interations; ++i) {
-        auto Smax = states.comb_stress_range(explorer);
+        auto Smax = states.stress_range(explorer);
         if (i == interations - 1) {
             std::cout << "Max stress intensity for " << method << ": " << Smax.Sr << std::endl;
         }
