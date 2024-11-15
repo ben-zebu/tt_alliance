@@ -4,6 +4,7 @@
 #include <vector>
 
 #include "Coefficient.h"
+#include "Combination.h"
 #include "Stress.h"
 
 namespace amath {
@@ -13,9 +14,9 @@ namespace amath {
         /// \brief The stress intensity.
         double Si = 0.;
         /// \brief The load number associated with the stress intensity.
-        int load = 0;
+        std::size_t load = 0;
         /// \brief The torsor combination number associated with the stress intensity.
-        int torsor = 0;
+        std::size_t torsor = 0;
     };
 
     /// \brief Represents a stress range.
@@ -27,9 +28,9 @@ namespace amath {
         /// \brief The maximum ratio between stress range and a coefficient.
         double ratio = 0.;
         /// \brief The load numbers associated with the stress range and the mean stress.
-        int loads[2] = {0, 0};
+        std::size_t loads[2] = {0, 0};
         /// \brief The torsor combination numbers associated with the stress range and the mean stress.
-        int torsors[2] = {0, 0};
+        std::size_t torsors[2] = {0, 0};
     };
 
     /// \brief Represents a collection of stress states.
@@ -41,13 +42,13 @@ namespace amath {
         private:
             /// \brief Check the data integrety of the stress states.
             void _check_();
-
+        public:
             /// \brief Maximum equivalent stress determination
             /// \param[out] Sr_max The maximum stress range.
             /// \param stress The stress state.
             /// \param coef The coefficient used to compute the stress range ratio.
             /// \param loads The load numbers associated with the stress range.
-            void _maximum_equivalent_stress_(StressRange& Sr_max, const Stress& stress, const double coef, const int loads[2]);
+            void _maximum_equivalent_stress_(StressRange& Sr_max, const Stress& stress, const double coef, const combi_ranks& loads);
 
             
         protected:
@@ -113,16 +114,28 @@ namespace amath {
 
             /// \brief Calculate the maximum stress intensity.
             /// \param states_id The states id used to calculate the stress intensity.
-            /// \param[out] stress_intensity The stress intensity.
+            /// \return The maximum stress intensity.
             StressIntensity stress_intensity(const std::vector<size_t>& states_id);
+
             /// \brief Calculate the maximum stress range.
             /// \param states_id The states id used to calculate the stress range.
-            /// \param[out] stress_range The maximum stress range.
+            /// \return The maximum stress range.
             StressRange stress_range(const std::vector<size_t>& states_id);
             /// \brief Calculate the maximum ratio between stress range and a coefficient.
             /// \param states_id The states id used to calculate the stress range.
             /// \param coefficient The coefficient used to calculate the maximum ratio.
-            /// \param[out] stress_range The maximum stress range.
+            /// \return The maximum stress range.
             StressRange stress_range_ratio(const std::vector<size_t>& states_id, const Coefficient& coefficient);
+
+            /// \brief Calculate the maximum stress range.
+            /// \param explorer combinations' explorer
+            /// \return The maximum stress range.
+            StressRange stress_range(const Combination& explorer);
+            /// \brief Calculate the maximum stress range.
+            /// \param explorer combinations' explorer
+            /// \return The maximum stress range.
+            StressRange stress_range_ratio(const Combination& explorer, const Coefficient& coefficient);
+
     };
+
 }            
