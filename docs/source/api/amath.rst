@@ -32,3 +32,8 @@ Table
 -----
 .. doxygenfile:: Table.h
     :project: tt_alliance
+
+TorsorCombination
+-----------------
+.. doxygenfile:: TorsorCombination.h
+    :project: tt_alliance
