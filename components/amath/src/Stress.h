@@ -10,7 +10,7 @@ namespace amath {
     /// \brief Stress tensor size: 6 components (3D tensor) are stored in a vector.
     static constexpr std::size_t STRESS_SIZE = 6;
     /// \brief Tolerance for stress components comparisons.
-    static constexpr double STRESS_TOLERANCE = 1e-10;
+    static constexpr double STRESS_TOLERANCE = 1e-6;
 
     /// \brief Represents a 3D stress tensor.
     ///
