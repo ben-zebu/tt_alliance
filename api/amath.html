@@ -67,9 +67,13 @@
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5amath6StressE"><code class="docutils literal notranslate"><span class="pre">amath::Stress</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#stressstates">StressStates</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#stresscontainer">StressContainer</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5amath15StressIntensityE"><code class="docutils literal notranslate"><span class="pre">amath::StressIntensity</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5amath11StressRangeE"><code class="docutils literal notranslate"><span class="pre">amath::StressRange</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5amath15StressContainerE"><code class="docutils literal notranslate"><span class="pre">amath::StressContainer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#stressstates">StressStates</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5amath12StressStatesE"><code class="docutils literal notranslate"><span class="pre">amath::StressStates</span></code></a></li>
 </ul>
 </li>
@@ -944,8 +948,8 @@
 </dd></dl>
 
 </section>
-<section id="stressstates">
-<h2>StressStates<a class="headerlink" href="#stressstates" title="Link to this heading"></a></h2>
+<section id="stresscontainer">
+<h2>StressContainer<a class="headerlink" href="#stresscontainer" title="Link to this heading"></a></h2>
 <dl class="cpp type">
 <dt class="sig sig-object cpp">
 <span class="target" id="namespaceamath"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">amath</span></span></span><br /></dt>
@@ -953,13 +957,13 @@
 <dt class="sig sig-object cpp" id="_CPPv4N5amath15StressIntensityE">
 <span id="_CPPv3N5amath15StressIntensityE"></span><span id="_CPPv2N5amath15StressIntensityE"></span><span id="amath::StressIntensity"></span><span class="target" id="structamath_1_1StressIntensity"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">StressIntensity</span></span></span><a class="headerlink" href="#_CPPv4N5amath15StressIntensityE" title="Link to this definition"></a><br /></dt>
 <dd><div class="docutils container">
-<em>#include &lt;StressStates.h&gt;</em></div>
-<p>Represents a stress intensity. </p>
+<em>#include &lt;StressContainer.h&gt;</em></div>
+<p>Utilty structure used to extract details results for a stress intensity. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
 <dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N5amath15StressIntensity2SiE">
-<span id="_CPPv3N5amath15StressIntensity2SiE"></span><span id="_CPPv2N5amath15StressIntensity2SiE"></span><span id="amath::StressIntensity::Si__double"></span><span class="target" id="structamath_1_1StressIntensity_1a0a4dc2b236cef44c67fb2cc55ad29e7d"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Si</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.</span></span><a class="headerlink" href="#_CPPv4N5amath15StressIntensity2SiE" title="Link to this definition"></a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N5amath15StressIntensity9intensityE">
+<span id="_CPPv3N5amath15StressIntensity9intensityE"></span><span id="_CPPv2N5amath15StressIntensity9intensityE"></span><span id="amath::StressIntensity::intensity__double"></span><span class="target" id="structamath_1_1StressIntensity_1a52e3632f3bfcf4cc9e99b904ee76b4af"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">intensity</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.</span></span><a class="headerlink" href="#_CPPv4N5amath15StressIntensity9intensityE" title="Link to this definition"></a><br /></dt>
 <dd><p>The stress intensity. </p>
 </dd></dl>
 
@@ -982,19 +986,19 @@
 <dt class="sig sig-object cpp" id="_CPPv4N5amath11StressRangeE">
 <span id="_CPPv3N5amath11StressRangeE"></span><span id="_CPPv2N5amath11StressRangeE"></span><span id="amath::StressRange"></span><span class="target" id="structamath_1_1StressRange"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">StressRange</span></span></span><a class="headerlink" href="#_CPPv4N5amath11StressRangeE" title="Link to this definition"></a><br /></dt>
 <dd><div class="docutils container">
-<em>#include &lt;StressStates.h&gt;</em></div>
-<p>Represents a stress range. </p>
+<em>#include &lt;StressContainer.h&gt;</em></div>
+<p>Utilty structure used to extract details results for a stress range. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
 <dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N5amath11StressRange2SrE">
-<span id="_CPPv3N5amath11StressRange2SrE"></span><span id="_CPPv2N5amath11StressRange2SrE"></span><span id="amath::StressRange::Sr__double"></span><span class="target" id="structamath_1_1StressRange_1a4a943cb27a2bebd12196f78a13c9a406"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Sr</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.</span></span><a class="headerlink" href="#_CPPv4N5amath11StressRange2SrE" title="Link to this definition"></a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N5amath11StressRange5rangeE">
+<span id="_CPPv3N5amath11StressRange5rangeE"></span><span id="_CPPv2N5amath11StressRange5rangeE"></span><span id="amath::StressRange::range__double"></span><span class="target" id="structamath_1_1StressRange_1a4d227b5575b39546e808d22fd37e1624"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">range</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.</span></span><a class="headerlink" href="#_CPPv4N5amath11StressRange5rangeE" title="Link to this definition"></a><br /></dt>
 <dd><p>The stresss range. </p>
 </dd></dl>
 
 <dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N5amath11StressRange5SmeanE">
-<span id="_CPPv3N5amath11StressRange5SmeanE"></span><span id="_CPPv2N5amath11StressRange5SmeanE"></span><span id="amath::StressRange::Smean__double"></span><span class="target" id="structamath_1_1StressRange_1af478efb3b941e14b60a5fa99a5c120c6"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Smean</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.</span></span><a class="headerlink" href="#_CPPv4N5amath11StressRange5SmeanE" title="Link to this definition"></a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N5amath11StressRange4meanE">
+<span id="_CPPv3N5amath11StressRange4meanE"></span><span id="_CPPv2N5amath11StressRange4meanE"></span><span id="amath::StressRange::mean__double"></span><span class="target" id="structamath_1_1StressRange_1a429854d43afb577a30d5956a1de9df9d"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mean</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.</span></span><a class="headerlink" href="#_CPPv4N5amath11StressRange4meanE" title="Link to this definition"></a><br /></dt>
 <dd><p>The mean stress. </p>
 </dd></dl>
 
@@ -1006,13 +1010,13 @@
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N5amath11StressRange5loadsE">
-<span id="_CPPv3N5amath11StressRange5loadsE"></span><span id="_CPPv2N5amath11StressRange5loadsE"></span><span id="amath::StressRange::loads__std::sA"></span><span class="target" id="structamath_1_1StressRange_1a9068d99bf4d984fbbb145b3ce046a888"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">loads</span></span></span><span class="p"><span class="pre">[</span></span><span class="m"><span class="pre">2</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N5amath11StressRange5loadsE" title="Link to this definition"></a><br /></dt>
+<span id="_CPPv3N5amath11StressRange5loadsE"></span><span id="_CPPv2N5amath11StressRange5loadsE"></span><span id="amath::StressRange::loads__combi_ranks"></span><span class="target" id="structamath_1_1StressRange_1a82fbed2f3a83760a73416b9f3fad8fd5"></span><a class="reference internal" href="#_CPPv4N5amath11combi_ranksE" title="amath::combi_ranks"><span class="n"><span class="pre">combi_ranks</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">loads</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N5amath11StressRange5loadsE" title="Link to this definition"></a><br /></dt>
 <dd><p>The load numbers associated with the stress range and the mean stress. </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N5amath11StressRange7torsorsE">
-<span id="_CPPv3N5amath11StressRange7torsorsE"></span><span id="_CPPv2N5amath11StressRange7torsorsE"></span><span id="amath::StressRange::torsors__std::sA"></span><span class="target" id="structamath_1_1StressRange_1aa37a985d9424362df4c7fe2052d7d604"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">torsors</span></span></span><span class="p"><span class="pre">[</span></span><span class="m"><span class="pre">2</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N5amath11StressRange7torsorsE" title="Link to this definition"></a><br /></dt>
+<span id="_CPPv3N5amath11StressRange7torsorsE"></span><span id="_CPPv2N5amath11StressRange7torsorsE"></span><span id="amath::StressRange::torsors__combi_ranks"></span><span class="target" id="structamath_1_1StressRange_1a07f5e4b89a4604d46f2b0571c4e18b6b"></span><a class="reference internal" href="#_CPPv4N5amath11combi_ranksE" title="amath::combi_ranks"><span class="n"><span class="pre">combi_ranks</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">torsors</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N5amath11StressRange7torsorsE" title="Link to this definition"></a><br /></dt>
 <dd><p>The torsor combination numbers associated with the stress range and the mean stress. </p>
 </dd></dl>
 
@@ -1020,6 +1024,169 @@
 </dd></dl>
 
 <dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath15StressContainerE">
+<span id="_CPPv3N5amath15StressContainerE"></span><span id="_CPPv2N5amath15StressContainerE"></span><span id="amath::StressContainer"></span><span class="target" id="classamath_1_1StressContainer"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">StressContainer</span></span></span><a class="headerlink" href="#_CPPv4N5amath15StressContainerE" title="Link to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;StressContainer.h&gt;</em></div>
+<p>Use to store results for a stress intensity or a stress range intensity. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath15StressContainer15StressContainerEv">
+<span id="_CPPv3N5amath15StressContainer15StressContainerEv"></span><span id="_CPPv2N5amath15StressContainer15StressContainerEv"></span><span id="amath::StressContainer::StressContainer"></span><span class="target" id="classamath_1_1StressContainer_1a66d6059f8e85258f83534b1a51fba0bc"></span><span class="sig-name descname"><span class="n"><span class="pre">StressContainer</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5amath15StressContainer15StressContainerEv" title="Link to this definition"></a><br /></dt>
+<dd><p>default empty constructor </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath15StressContainer15StressContainerERK15StressContainer">
+<span id="_CPPv3N5amath15StressContainer15StressContainerERK15StressContainer"></span><span id="_CPPv2N5amath15StressContainer15StressContainerERK15StressContainer"></span><span id="amath::StressContainer::StressContainer__StressContainerCR"></span><span class="target" id="classamath_1_1StressContainer_1a6067e87935ef7821f6ed2a49411831ce"></span><span class="sig-name descname"><span class="n"><span class="pre">StressContainer</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath15StressContainer15StressContainerERK15StressContainer" title="amath::StressContainer::StressContainer"><span class="n"><span class="pre">StressContainer</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath15StressContainer15StressContainerERK15StressContainer" title="Link to this definition"></a><br /></dt>
+<dd><p>constructor by copy </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> – an other <a class="reference internal" href="#classamath_1_1StressContainer"><span class="std std-ref">StressContainer</span></a> object </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath15StressContaineraSERK15StressContainer">
+<span id="_CPPv3N5amath15StressContaineraSERK15StressContainer"></span><span id="_CPPv2N5amath15StressContaineraSERK15StressContainer"></span><span id="amath::StressContainer::assign-operator__StressContainerCR"></span><span class="target" id="classamath_1_1StressContainer_1a1a63352118a37b73a3f4913b03cf526b"></span><a class="reference internal" href="#_CPPv4N5amath15StressContainerE" title="amath::StressContainer"><span class="n"><span class="pre">StressContainer</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath15StressContainerE" title="amath::StressContainer"><span class="n"><span class="pre">StressContainer</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath15StressContaineraSERK15StressContainer" title="Link to this definition"></a><br /></dt>
+<dd><p>Copy constructor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> – an other <a class="reference internal" href="#classamath_1_1StressContainer"><span class="std std-ref">StressContainer</span></a> object </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath15StressContainereqERK15StressContainer">
+<span id="_CPPv3N5amath15StressContainereqERK15StressContainer"></span><span id="_CPPv2N5amath15StressContainereqERK15StressContainer"></span><span id="amath::StressContainer::eq-operator__StressContainerCR"></span><span class="target" id="classamath_1_1StressContainer_1a570351cfad469d3e6afb339e0586aa11"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">==</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath15StressContainerE" title="amath::StressContainer"><span class="n"><span class="pre">StressContainer</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath15StressContainereqERK15StressContainer" title="Link to this definition"></a><br /></dt>
+<dd><p>Equal operator based on <code class="docutils literal notranslate"><span class="pre">_ratio_</span></code>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath15StressContainerneERK15StressContainer">
+<span id="_CPPv3N5amath15StressContainerneERK15StressContainer"></span><span id="_CPPv2N5amath15StressContainerneERK15StressContainer"></span><span id="amath::StressContainer::neq-operator__StressContainerCR"></span><span class="target" id="classamath_1_1StressContainer_1a2e1da8444e97942f11f2acfe641f9e2d"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">!=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath15StressContainerE" title="amath::StressContainer"><span class="n"><span class="pre">StressContainer</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath15StressContainerneERK15StressContainer" title="Link to this definition"></a><br /></dt>
+<dd><p>Difference operator based on <code class="docutils literal notranslate"><span class="pre">_ratio_</span></code>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath15StressContainerleERK15StressContainer">
+<span id="_CPPv3N5amath15StressContainerleERK15StressContainer"></span><span id="_CPPv2N5amath15StressContainerleERK15StressContainer"></span><span id="amath::StressContainer::lte-operator__StressContainerCR"></span><span class="target" id="classamath_1_1StressContainer_1a8c6c0182df7b163bbf6f05d09745e870"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">&lt;=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath15StressContainerE" title="amath::StressContainer"><span class="n"><span class="pre">StressContainer</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath15StressContainerleERK15StressContainer" title="Link to this definition"></a><br /></dt>
+<dd><p>Less or equal operator based on <code class="docutils literal notranslate"><span class="pre">_ratio_</span></code>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath15StressContainergeERK15StressContainer">
+<span id="_CPPv3N5amath15StressContainergeERK15StressContainer"></span><span id="_CPPv2N5amath15StressContainergeERK15StressContainer"></span><span id="amath::StressContainer::gte-operator__StressContainerCR"></span><span class="target" id="classamath_1_1StressContainer_1a51a26b89c49abfd611791a104a8a806c"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">&gt;=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath15StressContainerE" title="amath::StressContainer"><span class="n"><span class="pre">StressContainer</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath15StressContainergeERK15StressContainer" title="Link to this definition"></a><br /></dt>
+<dd><p>Upper or equal operator based on <code class="docutils literal notranslate"><span class="pre">_ratio_</span></code>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath15StressContainerltERK15StressContainer">
+<span id="_CPPv3N5amath15StressContainerltERK15StressContainer"></span><span id="_CPPv2N5amath15StressContainerltERK15StressContainer"></span><span id="amath::StressContainer::lt-operator__StressContainerCR"></span><span class="target" id="classamath_1_1StressContainer_1afb903ea313cafb84742c01d41edf1f89"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">&lt;</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath15StressContainerE" title="amath::StressContainer"><span class="n"><span class="pre">StressContainer</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath15StressContainerltERK15StressContainer" title="Link to this definition"></a><br /></dt>
+<dd><p>Less operator based on <code class="docutils literal notranslate"><span class="pre">_ratio_</span></code>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath15StressContainergtERK15StressContainer">
+<span id="_CPPv3N5amath15StressContainergtERK15StressContainer"></span><span id="_CPPv2N5amath15StressContainergtERK15StressContainer"></span><span id="amath::StressContainer::gt-operator__StressContainerCR"></span><span class="target" id="classamath_1_1StressContainer_1a1c0759e502aa319aa6267901c17a4be3"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">&gt;</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath15StressContainerE" title="amath::StressContainer"><span class="n"><span class="pre">StressContainer</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath15StressContainergtERK15StressContainer" title="Link to this definition"></a><br /></dt>
+<dd><p>Upper operator based on <code class="docutils literal notranslate"><span class="pre">_ratio_</span></code>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath15StressContainer9get_ratioEv">
+<span id="_CPPv3NK5amath15StressContainer9get_ratioEv"></span><span id="_CPPv2NK5amath15StressContainer9get_ratioEv"></span><span id="amath::StressContainer::get_ratioC"></span><span class="target" id="classamath_1_1StressContainer_1a2aec59a6aa7678d8c874c12ed32e0a70"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_ratio</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath15StressContainer9get_ratioEv" title="Link to this definition"></a><br /></dt>
+<dd><p>return the stored ratio </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath15StressContainer13set_intensityERKdKNSt6size_tEKNSt6size_tE">
+<span id="_CPPv3N5amath15StressContainer13set_intensityERKdKNSt6size_tEKNSt6size_tE"></span><span id="_CPPv2N5amath15StressContainer13set_intensityERKdKNSt6size_tEKNSt6size_tE"></span><span id="amath::StressContainer::set_intensity__doubleCR.std::sC.std::sC"></span><span class="target" id="classamath_1_1StressContainer_1aae9cc562f17e2b79fa39e8f52803d225"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_intensity</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">intensity</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">load</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">torsor</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath15StressContainer13set_intensityERKdKNSt6size_tEKNSt6size_tE" title="Link to this definition"></a><br /></dt>
+<dd><p>Set a stress intensity. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>intensity</strong> – equivalent stress intensity </p></li>
+<li><p><strong>load</strong> – load rank associated to the stress intensity </p></li>
+<li><p><strong>torsor</strong> – torsor combination rank associated to the stress intensity </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath15StressContainer9set_rangeERKNSt6vectorIdEERK11combi_ranksRK11combi_ranks">
+<span id="_CPPv3N5amath15StressContainer9set_rangeERKNSt6vectorIdEERK11combi_ranksRK11combi_ranks"></span><span id="_CPPv2N5amath15StressContainer9set_rangeERKNSt6vectorIdEERK11combi_ranksRK11combi_ranks"></span><span id="amath::StressContainer::set_range__std::vector:double:CR.combi_ranksCR.combi_ranksCR"></span><span class="target" id="classamath_1_1StressContainer_1aebef4664925b8d8507252fcc19b098ef"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_range</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">range</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath11combi_ranksE" title="amath::combi_ranks"><span class="n"><span class="pre">combi_ranks</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">load</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath11combi_ranksE" title="amath::combi_ranks"><span class="n"><span class="pre">combi_ranks</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">torsor</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath15StressContainer9set_rangeERKNSt6vectorIdEERK11combi_ranksRK11combi_ranks" title="Link to this definition"></a><br /></dt>
+<dd><p>Set a stress range intensity. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>range</strong> – vector composed of equivalent stress range intensity, ratio with a coefficient and the mean stress </p></li>
+<li><p><strong>load</strong> – loads’ ranks associated to the stress intensity </p></li>
+<li><p><strong>torsor</strong> – torsor combinations’ ranks associated to the stress intensity </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath15StressContainer9store_maxERK15StressContainer">
+<span id="_CPPv3N5amath15StressContainer9store_maxERK15StressContainer"></span><span id="_CPPv2N5amath15StressContainer9store_maxERK15StressContainer"></span><span id="amath::StressContainer::store_max__StressContainerCR"></span><span class="target" id="classamath_1_1StressContainer_1adb573ac57f7f2619b7df70ae93ad0796"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">store_max</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath15StressContainerE" title="amath::StressContainer"><span class="n"><span class="pre">StressContainer</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath15StressContainer9store_maxERK15StressContainer" title="Link to this definition"></a><br /></dt>
+<dd><p>Update internals parameters for maximal stress intensity. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> – a stess range </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath15StressContainer11_intensity_E">
+<span id="_CPPv3N5amath15StressContainer11_intensity_E"></span><span id="_CPPv2N5amath15StressContainer11_intensity_E"></span><span id="amath::StressContainer::_intensity___double"></span><span class="target" id="classamath_1_1StressContainer_1a0477ab5424112f1b2ed58f26cad86bdb"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_intensity_</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.</span></span><a class="headerlink" href="#_CPPv4N5amath15StressContainer11_intensity_E" title="Link to this definition"></a><br /></dt>
+<dd><p>The stresss range. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath15StressContainer6_mean_E">
+<span id="_CPPv3N5amath15StressContainer6_mean_E"></span><span id="_CPPv2N5amath15StressContainer6_mean_E"></span><span id="amath::StressContainer::_mean___double"></span><span class="target" id="classamath_1_1StressContainer_1a874ffa52693dd4965708108fafeef314"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_mean_</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.</span></span><a class="headerlink" href="#_CPPv4N5amath15StressContainer6_mean_E" title="Link to this definition"></a><br /></dt>
+<dd><p>The mean stress. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath15StressContainer7_ratio_E">
+<span id="_CPPv3N5amath15StressContainer7_ratio_E"></span><span id="_CPPv2N5amath15StressContainer7_ratio_E"></span><span id="amath::StressContainer::_ratio___double"></span><span class="target" id="classamath_1_1StressContainer_1a3a46ea7731c493d2a11bdb872302d9ef"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_ratio_</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.</span></span><a class="headerlink" href="#_CPPv4N5amath15StressContainer7_ratio_E" title="Link to this definition"></a><br /></dt>
+<dd><p>The maximum ratio between stress range and a coefficient. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath15StressContainer7_loads_E">
+<span id="_CPPv3N5amath15StressContainer7_loads_E"></span><span id="_CPPv2N5amath15StressContainer7_loads_E"></span><span id="amath::StressContainer::_loads___combi_ranks"></span><span class="target" id="classamath_1_1StressContainer_1ac81e869257bc3272427a32c34eb59f3b"></span><a class="reference internal" href="#_CPPv4N5amath11combi_ranksE" title="amath::combi_ranks"><span class="n"><span class="pre">combi_ranks</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_loads_</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N5amath15StressContainer7_loads_E" title="Link to this definition"></a><br /></dt>
+<dd><p>The load numbers associated with the stress range and the mean stress. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath15StressContainer9_torsors_E">
+<span id="_CPPv3N5amath15StressContainer9_torsors_E"></span><span id="_CPPv2N5amath15StressContainer9_torsors_E"></span><span id="amath::StressContainer::_torsors___combi_ranks"></span><span class="target" id="classamath_1_1StressContainer_1ac2a12a3d305cf9565fbf200bc18bbd81"></span><a class="reference internal" href="#_CPPv4N5amath11combi_ranksE" title="amath::combi_ranks"><span class="n"><span class="pre">combi_ranks</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_torsors_</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N5amath15StressContainer9_torsors_E" title="Link to this definition"></a><br /></dt>
+<dd><p>The torsor combination numbers associated with the stress range and the mean stress. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="stressstates">
+<h2>StressStates<a class="headerlink" href="#stressstates" title="Link to this heading"></a></h2>
+<dl class="cpp type">
+<dt class="sig sig-object cpp">
+<span class="target" id="namespaceamath"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">amath</span></span></span><br /></dt>
+<dd><dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N5amath12StressStatesE">
 <span id="_CPPv3N5amath12StressStatesE"></span><span id="_CPPv2N5amath12StressStatesE"></span><span id="amath::StressStates"></span><span class="target" id="classamath_1_1StressStates"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">StressStates</span></span></span><a class="headerlink" href="#_CPPv4N5amath12StressStatesE" title="Link to this definition"></a><br /></dt>
 <dd><div class="docutils container">
@@ -1029,13 +1196,13 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N5amath12StressStates27_maximum_equivalent_stress_ER11StressRangeRK6StressKdRK11combi_ranks">
-<span id="_CPPv3N5amath12StressStates27_maximum_equivalent_stress_ER11StressRangeRK6StressKdRK11combi_ranks"></span><span id="_CPPv2N5amath12StressStates27_maximum_equivalent_stress_ER11StressRangeRK6StressKdRK11combi_ranks"></span><span id="amath::StressStates::_maximum_equivalent_stress___StressRangeR.StressCR.doubleC.combi_ranksCR"></span><span class="target" id="classamath_1_1StressStates_1a60c547bf98c9e82f5ee13d2b009fdf7c"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_maximum_equivalent_stress_</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N5amath11StressRangeE" title="amath::StressRange"><span class="n"><span class="pre">StressRange</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">Sr_max</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath6StressE" title="amath::Stress"><span class="n"><span class="pre">Stress</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">stress</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">coef</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath11combi_ranksE" title="amath::combi_ranks"><span class="n"><span class="pre">combi_ranks</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">loads</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath12StressStates27_maximum_equivalent_stress_ER11StressRangeRK6StressKdRK11combi_ranks" title="Link to this definition"></a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N5amath12StressStates27_maximum_equivalent_stress_ER15StressContainerRK6StressKdRK11combi_ranks">
+<span id="_CPPv3N5amath12StressStates27_maximum_equivalent_stress_ER15StressContainerRK6StressKdRK11combi_ranks"></span><span id="_CPPv2N5amath12StressStates27_maximum_equivalent_stress_ER15StressContainerRK6StressKdRK11combi_ranks"></span><span id="amath::StressStates::_maximum_equivalent_stress___StressContainerR.StressCR.doubleC.combi_ranksCR"></span><span class="target" id="classamath_1_1StressStates_1a2af6dead2a3f63d007d444c89091398f"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_maximum_equivalent_stress_</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N5amath15StressContainerE" title="amath::StressContainer"><span class="n"><span class="pre">StressContainer</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">Sr_max</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath6StressE" title="amath::Stress"><span class="n"><span class="pre">Stress</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">stress</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">coef</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath11combi_ranksE" title="amath::combi_ranks"><span class="n"><span class="pre">combi_ranks</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">loads</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath12StressStates27_maximum_equivalent_stress_ER15StressContainerRK6StressKdRK11combi_ranks" title="Link to this definition"></a><br /></dt>
 <dd><p>Maximum equivalent stress determination. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>Sr_max</strong> – <strong>[out]</strong> The maximum stress range. </p></li>
+<li><p><strong>Sc_max</strong> – <strong>[out]</strong> The maximum stress range or stress intensity. </p></li>
 <li><p><strong>stress</strong> – The stress state. </p></li>
 <li><p><strong>coef</strong> – The coefficient used to compute the stress range ratio. </p></li>
 <li><p><strong>loads</strong> – The load numbers associated with the stress range. </p></li>
@@ -1130,7 +1297,7 @@
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5amath12StressStates16stress_intensityERKNSt6vectorI6size_tEE">
-<span id="_CPPv3N5amath12StressStates16stress_intensityERKNSt6vectorI6size_tEE"></span><span id="_CPPv2N5amath12StressStates16stress_intensityERKNSt6vectorI6size_tEE"></span><span id="amath::StressStates::stress_intensity__std::vector:s:CR"></span><span class="target" id="classamath_1_1StressStates_1ac8324ee2507f02b0368c9a3331d27b04"></span><a class="reference internal" href="#_CPPv4N5amath15StressIntensityE" title="amath::StressIntensity"><span class="n"><span class="pre">StressIntensity</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stress_intensity</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">states_id</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath12StressStates16stress_intensityERKNSt6vectorI6size_tEE" title="Link to this definition"></a><br /></dt>
+<span id="_CPPv3N5amath12StressStates16stress_intensityERKNSt6vectorI6size_tEE"></span><span id="_CPPv2N5amath12StressStates16stress_intensityERKNSt6vectorI6size_tEE"></span><span id="amath::StressStates::stress_intensity__std::vector:s:CR"></span><span class="target" id="classamath_1_1StressStates_1a623ed85debb14c48fa1e6af0a642db6b"></span><a class="reference internal" href="#_CPPv4N5amath15StressContainerE" title="amath::StressContainer"><span class="n"><span class="pre">StressContainer</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stress_intensity</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">states_id</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath12StressStates16stress_intensityERKNSt6vectorI6size_tEE" title="Link to this definition"></a><br /></dt>
 <dd><p>Calculate the maximum stress intensity. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1144,7 +1311,7 @@
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5amath12StressStates12stress_rangeERKNSt6vectorI6size_tEE">
-<span id="_CPPv3N5amath12StressStates12stress_rangeERKNSt6vectorI6size_tEE"></span><span id="_CPPv2N5amath12StressStates12stress_rangeERKNSt6vectorI6size_tEE"></span><span id="amath::StressStates::stress_range__std::vector:s:CR"></span><span class="target" id="classamath_1_1StressStates_1a81ba64599307bca02cbe2eb28b57c51b"></span><a class="reference internal" href="#_CPPv4N5amath11StressRangeE" title="amath::StressRange"><span class="n"><span class="pre">StressRange</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stress_range</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">states_id</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath12StressStates12stress_rangeERKNSt6vectorI6size_tEE" title="Link to this definition"></a><br /></dt>
+<span id="_CPPv3N5amath12StressStates12stress_rangeERKNSt6vectorI6size_tEE"></span><span id="_CPPv2N5amath12StressStates12stress_rangeERKNSt6vectorI6size_tEE"></span><span id="amath::StressStates::stress_range__std::vector:s:CR"></span><span class="target" id="classamath_1_1StressStates_1af07c64f4d0f59a2237f7fb5978c2ae4d"></span><a class="reference internal" href="#_CPPv4N5amath15StressContainerE" title="amath::StressContainer"><span class="n"><span class="pre">StressContainer</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stress_range</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">states_id</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath12StressStates12stress_rangeERKNSt6vectorI6size_tEE" title="Link to this definition"></a><br /></dt>
 <dd><p>Calculate the maximum stress range. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1158,7 +1325,7 @@
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5amath12StressStates18stress_range_ratioERKNSt6vectorI6size_tEERK11Coefficient">
-<span id="_CPPv3N5amath12StressStates18stress_range_ratioERKNSt6vectorI6size_tEERK11Coefficient"></span><span id="_CPPv2N5amath12StressStates18stress_range_ratioERKNSt6vectorI6size_tEERK11Coefficient"></span><span id="amath::StressStates::stress_range_ratio__std::vector:s:CR.CoefficientCR"></span><span class="target" id="classamath_1_1StressStates_1a2afa8fea5853b4b8b12f8bd4137f83b9"></span><a class="reference internal" href="#_CPPv4N5amath11StressRangeE" title="amath::StressRange"><span class="n"><span class="pre">StressRange</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stress_range_ratio</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">states_id</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath11CoefficientE" title="amath::Coefficient"><span class="n"><span class="pre">Coefficient</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">coefficient</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath12StressStates18stress_range_ratioERKNSt6vectorI6size_tEERK11Coefficient" title="Link to this definition"></a><br /></dt>
+<span id="_CPPv3N5amath12StressStates18stress_range_ratioERKNSt6vectorI6size_tEERK11Coefficient"></span><span id="_CPPv2N5amath12StressStates18stress_range_ratioERKNSt6vectorI6size_tEERK11Coefficient"></span><span id="amath::StressStates::stress_range_ratio__std::vector:s:CR.CoefficientCR"></span><span class="target" id="classamath_1_1StressStates_1a7ccbe7be92a7d4d7bb149a74b2e83c46"></span><a class="reference internal" href="#_CPPv4N5amath15StressContainerE" title="amath::StressContainer"><span class="n"><span class="pre">StressContainer</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stress_range_ratio</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">states_id</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath11CoefficientE" title="amath::Coefficient"><span class="n"><span class="pre">Coefficient</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">coefficient</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath12StressStates18stress_range_ratioERKNSt6vectorI6size_tEERK11Coefficient" title="Link to this definition"></a><br /></dt>
 <dd><p>Calculate the maximum ratio between stress range and a coefficient. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1175,7 +1342,7 @@
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5amath12StressStates12stress_rangeERK11Combination">
-<span id="_CPPv3N5amath12StressStates12stress_rangeERK11Combination"></span><span id="_CPPv2N5amath12StressStates12stress_rangeERK11Combination"></span><span id="amath::StressStates::stress_range__CombinationCR"></span><span class="target" id="classamath_1_1StressStates_1a0a2a67d83f2f396ef8052ece7f89d9d1"></span><a class="reference internal" href="#_CPPv4N5amath11StressRangeE" title="amath::StressRange"><span class="n"><span class="pre">StressRange</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stress_range</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath11CombinationE" title="amath::Combination"><span class="n"><span class="pre">Combination</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">explorer</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath12StressStates12stress_rangeERK11Combination" title="Link to this definition"></a><br /></dt>
+<span id="_CPPv3N5amath12StressStates12stress_rangeERK11Combination"></span><span id="_CPPv2N5amath12StressStates12stress_rangeERK11Combination"></span><span id="amath::StressStates::stress_range__CombinationCR"></span><span class="target" id="classamath_1_1StressStates_1ad42c539e94d65b15063f18d972d2b33c"></span><a class="reference internal" href="#_CPPv4N5amath15StressContainerE" title="amath::StressContainer"><span class="n"><span class="pre">StressContainer</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stress_range</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath11CombinationE" title="amath::Combination"><span class="n"><span class="pre">Combination</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">explorer</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath12StressStates12stress_rangeERK11Combination" title="Link to this definition"></a><br /></dt>
 <dd><p>Calculate the maximum stress range. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1189,7 +1356,7 @@
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5amath12StressStates18stress_range_ratioERK11CombinationRK11Coefficient">
-<span id="_CPPv3N5amath12StressStates18stress_range_ratioERK11CombinationRK11Coefficient"></span><span id="_CPPv2N5amath12StressStates18stress_range_ratioERK11CombinationRK11Coefficient"></span><span id="amath::StressStates::stress_range_ratio__CombinationCR.CoefficientCR"></span><span class="target" id="classamath_1_1StressStates_1a5ccab9033ecfb84f071ce9d375b19946"></span><a class="reference internal" href="#_CPPv4N5amath11StressRangeE" title="amath::StressRange"><span class="n"><span class="pre">StressRange</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stress_range_ratio</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath11CombinationE" title="amath::Combination"><span class="n"><span class="pre">Combination</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">explorer</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath11CoefficientE" title="amath::Coefficient"><span class="n"><span class="pre">Coefficient</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">coefficient</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath12StressStates18stress_range_ratioERK11CombinationRK11Coefficient" title="Link to this definition"></a><br /></dt>
+<span id="_CPPv3N5amath12StressStates18stress_range_ratioERK11CombinationRK11Coefficient"></span><span id="_CPPv2N5amath12StressStates18stress_range_ratioERK11CombinationRK11Coefficient"></span><span id="amath::StressStates::stress_range_ratio__CombinationCR.CoefficientCR"></span><span class="target" id="classamath_1_1StressStates_1ae80a4f837c9926f8f6d9d12b0b6ddab8"></span><a class="reference internal" href="#_CPPv4N5amath15StressContainerE" title="amath::StressContainer"><span class="n"><span class="pre">StressContainer</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stress_range_ratio</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath11CombinationE" title="amath::Combination"><span class="n"><span class="pre">Combination</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">explorer</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath11CoefficientE" title="amath::Coefficient"><span class="n"><span class="pre">Coefficient</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">coefficient</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath12StressStates18stress_range_ratioERK11CombinationRK11Coefficient" title="Link to this definition"></a><br /></dt>
 <dd><p>Calculate the maximum stress range. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
