@@ -5,7 +5,6 @@
 
 using namespace amath;
 
-
 void StressStates::reset() {
     PrimaryStresses.clear();
     SecondaryStresses.clear();
@@ -40,27 +39,23 @@ void StressStates::add_torsor_coefficients(const std::vector<double>& cmax, cons
     CoefficientsMin.push_back(cmin);
 }
 
-StressIntensity StressStates::stress_intensity(const std::vector<size_t>& states_id) {
-    StressRange Sr_max;
-    StressIntensity S_int;
+StressContainer StressStates::stress_intensity(const std::vector<size_t>& states_id) {
+    StressContainer Sc_max;
     combi_ranks loads = {0, 0};
     for (size_t i = 0; i < states_id.size(); i++) {
         size_t rk = states_id[i];
         loads.first = rk;
-        _maximum_equivalent_stress_(Sr_max, PrimaryStresses[rk], 1., loads);
+        _maximum_equivalent_stress_(Sc_max, PrimaryStresses[rk], 1., loads);
     }
-    S_int.Si = Sr_max.Sr;
-    S_int.load = Sr_max.loads[0];
-    S_int.torsor = Sr_max.torsors[0];
-    return S_int;
+    return Sc_max;
 }
 
-StressRange StressStates::stress_range(const std::vector<size_t>& states_id) {
+StressContainer StressStates::stress_range(const std::vector<size_t>& states_id) {
     return stress_range_ratio(states_id, ConstantCoefficient(1.));
 }
 
-StressRange StressStates::stress_range_ratio(const std::vector<size_t>& states_id, const Coefficient& coefficient) {
-    StressRange Sr_max;
+StressContainer StressStates::stress_range_ratio(const std::vector<size_t>& states_id, const Coefficient& coefficient) {
+    StressContainer Sc_max;
     for (size_t i = 0; i < states_id.size()-1; i++) {
         size_t rk1 = states_id[i];
         double c1 = Temperatures.empty() ? 1. : coefficient.get_yvalue(Temperatures[rk1]);
@@ -70,7 +65,7 @@ StressRange StressStates::stress_range_ratio(const std::vector<size_t>& states_i
             double c2 = Temperatures.empty() ? 1. : coefficient.get_yvalue(Temperatures[rk2]);            
             
             Stress Sr = PrimaryStresses[rk1] - PrimaryStresses[rk2];
-            _maximum_equivalent_stress_(Sr_max, Sr, std::max(c1, c2), {rk1, rk2});
+            _maximum_equivalent_stress_(Sc_max, Sr, std::max(c1, c2), {rk1, rk2});
         }
     }
 
@@ -78,15 +73,15 @@ StressRange StressStates::stress_range_ratio(const std::vector<size_t>& states_i
     /*
         TODO:
     */
-    return Sr_max;
+    return Sc_max;
 }
 
-StressRange StressStates::stress_range(const Combination& explorer) {
+StressContainer StressStates::stress_range(const Combination& explorer) {
     return stress_range_ratio(explorer, ConstantCoefficient(1.));
 }
 
-StressRange StressStates::stress_range_ratio(const Combination& explorer, const Coefficient& coefficient) {
-    StressRange Sr_max;
+StressContainer StressStates::stress_range_ratio(const Combination& explorer, const Coefficient& coefficient) {
+    StressContainer Sc_max;
     combi_ranks ranks;
     double c1, c2;
     double coef = 1.;
@@ -99,14 +94,14 @@ StressRange StressStates::stress_range_ratio(const Combination& explorer, const 
             coef = std::max(c1, c2);
         }
         Sr = PrimaryStresses[ranks.first] - PrimaryStresses[ranks.second];
-        _maximum_equivalent_stress_(Sr_max, Sr, coef, ranks);
+        _maximum_equivalent_stress_(Sc_max, Sr, coef, ranks);
     }
 
     // Determine the mean stress associated with the maximum stress range
     /*
         TODO:
     */
-    return Sr_max;
+    return Sc_max;
 }
 
 //
@@ -138,7 +133,7 @@ void StressStates::_check_() {
     }
 }
 
-void StressStates::_maximum_equivalent_stress_(StressRange& Sr_max, const Stress& Sr, const double coef, const combi_ranks& loads) {
+void StressStates::_maximum_equivalent_stress_(StressContainer& Sr_max, const Stress& Sr, const double coef, const combi_ranks& loads) {
     double ratio_max = 0.;
     if (equivalent_stress_method == "tresca") {
         ratio_max = Sr.tresca() / coef;
@@ -152,22 +147,9 @@ void StressStates::_maximum_equivalent_stress_(StressRange& Sr_max, const Stress
     else {
         throw std::runtime_error("Invalid equivalent stress method.");
     }
-    
-    if (ratio_max > Sr_max.ratio) {
-        if (equivalent_stress_method == "reduced_mises") {
-            double tt = Sr.tresca() / coef;
-            if (tt > Sr_max.ratio) {
-                Sr_max.ratio = tt;
-                Sr_max.Sr = tt * coef;
-                Sr_max.loads[0] = loads.first;
-                Sr_max.loads[1] = loads.second;
-            }
-        }
-        else {
-            Sr_max.ratio = ratio_max;
-            Sr_max.Sr = Sr_max.ratio * coef;
-            Sr_max.loads[0] = loads.first;
-            Sr_max.loads[1] = loads.second;
-        }
-    }    
+
+    if (ratio_max > Sr_max.get_ratio()) {
+        if (equivalent_stress_method == "reduced_mises") ratio_max = Sr.tresca() / coef;
+        Sr_max.set_range({ratio_max * coef, ratio_max}, loads, {0,0});    
+    }
 }

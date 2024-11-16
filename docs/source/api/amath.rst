@@ -18,6 +18,11 @@ Stress
 .. doxygenfile:: Stress.h
     :project: tt_alliance
 
+StressContainer
+---------------
+.. doxygenfile:: StressContainer.h
+    :project: tt_alliance
+
 StressStates
 ------------
 .. doxygenfile:: StressStates.h
