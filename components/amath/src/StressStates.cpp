@@ -5,8 +5,6 @@
 
 using namespace amath;
 
-StressContainer global_tmp_Sr;
-
 void StressStates::reset() {
     PrimaryStresses.clear();
     SecondaryStresses.clear();
@@ -150,10 +148,8 @@ void StressStates::_maximum_equivalent_stress_(StressContainer& Sr_max, const St
         throw std::runtime_error("Invalid equivalent stress method.");
     }
 
-    if (ratio_max > Sr_max.get_ratio() && equivalent_stress_method == "reduced_mises") {
-        ratio_max = Sr.tresca() / coef;
+    if (ratio_max > Sr_max.get_ratio()) {
+        if (equivalent_stress_method == "reduced_mises") ratio_max = Sr.tresca() / coef;
+        Sr_max.set_range({ratio_max * coef, ratio_max}, loads, {0,0});    
     }
-
-    global_tmp_Sr.set_range({ratio_max * coef, ratio_max}, loads, {0,0});
-    Sr_max.store_max(global_tmp_Sr);
 }
