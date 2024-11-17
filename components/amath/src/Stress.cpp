@@ -9,20 +9,20 @@ using namespace amath;
 //
 
 Stress::Stress(const std::array<double, STRESS_SIZE>& components) {
-    for (std::size_t i = 0; i < this->size(); i++) {
+    for (std::size_t i = 0; i < this->size(); ++i) {
         this->components[i] = components[i];
     }
 };
 
 Stress::Stress(const Stress& other) {
-    for (std::size_t i = 0; i < this->size(); i++) {
+    for (std::size_t i = 0; i < this->size(); ++i) {
         this->components[i] = other[i];
     }
 };
             
 Stress& Stress::operator=(const Stress& other) {
     if (this != &other) {
-        for (std::size_t i = 0; i < this->size(); i++) {
+        for (std::size_t i = 0; i < this->size(); ++i) {
             this->components[i] = other[i];
         }
     }
@@ -33,12 +33,12 @@ Stress::Stress(const std::vector<double>& components) {
     assert(components.size() == STRESS_SIZE && "Stress constructor: wrong number of components");
     int i = 0;
     for (auto value : components) {
-        this->components[i++] = value;
+        this->components[++i] = value;
     }    
 }
 
 void Stress::zero() {
-    for (std::size_t i = 0; i < this->size(); i++) {
+    for (std::size_t i = 0; i < this->size(); ++i) {
         this->components[i] = 0.0;
     }
 }
@@ -70,28 +70,28 @@ namespace amath {
 
 
 Stress& Stress::operator+=(const Stress& other) {
-    for  (std::size_t i = 0; i < this->size(); i++) {
+    for  (std::size_t i = 0; i < this->size(); ++i) {
         this->components[i] += other[i];
     }
     return *this;
 }
 
 Stress& Stress::operator-=(const Stress& other) {
-    for  (std::size_t i = 0; i < this->size(); i++) {
+    for  (std::size_t i = 0; i < this->size(); ++i) {
         this->components[i] -= other[i];
     }
     return *this;
 }
 
 Stress& Stress::operator*=(const double& scalar) {
-    for (std::size_t i = 0; i < this->size(); i++) {
+    for (std::size_t i = 0; i < this->size(); ++i) {
         this->components[i] *= scalar;
     }    
     return *this;
 }
 
 bool Stress::operator==(const Stress& other) {
-    for (size_t i = 0; i < this->size(); i++) {
+    for (size_t i = 0; i < this->size(); ++i) {
         if (this->components[i] != other.components[i]) {
             return false;
         }
@@ -104,7 +104,7 @@ bool Stress::operator!=(const Stress& other) {
 }
 
 bool Stress::is_diag() const {
-    for (size_t i = this->size()/2; i < this->size(); i++) {
+    for (size_t i = this->size()/2; i < this->size(); ++i) {
         if (std::abs(components[i]) >= STRESS_TOLERANCE) {
             return false;
         }
@@ -114,7 +114,7 @@ bool Stress::is_diag() const {
 
 void Stress::print(std::ostream& flux) const {
     std::string ss = "[ ";
-    for (std::size_t i=0; i < size(); i++) {
+    for (std::size_t i=0; i < size(); ++i) {
         ss += std::to_string(components[i]);
         if (i != size() - 1) ss += ", ";
     }

@@ -87,3 +87,14 @@ void StressContainer::store_max(const StressContainer& other) {
     if (*this < other)  *this = other;
 }
 
+StressIntensity StressContainer::get_intensity() const {
+    StressIntensity result;
+    result.set(_intensity_, _loads_.first, _torsors_.first);
+    return result;
+}
+
+StressRange StressContainer::get_range() const {
+    StressRange result;
+    result.set(_intensity_, _mean_, _ratio_, _loads_, _torsors_);
+    return result;
+}

@@ -2,8 +2,14 @@
 
 #include "GlobalTimer.h"
 #include "StressStates.h"
+#include "TorsorCombination.h"
 
 using namespace amath;
+
+StressStates::~StressStates() {
+    // resert the object in order to nullify pointers
+    torsors_manager.reset();
+}
 
 void StressStates::reset() {
     PrimaryStresses.clear();
@@ -39,40 +45,37 @@ void StressStates::add_torsor_coefficients(const std::vector<double>& cmax, cons
     CoefficientsMin.push_back(cmin);
 }
 
+void StressStates::set_active_torsors(const std::vector<bool>& active_torsors) { 
+    torsors_manager.set_ptr_coefficients(CoefficientsMax, CoefficientsMin);
+    torsors_manager.set_active_torsors(active_torsors); 
+}
+
 StressContainer StressStates::stress_intensity(const std::vector<size_t>& states_id) {
     StressContainer Sc_max;
+    Stress Stotal;
     combi_ranks loads = {0, 0};
-    for (size_t i = 0; i < states_id.size(); i++) {
-        size_t rk = states_id[i];
+
+    std::vector<double> coefs( nb_torsors() );
+    std::vector<bool> active_torsors( nb_torsors() );
+    for (std::size_t i = 0; i < nb_torsors(); ++i) active_torsors[i] = true;
+    
+    set_active_torsors(active_torsors);
+
+    for (std::size_t i = 0; i < states_id.size(); ++i) {
+        std::size_t rk = states_id[i];
         loads.first = rk;
-        _maximum_equivalent_stress_(Sc_max, PrimaryStresses[rk], 1., loads);
-    }
-    return Sc_max;
-}
+        for (std::size_t t = 0; t < torsors_manager.nb_combinaisons(rk); ++t) {
+            Stotal = PrimaryStresses[rk];
 
-StressContainer StressStates::stress_range(const std::vector<size_t>& states_id) {
-    return stress_range_ratio(states_id, ConstantCoefficient(1.));
-}
-
-StressContainer StressStates::stress_range_ratio(const std::vector<size_t>& states_id, const Coefficient& coefficient) {
-    StressContainer Sc_max;
-    for (size_t i = 0; i < states_id.size()-1; i++) {
-        size_t rk1 = states_id[i];
-        double c1 = Temperatures.empty() ? 1. : coefficient.get_yvalue(Temperatures[rk1]);
-
-        for (size_t j = i+1; j < states_id.size(); j++) {
-            size_t rk2 = states_id[j];
-            double c2 = Temperatures.empty() ? 1. : coefficient.get_yvalue(Temperatures[rk2]);            
-            
-            Stress Sr = PrimaryStresses[rk1] - PrimaryStresses[rk2];
-            _maximum_equivalent_stress_(Sc_max, Sr, std::max(c1, c2), {rk1, rk2});
+            if ( torsors_manager.is_activate() ) {
+                torsors_manager.get_coef(rk, t, coefs);
+                for (std::size_t trk = 0; trk < nb_torsors(); ++trk) {
+                    Stotal += coefs[trk]*Torsors[trk];
+                }
+            }
+            _maximum_equivalent_stress_(Sc_max, Stotal, 1., loads);
         }
     }
-
-    // Determine the mean stress associated with the maximum stress range
-    /*
-        TODO:
-    */
     return Sc_max;
 }
 
@@ -83,18 +86,30 @@ StressContainer StressStates::stress_range(const Combination& explorer) {
 StressContainer StressStates::stress_range_ratio(const Combination& explorer, const Coefficient& coefficient) {
     StressContainer Sc_max;
     combi_ranks ranks;
-    double c1, c2;
-    double coef = 1.;
-    Stress Sr;
-    for (size_t i = 0; i < explorer.size(); i++) {
+    Stress Scumul, Stotal;
+    std::vector<double> coefs( nb_torsors() );
+
+    std::vector<bool> active_torsors( nb_torsors() );
+    for (std::size_t i = 0; i < nb_torsors(); ++i) active_torsors[i] = true;
+    
+    set_active_torsors(active_torsors);
+
+    for (std::size_t i = 0; i < explorer.size(); ++i) {
         explorer.ranks_by_ptr(i, ranks);
-        if (!Temperatures.empty()) {
-            c1 = coefficient.get_yvalue(Temperatures[ranks.first]);
-            c2 = coefficient.get_yvalue(Temperatures[ranks.second]);
-            coef = std::max(c1, c2);
+        double cc = get_interpolated_coeffient(coefficient, ranks);
+        Scumul = PrimaryStresses[ranks.first] - PrimaryStresses[ranks.second];
+
+        for (std::size_t t = 0; t < torsors_manager.nb_combinaisons(ranks); ++t) {
+            Stotal = Scumul;
+
+            if ( torsors_manager.is_activate() ) {
+                torsors_manager.get_diff_coef(ranks, t, coefs);
+                for (std::size_t trk = 0; trk < nb_torsors(); ++trk) {
+                    Stotal += coefs[trk]*Torsors[trk];
+                }
+            }
+            _maximum_equivalent_stress_(Sc_max, Stotal, cc, ranks);
         }
-        Sr = PrimaryStresses[ranks.first] - PrimaryStresses[ranks.second];
-        _maximum_equivalent_stress_(Sc_max, Sr, coef, ranks);
     }
 
     // Determine the mean stress associated with the maximum stress range
@@ -123,7 +138,7 @@ void StressStates::_check_() {
     if (!CoefficientsMin.empty() && PrimaryStresses.size() != CoefficientsMin.size()) {
         throw std::runtime_error("PrimaryStresses and CoefficientsMin must have the same size.");
     }
-    for (size_t i = 0; i < PrimaryStresses.size(); ++i) {
+    for (std::size_t i = 0; i < PrimaryStresses.size(); ++i) {
         if (CoefficientsMax[i].size() != Torsors.size()) {
             throw std::runtime_error("For each state, CoefficientsMax must have the same size as Torsors.");
         }
@@ -143,13 +158,22 @@ void StressStates::_maximum_equivalent_stress_(StressContainer& Sr_max, const St
     }
     else if (equivalent_stress_method == "reduced_mises") {
         ratio_max = Sr.reduced_mises() / coef;
+        if ( ratio_max > Sr_max.get_ratio() ) ratio_max = Sr.tresca() / coef;
     }
     else {
         throw std::runtime_error("Invalid equivalent stress method.");
     }
 
     if (ratio_max > Sr_max.get_ratio()) {
-        if (equivalent_stress_method == "reduced_mises") ratio_max = Sr.tresca() / coef;
         Sr_max.set_range({ratio_max * coef, ratio_max}, loads, {0,0});    
     }
+}
+
+double StressStates::get_interpolated_coeffient(const Coefficient& coefficient, const combi_ranks& ranks) const {
+    // case for undefined temperatures
+    if (Temperatures.empty()) return 1.;
+
+    double c1 = coefficient.get_yvalue(Temperatures[ranks.first]);
+    double c2 = coefficient.get_yvalue(Temperatures[ranks.second]);
+    return std::max(c1, c2);
 }
