@@ -16,6 +16,13 @@ namespace amath {
         std::size_t load = 0;
         /// \brief The torsor combination number associated with the stress intensity.
         std::size_t torsor = 0;
+
+        // Function to set values
+        void set(double intensity_val, std::size_t load_val, std::size_t torsor_val) {
+            intensity = intensity_val;
+            load = load_val;
+            torsor = torsor_val;
+        }
     };
 
     /// @brief Utilty structure used to extract details results for a stress range 
@@ -30,6 +37,15 @@ namespace amath {
         combi_ranks loads = {0, 0};
         /// \brief The torsor combination numbers associated with the stress range and the mean stress.
         combi_ranks torsors = {0, 0};
+
+        // Function to set values
+        void set(double range_val, double mean_val, double ratio_val, combi_ranks loads_val, combi_ranks torsors_val) {
+            range = range_val;
+            mean = mean_val;
+            ratio = ratio_val;
+            loads = loads_val;
+            torsors = torsors_val;
+        }
     };
 
 
@@ -93,6 +109,13 @@ namespace amath {
             /// @brief Update internals parameters for maximal stress intensity
             /// @param other a stess range
             void store_max(const StressContainer& other);
+
+            /// @brief Return a structure with detailed results for stress intensity
+            /// @return detailed stress intensity
+            StressIntensity get_intensity() const;
+            /// @brief Return a structure with detailed results for stress range
+            /// @return detailed stress range
+            StressRange get_range() const;
 
     };
 }

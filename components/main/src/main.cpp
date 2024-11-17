@@ -50,7 +50,8 @@ void performBenchmark(amath::StressStates& states, const std::string& method, co
     for (int i = 0; i < interations; ++i) {
         auto Smax = states.stress_range(states_ids);
         if (i == interations - 1) {
-            std::cout << "Max stress intensity for " << method << ": " << Smax.Sr << std::endl;
+            auto Sr = Smax.get_range();
+            std::cout << "Max stress intensity for " << method << ": " << Sr.range << std::endl;
         }
     }
     stop_timer(method + " loop");
@@ -62,7 +63,8 @@ void performBenchmark(amath::StressStates& states, const std::string& method, co
     for (int i = 0; i < interations; ++i) {
         auto Smax = states.stress_range(explorer);
         if (i == interations - 1) {
-            std::cout << "Max stress intensity for " << method << ": " << Smax.Sr << std::endl;
+            auto Sr = Smax.get_range();
+            std::cout << "Max stress intensity for " << method << ": " << Sr.range << std::endl;
         }
     }
     stop_timer(method + " explorer");
