@@ -42,11 +42,13 @@ namespace amath {
     class TorsorCombination {
 
         private:
-            /// @brief Check data integrity.
-            void _check_() const;
-
+            /// \brief internal status
+            bool _is_activate_ = false;
             /// @brief internal size parameter
             std::size_t cached_size = 0;
+
+            /// @brief Check data integrity.
+            void _check_() const;
 
             /// @brief check if torsor coefficients for 2 states are constant
             /// @param states pair of state
@@ -67,8 +69,14 @@ namespace amath {
             /// @brief constructor by copy
             /// @param other the object to copy
             TorsorCombination(const TorsorCombination& other);
+            /// @bried Reset internal parameters.
+            void reset();
+            /// @brief Return the activation status
+            /// @return current status 
+            bool is_activate() const { return _is_activate_; }
 
-            /// @brief Create the link by pointers to the torsor coefficients
+            /// @brief Create the link by pointers to the torsor coefficients. This function must be called before
+            /// `set_active_torsors`.
             /// @param CoefMax vector of maximum coefficients
             /// @param CoefMin vector of maximum coefficients
             void set_ptr_coefficients(std::vector<std::vector<double>>& CoefMax, std::vector<std::vector<double>>& CoefMin);

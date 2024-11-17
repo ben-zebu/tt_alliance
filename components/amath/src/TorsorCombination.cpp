@@ -4,10 +4,18 @@
 
 using namespace amath;
 
+void TorsorCombination::reset() {
+    ptr_coef_max = nullptr;
+    ptr_coef_min = nullptr;
+    active_torsors.clear();
+    _is_activate_ = false;
+}
+
 TorsorCombination::TorsorCombination(const TorsorCombination& other) {
     this->active_torsors = other.active_torsors;
     this->ptr_coef_max = other.ptr_coef_max;
     this->ptr_coef_min = other.ptr_coef_min;
+    _is_activate_ = false;
 }
 
 void TorsorCombination::set_ptr_coefficients(std::vector<std::vector<double>>& CoefMax, 
@@ -17,11 +25,13 @@ void TorsorCombination::set_ptr_coefficients(std::vector<std::vector<double>>& C
     }
     ptr_coef_max = &CoefMax;
     ptr_coef_min = &CoefMin;
+    _is_activate_ = false;
 }
 
 void TorsorCombination::set_active_torsors(const std::vector<bool>& torsors) {
     active_torsors = torsors;
     cached_size = active_torsors.size();
+    _is_activate_ = true;
     _check_();
 }
 
@@ -37,6 +47,13 @@ void TorsorCombination::get_coef(std::size_t state, std::size_t tcomb, std::vect
 
     for (std::size_t i = 0; i < cached_size; ++i) {
         std::size_t rk = cached_size - 1 - i;
+
+        // set to zero for inactive torsor
+        if (!active_torsors[rk]) { 
+            coefficients[rk] = 0.; 
+            continue;
+        } 
+
         c1_max = (*ptr_coef_max)[state][rk];
         c1_min = (*ptr_coef_min)[state][rk];
 
@@ -63,6 +80,12 @@ void TorsorCombination::get_diff_coef(combi_ranks states, std::size_t tcomb, std
     for (std::size_t i = 0; i < cached_size; ++i) {
         std::size_t rk = cached_size - 1 - i;
 
+        // set to zero for inactive torsor
+        if (!active_torsors[rk]) { 
+            coefficients[rk] = 0.; 
+            continue;
+        } 
+
         c1_max = (*ptr_coef_max)[states.first][rk];
         c1_min = (*ptr_coef_min)[states.first][rk];
 
@@ -86,6 +109,9 @@ std::size_t TorsorCombination::nb_combinaisons(std::size_t state) const {
 
 std::size_t TorsorCombination::nb_combinaisons(const combi_ranks& states) const {
     std::size_t nb_comb = 1;
+    // case for undefined torsors status 
+    if ( !is_activate() ) return nb_comb;
+
     for (std::size_t i = 0; i < cached_size; ++i) {
         // only active torsors are taken into account
         if (!active_torsors[i]) continue;
