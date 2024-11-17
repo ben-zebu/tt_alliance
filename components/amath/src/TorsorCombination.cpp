@@ -35,7 +35,7 @@ void TorsorCombination::get_coef(std::size_t state, std::size_t tcomb, std::vect
 
     std::size_t tree_rk = tcomb;
 
-    for (std::size_t i = 0; i < cached_size; i++) {
+    for (std::size_t i = 0; i < cached_size; ++i) {
         std::size_t rk = cached_size - 1 - i;
         c1_max = (*ptr_coef_max)[state][rk];
         c1_min = (*ptr_coef_min)[state][rk];
@@ -60,7 +60,7 @@ void TorsorCombination::get_diff_coef(combi_ranks states, std::size_t tcomb, std
 
     std::size_t tree_rk = tcomb;
 
-    for (std::size_t i = 0; i < cached_size; i++) {
+    for (std::size_t i = 0; i < cached_size; ++i) {
         std::size_t rk = cached_size - 1 - i;
 
         c1_max = (*ptr_coef_max)[states.first][rk];
@@ -86,7 +86,7 @@ std::size_t TorsorCombination::nb_combinaisons(std::size_t state) const {
 
 std::size_t TorsorCombination::nb_combinaisons(const combi_ranks& states) const {
     std::size_t nb_comb = 1;
-    for (std::size_t i = 0; i < cached_size; i++) {
+    for (std::size_t i = 0; i < cached_size; ++i) {
         // only active torsors are taken into account
         if (!active_torsors[i]) continue;
 

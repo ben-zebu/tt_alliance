@@ -42,7 +42,7 @@ void StressStates::add_torsor_coefficients(const std::vector<double>& cmax, cons
 StressContainer StressStates::stress_intensity(const std::vector<size_t>& states_id) {
     StressContainer Sc_max;
     combi_ranks loads = {0, 0};
-    for (size_t i = 0; i < states_id.size(); i++) {
+    for (size_t i = 0; i < states_id.size(); ++i) {
         size_t rk = states_id[i];
         loads.first = rk;
         _maximum_equivalent_stress_(Sc_max, PrimaryStresses[rk], 1., loads);
@@ -56,11 +56,11 @@ StressContainer StressStates::stress_range(const std::vector<size_t>& states_id)
 
 StressContainer StressStates::stress_range_ratio(const std::vector<size_t>& states_id, const Coefficient& coefficient) {
     StressContainer Sc_max;
-    for (size_t i = 0; i < states_id.size()-1; i++) {
+    for (size_t i = 0; i < states_id.size()-1; ++i) {
         size_t rk1 = states_id[i];
         double c1 = Temperatures.empty() ? 1. : coefficient.get_yvalue(Temperatures[rk1]);
 
-        for (size_t j = i+1; j < states_id.size(); j++) {
+        for (size_t j = i+1; j < states_id.size(); ++j) {
             size_t rk2 = states_id[j];
             double c2 = Temperatures.empty() ? 1. : coefficient.get_yvalue(Temperatures[rk2]);            
             
@@ -86,7 +86,7 @@ StressContainer StressStates::stress_range_ratio(const Combination& explorer, co
     double c1, c2;
     double coef = 1.;
     Stress Sr;
-    for (size_t i = 0; i < explorer.size(); i++) {
+    for (size_t i = 0; i < explorer.size(); ++i) {
         explorer.ranks_by_ptr(i, ranks);
         if (!Temperatures.empty()) {
             c1 = coefficient.get_yvalue(Temperatures[ranks.first]);
