@@ -81,6 +81,11 @@
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5amath5TableE"><code class="docutils literal notranslate"><span class="pre">amath::Table</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#torsorcombination">TorsorCombination</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5amath21COEFFICIENT_TOLERANCEE"><code class="docutils literal notranslate"><span class="pre">amath::COEFFICIENT_TOLERANCE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5amath17TorsorCombinationE"><code class="docutils literal notranslate"><span class="pre">amath::TorsorCombination</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -753,7 +758,7 @@
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N5amath16STRESS_TOLERANCEE">
-<span id="_CPPv3N5amath16STRESS_TOLERANCEE"></span><span id="_CPPv2N5amath16STRESS_TOLERANCEE"></span><span id="amath::STRESS_TOLERANCE__double"></span><span class="target" id="Stress_8h_1a9549de6ab03b70a214c8b411c69b5c42"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">STRESS_TOLERANCE</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1e-10</span></span><a class="headerlink" href="#_CPPv4N5amath16STRESS_TOLERANCEE" title="Link to this definition"></a><br /></dt>
+<span id="_CPPv3N5amath16STRESS_TOLERANCEE"></span><span id="_CPPv2N5amath16STRESS_TOLERANCEE"></span><span id="amath::STRESS_TOLERANCE__double"></span><span class="target" id="Stress_8h_1a9549de6ab03b70a214c8b411c69b5c42"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">STRESS_TOLERANCE</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1e-6</span></span><a class="headerlink" href="#_CPPv4N5amath16STRESS_TOLERANCEE" title="Link to this definition"></a><br /></dt>
 <dd><p>Tolerance for stress components comparisons. </p>
 </dd></dl>
 
@@ -960,6 +965,14 @@
 <em>#include &lt;StressContainer.h&gt;</em></div>
 <p>Utilty structure used to extract details results for a stress intensity. </p>
 <div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath15StressIntensity3setEdNSt6size_tENSt6size_tE">
+<span id="_CPPv3N5amath15StressIntensity3setEdNSt6size_tENSt6size_tE"></span><span id="_CPPv2N5amath15StressIntensity3setEdNSt6size_tENSt6size_tE"></span><span id="amath::StressIntensity::set__double.std::s.std::s"></span><span class="target" id="structamath_1_1StressIntensity_1a28913bbc2748f6abb956bb48979023f5"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">intensity_val</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">load_val</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">torsor_val</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath15StressIntensity3setEdNSt6size_tENSt6size_tE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N5amath15StressIntensity9intensityE">
@@ -988,6 +1001,14 @@
 <dd><div class="docutils container">
 <em>#include &lt;StressContainer.h&gt;</em></div>
 <p>Utilty structure used to extract details results for a stress range. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath11StressRange3setEddd11combi_ranks11combi_ranks">
+<span id="_CPPv3N5amath11StressRange3setEddd11combi_ranks11combi_ranks"></span><span id="_CPPv2N5amath11StressRange3setEddd11combi_ranks11combi_ranks"></span><span id="amath::StressRange::set__double.double.double.combi_ranks.combi_ranks"></span><span class="target" id="structamath_1_1StressRange_1ae787274bacf1f77646d1ff4ebcc74932"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">range_val</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">mean_val</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">ratio_val</span></span>, <a class="reference internal" href="#_CPPv4N5amath11combi_ranksE" title="amath::combi_ranks"><span class="n"><span class="pre">combi_ranks</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">loads_val</span></span>, <a class="reference internal" href="#_CPPv4N5amath11combi_ranksE" title="amath::combi_ranks"><span class="n"><span class="pre">combi_ranks</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">torsors_val</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath11StressRange3setEddd11combi_ranks11combi_ranks" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
 <dl class="cpp var">
@@ -1142,6 +1163,28 @@
 </dl>
 </dd></dl>
 
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath15StressContainer13get_intensityEv">
+<span id="_CPPv3NK5amath15StressContainer13get_intensityEv"></span><span id="_CPPv2NK5amath15StressContainer13get_intensityEv"></span><span id="amath::StressContainer::get_intensityC"></span><span class="target" id="classamath_1_1StressContainer_1adb0317d1ee8058a30078f1f1a5ae3925"></span><a class="reference internal" href="#_CPPv4N5amath15StressIntensityE" title="amath::StressIntensity"><span class="n"><span class="pre">StressIntensity</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_intensity</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath15StressContainer13get_intensityEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Return a structure with detailed results for stress intensity. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>detailed stress intensity </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath15StressContainer9get_rangeEv">
+<span id="_CPPv3NK5amath15StressContainer9get_rangeEv"></span><span id="_CPPv2NK5amath15StressContainer9get_rangeEv"></span><span id="amath::StressContainer::get_rangeC"></span><span class="target" id="classamath_1_1StressContainer_1acafd603b8899e30828ebe0569742c69e"></span><a class="reference internal" href="#_CPPv4N5amath11StressRangeE" title="amath::StressRange"><span class="n"><span class="pre">StressRange</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_range</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath15StressContainer9get_rangeEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Return a structure with detailed results for stress range. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>detailed stress range </p>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
@@ -1196,19 +1239,9 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N5amath12StressStates27_maximum_equivalent_stress_ER15StressContainerRK6StressKdRK11combi_ranks">
-<span id="_CPPv3N5amath12StressStates27_maximum_equivalent_stress_ER15StressContainerRK6StressKdRK11combi_ranks"></span><span id="_CPPv2N5amath12StressStates27_maximum_equivalent_stress_ER15StressContainerRK6StressKdRK11combi_ranks"></span><span id="amath::StressStates::_maximum_equivalent_stress___StressContainerR.StressCR.doubleC.combi_ranksCR"></span><span class="target" id="classamath_1_1StressStates_1a2af6dead2a3f63d007d444c89091398f"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_maximum_equivalent_stress_</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N5amath15StressContainerE" title="amath::StressContainer"><span class="n"><span class="pre">StressContainer</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">Sr_max</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath6StressE" title="amath::Stress"><span class="n"><span class="pre">Stress</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">stress</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">coef</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath11combi_ranksE" title="amath::combi_ranks"><span class="n"><span class="pre">combi_ranks</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">loads</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath12StressStates27_maximum_equivalent_stress_ER15StressContainerRK6StressKdRK11combi_ranks" title="Link to this definition"></a><br /></dt>
-<dd><p>Maximum equivalent stress determination. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>Sc_max</strong> – <strong>[out]</strong> The maximum stress range or stress intensity. </p></li>
-<li><p><strong>stress</strong> – The stress state. </p></li>
-<li><p><strong>coef</strong> – The coefficient used to compute the stress range ratio. </p></li>
-<li><p><strong>loads</strong> – The load numbers associated with the stress range. </p></li>
-</ul>
-</dd>
-</dl>
+<dt class="sig sig-object cpp" id="_CPPv4N5amath12StressStatesD0Ev">
+<span id="_CPPv3N5amath12StressStatesD0Ev"></span><span id="_CPPv2N5amath12StressStatesD0Ev"></span><span id="amath::StressStates::~StressStates"></span><span class="target" id="classamath_1_1StressStates_1ad19322dc50e508e9e185f3a56cb1b047"></span><span class="sig-name descname"><span class="n"><span class="pre">~StressStates</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath12StressStatesD0Ev" title="Link to this definition"></a><br /></dt>
+<dd><p>destructor method </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1236,11 +1269,22 @@
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK5amath12StressStates4sizeEv">
-<span id="_CPPv3NK5amath12StressStates4sizeEv"></span><span id="_CPPv2NK5amath12StressStates4sizeEv"></span><span id="amath::StressStates::sizeC"></span><span class="target" id="classamath_1_1StressStates_1a1f00fc8b1a848f3d28c018844770ca9a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">size</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath12StressStates4sizeEv" title="Link to this definition"></a><br /></dt>
+<span id="_CPPv3NK5amath12StressStates4sizeEv"></span><span id="_CPPv2NK5amath12StressStates4sizeEv"></span><span id="amath::StressStates::sizeC"></span><span class="target" id="classamath_1_1StressStates_1a4bab2b2aea15985eb509661ce5305fee"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">size</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath12StressStates4sizeEv" title="Link to this definition"></a><br /></dt>
 <dd><p>Get the number of stress states. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The number of stress states. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath12StressStates10nb_torsorsEv">
+<span id="_CPPv3NK5amath12StressStates10nb_torsorsEv"></span><span id="_CPPv2NK5amath12StressStates10nb_torsorsEv"></span><span id="amath::StressStates::nb_torsorsC"></span><span class="target" id="classamath_1_1StressStates_1aa44a85191e6f5558941bda6539253abf"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">nb_torsors</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath12StressStates10nb_torsorsEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the number of torsors. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The number of torsors. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -1296,6 +1340,17 @@
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath12StressStates18set_active_torsorsERKNSt6vectorIbEE">
+<span id="_CPPv3N5amath12StressStates18set_active_torsorsERKNSt6vectorIbEE"></span><span id="_CPPv2N5amath12StressStates18set_active_torsorsERKNSt6vectorIbEE"></span><span id="amath::StressStates::set_active_torsors__std::vector:b:CR"></span><span class="target" id="classamath_1_1StressStates_1a908878995dc8c479754a95e5cf620e6c"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_active_torsors</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">bool</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">active_torsors</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath12StressStates18set_active_torsorsERKNSt6vectorIbEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Set active torsors in the combination manager. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>active_torsors</strong> – status list for each torsor </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5amath12StressStates16stress_intensityERKNSt6vectorI6size_tEE">
 <span id="_CPPv3N5amath12StressStates16stress_intensityERKNSt6vectorI6size_tEE"></span><span id="_CPPv2N5amath12StressStates16stress_intensityERKNSt6vectorI6size_tEE"></span><span id="amath::StressStates::stress_intensity__std::vector:s:CR"></span><span class="target" id="classamath_1_1StressStates_1a623ed85debb14c48fa1e6af0a642db6b"></span><a class="reference internal" href="#_CPPv4N5amath15StressContainerE" title="amath::StressContainer"><span class="n"><span class="pre">StressContainer</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stress_intensity</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">states_id</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath12StressStates16stress_intensityERKNSt6vectorI6size_tEE" title="Link to this definition"></a><br /></dt>
 <dd><p>Calculate the maximum stress intensity. </p>
@@ -1305,37 +1360,6 @@
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The maximum stress intensity. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N5amath12StressStates12stress_rangeERKNSt6vectorI6size_tEE">
-<span id="_CPPv3N5amath12StressStates12stress_rangeERKNSt6vectorI6size_tEE"></span><span id="_CPPv2N5amath12StressStates12stress_rangeERKNSt6vectorI6size_tEE"></span><span id="amath::StressStates::stress_range__std::vector:s:CR"></span><span class="target" id="classamath_1_1StressStates_1af07c64f4d0f59a2237f7fb5978c2ae4d"></span><a class="reference internal" href="#_CPPv4N5amath15StressContainerE" title="amath::StressContainer"><span class="n"><span class="pre">StressContainer</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stress_range</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">states_id</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath12StressStates12stress_rangeERKNSt6vectorI6size_tEE" title="Link to this definition"></a><br /></dt>
-<dd><p>Calculate the maximum stress range. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>states_id</strong> – The states id used to calculate the stress range. </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The maximum stress range. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N5amath12StressStates18stress_range_ratioERKNSt6vectorI6size_tEERK11Coefficient">
-<span id="_CPPv3N5amath12StressStates18stress_range_ratioERKNSt6vectorI6size_tEERK11Coefficient"></span><span id="_CPPv2N5amath12StressStates18stress_range_ratioERKNSt6vectorI6size_tEERK11Coefficient"></span><span id="amath::StressStates::stress_range_ratio__std::vector:s:CR.CoefficientCR"></span><span class="target" id="classamath_1_1StressStates_1a7ccbe7be92a7d4d7bb149a74b2e83c46"></span><a class="reference internal" href="#_CPPv4N5amath15StressContainerE" title="amath::StressContainer"><span class="n"><span class="pre">StressContainer</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stress_range_ratio</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">states_id</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath11CoefficientE" title="amath::Coefficient"><span class="n"><span class="pre">Coefficient</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">coefficient</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath12StressStates18stress_range_ratioERKNSt6vectorI6size_tEERK11Coefficient" title="Link to this definition"></a><br /></dt>
-<dd><p>Calculate the maximum ratio between stress range and a coefficient. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>states_id</strong> – The states id used to calculate the stress range. </p></li>
-<li><p><strong>coefficient</strong> – The coefficient used to calculate the maximum ratio. </p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The maximum stress range. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -1421,6 +1445,12 @@
 <dd><p>Method used to calculate the equivalent stress. </p>
 </dd></dl>
 
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath12StressStates15torsors_managerE">
+<span id="_CPPv3N5amath12StressStates15torsors_managerE"></span><span id="_CPPv2N5amath12StressStates15torsors_managerE"></span><span id="amath::StressStates::torsors_manager__TorsorCombination"></span><span class="target" id="classamath_1_1StressStates_1a7e00975490f97445b2b857f86a1e9b06"></span><a class="reference internal" href="#_CPPv4N5amath17TorsorCombinationE" title="amath::TorsorCombination"><span class="n"><span class="pre">TorsorCombination</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">torsors_manager</span></span></span><a class="headerlink" href="#_CPPv4N5amath12StressStates15torsors_managerE" title="Link to this definition"></a><br /></dt>
+<dd><p>manage the torsor combination </p>
+</dd></dl>
+
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-functions">Private Functions</p>
@@ -1428,6 +1458,39 @@
 <dt class="sig sig-object cpp" id="_CPPv4N5amath12StressStates7_check_Ev">
 <span id="_CPPv3N5amath12StressStates7_check_Ev"></span><span id="_CPPv2N5amath12StressStates7_check_Ev"></span><span id="amath::StressStates::_check_"></span><span class="target" id="classamath_1_1StressStates_1ad50f850c169d42a695855190f28f0305"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_check_</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath12StressStates7_check_Ev" title="Link to this definition"></a><br /></dt>
 <dd><p>Check the data integrety of the stress states. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath12StressStates27_maximum_equivalent_stress_ER15StressContainerRK6StressKdRK11combi_ranks">
+<span id="_CPPv3N5amath12StressStates27_maximum_equivalent_stress_ER15StressContainerRK6StressKdRK11combi_ranks"></span><span id="_CPPv2N5amath12StressStates27_maximum_equivalent_stress_ER15StressContainerRK6StressKdRK11combi_ranks"></span><span id="amath::StressStates::_maximum_equivalent_stress___StressContainerR.StressCR.doubleC.combi_ranksCR"></span><span class="target" id="classamath_1_1StressStates_1a2af6dead2a3f63d007d444c89091398f"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_maximum_equivalent_stress_</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N5amath15StressContainerE" title="amath::StressContainer"><span class="n"><span class="pre">StressContainer</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">Sr_max</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath6StressE" title="amath::Stress"><span class="n"><span class="pre">Stress</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">stress</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">coef</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath11combi_ranksE" title="amath::combi_ranks"><span class="n"><span class="pre">combi_ranks</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">loads</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath12StressStates27_maximum_equivalent_stress_ER15StressContainerRK6StressKdRK11combi_ranks" title="Link to this definition"></a><br /></dt>
+<dd><p>Maximum equivalent stress determination. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Sc_max</strong> – <strong>[out]</strong> The maximum stress range or stress intensity. </p></li>
+<li><p><strong>stress</strong> – The stress state. </p></li>
+<li><p><strong>coef</strong> – The coefficient used to compute the stress range ratio. </p></li>
+<li><p><strong>loads</strong> – The load numbers associated with the stress range. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath12StressStates26get_interpolated_coeffientERK11CoefficientRK11combi_ranks">
+<span id="_CPPv3NK5amath12StressStates26get_interpolated_coeffientERK11CoefficientRK11combi_ranks"></span><span id="_CPPv2NK5amath12StressStates26get_interpolated_coeffientERK11CoefficientRK11combi_ranks"></span><span id="amath::StressStates::get_interpolated_coeffient__CoefficientCR.combi_ranksCRC"></span><span class="target" id="classamath_1_1StressStates_1ab2c81d382f7251acaaed063702a28de6"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_interpolated_coeffient</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath11CoefficientE" title="amath::Coefficient"><span class="n"><span class="pre">Coefficient</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">coefficient</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath11combi_ranksE" title="amath::combi_ranks"><span class="n"><span class="pre">combi_ranks</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">ranks</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath12StressStates26get_interpolated_coeffientERK11CoefficientRK11combi_ranks" title="Link to this definition"></a><br /></dt>
+<dd><p>Return the maximum interpoletd coefficient for 2 states. Temperature of each state is used to determine the interpolated value. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>coefficient</strong> – coefficient used for interpolation </p></li>
+<li><p><strong>ranks</strong> – states ranks </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>maximum interpoletd coefficient </p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -1699,6 +1762,231 @@
 <dt class="sig sig-object cpp" id="_CPPv4N5amath5Table7yvaluesE">
 <span id="_CPPv3N5amath5Table7yvaluesE"></span><span id="_CPPv2N5amath5Table7yvaluesE"></span><span id="amath::Table::yvalues__std::vector:double:"></span><span class="target" id="classamath_1_1Table_1ad14d462fd5fe2048833c503861509954"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">yvalues</span></span></span><a class="headerlink" href="#_CPPv4N5amath5Table7yvaluesE" title="Link to this definition"></a><br /></dt>
 <dd><p>The vector of ordinate values. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="torsorcombination">
+<h2>TorsorCombination<a class="headerlink" href="#torsorcombination" title="Link to this heading"></a></h2>
+<dl class="cpp type">
+<dt class="sig sig-object cpp">
+<span class="target" id="namespaceamath"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">amath</span></span></span><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-variables">Variables</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath21COEFFICIENT_TOLERANCEE">
+<span id="_CPPv3N5amath21COEFFICIENT_TOLERANCEE"></span><span id="_CPPv2N5amath21COEFFICIENT_TOLERANCEE"></span><span id="amath::COEFFICIENT_TOLERANCE__double"></span><span class="target" id="TorsorCombination_8h_1a5dbe46ce06fe0b1f1904911992e0b92c"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">COEFFICIENT_TOLERANCE</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1e-6</span></span><a class="headerlink" href="#_CPPv4N5amath21COEFFICIENT_TOLERANCEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Value used to check if 2 coefficients are equal. </p>
+</dd></dl>
+
+</div>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath17TorsorCombinationE">
+<span id="_CPPv3N5amath17TorsorCombinationE"></span><span id="_CPPv2N5amath17TorsorCombinationE"></span><span id="amath::TorsorCombination"></span><span class="target" id="classamath_1_1TorsorCombination"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TorsorCombination</span></span></span><a class="headerlink" href="#_CPPv4N5amath17TorsorCombinationE" title="Link to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;TorsorCombination.h&gt;</em></div>
+<p>Class used to manage the torsor’s combinations. All possible torsor combination are represented by a binary tree. The following representation is given for 4 torsors, the second one is constant. </p>
+<p><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">///                                   tree_rk</span>
+<span class="c1">///                           / Max      0</span>
+<span class="c1">///                     / Max   </span>
+<span class="c1">///                    /     \ min       1</span>
+<span class="c1">///       / Max --- cst </span>
+<span class="c1">///      /             \     / Max       2</span>
+<span class="c1">///     /               \ min</span>
+<span class="c1">///    /                     \ min       3</span>
+<span class="c1">///   *</span>
+<span class="c1">///    \                     / Max       4</span>
+<span class="c1">///     \               / Max</span>
+<span class="c1">///      \             /     \ min       5</span>
+<span class="c1">///       \ min --- cst</span>
+<span class="c1">///                    \     / Max       6</span>
+<span class="c1">///                     \ min </span>
+<span class="c1">///                          \ min       7</span>
+<span class="c1">///</span>
+</pre></div>
+</div>
+ The number of torsor combination is equal to <span class="math notranslate nohighlight">\( 2^t \)</span> where <span class="math notranslate nohighlight">\( t \)</span> is the number of torsor with different. coefficients.</p>
+<p>For a given torsor combination, the choice between the maximum and the minimun value is based on the parity of each explorer branch. For the 5th combination of the example, the retained coefficients are:<ul class="simple">
+<li><p>4th torsor associated to <span class="math notranslate nohighlight">\( tree\_rk = 5 \rightarrow \)</span> minimal coefficient</p></li>
+<li><p>3rd torsor associated to <span class="math notranslate nohighlight">\( tree\_rk = 5//2 = 2 \rightarrow \)</span> maximal coefficient</p></li>
+<li><p>2nd torsor associated to <span class="math notranslate nohighlight">\( tree\_rk = 2 \rightarrow \)</span> constant coefficient</p></li>
+<li><p>1st torsor associated to <span class="math notranslate nohighlight">\( tree\_rk = 2//2 = 1 \rightarrow \)</span> minimal coefficient </p></li>
+</ul>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath17TorsorCombination17TorsorCombinationEv">
+<span id="_CPPv3N5amath17TorsorCombination17TorsorCombinationEv"></span><span id="_CPPv2N5amath17TorsorCombination17TorsorCombinationEv"></span><span id="amath::TorsorCombination::TorsorCombination"></span><span class="target" id="classamath_1_1TorsorCombination_1adeb9a297b9a4994ea115ecea8013eef6"></span><span class="sig-name descname"><span class="n"><span class="pre">TorsorCombination</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5amath17TorsorCombination17TorsorCombinationEv" title="Link to this definition"></a><br /></dt>
+<dd><p>default construtor </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath17TorsorCombination17TorsorCombinationERK17TorsorCombination">
+<span id="_CPPv3N5amath17TorsorCombination17TorsorCombinationERK17TorsorCombination"></span><span id="_CPPv2N5amath17TorsorCombination17TorsorCombinationERK17TorsorCombination"></span><span id="amath::TorsorCombination::TorsorCombination__TorsorCombinationCR"></span><span class="target" id="classamath_1_1TorsorCombination_1a6caeedfc5cedf35f87539d7669b19fe7"></span><span class="sig-name descname"><span class="n"><span class="pre">TorsorCombination</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath17TorsorCombination17TorsorCombinationERK17TorsorCombination" title="amath::TorsorCombination::TorsorCombination"><span class="n"><span class="pre">TorsorCombination</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath17TorsorCombination17TorsorCombinationERK17TorsorCombination" title="Link to this definition"></a><br /></dt>
+<dd><p>constructor by copy </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> – the object to copy </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath17TorsorCombination5resetEv">
+<span id="_CPPv3N5amath17TorsorCombination5resetEv"></span><span id="_CPPv2N5amath17TorsorCombination5resetEv"></span><span id="amath::TorsorCombination::reset"></span><span class="target" id="classamath_1_1TorsorCombination_1a0af698670f2d932b1de84a98a2d26e57"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reset</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath17TorsorCombination5resetEv" title="Link to this definition"></a><br /></dt>
+<dd><p>&#64;bried Reset internal parameters. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath17TorsorCombination11is_activateEv">
+<span id="_CPPv3NK5amath17TorsorCombination11is_activateEv"></span><span id="_CPPv2NK5amath17TorsorCombination11is_activateEv"></span><span id="amath::TorsorCombination::is_activateC"></span><span class="target" id="classamath_1_1TorsorCombination_1acf0e89a601916876520141a5d41c2820"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">is_activate</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath17TorsorCombination11is_activateEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Return the activation status. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>current status </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath17TorsorCombination20set_ptr_coefficientsERNSt6vectorINSt6vectorIdEEEERNSt6vectorINSt6vectorIdEEEE">
+<span id="_CPPv3N5amath17TorsorCombination20set_ptr_coefficientsERNSt6vectorINSt6vectorIdEEEERNSt6vectorINSt6vectorIdEEEE"></span><span id="_CPPv2N5amath17TorsorCombination20set_ptr_coefficientsERNSt6vectorINSt6vectorIdEEEERNSt6vectorINSt6vectorIdEEEE"></span><span id="amath::TorsorCombination::set_ptr_coefficients__std::vector:std::vector:double::R.std::vector:std::vector:double::R"></span><span class="target" id="classamath_1_1TorsorCombination_1abd68f0ffe0ea093098219e8a3e20051a"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_ptr_coefficients</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">CoefMax</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">CoefMin</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath17TorsorCombination20set_ptr_coefficientsERNSt6vectorINSt6vectorIdEEEERNSt6vectorINSt6vectorIdEEEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Create the link by pointers to the torsor coefficients. This function must be called before <code class="docutils literal notranslate"><span class="pre">set_active_torsors</span></code>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>CoefMax</strong> – vector of maximum coefficients </p></li>
+<li><p><strong>CoefMin</strong> – vector of maximum coefficients </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath17TorsorCombination18set_active_torsorsERKNSt6vectorIbEE">
+<span id="_CPPv3N5amath17TorsorCombination18set_active_torsorsERKNSt6vectorIbEE"></span><span id="_CPPv2N5amath17TorsorCombination18set_active_torsorsERKNSt6vectorIbEE"></span><span id="amath::TorsorCombination::set_active_torsors__std::vector:b:CR"></span><span class="target" id="classamath_1_1TorsorCombination_1acdbac554ace5cc448146fc676fcea892"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_active_torsors</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">bool</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">torsors</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5amath17TorsorCombination18set_active_torsorsERKNSt6vectorIbEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Set active torsors. This function must be called after the function <code class="docutils literal notranslate"><span class="pre">set_ptr_coefficients</span></code>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>torsors</strong> – status for each torsor </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath17TorsorCombination8get_coefENSt6size_tENSt6size_tERNSt6vectorIdEE">
+<span id="_CPPv3NK5amath17TorsorCombination8get_coefENSt6size_tENSt6size_tERNSt6vectorIdEE"></span><span id="_CPPv2NK5amath17TorsorCombination8get_coefENSt6size_tENSt6size_tERNSt6vectorIdEE"></span><span id="amath::TorsorCombination::get_coef__std::s.std::s.std::vector:double:RC"></span><span class="target" id="classamath_1_1TorsorCombination_1aa38e901618616f7f0922f4022418144c"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_coef</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">state</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">tcomb</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">coefficients</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath17TorsorCombination8get_coefENSt6size_tENSt6size_tERNSt6vectorIdEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Return the list of coefficients for a state and a torsor’s combination. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>state</strong> – current state </p></li>
+<li><p><strong>tcomb</strong> – torsor’s combination </p></li>
+<li><p><strong>coefficients</strong> – <strong>[out]</strong> list of coefficients </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath17TorsorCombination13get_diff_coefE11combi_ranksNSt6size_tERNSt6vectorIdEE">
+<span id="_CPPv3NK5amath17TorsorCombination13get_diff_coefE11combi_ranksNSt6size_tERNSt6vectorIdEE"></span><span id="_CPPv2NK5amath17TorsorCombination13get_diff_coefE11combi_ranksNSt6size_tERNSt6vectorIdEE"></span><span id="amath::TorsorCombination::get_diff_coef__combi_ranks.std::s.std::vector:double:RC"></span><span class="target" id="classamath_1_1TorsorCombination_1a685d866c9ea3acde2e46165f5071b166"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_diff_coef</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N5amath11combi_ranksE" title="amath::combi_ranks"><span class="n"><span class="pre">combi_ranks</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">states</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">tcomb</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">coefficients</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath17TorsorCombination13get_diff_coefE11combi_ranksNSt6size_tERNSt6vectorIdEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Return the difference of coefficients for a pair of states and a torsor’s combination. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>states</strong> – pair of states </p></li>
+<li><p><strong>tcomb</strong> – torsor’s combinations </p></li>
+<li><p><strong>coefficients</strong> – <strong>[out]</strong> list of coefficients </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath17TorsorCombination15nb_combinaisonsENSt6size_tE">
+<span id="_CPPv3NK5amath17TorsorCombination15nb_combinaisonsENSt6size_tE"></span><span id="_CPPv2NK5amath17TorsorCombination15nb_combinaisonsENSt6size_tE"></span><span id="amath::TorsorCombination::nb_combinaisons__std::sC"></span><span class="target" id="classamath_1_1TorsorCombination_1aea2067a8c1519ac72565f55b5c6e41d6"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">nb_combinaisons</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">state</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath17TorsorCombination15nb_combinaisonsENSt6size_tE" title="Link to this definition"></a><br /></dt>
+<dd><p>Return the number of torsor’s combinations for a state. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>state</strong> – current state </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath17TorsorCombination15nb_combinaisonsERK11combi_ranks">
+<span id="_CPPv3NK5amath17TorsorCombination15nb_combinaisonsERK11combi_ranks"></span><span id="_CPPv2NK5amath17TorsorCombination15nb_combinaisonsERK11combi_ranks"></span><span id="amath::TorsorCombination::nb_combinaisons__combi_ranksCRC"></span><span class="target" id="classamath_1_1TorsorCombination_1a55bdd0fa3f23c910e717048f99b5d114"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">nb_combinaisons</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath11combi_ranksE" title="amath::combi_ranks"><span class="n"><span class="pre">combi_ranks</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">states</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath17TorsorCombination15nb_combinaisonsERK11combi_ranks" title="Link to this definition"></a><br /></dt>
+<dd><p>Return the number of torsor’s combinations for a pair of states. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>states</strong> – pair of states </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath17TorsorCombination14active_torsorsE">
+<span id="_CPPv3N5amath17TorsorCombination14active_torsorsE"></span><span id="_CPPv2N5amath17TorsorCombination14active_torsorsE"></span><span id="amath::TorsorCombination::active_torsors__std::vector:b:"></span><span class="target" id="classamath_1_1TorsorCombination_1a8c2730b29e2c3a2085cd9dbaa339d030"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">bool</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">active_torsors</span></span></span><a class="headerlink" href="#_CPPv4N5amath17TorsorCombination14active_torsorsE" title="Link to this definition"></a><br /></dt>
+<dd><p>vector of active torsors </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath17TorsorCombination12ptr_coef_maxE">
+<span id="_CPPv3N5amath17TorsorCombination12ptr_coef_maxE"></span><span id="_CPPv2N5amath17TorsorCombination12ptr_coef_maxE"></span><span id="amath::TorsorCombination::ptr_coef_max__std::vector:std::vector:double::P"></span><span class="target" id="classamath_1_1TorsorCombination_1a055ef25ba161cc4812a716bb29103122"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">ptr_coef_max</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">nullptr</span></span><a class="headerlink" href="#_CPPv4N5amath17TorsorCombination12ptr_coef_maxE" title="Link to this definition"></a><br /></dt>
+<dd><p>pointer to the maximum coefficients for each state and each torsor (<a class="reference internal" href="#classamath_1_1StressStates"><span class="std std-ref">StressStates</span></a>) </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath17TorsorCombination12ptr_coef_minE">
+<span id="_CPPv3N5amath17TorsorCombination12ptr_coef_minE"></span><span id="_CPPv2N5amath17TorsorCombination12ptr_coef_minE"></span><span id="amath::TorsorCombination::ptr_coef_min__std::vector:std::vector:double::P"></span><span class="target" id="classamath_1_1TorsorCombination_1a166288d9fd5a04a8a63728c3faa82351"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">ptr_coef_min</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">nullptr</span></span><a class="headerlink" href="#_CPPv4N5amath17TorsorCombination12ptr_coef_minE" title="Link to this definition"></a><br /></dt>
+<dd><p>pointer to the minimum coefficients for each state and each torsor (<a class="reference internal" href="#classamath_1_1StressStates"><span class="std std-ref">StressStates</span></a>) </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-functions">Private Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath17TorsorCombination7_check_Ev">
+<span id="_CPPv3NK5amath17TorsorCombination7_check_Ev"></span><span id="_CPPv2NK5amath17TorsorCombination7_check_Ev"></span><span id="amath::TorsorCombination::_check_C"></span><span class="target" id="classamath_1_1TorsorCombination_1ab9f9d058e9da38d0a09bc7f4195b1e0f"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_check_</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath17TorsorCombination7_check_Ev" title="Link to this definition"></a><br /></dt>
+<dd><p>Check data integrity. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5amath17TorsorCombination21constant_coefficientsERK11combi_ranksNSt6size_tE">
+<span id="_CPPv3NK5amath17TorsorCombination21constant_coefficientsERK11combi_ranksNSt6size_tE"></span><span id="_CPPv2NK5amath17TorsorCombination21constant_coefficientsERK11combi_ranksNSt6size_tE"></span><span id="amath::TorsorCombination::constant_coefficients__combi_ranksCR.std::sC"></span><span class="target" id="classamath_1_1TorsorCombination_1a06d408f0d631e950dfa87c9e9815750d"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">constant_coefficients</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5amath11combi_ranksE" title="amath::combi_ranks"><span class="n"><span class="pre">combi_ranks</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">states</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">torsor_rk</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5amath17TorsorCombination21constant_coefficientsERK11combi_ranksNSt6size_tE" title="Link to this definition"></a><br /></dt>
+<dd><p>check if torsor coefficients for 2 states are constant </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>states</strong> – pair of state </p></li>
+<li><p><strong>torsor_rk</strong> – torsor rank </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath17TorsorCombination13_is_activate_E">
+<span id="_CPPv3N5amath17TorsorCombination13_is_activate_E"></span><span id="_CPPv2N5amath17TorsorCombination13_is_activate_E"></span><span id="amath::TorsorCombination::_is_activate___b"></span><span class="target" id="classamath_1_1TorsorCombination_1a15043bd98d68bcf0be6a160eae4053b6"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_is_activate_</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N5amath17TorsorCombination13_is_activate_E" title="Link to this definition"></a><br /></dt>
+<dd><p>internal status </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5amath17TorsorCombination11cached_sizeE">
+<span id="_CPPv3N5amath17TorsorCombination11cached_sizeE"></span><span id="_CPPv2N5amath17TorsorCombination11cached_sizeE"></span><span id="amath::TorsorCombination::cached_size__std::s"></span><span class="target" id="classamath_1_1TorsorCombination_1a1381114bf19a1f3b545e3ec288930948"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cached_size</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5amath17TorsorCombination11cached_sizeE" title="Link to this definition"></a><br /></dt>
+<dd><p>internal size parameter </p>
 </dd></dl>
 
 </div>
