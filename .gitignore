@@ -1,5 +1,6 @@
 # compiled objects
 *.o
+*.d
 release/*
 debug/*
 
@@ -10,3 +11,6 @@ docs/source/Doxyfile
 # tinyxml2 library
 externals/xml/docs/*
 externals/xml/lib/*
+
+# externals packages
+*.zip

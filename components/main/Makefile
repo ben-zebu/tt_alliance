@@ -50,6 +50,12 @@ $(OBJ_DIR_DEBUG)/%.o: $(SRC_DIR)/%.cpp
 $(OBJ_DIR_RELEASE)/%.o: $(SRC_DIR)/%.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@  && $(CP) ${<:.cpp=.h} $(RELEASE_INC_DIR) || true
 
+# Dependancy rules for Debug
+-include $(OBJS_DEBUG:.o=.d)
+
+# Dependancy rules for Debug
+-include $(OBJS_RELEASE:.o=.d)
+
 # Clean target
 clean:
 	$(RM) $(OBJ_DIR_DEBUG)    $(DEBUG_LIB_DIR)/$(SONAME)
