@@ -20,7 +20,7 @@
 #include "Coefficient.h"
 #include "Combination.h"
 
-#include "yaml-cpp/yaml.h"
+#include "TranslationManager.h"
 
 amath::StressStates generateStressStates(const std::size_t numStates, const std::size_t numTorsors) {
     // Seed the random number generator
@@ -110,12 +110,8 @@ void yaml_test(int argc, char* argv[]) {
     std::string project_folder = abase::getAppPath(exe);
     std::cout << "project_folder = " << project_folder << std::endl;
 
-    YAML::Node node = YAML::LoadFile(project_folder + "/ressources/main.yml");
-
-    for (const auto& key : node) {
-        std::cout << "first= " << key.first << " second= " << key.second << std::endl;
-    }
-
+    abase::globalTranslationManager.loadAllTranslations(project_folder + "/ressources");
+    abase::globalTranslationManager.print();
 }
 
 
