@@ -29,9 +29,6 @@ include(${CMAKE_SOURCE_DIR}/cmake/externals.cmake)
 # Include common CMake functions
 include(${CMAKE_SOURCE_DIR}/cmake/common.cmake)
 
-# xml support
-add_subdirectory(externals/xml)
-
 # Add subdirectories
 add_subdirectory(components/abase)
 add_subdirectory(components/amath)
