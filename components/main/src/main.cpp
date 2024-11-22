@@ -1,22 +1,26 @@
 #include <iostream>
+#include <fstream>
 #include <cmath>
 #include <ctime>
 
-#ifdef _WIN32
-    #include <windows.h>
-#else
-    #include <limits.h>
-    #include <stdlib.h>
-#endif
+// #ifdef _WIN32
+//     #include <windows.h>
+// #else
+//     #include <limits.h>
+//     #include <stdlib.h>
+// #endif
 #include <string>
 #include <utility>
 
 #include "GlobalTimer.h"
+#include "LocalPath.h"
 #include "StressStates.h"
 #include "Stress.h"
 #include "Table.h"
 #include "Coefficient.h"
 #include "Combination.h"
+
+#include "yaml-cpp/yaml.h"
 
 amath::StressStates generateStressStates(const std::size_t numStates, const std::size_t numTorsors) {
     // Seed the random number generator
@@ -101,7 +105,23 @@ void benchmark() {
     }
 }
 
+void yaml_test(int argc, char* argv[]) {
+    std::string exe( argv[0] );
+    std::string project_folder = abase::getAppPath(exe);
+    std::cout << "project_folder = " << project_folder << std::endl;
+
+    YAML::Node node = YAML::LoadFile(project_folder + "/ressources/main.yml");
+
+    for (const auto& key : node) {
+        std::cout << "first= " << key.first << " second= " << key.second << std::endl;
+    }
+
+}
+
+
+
 int main(int argc, char* argv[]) {
-    benchmark();
+    yaml_test(argc, argv);
+    //benchmark();
     return 0;
 }
