@@ -52,8 +52,8 @@ function(create_executable TARGET_NAME TARGET_SRC_DIR)
 
     # Compile options
     target_compile_options(${TARGET_NAME} PRIVATE
-        $<$<CONFIG:DEBUG>:-g -O0>
-        $<$<CONFIG:RELEASE>:-O3>
+        $<$<CONFIG:DEBUG>:-g -O0 -std=c++17>
+        $<$<CONFIG:RELEASE>:-O3 -std=c++17>
     )
 
     # Link external libraries 
