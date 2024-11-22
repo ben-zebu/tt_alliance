@@ -438,7 +438,7 @@ def main() :
     
     # recherche de l'éxecutable compilé et des bibliothèques de calcul
     cmd = find_binary_program(options)
-    libdir = find_librairies_path(options)
+    #libdir = find_librairies_path(options)
 
     # mise à jours de l'environnement pour le support OpenMP
     # update_openmp_env(options)
