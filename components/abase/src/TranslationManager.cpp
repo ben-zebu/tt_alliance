@@ -1,9 +1,12 @@
-#include "TranslationManager.h"
 #include <iostream>
-#include <sstream>
 #include <filesystem>
+#include <sstream>
+#include <stdexcept>
 
-#include "tinyxml2.h"
+#include "LocalPath.h"
+#include "TranslationManager.h"
+
+#include "yaml-cpp/yaml.h"
 
 namespace fs = std::filesystem;
 using namespace abase;
@@ -13,52 +16,64 @@ namespace abase {
     TranslationManager globalTranslationManager;
 }
 
-void TranslationManager::loadTranslationsFromFile(const std::string& filename) {
-    using namespace tinyxml2;
-    XMLDocument doc;
-    if (doc.LoadFile(filename.c_str()) != XML_SUCCESS) {
-        std::cerr << "Error loading file: " << filename << std::endl;
-        return;
-    }
-
-    XMLElement* root = doc.FirstChildElement("translations");
-    if (!root) {
-        std::cerr << "No root element found." << std::endl;
-        return;
-    }
-
-    XMLElement* language = root->FirstChildElement("language");
-    while (language) {
-        const char* langCode = language->Attribute("code");
-        if (langCode) {
-            XMLElement* translation = language->FirstChildElement("translation");
-            while (translation) {
-                const char* key = translation->Attribute("key");
-                const char* value = translation->GetText();
-                if (key && value) {
-                    translations[langCode][key] = value;
-                }
-                translation = translation->NextSiblingElement("translation");
+bool TranslationManager::dictionnary_format(const YAML::Node& node) const {
+    for (const auto& key : node) {
+        if (key.first.as<std::string>() == format_type) {
+            try {
+                bool status = key.second.as<bool>();
+                return status;
             }
+            catch(std::exception const& e)
+            {
+                return false;
+            } 
         }
-        language = language->NextSiblingElement("language");
+    }
+    return false;
+}
+
+void TranslationManager::print() const {
+    for (const auto& dic_key : translations) {
+        std::string msg = dic_key.first + ":";
+        for (const auto& value : dic_key.second) {
+            msg += "\n  " + value.first + ": " + value.second;
+        }
+        std::cout << msg << std::endl;
+    }
+}
+
+void TranslationManager::loadTranslationsFromFile(const std::string& filename) {
+    // Check the file type and status before loading
+    if ( !is_file_readable(filename) ) {
+        throw std::invalid_argument("Cannot read the file " + filename + " !");
+    }
+
+    YAML::Node node = YAML::LoadFile(filename);
+    if (!dictionnary_format(node)) return;
+
+    for (const auto& key : node) {
+        std::string dic_key = key.first.as<std::string>();
+        if (dic_key == format_type) continue;
+        
+        // Check previous definition
+        if (translations.find(dic_key) != translations.end()) {
+            throw std::invalid_argument("The key " + dic_key + " is already defined !");
+        } 
+
+        std::unordered_map<std::string, std::string> dic_values;
+        for (const auto& subkey : key.second) {
+            std::string lang = subkey.first.as<std::string>();
+            std::string value = subkey.second.as<std::string>();
+            dic_values.insert({lang, value});
+        }
+        translations.insert({dic_key, dic_values});
     }
 }
 
 void TranslationManager::loadAllTranslations(const std::string& directory) {
-    std::vector<std::string> filePaths;
-    searchXmlFiles(directory, filePaths);
-
-    for (const auto& filePath : filePaths) {
-        loadTranslationsFromFile(filePath);
-    }
-}
-
-void TranslationManager::searchXmlFiles(const std::string& directory, std::vector<std::string>& filePaths) {
-    for (const auto& entry : fs::recursive_directory_iterator(directory)) {
-        if (entry.path().extension() == ".xml") {
-            filePaths.push_back(entry.path().string());
-        }
+    std::vector<std::string> files = getFilesbyExtension(directory, file_extension);
+    for (const auto& ff : files) {
+        loadTranslationsFromFile(ff);
     }
 }
 
@@ -79,11 +94,13 @@ std::string TranslationManager::replacePlaceholders(const std::string& message, 
 }
 
 std::string TranslationManager::translate(const std::string& key) const {
-    if (translations.empty()) {
-        return key;
-    }
-    auto it = translations.at(currentLanguage).find(key);
-    return it != translations.at(currentLanguage).end() ? it->second : key;
+    if (translations.empty()) return key;
+    
+    auto it = translations.find(key);
+    if (it == translations.end()) return key;
+    
+    auto jt = it->second.find(currentLanguage);
+    return jt != it->second.end() ? jt->second : key;
 }
 
 std::string TranslationManager::translate(const std::string& key, const std::string& value) const {
@@ -91,13 +108,6 @@ std::string TranslationManager::translate(const std::string& key, const std::str
 }
 
 std::string TranslationManager::translate(const std::string& key, const std::vector<std::string>& values) const {
-    if (translations.empty()) {
-        return key;
-    }
-
-    auto it = translations.at(currentLanguage).find(key);
-    if (it != translations.at(currentLanguage).end()) {
-        return replacePlaceholders(it->second, values);
-    }
-    return key;
+    std::string translated_key = translate(key);
+    return replacePlaceholders(translated_key, values);
 }
