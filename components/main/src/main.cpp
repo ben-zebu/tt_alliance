@@ -25,6 +25,8 @@
 #include "FileLogger.h"
 #include "ErrorManager.h"
 
+#include "CommandParser.h"
+
 amath::StressStates generateStressStates(const std::size_t numStates, const std::size_t numTorsors) {
     // Seed the random number generator
     srand(static_cast<unsigned int>(time(nullptr)));
@@ -127,7 +129,14 @@ void yaml_test(int argc, char* argv[]) {
 
 
 int main(int argc, char* argv[]) {
-    yaml_test(argc, argv);
+    std::string exe( argv[0] );
+    std::string project_folder = abase::getAppPath(exe);
+    abase::globalTranslationManager.loadAllTranslations(project_folder + "/ressources");
+    abase::globalTranslationManager.setCurrentLanguage("fr");
+
+    adata::CommandParser parser(argc, argv);
+
+    //yaml_test(argc, argv);
     //benchmark();
     return 0;
 }

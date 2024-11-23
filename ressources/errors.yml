@@ -21,3 +21,18 @@
     en: "Cannot convert value to float: {0}"
     fr: "Conversion impossible en nombre réel : {0}"
 
+  OPTION_INTEGER_CONVERT:
+    en: "Cannot convert value '{1}'' to integer for the option '{0}'' !"
+    fr: "Conversion impossible en nombre entier de la valeur '{1}'' associée à l'option '{0}'' !"
+
+  UNKNOWN_OPTION:
+    en: "Unknown option '{0}' on command input !"
+    fr: "Option inconnue '{0}' sur la ligne de commande !"
+
+  ERROR_OPEN_FILE:
+    en: "Cannot open file '{0}' !"
+    fr: "Ouverture impossible du fichier '{0}' !"
+
+  UNKNOW_CONFIG_KEY:
+    en: "Unknown key '{0}' in program configuration !"
+    fr: "Clé inconnue '{0}' dans la configuration du programme !"    
