@@ -21,13 +21,13 @@ void ErrorManager::init(std::shared_ptr<FileLogger> logger) {
 // Log an error message and terminate the program
 void ErrorManager::logError(const std::string& message) {
     logMessage("ERROR", message);
-    std::terminate();
+    std::exit(1);
 }
 
 // Log an input error message and terminate the program
 void ErrorManager::logInputError(const std::string& message) {
     logMessage("INPUT_ERROR", message);
-    std::terminate();
+    std::exit(1);
 }
 
 // Log a warning message

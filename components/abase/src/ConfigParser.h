@@ -47,13 +47,12 @@ namespace abase {
 
 } //  namespace abase
 
-
 template<typename T>
 inline T get_parser_value(const std::string& key) {
     return abase::globalConfigParser.getValue<T>(key);
 }
 
-template<typename T>
-inline void set_parser_value(const std::string& key, const T& value) {
-    abase::globalConfigParser.setValue(key, std::to_string(value));
+inline void set_parser_value(const std::string& key, const std::string& value) {
+    abase::globalConfigParser.setValue(key, value);
 }
+
