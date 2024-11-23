@@ -1,0 +1,23 @@
+---
+  DICTIONNARY_FORMAT: True
+
+  ERROR:
+    en: "ERROR"
+    fr: "ERREUR"
+
+  WARNING:
+    en: "WARNING"
+    fr: "AVERTISSEMENT"
+
+  INPUT_ERROR:
+    en: "INPUT_ERROR"
+    fr: "ERREUR MISE EN DONNEES"
+
+  ERROR_INTEGER_CONVERT:
+    en: "Cannot convert value to integer: {0}"
+    fr: "Conversion impossible en nombre entier : {0}"
+
+  ERROR_FLOAT_CONVERT:
+    en: "Cannot convert value to float: {0}"
+    fr: "Conversion impossible en nombre réel : {0}"
+

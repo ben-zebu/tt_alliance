@@ -9,6 +9,7 @@
 //     #include <limits.h>
 //     #include <stdlib.h>
 // #endif
+#include <memory>
 #include <string>
 #include <utility>
 
@@ -21,6 +22,8 @@
 #include "Combination.h"
 
 #include "TranslationManager.h"
+#include "FileLogger.h"
+#include "ErrorManager.h"
 
 amath::StressStates generateStressStates(const std::size_t numStates, const std::size_t numTorsors) {
     // Seed the random number generator
@@ -108,10 +111,17 @@ void benchmark() {
 void yaml_test(int argc, char* argv[]) {
     std::string exe( argv[0] );
     std::string project_folder = abase::getAppPath(exe);
-    std::cout << "project_folder = " << project_folder << std::endl;
-
     abase::globalTranslationManager.loadAllTranslations(project_folder + "/ressources");
-    abase::globalTranslationManager.print();
+    abase::globalTranslationManager.setCurrentLanguage("fr");
+    
+    std::string resname( argv[7] );
+    std::string ext = ".dat";
+    resname.replace(resname.find(ext) , ext.length(), ".res");
+    auto filelogger = std::make_shared<abase::FileLogger>(resname);
+
+    abase::ErrorManager::getInstance().init(filelogger);
+    warning("Ceci est un avertissement !");
+
 }
 
 
