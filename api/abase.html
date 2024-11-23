@@ -21,7 +21,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="amath components" href="amath.html" />
+    <link rel="next" title="adata components" href="adata.html" />
     <link rel="prev" title="API" href="index.html" /> 
 </head>
 
@@ -51,8 +51,13 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">abase components</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#configuration-parser">Configuration Parser</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4I0E16get_parser_value1TRKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">get_parser_value()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#_CPPv4I0E16set_parser_valuevRKNSt6stringERK1T"><code class="docutils literal notranslate"><span class="pre">set_parser_value()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv416set_parser_valueRKNSt6stringERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">set_parser_value()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv45abase"><code class="docutils literal notranslate"><span class="pre">abase</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#error-parser">Error Parser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#file-logger">File Logger</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5abase10FileLoggerE"><code class="docutils literal notranslate"><span class="pre">abase::FileLogger</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#global-timer">Global Timer</a><ul>
@@ -60,6 +65,15 @@
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv410stop_timerRKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">stop_timer()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv411print_timerRKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">print_timer()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5abase11GlobalTimerE"><code class="docutils literal notranslate"><span class="pre">abase::GlobalTimer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#local-path">Local Path</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5abase16is_file_readableERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">abase::is_file_readable()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5abase16is_file_writableERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">abase::is_file_writable()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5abase17getExecutablePathERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">abase::getExecutablePath()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5abase10getAppPathERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">abase::getAppPath()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5abase9splitPathERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">abase::splitPath()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5abase19getFilesbyExtensionERKNSt6stringERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">abase::getFilesbyExtension()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#translation-manager">Translation Manager</a><ul>
@@ -71,6 +85,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="adata.html">adata components</a></li>
 <li class="toctree-l2"><a class="reference internal" href="amath.html">amath components</a></li>
 </ul>
 </li>
@@ -113,8 +128,8 @@
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4I0E16set_parser_valuevRKNSt6stringERK1T">
-<span id="_CPPv3I0E16set_parser_valueRKNSt6stringERK1T"></span><span id="_CPPv2I0E16set_parser_valueRKNSt6stringERK1T"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="ConfigParser_8h_1ac5dbd5dcc75e8a195d88aeb7a3c4013f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_parser_value</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">key</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0E16set_parser_valuevRKNSt6stringERK1T" title="set_parser_value::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0E16set_parser_valuevRKNSt6stringERK1T" title="Link to this definition"></a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv416set_parser_valueRKNSt6stringERKNSt6stringE">
+<span id="_CPPv316set_parser_valueRKNSt6stringERKNSt6stringE"></span><span id="_CPPv216set_parser_valueRKNSt6stringERKNSt6stringE"></span><span id="set_parser_value__ssCR.ssCR"></span><span class="target" id="ConfigParser_8h_1ad47e9a300823df8ee198ff2b2a75312c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_parser_value</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">key</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416set_parser_valueRKNSt6stringERKNSt6stringE" title="Link to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -146,7 +161,7 @@
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4I0ENK5abase12ConfigParser8getValueE1TRKNSt6stringE">
-<span id="_CPPv3I0ENK5abase12ConfigParser8getValueERKNSt6stringE"></span><span id="_CPPv2I0ENK5abase12ConfigParser8getValueERKNSt6stringE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classabase_1_1ConfigParser_1a93726caafeafa67547dd56da28a744f0"></span><a class="reference internal" href="#_CPPv4I0ENK5abase12ConfigParser8getValueE1TRKNSt6stringE" title="abase::ConfigParser::getValue::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getValue</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">key</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4I0ENK5abase12ConfigParser8getValueE1TRKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<span id="_CPPv3I0ENK5abase12ConfigParser8getValueERKNSt6stringE"></span><span id="_CPPv2I0ENK5abase12ConfigParser8getValueERKNSt6stringE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classabase_1_1ConfigParser_1a4d0d7a150c66359b671ba33796a8d5b9"></span><a class="reference internal" href="#_CPPv4I0ENK5abase12ConfigParser8getValueE1TRKNSt6stringE" title="abase::ConfigParser::getValue::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getValue</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">key</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4I0ENK5abase12ConfigParser8getValueE1TRKNSt6stringE" title="Link to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
@@ -189,6 +204,72 @@
 <dt class="sig sig-object cpp" id="_CPPv4N5abase12ConfigParser10config_mapE">
 <span id="_CPPv3N5abase12ConfigParser10config_mapE"></span><span id="_CPPv2N5abase12ConfigParser10config_mapE"></span><span id="abase::ConfigParser::config_map__std::unordered_map:ss.ss:"></span><span class="target" id="classabase_1_1ConfigParser_1ac08ddcc629a6b1684bb24b74d9bc749a"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unordered_map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">config_map</span></span></span><a class="headerlink" href="#_CPPv4N5abase12ConfigParser10config_mapE" title="Link to this definition"></a><br /></dt>
 <dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="error-parser">
+<h2>Error Parser<a class="headerlink" href="#error-parser" title="Link to this heading"></a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfile: Cannot find file “ErrorParser.h </p>
+</div>
+</section>
+<section id="file-logger">
+<h2>File Logger<a class="headerlink" href="#file-logger" title="Link to this heading"></a></h2>
+<dl class="cpp type">
+<dt class="sig sig-object cpp">
+<span class="target" id="namespaceabase"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">abase</span></span></span><br /></dt>
+<dd><dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase10FileLoggerE">
+<span id="_CPPv3N5abase10FileLoggerE"></span><span id="_CPPv2N5abase10FileLoggerE"></span><span id="abase::FileLogger"></span><span class="target" id="classabase_1_1FileLogger"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FileLogger</span></span></span><a class="headerlink" href="#_CPPv4N5abase10FileLoggerE" title="Link to this definition"></a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase10FileLogger10FileLoggerERKNSt6stringE">
+<span id="_CPPv3N5abase10FileLogger10FileLoggerERKNSt6stringE"></span><span id="_CPPv2N5abase10FileLogger10FileLoggerERKNSt6stringE"></span><span id="abase::FileLogger::FileLogger__ssCR"></span><span class="target" id="classabase_1_1FileLogger_1ae0e59aff5cdfafa691e0b61040c8c6a0"></span><span class="sig-name descname"><span class="n"><span class="pre">FileLogger</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">logFilePath</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase10FileLogger10FileLoggerERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Constructor method. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>logFilePath</strong> – output file name </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase10FileLoggerD0Ev">
+<span id="_CPPv3N5abase10FileLoggerD0Ev"></span><span id="_CPPv2N5abase10FileLoggerD0Ev"></span><span id="abase::FileLogger::~FileLogger"></span><span class="target" id="classabase_1_1FileLogger_1ab3c240cef5445d7306e1461332bcc430"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~FileLogger</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5abase10FileLoggerD0Ev" title="Link to this definition"></a><br /></dt>
+<dd><p>Destructor method. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase10FileLogger5writeERKNSt6stringE">
+<span id="_CPPv3N5abase10FileLogger5writeERKNSt6stringE"></span><span id="_CPPv2N5abase10FileLogger5writeERKNSt6stringE"></span><span id="abase::FileLogger::write__ssCR"></span><span class="target" id="classabase_1_1FileLogger_1a92470ae2c19b50d98bd598f3507a5d39"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">write</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">message</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase10FileLogger5writeERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Method used to write a message in the output file. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>message</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase10FileLogger8logFile_E">
+<span id="_CPPv3N5abase10FileLogger8logFile_E"></span><span id="_CPPv2N5abase10FileLogger8logFile_E"></span><span id="abase::FileLogger::logFile___std::ofstream"></span><span class="target" id="classabase_1_1FileLogger_1aee2eef55abff851872ebbb5074e4b040"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ofstream</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">logFile_</span></span></span><a class="headerlink" href="#_CPPv4N5abase10FileLogger8logFile_E" title="Link to this definition"></a><br /></dt>
+<dd><p>output file stream </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase10FileLogger6mutex_E">
+<span id="_CPPv3N5abase10FileLogger6mutex_E"></span><span id="_CPPv2N5abase10FileLogger6mutex_E"></span><span id="abase::FileLogger::mutex___std::mutex"></span><span class="target" id="classabase_1_1FileLogger_1a82dc05843ced4bc1f9003e4b916424a9"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">mutex</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mutex_</span></span></span><a class="headerlink" href="#_CPPv4N5abase10FileLogger6mutex_E" title="Link to this definition"></a><br /></dt>
+<dd><p>Mutex to ensure thread safety. </p>
+</dd></dl>
 
 </div>
 </dd></dl>
@@ -321,6 +402,104 @@
 
 </dd></dl>
 
+</dd></dl>
+
+</section>
+<section id="local-path">
+<h2>Local Path<a class="headerlink" href="#local-path" title="Link to this heading"></a></h2>
+<dl class="cpp type">
+<dt class="sig sig-object cpp">
+<span class="target" id="namespaceabase"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">abase</span></span></span><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase16is_file_readableERKNSt6stringE">
+<span id="_CPPv3N5abase16is_file_readableERKNSt6stringE"></span><span id="_CPPv2N5abase16is_file_readableERKNSt6stringE"></span><span id="abase::is_file_readable__ssCR"></span><span class="target" id="LocalPath_8h_1aad83ec7044e290114f69642394d46819"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">is_file_readable</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filename</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase16is_file_readableERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Check if the file is readable by the user. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> – the file name </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>readable status </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase16is_file_writableERKNSt6stringE">
+<span id="_CPPv3N5abase16is_file_writableERKNSt6stringE"></span><span id="_CPPv2N5abase16is_file_writableERKNSt6stringE"></span><span id="abase::is_file_writable__ssCR"></span><span class="target" id="LocalPath_8h_1a61fc3990e160c8cf0767e81ffc0c926f"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">is_file_writable</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filename</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase16is_file_writableERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Check if the file is writable by the user. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> – the file name </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>writable status </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase17getExecutablePathERKNSt6stringE">
+<span id="_CPPv3N5abase17getExecutablePathERKNSt6stringE"></span><span id="_CPPv2N5abase17getExecutablePathERKNSt6stringE"></span><span id="abase::getExecutablePath__ssCR"></span><span class="target" id="LocalPath_8h_1abdb1b35d64008e0fdf5acaf23e56c530"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getExecutablePath</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">cmd</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase17getExecutablePathERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Return the path of the executable file. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cmd</strong> – Executable file (relative path) </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Absolute path of the executable file </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase10getAppPathERKNSt6stringE">
+<span id="_CPPv3N5abase10getAppPathERKNSt6stringE"></span><span id="_CPPv2N5abase10getAppPathERKNSt6stringE"></span><span id="abase::getAppPath__ssCR"></span><span class="target" id="LocalPath_8h_1a3779d7f672d239726c2bd365b81550af"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getAppPath</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">cmd</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase10getAppPathERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Return the main path of the application. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cmd</strong> – Executable file (relative path) </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Absolute path of the application </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase9splitPathERKNSt6stringE">
+<span id="_CPPv3N5abase9splitPathERKNSt6stringE"></span><span id="_CPPv2N5abase9splitPathERKNSt6stringE"></span><span id="abase::splitPath__ssCR"></span><span class="target" id="LocalPath_8h_1ac4c595e960fec1bb4d5dc091035a91f4"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">splitPath</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">a_path</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase9splitPathERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Split a path in a head and a tail. The tail is the last folder level. The head is the absolute path to the tail folder. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>a_path</strong> – the path to split </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A pair of string that give the head and the tail </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase19getFilesbyExtensionERKNSt6stringERKNSt6stringE">
+<span id="_CPPv3N5abase19getFilesbyExtensionERKNSt6stringERKNSt6stringE"></span><span id="_CPPv2N5abase19getFilesbyExtensionERKNSt6stringERKNSt6stringE"></span><span id="abase::getFilesbyExtension__ssCR.ssCR"></span><span class="target" id="LocalPath_8h_1a09f54c8d4e93ee382d3211e786443e14"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getFilesbyExtension</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">directory</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">ext</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase19getFilesbyExtensionERKNSt6stringERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Return the list of files with a specific extension and contained in a folder. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>directory</strong> – the folder used to search the files with an extension </p></li>
+<li><p><strong>ext</strong> – the expected extension </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the list of files </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
 </dd></dl>
 
 </section>
@@ -558,7 +737,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="amath.html" class="btn btn-neutral float-right" title="amath components" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="adata.html" class="btn btn-neutral float-right" title="adata components" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

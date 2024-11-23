@@ -1,0 +1,210 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>adata components &mdash; tt_alliance 0.0.1-cpp documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+
+  
+    <link rel="canonical" href="https://ben-zebu.github.io/tt_alliance/api/adata.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=347b672c"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="amath components" href="amath.html" />
+    <link rel="prev" title="abase components" href="abase.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            tt_alliance
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">tt_alliance documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="abase.html">abase components</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">adata components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#command-parser">Command Parser</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv45adata"><code class="docutils literal notranslate"><span class="pre">adata</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="amath.html">amath components</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">tt_alliance</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">API</a></li>
+      <li class="breadcrumb-item active">adata components</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/adata.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="adata-components">
+<span id="adata"></span><h1>adata components<a class="headerlink" href="#adata-components" title="Link to this heading"></a></h1>
+<section id="command-parser">
+<h2>Command Parser<a class="headerlink" href="#command-parser" title="Link to this heading"></a></h2>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv45adata">
+<span id="_CPPv35adata"></span><span id="_CPPv25adata"></span><span class="target" id="namespaceadata"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">adata</span></span></span><a class="headerlink" href="#_CPPv45adata" title="Link to this definition"></a><br /></dt>
+<dd><dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata13CommandParserE">
+<span id="_CPPv3N5adata13CommandParserE"></span><span id="_CPPv2N5adata13CommandParserE"></span><span id="adata::CommandParser"></span><span class="target" id="classadata_1_1CommandParser"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CommandParser</span></span></span><a class="headerlink" href="#_CPPv4N5adata13CommandParserE" title="Link to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;CommandParser.h&gt;</em></div>
+<p>Classe used to read the command line and to set parameter in the global configuration manager. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata13CommandParser13CommandParserEiPPc">
+<span id="_CPPv3N5adata13CommandParser13CommandParserEiPPc"></span><span id="_CPPv2N5adata13CommandParser13CommandParserEiPPc"></span><span id="adata::CommandParser::CommandParser__i.cPP"></span><span class="target" id="classadata_1_1CommandParser_1a7628bbc831761235c70e2a70eb23ae0b"></span><span class="sig-name descname"><span class="n"><span class="pre">CommandParser</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">argc</span></span>, <span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">argv</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5adata13CommandParser13CommandParserEiPPc" title="Link to this definition"></a><br /></dt>
+<dd><p>Parse the command line. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>argc</strong> – Number of arguments on the command line </p></li>
+<li><p><strong>argv</strong> – arguments of the command line </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata13CommandParser15integer_optionsE">
+<span id="_CPPv3N5adata13CommandParser15integer_optionsE"></span><span id="_CPPv2N5adata13CommandParser15integer_optionsE"></span><span id="adata::CommandParser::integer_options__std::vector:ss:"></span><span class="target" id="classadata_1_1CommandParser_1a323d64e489cf67d9c7fce5d3d1b1b089"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">integer_options</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="s"><span class="pre">&quot;--multi&quot;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;--mpi&quot;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;--optimize&quot;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;--verbose&quot;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;--max_load_set_cat2&quot;</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N5adata13CommandParser15integer_optionsE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata13CommandParser15boolean_optionsE">
+<span id="_CPPv3N5adata13CommandParser15boolean_optionsE"></span><span id="_CPPv2N5adata13CommandParser15boolean_optionsE"></span><span id="adata::CommandParser::boolean_options__std::vector:ss:"></span><span class="target" id="classadata_1_1CommandParser_1a9e1c121ef35f6069d63a923e05f677d8"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">boolean_options</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="s"><span class="pre">&quot;--no_omp_nested&quot;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;--only_min_max_torseur&quot;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;--compatibility&quot;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;--plate_compatibility&quot;</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N5adata13CommandParser15boolean_optionsE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-functions">Private Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata13CommandParser4helpEv">
+<span id="_CPPv3N5adata13CommandParser4helpEv"></span><span id="_CPPv2N5adata13CommandParser4helpEv"></span><span id="adata::CommandParser::help"></span><span class="target" id="classadata_1_1CommandParser_1a6f456f0c5f6c6cda76a6266601debbb6"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">help</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5adata13CommandParser4helpEv" title="Link to this definition"></a><br /></dt>
+<dd><p>show help message </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata13CommandParser7versionEv">
+<span id="_CPPv3N5adata13CommandParser7versionEv"></span><span id="_CPPv2N5adata13CommandParser7versionEv"></span><span id="adata::CommandParser::version"></span><span class="target" id="classadata_1_1CommandParser_1aa6d73731b90b80707f08f1c1974d30dd"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">version</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5adata13CommandParser7versionEv" title="Link to this definition"></a><br /></dt>
+<dd><p>show the program version </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5adata13CommandParser18set_integer_optionERKNSt6stringERKNSt6stringE">
+<span id="_CPPv3NK5adata13CommandParser18set_integer_optionERKNSt6stringERKNSt6stringE"></span><span id="_CPPv2NK5adata13CommandParser18set_integer_optionERKNSt6stringERKNSt6stringE"></span><span id="adata::CommandParser::set_integer_option__ssCR.ssCRC"></span><span class="target" id="classadata_1_1CommandParser_1aa57384b29b7fd27dfc267a65eda0c0ae"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_integer_option</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">key</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5adata13CommandParser18set_integer_optionERKNSt6stringERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Set an integer parameter in the global configuration manager. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> – parameter name </p></li>
+<li><p><strong>value</strong> – parameter value </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5adata13CommandParser18set_boolean_optionERKNSt6stringE">
+<span id="_CPPv3NK5adata13CommandParser18set_boolean_optionERKNSt6stringE"></span><span id="_CPPv2NK5adata13CommandParser18set_boolean_optionERKNSt6stringE"></span><span id="adata::CommandParser::set_boolean_option__ssCRC"></span><span class="target" id="classadata_1_1CommandParser_1ad9e54381f75573f38514804cc80c2746"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_boolean_option</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">key</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5adata13CommandParser18set_boolean_optionERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Set a boolean parameter (internaly set an inetger to 1) in the global configuration manager. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>key</strong> – parameter name </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="abase.html" class="btn btn-neutral float-left" title="abase components" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="amath.html" class="btn btn-neutral float-right" title="amath components" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Benoit Serre.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
