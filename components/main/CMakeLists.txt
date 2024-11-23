@@ -5,5 +5,5 @@ target_link_libraries(alliance.exe amath abase)
 
 # Define installation directories for release and debug configurations
 install(TARGETS alliance.exe
-    RUNTIME DESTINATION "$<IF:$<CONFIG:Release>,${RELEASE_INSTALL_DIR},${RELEASE_INSTALL_DIR}>"
+    RUNTIME DESTINATION "$<IF:$<CONFIG:Release>,${RELEASE_INSTALL_DIR},${DEBUG_INSTALL_DIR}>"
 )

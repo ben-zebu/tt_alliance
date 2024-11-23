@@ -6,7 +6,7 @@
 using namespace abase;
 
 FileLogger::FileLogger(const std::string& logFilePath) {
-    logFile_.open(logFilePath, std::ios::out | std::ios::app);
+    logFile_.open(logFilePath, std::ios::out);
     if (!logFile_.is_open()) {
         throw std::runtime_error("Failed to open log file: " + logFilePath + " !");
     }

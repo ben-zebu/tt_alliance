@@ -2,16 +2,16 @@
   DICTIONNARY_FORMAT: True
 
   ERROR:
-    en: "ERROR:"
-    fr: "ERREUR :"
+    en: "ERROR"
+    fr: "ERREUR"
 
   WARNING:
-    en: "WARNING:"
-    fr: "AVERTISSEMENT :"
+    en: "WARNING"
+    fr: "AVERTISSEMENT"
 
   INPUT_ERROR:
-    en: "INPUT_ERROR:"
-    fr: "ERREUR MISE EN DONNEES :"
+    en: "INPUT_ERROR"
+    fr: "ERREUR MISE EN DONNEES"
 
   ERROR_INTEGER_CONVERT:
     en: "Cannot convert value to integer: {0}"

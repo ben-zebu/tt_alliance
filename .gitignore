@@ -3,6 +3,7 @@
 *.d
 release/*
 debug/*
+include/*
 
 # Build folders for by cmake
 build_debug/*
