@@ -4,6 +4,7 @@
 #include <iostream>
 #include <stdexcept>
 
+#include "ErrorManager.h"
 #include "TranslationManager.h"
 #include "ConfigParser.h"
 
@@ -25,7 +26,7 @@ namespace abase {
 std::string ConfigParser::_findValue_(const std::string& key) const {
     auto it = config_map.find(key);
     if (it == config_map.end()) {
-        throw std::runtime_error("Unknown key: " + key);
+        error(translate("UNKNOW_CONFIG_KEY", key));
     }
     return it->second;
 }
@@ -55,8 +56,15 @@ int ConfigParser::_convertValue_<int>(const std::string& value) const {
     try {
         return std::stoi(value);
     } catch (const std::exception& e) {
-        throw std::runtime_error(translate("CP_INTEGER_CONVERT", value));
+        error(translate("INTEGER_CONVERT", value));
     }
+    return 0;
+}
+
+template<>
+bool ConfigParser::_convertValue_<bool>(const std::string& value) const {
+    int ivalue = _convertValue_<int>(value);
+    return (ivalue == 1) ? true : false;
 }
 
 template<>
@@ -64,8 +72,9 @@ float ConfigParser::_convertValue_<float>(const std::string& value) const {
     try {
         return std::stof(value);
     } catch (const std::exception& e) {
-        throw std::runtime_error(translate("CP_FLOAT_CONVERT", value));
+        error(translate("FLOAT_CONVERT", value));
     }
+    return 0.;
 }
 
 template<>
@@ -80,7 +89,7 @@ std::string ConfigParser::_convertValue_<std::string>(const std::string& value) 
 void ConfigParser::loadFromFile(const std::string& filename) {
     std::ifstream file(filename);
     if (!file.is_open()) {
-        throw std::runtime_error("Cannot open configuration file: " + filename);
+        error(translate("ERROR_OPEN_FILE",filename));
     }
 
     std::string line, key, value;
@@ -118,6 +127,7 @@ T ConfigParser::getValue(const std::string& key) const {
 
 template float ConfigParser::getValue<float>(const std::string&) const;
 template int ConfigParser::getValue<int>(const std::string&) const;
+template bool ConfigParser::getValue<bool>(const std::string&) const;
 template std::string ConfigParser::getValue<std::string>(const std::string&) const;
 
 void ConfigParser::printConfig() const {
