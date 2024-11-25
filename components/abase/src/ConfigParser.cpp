@@ -4,13 +4,10 @@
 #include <iostream>
 #include <stdexcept>
 
+#include "Environment.h"
 #include "ErrorManager.h"
 #include "TranslationManager.h"
 #include "ConfigParser.h"
-
-#define STRING_DELIMITER " \t\r\n"
-#define COMMENT_DELIMITER "#;"
-#define QUOTATION_DELIMITER "'\""
 
 using namespace abase;
 

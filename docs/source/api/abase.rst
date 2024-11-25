@@ -8,9 +8,9 @@ Configuration Parser
 .. doxygenfile:: ConfigParser.h
    :project: tt_alliance
 
-Error Parser
-------------
-.. doxygenfile:: ErrorParser.h
+Error Manager
+-------------
+.. doxygenfile:: ErrorManager.h
    :project: tt_alliance
 
 File Logger
