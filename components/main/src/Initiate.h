@@ -5,7 +5,7 @@
 namespace init {
 
     /// @brief Start the main program
-    static void start(int argc, char* argv[]);
+    void start(int argc, char* argv[]);
 
 
 }

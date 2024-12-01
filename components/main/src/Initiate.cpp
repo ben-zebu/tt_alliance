@@ -7,8 +7,6 @@
 constexpr std::string_view CONFIG_FILE = "/etc/alliance.conf";
 constexpr std::string_view RESSOURCES_DIR = "/ressources";
 
-using namespace init;
-
 /// @brief Load the configuration file
 void load_configuration() {
     std::string app_path = get_parser_value<std::string>("application_path");
@@ -31,7 +29,7 @@ void parse_commands_line(int argc, char* argv[]) {
     adata::ArgumentParser parser(argc, argv);
 } 
 
-void start(int argc, char* argv[]) {
+void init::start(int argc, char* argv[]) {
     // start the global timer
     start_timer("global_timer");
 
