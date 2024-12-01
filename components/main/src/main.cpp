@@ -21,9 +21,10 @@
 #include "Coefficient.h"
 #include "Combination.h"
 
-#include "TranslationManager.h"
+#include "Environment.h"
 #include "FileLogger.h"
-#include "ErrorManager.h"
+#include "ConfigParser.h"
+#include "CommandsCollector.h"
 
 #include "CommandParser.h"
 
@@ -110,13 +111,11 @@ void benchmark() {
     }
 }
 
-void yaml_test(int argc, char* argv[]) {
-    std::string exe( argv[0] );
-    std::string project_folder = abase::getAppPath(exe);
-    abase::globalTranslationManager.loadAllTranslations(project_folder + "/ressources");
-    abase::globalTranslationManager.setCurrentLanguage("fr");
-    
-    std::string resname( argv[7] );
+void yaml_test() {
+    std::string app_path = get_parser_value<std::string>("application_path");
+    std::string filename = "/etc/alliance_commands_tree.yml";
+
+    std::string resname = get_parser_value<std::string>("input_file");
     std::string ext = ".dat";
     resname.replace(resname.find(ext) , ext.length(), ".res");
     auto filelogger = std::make_shared<abase::FileLogger>(resname);
@@ -124,19 +123,23 @@ void yaml_test(int argc, char* argv[]) {
     abase::ErrorManager::getInstance().init(filelogger);
     warning("Ceci est un avertissement !");
 
+    abase::CommandsCollector collector;
+    collector.loadCommandsFromFile(app_path + filename);
+
 }
 
 
 
 int main(int argc, char* argv[]) {
-    std::string exe( argv[0] );
-    std::string project_folder = abase::getAppPath(exe);
-    abase::globalTranslationManager.loadAllTranslations(project_folder + "/ressources");
+    // parse the commande line
+    adata::CommandParser parser(argc, argv);
+    
+    std::string app_path = get_parser_value<std::string>("application_path");
+
+    abase::globalTranslationManager.loadAllTranslations(app_path + "/ressources");
     abase::globalTranslationManager.setCurrentLanguage("fr");
 
-    adata::CommandParser parser(argc, argv);
-
-    //yaml_test(argc, argv);
+    yaml_test();
     //benchmark();
     return 0;
 }
