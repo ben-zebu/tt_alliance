@@ -7,40 +7,19 @@ using namespace amath;
 //
 // Constructors and copy constructor
 //
-
-Stress::Stress(const std::array<double, STRESS_SIZE>& components) {
-    for (std::size_t i = 0; i < this->size(); ++i) {
-        this->components[i] = components[i];
-    }
-};
-
-Stress::Stress(const Stress& other) {
-    for (std::size_t i = 0; i < this->size(); ++i) {
-        this->components[i] = other[i];
-    }
-};
             
 Stress& Stress::operator=(const Stress& other) {
-    if (this != &other) {
-        for (std::size_t i = 0; i < this->size(); ++i) {
-            this->components[i] = other[i];
-        }
-    }
+    if (this != &other) components = other.components;
     return *this;
 }
 
 Stress::Stress(const std::vector<double>& components) {
     assert(components.size() == STRESS_SIZE && "Stress constructor: wrong number of components");
-    int i = 0;
-    for (auto value : components) {
-        this->components[++i] = value;
-    }    
+    std::copy(components.begin(), components.end(), this->components.begin());   
 }
 
 void Stress::zero() {
-    for (std::size_t i = 0; i < this->size(); ++i) {
-        this->components[i] = 0.0;
-    }
+    std::fill(components.begin(), components.end(), 0.0);
 }
 
 //
@@ -71,28 +50,28 @@ namespace amath {
 
 Stress& Stress::operator+=(const Stress& other) {
     for  (std::size_t i = 0; i < this->size(); ++i) {
-        this->components[i] += other[i];
+        components[i] += other[i];
     }
     return *this;
 }
 
 Stress& Stress::operator-=(const Stress& other) {
     for  (std::size_t i = 0; i < this->size(); ++i) {
-        this->components[i] -= other[i];
+        components[i] -= other[i];
     }
     return *this;
 }
 
 Stress& Stress::operator*=(const double& scalar) {
     for (std::size_t i = 0; i < this->size(); ++i) {
-        this->components[i] *= scalar;
+        components[i] *= scalar;
     }    
     return *this;
 }
 
 bool Stress::operator==(const Stress& other) {
     for (size_t i = 0; i < this->size(); ++i) {
-        if (this->components[i] != other.components[i]) {
+        if (components[i] != other.components[i]) {
             return false;
         }
     }

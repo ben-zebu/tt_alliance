@@ -23,7 +23,7 @@ namespace amath {
         protected:
             /// \brief Stress components stored as a vector: 
             //// \f$(s_{11}, s_{22}, s_{33}, s_{12}, s_{13}, s_{23})\f$
-            double components[STRESS_SIZE];
+            std::array<double, STRESS_SIZE> components;
         
         private:
             /// \brief Constant factor used in the calculation of an equivalent stress based on
@@ -64,17 +64,13 @@ namespace amath {
         public:
             // Constructors and copy constructor
             Stress() = default ;
-            Stress(const std::array<double, STRESS_SIZE>& components);
-            Stress(const Stress& other);
+            Stress(const std::array<double, STRESS_SIZE>& stress) : components(stress) {};
+            Stress(const Stress& other) : components(other.components) {};
             Stress(const std::vector<double>& components);
             Stress& operator=(const Stress& other);
 
             // Utility
             bool is_diag() const;
-            /// \brief Returns the number of stress components.
-            ///
-            /// This function returns the number of stress components stored in the `components` vector.
-            size_t size() const { return STRESS_SIZE; }
             /// \brief  Set all stress components to zero.
             void zero();
 
@@ -84,23 +80,11 @@ namespace amath {
             /// `components` vector. The principal stresses are returned in descending order.
             std::array<double, STRESS_SIZE/2> principal_stresses() const;
 
-            /// \brief Returns a reference to the vector of stress tensor components.
-            ///
-            /// This function returns a constant reference to the `components` vector, which stores the six independent
-            /// components of the stress tensor.
-            std::vector<double> get_components() const { return std::vector<double>(std::begin(components), std::end(components)); }
-
-
-
-            // Operators overloading
-            double& operator[](const size_t& i) { 
-                assert(i < STRESS_SIZE && "Index out of range");
-                return components[i];
-            }
-            const double& operator[](const size_t& i) const { 
-                assert(i < STRESS_SIZE && "Index out of range");
-                return components[i];
-            }
+            // Accessors
+            double operator[](std::size_t index) const { return components[index]; }
+            double& operator[](std::size_t index) { return components[index]; }
+            /// \brief Returns the number of stress components.
+            std::size_t size() const { return components.size(); } 
 
             Stress& operator+=(const Stress& other);
             Stress& operator-=(const Stress& other);

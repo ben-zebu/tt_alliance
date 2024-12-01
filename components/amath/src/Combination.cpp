@@ -114,8 +114,7 @@ std::size_t TriangularCombination::operator()(const std::size_t& row, const std:
 std::vector<std::size_t> TriangularCombination::get_ranks(const std::size_t& combination) const {
     combi_ranks oranks;
     ranks_by_ptr(combination, oranks);
-    std::vector<std::size_t> out({oranks.first, oranks.second});
-    return out;
+    return {oranks.first, oranks.second};
 }
 
 void TriangularCombination::ranks_by_ptr(const std::size_t& combination, combi_ranks& oranks) const {

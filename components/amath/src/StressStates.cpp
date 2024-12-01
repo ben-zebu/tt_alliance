@@ -1,4 +1,5 @@
 #include <iostream>
+#include <numeric>
 
 #include "GlobalTimer.h"
 #include "StressStates.h"
@@ -69,9 +70,7 @@ StressContainer StressStates::stress_intensity(const std::vector<size_t>& states
 
             if ( torsors_manager.is_activate() ) {
                 torsors_manager.get_coef(rk, t, coefs);
-                for (std::size_t trk = 0; trk < nb_torsors(); ++trk) {
-                    Stotal += coefs[trk]*Torsors[trk];
-                }
+                Stotal = std::inner_product(coefs.begin(), coefs.end(), Torsors.begin(), Stotal);            
             }
             _maximum_equivalent_stress_(Sc_max, Stotal, 1., loads);
         }
@@ -104,9 +103,7 @@ StressContainer StressStates::stress_range_ratio(const Combination& explorer, co
 
             if ( torsors_manager.is_activate() ) {
                 torsors_manager.get_diff_coef(ranks, t, coefs);
-                for (std::size_t trk = 0; trk < nb_torsors(); ++trk) {
-                    Stotal += coefs[trk]*Torsors[trk];
-                }
+                Stotal = std::inner_product(coefs.begin(), coefs.end(), Torsors.begin(), Stotal);
             }
             _maximum_equivalent_stress_(Sc_max, Stotal, cc, ranks);
         }
