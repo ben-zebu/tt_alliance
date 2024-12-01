@@ -13,6 +13,9 @@ Commands Collector
 .. doxygenfile:: CommandsCollector.h
    :project: tt_alliance
 
+.. doxygenfile:: CommandsCollector.cpp
+   :project: tt_alliance
+
 Commands Type Factory
 ---------------------
 .. doxygenfile:: CommandsTypeFactory.h

@@ -8,7 +8,7 @@
 
 using namespace adata;
 
-CommandParser::CommandParser(int argc, char** argv) {
+ArgumentParser::ArgumentParser(int argc, char** argv) {
     // set the path of the executable for future purpose
     set_application_path(argv[0]);
 
@@ -55,12 +55,12 @@ CommandParser::CommandParser(int argc, char** argv) {
 
 }
 
-void CommandParser::set_application_path(const std::string& path) {
+void ArgumentParser::set_application_path(const std::string& path) {
     std::string app_path = abase::getAppPath(path);
     set_parser_value("application_path", app_path);
 }
 
-void CommandParser::set_integer_option(const std::string& key, const std::string& value) const {
+void ArgumentParser::set_integer_option(const std::string& key, const std::string& value) const {
     int ivalue = 0;
     try {
         ivalue = std::stoi(value);
@@ -70,15 +70,15 @@ void CommandParser::set_integer_option(const std::string& key, const std::string
     set_parser_value(key, value);
 }
 
-void CommandParser::set_boolean_option(const std::string& key) const {
+void ArgumentParser::set_boolean_option(const std::string& key) const {
     set_integer_option(key, "1");
 }
 
-void CommandParser::help() {
+void ArgumentParser::help() {
     std::exit(0);
 }
     
-void CommandParser::version() {
+void ArgumentParser::version() {
     std::string version = get_parser_value<std::string>("version");
     std::cout << "Alliance version " << version << std::endl;
     std::exit(0);

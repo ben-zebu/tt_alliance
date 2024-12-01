@@ -7,6 +7,46 @@
 
 #include "FileReader.h"
 
+/**
+ * @brief Command system for input file processing
+ * 
+ * This namespace contains a hierarchical command system for processing input files.
+ * It provides base classes and specialized command types for different data handling needs.
+ * 
+ * The command hierarchy consists of:
+ * - BaseCommand: Abstract base class for all commands
+ * - CompositeCommand: Intermediate class supporting child commands
+ * - SingleCommand: Command for handling string values
+ * - ValueCommand<T>: Template command for handling single values of type T
+ * - VectorCommand<T>: Template command for handling vectors of values of type T
+ * 
+ * Key features:
+ * - Hierarchical command structure
+ * - Support for command translations
+ * - Type-safe value handling through templates
+ * - Flexible input file processing
+ * 
+ * Each command type serves a specific purpose:
+ * - BaseCommand: Provides core functionality and interface
+ * - CompositeCommand: Manages child commands and their processing
+ * - SingleCommand: Handles string-based commands
+ * - ValueCommand<T>: Processes single values of any type
+ * - VectorCommand<T>: Manages arrays/vectors of values
+ * 
+ * Common usage:
+ * @code
+ * auto cmd = std::make_shared<SingleCommand>();
+ * cmd->set_name("command_name");
+ * cmd->read_input(reader);
+ * @endcode
+ * 
+ * @note All commands support nested hierarchies through the CompositeCommand base
+ * @note Translation support is built into the base command level
+ * 
+ * @see FileReader
+ * @see BaseCommand
+ * @see CompositeCommand
+ */
 namespace abase {
 
     /// @brief Base class for all commands

@@ -3,8 +3,8 @@
 adata components
 ================
 
-Command Parser
---------------
-.. doxygenfile:: CommandParser.h
+Argument Parser
+---------------
+.. doxygenfile:: ArgumentParser.h
    :project: tt_alliance
 

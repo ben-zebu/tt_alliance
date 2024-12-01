@@ -9,7 +9,7 @@
 using namespace abase;
 
 /// @brief Get the command type from the YAML node position (internal function without outside access)
-/// @param key position in the YAML node
+/// @param node position in the YAML tree
 /// @return the command type
 std::string get_command_type(const YAML::Node& node) {
     for (const auto& key : node) {
@@ -19,7 +19,7 @@ std::string get_command_type(const YAML::Node& node) {
 }
 
 /// @brief Get the command keys from the YAML node position (internal function without outside access)
-/// @param key position in the YAML node
+/// @param node position in the YAML tree
 /// @return the associated keys
 std::unordered_map<std::string, std::vector<std::string>> get_command_keys(const std::string& node_name, 
                                                                            const YAML::Node& node) {
@@ -45,7 +45,7 @@ std::unordered_map<std::string, std::vector<std::string>> get_command_keys(const
 
 /// @brief Create a command object based on informattions read in YAML file (internal function without outside access).
 /// The function is recursive to add all children commands.
-/// @param key position in the YAML node
+/// @param node position in the YAML tree
 /// @return the command object
 std::shared_ptr<BaseCommand> add_command(const std::string node_name, const YAML::Node& node) {
     // get the command type

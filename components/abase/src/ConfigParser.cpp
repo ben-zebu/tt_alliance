@@ -84,6 +84,8 @@ std::string ConfigParser::_convertValue_<std::string>(const std::string& value) 
 //
 
 void ConfigParser::loadFromFile(const std::string& filename) {
+    std::lock_guard<std::mutex> lock(mutex);
+    
     std::ifstream file(filename);
     if (!file.is_open()) {
         error(translate("ERROR_OPEN_FILE",filename));
