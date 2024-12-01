@@ -27,6 +27,7 @@
 #include "CommandsCollector.h"
 
 #include "CommandParser.h"
+#include "Initiate.h"
 
 amath::StressStates generateStressStates(const std::size_t numStates, const std::size_t numTorsors) {
     // Seed the random number generator
@@ -115,29 +116,25 @@ void yaml_test() {
     std::string app_path = get_parser_value<std::string>("application_path");
     std::string filename = "/etc/alliance_commands_tree.yml";
 
+    // create a file logger
     std::string resname = get_parser_value<std::string>("input_file");
     std::string ext = ".dat";
     resname.replace(resname.find(ext) , ext.length(), ".res");
     auto filelogger = std::make_shared<abase::FileLogger>(resname);
-
     abase::ErrorManager::getInstance().init(filelogger);
-    warning("Ceci est un avertissement !");
 
+    // retrieve the commands from the YAML file
     abase::CommandsCollector collector;
     collector.loadCommandsFromFile(app_path + filename);
+
 
 }
 
 
 
 int main(int argc, char* argv[]) {
-    // parse the commande line
-    adata::CommandParser parser(argc, argv);
-    
-    std::string app_path = get_parser_value<std::string>("application_path");
-
-    abase::globalTranslationManager.loadAllTranslations(app_path + "/ressources");
-    abase::globalTranslationManager.setCurrentLanguage("fr");
+    // initialization process
+    init::start(argc, argv);
 
     yaml_test();
     //benchmark();
