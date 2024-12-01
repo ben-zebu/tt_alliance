@@ -3,12 +3,15 @@
 
 #include "ConfigParser.h"
 #include "CommandParser.h"
-#include "ErrorManager.h"
-#include "TranslationManager.h"
+#include "Environment.h"
+#include "LocalPath.h"
 
 using namespace adata;
 
 CommandParser::CommandParser(int argc, char** argv) {
+    // set the path of the executable for future purpose
+    set_application_path(argv[0]);
+
     int arg_rk = 1;
     while (arg_rk < argc) {
         std::string name = argv[arg_rk];
@@ -48,9 +51,13 @@ CommandParser::CommandParser(int argc, char** argv) {
         // standard text for input file    
         set_parser_value("input_file", name);            
         arg_rk += 1;
-        
     }
 
+}
+
+void CommandParser::set_application_path(const std::string& path) {
+    std::string app_path = abase::getAppPath(path);
+    set_parser_value("application_path", app_path);
 }
 
 void CommandParser::set_integer_option(const std::string& key, const std::string& value) const {

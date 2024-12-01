@@ -6,7 +6,7 @@
 #include <vector>
 
 namespace adata {
-    /// @brief Classe used to read the command line and to set parameter in the global configuration manager
+    /// @brief Class used to read the command line and to set parameter in the global configuration manager
     class CommandParser {
         private:
             /// @brief show help message
@@ -20,6 +20,9 @@ namespace adata {
             /// @brief Set a boolean parameter (internaly set an inetger to 1) in the global configuration manager
             /// @param key parameter name
             void set_boolean_option(const std::string& key) const;
+            /// @brief Set a parameter in the global configuration manager for the application path
+            /// @param path path given by the command line
+            void set_application_path(const std::string& path);
         
         protected:
             std::vector<std::string> integer_options = { 
