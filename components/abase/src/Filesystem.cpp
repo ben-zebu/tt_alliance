@@ -1,11 +1,7 @@
-#include <iostream>
 #include <filesystem>
-#include <limits.h>
-#include <string>
 #include <utility>
-#include <vector>
 
-#include "LocalPath.h"
+#include "Filesystem.h"
 
 namespace fs = std::filesystem;
 
@@ -68,4 +64,24 @@ std::vector<std::string> abase::getFilesbyExtension(const std::string& directory
         }
     }
     return files;
+}
+
+std::pair<std::string, std::string> abase::splitExt(const std::string& a_path) {
+    size_t lastSeparator = a_path.find_last_of(".");
+    
+    std::string head = a_path.substr(0, lastSeparator);
+    std::string tail = a_path.substr(lastSeparator + 1);
+    
+    return {head, tail};
+}
+
+bool abase::remove(const std::string& filename) {
+    if (!fs::exists(filename)) return false;
+    return fs::remove(filename);
+}
+
+bool abase::remove_all(const std::string& foldername) {
+    if (!fs::exists(foldername)) return false;
+    std::uintmax_t count = fs::remove_all(foldername);
+    return (count > 0) ? true : false;
 }

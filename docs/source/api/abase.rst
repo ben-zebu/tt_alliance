@@ -41,14 +41,14 @@ File Reader
 .. doxygenfile:: FileReader.h
    :project: tt_alliance
 
+Filesystem
+----------
+.. doxygenfile:: Filesystem.h
+   :project: tt_alliance
+
 Global Timer
 ------------
 .. doxygenfile:: GlobalTimer.h
-   :project: tt_alliance
-
-Local Path
-----------
-.. doxygenfile:: LocalPath.h
    :project: tt_alliance
 
 Translation Manager

@@ -1,11 +1,24 @@
 #pragma once
 
-#include <iostream>
-#include <filesystem>
-#include <limits.h>
-#include <string>
-#include <utility>
-#include <vector>
+#include "Environment.h"
+
+/// @brief Header file containing file system operations and path manipulation utilities
+/// 
+/// This header provides a set of functions to:
+/// - Check file permissions (readable/writable)
+/// - Manipulate file paths (splitting, getting executable paths)
+/// - File system operations (listing files, removing files/directories)
+/// - Path resolution (executable and application paths)
+///
+/// The functions in this header file are designed to work with standard string paths
+/// and provide common file system operations in a platform-independent way.
+///
+/// Example usage:
+/// @code
+/// std::string execPath = abase::getExecutablePath("myapp");
+/// auto [head, tail] = abase::splitPath("/path/to/file");
+/// bool canWrite = abase::is_file_writable("config.txt");
+/// @endcode
 
 namespace abase {
     
@@ -39,5 +52,21 @@ namespace abase {
     /// @param ext the expected extension
     /// @return the list of files
     std::vector<std::string> getFilesbyExtension(const std::string& directory, const std::string& ext);
+
+    /// @brief Split a path in a head and an extension. The extension is the last part of the path after the last dot.
+    /// @param a_path the path to split
+    /// @return A pair of string that give the base name and the extension
+    std::pair<std::string, std::string> splitExt(const std::string& a_path);
+
+    /// @brief Remove a file from the file system
+    /// @param filename the file to remove
+    /// @return removal status
+    bool remove(const std::string& filename);
+
+    /// @brief Remove a folder and recursively its contained.
+    /// @param foldername the folder to remove
+    /// @return removal status
+    bool remove_all(const std::string& foldername);
+
 
 }
