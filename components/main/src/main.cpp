@@ -26,6 +26,7 @@
 #include "ConfigParser.h"
 #include "CommandsCollector.h"
 
+#include "DataManager.h"
 #include "CommandParser.h"
 #include "Initiate.h"
 
@@ -113,24 +114,14 @@ void benchmark() {
 }
 
 void yaml_test() {
+    std::string input_file = get_parser_value<std::string>("input_file");
     std::string app_path = get_parser_value<std::string>("application_path");
-    std::string filename = "/etc/alliance_commands_tree.yml";
+    std::string commands_tree = "/etc/alliance_commands_tree.yml";
 
-    // create a file logger
-    std::string resname = get_parser_value<std::string>("input_file");
-    std::string ext = ".dat";
-    resname.replace(resname.find(ext) , ext.length(), ".res");
-    auto filelogger = std::make_shared<abase::FileLogger>(resname);
-    abase::ErrorManager::getInstance().init(filelogger);
-
-    // retrieve the commands from the YAML file
-    abase::CommandsCollector collector;
-    collector.loadCommandsFromFile(app_path + filename);
-
+    adata::DataManager dataManager;
+    dataManager.read_data(input_file, app_path + commands_tree);
 
 }
-
-
 
 int main(int argc, char* argv[]) {
     // initialization process

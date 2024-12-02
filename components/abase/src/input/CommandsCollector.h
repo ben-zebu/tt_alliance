@@ -23,6 +23,15 @@ namespace abase {
             /// @param filename path to the YAML file
             void loadCommandsFromFile(const std::string& filename);
 
+            /// @brief Get the command associated to a given name
+            /// @param name command name
+            /// @return the command object
+            std::shared_ptr<BaseCommand> get_command(const std::string& name);
+            /// @brief Get the list of all commands names
+            /// @return the list of commands names
+            std::vector<std::string> get_commands_names();
+
+
             void clear() { commands.clear(); }
     };
 

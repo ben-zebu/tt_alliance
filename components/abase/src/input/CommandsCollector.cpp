@@ -70,8 +70,6 @@ std::shared_ptr<BaseCommand> add_command(const std::string node_name, const YAML
     for (const auto& child : node) {
         std::string childname = child.first.as<std::string>();
         if (childname == "keys" || childname == "type") continue;
-
-        std::cout << "\t" << "child: " << childname << std::endl;
         command->addChild( add_command(childname, child.second) );
     }
 
@@ -94,7 +92,22 @@ void CommandsCollector::loadCommandsFromFile(const std::string& filename) {
     // Add all commands and their children to the collector
     for (const auto& key : node) {
         std::string str_key = key.first.as<std::string>();
-        std::cout << "Key: " << str_key << std::endl;
         commands[str_key] = add_command(str_key, key.second);
+        std::cout << "Key: " << str_key << " with adress: " << commands[str_key] << std::endl;
     }
+}
+
+std::shared_ptr<BaseCommand> CommandsCollector::get_command(const std::string& name) {
+    if (commands.find(name) == commands.end()) {
+        error(translate("ERROR_FACTORY_UNKNOWN", name));
+    }
+    return commands[name];
+}
+
+std::vector<std::string> CommandsCollector::get_commands_names() {
+    std::vector<std::string> names;
+    for (const auto& command : commands) {
+        names.push_back(command.first);
+    }
+    return names;
 }

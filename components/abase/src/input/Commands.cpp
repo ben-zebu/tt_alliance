@@ -1,3 +1,5 @@
+#include <algorithm>
+#include <cctype>
 #include <sstream>
 
 #include "Commands.h"
@@ -5,7 +7,16 @@
 
 using namespace abase;
 
+std::string to_lowercase(const std::string& input) {
+    std::string result = input;
+    std::transform(result.begin(), result.end(), result.begin(), [](unsigned char c) {
+        return std::tolower(c);
+    });
+    return result;
+}
+
 bool BaseCommand::is_same_keyword(const std::string& a_key) {
+    std::string lower_case_key = to_lowercase(a_key);
     for (const auto& translation : translations) {
         const auto& keys = translation.second;
         if (keys.empty()) continue;
