@@ -1,15 +1,20 @@
 #include <iostream>
-#include <stdexcept>
 
+#include "Environment.h"
 #include "FileLogger.h"
 
 using namespace abase;
 
 FileLogger::FileLogger(const std::string& logFilePath) {
+    open(logFilePath);
+}
+
+void FileLogger::open(const std::string& logFilePath) {
     logFile_.open(logFilePath, std::ios::out);
     if (!logFile_.is_open()) {
         throw std::runtime_error("Failed to open log file: " + logFilePath + " !");
     }
+
 }
 
 void FileLogger::write(const std::string& message) {

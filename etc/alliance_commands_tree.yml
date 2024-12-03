@@ -1,0 +1,460 @@
+---
+FIND:
+  keys: {"fr": ["rech", "rechercher"], "en": ["find", "find"]}
+  type: string_array
+
+CODE:
+  keys: {"fr": ["rccm", "rccm"], "en": ["asme", "asme"]}
+  type: single
+  
+  CATEGORY:
+    keys: {"fr": ["cate", "categorie"], "en": ["cate", "category"]}
+    type: uint
+  
+  NS:
+    keys: {"fr": ["ns", "ns"], "en": ["ns", "ns"]}
+    type: uint
+  
+  LANGUAGE:
+    keys: {"fr": ["angl", "anglais"], "en": ["engl", "english"]}
+    type: string
+
+  EDITION:
+    keys: {"fr": ["edit", "edition"], "en": ["edit", "edit"]}
+    type: uint
+
+  VERSION:
+    keys: {"fr": ["vers", "version"], "en": ["vers", "version"]}
+    type: string
+
+TORSOR:
+  keys: {"fr": ["tors", "torseur"], "en": ["tors", "torsor"]}
+  type: int_array
+
+LOADSTEP:
+  keys: {"fr": ["pres", "pression"], "en": ["pres", "pressure"]}
+  type: uint_array
+
+  KP:
+    keys: {"fr": ["kp", "kp"], "en": ["kp", "kp"]}
+    type: real_array
+  
+  THERMAL:
+    keys: {"fr": ["ther", "thermique"], "en": ["ther", "thermal"]}
+    type: uint
+
+    KH:
+      keys: {"fr": ["kh", "kh"], "en": ["kh", "kh"]}
+      type: real
+
+  FT:
+    keys: {"fr": ["ft", "ftotal"], "en": ["ft", "load"]}
+    type: real_array
+
+  EF:
+    keys: {"fr": ["ef", "effort"], "en": ["ef", "stress"]}
+    type: real_array
+
+TRANSIENT:
+  keys: {"fr": ["tran", "transitoire"], "en": ["tran", "transient"]}
+  type: single
+
+  NAME:
+    keys: {"fr": ["no", "nom"], "en": ["na", "name"]}
+    type: string
+
+  NCY:
+    keys: {"fr": ["ncy", "ncy"], "en": ["ncy", "ncy"]}
+    type: uint
+
+  NUMBERS:
+    keys: {"fr": ["nu", "numeros"], "en": ["nu", "numbers"]}
+    type: uint_array
+
+  GROUP:
+    keys: {"fr": ["grou", "groupe"], "en": ["grou", "group"]}
+    type: uint_array
+
+    GDF:
+      keys: {"fr": ["gdf", "gdf"], "en": ["gdf", "gdf"]}
+      type: uint_array
+
+    GDP:
+      keys: {"fr": ["gdp", "gdp"], "en": ["gdp", "gdp"]}
+      type: uint
+
+  SINGLE:
+    keys: {"fr": ["seul", "seul"], "en": ["sing", "single"]}
+    type: single
+
+  NVAR:
+    keys: {"fr": ["nvar", "nvar"], "en": ["nvar", "nvar"]}
+    type: uint
+
+  GVAR:
+    keys: {"fr": ["gvar", "gvar"], "en": ["gvar", "gvar"]}
+    type: uint
+
+  N3SM:
+    keys: {"fr": ["n3sm", "n3sm"], "en": ["n3sm", "n3sm"]}
+    type: single
+
+  NROC:
+    keys: {"fr": ["nroc", "nroc"], "en": ["nroc", "nroc"]}
+    type: single
+
+TABLE:
+  keys: {"fr": ["table", "table"], "en": ["table", "table"]}
+  type: single
+
+MATERIAL:
+  keys: {"fr": ["mat", "materiau"], "en": ["mat", "material"]}
+  type: single
+
+  NAME:
+    keys: {"fr": ["no", "nom"], "en": ["na", "name"]}
+    type: string
+
+  EE:
+    keys: {"fr": ["ee", "ee"], "en": ["ee", "ee"]}
+    type: real
+
+  SM:
+    keys: {"fr": ["sm", "sm"], "en": ["sm", "sm"]}
+    type: real
+
+  SU:
+    keys: {"fr": ["su", "su"], "en": ["su", "su"]}
+    type: real
+
+  SCY:
+    keys: {"fr": ["scy", "scy"], "en": ["scy", "scy"]}
+    type: real
+
+  LAW:
+    keys: {"fr": ["loi", "loi"], "en": ["law", "law"]}
+    type: uint
+
+  KETABLE:
+    keys: {"fr": ["keta", "ketable"], "en": ["keta", "ketable"]}
+    type: string
+
+  SY:
+    keys: {"fr": ["sy", "sy"], "en": ["sy", "sy"]}
+    type: real
+
+  SYG:
+    keys: {"fr": ["syg", "syg"], "en": ["syg", "syg"]}
+    type: real
+
+  EREF:
+    keys: {"fr": ["eref", "eref"], "en": ["eref", "eref"]}
+    type: real
+
+    TYPM:
+      keys: {"fr": ["typm", "typm"], "en": ["typm", "typm"]}
+      type: uint
+
+    FACTOR:
+      keys: {"fr": ["fact", "facteur"], "en": ["fact", "factor"]}
+      type: real
+
+    CORRECTION:
+      keys: {"fr": ["corre", "correction"], "en": ["corre", "correction"]}
+      type: uint
+
+    TABLE:
+      keys: {"fr": ["tabl", "table"], "en": ["tabl", "table"]}
+      type: string
+
+CHAIN:
+  keys: {"fr": ["chai", "chaine"], "en": ["chai", "chain"]}
+  type: single
+
+  MATERIAL:
+    keys: {"fr": ["mat", "materiau"], "en": ["mat", "material"]}
+    type: string_array
+
+  EE:
+    keys: {"fr": ["ee", "ee"], "en": ["ee", "ee"]}
+    type: real
+
+  LAW:
+    keys: {"fr": ["loi", "loi"], "en": ["law", "law"]}
+    type: uint
+
+  SM:
+    keys: {"fr": ["sm", "sm"], "en": ["sm", "sm"]}
+    type: real
+
+  SU:
+    keys: {"fr": ["su", "su"], "en": ["su", "su"]}
+    type: real
+
+  SCY:
+    keys: {"fr": ["scy", "scy"], "en": ["scy", "scy"]}
+    type: real
+
+  TMEAN:
+    keys: {"fr": ["tmoy", "tmoy"], "en": ["tmea", "tmean"]}
+    type: single
+
+  TMAX:
+    keys: {"fr": ["tmax", "tmax"], "en": ["tmax", "tmax"]}
+    type: single
+
+  TMIN:
+    keys: {"fr": ["tmin", "tmin"], "en": ["tmin", "tmin"]}
+    type: single
+
+  DRILLED:
+    keys: {"fr": ["perf", "perforee"], "en": ["dril", "drilled"]}
+    type: single
+
+  NEUBER:
+    keys: {"fr": ["neu", "neuber"], "en": ["neu", "neuber"]}
+    type: single
+
+  NAME:
+    keys: {"fr": ["nom", "nom"], "en": ["name", "name"]}
+    type: string
+
+  RATCHETING:
+    keys: {"fr": ["roch", "rochet"], "en": ["ratc", "ratcheting"]}
+    type: single
+
+    PSINGLE:
+      keys: {"fr": ["pseu", "pseul"], "en": ["psin", "psingle"]}
+      type: single
+
+  WELD:
+    keys: {"fr": ["soud", "soudure"], "en": ["weld", "weld"]}
+    type: single
+
+    NZE:
+      keys: {"fr": ["nze", "nze"], "en": ["nze", "nze"]}
+      type: single
+
+  MISES:
+    keys: {"fr": ["mise", "mises"], "en": ["mise", "mises"]}
+    type: single
+
+  PK:
+    keys: {"fr": ["pk", "pk"], "en": ["pk", "pk"]}
+    type: real_array
+
+  KM:
+    keys: {"fr": ["km", "km"], "en": ["km", "km"]}
+    type: real_array
+
+  KF:
+    keys: {"fr": ["kf", "kf"], "en": ["kf", "kf"]}
+    type: real_array
+
+  MB:
+    keys: {"fr": ["mb", "mb"], "en": ["mb", "mb"]}
+    type: single
+
+  AVERAGE:
+    keys: {"fr": ["moye", "moyenne"], "en": ["aver", "average"]}
+    type: single
+
+  MF:
+    keys: {"fr": ["mf", "mf"], "en": ["mf", "mf"]}
+    type: single
+
+  OVAL:
+    keys: {"fr": ["oval", "ovalisation"], "en": ["oval", "oval"]}
+    type: real_array
+
+  BT:
+    keys: {"fr": ["bt", "bt"], "en": ["bt", "bt"]}
+    type: real_array
+
+  PMB:
+    keys: {"fr": ["pmb", "pmb"], "en": ["pmb", "pmb"]}
+    type: real_array
+
+  OUTPUT:
+    keys: {"fr": ["extr", "extraire"], "en": ["out", "output"]}
+    type: single
+
+  KEMECH:
+    keys: {"fr": ["ke", "kemeca"], "en": ["ke", "kemech"]}
+    type: real
+
+  KIMECH:
+    keys: {"fr": ["ki", "kimeca"], "en": ["ki", "kimech"]}
+    type: real
+
+  KETHER:
+    keys: {"fr": ["keth", "kether"], "en": ["keth", "kether"]}
+    type: real
+
+  KITHER:
+    keys: {"fr": ["kith", "kither"], "en": ["kith", "kither"]}
+    type: real
+
+  LSC:
+    keys: {"fr": ["lsc", "lsc"], "en": ["lsc", "lsc"]}
+    type: single
+
+  SAEXTERNAL:
+    keys: {"fr": ["saex", "saexterne"], "en": ["saex", "saexternal"]}
+    type: real
+
+  SREXTERNAL:
+    keys: {"fr": ["srex", "srexterne"], "en": ["srex", "srexternal"]}
+    type: real
+
+  UNDERMINING:
+    keys: {"fr": ["affo", "affouillement"], "en": ["unde", "undermining"]}
+    type: single
+
+    SKIN:
+      keys: {"fr": ["peau", "peau"], "en": ["skin", "skin"]}
+      type: uint
+
+    ATRA:
+      keys: {"fr": ["atra", "atra"], "en": ["atra", "atra"]}
+      type: int_array
+
+    ATRN:
+      keys: {"fr": ["atrn", "atrn"], "en": ["atrn", "atrn"]}
+      type: string_array
+
+    AFSM:
+      keys: {"fr": ["afsm", "afsm"], "en": ["afsm", "afsm"]}
+      type: real
+
+    AFSP:
+      keys: {"fr": ["afsp", "afsp"], "en": ["afsp", "afsp"]}
+      type: real
+
+    AKSP:
+      keys: {"fr": ["aksp", "aksp"], "en": ["aksp", "aksp"]}
+      type: real
+
+    DEPTH:
+      keys: {"fr": ["prof", "profondeur"], "en": ["dept", "depth"]}
+      type: real
+
+  SAMAX:
+    keys: {"fr": ["sama", "samax"], "en": ["sama", "samax"]}
+    type: real
+
+    SATRA:
+      keys: {"fr": ["satra", "satra"], "en": ["satra", "satra"]}
+      type: uint_array
+
+    SATRN:
+      keys: {"fr": ["satrn", "satrn"], "en": ["satrn", "satrn"]}
+      type: string_array
+
+  LINESTUD:
+    keys: {"fr": ["line", "linegoujon"], "en": ["line", "linestud"]}
+    type: single
+
+    RADIUS:
+      keys: {"fr": ["rayo", "rayon"], "en": ["radi", "radius"]}
+      type: real
+
+  CATCH:
+    keys: {"fr": ["ferm", "fermeture"], "en": ["catc", "catch"]}
+    type: single
+
+    CATCHLOAD:
+      keys: {"fr": ["effo", "effort"], "en": ["cl", "catchload"]}
+      type: real
+
+    NBBOLT:
+      keys: {"fr": ["nbgo", "nbgoujon"], "en": ["nbbo", "nbbolt"]}
+      type: uint
+
+    DJOINT:
+      keys: {"fr": ["djoi", "djoint"], "en": ["djoi", "djoint"]}
+      type: real
+
+    AXISSTUD:
+      keys: {"fr": ["axeg", "axegoujon"], "en": ["axis", "axisstud"]}
+      type: uint
+
+  PLANE:
+    keys: {"fr": ["plan", "plan"], "en": ["plan", "plane"]}
+    type: uint
+
+    SYMETRIC:
+      keys: {"fr": ["syme", "symetrique"], "en": ["syme", "symetric"]}
+      type: single
+
+  DRAINHOLE:
+    keys: {"fr": ["trou", "troudrain"], "en": ["hole", "drainhole"]}
+    type: real
+
+PLATE:
+  keys: {"fr": ["plaq", "plaque"], "en": ["plat", "plate"]}
+  type: single
+
+  SQUARE:
+    keys: {"fr": ["carr", "carre"], "en": ["squa", "square"]}
+    type: uint
+
+  TRIANGULAR:
+    keys: {"fr": ["tria", "triangulaire"], "en": ["tria", "triangular"]}
+    type: uint
+
+  BIDIM:
+    keys: {"fr": ["2d", "2d"], "en": ["2d", "2d"]}
+    type: single
+
+  TDIF:
+    keys: {"fr": ["tdif", "tdif"], "en": ["tdif", "tdif"]}
+    type: single
+
+  DPHI:
+    keys: {"fr": ["dphi", "dphi"], "en": ["dphi", "dphi"]}
+    type: real
+
+  DTHETA:
+    keys: {"fr": ["dthe", "dtheta"], "en": ["dthe", "dthet"]}
+    type: real
+
+  PMAX:
+    keys: {"fr": ["pmax", "pmax"], "en": ["pmax", "pmax"]}
+    type: real
+
+  TMAX:
+    keys: {"fr": ["tmax", "tmax"], "en": ["tmax", "tmax"]}
+    type: real
+
+  PTSINGLE:
+    keys: {"fr": ["ptse", "ptseul"], "en": ["ptsi", "ptsingle"]}
+    type: single
+
+  N3SM:
+    keys: {"fr": ["n3sm", "n3sm"], "en": ["n3sm", "n3sm"]}
+    type: single
+
+  NANG:
+    keys: {"fr": ["nang", "nang"], "en": ["nang", "nang"]}
+    type: uint
+
+    ANGLE:
+      keys: {"fr": ["ang", "angle"], "en": ["ang", "angle"]}
+      type: real_array
+
+    APHI:
+      keys: {"fr": ["aphi", "aphi"], "en": ["aphi", "aphi"]}
+      type: real_array
+
+    BPHI:
+      keys: {"fr": ["bphi", "bphi"], "en": ["bphi", "bphi"]}
+      type: real_array
+
+    CPHI:
+      keys: {"fr": ["cphi", "cphi"], "en": ["cphi", "cphi"]}
+      type: real_array
+
+RETURN:
+  keys: {"fr": ["reto", "retour"], "en": ["retu", "return"]}
+  type: single

@@ -4,8 +4,6 @@
 #include <unordered_map>
 #include <vector>
 
-#include "yaml-cpp/yaml.h"
-
 namespace abase {
 
     class TranslationManager {
@@ -15,11 +13,6 @@ namespace abase {
 
             /// @brief Key used to detect the YAML format
             std::string format_type = "DICTIONNARY_FORMAT";
-
-            /// @brief Check if the YAML node used the expected `format_type`
-            /// @param node YAML node
-            /// @return true is the `format_type` is correct
-            bool dictionnary_format(const YAML::Node& node) const;
 
             /// @brief Replace place holder strings (such as {0}, {1}, ...) by an other string
             /// @param message initial message with place holder

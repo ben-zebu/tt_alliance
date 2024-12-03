@@ -1,7 +1,7 @@
 # Function to create a library
 function(create_library TARGET_NAME TARGET_SRC_DIR)
-    file(GLOB TARGET_SOURCES ${TARGET_SRC_DIR}/*.cpp)
-    file(GLOB TARGET_HEADERS ${TARGET_SRC_DIR}/*.h)
+    file(GLOB_RECURSE TARGET_SOURCES ${TARGET_SRC_DIR}/*.cpp)
+    file(GLOB_RECURSE TARGET_HEADERS ${TARGET_SRC_DIR}/*.h)
     add_library(${TARGET_NAME} STATIC ${TARGET_SOURCES})
 
     # Include directories
@@ -37,8 +37,8 @@ endfunction()
 
 # Function to create an executable
 function(create_executable TARGET_NAME TARGET_SRC_DIR)
-    file(GLOB TARGET_SOURCES ${TARGET_SRC_DIR}/*.cpp)
-    file(GLOB TARGET_HEADERS ${TARGET_SRC_DIR}/*.h)
+    file(GLOB_RECURSE TARGET_SOURCES ${TARGET_SRC_DIR}/*.cpp)
+    file(GLOB_RECURSE TARGET_HEADERS ${TARGET_SRC_DIR}/*.h)
     add_executable(${TARGET_NAME} ${TARGET_SOURCES})
 
     # Include directories

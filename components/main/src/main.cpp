@@ -14,18 +14,20 @@
 #include <utility>
 
 #include "GlobalTimer.h"
-#include "LocalPath.h"
+#include "Filesystem.h"
 #include "StressStates.h"
 #include "Stress.h"
 #include "Table.h"
 #include "Coefficient.h"
 #include "Combination.h"
 
-#include "TranslationManager.h"
+#include "Environment.h"
 #include "FileLogger.h"
-#include "ErrorManager.h"
+#include "ConfigParser.h"
+#include "CommandsCollector.h"
 
-#include "CommandParser.h"
+#include "DataManager.h"
+#include "Initiate.h"
 
 amath::StressStates generateStressStates(const std::size_t numStates, const std::size_t numTorsors) {
     // Seed the random number generator
@@ -110,33 +112,21 @@ void benchmark() {
     }
 }
 
-void yaml_test(int argc, char* argv[]) {
-    std::string exe( argv[0] );
-    std::string project_folder = abase::getAppPath(exe);
-    abase::globalTranslationManager.loadAllTranslations(project_folder + "/ressources");
-    abase::globalTranslationManager.setCurrentLanguage("fr");
-    
-    std::string resname( argv[7] );
-    std::string ext = ".dat";
-    resname.replace(resname.find(ext) , ext.length(), ".res");
-    auto filelogger = std::make_shared<abase::FileLogger>(resname);
+void yaml_test() {
+    std::string input_file = get_parser_value<std::string>("input_file");
+    std::string app_path = get_parser_value<std::string>("application_path");
+    std::string commands_tree = "/etc/alliance_commands_tree.yml";
 
-    abase::ErrorManager::getInstance().init(filelogger);
-    warning("Ceci est un avertissement !");
+    adata::DataManager dataManager;
+    dataManager.read_data(input_file, app_path + commands_tree);
 
 }
 
-
-
 int main(int argc, char* argv[]) {
-    std::string exe( argv[0] );
-    std::string project_folder = abase::getAppPath(exe);
-    abase::globalTranslationManager.loadAllTranslations(project_folder + "/ressources");
-    abase::globalTranslationManager.setCurrentLanguage("fr");
+    // initialization process
+    init::start(argc, argv);
 
-    adata::CommandParser parser(argc, argv);
-
-    //yaml_test(argc, argv);
+    yaml_test();
     //benchmark();
     return 0;
 }

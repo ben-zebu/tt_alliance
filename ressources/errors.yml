@@ -13,6 +13,10 @@
     en: "INPUT_ERROR"
     fr: "ERREUR MISE EN DONNEES"
 
+  FILE_INPUT_ERROR:
+    en: "FILE_INPUT_ERROR"
+    fr: "ERREUR MISE EN DONNEES"
+
   ERROR_INTEGER_CONVERT:
     en: "Cannot convert value to integer: {0}"
     fr: "Conversion impossible en nombre entier : {0}"
@@ -35,4 +39,28 @@
 
   UNKNOW_CONFIG_KEY:
     en: "Unknown key '{0}' in program configuration !"
-    fr: "Clé inconnue '{0}' dans la configuration du programme !"    
+    fr: "Clé inconnue '{0}' dans la configuration du programme !"
+
+  ERROR_FILE_FOOTER:
+    en: "File '{0}':\nLine: ${1}"
+    fr: "Fichier '{0}' :\nLigne : ${1}"
+
+  ERROR_READ_VECTOR_VALUES:
+    en: "Cannot read ${0} values associated to the command '{1}' !"
+    fr: "Impossible de lire ${0} valeurs associées à la commande '{1}' !"
+
+  ERROR_FACTORY_FILE:
+    en: "Cannot open file '{0}' for commands factory !"
+    fr: "Ouverture impossible du fichier '{0}' pour la fabrique de commandes !"
+
+  ERROR_FACTORY_UNDEFINED_PARAMTER:
+    en: "Undefined key '{0}' type for node '{1}' !"
+    fr: "Clé '{0}' non définie pour l'objet '{1}' !"
+
+  ERROR_FACTORY_UNKNOWN:
+    en: "Unknown object type '{0}' in commands factory !"
+    fr: "Type d'objet inconnu '{0}' dans la fabrique de commandes !"
+  
+  ERROR_FACTORY_MULTI_CREATION:
+    en: "Cannot set multiple creation for the command '{0}' !"
+    fr: "Impossible de définir une création multiple pour la commande '{0}' !"

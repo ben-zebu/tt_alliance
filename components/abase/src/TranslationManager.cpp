@@ -3,7 +3,7 @@
 #include <sstream>
 #include <stdexcept>
 
-#include "LocalPath.h"
+#include "Filesystem.h"
 #include "TranslationManager.h"
 
 #include "yaml-cpp/yaml.h"
@@ -16,7 +16,10 @@ namespace abase {
     TranslationManager globalTranslationManager;
 }
 
-bool TranslationManager::dictionnary_format(const YAML::Node& node) const {
+/// @brief Check if the YAML node used the expected `format_type`
+/// @param node YAML node
+/// @return true is the `format_type` is correct
+bool dictionnary_format(const YAML::Node& node, const std::string& format_type) {
     for (const auto& key : node) {
         if (key.first.as<std::string>() == format_type) {
             try {
@@ -49,7 +52,7 @@ void TranslationManager::loadTranslationsFromFile(const std::string& filename) {
     }
 
     YAML::Node node = YAML::LoadFile(filename);
-    if (!dictionnary_format(node)) return;
+    if (!dictionnary_format(node, format_type)) return;
 
     for (const auto& key : node) {
         std::string dic_key = key.first.as<std::string>();

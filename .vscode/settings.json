@@ -63,6 +63,9 @@
         "charconv": "cpp",
         "condition_variable": "cpp",
         "mutex": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "bitset": "cpp",
+        "regex": "cpp",
+        "shared_mutex": "cpp"
     }
 }

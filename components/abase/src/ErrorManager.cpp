@@ -30,6 +30,13 @@ void ErrorManager::logInputError(const std::string& message) {
     std::exit(1);
 }
 
+// Log an file input error message and terminate the program
+void ErrorManager::logFileInputError(const std::string& message, const std::string& filecontext) {
+    std::string msg = message + "\n" + filecontext;
+    logMessage("FILE_INPUT_ERROR", msg);
+    std::exit(1);
+}
+
 // Log a warning message
 void ErrorManager::logWarning(const std::string& message) {
     logMessage("WARNING", message);
