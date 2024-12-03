@@ -27,7 +27,6 @@
 #include "CommandsCollector.h"
 
 #include "DataManager.h"
-#include "CommandParser.h"
 #include "Initiate.h"
 
 amath::StressStates generateStressStates(const std::size_t numStates, const std::size_t numTorsors) {

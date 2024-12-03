@@ -21,6 +21,7 @@ void DataManager::read_data(const std::string& filename, const std::string& comm
     std::size_t cumul_status = 0;
     while (reader.get_word().size() > 0 && cumul_status == 0) {
         cumul_status = 1;
+        std::cout << "current word: " << reader.get_word() << std::endl;
         for (const auto& name : commands_names) {
             auto command = commands_reader.get_command(name);
             std::size_t status = command->read_input(reader);
@@ -30,6 +31,12 @@ void DataManager::read_data(const std::string& filename, const std::string& comm
             }
             cumul_status *= status;
         }
+    }
+
+    // Error case when the current word is not found in the command list
+    if (reader.get_word().size() > 0 && cumul_status == 1) {
+        std::string error_msg = translate("ERROR_DATA_UNKNOWN_COMMAND", reader.get_word());
+        file_input_error(error_msg, reader.context_error());
     }
 
 }

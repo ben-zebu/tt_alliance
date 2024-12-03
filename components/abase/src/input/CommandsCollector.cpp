@@ -2,7 +2,7 @@
 #include "CommandsCollector.h"
 #include "CommandsTypeFactory.h"
 #include "Environment.h"
-#include "LocalPath.h"
+#include "Filesystem.h"
 
 #include "yaml-cpp/yaml.h"
 
@@ -55,7 +55,7 @@ std::shared_ptr<BaseCommand> add_command(const std::string node_name, const YAML
     }
 
     // create the command by its type
-    std::shared_ptr<BaseCommand> command = CommandsTypeFactory::get_object(ntype);
+    std::shared_ptr<BaseCommand> command = CommandsTypeFactory::create_command(ntype);
     if (command == nullptr) {
         error(translate("ERROR_FACTORY_UNKNOWN", node_name));
     }
@@ -93,7 +93,6 @@ void CommandsCollector::loadCommandsFromFile(const std::string& filename) {
     for (const auto& key : node) {
         std::string str_key = key.first.as<std::string>();
         commands[str_key] = add_command(str_key, key.second);
-        std::cout << "Key: " << str_key << " with adress: " << commands[str_key] << std::endl;
     }
 }
 

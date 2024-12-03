@@ -103,32 +103,23 @@ namespace abase {
             virtual ~CompositeCommand() = default;
             /// @brief Add a child command to the current one
             /// @param child the sub command to add
-            void addChild(std::shared_ptr<BaseCommand> child) {
-                _children.push_back(std::move(child));
-            }
+            void addChild(std::shared_ptr<BaseCommand> child) override;
 
             /// @brief Get the child command associated to a given name
             /// @param name child command name
             /// @return pointer to the child command
-            std::shared_ptr<BaseCommand> get_child(const std::string& name);
+            std::shared_ptr<BaseCommand> get_child(const std::string& name) override;
 
     };
 
     class SingleCommand : public CompositeCommand {
-        protected :
-            /// @brief Value of the command read from the input file
-            std::string _value;
-            
         public :
             SingleCommand() = default;
             virtual ~SingleCommand() = default;
             /// @brief Read input file and set the value of the command
             /// @param reader file reader associated to the input file
             /// @return a status code (0 for success and 1 for fail)
-            virtual std::size_t read_input(FileReader& reader);
-            /// @brief Return the string associated to the command
-            /// @return the value
-            std::string get() { return _value; }
+            virtual std::size_t read_input(FileReader& reader) override;
     };
 
     template<typename T>
@@ -143,11 +134,7 @@ namespace abase {
             /// @brief Read input file and set the value of the command
             /// @param reader file reader associated to the input file
             /// @return a status code (0 for success and 1 for fail)
-            virtual std::size_t read_input(FileReader& reader);
-            /// @brief Return the value associated to the command
-            /// @return the value
-            T get() { return _value; }
-
+            virtual std::size_t read_input(FileReader& reader) override;
     };
 
     template<typename T>
@@ -162,15 +149,7 @@ namespace abase {
             /// @brief Read input file and set the value of the command
             /// @param reader file reader associated to the input file
             /// @return a status code (0 for success and 1 for fail)
-            virtual std::size_t read_input(FileReader& reader);
-            /// @brief Read input file and set the value of the command
-            /// @param reader file reader associated to the input file
-            /// @param size expected size of the vector
-            /// @return a status code (0 for success and 1 for fail)
-            virtual std::size_t read_input(FileReader& reader, const std::size_t& size);
-            /// @brief Return the values associated to the command
-            /// @return the vector of values
-            std::vector<T> get() { return _values; }
+            virtual std::size_t read_input(FileReader& reader) override;
     };
 
 

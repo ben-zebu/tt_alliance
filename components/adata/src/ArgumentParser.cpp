@@ -2,7 +2,7 @@
 #include <string>
 
 #include "ConfigParser.h"
-#include "CommandParser.h"
+#include "ArgumentParser.h"
 #include "Environment.h"
 #include "Filesystem.h"
 
