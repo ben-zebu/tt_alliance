@@ -1,0 +1,6 @@
+---
+  DICTIONNARY_FORMAT: True
+
+  ERROR_DATA_UNKNOWN_COMMAND:
+    en: "Unknown command: '{0}' !"
+    fr: "Commande inconnue : '{0}' !"

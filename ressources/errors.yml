@@ -13,6 +13,10 @@
     en: "INPUT_ERROR"
     fr: "ERREUR MISE EN DONNEES"
 
+  FILE_INPUT_ERROR:
+    en: "FILE_INPUT_ERROR"
+    fr: "ERREUR MISE EN DONNEES"
+
   ERROR_INTEGER_CONVERT:
     en: "Cannot convert value to integer: {0}"
     fr: "Conversion impossible en nombre entier : {0}"

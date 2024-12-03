@@ -24,8 +24,8 @@ CODE:
     type: uint
 
   VERSION:
-      keys: {"fr": ["vers", "version"], "en": ["vers", "version"]}
-      type: string
+    keys: {"fr": ["vers", "version"], "en": ["vers", "version"]}
+    type: string
 
 TORSOR:
   keys: {"fr": ["tors", "torseur"], "en": ["tors", "torsor"]}
