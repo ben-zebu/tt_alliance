@@ -3,7 +3,7 @@
 #include <sstream>
 #include <stdexcept>
 
-#include "LocalPath.h"
+#include "Filesystem.h"
 #include "TranslationManager.h"
 
 #include "yaml-cpp/yaml.h"

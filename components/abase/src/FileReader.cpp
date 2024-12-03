@@ -75,6 +75,9 @@ void FileReader::buffer_update() {
         if (!buffer.empty()) break;
     }
     word_rk = 0;
+
+    // case for end of file
+    if (line.empty()) buffer.clear();
 }
 
 std::string FileReader::context_error() const {

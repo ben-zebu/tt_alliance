@@ -43,6 +43,10 @@ class ErrorManager {
         /// @brief Log an input error message and terminate the program
         /// @param message output message
         void logInputError(const std::string& message);
+        /// @brief Log an input error message and terminate the program
+        /// @param message output message
+        /// @param filecontext context of the file
+        void logFileInputError(const std::string& message, const std::string& filecontext);        
         /// @brief Log an warning message and terminate the program
         /// @param message output message
         void logWarning(const std::string& message);
@@ -61,6 +65,13 @@ inline void error(const std::string message) {
 inline void input_error(const std::string message) {
     abase::ErrorManager::getInstance().logInputError(message);
 }
+
+/// @brief Alias function for file input error output
+/// @param message output message
+inline void file_input_error(const std::string message, const std::string filecontext) {
+    abase::ErrorManager::getInstance().logFileInputError(message, filecontext);
+}
+
 
 /// @brief Alias function for warning output
 /// @param message output message
