@@ -55,7 +55,8 @@ std::size_t SingleCommand::read_input(FileReader& reader) {
 
 template<typename T>
 std::size_t ValueCommand<T>::read_input(FileReader& reader) {
-    if (!is_same_keyword(reader.get_word())) return 1;
+    std::string key = reader.get_word();
+    if (!is_same_keyword(key)) return 1;
     reader.move();
 
     std::string str_value = reader.get_word();
@@ -64,7 +65,10 @@ std::size_t ValueCommand<T>::read_input(FileReader& reader) {
     std::stringstream ss(str_value);
     ss >> _value;
     std::cout << "str_value: " << str_value << "  _value: " << _value << std::endl;
-    if (ss.fail() || !ss.eof()) input_error(translate("ERROR_READ_VALUE", {str_value}));
+    if (ss.fail() || !ss.eof()) {
+        std::string filecontext = reader.context_error();
+        file_input_error(translate("ERROR_TYPE_CONVERSION", {key, str_value}), filecontext);
+    }
 
     reader.move();
     return 0;
