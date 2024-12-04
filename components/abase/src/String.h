@@ -6,6 +6,10 @@
 #define COMMENT_DELIMITER "#;"
 #define QUOTATION_DELIMITER "'\""
 
+/// @brief String manipulation utilities
+/// @namespace str
+/// This namespace provides a collection of string manipulation functions
+/// for common operations such as trimming whitespace, and case conversion.
 namespace str {
 
     /// @brief Remove leading and trailing spaces from a string
