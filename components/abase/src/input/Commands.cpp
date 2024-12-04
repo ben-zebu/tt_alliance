@@ -8,16 +8,11 @@
 
 using namespace abase;
 
-std::string to_lowercase(const std::string& input) {
-    std::string result = input;
-    std::transform(result.begin(), result.end(), result.begin(), [](unsigned char c) {
-        return std::tolower(c);
-    });
-    return result;
-}
-
 bool BaseCommand::is_same_keyword(const std::string& a_key) {
-    std::string lower_key = to_lowercase(a_key);
+    // case for empty string
+    if (a_key.empty()) return false;
+
+    std::string lower_key = str::lowercase(a_key);
     for (const auto& translation : translations) {
         const auto& keys = translation.second;
         if (keys.empty()) continue;
@@ -64,13 +59,13 @@ std::size_t ValueCommand<T>::read_input(FileReader& reader) {
     reader.move();
 
     std::string str_value = reader.get_word();
-    try {
-        std::stringstream ss(str_value);
-        ss >> _value;
-    }
-    catch (std::invalid_argument& e) {
-        input_error(translate("ERROR_READ_VALUE", {str_value}));
-    }
+
+    // Convert the string to the expected type.
+    std::stringstream ss(str_value);
+    ss >> _value;
+    std::cout << "str_value: " << str_value << "  _value: " << _value << std::endl;
+    if (ss.fail() || !ss.eof()) input_error(translate("ERROR_READ_VALUE", {str_value}));
+
     reader.move();
     return 0;
 }
@@ -81,16 +76,16 @@ std::size_t VectorCommand<T>::read_input(FileReader& reader) {
     reader.move();
 
     std::string str_value = reader.get_word();
+    // Read the values until the expected type conversion fails.
     while (str_value.size() > 0) {
         T _value;
+        // Convert the string to the expected type and add it to the vector.
+        // Exit the loop if the conversion fails.
         std::stringstream ss(str_value);
-        try {
-            ss >> _value;
-            _values.push_back(_value);
-        }
-        catch(const std::exception& e) {
-            break;
-        }
+        ss >> _value;
+        if (ss.fail() || !ss.eof()) break;
+        _values.push_back(_value);
+        
         reader.move();
         str_value = reader.get_word();
     }

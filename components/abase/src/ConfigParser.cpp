@@ -30,16 +30,11 @@ std::string ConfigParser::_findValue_(const std::string& key) const {
 
 std::string ConfigParser::trim(const std::string& str) const {
     // Trim leading and trailing string delimiters 
-    auto start = str.find_first_not_of(STRING_DELIMITER);
-    if (start == std::string::npos) {
-        return "";
-    }
-    auto end = str.find_last_not_of(STRING_DELIMITER);
-    std::string trimed_str = str.substr(start, end - start + 1);
+    std::string trimed_str = str::trim(str);
 
     // Suppress quotation marks
-    start = trimed_str.find_first_of(QUOTATION_DELIMITER);
-    end = trimed_str.find_last_of(QUOTATION_DELIMITER);
+    std::size_t start = trimed_str.find_first_of(QUOTATION_DELIMITER);
+    std::size_t end = trimed_str.find_last_of(QUOTATION_DELIMITER);
 
     if (start == 0 && end == trimed_str.size() - 1) {
         trimed_str = trimed_str.substr(start + 1, end - start - 1);
