@@ -26,22 +26,7 @@ std::vector<std::string> FileLineFilter::filter(const std::string& line) {
     line_without_comments = str::trim(line_without_comments);
     if (line_without_comments.front() == '*') line_without_comments.erase(0, 1);
 
-    // Regex expression to split the line into words
-    std::regex SplitRegex(R"((["'][^"']*["'])|(\S+))");
-    auto wordsBegin = std::sregex_iterator(line_without_comments.begin(), line_without_comments.end(), SplitRegex);
-    auto wordsEnd = std::sregex_iterator();
-
-    // Process each word
-    std::vector<std::string> result;
-    for (auto it = wordsBegin; it != wordsEnd; ++it) {
-        std::string word = it->str();
-        // Remove leading and trailing spaces
-        if (word.front() == '"' || word.front() == '\'') word.erase(0, 1);
-        if (word.back() == '"' || word.back() == '\'') word.pop_back();
-
-        if (!word.empty()) result.push_back(word);        
-    }
-    return result;
+    return str::split(line_without_comments);
 }
 
 //
