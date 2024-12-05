@@ -60,14 +60,24 @@ std::size_t ValueCommand<T>::read_input(FileReader& reader) {
     reader.move();
 
     std::string str_value = reader.get_word();
+    std::string delimiters = STRING_DELIMITER;
+
+    // Replace the string delimiters with a special string to avoid issue with stringstream.
+    for (std::size_t i = 0; i < delimiters.size(); i++) {
+        str_value = str::replace(str_value, delimiters.substr(i, 1), "&" + std::to_string(i) + "&");
+    }
 
     // Convert the string to the expected type.
     std::stringstream ss(str_value);
     ss >> _value;
-    std::cout << "str_value: " << str_value << "  _value: " << _value << std::endl;
     if (ss.fail() || !ss.eof()) {
         std::string filecontext = reader.context_error();
         file_input_error(translate("ERROR_TYPE_CONVERSION", {key, str_value}), filecontext);
+    }
+
+    // Replace the special string with the original delimiters.
+    for (std::size_t i = 0; i < delimiters.size(); i++) {
+        str_value = str::replace(str_value, "&" + std::to_string(i) + "&", delimiters.substr(i, 1));
     }
 
     reader.move();
