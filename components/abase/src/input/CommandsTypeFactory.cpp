@@ -31,11 +31,11 @@ namespace {
     struct RegisterCommands {
         RegisterCommands() {
             CommandsTypeFactory::register_creator("single", []() { return std::make_shared<SingleCommand>(); });
-            CommandsTypeFactory::register_creator("string", []() { return std::make_shared<ValueCommand<std::string>>(); });
+            CommandsTypeFactory::register_creator("string", []() { return std::make_shared<StringCommand>(); });
             CommandsTypeFactory::register_creator("int", []() { return std::make_shared<ValueCommand<int>>(); });
             CommandsTypeFactory::register_creator("real", []() { return std::make_shared<ValueCommand<double>>(); });
             CommandsTypeFactory::register_creator("uint", []() { return std::make_shared<ValueCommand<std::size_t>>(); });
-            CommandsTypeFactory::register_creator("string_array", []() { return std::make_shared<VectorCommand<std::string>>(); });
+            CommandsTypeFactory::register_creator("string_array", []() { return std::make_shared<VectorStringCommand>(); });
             CommandsTypeFactory::register_creator("int_array", []() { return std::make_shared<VectorCommand<int>>(); });
             CommandsTypeFactory::register_creator("real_array", []() { return std::make_shared<VectorCommand<double>>(); });
             CommandsTypeFactory::register_creator("uint_array", []() { return std::make_shared<VectorCommand<std::size_t>>(); });

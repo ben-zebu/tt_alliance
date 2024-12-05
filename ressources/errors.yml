@@ -53,7 +53,7 @@
     en: "Cannot open file '{0}' for commands factory !"
     fr: "Ouverture impossible du fichier '{0}' pour la fabrique de commandes !"
 
-  ERROR_FACTORY_UNDEFINED_PARAMTER:
+  ERROR_FACTORY_UNDEFINED_PARAMETER:
     en: "Undefined key '{0}' type for node '{1}' !"
     fr: "Clé '{0}' non définie pour l'objet '{1}' !"
 
@@ -64,6 +64,10 @@
   ERROR_FACTORY_MULTI_CREATION:
     en: "Cannot set multiple creation for the command '{0}' !"
     fr: "Impossible de définir une création multiple pour la commande '{0}' !"
+
+  ERROR_MISSING_PARAMETER:
+    en: "Missing parameter for the command '{0}' !"
+    fr: "Paramètre manquant pour la commande '{0}' !"
 
   ERROR_TYPE_CONVERSION:
     en: "Unexpected type of value after key '{0}' : '{1}'"

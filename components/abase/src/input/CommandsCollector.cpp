@@ -37,7 +37,7 @@ std::unordered_map<std::string, std::vector<std::string>> get_command_keys(const
 
     // if no keys are found, return an error
     if (translations.empty()) {
-        error(translate("ERROR_FACTORY_UNDEFINED_PARAMTER", {"keys", node_name}));
+        error(translate("ERROR_FACTORY_UNDEFINED_PARAMETER", {"keys", node_name}));
     }
 
     return translations;
@@ -51,7 +51,7 @@ std::shared_ptr<BaseCommand> add_command(const std::string node_name, const YAML
     // get the command type
     std::string ntype = get_command_type(node);
     if (ntype.empty()) {
-        error(translate("ERROR_FACTORY_UNDEFINED_PARAMTER", {"type", node_name}));
+        error(translate("ERROR_FACTORY_UNDEFINED_PARAMETER", {"type", node_name}));
     }
 
     // create the command by its type

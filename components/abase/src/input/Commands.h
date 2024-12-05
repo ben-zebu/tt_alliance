@@ -87,6 +87,10 @@ namespace abase {
             /// @return status of the comparison
             bool is_same_keyword(const std::string& a_key);
 
+            /// @brief Check if the input name is the command name or a child one (pure virtual)
+            /// @param name name to check
+            /// @return status of the comparison
+            virtual bool is_command_name(const std::string& name) = 0;
     };
 
     /// @brief Command class used to add children of the current command
@@ -110,6 +114,11 @@ namespace abase {
             /// @return pointer to the child command
             std::shared_ptr<BaseCommand> get_child(const std::string& name) override;
 
+            /// @brief Check if the input name is the command name or a child one
+            /// @param name name to check
+            /// @return status of the comparison
+            bool is_command_name(const std::string& name);
+
     };
 
     class SingleCommand : public CompositeCommand {
@@ -122,8 +131,56 @@ namespace abase {
             virtual std::size_t read_input(FileReader& reader) override;
     };
 
+    //
+    // Classes for string values
+    //
+
+    class StringCommand : public CompositeCommand {
+        protected :
+            /// @brief Value associated to the command
+            std::string _value;
+
+        public :
+            StringCommand() = default;
+            virtual ~StringCommand() = default;
+            /// @brief Read input file and set the value of the command
+            /// @param reader file reader associated to the input file
+            /// @return a status code (0 for success and 1 for fail)
+            virtual std::size_t read_input(FileReader& reader) override;
+    };
+
+    class VectorStringCommand : public CompositeCommand {
+        protected :
+            /// @brief Value associated to the command
+            std::vector<std::string> _values;
+
+        public :
+            VectorStringCommand() = default;
+            virtual ~VectorStringCommand() = default;
+            /// @brief Read input file and set the value of the command
+            /// @param reader file reader associated to the input file
+            /// @return a status code (0 for success and 1 for fail)
+            virtual std::size_t read_input(FileReader& reader) override;
+    };
+
+
+    //
+    // Template class for numerical values
+    //
+
     template<typename T>
-    class ValueCommand : public CompositeCommand {
+    class TemplateCommand : public CompositeCommand {
+        protected:
+            std::pair<T, bool> convert_value(const std::string& key, FileReader& reader);
+
+        public:
+            TemplateCommand() = default;
+            virtual ~TemplateCommand() = default;
+
+    };
+
+    template<typename T>
+    class ValueCommand : public TemplateCommand<T> {
         protected :
             /// @brief Value associated to the command
             T _value;
@@ -138,7 +195,7 @@ namespace abase {
     };
 
     template<typename T>
-    class VectorCommand : public CompositeCommand {
+    class VectorCommand : public TemplateCommand<T> {
         protected :
             /// @brief Vector of values associated to the command
             std::vector<T> _values;
@@ -152,6 +209,22 @@ namespace abase {
             virtual std::size_t read_input(FileReader& reader) override;
     };
 
+    template<typename T>
+    class MixCommand : public TemplateCommand<T> {
+        protected :
+            /// @brief Vector of values associated to the command
+            std::vector<T> _values;
+            /// @brief Number of values to read
+            std::size_t _n_values;
+            
+        public :
+            MixCommand() = default;
+            virtual ~MixCommand() = default;
+            /// @brief Read input file and set the value of the command
+            /// @param reader file reader associated to the input file
+            /// @return a status code (0 for success and 1 for fail)
+            virtual std::size_t read_input(FileReader& reader) override;
+    };
 
 }
 
