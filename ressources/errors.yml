@@ -72,3 +72,7 @@
   ERROR_TYPE_CONVERSION:
     en: "Unexpected type of value after key '{0}' : '{1}'"
     fr: "Type de valeur inattendu après la clé '{0}' : '{1}'"
+
+  ERROR_NB_VALUES:
+    en: "Cannot read '{1}' values after key '{0}' !"
+    fr: "Impossible de lire '{1}' valeurs après la clé '{0}' !"

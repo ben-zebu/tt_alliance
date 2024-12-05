@@ -163,24 +163,39 @@ namespace abase {
             virtual std::size_t read_input(FileReader& reader) override;
     };
 
+    class MixStringCommand : public CompositeCommand {
+        protected :
+            /// @brief Value associated to the command
+            std::vector<std::string> _values;
+            /// @brief Number of values to read
+            std::size_t _n_values;
+
+        public :
+            MixStringCommand() = default;
+            virtual ~MixStringCommand() = default;
+            /// @brief Read input file and set the value of the command
+            /// @param reader file reader associated to the input file
+            /// @return a status code (0 for success and 1 for fail)
+            virtual std::size_t read_input(FileReader& reader) override;
+    };
 
     //
     // Template class for numerical values
     //
 
     template<typename T>
-    class TemplateCommand : public CompositeCommand {
+    class NumericCommand : public CompositeCommand {
         protected:
             std::pair<T, bool> convert_value(const std::string& key, FileReader& reader);
 
         public:
-            TemplateCommand() = default;
-            virtual ~TemplateCommand() = default;
+            NumericCommand() = default;
+            virtual ~NumericCommand() = default;
 
     };
 
     template<typename T>
-    class ValueCommand : public TemplateCommand<T> {
+    class ValueCommand : public NumericCommand<T> {
         protected :
             /// @brief Value associated to the command
             T _value;
@@ -195,7 +210,7 @@ namespace abase {
     };
 
     template<typename T>
-    class VectorCommand : public TemplateCommand<T> {
+    class VectorCommand : public NumericCommand<T> {
         protected :
             /// @brief Vector of values associated to the command
             std::vector<T> _values;
@@ -210,7 +225,7 @@ namespace abase {
     };
 
     template<typename T>
-    class MixCommand : public TemplateCommand<T> {
+    class MixCommand : public NumericCommand<T> {
         protected :
             /// @brief Vector of values associated to the command
             std::vector<T> _values;

@@ -69,7 +69,7 @@ TRANSIENT:
 
   NUMBERS:
     keys: {"fr": ["nu", "numeros"], "en": ["nu", "numbers"]}
-    type: uint_array
+    type: string_array
 
   GROUP:
     keys: {"fr": ["grou", "groupe"], "en": ["grou", "group"]}

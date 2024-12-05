@@ -95,9 +95,41 @@ std::size_t VectorStringCommand::read_input(FileReader& reader) {
     return 0;
 }
 
+std::size_t MixStringCommand::read_input(FileReader& reader) {
+    std::string key = reader.get_word();
+    if (!this->is_same_keyword(key)) return 1;
+    reader.move();
+
+    // Read the number of expected values
+    std::string str_value = reader.get_word();
+    std::stringstream ss(str_value);
+    ss >> _n_values;
+    if (ss.fail() || !ss.eof()) {
+        std::string filecontext = reader.context_error();
+        file_input_error(translate("ERROR_TYPE_CONVERSION", {key, str_value}), filecontext);
+    }
+    reader.move();
+    
+    // Read the values with the expected type
+    for (std::size_t i = 0; i < _n_values; i++) {
+        str_value = reader.get_word();
+        if (str_value.empty() && this->is_command_name(str_value)) {
+            std::string filecontext = reader.context_error();
+            file_input_error(translate("ERROR_NB_VALUES", {key, std::to_string(_n_values)}), filecontext);
+        }
+        _values.push_back(str_value);
+        reader.move();
+    }    
+    std::size_t children_status = this->children_process(reader);
+    return 0;
+}
+
+
+
+
 
 template<typename T>
-std::pair<T, bool> TemplateCommand<T>::convert_value(const std::string& key, FileReader& reader) {
+std::pair<T, bool> NumericCommand<T>::convert_value(const std::string& key, FileReader& reader) {
     T output_value;
     bool status = true;
     std::string str_value = reader.get_word();
@@ -131,7 +163,7 @@ std::size_t ValueCommand<T>::read_input(FileReader& reader) {
     
     _value = conversion.first;
     reader.move();
-    
+
     std::size_t children_status = this->children_process(reader);
     return 0;
 }
@@ -157,10 +189,43 @@ std::size_t VectorCommand<T>::read_input(FileReader& reader) {
     return 0;
 }
 
+template<typename T>
+std::size_t MixCommand<T>::read_input(FileReader& reader) {
+    std::string key = reader.get_word();
+    if (!this->is_same_keyword(key)) return 1;
+    reader.move();
+
+    // Read the number of expected values
+    std::string str_value = reader.get_word();
+    std::stringstream ss(str_value);
+    ss >> _n_values;
+    if (ss.fail() || !ss.eof()) {
+        std::string filecontext = reader.context_error();
+        file_input_error(translate("ERROR_TYPE_CONVERSION", {key, str_value}), filecontext);
+    }
+    reader.move();
+    
+    // Read the values with the expected type
+    for (std::size_t i = 0; i < _n_values; i++) {
+        std::pair<T, bool> conversion = this->convert_value(key, reader); 
+        if (!conversion.second) {
+            str_value = reader.get_word();
+            std::string filecontext = reader.context_error();
+            file_input_error(translate("ERROR_NB_VALUES", {key, std::to_string(_n_values)}), filecontext);
+        }
+        _values.push_back(conversion.first);
+        reader.move();
+    }
+    
+    std::size_t children_status = this->children_process(reader);
+    return 0;
+}
+
+
 // Explicit template instantiation
-template class TemplateCommand<int>;
-template class TemplateCommand<double>;
-template class TemplateCommand<std::size_t>;
+template class NumericCommand<int>;
+template class NumericCommand<double>;
+template class NumericCommand<std::size_t>;
 
 template class ValueCommand<int>;
 template class ValueCommand<double>;
@@ -169,3 +234,7 @@ template class ValueCommand<std::size_t>;
 template class VectorCommand<int>;
 template class VectorCommand<double>;
 template class VectorCommand<std::size_t>;
+
+template class MixCommand<int>;
+template class MixCommand<double>;
+template class MixCommand<std::size_t>;
