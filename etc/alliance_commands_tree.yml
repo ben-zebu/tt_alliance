@@ -32,7 +32,11 @@ TORSOR:
   type: int_array
 
 LOADSTEP:
-  keys: {"fr": ["pres", "pression"], "en": ["pres", "pressure"]}
+  keys:
+    fr: ["pres", "pression"] 
+    en: ["pres", "pressure"]
+    fr_var: ["comb", "combinaison"]
+    en_var: ["comb", "combination"] 
   type: uint_array
 
   KP:
@@ -169,7 +173,7 @@ MATERIAL:
 
 CHAIN:
   keys: {"fr": ["chai", "chaine"], "en": ["chai", "chain"]}
-  type: single
+  type: uint_array
 
   MATERIAL:
     keys: {"fr": ["mat", "materiau"], "en": ["mat", "material"]}
