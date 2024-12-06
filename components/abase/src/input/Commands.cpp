@@ -19,6 +19,8 @@ bool BaseCommand::is_same_keyword(const std::string& a_key) {
         if (keys.empty()) continue;
         if (keys.size() == 1 && keys[0] == lower_key) return true;
 
+        if (lower_key.size() < keys[0].size()) continue;
+
         std::size_t min_sz = std::min(keys[1].size(), lower_key.size());
         if (lower_key.substr(0, min_sz) == keys[1].substr(0, min_sz)) return true;
     }
@@ -56,7 +58,9 @@ std::shared_ptr<BaseCommand> CompositeCommand::get_child(const std::string& name
 }
 
 std::size_t SingleCommand::read_input(FileReader& reader, const CommandsCollector& collector) {
-    if (!is_same_keyword(reader.get_word())) return 1;
+    std::string key = reader.get_word();
+    //std::cout << "key: " << key << std::endl;
+    if (!is_same_keyword(key)) return 1;
     reader.move();
     std::size_t children_status = children_process(reader, collector);
     return 0;

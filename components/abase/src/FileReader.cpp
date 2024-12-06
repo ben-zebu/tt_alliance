@@ -54,6 +54,11 @@ void FileReader::move() {
     if (word_rk >= buffer.size()) buffer_update();
 }
 
+ void FileReader::move_line() {
+    word_rk = buffer.size();
+    move();
+ }
+
 void FileReader::buffer_update() {
     std::lock_guard<std::mutex> lock(mutex);
 
