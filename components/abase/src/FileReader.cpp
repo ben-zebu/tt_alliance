@@ -23,23 +23,10 @@ std::vector<std::string> FileLineFilter::filter(const std::string& line) {
     // Suppress comments in the line
     std::regex CommentRegex(comment_regex(COMMENT_DELIMITER));
     std::string line_without_comments = std::regex_replace(line, CommentRegex, "");
+    line_without_comments = str::trim(line_without_comments);
+    if (line_without_comments.front() == '*') line_without_comments.erase(0, 1);
 
-    // Regex expression to split the line into words
-    std::regex SplitRegex(R"((["'][^"']*["'])|(\S+))");
-    auto wordsBegin = std::sregex_iterator(line_without_comments.begin(), line_without_comments.end(), SplitRegex);
-    auto wordsEnd = std::sregex_iterator();
-
-    // Process each word
-    std::vector<std::string> result;
-    for (auto it = wordsBegin; it != wordsEnd; ++it) {
-        std::string word = it->str();
-        // Remove leading and trailing spaces
-        if (word.front() == '"' || word.front() == '\'') word.erase(0, 1);
-        if (word.back() == '"' || word.back() == '\'') word.pop_back();
-
-        if (!word.empty()) result.push_back(word);        
-    }
-    return result;
+    return str::split(line_without_comments);
 }
 
 //
@@ -67,19 +54,27 @@ void FileReader::move() {
     if (word_rk >= buffer.size()) buffer_update();
 }
 
+ void FileReader::move_line() {
+    word_rk = buffer.size();
+    move();
+ }
+
 void FileReader::buffer_update() {
     std::lock_guard<std::mutex> lock(mutex);
+
+    // clear buffer and line
+    buffer.clear();
     line.clear();
+    
+    // read next not empty line
     while(std::getline(input, line)) {
         buffer = FileLineFilter::filter(line);
         if (!buffer.empty()) break;
     }
     word_rk = 0;
-
-    // case for end of file
-    if (line.empty()) buffer.clear();
 }
 
 std::string FileReader::context_error() const {
+    std::cout << "Error in file " << filename << " at line " << line << std::endl;
     return translate("ERROR_FILE_FOOTER", {filename, line});
 }

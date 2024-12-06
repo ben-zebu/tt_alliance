@@ -32,7 +32,11 @@ TORSOR:
   type: int_array
 
 LOADSTEP:
-  keys: {"fr": ["pres", "pression"], "en": ["pres", "pressure"]}
+  keys:
+    fr: ["pres", "pression"] 
+    en: ["pres", "pressure"]
+    fr_var: ["comb", "combinaison"]
+    en_var: ["comb", "combination"] 
   type: uint_array
 
   KP:
@@ -69,7 +73,7 @@ TRANSIENT:
 
   NUMBERS:
     keys: {"fr": ["nu", "numeros"], "en": ["nu", "numbers"]}
-    type: uint_array
+    type: time_array
 
   GROUP:
     keys: {"fr": ["grou", "groupe"], "en": ["grou", "group"]}
@@ -169,7 +173,7 @@ MATERIAL:
 
 CHAIN:
   keys: {"fr": ["chai", "chaine"], "en": ["chai", "chain"]}
-  type: single
+  type: uint_array
 
   MATERIAL:
     keys: {"fr": ["mat", "materiau"], "en": ["mat", "material"]}
@@ -317,11 +321,11 @@ CHAIN:
 
     ATRA:
       keys: {"fr": ["atra", "atra"], "en": ["atra", "atra"]}
-      type: int_array
+      type: uint_mix
 
     ATRN:
       keys: {"fr": ["atrn", "atrn"], "en": ["atrn", "atrn"]}
-      type: string_array
+      type: string_mix
 
     AFSM:
       keys: {"fr": ["afsm", "afsm"], "en": ["afsm", "afsm"]}
@@ -345,11 +349,11 @@ CHAIN:
 
     SATRA:
       keys: {"fr": ["satra", "satra"], "en": ["satra", "satra"]}
-      type: uint_array
+      type: uint_mix
 
     SATRN:
       keys: {"fr": ["satrn", "satrn"], "en": ["satrn", "satrn"]}
-      type: string_array
+      type: string_mix
 
   LINESTUD:
     keys: {"fr": ["line", "linegoujon"], "en": ["line", "linestud"]}

@@ -31,6 +31,10 @@ namespace abase {
             /// @return the list of commands names
             std::vector<std::string> get_commands_names();
 
+            /// @brief Check if the input name is a command name
+            /// @param name name to check
+            /// @return status of the comparison
+            bool is_command_name(const std::string& name) const;
 
             void clear() { commands.clear(); }
     };

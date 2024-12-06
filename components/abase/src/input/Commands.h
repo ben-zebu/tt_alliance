@@ -17,8 +17,14 @@
  * - BaseCommand: Abstract base class for all commands
  * - CompositeCommand: Intermediate class supporting child commands
  * - SingleCommand: Command for handling string values
- * - ValueCommand<T>: Template command for handling single values of type T
- * - VectorCommand<T>: Template command for handling vectors of values of type T
+ * - StringCommand: Command for handling single string values
+ * - VectorStringCommand: Command for handling vectors of string values
+ * - MixStringCommand: Command for handling a fixed number of string values
+ * - NumericCommand<T>: Template command for handling numerical values
+ * - ValueCommand<T>: Template command for handling single numerical values of type T
+ * - VectorCommand<T>: Template command for handling vectors of numerical values of type T
+ * - MixCommand<T>: Template command for handling a fixed number of numerical values of type T
+ * - TimeStepCommand: Command for handling time steps
  * 
  * Key features:
  * - Hierarchical command structure
@@ -29,9 +35,15 @@
  * Each command type serves a specific purpose:
  * - BaseCommand: Provides core functionality and interface
  * - CompositeCommand: Manages child commands and their processing
- * - SingleCommand: Handles string-based commands
- * - ValueCommand<T>: Processes single values of any type
- * - VectorCommand<T>: Manages arrays/vectors of values
+ * - SingleCommand: Handles string-based commands without values
+ * - StringCommand: Processes single string values
+ * - VectorStringCommand: Manages arrays/vectors of string values
+ * - MixStringCommand: Handles a fixed number of string values
+ * - NumericCommand<T>: Provides numerical value conversion support
+ * - ValueCommand<T>: Processes single numerical values of any type
+ * - VectorCommand<T>: Manages arrays/vectors of numerical values
+ * - MixCommand<T>: Handles a fixed number of numerical values
+ * - TimeStepCommand: Processes time steps
  * 
  * Common usage:
  * @code
@@ -49,6 +61,8 @@
  */
 namespace abase {
 
+    class CommandsCollector;
+
     /// @brief Base class for all commands
     class BaseCommand {
         protected:
@@ -61,7 +75,7 @@ namespace abase {
             virtual ~BaseCommand() = default;
             /// @brief Read the input file and set the values of the command
             /// @return Action status (0 for succes and 1 for failded)
-            virtual std::size_t read_input(FileReader& reader) = 0;
+            virtual std::size_t read_input(FileReader& reader, const CommandsCollector& collector) = 0;
             /// @brief Set the name of the command
             void set_name(const std::string& name) { _name = name; }
             /// @brief Returns the name of the command
@@ -87,6 +101,10 @@ namespace abase {
             /// @return status of the comparison
             bool is_same_keyword(const std::string& a_key);
 
+            /// @brief Check if the input name is the command name or a child one (pure virtual)
+            /// @param name name to check
+            /// @return status of the comparison
+            virtual bool is_command_name(const std::string& name) = 0;
     };
 
     /// @brief Command class used to add children of the current command
@@ -96,7 +114,7 @@ namespace abase {
             std::vector<std::shared_ptr<BaseCommand>> _children;
 
             /// @brief Read input process for all children
-            virtual std::size_t children_process(FileReader& reader);
+            virtual std::size_t children_process(FileReader& reader, const CommandsCollector& collector);
 
         public:
             CompositeCommand() = default;
@@ -110,8 +128,14 @@ namespace abase {
             /// @return pointer to the child command
             std::shared_ptr<BaseCommand> get_child(const std::string& name) override;
 
+            /// @brief Check if the input name is the command name or a child one
+            /// @param name name to check
+            /// @return status of the comparison
+            bool is_command_name(const std::string& name) override;
+
     };
 
+    /// @brief Command without value
     class SingleCommand : public CompositeCommand {
         public :
             SingleCommand() = default;
@@ -119,11 +143,79 @@ namespace abase {
             /// @brief Read input file and set the value of the command
             /// @param reader file reader associated to the input file
             /// @return a status code (0 for success and 1 for fail)
-            virtual std::size_t read_input(FileReader& reader) override;
+            virtual std::size_t read_input(FileReader& reade, const CommandsCollector& collector) override;
     };
 
+    //
+    // Classes for string values
+    //
+
+    /// @brief Command used to read a string value from the input file
+    class StringCommand : public CompositeCommand {
+        protected :
+            /// @brief Value associated to the command
+            std::string _value;
+
+        public :
+            StringCommand() = default;
+            virtual ~StringCommand() = default;
+            /// @brief Read input file and set the value of the command
+            /// @param reader file reader associated to the input file
+            /// @return a status code (0 for success and 1 for fail)
+            virtual std::size_t read_input(FileReader& reader, const CommandsCollector& collector) override;
+    };
+
+    /// @brief Command used to read a list of string values from the input file
+    class VectorStringCommand : public CompositeCommand {
+        protected :
+            /// @brief Value associated to the command
+            std::vector<std::string> _values;
+
+        public :
+            VectorStringCommand() = default;
+            virtual ~VectorStringCommand() = default;
+            /// @brief Read input file and set the value of the command
+            /// @param reader file reader associated to the input file
+            /// @return a status code (0 for success and 1 for fail)
+            virtual std::size_t read_input(FileReader& reader, const CommandsCollector& collector) override;
+    };
+
+    /// @brief Command used to read a fixed number of string values from the input file
+    class MixStringCommand : public CompositeCommand {
+        protected :
+            /// @brief Value associated to the command
+            std::vector<std::string> _values;
+            /// @brief Number of values to read
+            std::size_t _n_values;
+
+        public :
+            MixStringCommand() = default;
+            virtual ~MixStringCommand() = default;
+            /// @brief Read input file and set the value of the command
+            /// @param reader file reader associated to the input file
+            /// @return a status code (0 for success and 1 for fail)
+            virtual std::size_t read_input(FileReader& reader, const CommandsCollector& collector) override;
+    };
+
+    //
+    // Template class for numerical values
+    //
+
+    /// @brief Virtual class used to support numerical values conversion for its child classes
     template<typename T>
-    class ValueCommand : public CompositeCommand {
+    class NumericCommand : public CompositeCommand {
+        protected:
+            std::pair<T, bool> convert_value(const std::string& key, FileReader& reader);
+
+        public:
+            NumericCommand() = default;
+            virtual ~NumericCommand() = default;
+
+    };
+
+    /// @brief Class used to read a numerical value from the input file
+    template<typename T>
+    class ValueCommand : public NumericCommand<T> {
         protected :
             /// @brief Value associated to the command
             T _value;
@@ -134,11 +226,12 @@ namespace abase {
             /// @brief Read input file and set the value of the command
             /// @param reader file reader associated to the input file
             /// @return a status code (0 for success and 1 for fail)
-            virtual std::size_t read_input(FileReader& reader) override;
+            virtual std::size_t read_input(FileReader& reader, const CommandsCollector& collector) override;
     };
 
+    /// @brief Class used to read a list of numerical values from the input file
     template<typename T>
-    class VectorCommand : public CompositeCommand {
+    class VectorCommand : public NumericCommand<T> {
         protected :
             /// @brief Vector of values associated to the command
             std::vector<T> _values;
@@ -149,9 +242,55 @@ namespace abase {
             /// @brief Read input file and set the value of the command
             /// @param reader file reader associated to the input file
             /// @return a status code (0 for success and 1 for fail)
-            virtual std::size_t read_input(FileReader& reader) override;
+            virtual std::size_t read_input(FileReader& reader, const CommandsCollector& collector) override;
     };
 
+    /// @brief Class used to read a fixed number of numerical values from the input file
+    template<typename T>
+    class MixCommand : public NumericCommand<T> {
+        protected :
+            /// @brief Vector of values associated to the command
+            std::vector<T> _values;
+            /// @brief Number of values to read
+            std::size_t _n_values;
+            
+        public :
+            MixCommand() = default;
+            virtual ~MixCommand() = default;
+            /// @brief Read input file and set the value of the command
+            /// @param reader file reader associated to the input file
+            /// @return a status code (0 for success and 1 for fail)
+            virtual std::size_t read_input(FileReader& reader, const CommandsCollector& collector) override;
+    };
+
+    /// @brief Class used to read time steps from the input file
+    class TimeStepCommand : public CompositeCommand {
+        private:
+            /// @brief Convert a time step range into a vector of time steps
+            /// @param start first time step
+            /// @param end last time step
+            /// @param step time step increment
+            /// @param status status of the conversion
+            /// @return a vector of time steps
+            std::vector<std::size_t> convert_range(const std::string& start, const std::string& end, 
+                                                   const std::string& step, bool& status);
+            /// @brief Extract all time steps from a sequence of strings
+            /// @param sequence extracted sequence
+            /// @param status status of the extraction
+            /// @return a vector of time steps
+            std::vector<std::size_t> split_sequence(const std::string& sequence, bool& status);
+        protected :
+            /// @brief vector of time steps rank.
+            std::vector<std::size_t> _values;
+        public:
+            TimeStepCommand() = default;
+            virtual ~TimeStepCommand() = default;
+            /// @brief Read input file and set the value of the command
+            /// @param reader file reader associated to the input file
+            /// @return a status code (0 for success and 1 for fail)
+            virtual std::size_t read_input(FileReader& reader, const CommandsCollector& collector) override;
+
+    };
 
 }
 

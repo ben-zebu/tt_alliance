@@ -74,6 +74,8 @@ namespace abase {
             std::string get_word();
             /// @brief move forward from one word in the buffer
             void move();
+            /// @brief move forward from one line in the buffer
+            void move_line();
             /// @brief return the current line in the buffer
             std::string get_line() { return line; }
             /// @brief return a standard error message with the current line

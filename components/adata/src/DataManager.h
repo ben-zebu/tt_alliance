@@ -3,6 +3,12 @@
 namespace adata {
 
     class DataManager {
+        private:
+            /// @brief Read the title of the problem in the input file
+            /// @param reader file reader associated to the input file
+            /// @param collector commands collector used to read the input file
+            /// @return problem title as a vector of strings
+            std::vector<std::string> read_title(abase::FileReader& reader, const abase::CommandsCollector& collector);
         /*
         protected:
             pb_fem_interface fem_interface;
@@ -18,7 +24,9 @@ namespace adata {
         public:
             DataManager() = default;
             ~DataManager() = default;
-
+            /// @brief Function used to read the input file based on a commands collector
+            /// @param filename name of the input file
+            /// @param commands_tree_file file containing the commands tree definition
             void read_data(const std::string& filename, const std::string& commands_tree_file);
     };
 
