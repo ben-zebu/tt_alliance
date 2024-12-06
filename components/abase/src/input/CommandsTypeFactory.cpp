@@ -39,6 +39,11 @@ namespace {
             CommandsTypeFactory::register_creator("int_array", []() { return std::make_shared<VectorCommand<int>>(); });
             CommandsTypeFactory::register_creator("real_array", []() { return std::make_shared<VectorCommand<double>>(); });
             CommandsTypeFactory::register_creator("uint_array", []() { return std::make_shared<VectorCommand<std::size_t>>(); });
+            CommandsTypeFactory::register_creator("string_mix", []() { return std::make_shared<MixStringCommand>(); });
+            CommandsTypeFactory::register_creator("int_mix", []() { return std::make_shared<MixCommand<int>>(); });
+            CommandsTypeFactory::register_creator("real_mix", []() { return std::make_shared<MixCommand<double>>(); });
+            CommandsTypeFactory::register_creator("uint_mix", []() { return std::make_shared<MixCommand<std::size_t>>(); });
+            CommandsTypeFactory::register_creator("time_array", []() { return std::make_shared<TimeStepCommand>(); });
         }
     } registerCommands;
 }

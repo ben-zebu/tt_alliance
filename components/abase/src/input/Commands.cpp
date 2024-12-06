@@ -129,10 +129,6 @@ std::size_t MixStringCommand::read_input(FileReader& reader, const CommandsColle
     return 0;
 }
 
-
-
-
-
 template<typename T>
 std::pair<T, bool> NumericCommand<T>::convert_value(const std::string& key, FileReader& reader) {
     T output_value;
@@ -243,3 +239,106 @@ template class VectorCommand<std::size_t>;
 template class MixCommand<int>;
 template class MixCommand<double>;
 template class MixCommand<std::size_t>;
+
+
+
+std::vector<std::size_t> TimeStepCommand::convert_range(const std::string& start, const std::string& end, 
+                                                        const std::string& step, bool& status) {
+    std::vector<std::size_t> range;
+    try {
+        std::size_t start_value = std::stoull(start);
+        std::size_t end_value = std::stoull(end);
+        std::size_t step_value = std::stoull(step);
+
+        if (step_value == 0) {
+            status = false;
+            return range;
+        }
+
+        for (std::size_t value = start_value; value <= end_value; value += step_value) {
+            range.push_back(value);
+        }
+        status = true;
+    } catch (const std::invalid_argument& e) {
+        status = false;
+    } catch (const std::out_of_range& e) {
+        status = false;
+    }
+    return range;
+}
+
+
+std::vector<std::size_t> TimeStepCommand::split_sequence(const std::string& sequence, bool& status) {
+    std::vector<std::size_t> timesteps;
+
+    // Replace the keywords by special characters and split it.
+    std::string s = str::trim(sequence);
+    for (auto& key : { "PAS", "STEP"}) s = str::replace(s, key, " % ");
+    for (auto& key : { "A", "TO"}) s = str::replace(s, key, " : ");
+    std::vector<std::string> str_values = str::split(s);
+
+    // Convert the string values to unsigned integers.
+    std::string start, end, step;
+    std::size_t pos = 0;
+    while (pos < str_values.size()) {
+        s = str_values[pos];
+        if (s == "%" || s == ":") {
+            status = false;
+            return timesteps;
+        }
+
+        // case for single timestep
+        start = s;
+        end = s;
+        step = "1";
+        pos++;
+
+        // case for range of timesteps
+        if (pos < str_values.size() - 1 && str_values[pos] == ":") {
+            end = str_values[pos + 1];
+            pos += 2;
+            if (pos < str_values.size() - 1 && str_values[pos] == "%") {
+                step = str_values[pos + 1];
+                pos += 2;
+            }
+        }
+
+        // Convert the string values to unsigned integers.
+        std::vector<std::size_t> range = convert_range(start, end, step, status);
+        if (!status) return timesteps;
+        timesteps.insert(timesteps.end(), range.begin(), range.end());
+    }
+
+    return timesteps;
+}
+
+std::size_t TimeStepCommand::read_input(FileReader& reader, const CommandsCollector& collector) {
+    std::string key = reader.get_word();
+    if (!this->is_same_keyword(key)) return 1;
+    reader.move();
+
+    std::string str_value = reader.get_word();
+    std::string sequence = "";
+    // Read the values until a command name is found.
+    while (!str_value.empty() && !collector.is_command_name(str_value)) {
+        sequence += str_value + " ";
+        reader.move();
+        str_value = reader.get_word();
+    }
+
+    if (sequence.empty()) {
+        std::string filecontext = reader.context_error();
+        file_input_error(translate("ERROR_UNREADABLE_TIMESTEP"), filecontext);
+    }
+
+    // convert the sequence of timesteps into a vector of timesteps
+    bool status = true;
+    _values = split_sequence(sequence, status);
+    if (!status) {
+        std::string filecontext = reader.context_error();
+        file_input_error(translate("ERROR_UNREADABLE_TIMESTEP"), filecontext);
+    }
+
+    std::size_t children_status = this->children_process(reader, collector);
+    return 0;
+}

@@ -31,11 +31,10 @@ void DataManager::read_data(const std::string& filename, const std::string& comm
     bool end_of_file = false;
     while (reader.get_word().size() > 0 && cumul_status == 0) {
         cumul_status = 1;
-        std::cout << "current word: " << reader.get_word() << std::endl;
+        
         for (const auto& name : commands_names) {
             auto command = commands_reader.get_command(name);
             std::size_t status = command->read_input(reader, commands_reader);
-            std::cout << "   command: " << command->get_name() << " status: " << status << std::endl;
             if (status == 0) {
                 // add the command to the data manager
                 
@@ -44,8 +43,6 @@ void DataManager::read_data(const std::string& filename, const std::string& comm
                 if (command->get_name() == "CODE") {
                     // add the fem interface to the data manager
                     std::vector<std::string> title = read_title(reader, commands_reader);
-                    std::cout << "Title: ";
-                    for (const auto& t : title) std::cout << t << std::endl;
                 }
 
                 // special case for end of input data

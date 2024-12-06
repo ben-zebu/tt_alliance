@@ -76,3 +76,7 @@
   ERROR_NB_VALUES:
     en: "Cannot read '{1}' values after key '{0}' !"
     fr: "Impossible de lire '{1}' valeurs après la clé '{0}' !"
+
+  ERROR_UNREADABLE_TIMESTEP:
+    en: "Cannot read timestep numbers !"
+    fr: "Impossible de lire les numéros d'instant !"
