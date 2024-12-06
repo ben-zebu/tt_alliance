@@ -54,6 +54,17 @@
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv45adata"><code class="docutils literal notranslate"><span class="pre">adata</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#data-manager">Data Manager</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5adata11DataManagerE"><code class="docutils literal notranslate"><span class="pre">adata::DataManager</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#output-resume">Output Resume</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv416RESUME_EXTENSION"><code class="docutils literal notranslate"><span class="pre">RESUME_EXTENSION</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv417LISTING_EXTENSION"><code class="docutils literal notranslate"><span class="pre">LISTING_EXTENSION</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv417LOG_DIR_EXTENSION"><code class="docutils literal notranslate"><span class="pre">LOG_DIR_EXTENSION</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv412OutputResume"><code class="docutils literal notranslate"><span class="pre">OutputResume</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="amath.html">amath components</a></li>
@@ -183,6 +194,187 @@
 </div>
 </dd></dl>
 
+</dd></dl>
+
+</section>
+<section id="data-manager">
+<h2>Data Manager<a class="headerlink" href="#data-manager" title="Link to this heading"></a></h2>
+<dl class="cpp type">
+<dt class="sig sig-object cpp">
+<span class="target" id="namespaceadata"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">adata</span></span></span><br /></dt>
+<dd><dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata11DataManagerE">
+<span id="_CPPv3N5adata11DataManagerE"></span><span id="_CPPv2N5adata11DataManagerE"></span><span id="adata::DataManager"></span><span class="target" id="classadata_1_1DataManager"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DataManager</span></span></span><a class="headerlink" href="#_CPPv4N5adata11DataManagerE" title="Link to this definition"></a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata11DataManager11DataManagerEv">
+<span id="_CPPv3N5adata11DataManager11DataManagerEv"></span><span id="_CPPv2N5adata11DataManager11DataManagerEv"></span><span id="adata::DataManager::DataManager"></span><span class="target" id="classadata_1_1DataManager_1aceabf3c2c283a97d6ce1d5287bf94ad6"></span><span class="sig-name descname"><span class="n"><span class="pre">DataManager</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5adata11DataManager11DataManagerEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata11DataManagerD0Ev">
+<span id="_CPPv3N5adata11DataManagerD0Ev"></span><span id="_CPPv2N5adata11DataManagerD0Ev"></span><span id="adata::DataManager::~DataManager"></span><span class="target" id="classadata_1_1DataManager_1a13231c5bd6e51be6165609f207f1ad1d"></span><span class="sig-name descname"><span class="n"><span class="pre">~DataManager</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5adata11DataManagerD0Ev" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata11DataManager9read_dataERKNSt6stringERKNSt6stringE">
+<span id="_CPPv3N5adata11DataManager9read_dataERKNSt6stringERKNSt6stringE"></span><span id="_CPPv2N5adata11DataManager9read_dataERKNSt6stringERKNSt6stringE"></span><span id="adata::DataManager::read_data__ssCR.ssCR"></span><span class="target" id="classadata_1_1DataManager_1a80fae1b510df9f30852405f1037de200"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">read_data</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filename</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">commands_tree_file</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5adata11DataManager9read_dataERKNSt6stringERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Function used to read the input file based on a commands collector. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> – name of the input file </p></li>
+<li><p><strong>commands_tree_file</strong> – file containing the commands tree definition </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-functions">Private Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata11DataManager10read_titleERN5abase10FileReaderERKN5abase17CommandsCollectorE">
+<span id="_CPPv3N5adata11DataManager10read_titleERN5abase10FileReaderERKN5abase17CommandsCollectorE"></span><span id="_CPPv2N5adata11DataManager10read_titleERN5abase10FileReaderERKN5abase17CommandsCollectorE"></span><span id="adata::DataManager::read_title__abase::FileReaderR.abase::CommandsCollectorCR"></span><span class="target" id="classadata_1_1DataManager_1a067df966b499d236d785895ce2495a2f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">read_title</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="abase.html#_CPPv45abase" title="abase"><span class="n"><span class="pre">abase</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="abase.html#_CPPv4N5abase10FileReaderE" title="abase::FileReader"><span class="n"><span class="pre">FileReader</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">reader</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="abase.html#_CPPv45abase" title="abase"><span class="n"><span class="pre">abase</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="abase.html#_CPPv4N5abase17CommandsCollectorE" title="abase::CommandsCollector"><span class="n"><span class="pre">CommandsCollector</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">collector</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5adata11DataManager10read_titleERN5abase10FileReaderERKN5abase17CommandsCollectorE" title="Link to this definition"></a><br /></dt>
+<dd><p>Read the title of the problem in the input file. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>reader</strong> – file reader associated to the input file </p></li>
+<li><p><strong>collector</strong> – commands collector used to read the input file </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>problem title as a vector of strings </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="output-resume">
+<h2>Output Resume<a class="headerlink" href="#output-resume" title="Link to this heading"></a></h2>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-variables">Variables</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv416RESUME_EXTENSION">
+<span id="_CPPv316RESUME_EXTENSION"></span><span id="_CPPv216RESUME_EXTENSION"></span><span id="RESUME_EXTENSION__std::string_view"></span><span class="target" id="OutputResume_8h_1ae5435a823f4232d91344c5d68b604734"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RESUME_EXTENSION</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;.res&quot;</span></span><a class="headerlink" href="#_CPPv416RESUME_EXTENSION" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv417LISTING_EXTENSION">
+<span id="_CPPv317LISTING_EXTENSION"></span><span id="_CPPv217LISTING_EXTENSION"></span><span id="LISTING_EXTENSION__std::string_view"></span><span class="target" id="OutputResume_8h_1a887f8b19bb173a623fbb484696684a90"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LISTING_EXTENSION</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;.lis&quot;</span></span><a class="headerlink" href="#_CPPv417LISTING_EXTENSION" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv417LOG_DIR_EXTENSION">
+<span id="_CPPv317LOG_DIR_EXTENSION"></span><span id="_CPPv217LOG_DIR_EXTENSION"></span><span id="LOG_DIR_EXTENSION__std::string_view"></span><span class="target" id="OutputResume_8h_1a2b02dea7b0d29964fc7b634989c34d81"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LOG_DIR_EXTENSION</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;.log.d&quot;</span></span><a class="headerlink" href="#_CPPv417LOG_DIR_EXTENSION" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv412OutputResume">
+<span id="_CPPv312OutputResume"></span><span id="_CPPv212OutputResume"></span><span id="OutputResume"></span><span class="target" id="classOutputResume"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">OutputResume</span></span></span><a class="headerlink" href="#_CPPv412OutputResume" title="Link to this definition"></a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N12OutputResume12OutputResumeERKNSt6stringE">
+<span id="_CPPv3N12OutputResume12OutputResumeERKNSt6stringE"></span><span id="_CPPv2N12OutputResume12OutputResumeERKNSt6stringE"></span><span id="OutputResume::OutputResume__ssCR"></span><span class="target" id="classOutputResume_1aa6ac43675b076436f916590b43754f93"></span><span class="sig-name descname"><span class="n"><span class="pre">OutputResume</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filename</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N12OutputResume12OutputResumeERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Constructor method that suppress previous results and open the output file. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N12OutputResumeD0Ev">
+<span id="_CPPv3N12OutputResumeD0Ev"></span><span id="_CPPv2N12OutputResumeD0Ev"></span><span id="OutputResume::~OutputResume"></span><span class="target" id="classOutputResume_1a780222177b820b9bc2342548372a415e"></span><span class="sig-name descname"><span class="n"><span class="pre">~OutputResume</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N12OutputResumeD0Ev" title="Link to this definition"></a><br /></dt>
+<dd><p>Destructor method. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N12OutputResume5writeERKNSt6stringE">
+<span id="_CPPv3N12OutputResume5writeERKNSt6stringE"></span><span id="_CPPv2N12OutputResume5writeERKNSt6stringE"></span><span id="OutputResume::write__ssCR"></span><span class="target" id="classOutputResume_1a4bbb51cd6071026818a73373c50a9a1d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">write</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">message</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N12OutputResume5writeERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Method used to write a message in the output file. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>message</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N12OutputResume13output_resumeEv">
+<span id="_CPPv3N12OutputResume13output_resumeEv"></span><span id="_CPPv2N12OutputResume13output_resumeEv"></span><span id="OutputResume::output_resume"></span><span class="target" id="classOutputResume_1ad029dc741e24ede62effcd0fa36b11ce"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">output_resume</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N12OutputResume13output_resumeEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Method that determine the name of the resume file based on the input file. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>name of the output file </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N12OutputResume14output_listingEv">
+<span id="_CPPv3N12OutputResume14output_listingEv"></span><span id="_CPPv2N12OutputResume14output_listingEv"></span><span id="OutputResume::output_listing"></span><span class="target" id="classOutputResume_1a9b3b0844c20900750e3ecb81a07964a6"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">output_listing</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N12OutputResume14output_listingEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Method that determine the name of the listing file based on the input file. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>name of the output file </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N12OutputResume13output_folderEv">
+<span id="_CPPv3N12OutputResume13output_folderEv"></span><span id="_CPPv2N12OutputResume13output_folderEv"></span><span id="OutputResume::output_folder"></span><span class="target" id="classOutputResume_1a46399558b1b8af9ca2402568055497f7"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">output_folder</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N12OutputResume13output_folderEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Method that determine the name of the output folder based on the input file. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>name of the output folder </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12OutputResume7logFileE">
+<span id="_CPPv3N12OutputResume7logFileE"></span><span id="_CPPv2N12OutputResume7logFileE"></span><span id="OutputResume::logFile__abase::FileLogger"></span><span class="target" id="classOutputResume_1a238cfed6ecce9c65cb13bdcf123f4e64"></span><a class="reference internal" href="abase.html#_CPPv45abase" title="abase"><span class="n"><span class="pre">abase</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="abase.html#_CPPv4N5abase10FileLoggerE" title="abase::FileLogger"><span class="n"><span class="pre">FileLogger</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">logFile</span></span></span><a class="headerlink" href="#_CPPv4N12OutputResume7logFileE" title="Link to this definition"></a><br /></dt>
+<dd><p>output file stream </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12OutputResume6mutex_E">
+<span id="_CPPv3N12OutputResume6mutex_E"></span><span id="_CPPv2N12OutputResume6mutex_E"></span><span id="OutputResume::mutex___std::mutex"></span><span class="target" id="classOutputResume_1aded682f0a86a6a2b7201b5792454e01b"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">mutex</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mutex_</span></span></span><a class="headerlink" href="#_CPPv4N12OutputResume6mutex_E" title="Link to this definition"></a><br /></dt>
+<dd><p>Mutex to ensure thread safety. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12OutputResume14input_filenameE">
+<span id="_CPPv3N12OutputResume14input_filenameE"></span><span id="_CPPv2N12OutputResume14input_filenameE"></span><span id="OutputResume::input_filename__ss"></span><span class="target" id="classOutputResume_1a906a91adb6bcc5f06a6c1f2ca7eb9839"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">input_filename</span></span></span><a class="headerlink" href="#_CPPv4N12OutputResume14input_filenameE" title="Link to this definition"></a><br /></dt>
+<dd><p>input file name </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-functions">Private Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N12OutputResume12get_basenameEv">
+<span id="_CPPv3N12OutputResume12get_basenameEv"></span><span id="_CPPv2N12OutputResume12get_basenameEv"></span><span id="OutputResume::get_basename"></span><span class="target" id="classOutputResume_1a277765ee3d5c68debab96c194897f2bd"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_basename</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N12OutputResume12get_basenameEv" title="Link to this definition"></a><br /></dt>
+<dd><p>determine the base name of the input file </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N12OutputResume25suppress_previous_resultsEv">
+<span id="_CPPv3N12OutputResume25suppress_previous_resultsEv"></span><span id="_CPPv2N12OutputResume25suppress_previous_resultsEv"></span><span id="OutputResume::suppress_previous_results"></span><span class="target" id="classOutputResume_1ad2d4db7a9b6dc6e11b03d4b877347dce"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">suppress_previous_results</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N12OutputResume25suppress_previous_resultsEv" title="Link to this definition"></a><br /></dt>
+<dd><p>suppress previous results files </p>
+</dd></dl>
+
+</div>
 </dd></dl>
 
 </section>

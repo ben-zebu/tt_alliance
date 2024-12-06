@@ -26,6 +26,11 @@ Configuration Parser
 .. doxygenfile:: ConfigParser.h
    :project: tt_alliance
 
+Environment
+-----------
+.. doxygenfile:: Environment.h
+   :project: tt_alliance
+
 Error Manager
 -------------
 .. doxygenfile:: ErrorManager.h
@@ -49,6 +54,11 @@ Filesystem
 Global Timer
 ------------
 .. doxygenfile:: GlobalTimer.h
+   :project: tt_alliance
+
+String
+------
+.. doxygenfile:: String.h
    :project: tt_alliance
 
 Translation Manager
