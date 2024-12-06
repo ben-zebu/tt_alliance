@@ -4,6 +4,7 @@
 #include <cassert>
 
 #include "Commands.h"
+#include "CommandsCollector.h"
 #include "Environment.h"
 
 using namespace abase;
@@ -32,12 +33,12 @@ bool CompositeCommand::is_command_name(const std::string& name) {
     return false;
 }
 
-std::size_t CompositeCommand::children_process(FileReader& reader) {
+std::size_t CompositeCommand::children_process(FileReader& reader, const CommandsCollector& collector) {
     std::size_t status = 0;
     while(status == 0 && reader.get_word().size() > 0) {
         status = 1;
         for (auto& child : _children) {
-            status *= child->read_input(reader);
+            status *= child->read_input(reader, collector);
         }
     }
     return status;
@@ -54,14 +55,14 @@ std::shared_ptr<BaseCommand> CompositeCommand::get_child(const std::string& name
     return nullptr;
 }
 
-std::size_t SingleCommand::read_input(FileReader& reader) {
+std::size_t SingleCommand::read_input(FileReader& reader, const CommandsCollector& collector) {
     if (!is_same_keyword(reader.get_word())) return 1;
     reader.move();
-    std::size_t children_status = children_process(reader);
+    std::size_t children_status = children_process(reader, collector);
     return 0;
 }
 
-std::size_t StringCommand::read_input(FileReader& reader) {
+std::size_t StringCommand::read_input(FileReader& reader, const CommandsCollector& collector) {
     std::string key = reader.get_word();
     if (!this->is_same_keyword(key)) return 1;
     reader.move();
@@ -73,29 +74,29 @@ std::size_t StringCommand::read_input(FileReader& reader) {
     }
     reader.move();
 
-    std::size_t children_status = this->children_process(reader);
+    std::size_t children_status = this->children_process(reader, collector);
     return 0;
 }
 
-std::size_t VectorStringCommand::read_input(FileReader& reader) {
+std::size_t VectorStringCommand::read_input(FileReader& reader, const CommandsCollector& collector) {
     std::string key = reader.get_word();
     if (!this->is_same_keyword(key)) return 1;
     reader.move();
 
     std::string str_value = reader.get_word();
     // Read the values until a command name is found.
-    while (!str_value.empty() && !this->is_command_name(str_value)) {
+    while (!str_value.empty() && !collector.is_command_name(str_value)) {
         _values.push_back(str_value);
         
         reader.move();
         str_value = reader.get_word();
     }
     
-    std::size_t children_status = this->children_process(reader);
+    std::size_t children_status = this->children_process(reader, collector);
     return 0;
 }
 
-std::size_t MixStringCommand::read_input(FileReader& reader) {
+std::size_t MixStringCommand::read_input(FileReader& reader, const CommandsCollector& collector) {
     std::string key = reader.get_word();
     if (!this->is_same_keyword(key)) return 1;
     reader.move();
@@ -113,14 +114,14 @@ std::size_t MixStringCommand::read_input(FileReader& reader) {
     // Read the values with the expected type
     for (std::size_t i = 0; i < _n_values; i++) {
         str_value = reader.get_word();
-        if (str_value.empty() && this->is_command_name(str_value)) {
+        if (str_value.empty() || collector.is_command_name(str_value)) {
             std::string filecontext = reader.context_error();
             file_input_error(translate("ERROR_NB_VALUES", {key, std::to_string(_n_values)}), filecontext);
         }
         _values.push_back(str_value);
         reader.move();
     }    
-    std::size_t children_status = this->children_process(reader);
+    std::size_t children_status = this->children_process(reader, collector);
     return 0;
 }
 
@@ -149,7 +150,7 @@ std::pair<T, bool> NumericCommand<T>::convert_value(const std::string& key, File
 }
 
 template<typename T>
-std::size_t ValueCommand<T>::read_input(FileReader& reader) {
+std::size_t ValueCommand<T>::read_input(FileReader& reader, const CommandsCollector& collector) {
     std::string key = reader.get_word();
     if (!this->is_same_keyword(key)) return 1;
     reader.move();
@@ -164,12 +165,12 @@ std::size_t ValueCommand<T>::read_input(FileReader& reader) {
     _value = conversion.first;
     reader.move();
 
-    std::size_t children_status = this->children_process(reader);
+    std::size_t children_status = this->children_process(reader, collector);
     return 0;
 }
 
 template<typename T>
-std::size_t VectorCommand<T>::read_input(FileReader& reader) {
+std::size_t VectorCommand<T>::read_input(FileReader& reader, const CommandsCollector& collector) {
     std::string key = reader.get_word();
     if (!this->is_same_keyword(key)) return 1;
     reader.move();
@@ -185,12 +186,12 @@ std::size_t VectorCommand<T>::read_input(FileReader& reader) {
         str_value = reader.get_word();
     }
     
-    std::size_t children_status = this->children_process(reader);
+    std::size_t children_status = this->children_process(reader, collector);
     return 0;
 }
 
 template<typename T>
-std::size_t MixCommand<T>::read_input(FileReader& reader) {
+std::size_t MixCommand<T>::read_input(FileReader& reader, const CommandsCollector& collector) {
     std::string key = reader.get_word();
     if (!this->is_same_keyword(key)) return 1;
     reader.move();
@@ -217,7 +218,7 @@ std::size_t MixCommand<T>::read_input(FileReader& reader) {
         reader.move();
     }
     
-    std::size_t children_status = this->children_process(reader);
+    std::size_t children_status = this->children_process(reader, collector);
     return 0;
 }
 

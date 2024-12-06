@@ -24,7 +24,7 @@ void DataManager::read_data(const std::string& filename, const std::string& comm
         std::cout << "current word: " << reader.get_word() << std::endl;
         for (const auto& name : commands_names) {
             auto command = commands_reader.get_command(name);
-            std::size_t status = command->read_input(reader);
+            std::size_t status = command->read_input(reader, commands_reader);
             if (status == 0) {
                 // add the command to the data manager
                 std::cout << "Command " << name << " read" << std::endl;

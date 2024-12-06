@@ -110,3 +110,10 @@ std::vector<std::string> CommandsCollector::get_commands_names() {
     }
     return names;
 }
+
+bool CommandsCollector::is_command_name(const std::string& name) const {
+    for (const auto& command : commands) {
+        if (command.second->is_command_name(name)) return true;
+    }
+    return false;
+}

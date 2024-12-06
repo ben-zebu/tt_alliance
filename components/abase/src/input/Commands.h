@@ -49,6 +49,8 @@
  */
 namespace abase {
 
+    class CommandsCollector;
+
     /// @brief Base class for all commands
     class BaseCommand {
         protected:
@@ -61,7 +63,7 @@ namespace abase {
             virtual ~BaseCommand() = default;
             /// @brief Read the input file and set the values of the command
             /// @return Action status (0 for succes and 1 for failded)
-            virtual std::size_t read_input(FileReader& reader) = 0;
+            virtual std::size_t read_input(FileReader& reader, const CommandsCollector& collector) = 0;
             /// @brief Set the name of the command
             void set_name(const std::string& name) { _name = name; }
             /// @brief Returns the name of the command
@@ -100,7 +102,7 @@ namespace abase {
             std::vector<std::shared_ptr<BaseCommand>> _children;
 
             /// @brief Read input process for all children
-            virtual std::size_t children_process(FileReader& reader);
+            virtual std::size_t children_process(FileReader& reader, const CommandsCollector& collector);
 
         public:
             CompositeCommand() = default;
@@ -117,7 +119,7 @@ namespace abase {
             /// @brief Check if the input name is the command name or a child one
             /// @param name name to check
             /// @return status of the comparison
-            bool is_command_name(const std::string& name);
+            bool is_command_name(const std::string& name) override;
 
     };
 
@@ -128,7 +130,7 @@ namespace abase {
             /// @brief Read input file and set the value of the command
             /// @param reader file reader associated to the input file
             /// @return a status code (0 for success and 1 for fail)
-            virtual std::size_t read_input(FileReader& reader) override;
+            virtual std::size_t read_input(FileReader& reade, const CommandsCollector& collector) override;
     };
 
     //
@@ -146,7 +148,7 @@ namespace abase {
             /// @brief Read input file and set the value of the command
             /// @param reader file reader associated to the input file
             /// @return a status code (0 for success and 1 for fail)
-            virtual std::size_t read_input(FileReader& reader) override;
+            virtual std::size_t read_input(FileReader& reader, const CommandsCollector& collector) override;
     };
 
     class VectorStringCommand : public CompositeCommand {
@@ -160,7 +162,7 @@ namespace abase {
             /// @brief Read input file and set the value of the command
             /// @param reader file reader associated to the input file
             /// @return a status code (0 for success and 1 for fail)
-            virtual std::size_t read_input(FileReader& reader) override;
+            virtual std::size_t read_input(FileReader& reader, const CommandsCollector& collector) override;
     };
 
     class MixStringCommand : public CompositeCommand {
@@ -176,7 +178,7 @@ namespace abase {
             /// @brief Read input file and set the value of the command
             /// @param reader file reader associated to the input file
             /// @return a status code (0 for success and 1 for fail)
-            virtual std::size_t read_input(FileReader& reader) override;
+            virtual std::size_t read_input(FileReader& reader, const CommandsCollector& collector) override;
     };
 
     //
@@ -206,7 +208,7 @@ namespace abase {
             /// @brief Read input file and set the value of the command
             /// @param reader file reader associated to the input file
             /// @return a status code (0 for success and 1 for fail)
-            virtual std::size_t read_input(FileReader& reader) override;
+            virtual std::size_t read_input(FileReader& reader, const CommandsCollector& collector) override;
     };
 
     template<typename T>
@@ -221,7 +223,7 @@ namespace abase {
             /// @brief Read input file and set the value of the command
             /// @param reader file reader associated to the input file
             /// @return a status code (0 for success and 1 for fail)
-            virtual std::size_t read_input(FileReader& reader) override;
+            virtual std::size_t read_input(FileReader& reader, const CommandsCollector& collector) override;
     };
 
     template<typename T>
@@ -238,7 +240,7 @@ namespace abase {
             /// @brief Read input file and set the value of the command
             /// @param reader file reader associated to the input file
             /// @return a status code (0 for success and 1 for fail)
-            virtual std::size_t read_input(FileReader& reader) override;
+            virtual std::size_t read_input(FileReader& reader, const CommandsCollector& collector) override;
     };
 
 }
