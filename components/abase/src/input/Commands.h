@@ -105,6 +105,33 @@ namespace abase {
             /// @param name name to check
             /// @return status of the comparison
             virtual bool is_command_name(const std::string& name) = 0;
+
+            /// @brief Return a string value of the command (pure virtual)
+            /// @param value returned value
+            virtual void get_value(std::string& value) const { value = ""; }
+            /// @brief Return a size_t value of the command (pure virtual)
+            /// @param value returned value
+            virtual void get_value(std::size_t& value) const { value = 0; }
+            /// @brief Return a integer value of the command (pure virtual)
+            /// @param value returned value
+            virtual void get_value(int& value) const { value = 0; }
+            /// @brief Return a double value of the command (pure virtual)
+            /// @param value returned value
+            virtual void get_value(double& value) const { value = 0.; }
+
+            /// @brief Return string values of the command (pure virtual)
+            /// @param value returned values
+            virtual void get_values(std::vector<std::string>& values) const { values.clear(); }
+            /// @brief Return size_t values of the command (pure virtual)
+            /// @param value returned values
+            virtual void get_values(std::vector<std::size_t>& values) const { values.clear(); }
+            /// @brief Return integer values of the command (pure virtual)
+            /// @param value returned values
+            virtual void get_values(std::vector<int>& values) const { values.clear(); }
+            /// @brief Return double values of the command (pure virtual)
+            /// @param value returned values
+            virtual void get_values(std::vector<double>& values) const { values.clear(); }
+
     };
 
     /// @brief Command class used to add children of the current command
@@ -137,6 +164,9 @@ namespace abase {
 
     /// @brief Command without value
     class SingleCommand : public CompositeCommand {
+        protected :
+            /// @brief keyword read from the input fila associated to the command 
+            std::string _value;
         public :
             SingleCommand() = default;
             virtual ~SingleCommand() = default;
@@ -144,6 +174,9 @@ namespace abase {
             /// @param reader file reader associated to the input file
             /// @return a status code (0 for success and 1 for fail)
             virtual std::size_t read_input(FileReader& reade, const CommandsCollector& collector) override;
+            /// @brief Get the value of the command
+            /// @param value value associated to the command
+            void get_value(std::string& value) const override { value = _value; }
     };
 
     //
@@ -163,6 +196,10 @@ namespace abase {
             /// @param reader file reader associated to the input file
             /// @return a status code (0 for success and 1 for fail)
             virtual std::size_t read_input(FileReader& reader, const CommandsCollector& collector) override;
+            /// @brief Get the value of the command
+            /// @param value value associated to the command
+            void get_value(std::string& value) const override { value = _value; }
+
     };
 
     /// @brief Command used to read a list of string values from the input file
@@ -178,6 +215,10 @@ namespace abase {
             /// @param reader file reader associated to the input file
             /// @return a status code (0 for success and 1 for fail)
             virtual std::size_t read_input(FileReader& reader, const CommandsCollector& collector) override;
+            /// @brief Get the values of the command
+            /// @param values values associated to the command
+            void get_values(std::vector<std::string>& values) const override { values = _values; }
+
     };
 
     /// @brief Command used to read a fixed number of string values from the input file
@@ -195,6 +236,10 @@ namespace abase {
             /// @param reader file reader associated to the input file
             /// @return a status code (0 for success and 1 for fail)
             virtual std::size_t read_input(FileReader& reader, const CommandsCollector& collector) override;
+            /// @brief Get the values of the command
+            /// @param values values associated to the command
+            void get_values(std::vector<std::string>& values) const override { values = _values; }
+
     };
 
     //
@@ -227,6 +272,10 @@ namespace abase {
             /// @param reader file reader associated to the input file
             /// @return a status code (0 for success and 1 for fail)
             virtual std::size_t read_input(FileReader& reader, const CommandsCollector& collector) override;
+            /// @brief Get the value of the command
+            /// @param value value associated to the command
+            void get_value(T& value) const override { value = _value; }
+
     };
 
     /// @brief Class used to read a list of numerical values from the input file
@@ -243,6 +292,9 @@ namespace abase {
             /// @param reader file reader associated to the input file
             /// @return a status code (0 for success and 1 for fail)
             virtual std::size_t read_input(FileReader& reader, const CommandsCollector& collector) override;
+            /// @brief Get the values of the command
+            /// @param values values associated to the command
+            void get_values(std::vector<T>& values) const override { values = _values; }
     };
 
     /// @brief Class used to read a fixed number of numerical values from the input file
@@ -261,6 +313,9 @@ namespace abase {
             /// @param reader file reader associated to the input file
             /// @return a status code (0 for success and 1 for fail)
             virtual std::size_t read_input(FileReader& reader, const CommandsCollector& collector) override;
+            /// @brief Get the values of the command
+            /// @param values values associated to the command
+            void get_values(std::vector<T>& values) const override { values = _values; }            
     };
 
     /// @brief Class used to read time steps from the input file
@@ -289,7 +344,9 @@ namespace abase {
             /// @param reader file reader associated to the input file
             /// @return a status code (0 for success and 1 for fail)
             virtual std::size_t read_input(FileReader& reader, const CommandsCollector& collector) override;
-
+            /// @brief Get the values of the command
+            /// @param values values associated to the command
+            void get_values(std::vector<std::size_t>& values) const override { values = _values; }
     };
 
 }
