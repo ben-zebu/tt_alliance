@@ -9,10 +9,10 @@
 
 /**
  * @brief Command system for input file processing
- * 
+ *
  * This namespace contains a hierarchical command system for processing input files.
  * It provides base classes and specialized command types for different data handling needs.
- * 
+ *
  * The command hierarchy consists of:
  * - BaseCommand: Abstract base class for all commands
  * - CompositeCommand: Intermediate class supporting child commands
@@ -25,13 +25,13 @@
  * - VectorCommand<T>: Template command for handling vectors of numerical values of type T
  * - MixCommand<T>: Template command for handling a fixed number of numerical values of type T
  * - TimeStepCommand: Command for handling time steps
- * 
+ *
  * Key features:
  * - Hierarchical command structure
  * - Support for command translations
  * - Type-safe value handling through templates
  * - Flexible input file processing
- * 
+ *
  * Each command type serves a specific purpose:
  * - BaseCommand: Provides core functionality and interface
  * - CompositeCommand: Manages child commands and their processing
@@ -44,17 +44,17 @@
  * - VectorCommand<T>: Manages arrays/vectors of numerical values
  * - MixCommand<T>: Handles a fixed number of numerical values
  * - TimeStepCommand: Processes time steps
- * 
+ *
  * Common usage:
  * @code
  * auto cmd = std::make_shared<SingleCommand>();
  * cmd->set_name("command_name");
  * cmd->read_input(reader);
  * @endcode
- * 
+ *
  * @note All commands support nested hierarchies through the CompositeCommand base
  * @note Translation support is built into the base command level
- * 
+ *
  * @see FileReader
  * @see BaseCommand
  * @see CompositeCommand
@@ -66,7 +66,7 @@ namespace abase {
     /// @brief Base class for all commands
     class BaseCommand {
         protected:
-            std::string _name = "";    
+            std::string _name = "";
             std::unordered_map<std::string, std::vector<std::string>> translations;
             /// @brief read status
             bool _read_status = false;
@@ -170,7 +170,7 @@ namespace abase {
     /// @brief Command without value
     class SingleCommand : public CompositeCommand {
         protected :
-            /// @brief keyword read from the input fila associated to the command 
+            /// @brief keyword read from the input fila associated to the command
             std::string _value;
             /// @brief clear read data associated to the command
             virtual void clear() { _read_status = false; _value = ""; }
@@ -240,7 +240,7 @@ namespace abase {
             /// @brief Number of values to read
             std::size_t _n_values;
             /// @brief clear read data associated to the command
-            virtual void clear() { _read_status = false; _values.clear(); _n_values = 0; }            
+            virtual void clear() { _read_status = false; _values.clear(); _n_values = 0; }
 
         public :
             MixStringCommand() = default;
@@ -278,8 +278,8 @@ namespace abase {
             /// @brief Value associated to the command
             T _value;
             /// @brief clear read data associated to the command
-            virtual void clear() { this->_read_status = false; _value = T(); }            
-            
+            virtual void clear() { this->_read_status = false; _value = T(); }
+
         public :
             ValueCommand() = default;
             virtual ~ValueCommand() = default;
@@ -300,8 +300,8 @@ namespace abase {
             /// @brief Vector of values associated to the command
             std::vector<T> _values;
             /// @brief clear read data associated to the command
-            virtual void clear() { this->_read_status = false; _values.clear(); }     
-            
+            virtual void clear() { this->_read_status = false; _values.clear(); }
+
         public :
             VectorCommand() = default;
             virtual ~VectorCommand() = default;
@@ -324,7 +324,7 @@ namespace abase {
             std::size_t _n_values;
             /// @brief clear read data associated to the command
             virtual void clear() { this->_read_status = false; _values.clear(); _n_values = 0; }
-            
+
         public :
             MixCommand() = default;
             virtual ~MixCommand() = default;
@@ -334,7 +334,7 @@ namespace abase {
             virtual std::size_t read_input(FileReader& reader, const CommandsCollector& collector) override;
             /// @brief Get the values of the command
             /// @param values values associated to the command
-            void get_values(std::vector<T>& values) const override { if (this->_read_status) values = _values; }            
+            void get_values(std::vector<T>& values) const override { if (this->_read_status) values = _values; }
     };
 
     /// @brief Class used to read time steps from the input file
@@ -346,7 +346,7 @@ namespace abase {
             /// @param step time step increment
             /// @param status status of the conversion
             /// @return a vector of time steps
-            std::vector<std::size_t> convert_range(const std::string& start, const std::string& end, 
+            std::vector<std::size_t> convert_range(const std::string& start, const std::string& end,
                                                    const std::string& step, bool& status);
             /// @brief Extract all time steps from a sequence of strings
             /// @param sequence extracted sequence

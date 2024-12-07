@@ -22,9 +22,9 @@ namespace adata {
             std::size_t thermal_card = 0;
             /// @brief Thermomechanical coefficient associated to the thermal card
             double kh = 1.0;
-            /// @brief Maximum coefficients associated to external torsors, case without earthquake 
+            /// @brief Maximum coefficients associated to external torsors, case without earthquake
             std::vector<double> max_ef;
-            /// @brief Minimum coefficients associated to external torsors, case without earthquake 
+            /// @brief Minimum coefficients associated to external torsors, case without earthquake
             std::vector<double> min_ef;
             /// @brief Maximum coefficients associated to external torsors, case with earthquake
             std::vector<double> max_ft;

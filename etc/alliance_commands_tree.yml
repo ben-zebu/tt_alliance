@@ -14,11 +14,11 @@ CODE:
   CATEGORY:
     keys: {"fr": ["cate", "categorie"], "en": ["cate", "category"]}
     type: uint
-  
+
   NS:
     keys: {"fr": ["ns", "ns"], "en": ["ns", "ns"]}
     type: uint
-  
+
   LANGUAGE:
     keys: {"fr": ["angl", "anglais"], "en": ["engl", "english"]}
     type: string
@@ -37,16 +37,16 @@ TORSOR:
 
 LOADSTEP:
   keys:
-    fr: ["pres", "pression"] 
+    fr: ["pres", "pression"]
     en: ["pres", "pressure"]
     fr_var: ["comb", "combinaison"]
-    en_var: ["comb", "combination"] 
+    en_var: ["comb", "combination"]
   type: uint_array
 
   KP:
     keys: {"fr": ["kp", "kp"], "en": ["kp", "kp"]}
     type: real_array
-  
+
   THERMAL:
     keys: {"fr": ["ther", "thermique"], "en": ["ther", "thermal"]}
     type: uint
@@ -54,7 +54,7 @@ LOADSTEP:
     KH:
       keys: {"fr": ["kh", "kh"], "en": ["kh", "kh"]}
       type: real
-  
+
   EF:
     keys: {"fr": ["ef", "effort"], "en": ["ef", "stress"]}
     type: real_array

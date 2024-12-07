@@ -17,7 +17,7 @@ void DataManager::set_data(std::shared_ptr<abase::BaseCommand> command, std::str
         torsor.init(command);
         torsor.verify(filecontext);
     }
-    
+
     if (name == "LOADSTEP") {
         ProblemLoadstep loadstep;
         loadstep.init(command, torsor.cards.size());
@@ -53,7 +53,7 @@ void DataManager::read_data(const std::string& filename, const std::string& comm
     bool end_of_file = false;
     while (reader.get_word().size() > 0 && cumul_status == 0) {
         cumul_status = 1;
-        
+
         for (const auto& name : commands_names) {
             auto command = commands_reader.get_command(name);
             std::size_t status = command->read_input(reader, commands_reader);

@@ -27,7 +27,7 @@ void load_translations() {
 /// @param argv list of arguments
 void parse_commands_line(int argc, char* argv[]) {
     adata::ArgumentParser parser(argc, argv);
-} 
+}
 
 void init::start(int argc, char* argv[]) {
     // start the global timer

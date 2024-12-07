@@ -22,7 +22,7 @@ void ProblemLoadstep::init(std::shared_ptr<abase::BaseCommand> command, std::siz
         if (values.size() == nb_torsors) {
             max_ef = values;
             min_ef = values;
-        } 
+        }
         else if (values.size() == 2*nb_torsors) {
             max_ef = std::vector<double>(values.begin(), values.begin() + nb_torsors);
             min_ef = std::vector<double>(values.begin() + nb_torsors, values.end());
@@ -39,7 +39,7 @@ void ProblemLoadstep::init(std::shared_ptr<abase::BaseCommand> command, std::siz
         if (values.size() == nb_torsors) {
             max_ft = values;
             min_ft = values;
-        } 
+        }
         else if (values.size() == 2*nb_torsors) {
             max_ft = std::vector<double>(values.begin(), values.begin() + nb_torsors);
             min_ft = std::vector<double>(values.begin() + nb_torsors, values.end());
@@ -57,7 +57,7 @@ void ProblemLoadstep::verify(std::string& filecontext) const {
         std::string msg = translate("PRESSURE_CARDS_VALUES_MISMATCH", {nb_cards, nb_values});
         file_input_error(msg, filecontext);
     }
-    
+
     // check if coefficients associated to external torsors are correctly initialized
     if (_mismatch_coefficients) {
         std::string s_nb = std::to_string(_nb_torsors);
