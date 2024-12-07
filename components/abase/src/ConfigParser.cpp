@@ -99,7 +99,7 @@ void ConfigParser::loadFromFile(const std::string& filename) {
 
         auto pos = line.find('=');
         if (pos != std::string::npos) {
-            key = trim(line.substr(0, pos));
+            key = str::lowercase( trim(line.substr(0, pos)) );
             value = trim(line.substr(pos + 1));
             if (!key.empty() && !value.empty()) {
                 config_map[key] = value;
