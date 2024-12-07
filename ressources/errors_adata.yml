@@ -4,3 +4,14 @@
   ERROR_DATA_UNKNOWN_COMMAND:
     en: "Unknown command: '{0}' !"
     fr: "Commande inconnue : '{0}' !"
+
+#
+# ProblemDescription messages
+#
+  CODE_EDITION_MISSING:
+    en: "Code edition is required for category 2 !"
+    fr: "L'édition du code est requise en catégorie 2 !"
+
+  CODE_EDITION_UNKNOWN:
+    en: "Unknown edition '{0}' for code '{1}' !"
+    fr: "Édition inconnue '{0}' pour le code '{1}' !"

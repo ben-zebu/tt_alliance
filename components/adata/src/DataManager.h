@@ -1,14 +1,21 @@
 #include "Environment.h"
+#include "ProblemDescription.h"
 
 namespace adata {
 
     class DataManager {
         private:
+            void set_data(std::shared_ptr<abase::BaseCommand> command, std::string filecontext);
+
+
             /// @brief Read the title of the problem in the input file
             /// @param reader file reader associated to the input file
             /// @param collector commands collector used to read the input file
             /// @return problem title as a vector of strings
             std::vector<std::string> read_title(abase::FileReader& reader, const abase::CommandsCollector& collector);
+
+        protected:
+            ProblemDescription description;
         /*
         protected:
             pb_fem_interface fem_interface;
