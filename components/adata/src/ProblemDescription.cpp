@@ -2,27 +2,19 @@
 
 using namespace adata;
 
-namespace {
-    template<typename T>
-    void get_child_value(std::shared_ptr<abase::BaseCommand> command, const std::string& child_name, T& value) {
-        auto sub = command->get_child(child_name);
-        if (sub) sub->get_value(value);
-    }
-}
-
 void ProblemDescription::init(std::shared_ptr<abase::BaseCommand> command) {
     command->get_value(code_type);
     code_type = str::uppercase(code_type);
 
-    get_child_value(command, "VERSION", code_edition);
-    get_child_value(command, "CATEGORY", category);
-    get_child_value(command, "NS", earthquakes);
-    get_child_value(command, "LANGUAGE", language);
-    get_child_value(command, "EDITION", edition);
-    get_child_value(command, "UNITS", units);
+    abase::get_child_value(command, "VERSION", code_edition);
+    abase::get_child_value(command, "CATEGORY", category);
+    abase::get_child_value(command, "NS", earthquakes);
+    abase::get_child_value(command, "LANGUAGE", language);
+    abase::get_child_value(command, "EDITION", edition);
+    abase::get_child_value(command, "UNITS", units);
 }
 
-void ProblemDescription::verify(std::string filecontext) const {
+void ProblemDescription::verify(std::string& filecontext) const {
     // check if the code edition is defined in category 2
     if (category == 2 && code_edition.empty() ) {
         file_input_error(translate("CODE_EDITION_MISSING"), filecontext);

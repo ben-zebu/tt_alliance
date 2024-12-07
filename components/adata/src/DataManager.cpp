@@ -11,6 +11,10 @@ void DataManager::set_data(std::shared_ptr<abase::BaseCommand> command, std::str
         description.init(command);
         description.verify(filecontext);
     }
+    if (name == "TORSOR") {
+        torsor.init(command);
+        torsor.verify(filecontext);
+    }
 }
 
 

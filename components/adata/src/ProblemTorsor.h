@@ -6,22 +6,13 @@
 
 namespace adata {
 
-    class ProblemDescription {
+    class ProblemTorsor {
         public:
-            std::string code_type = "";
-            std::string code_edition = "";
+            /// @brief Rank of each card that contains stress values associated to external torsors
+            std::vector<std::size_t> cards;
 
-            std::size_t category = 0;
-            std::size_t earthquakes = 0;
-            
-            std::string language = "";
-            std::string units = "mpa";
-            std::size_t edition = 0;
-
-            std::vector<std::string> titles;
-
-            ProblemDescription() = default;
-            virtual ~ProblemDescription() = default;
+            ProblemTorsor() = default;
+            virtual ~ProblemTorsor() = default;
 
             /// @brief Initialize the object with the values read from the input file
             /// @param command values read from the input file
@@ -34,4 +25,4 @@ namespace adata {
             void verify(std::string& filecontext) const;
     };
 
-} // namespace adata
+}
