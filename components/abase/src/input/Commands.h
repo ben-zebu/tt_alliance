@@ -68,6 +68,11 @@ namespace abase {
         protected:
             std::string _name = "";    
             std::unordered_map<std::string, std::vector<std::string>> translations;
+            /// @brief read status
+            bool _read_status = false;
+
+            /// @brief clear read data associated to the command
+            virtual void clear() { _read_status = false; }
 
         public:
             BaseCommand() = default;
@@ -108,29 +113,29 @@ namespace abase {
 
             /// @brief Return a string value of the command (pure virtual)
             /// @param value returned value
-            virtual void get_value(std::string& value) const { value = ""; }
+            virtual void get_value(std::string& value) const { if (_read_status) value = ""; }
             /// @brief Return a size_t value of the command (pure virtual)
             /// @param value returned value
-            virtual void get_value(std::size_t& value) const { value = 0; }
+            virtual void get_value(std::size_t& value) const { if (_read_status) value = 0; }
             /// @brief Return a integer value of the command (pure virtual)
             /// @param value returned value
-            virtual void get_value(int& value) const { value = 0; }
+            virtual void get_value(int& value) const { if (_read_status) value = 0; }
             /// @brief Return a double value of the command (pure virtual)
             /// @param value returned value
-            virtual void get_value(double& value) const { value = 0.; }
+            virtual void get_value(double& value) const {if (_read_status)  value = 0.; }
 
             /// @brief Return string values of the command (pure virtual)
             /// @param value returned values
-            virtual void get_values(std::vector<std::string>& values) const { values.clear(); }
+            virtual void get_values(std::vector<std::string>& values) const { if (_read_status) values.clear(); }
             /// @brief Return size_t values of the command (pure virtual)
             /// @param value returned values
-            virtual void get_values(std::vector<std::size_t>& values) const { values.clear(); }
+            virtual void get_values(std::vector<std::size_t>& values) const { if (_read_status) values.clear(); }
             /// @brief Return integer values of the command (pure virtual)
             /// @param value returned values
-            virtual void get_values(std::vector<int>& values) const { values.clear(); }
+            virtual void get_values(std::vector<int>& values) const { if (_read_status) values.clear(); }
             /// @brief Return double values of the command (pure virtual)
             /// @param value returned values
-            virtual void get_values(std::vector<double>& values) const { values.clear(); }
+            virtual void get_values(std::vector<double>& values) const { if (_read_status) values.clear(); }
 
     };
 
@@ -167,6 +172,8 @@ namespace abase {
         protected :
             /// @brief keyword read from the input fila associated to the command 
             std::string _value;
+            /// @brief clear read data associated to the command
+            virtual void clear() { _read_status = false; _value = ""; }
         public :
             SingleCommand() = default;
             virtual ~SingleCommand() = default;
@@ -176,7 +183,7 @@ namespace abase {
             virtual std::size_t read_input(FileReader& reade, const CommandsCollector& collector) override;
             /// @brief Get the value of the command
             /// @param value value associated to the command
-            void get_value(std::string& value) const override { value = _value; }
+            void get_value(std::string& value) const override { if (_read_status) value = _value; }
     };
 
     //
@@ -188,6 +195,8 @@ namespace abase {
         protected :
             /// @brief Value associated to the command
             std::string _value;
+            /// @brief clear read data associated to the command
+            virtual void clear() { _read_status = false; _value = ""; }
 
         public :
             StringCommand() = default;
@@ -198,7 +207,7 @@ namespace abase {
             virtual std::size_t read_input(FileReader& reader, const CommandsCollector& collector) override;
             /// @brief Get the value of the command
             /// @param value value associated to the command
-            void get_value(std::string& value) const override { value = _value; }
+            void get_value(std::string& value) const override { if (_read_status) value = _value; }
 
     };
 
@@ -207,6 +216,8 @@ namespace abase {
         protected :
             /// @brief Value associated to the command
             std::vector<std::string> _values;
+            /// @brief clear read data associated to the command
+            virtual void clear() { _read_status = false; _values.clear(); }
 
         public :
             VectorStringCommand() = default;
@@ -217,7 +228,7 @@ namespace abase {
             virtual std::size_t read_input(FileReader& reader, const CommandsCollector& collector) override;
             /// @brief Get the values of the command
             /// @param values values associated to the command
-            void get_values(std::vector<std::string>& values) const override { values = _values; }
+            void get_values(std::vector<std::string>& values) const override { if (_read_status) values = _values; }
 
     };
 
@@ -228,6 +239,8 @@ namespace abase {
             std::vector<std::string> _values;
             /// @brief Number of values to read
             std::size_t _n_values;
+            /// @brief clear read data associated to the command
+            virtual void clear() { _read_status = false; _values.clear(); _n_values = 0; }            
 
         public :
             MixStringCommand() = default;
@@ -238,7 +251,7 @@ namespace abase {
             virtual std::size_t read_input(FileReader& reader, const CommandsCollector& collector) override;
             /// @brief Get the values of the command
             /// @param values values associated to the command
-            void get_values(std::vector<std::string>& values) const override { values = _values; }
+            void get_values(std::vector<std::string>& values) const override { if (_read_status) values = _values; }
 
     };
 
@@ -264,6 +277,8 @@ namespace abase {
         protected :
             /// @brief Value associated to the command
             T _value;
+            /// @brief clear read data associated to the command
+            virtual void clear() { this->_read_status = false; _value = T(); }            
             
         public :
             ValueCommand() = default;
@@ -274,7 +289,7 @@ namespace abase {
             virtual std::size_t read_input(FileReader& reader, const CommandsCollector& collector) override;
             /// @brief Get the value of the command
             /// @param value value associated to the command
-            void get_value(T& value) const override { value = _value; }
+            void get_value(T& value) const override { if (this->_read_status) value = _value; }
 
     };
 
@@ -284,6 +299,8 @@ namespace abase {
         protected :
             /// @brief Vector of values associated to the command
             std::vector<T> _values;
+            /// @brief clear read data associated to the command
+            virtual void clear() { this->_read_status = false; _values.clear(); }     
             
         public :
             VectorCommand() = default;
@@ -294,7 +311,7 @@ namespace abase {
             virtual std::size_t read_input(FileReader& reader, const CommandsCollector& collector) override;
             /// @brief Get the values of the command
             /// @param values values associated to the command
-            void get_values(std::vector<T>& values) const override { values = _values; }
+            void get_values(std::vector<T>& values) const override { if (this->_read_status) values = _values; }
     };
 
     /// @brief Class used to read a fixed number of numerical values from the input file
@@ -305,6 +322,8 @@ namespace abase {
             std::vector<T> _values;
             /// @brief Number of values to read
             std::size_t _n_values;
+            /// @brief clear read data associated to the command
+            virtual void clear() { this->_read_status = false; _values.clear(); _n_values = 0; }
             
         public :
             MixCommand() = default;
@@ -315,7 +334,7 @@ namespace abase {
             virtual std::size_t read_input(FileReader& reader, const CommandsCollector& collector) override;
             /// @brief Get the values of the command
             /// @param values values associated to the command
-            void get_values(std::vector<T>& values) const override { values = _values; }            
+            void get_values(std::vector<T>& values) const override { if (this->_read_status) values = _values; }            
     };
 
     /// @brief Class used to read time steps from the input file
@@ -337,6 +356,9 @@ namespace abase {
         protected :
             /// @brief vector of time steps rank.
             std::vector<std::size_t> _values;
+            /// @brief clear read data associated to the command
+            virtual void clear() { this->_read_status = false; _values.clear(); }
+
         public:
             TimeStepCommand() = default;
             virtual ~TimeStepCommand() = default;
@@ -346,7 +368,7 @@ namespace abase {
             virtual std::size_t read_input(FileReader& reader, const CommandsCollector& collector) override;
             /// @brief Get the values of the command
             /// @param values values associated to the command
-            void get_values(std::vector<std::size_t>& values) const override { values = _values; }
+            void get_values(std::vector<std::size_t>& values) const override { if (_read_status) values = _values; }
     };
 
     namespace {
@@ -354,6 +376,12 @@ namespace abase {
         void get_child_value(std::shared_ptr<abase::BaseCommand> command, const std::string& child_name, T& value) {
             auto sub = command->get_child(child_name);
             if (sub) sub->get_value(value);
+        }
+
+        template<typename T>
+        void get_child_values(std::shared_ptr<abase::BaseCommand> command, const std::string& child_name, std::vector<T>& values) {
+            auto sub = command->get_child(child_name);
+            if (sub) sub->get_values(values);
         }
     }
 
