@@ -5,6 +5,15 @@
 
 using namespace adata;
 
+void DataManager::set_data(std::shared_ptr<abase::BaseCommand> command, std::string filecontext) {
+    std::string name = command->get_name();
+    if (name == "CODE") {
+        description.init(command);
+        description.verify(filecontext);
+    }
+}
+
+
 std::vector<std::string> DataManager::read_title(abase::FileReader& reader, const abase::CommandsCollector& collector) {
     std::vector<std::string> title;
     std::string key = reader.get_word();
@@ -36,14 +45,13 @@ void DataManager::read_data(const std::string& filename, const std::string& comm
             auto command = commands_reader.get_command(name);
             std::size_t status = command->read_input(reader, commands_reader);
             if (status == 0) {
+                std::string filecontext = reader.context_error();
+
                 // add the command to the data manager
-                
+                set_data(command, filecontext);
 
                 // special case for problem title
-                if (command->get_name() == "CODE") {
-                    // add the fem interface to the data manager
-                    std::vector<std::string> title = read_title(reader, commands_reader);
-                }
+                if (command->get_name() == "CODE") description.titles = read_title(reader, commands_reader);
 
                 // special case for end of input data
                 if (command->get_name() == "RETURN") {

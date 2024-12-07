@@ -6,7 +6,11 @@ FIND:
 CODE:
   keys: {"fr": ["rccm", "rccm"], "en": ["asme", "asme"]}
   type: single
-  
+
+  VERSION:
+    keys: {"fr": ["vers", "version"], "en": ["vers", "version"]}
+    type: string
+
   CATEGORY:
     keys: {"fr": ["cate", "categorie"], "en": ["cate", "category"]}
     type: uint
@@ -23,8 +27,8 @@ CODE:
     keys: {"fr": ["edit", "edition"], "en": ["edit", "edit"]}
     type: uint
 
-  VERSION:
-    keys: {"fr": ["vers", "version"], "en": ["vers", "version"]}
+  UNITS:
+    keys: {"fr": ["mpa", "mpa"], "en": ["ksi", "ksi"]}
     type: string
 
 TORSOR:

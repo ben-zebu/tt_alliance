@@ -59,8 +59,10 @@ std::shared_ptr<BaseCommand> CompositeCommand::get_child(const std::string& name
 
 std::size_t SingleCommand::read_input(FileReader& reader, const CommandsCollector& collector) {
     std::string key = reader.get_word();
-    //std::cout << "key: " << key << std::endl;
     if (!is_same_keyword(key)) return 1;
+
+    _value = str::uppercase(key);
+
     reader.move();
     std::size_t children_status = children_process(reader, collector);
     return 0;

@@ -49,6 +49,8 @@ namespace abase {
     /// can safely access the file and buffer.
     class FileReader {
         private:
+            /// @brief previous line of the file (only used for error messages)
+            std::string prev_line;
             /// @brief current line of the file
             std::string line;
             /// @brief buffer of string for current line

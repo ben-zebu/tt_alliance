@@ -61,8 +61,9 @@ void FileReader::move() {
 
 void FileReader::buffer_update() {
     std::lock_guard<std::mutex> lock(mutex);
-
+    
     // clear buffer and line
+    prev_line = line;
     buffer.clear();
     line.clear();
     
@@ -75,6 +76,6 @@ void FileReader::buffer_update() {
 }
 
 std::string FileReader::context_error() const {
-    std::cout << "Error in file " << filename << " at line " << line << std::endl;
-    return translate("ERROR_FILE_FOOTER", {filename, line});
+    std::string expected_line = (word_rk == 0 ? prev_line : line );
+    return translate("ERROR_FILE_FOOTER", {filename, expected_line});
 }
