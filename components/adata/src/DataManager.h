@@ -1,5 +1,7 @@
 #include "Environment.h"
+
 #include "ProblemDescription.h"
+#include "ProblemTorsor.h"
 
 namespace adata {
 
@@ -16,6 +18,7 @@ namespace adata {
 
         protected:
             ProblemDescription description;
+            ProblemTorsor torsor;
         /*
         protected:
             pb_fem_interface fem_interface;

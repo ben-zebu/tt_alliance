@@ -33,7 +33,7 @@ CODE:
 
 TORSOR:
   keys: {"fr": ["tors", "torseur"], "en": ["tors", "torsor"]}
-  type: int_array
+  type: uint_array
 
 LOADSTEP:
   keys:
