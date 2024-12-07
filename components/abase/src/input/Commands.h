@@ -349,5 +349,13 @@ namespace abase {
             void get_values(std::vector<std::size_t>& values) const override { values = _values; }
     };
 
+    namespace {
+        template<typename T>
+        void get_child_value(std::shared_ptr<abase::BaseCommand> command, const std::string& child_name, T& value) {
+            auto sub = command->get_child(child_name);
+            if (sub) sub->get_value(value);
+        }
+    }
+
 }
 

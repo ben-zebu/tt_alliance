@@ -31,7 +31,7 @@ namespace adata {
             /// @brief Verify if the object is correctly initialized
             /// @param filecontext context of the input file
             /// @return status of the object initialization
-            void verify(std::string filecontext) const;
+            void verify(std::string& filecontext) const;
     };
 
 } // namespace adata
