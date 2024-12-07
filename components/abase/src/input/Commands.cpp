@@ -60,8 +60,9 @@ std::shared_ptr<BaseCommand> CompositeCommand::get_child(const std::string& name
 std::size_t SingleCommand::read_input(FileReader& reader, const CommandsCollector& collector) {
     std::string key = reader.get_word();
     if (!is_same_keyword(key)) return 1;
-
+    clear();
     _value = str::uppercase(key);
+    _read_status = true;
 
     reader.move();
     std::size_t children_status = children_process(reader, collector);
@@ -71,6 +72,7 @@ std::size_t SingleCommand::read_input(FileReader& reader, const CommandsCollecto
 std::size_t StringCommand::read_input(FileReader& reader, const CommandsCollector& collector) {
     std::string key = reader.get_word();
     if (!this->is_same_keyword(key)) return 1;
+    clear();
     reader.move();
 
     _value = reader.get_word();
@@ -78,6 +80,7 @@ std::size_t StringCommand::read_input(FileReader& reader, const CommandsCollecto
         std::string filecontext = reader.context_error();
         file_input_error(translate("ERROR_MISSING_PARAMETER", key), filecontext);
     }
+    _read_status = true;
     reader.move();
 
     std::size_t children_status = this->children_process(reader, collector);
@@ -87,13 +90,16 @@ std::size_t StringCommand::read_input(FileReader& reader, const CommandsCollecto
 std::size_t VectorStringCommand::read_input(FileReader& reader, const CommandsCollector& collector) {
     std::string key = reader.get_word();
     if (!this->is_same_keyword(key)) return 1;
+    clear();
     reader.move();
+
 
     std::string str_value = reader.get_word();
     // Read the values until a command name is found.
     while (!str_value.empty() && !collector.is_command_name(str_value)) {
         _values.push_back(str_value);
-        
+        _read_status = true;
+
         reader.move();
         str_value = reader.get_word();
     }
@@ -105,6 +111,7 @@ std::size_t VectorStringCommand::read_input(FileReader& reader, const CommandsCo
 std::size_t MixStringCommand::read_input(FileReader& reader, const CommandsCollector& collector) {
     std::string key = reader.get_word();
     if (!this->is_same_keyword(key)) return 1;
+    clear();
     reader.move();
 
     // Read the number of expected values
@@ -115,6 +122,7 @@ std::size_t MixStringCommand::read_input(FileReader& reader, const CommandsColle
         std::string filecontext = reader.context_error();
         file_input_error(translate("ERROR_TYPE_CONVERSION", {key, str_value}), filecontext);
     }
+    _read_status = true;
     reader.move();
     
     // Read the values with the expected type
@@ -125,6 +133,7 @@ std::size_t MixStringCommand::read_input(FileReader& reader, const CommandsColle
             file_input_error(translate("ERROR_NB_VALUES", {key, std::to_string(_n_values)}), filecontext);
         }
         _values.push_back(str_value);
+        _read_status = true;
         reader.move();
     }    
     std::size_t children_status = this->children_process(reader, collector);
@@ -155,6 +164,7 @@ template<typename T>
 std::size_t ValueCommand<T>::read_input(FileReader& reader, const CommandsCollector& collector) {
     std::string key = reader.get_word();
     if (!this->is_same_keyword(key)) return 1;
+    clear();
     reader.move();
 
     std::pair<T, bool> conversion = this->convert_value(key, reader);
@@ -165,6 +175,7 @@ std::size_t ValueCommand<T>::read_input(FileReader& reader, const CommandsCollec
     }
     
     _value = conversion.first;
+    this->_read_status = true;
     reader.move();
 
     std::size_t children_status = this->children_process(reader, collector);
@@ -175,6 +186,7 @@ template<typename T>
 std::size_t VectorCommand<T>::read_input(FileReader& reader, const CommandsCollector& collector) {
     std::string key = reader.get_word();
     if (!this->is_same_keyword(key)) return 1;
+    clear();
     reader.move();
 
     std::string str_value = reader.get_word();
@@ -183,6 +195,7 @@ std::size_t VectorCommand<T>::read_input(FileReader& reader, const CommandsColle
         std::pair<T, bool> conversion = this->convert_value(key, reader); 
         if (!conversion.second) break;
         _values.push_back(conversion.first);
+        this->_read_status = true;
         
         reader.move();
         str_value = reader.get_word();
@@ -196,6 +209,7 @@ template<typename T>
 std::size_t MixCommand<T>::read_input(FileReader& reader, const CommandsCollector& collector) {
     std::string key = reader.get_word();
     if (!this->is_same_keyword(key)) return 1;
+    clear();
     reader.move();
 
     // Read the number of expected values
@@ -217,6 +231,7 @@ std::size_t MixCommand<T>::read_input(FileReader& reader, const CommandsCollecto
             file_input_error(translate("ERROR_NB_VALUES", {key, std::to_string(_n_values)}), filecontext);
         }
         _values.push_back(conversion.first);
+        this->_read_status = true;
         reader.move();
     }
     
@@ -317,6 +332,7 @@ std::vector<std::size_t> TimeStepCommand::split_sequence(const std::string& sequ
 std::size_t TimeStepCommand::read_input(FileReader& reader, const CommandsCollector& collector) {
     std::string key = reader.get_word();
     if (!this->is_same_keyword(key)) return 1;
+    clear();    
     reader.move();
 
     std::string str_value = reader.get_word();
@@ -340,6 +356,7 @@ std::size_t TimeStepCommand::read_input(FileReader& reader, const CommandsCollec
         std::string filecontext = reader.context_error();
         file_input_error(translate("ERROR_UNREADABLE_TIMESTEP"), filecontext);
     }
+    _read_status = true;
 
     std::size_t children_status = this->children_process(reader, collector);
     return 0;

@@ -16,7 +16,6 @@ namespace adata {
 
             /// @brief Initialize the object with the values read from the input file
             /// @param command values read from the input file
-            /// @param reader object used to read the input file
             void init(std::shared_ptr<abase::BaseCommand> command);
 
             /// @brief Verify if the object is correctly initialized

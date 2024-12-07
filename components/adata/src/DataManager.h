@@ -2,6 +2,7 @@
 
 #include "ProblemDescription.h"
 #include "ProblemTorsor.h"
+#include "ProblemLoadstep.h"
 
 namespace adata {
 
@@ -19,6 +20,7 @@ namespace adata {
         protected:
             ProblemDescription description;
             ProblemTorsor torsor;
+            std::vector<ProblemLoadstep> loadsteps;
         /*
         protected:
             pb_fem_interface fem_interface;

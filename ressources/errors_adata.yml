@@ -15,3 +15,11 @@
   CODE_EDITION_UNKNOWN:
     en: "Unknown edition '{0}' for code '{1}' !"
     fr: "Édition inconnue '{0}' pour le code '{1}' !"
+
+  PRESSURE_CARDS_VALUES_MISMATCH:
+    en: "Mismatch between numbers of pressure cards '{0}' and pressure values '{1}' !"
+    fr: "Incohérence entre le nombre de cartes de pression '{0}' et le nombre de valeurs de pression '{1}' !"
+
+  MISMATCH_COEFFICIENTS:
+    en: "Mismatch with external loads coefficients: expected values '{0}' or '{1}' !"
+    fr: "Incohérence avec les coefficients pour les efforts externes : valeurs attendues '{0}' ou '{1}' !"

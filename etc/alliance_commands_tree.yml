@@ -54,13 +54,13 @@ LOADSTEP:
     KH:
       keys: {"fr": ["kh", "kh"], "en": ["kh", "kh"]}
       type: real
+  
+  EF:
+    keys: {"fr": ["ef", "effort"], "en": ["ef", "stress"]}
+    type: real_array
 
   FT:
     keys: {"fr": ["ft", "ftotal"], "en": ["ft", "load"]}
-    type: real_array
-
-  EF:
-    keys: {"fr": ["ef", "effort"], "en": ["ef", "stress"]}
     type: real_array
 
 TRANSIENT:
