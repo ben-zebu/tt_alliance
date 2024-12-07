@@ -7,13 +7,22 @@ using namespace adata;
 
 void DataManager::set_data(std::shared_ptr<abase::BaseCommand> command, std::string filecontext) {
     std::string name = command->get_name();
+
     if (name == "CODE") {
         description.init(command);
         description.verify(filecontext);
     }
+
     if (name == "TORSOR") {
         torsor.init(command);
         torsor.verify(filecontext);
+    }
+    
+    if (name == "LOADSTEP") {
+        ProblemLoadstep loadstep;
+        loadstep.init(command, torsor.cards.size());
+        loadstep.verify(filecontext);
+        loadsteps.push_back(loadstep);
     }
 }
 
