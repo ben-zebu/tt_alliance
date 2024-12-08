@@ -7,7 +7,7 @@
 namespace abase {
 
 
-// ErrorManager Class Definition
+/// @brief ErrorManager Class Definition
 class ErrorManager {
     private:
         /// @brief Private constructor for Singleton Pattern

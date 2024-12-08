@@ -7,6 +7,7 @@
 
 namespace abase {
 
+    /// @class FileReader
     /// @brief Provides utility functions for filtering lines of text.
     ///
     /// The FileLineFilter class contains static methods for performing common text filtering operations,

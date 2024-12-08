@@ -7,62 +7,66 @@
 
 #include "FileReader.h"
 
-/**
- * @brief Command system for input file processing
- *
- * This namespace contains a hierarchical command system for processing input files.
- * It provides base classes and specialized command types for different data handling needs.
- *
- * The command hierarchy consists of:
- * - BaseCommand: Abstract base class for all commands
- * - CompositeCommand: Intermediate class supporting child commands
- * - SingleCommand: Command for handling string values
- * - StringCommand: Command for handling single string values
- * - VectorStringCommand: Command for handling vectors of string values
- * - MixStringCommand: Command for handling a fixed number of string values
- * - NumericCommand<T>: Template command for handling numerical values
- * - ValueCommand<T>: Template command for handling single numerical values of type T
- * - VectorCommand<T>: Template command for handling vectors of numerical values of type T
- * - MixCommand<T>: Template command for handling a fixed number of numerical values of type T
- * - TimeStepCommand: Command for handling time steps
- *
- * Key features:
- * - Hierarchical command structure
- * - Support for command translations
- * - Type-safe value handling through templates
- * - Flexible input file processing
- *
- * Each command type serves a specific purpose:
- * - BaseCommand: Provides core functionality and interface
- * - CompositeCommand: Manages child commands and their processing
- * - SingleCommand: Handles string-based commands without values
- * - StringCommand: Processes single string values
- * - VectorStringCommand: Manages arrays/vectors of string values
- * - MixStringCommand: Handles a fixed number of string values
- * - NumericCommand<T>: Provides numerical value conversion support
- * - ValueCommand<T>: Processes single numerical values of any type
- * - VectorCommand<T>: Manages arrays/vectors of numerical values
- * - MixCommand<T>: Handles a fixed number of numerical values
- * - TimeStepCommand: Processes time steps
- *
- * Common usage:
- * @code
- * auto cmd = std::make_shared<SingleCommand>();
- * cmd->set_name("command_name");
- * cmd->read_input(reader);
- * @endcode
- *
- * @note All commands support nested hierarchies through the CompositeCommand base
- * @note Translation support is built into the base command level
- *
- * @see FileReader
- * @see BaseCommand
- * @see CompositeCommand
- */
+
 namespace abase {
+
+    /**
+     * @brief Command system for input file processing
+     *
+     * This namespace contains a hierarchical command system for processing input files.
+     * It provides base classes and specialized command types for different data handling needs.
+     *
+     * The command hierarchy consists of:
+     * - BaseCommand: Abstract base class for all commands
+     * - CompositeCommand: Intermediate class supporting child commands
+     * - SingleCommand: Command for handling string values
+     * - StringCommand: Command for handling single string values
+     * - VectorStringCommand: Command for handling vectors of string values
+     * - MixStringCommand: Command for handling a fixed number of string values
+     * - NumericCommand<T>: Template command for handling numerical values
+     * - ValueCommand<T>: Template command for handling single numerical values of type T
+     * - VectorCommand<T>: Template command for handling vectors of numerical values of type T
+     * - MixCommand<T>: Template command for handling a fixed number of numerical values of type T
+     * - TimeStepCommand: Command for handling time steps
+     *
+     * Key features:
+     * - Hierarchical command structure
+     * - Support for command translations
+     * - Type-safe value handling through templates
+     * - Flexible input file processing
+     *
+     * Each command type serves a specific purpose:
+     * - BaseCommand: Provides core functionality and interface
+     * - CompositeCommand: Manages child commands and their processing
+     * - SingleCommand: Handles string-based commands without values
+     * - StringCommand: Processes single string values
+     * - VectorStringCommand: Manages arrays/vectors of string values
+     * - MixStringCommand: Handles a fixed number of string values
+     * - NumericCommand<T>: Provides numerical value conversion support
+     * - ValueCommand<T>: Processes single numerical values of any type
+     * - VectorCommand<T>: Manages arrays/vectors of numerical values
+     * - MixCommand<T>: Handles a fixed number of numerical values
+     * - TimeStepCommand: Processes time steps
+     *
+     * Common usage:
+     * @code
+     * auto cmd = std::make_shared<SingleCommand>();
+     * cmd->set_name("command_name");
+     * cmd->read_input(reader);
+     * @endcode
+     *
+     * @note All commands support nested hierarchies through the CompositeCommand base
+     * @note Translation support is built into the base command level
+     *
+     * @see FileReader
+     * @see BaseCommand
+     * @see CompositeCommand
+     */
+
 
     class CommandsCollector;
 
+    /// @class BaseCommand
     /// @brief Base class for all commands
     class BaseCommand {
         protected:
@@ -139,6 +143,7 @@ namespace abase {
 
     };
 
+    /// @class CompositeCommand
     /// @brief Command class used to add children of the current command
     class CompositeCommand : public BaseCommand {
         protected:
@@ -167,6 +172,7 @@ namespace abase {
 
     };
 
+    /// @class SingleCommand
     /// @brief Command without value
     class SingleCommand : public CompositeCommand {
         protected :
@@ -190,6 +196,7 @@ namespace abase {
     // Classes for string values
     //
 
+    /// @class StringCommand
     /// @brief Command used to read a string value from the input file
     class StringCommand : public CompositeCommand {
         protected :
@@ -211,6 +218,7 @@ namespace abase {
 
     };
 
+    /// @class VectorStringCommand
     /// @brief Command used to read a list of string values from the input file
     class VectorStringCommand : public CompositeCommand {
         protected :
@@ -232,6 +240,7 @@ namespace abase {
 
     };
 
+    /// @class MixStringCommand
     /// @brief Command used to read a fixed number of string values from the input file
     class MixStringCommand : public CompositeCommand {
         protected :
@@ -259,6 +268,7 @@ namespace abase {
     // Template class for numerical values
     //
 
+    /// @class NumericCommand
     /// @brief Virtual class used to support numerical values conversion for its child classes
     template<typename T>
     class NumericCommand : public CompositeCommand {
@@ -271,6 +281,7 @@ namespace abase {
 
     };
 
+    /// @class ValueCommand
     /// @brief Class used to read a numerical value from the input file
     template<typename T>
     class ValueCommand : public NumericCommand<T> {
@@ -293,6 +304,7 @@ namespace abase {
 
     };
 
+    /// @class VectorCommand
     /// @brief Class used to read a list of numerical values from the input file
     template<typename T>
     class VectorCommand : public NumericCommand<T> {
@@ -314,6 +326,7 @@ namespace abase {
             void get_values(std::vector<T>& values) const override { if (this->_read_status) values = _values; }
     };
 
+    /// @class MixCommand
     /// @brief Class used to read a fixed number of numerical values from the input file
     template<typename T>
     class MixCommand : public NumericCommand<T> {
@@ -337,6 +350,7 @@ namespace abase {
             void get_values(std::vector<T>& values) const override { if (this->_read_status) values = _values; }
     };
 
+    /// @class TimeStepCommand
     /// @brief Class used to read time steps from the input file
     class TimeStepCommand : public CompositeCommand {
         private:
@@ -372,12 +386,22 @@ namespace abase {
     };
 
     namespace {
+        /// @brief Get the value of a child command
+        /// @tparam T type of the value 
+        /// @param command main command
+        /// @param child_name child command name
+        /// @param value value associated to the child command
         template<typename T>
         void get_child_value(std::shared_ptr<abase::BaseCommand> command, const std::string& child_name, T& value) {
             auto sub = command->get_child(child_name);
             if (sub) sub->get_value(value);
         }
 
+        /// @brief Get a vector of values from a child command
+        /// @tparam T type of the values
+        /// @param command main command
+        /// @param child_name child command name
+        /// @param values vector of values associated to the child command
         template<typename T>
         void get_child_values(std::shared_ptr<abase::BaseCommand> command, const std::string& child_name, std::vector<T>& values) {
             auto sub = command->get_child(child_name);

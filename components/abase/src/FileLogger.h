@@ -5,6 +5,9 @@
 #include <string>
 
 namespace abase {
+
+    /// @class FileLogger
+    /// @brief Class used to log messages in a file
     class FileLogger {
         private:
             /// @brief output file stream
