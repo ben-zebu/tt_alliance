@@ -160,7 +160,6 @@
 <dt class="sig sig-object cpp" id="_CPPv45abase">
 <span id="_CPPv35abase"></span><span id="_CPPv25abase"></span><span class="target" id="namespaceabase"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">abase</span></span></span><a class="headerlink" href="#_CPPv45abase" title="Link to this definition"></a><br /></dt>
 <dd><p>Header file containing file system operations and path manipulation utilities. </p>
-<p>Command system for input file processing.</p>
 <p>This header provides a set of functions to:<ul class="simple">
 <li><p>Check file permissions (readable/writable)</p></li>
 <li><p>Manipulate file paths (splitting, getting executable paths)</p></li>
@@ -175,69 +174,6 @@
 </pre></div>
 </div>
 </p>
-<p>This namespace contains a hierarchical command system for processing input files. It provides base classes and specialized command types for different data handling needs.</p>
-<p>The command hierarchy consists of:<ul class="simple">
-<li><p><a class="reference internal" href="#classabase_1_1BaseCommand"><span class="std std-ref">BaseCommand</span></a>: Abstract base class for all commands</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1CompositeCommand"><span class="std std-ref">CompositeCommand</span></a>: Intermediate class supporting child commands</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1SingleCommand"><span class="std std-ref">SingleCommand</span></a>: Command for handling string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1StringCommand"><span class="std std-ref">StringCommand</span></a>: Command for handling single string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1VectorStringCommand"><span class="std std-ref">VectorStringCommand</span></a>: Command for handling vectors of string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1MixStringCommand"><span class="std std-ref">MixStringCommand</span></a>: Command for handling a fixed number of string values</p></li>
-<li><p>NumericCommand&lt;T&gt;: Template command for handling numerical values</p></li>
-<li><p>ValueCommand&lt;T&gt;: Template command for handling single numerical values of type T</p></li>
-<li><p>VectorCommand&lt;T&gt;: Template command for handling vectors of numerical values of type T</p></li>
-<li><p>MixCommand&lt;T&gt;: Template command for handling a fixed number of numerical values of type T</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1TimeStepCommand"><span class="std std-ref">TimeStepCommand</span></a>: Command for handling time steps</p></li>
-</ul>
-</p>
-<p>Key features:<ul class="simple">
-<li><p>Hierarchical command structure</p></li>
-<li><p>Support for command translations</p></li>
-<li><p>Type-safe value handling through templates</p></li>
-<li><p>Flexible input file processing</p></li>
-</ul>
-</p>
-<p>Each command type serves a specific purpose:<ul class="simple">
-<li><p><a class="reference internal" href="#classabase_1_1BaseCommand"><span class="std std-ref">BaseCommand</span></a>: Provides core functionality and interface</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1CompositeCommand"><span class="std std-ref">CompositeCommand</span></a>: Manages child commands and their processing</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1SingleCommand"><span class="std std-ref">SingleCommand</span></a>: Handles string-based commands without values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1StringCommand"><span class="std std-ref">StringCommand</span></a>: Processes single string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1VectorStringCommand"><span class="std std-ref">VectorStringCommand</span></a>: Manages arrays/vectors of string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1MixStringCommand"><span class="std std-ref">MixStringCommand</span></a>: Handles a fixed number of string values</p></li>
-<li><p>NumericCommand&lt;T&gt;: Provides numerical value conversion support</p></li>
-<li><p>ValueCommand&lt;T&gt;: Processes single numerical values of any type</p></li>
-<li><p>VectorCommand&lt;T&gt;: Manages arrays/vectors of numerical values</p></li>
-<li><p>MixCommand&lt;T&gt;: Handles a fixed number of numerical values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1TimeStepCommand"><span class="std std-ref">TimeStepCommand</span></a>: Processes time steps</p></li>
-</ul>
-</p>
-<p>Common usage: <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">SingleCommand</span><span class="o">&gt;</span><span class="p">();</span>
-<span class="n">cmd</span><span class="o">-&gt;</span><span class="n">set_name</span><span class="p">(</span><span class="s">&quot;command_name&quot;</span><span class="p">);</span>
-<span class="n">cmd</span><span class="o">-&gt;</span><span class="n">read_input</span><span class="p">(</span><span class="n">reader</span><span class="p">);</span>
-</pre></div>
-</div>
-</p>
-<p><div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classabase_1_1FileReader"><span class="std std-ref">FileReader</span></a></p>
-</div>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classabase_1_1BaseCommand"><span class="std std-ref">BaseCommand</span></a></p>
-</div>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classabase_1_1CompositeCommand"><span class="std std-ref">CompositeCommand</span></a></p>
-</div>
-</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>All commands support nested hierarchies through the <a class="reference internal" href="#classabase_1_1CompositeCommand"><span class="std std-ref">CompositeCommand</span></a> base </p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Translation support is built into the base command level</p>
-</div>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N5abase11BaseCommandE">
 <span id="_CPPv3N5abase11BaseCommandE"></span><span id="_CPPv2N5abase11BaseCommandE"></span><span id="abase::BaseCommand"></span><span class="target" id="classabase_1_1BaseCommand"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">BaseCommand</span></span></span><a class="headerlink" href="#_CPPv4N5abase11BaseCommandE" title="Link to this definition"></a><br /></dt>
@@ -357,18 +293,123 @@
 </dl>
 </dd></dl>
 
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5abase11BaseCommand9get_valueERNSt6stringE">
+<span id="_CPPv3NK5abase11BaseCommand9get_valueERNSt6stringE"></span><span id="_CPPv2NK5abase11BaseCommand9get_valueERNSt6stringE"></span><span id="abase::BaseCommand::get_value__ssRC"></span><span class="target" id="classabase_1_1BaseCommand_1a35e7715b668aaed363d8c183e077ca6f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_value</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5abase11BaseCommand9get_valueERNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Return a string value of the command (pure virtual) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – returned value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5abase11BaseCommand9get_valueERNSt6size_tE">
+<span id="_CPPv3NK5abase11BaseCommand9get_valueERNSt6size_tE"></span><span id="_CPPv2NK5abase11BaseCommand9get_valueERNSt6size_tE"></span><span id="abase::BaseCommand::get_value__std::sRC"></span><span class="target" id="classabase_1_1BaseCommand_1ad53ccbfbb51ed53d71c9781f180baecd"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_value</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5abase11BaseCommand9get_valueERNSt6size_tE" title="Link to this definition"></a><br /></dt>
+<dd><p>Return a size_t value of the command (pure virtual) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – returned value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5abase11BaseCommand9get_valueERi">
+<span id="_CPPv3NK5abase11BaseCommand9get_valueERi"></span><span id="_CPPv2NK5abase11BaseCommand9get_valueERi"></span><span id="abase::BaseCommand::get_value__iRC"></span><span class="target" id="classabase_1_1BaseCommand_1a6cbc8c90cb7737ac93c37f3ae0ecf5a8"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_value</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5abase11BaseCommand9get_valueERi" title="Link to this definition"></a><br /></dt>
+<dd><p>Return a integer value of the command (pure virtual) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – returned value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5abase11BaseCommand9get_valueERd">
+<span id="_CPPv3NK5abase11BaseCommand9get_valueERd"></span><span id="_CPPv2NK5abase11BaseCommand9get_valueERd"></span><span id="abase::BaseCommand::get_value__doubleRC"></span><span class="target" id="classabase_1_1BaseCommand_1acc4b46d520c78fa94beab136d1619693"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_value</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5abase11BaseCommand9get_valueERd" title="Link to this definition"></a><br /></dt>
+<dd><p>Return a double value of the command (pure virtual) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – returned value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5abase11BaseCommand10get_valuesERNSt6vectorINSt6stringEEE">
+<span id="_CPPv3NK5abase11BaseCommand10get_valuesERNSt6vectorINSt6stringEEE"></span><span id="_CPPv2NK5abase11BaseCommand10get_valuesERNSt6vectorINSt6stringEEE"></span><span id="abase::BaseCommand::get_values__std::vector:ss:RC"></span><span class="target" id="classabase_1_1BaseCommand_1a5c4c82be8c1c134b6a17f110bc9531ea"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_values</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">values</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5abase11BaseCommand10get_valuesERNSt6vectorINSt6stringEEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Return string values of the command (pure virtual) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – returned values </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5abase11BaseCommand10get_valuesERNSt6vectorINSt6size_tEEE">
+<span id="_CPPv3NK5abase11BaseCommand10get_valuesERNSt6vectorINSt6size_tEEE"></span><span id="_CPPv2NK5abase11BaseCommand10get_valuesERNSt6vectorINSt6size_tEEE"></span><span id="abase::BaseCommand::get_values__std::vector:std::s:RC"></span><span class="target" id="classabase_1_1BaseCommand_1aafabe9ac2447e52fdda62ec80715afda"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_values</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">values</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5abase11BaseCommand10get_valuesERNSt6vectorINSt6size_tEEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Return size_t values of the command (pure virtual) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – returned values </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5abase11BaseCommand10get_valuesERNSt6vectorIiEE">
+<span id="_CPPv3NK5abase11BaseCommand10get_valuesERNSt6vectorIiEE"></span><span id="_CPPv2NK5abase11BaseCommand10get_valuesERNSt6vectorIiEE"></span><span id="abase::BaseCommand::get_values__std::vector:i:RC"></span><span class="target" id="classabase_1_1BaseCommand_1a43b6aba47a6346b8bea13322e59b40f7"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_values</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">values</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5abase11BaseCommand10get_valuesERNSt6vectorIiEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Return integer values of the command (pure virtual) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – returned values </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5abase11BaseCommand10get_valuesERNSt6vectorIdEE">
+<span id="_CPPv3NK5abase11BaseCommand10get_valuesERNSt6vectorIdEE"></span><span id="_CPPv2NK5abase11BaseCommand10get_valuesERNSt6vectorIdEE"></span><span id="abase::BaseCommand::get_values__std::vector:double:RC"></span><span class="target" id="classabase_1_1BaseCommand_1aaec3101d1b52f5a3cd9720bbd888fa61"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_values</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">values</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5abase11BaseCommand10get_valuesERNSt6vectorIdEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Return double values of the command (pure virtual) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – returned values </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-functions">Protected Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase11BaseCommand5clearEv">
+<span id="_CPPv3N5abase11BaseCommand5clearEv"></span><span id="_CPPv2N5abase11BaseCommand5clearEv"></span><span id="abase::BaseCommand::clear"></span><span class="target" id="classabase_1_1BaseCommand_1ad3781aec876d7b43c81dd7569204427e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clear</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase11BaseCommand5clearEv" title="Link to this definition"></a><br /></dt>
+<dd><p>clear read data associated to the command </p>
+</dd></dl>
+
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N5abase11BaseCommand5_nameE">
 <span id="_CPPv3N5abase11BaseCommand5_nameE"></span><span id="_CPPv2N5abase11BaseCommand5_nameE"></span><span id="abase::BaseCommand::_name__ss"></span><span class="target" id="classabase_1_1BaseCommand_1aec9a6b8ba6c1ba6c2cdb7f8ce4a501e4"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_name</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><a class="headerlink" href="#_CPPv4N5abase11BaseCommand5_nameE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>command name </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N5abase11BaseCommand12translationsE">
 <span id="_CPPv3N5abase11BaseCommand12translationsE"></span><span id="_CPPv2N5abase11BaseCommand12translationsE"></span><span id="abase::BaseCommand::translations__std::unordered_map:ss.std::vector:ss::"></span><span class="target" id="classabase_1_1BaseCommand_1ab17c0565b7669c5ebe6743ca05f8ae95"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unordered_map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">translations</span></span></span><a class="headerlink" href="#_CPPv4N5abase11BaseCommand12translationsE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>command translations </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase11BaseCommand12_read_statusE">
+<span id="_CPPv3N5abase11BaseCommand12_read_statusE"></span><span id="_CPPv2N5abase11BaseCommand12_read_statusE"></span><span id="abase::BaseCommand::_read_status__b"></span><span class="target" id="classabase_1_1BaseCommand_1a906d3c14e6aa55e2368908a06db3ad24"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_read_status</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N5abase11BaseCommand12_read_statusE" title="Link to this definition"></a><br /></dt>
+<dd><p>read status </p>
+</dd></dl>
 
 </div>
 </dd></dl>
@@ -379,7 +420,7 @@
 <dd><div class="docutils container">
 <em>#include &lt;Commands.h&gt;</em></div>
 <p>Command class used to add children of the current command. </p>
-<p>Subclassed by <a class="reference internal" href="#classabase_1_1MixStringCommand"><span class="std std-ref">abase::MixStringCommand</span></a>, <a class="reference internal" href="#classabase_1_1NumericCommand"><span class="std std-ref">abase::NumericCommand&lt; T &gt;</span></a>, <a class="reference internal" href="#classabase_1_1SingleCommand"><span class="std std-ref">abase::SingleCommand</span></a>, <a class="reference internal" href="#classabase_1_1StringCommand"><span class="std std-ref">abase::StringCommand</span></a>, <a class="reference internal" href="#classabase_1_1TimeStepCommand"><span class="std std-ref">abase::TimeStepCommand</span></a>, <a class="reference internal" href="#classabase_1_1VectorStringCommand"><span class="std std-ref">abase::VectorStringCommand</span></a></p>
+<p>Subclassed by <a class="reference internal" href="#classabase_1_1MixStringCommand"><span class="std std-ref">abase::MixStringCommand</span></a>, <a class="reference internal" href="#classabase_1_1NumericCommand"><span class="std std-ref">abase::NumericCommand&lt; T &gt;</span></a>, <a class="reference internal" href="#classabase_1_1SingleCommand"><span class="std std-ref">abase::SingleCommand</span></a>, <a class="reference internal" href="#classabase_1_1StringCommand"><span class="std std-ref">abase::StringCommand</span></a>, <a class="reference internal" href="#classabase_1_1TableCommand"><span class="std std-ref">abase::TableCommand</span></a>, <a class="reference internal" href="#classabase_1_1TimeStepCommand"><span class="std std-ref">abase::TimeStepCommand</span></a>, <a class="reference internal" href="#classabase_1_1VectorStringCommand"><span class="std std-ref">abase::VectorStringCommand</span></a></p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
@@ -484,6 +525,35 @@
 </dl>
 </dd></dl>
 
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5abase13SingleCommand9get_valueERNSt6stringE">
+<span id="_CPPv3NK5abase13SingleCommand9get_valueERNSt6stringE"></span><span id="_CPPv2NK5abase13SingleCommand9get_valueERNSt6stringE"></span><span id="abase::SingleCommand::get_value__ssRC"></span><span class="target" id="classabase_1_1SingleCommand_1ab0e72af2b1e70139d2f3b5f7ac4fc0d7"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_value</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK5abase13SingleCommand9get_valueERNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the value of the command. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – value associated to the command </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-functions">Protected Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase13SingleCommand5clearEv">
+<span id="_CPPv3N5abase13SingleCommand5clearEv"></span><span id="_CPPv2N5abase13SingleCommand5clearEv"></span><span id="abase::SingleCommand::clear"></span><span class="target" id="classabase_1_1SingleCommand_1acbea55e5c6b868cd0c904be90210ed54"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clear</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase13SingleCommand5clearEv" title="Link to this definition"></a><br /></dt>
+<dd><p>clear read data associated to the command </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase13SingleCommand6_valueE">
+<span id="_CPPv3N5abase13SingleCommand6_valueE"></span><span id="_CPPv2N5abase13SingleCommand6_valueE"></span><span id="abase::SingleCommand::_value__ss"></span><span class="target" id="classabase_1_1SingleCommand_1a58bcca62a2f11b39f9885e004a1c6f97"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_value</span></span></span><a class="headerlink" href="#_CPPv4N5abase13SingleCommand6_valueE" title="Link to this definition"></a><br /></dt>
+<dd><p>keyword read from the input fila associated to the command </p>
+</dd></dl>
+
 </div>
 </dd></dl>
 
@@ -517,6 +587,26 @@
 <dd class="field-even"><p>a status code (0 for success and 1 for fail) </p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5abase13StringCommand9get_valueERNSt6stringE">
+<span id="_CPPv3NK5abase13StringCommand9get_valueERNSt6stringE"></span><span id="_CPPv2NK5abase13StringCommand9get_valueERNSt6stringE"></span><span id="abase::StringCommand::get_value__ssRC"></span><span class="target" id="classabase_1_1StringCommand_1aab762f49765827adc09d6d1c159473eb"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_value</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK5abase13StringCommand9get_valueERNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the value of the command. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – value associated to the command </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-functions">Protected Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase13StringCommand5clearEv">
+<span id="_CPPv3N5abase13StringCommand5clearEv"></span><span id="_CPPv2N5abase13StringCommand5clearEv"></span><span id="abase::StringCommand::clear"></span><span class="target" id="classabase_1_1StringCommand_1a8c751a3b310dfbf8288e505963f8dec4"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clear</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase13StringCommand5clearEv" title="Link to this definition"></a><br /></dt>
+<dd><p>clear read data associated to the command </p>
 </dd></dl>
 
 </div>
@@ -563,6 +653,26 @@
 </dl>
 </dd></dl>
 
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5abase19VectorStringCommand10get_valuesERNSt6vectorINSt6stringEEE">
+<span id="_CPPv3NK5abase19VectorStringCommand10get_valuesERNSt6vectorINSt6stringEEE"></span><span id="_CPPv2NK5abase19VectorStringCommand10get_valuesERNSt6vectorINSt6stringEEE"></span><span id="abase::VectorStringCommand::get_values__std::vector:ss:RC"></span><span class="target" id="classabase_1_1VectorStringCommand_1a56c6b3974fdee2c5d9d0841882bd65ea"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_values</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">values</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK5abase19VectorStringCommand10get_valuesERNSt6vectorINSt6stringEEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the values of the command. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>values</strong> – values associated to the command </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-functions">Protected Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase19VectorStringCommand5clearEv">
+<span id="_CPPv3N5abase19VectorStringCommand5clearEv"></span><span id="_CPPv2N5abase19VectorStringCommand5clearEv"></span><span id="abase::VectorStringCommand::clear"></span><span class="target" id="classabase_1_1VectorStringCommand_1ab42c5dbe91644c66bf8b028018e3b9d0"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clear</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase19VectorStringCommand5clearEv" title="Link to this definition"></a><br /></dt>
+<dd><p>clear read data associated to the command </p>
+</dd></dl>
+
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
@@ -605,6 +715,26 @@
 <dd class="field-even"><p>a status code (0 for success and 1 for fail) </p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5abase16MixStringCommand10get_valuesERNSt6vectorINSt6stringEEE">
+<span id="_CPPv3NK5abase16MixStringCommand10get_valuesERNSt6vectorINSt6stringEEE"></span><span id="_CPPv2NK5abase16MixStringCommand10get_valuesERNSt6vectorINSt6stringEEE"></span><span id="abase::MixStringCommand::get_values__std::vector:ss:RC"></span><span class="target" id="classabase_1_1MixStringCommand_1a2cc520f8fa1d029b09bb8a5985cd3d80"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_values</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">values</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK5abase16MixStringCommand10get_valuesERNSt6vectorINSt6stringEEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the values of the command. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>values</strong> – values associated to the command </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-functions">Protected Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase16MixStringCommand5clearEv">
+<span id="_CPPv3N5abase16MixStringCommand5clearEv"></span><span id="_CPPv2N5abase16MixStringCommand5clearEv"></span><span id="abase::MixStringCommand::clear"></span><span class="target" id="classabase_1_1MixStringCommand_1a4f2b1a559efeb8725c79d737aca5d054"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clear</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase16MixStringCommand5clearEv" title="Link to this definition"></a><br /></dt>
+<dd><p>clear read data associated to the command </p>
 </dd></dl>
 
 </div>
@@ -687,6 +817,26 @@
 </dl>
 </dd></dl>
 
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5abase12ValueCommand9get_valueER1T">
+<span id="_CPPv3NK5abase12ValueCommand9get_valueER1T"></span><span id="_CPPv2NK5abase12ValueCommand9get_valueER1T"></span><span id="abase::ValueCommand::get_value__TRC"></span><span class="target" id="classabase_1_1ValueCommand_1ad8c13db8da4fc05fcc23fbc6c10431dc"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_value</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN5abase12ValueCommandE" title="abase::ValueCommand::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK5abase12ValueCommand9get_valueER1T" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the value of the command. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – value associated to the command </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-functions">Protected Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase12ValueCommand5clearEv">
+<span id="_CPPv3N5abase12ValueCommand5clearEv"></span><span id="_CPPv2N5abase12ValueCommand5clearEv"></span><span id="abase::ValueCommand::clear"></span><span class="target" id="classabase_1_1ValueCommand_1aa79ee3a102ccdd5349e0ddfba7cac506"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clear</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase12ValueCommand5clearEv" title="Link to this definition"></a><br /></dt>
+<dd><p>clear read data associated to the command </p>
+</dd></dl>
+
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
@@ -731,6 +881,26 @@
 </dl>
 </dd></dl>
 
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5abase13VectorCommand10get_valuesERNSt6vectorI1TEE">
+<span id="_CPPv3NK5abase13VectorCommand10get_valuesERNSt6vectorI1TEE"></span><span id="_CPPv2NK5abase13VectorCommand10get_valuesERNSt6vectorI1TEE"></span><span id="abase::VectorCommand::get_values__std::vector:T:RC"></span><span class="target" id="classabase_1_1VectorCommand_1acac7131591ead3831fa56ceb3cea6c09"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_values</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN5abase13VectorCommandE" title="abase::VectorCommand::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">values</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK5abase13VectorCommand10get_valuesERNSt6vectorI1TEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the values of the command. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>values</strong> – values associated to the command </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-functions">Protected Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase13VectorCommand5clearEv">
+<span id="_CPPv3N5abase13VectorCommand5clearEv"></span><span id="_CPPv2N5abase13VectorCommand5clearEv"></span><span id="abase::VectorCommand::clear"></span><span class="target" id="classabase_1_1VectorCommand_1ab3b8c98c792380a61ca8d0c3061a4ff7"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clear</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase13VectorCommand5clearEv" title="Link to this definition"></a><br /></dt>
+<dd><p>clear read data associated to the command </p>
+</dd></dl>
+
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
@@ -773,6 +943,26 @@
 <dd class="field-even"><p>a status code (0 for success and 1 for fail) </p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5abase10MixCommand10get_valuesERNSt6vectorI1TEE">
+<span id="_CPPv3NK5abase10MixCommand10get_valuesERNSt6vectorI1TEE"></span><span id="_CPPv2NK5abase10MixCommand10get_valuesERNSt6vectorI1TEE"></span><span id="abase::MixCommand::get_values__std::vector:T:RC"></span><span class="target" id="classabase_1_1MixCommand_1ae2e4ecf38385b9cb53b1df9485653d77"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_values</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN5abase10MixCommandE" title="abase::MixCommand::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">values</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK5abase10MixCommand10get_valuesERNSt6vectorI1TEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the values of the command. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>values</strong> – values associated to the command </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-functions">Protected Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase10MixCommand5clearEv">
+<span id="_CPPv3N5abase10MixCommand5clearEv"></span><span id="_CPPv2N5abase10MixCommand5clearEv"></span><span id="abase::MixCommand::clear"></span><span class="target" id="classabase_1_1MixCommand_1a9f3dfe35da4a93c383ff893a8332dc87"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clear</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase10MixCommand5clearEv" title="Link to this definition"></a><br /></dt>
+<dd><p>clear read data associated to the command </p>
 </dd></dl>
 
 </div>
@@ -823,6 +1013,26 @@
 <dd class="field-even"><p>a status code (0 for success and 1 for fail) </p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5abase15TimeStepCommand10get_valuesERNSt6vectorINSt6size_tEEE">
+<span id="_CPPv3NK5abase15TimeStepCommand10get_valuesERNSt6vectorINSt6size_tEEE"></span><span id="_CPPv2NK5abase15TimeStepCommand10get_valuesERNSt6vectorINSt6size_tEEE"></span><span id="abase::TimeStepCommand::get_values__std::vector:std::s:RC"></span><span class="target" id="classabase_1_1TimeStepCommand_1a89227e6f2ed232da04a9f2d145c07f76"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_values</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">values</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK5abase15TimeStepCommand10get_valuesERNSt6vectorINSt6size_tEEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the values of the command. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>values</strong> – values associated to the command </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-functions">Protected Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase15TimeStepCommand5clearEv">
+<span id="_CPPv3N5abase15TimeStepCommand5clearEv"></span><span id="_CPPv2N5abase15TimeStepCommand5clearEv"></span><span id="abase::TimeStepCommand::clear"></span><span class="target" id="classabase_1_1TimeStepCommand_1adc8344582883898f2ddb3e4e9af6f78b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clear</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase15TimeStepCommand5clearEv" title="Link to this definition"></a><br /></dt>
+<dd><p>clear read data associated to the command </p>
 </dd></dl>
 
 </div>
@@ -876,6 +1086,118 @@
 </div>
 </dd></dl>
 
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase12TableCommandE">
+<span id="_CPPv3N5abase12TableCommandE"></span><span id="_CPPv2N5abase12TableCommandE"></span><span id="abase::TableCommand"></span><span class="target" id="classabase_1_1TableCommand"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TableCommand</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv45abase" title="abase"><span class="n"><span class="pre">abase</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5abase16CompositeCommandE" title="abase::CompositeCommand"><span class="n"><span class="pre">CompositeCommand</span></span></a><a class="headerlink" href="#_CPPv4N5abase12TableCommandE" title="Link to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;Commands.h&gt;</em></div>
+<p>Class used to read a table from the input file. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase12TableCommand12TableCommandEv">
+<span id="_CPPv3N5abase12TableCommand12TableCommandEv"></span><span id="_CPPv2N5abase12TableCommand12TableCommandEv"></span><span id="abase::TableCommand::TableCommand"></span><span class="target" id="classabase_1_1TableCommand_1a279c8ed76b200a005c0992d90121fd7d"></span><span class="sig-name descname"><span class="n"><span class="pre">TableCommand</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5abase12TableCommand12TableCommandEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase12TableCommandD0Ev">
+<span id="_CPPv3N5abase12TableCommandD0Ev"></span><span id="_CPPv2N5abase12TableCommandD0Ev"></span><span id="abase::TableCommand::~TableCommand"></span><span class="target" id="classabase_1_1TableCommand_1a4b4864008693964c93593cc222906ea0"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~TableCommand</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5abase12TableCommandD0Ev" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase12TableCommand10read_inputER10FileReaderRK17CommandsCollector">
+<span id="_CPPv3N5abase12TableCommand10read_inputER10FileReaderRK17CommandsCollector"></span><span id="_CPPv2N5abase12TableCommand10read_inputER10FileReaderRK17CommandsCollector"></span><span id="abase::TableCommand::read_input__FileReaderR.CommandsCollectorCR"></span><span class="target" id="classabase_1_1TableCommand_1a59a5683b71f1fcf4024447f5b0102ef5"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">read_input</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N5abase10FileReaderE" title="abase::FileReader"><span class="n"><span class="pre">FileReader</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">reader</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5abase17CommandsCollectorE" title="abase::CommandsCollector"><span class="n"><span class="pre">CommandsCollector</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">collector</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N5abase12TableCommand10read_inputER10FileReaderRK17CommandsCollector" title="Link to this definition"></a><br /></dt>
+<dd><p>Read input file and set the value of the command. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>reader</strong> – file reader associated to the input file </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a status code (0 for success and 1 for fail) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5abase12TableCommand9get_valueERNSt6stringE">
+<span id="_CPPv3NK5abase12TableCommand9get_valueERNSt6stringE"></span><span id="_CPPv2NK5abase12TableCommand9get_valueERNSt6stringE"></span><span id="abase::TableCommand::get_value__ssRC"></span><span class="target" id="classabase_1_1TableCommand_1abb22be89421a52b8595bb4254dfc320e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_value</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK5abase12TableCommand9get_valueERNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the table name. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> – name of the table </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5abase12TableCommand10get_valuesERNSt6vectorIdEE">
+<span id="_CPPv3NK5abase12TableCommand10get_valuesERNSt6vectorIdEE"></span><span id="_CPPv2NK5abase12TableCommand10get_valuesERNSt6vectorIdEE"></span><span id="abase::TableCommand::get_values__std::vector:double:RC"></span><span class="target" id="classabase_1_1TableCommand_1ac454723859a7f0c14404da18e60b0d8e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_values</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">values</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK5abase12TableCommand10get_valuesERNSt6vectorIdEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the values of the command. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>values</strong> – values associated to the command </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-functions">Protected Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase12TableCommand5clearEv">
+<span id="_CPPv3N5abase12TableCommand5clearEv"></span><span id="_CPPv2N5abase12TableCommand5clearEv"></span><span id="abase::TableCommand::clear"></span><span class="target" id="classabase_1_1TableCommand_1ac6a945c0ad92066e12f52338bfe7a331"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clear</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase12TableCommand5clearEv" title="Link to this definition"></a><br /></dt>
+<dd><p>clear read data associated to the command </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase12TableCommand11_table_nameE">
+<span id="_CPPv3N5abase12TableCommand11_table_nameE"></span><span id="_CPPv2N5abase12TableCommand11_table_nameE"></span><span id="abase::TableCommand::_table_name__ss"></span><span class="target" id="classabase_1_1TableCommand_1a0ce121213aef5d5777273425bd6c3b0e"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_table_name</span></span></span><a class="headerlink" href="#_CPPv4N5abase12TableCommand11_table_nameE" title="Link to this definition"></a><br /></dt>
+<dd><p>table name </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase12TableCommand7_valuesE">
+<span id="_CPPv3N5abase12TableCommand7_valuesE"></span><span id="_CPPv2N5abase12TableCommand7_valuesE"></span><span id="abase::TableCommand::_values__std::vector:double:"></span><span class="target" id="classabase_1_1TableCommand_1ac91bd488044c7d2de27b2020e960aa33"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_values</span></span></span><a class="headerlink" href="#_CPPv4N5abase12TableCommand7_valuesE" title="Link to this definition"></a><br /></dt>
+<dd><p>vector of time steps rank. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-functions">Private Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase12TableCommand7convertERKNSt6vectorINSt6stringEEERb">
+<span id="_CPPv3N5abase12TableCommand7convertERKNSt6vectorINSt6stringEEERb"></span><span id="_CPPv2N5abase12TableCommand7convertERKNSt6vectorINSt6stringEEERb"></span><span id="abase::TableCommand::convert__std::vector:ss:CR.bR"></span><span class="target" id="classabase_1_1TableCommand_1a4a71b882936115f85a8878a58c5468a3"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">convert</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">values</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">status</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase12TableCommand7convertERKNSt6vectorINSt6stringEEERb" title="Link to this definition"></a><br /></dt>
+<dd><p>Convert table values from a sequence of strings. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>values</strong> – sequence of strings </p></li>
+<li><p><strong>status</strong> – status of the conversion </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase12TableCommand14split_sequenceERKNSt6stringERb">
+<span id="_CPPv3N5abase12TableCommand14split_sequenceERKNSt6stringERb"></span><span id="_CPPv2N5abase12TableCommand14split_sequenceERKNSt6stringERb"></span><span id="abase::TableCommand::split_sequence__ssCR.bR"></span><span class="target" id="classabase_1_1TableCommand_1a10a11541640c48663d99761ccd7d671b"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">split_sequence</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sequence</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">status</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase12TableCommand14split_sequenceERKNSt6stringERb" title="Link to this definition"></a><br /></dt>
+<dd><p>Extract all time steps from a sequence of strings. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sequence</strong> – extracted sequence </p></li>
+<li><p><strong>status</strong> – status of the extraction </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
 </dd></dl>
 
 </section>
@@ -885,7 +1207,6 @@
 <dt class="sig sig-object cpp">
 <span class="target" id="namespaceabase"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">abase</span></span></span><br /></dt>
 <dd><p>Header file containing file system operations and path manipulation utilities. </p>
-<p>Command system for input file processing.</p>
 <p>This header provides a set of functions to:<ul class="simple">
 <li><p>Check file permissions (readable/writable)</p></li>
 <li><p>Manipulate file paths (splitting, getting executable paths)</p></li>
@@ -900,69 +1221,6 @@
 </pre></div>
 </div>
 </p>
-<p>This namespace contains a hierarchical command system for processing input files. It provides base classes and specialized command types for different data handling needs.</p>
-<p>The command hierarchy consists of:<ul class="simple">
-<li><p><a class="reference internal" href="#classabase_1_1BaseCommand"><span class="std std-ref">BaseCommand</span></a>: Abstract base class for all commands</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1CompositeCommand"><span class="std std-ref">CompositeCommand</span></a>: Intermediate class supporting child commands</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1SingleCommand"><span class="std std-ref">SingleCommand</span></a>: Command for handling string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1StringCommand"><span class="std std-ref">StringCommand</span></a>: Command for handling single string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1VectorStringCommand"><span class="std std-ref">VectorStringCommand</span></a>: Command for handling vectors of string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1MixStringCommand"><span class="std std-ref">MixStringCommand</span></a>: Command for handling a fixed number of string values</p></li>
-<li><p>NumericCommand&lt;T&gt;: Template command for handling numerical values</p></li>
-<li><p>ValueCommand&lt;T&gt;: Template command for handling single numerical values of type T</p></li>
-<li><p>VectorCommand&lt;T&gt;: Template command for handling vectors of numerical values of type T</p></li>
-<li><p>MixCommand&lt;T&gt;: Template command for handling a fixed number of numerical values of type T</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1TimeStepCommand"><span class="std std-ref">TimeStepCommand</span></a>: Command for handling time steps</p></li>
-</ul>
-</p>
-<p>Key features:<ul class="simple">
-<li><p>Hierarchical command structure</p></li>
-<li><p>Support for command translations</p></li>
-<li><p>Type-safe value handling through templates</p></li>
-<li><p>Flexible input file processing</p></li>
-</ul>
-</p>
-<p>Each command type serves a specific purpose:<ul class="simple">
-<li><p><a class="reference internal" href="#classabase_1_1BaseCommand"><span class="std std-ref">BaseCommand</span></a>: Provides core functionality and interface</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1CompositeCommand"><span class="std std-ref">CompositeCommand</span></a>: Manages child commands and their processing</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1SingleCommand"><span class="std std-ref">SingleCommand</span></a>: Handles string-based commands without values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1StringCommand"><span class="std std-ref">StringCommand</span></a>: Processes single string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1VectorStringCommand"><span class="std std-ref">VectorStringCommand</span></a>: Manages arrays/vectors of string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1MixStringCommand"><span class="std std-ref">MixStringCommand</span></a>: Handles a fixed number of string values</p></li>
-<li><p>NumericCommand&lt;T&gt;: Provides numerical value conversion support</p></li>
-<li><p>ValueCommand&lt;T&gt;: Processes single numerical values of any type</p></li>
-<li><p>VectorCommand&lt;T&gt;: Manages arrays/vectors of numerical values</p></li>
-<li><p>MixCommand&lt;T&gt;: Handles a fixed number of numerical values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1TimeStepCommand"><span class="std std-ref">TimeStepCommand</span></a>: Processes time steps</p></li>
-</ul>
-</p>
-<p>Common usage: <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">SingleCommand</span><span class="o">&gt;</span><span class="p">();</span>
-<span class="n">cmd</span><span class="o">-&gt;</span><span class="n">set_name</span><span class="p">(</span><span class="s">&quot;command_name&quot;</span><span class="p">);</span>
-<span class="n">cmd</span><span class="o">-&gt;</span><span class="n">read_input</span><span class="p">(</span><span class="n">reader</span><span class="p">);</span>
-</pre></div>
-</div>
-</p>
-<p><div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classabase_1_1FileReader"><span class="std std-ref">FileReader</span></a></p>
-</div>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classabase_1_1BaseCommand"><span class="std std-ref">BaseCommand</span></a></p>
-</div>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classabase_1_1CompositeCommand"><span class="std std-ref">CompositeCommand</span></a></p>
-</div>
-</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>All commands support nested hierarchies through the <a class="reference internal" href="#classabase_1_1CompositeCommand"><span class="std std-ref">CompositeCommand</span></a> base </p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Translation support is built into the base command level</p>
-</div>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N5abase17CommandsCollectorE">
 <span id="_CPPv3N5abase17CommandsCollectorE"></span><span id="_CPPv2N5abase17CommandsCollectorE"></span><span id="abase::CommandsCollector"></span><span class="target" id="classabase_1_1CommandsCollector"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CommandsCollector</span></span></span><a class="headerlink" href="#_CPPv4N5abase17CommandsCollectorE" title="Link to this definition"></a><br /></dt>
@@ -1103,7 +1361,6 @@
 <dt class="sig sig-object cpp">
 <span class="target" id="namespaceabase"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">abase</span></span></span><br /></dt>
 <dd><p>Header file containing file system operations and path manipulation utilities. </p>
-<p>Command system for input file processing.</p>
 <p>This header provides a set of functions to:<ul class="simple">
 <li><p>Check file permissions (readable/writable)</p></li>
 <li><p>Manipulate file paths (splitting, getting executable paths)</p></li>
@@ -1118,69 +1375,6 @@
 </pre></div>
 </div>
 </p>
-<p>This namespace contains a hierarchical command system for processing input files. It provides base classes and specialized command types for different data handling needs.</p>
-<p>The command hierarchy consists of:<ul class="simple">
-<li><p><a class="reference internal" href="#classabase_1_1BaseCommand"><span class="std std-ref">BaseCommand</span></a>: Abstract base class for all commands</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1CompositeCommand"><span class="std std-ref">CompositeCommand</span></a>: Intermediate class supporting child commands</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1SingleCommand"><span class="std std-ref">SingleCommand</span></a>: Command for handling string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1StringCommand"><span class="std std-ref">StringCommand</span></a>: Command for handling single string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1VectorStringCommand"><span class="std std-ref">VectorStringCommand</span></a>: Command for handling vectors of string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1MixStringCommand"><span class="std std-ref">MixStringCommand</span></a>: Command for handling a fixed number of string values</p></li>
-<li><p>NumericCommand&lt;T&gt;: Template command for handling numerical values</p></li>
-<li><p>ValueCommand&lt;T&gt;: Template command for handling single numerical values of type T</p></li>
-<li><p>VectorCommand&lt;T&gt;: Template command for handling vectors of numerical values of type T</p></li>
-<li><p>MixCommand&lt;T&gt;: Template command for handling a fixed number of numerical values of type T</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1TimeStepCommand"><span class="std std-ref">TimeStepCommand</span></a>: Command for handling time steps</p></li>
-</ul>
-</p>
-<p>Key features:<ul class="simple">
-<li><p>Hierarchical command structure</p></li>
-<li><p>Support for command translations</p></li>
-<li><p>Type-safe value handling through templates</p></li>
-<li><p>Flexible input file processing</p></li>
-</ul>
-</p>
-<p>Each command type serves a specific purpose:<ul class="simple">
-<li><p><a class="reference internal" href="#classabase_1_1BaseCommand"><span class="std std-ref">BaseCommand</span></a>: Provides core functionality and interface</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1CompositeCommand"><span class="std std-ref">CompositeCommand</span></a>: Manages child commands and their processing</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1SingleCommand"><span class="std std-ref">SingleCommand</span></a>: Handles string-based commands without values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1StringCommand"><span class="std std-ref">StringCommand</span></a>: Processes single string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1VectorStringCommand"><span class="std std-ref">VectorStringCommand</span></a>: Manages arrays/vectors of string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1MixStringCommand"><span class="std std-ref">MixStringCommand</span></a>: Handles a fixed number of string values</p></li>
-<li><p>NumericCommand&lt;T&gt;: Provides numerical value conversion support</p></li>
-<li><p>ValueCommand&lt;T&gt;: Processes single numerical values of any type</p></li>
-<li><p>VectorCommand&lt;T&gt;: Manages arrays/vectors of numerical values</p></li>
-<li><p>MixCommand&lt;T&gt;: Handles a fixed number of numerical values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1TimeStepCommand"><span class="std std-ref">TimeStepCommand</span></a>: Processes time steps</p></li>
-</ul>
-</p>
-<p>Common usage: <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">SingleCommand</span><span class="o">&gt;</span><span class="p">();</span>
-<span class="n">cmd</span><span class="o">-&gt;</span><span class="n">set_name</span><span class="p">(</span><span class="s">&quot;command_name&quot;</span><span class="p">);</span>
-<span class="n">cmd</span><span class="o">-&gt;</span><span class="n">read_input</span><span class="p">(</span><span class="n">reader</span><span class="p">);</span>
-</pre></div>
-</div>
-</p>
-<p><div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classabase_1_1FileReader"><span class="std std-ref">FileReader</span></a></p>
-</div>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classabase_1_1BaseCommand"><span class="std std-ref">BaseCommand</span></a></p>
-</div>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classabase_1_1CompositeCommand"><span class="std std-ref">CompositeCommand</span></a></p>
-</div>
-</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>All commands support nested hierarchies through the <a class="reference internal" href="#classabase_1_1CompositeCommand"><span class="std std-ref">CompositeCommand</span></a> base </p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Translation support is built into the base command level</p>
-</div>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N5abase19CommandsTypeFactoryE">
 <span id="_CPPv3N5abase19CommandsTypeFactoryE"></span><span id="_CPPv2N5abase19CommandsTypeFactoryE"></span><span id="abase::CommandsTypeFactory"></span><span class="target" id="classabase_1_1CommandsTypeFactory"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CommandsTypeFactory</span></span></span><a class="headerlink" href="#_CPPv4N5abase19CommandsTypeFactoryE" title="Link to this definition"></a><br /></dt>
@@ -1278,7 +1472,6 @@
 <dt class="sig sig-object cpp">
 <span class="target" id="namespaceabase"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">abase</span></span></span><br /></dt>
 <dd><p>Header file containing file system operations and path manipulation utilities. </p>
-<p>Command system for input file processing.</p>
 <p>This header provides a set of functions to:<ul class="simple">
 <li><p>Check file permissions (readable/writable)</p></li>
 <li><p>Manipulate file paths (splitting, getting executable paths)</p></li>
@@ -1293,69 +1486,6 @@
 </pre></div>
 </div>
 </p>
-<p>This namespace contains a hierarchical command system for processing input files. It provides base classes and specialized command types for different data handling needs.</p>
-<p>The command hierarchy consists of:<ul class="simple">
-<li><p><a class="reference internal" href="#classabase_1_1BaseCommand"><span class="std std-ref">BaseCommand</span></a>: Abstract base class for all commands</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1CompositeCommand"><span class="std std-ref">CompositeCommand</span></a>: Intermediate class supporting child commands</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1SingleCommand"><span class="std std-ref">SingleCommand</span></a>: Command for handling string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1StringCommand"><span class="std std-ref">StringCommand</span></a>: Command for handling single string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1VectorStringCommand"><span class="std std-ref">VectorStringCommand</span></a>: Command for handling vectors of string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1MixStringCommand"><span class="std std-ref">MixStringCommand</span></a>: Command for handling a fixed number of string values</p></li>
-<li><p>NumericCommand&lt;T&gt;: Template command for handling numerical values</p></li>
-<li><p>ValueCommand&lt;T&gt;: Template command for handling single numerical values of type T</p></li>
-<li><p>VectorCommand&lt;T&gt;: Template command for handling vectors of numerical values of type T</p></li>
-<li><p>MixCommand&lt;T&gt;: Template command for handling a fixed number of numerical values of type T</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1TimeStepCommand"><span class="std std-ref">TimeStepCommand</span></a>: Command for handling time steps</p></li>
-</ul>
-</p>
-<p>Key features:<ul class="simple">
-<li><p>Hierarchical command structure</p></li>
-<li><p>Support for command translations</p></li>
-<li><p>Type-safe value handling through templates</p></li>
-<li><p>Flexible input file processing</p></li>
-</ul>
-</p>
-<p>Each command type serves a specific purpose:<ul class="simple">
-<li><p><a class="reference internal" href="#classabase_1_1BaseCommand"><span class="std std-ref">BaseCommand</span></a>: Provides core functionality and interface</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1CompositeCommand"><span class="std std-ref">CompositeCommand</span></a>: Manages child commands and their processing</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1SingleCommand"><span class="std std-ref">SingleCommand</span></a>: Handles string-based commands without values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1StringCommand"><span class="std std-ref">StringCommand</span></a>: Processes single string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1VectorStringCommand"><span class="std std-ref">VectorStringCommand</span></a>: Manages arrays/vectors of string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1MixStringCommand"><span class="std std-ref">MixStringCommand</span></a>: Handles a fixed number of string values</p></li>
-<li><p>NumericCommand&lt;T&gt;: Provides numerical value conversion support</p></li>
-<li><p>ValueCommand&lt;T&gt;: Processes single numerical values of any type</p></li>
-<li><p>VectorCommand&lt;T&gt;: Manages arrays/vectors of numerical values</p></li>
-<li><p>MixCommand&lt;T&gt;: Handles a fixed number of numerical values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1TimeStepCommand"><span class="std std-ref">TimeStepCommand</span></a>: Processes time steps</p></li>
-</ul>
-</p>
-<p>Common usage: <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">SingleCommand</span><span class="o">&gt;</span><span class="p">();</span>
-<span class="n">cmd</span><span class="o">-&gt;</span><span class="n">set_name</span><span class="p">(</span><span class="s">&quot;command_name&quot;</span><span class="p">);</span>
-<span class="n">cmd</span><span class="o">-&gt;</span><span class="n">read_input</span><span class="p">(</span><span class="n">reader</span><span class="p">);</span>
-</pre></div>
-</div>
-</p>
-<p><div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classabase_1_1FileReader"><span class="std std-ref">FileReader</span></a></p>
-</div>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classabase_1_1BaseCommand"><span class="std std-ref">BaseCommand</span></a></p>
-</div>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classabase_1_1CompositeCommand"><span class="std std-ref">CompositeCommand</span></a></p>
-</div>
-</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>All commands support nested hierarchies through the <a class="reference internal" href="#classabase_1_1CompositeCommand"><span class="std std-ref">CompositeCommand</span></a> base </p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Translation support is built into the base command level</p>
-</div>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N5abase12ConfigParserE">
 <span id="_CPPv3N5abase12ConfigParserE"></span><span id="_CPPv2N5abase12ConfigParserE"></span><span id="abase::ConfigParser"></span><span class="target" id="classabase_1_1ConfigParser"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ConfigParser</span></span></span><a class="headerlink" href="#_CPPv4N5abase12ConfigParserE" title="Link to this definition"></a><br /></dt>
@@ -1564,7 +1694,6 @@
 <dt class="sig sig-object cpp">
 <span class="target" id="namespaceabase"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">abase</span></span></span><br /></dt>
 <dd><p>Header file containing file system operations and path manipulation utilities. </p>
-<p>Command system for input file processing.</p>
 <p>This header provides a set of functions to:<ul class="simple">
 <li><p>Check file permissions (readable/writable)</p></li>
 <li><p>Manipulate file paths (splitting, getting executable paths)</p></li>
@@ -1579,73 +1708,13 @@
 </pre></div>
 </div>
 </p>
-<p>This namespace contains a hierarchical command system for processing input files. It provides base classes and specialized command types for different data handling needs.</p>
-<p>The command hierarchy consists of:<ul class="simple">
-<li><p><a class="reference internal" href="#classabase_1_1BaseCommand"><span class="std std-ref">BaseCommand</span></a>: Abstract base class for all commands</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1CompositeCommand"><span class="std std-ref">CompositeCommand</span></a>: Intermediate class supporting child commands</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1SingleCommand"><span class="std std-ref">SingleCommand</span></a>: Command for handling string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1StringCommand"><span class="std std-ref">StringCommand</span></a>: Command for handling single string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1VectorStringCommand"><span class="std std-ref">VectorStringCommand</span></a>: Command for handling vectors of string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1MixStringCommand"><span class="std std-ref">MixStringCommand</span></a>: Command for handling a fixed number of string values</p></li>
-<li><p>NumericCommand&lt;T&gt;: Template command for handling numerical values</p></li>
-<li><p>ValueCommand&lt;T&gt;: Template command for handling single numerical values of type T</p></li>
-<li><p>VectorCommand&lt;T&gt;: Template command for handling vectors of numerical values of type T</p></li>
-<li><p>MixCommand&lt;T&gt;: Template command for handling a fixed number of numerical values of type T</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1TimeStepCommand"><span class="std std-ref">TimeStepCommand</span></a>: Command for handling time steps</p></li>
-</ul>
-</p>
-<p>Key features:<ul class="simple">
-<li><p>Hierarchical command structure</p></li>
-<li><p>Support for command translations</p></li>
-<li><p>Type-safe value handling through templates</p></li>
-<li><p>Flexible input file processing</p></li>
-</ul>
-</p>
-<p>Each command type serves a specific purpose:<ul class="simple">
-<li><p><a class="reference internal" href="#classabase_1_1BaseCommand"><span class="std std-ref">BaseCommand</span></a>: Provides core functionality and interface</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1CompositeCommand"><span class="std std-ref">CompositeCommand</span></a>: Manages child commands and their processing</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1SingleCommand"><span class="std std-ref">SingleCommand</span></a>: Handles string-based commands without values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1StringCommand"><span class="std std-ref">StringCommand</span></a>: Processes single string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1VectorStringCommand"><span class="std std-ref">VectorStringCommand</span></a>: Manages arrays/vectors of string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1MixStringCommand"><span class="std std-ref">MixStringCommand</span></a>: Handles a fixed number of string values</p></li>
-<li><p>NumericCommand&lt;T&gt;: Provides numerical value conversion support</p></li>
-<li><p>ValueCommand&lt;T&gt;: Processes single numerical values of any type</p></li>
-<li><p>VectorCommand&lt;T&gt;: Manages arrays/vectors of numerical values</p></li>
-<li><p>MixCommand&lt;T&gt;: Handles a fixed number of numerical values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1TimeStepCommand"><span class="std std-ref">TimeStepCommand</span></a>: Processes time steps</p></li>
-</ul>
-</p>
-<p>Common usage: <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">SingleCommand</span><span class="o">&gt;</span><span class="p">();</span>
-<span class="n">cmd</span><span class="o">-&gt;</span><span class="n">set_name</span><span class="p">(</span><span class="s">&quot;command_name&quot;</span><span class="p">);</span>
-<span class="n">cmd</span><span class="o">-&gt;</span><span class="n">read_input</span><span class="p">(</span><span class="n">reader</span><span class="p">);</span>
-</pre></div>
-</div>
-</p>
-<p><div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classabase_1_1FileReader"><span class="std std-ref">FileReader</span></a></p>
-</div>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classabase_1_1BaseCommand"><span class="std std-ref">BaseCommand</span></a></p>
-</div>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classabase_1_1CompositeCommand"><span class="std std-ref">CompositeCommand</span></a></p>
-</div>
-</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>All commands support nested hierarchies through the <a class="reference internal" href="#classabase_1_1CompositeCommand"><span class="std std-ref">CompositeCommand</span></a> base </p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Translation support is built into the base command level</p>
-</div>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N5abase12ErrorManagerE">
 <span id="_CPPv3N5abase12ErrorManagerE"></span><span id="_CPPv2N5abase12ErrorManagerE"></span><span id="abase::ErrorManager"></span><span class="target" id="classabase_1_1ErrorManager"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ErrorManager</span></span></span><a class="headerlink" href="#_CPPv4N5abase12ErrorManagerE" title="Link to this definition"></a><br /></dt>
-<dd><div class="breathe-sectiondef docutils container">
+<dd><div class="docutils container">
+<em>#include &lt;ErrorManager.h&gt;</em></div>
+<p><a class="reference internal" href="#classabase_1_1ErrorManager"><span class="std std-ref">ErrorManager</span></a> Class Definition. </p>
+<div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5abase12ErrorManager12ErrorManagerERK12ErrorManager">
@@ -1774,7 +1843,6 @@
 <dt class="sig sig-object cpp">
 <span class="target" id="namespaceabase"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">abase</span></span></span><br /></dt>
 <dd><p>Header file containing file system operations and path manipulation utilities. </p>
-<p>Command system for input file processing.</p>
 <p>This header provides a set of functions to:<ul class="simple">
 <li><p>Check file permissions (readable/writable)</p></li>
 <li><p>Manipulate file paths (splitting, getting executable paths)</p></li>
@@ -1789,73 +1857,13 @@
 </pre></div>
 </div>
 </p>
-<p>This namespace contains a hierarchical command system for processing input files. It provides base classes and specialized command types for different data handling needs.</p>
-<p>The command hierarchy consists of:<ul class="simple">
-<li><p><a class="reference internal" href="#classabase_1_1BaseCommand"><span class="std std-ref">BaseCommand</span></a>: Abstract base class for all commands</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1CompositeCommand"><span class="std std-ref">CompositeCommand</span></a>: Intermediate class supporting child commands</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1SingleCommand"><span class="std std-ref">SingleCommand</span></a>: Command for handling string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1StringCommand"><span class="std std-ref">StringCommand</span></a>: Command for handling single string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1VectorStringCommand"><span class="std std-ref">VectorStringCommand</span></a>: Command for handling vectors of string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1MixStringCommand"><span class="std std-ref">MixStringCommand</span></a>: Command for handling a fixed number of string values</p></li>
-<li><p>NumericCommand&lt;T&gt;: Template command for handling numerical values</p></li>
-<li><p>ValueCommand&lt;T&gt;: Template command for handling single numerical values of type T</p></li>
-<li><p>VectorCommand&lt;T&gt;: Template command for handling vectors of numerical values of type T</p></li>
-<li><p>MixCommand&lt;T&gt;: Template command for handling a fixed number of numerical values of type T</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1TimeStepCommand"><span class="std std-ref">TimeStepCommand</span></a>: Command for handling time steps</p></li>
-</ul>
-</p>
-<p>Key features:<ul class="simple">
-<li><p>Hierarchical command structure</p></li>
-<li><p>Support for command translations</p></li>
-<li><p>Type-safe value handling through templates</p></li>
-<li><p>Flexible input file processing</p></li>
-</ul>
-</p>
-<p>Each command type serves a specific purpose:<ul class="simple">
-<li><p><a class="reference internal" href="#classabase_1_1BaseCommand"><span class="std std-ref">BaseCommand</span></a>: Provides core functionality and interface</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1CompositeCommand"><span class="std std-ref">CompositeCommand</span></a>: Manages child commands and their processing</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1SingleCommand"><span class="std std-ref">SingleCommand</span></a>: Handles string-based commands without values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1StringCommand"><span class="std std-ref">StringCommand</span></a>: Processes single string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1VectorStringCommand"><span class="std std-ref">VectorStringCommand</span></a>: Manages arrays/vectors of string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1MixStringCommand"><span class="std std-ref">MixStringCommand</span></a>: Handles a fixed number of string values</p></li>
-<li><p>NumericCommand&lt;T&gt;: Provides numerical value conversion support</p></li>
-<li><p>ValueCommand&lt;T&gt;: Processes single numerical values of any type</p></li>
-<li><p>VectorCommand&lt;T&gt;: Manages arrays/vectors of numerical values</p></li>
-<li><p>MixCommand&lt;T&gt;: Handles a fixed number of numerical values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1TimeStepCommand"><span class="std std-ref">TimeStepCommand</span></a>: Processes time steps</p></li>
-</ul>
-</p>
-<p>Common usage: <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">SingleCommand</span><span class="o">&gt;</span><span class="p">();</span>
-<span class="n">cmd</span><span class="o">-&gt;</span><span class="n">set_name</span><span class="p">(</span><span class="s">&quot;command_name&quot;</span><span class="p">);</span>
-<span class="n">cmd</span><span class="o">-&gt;</span><span class="n">read_input</span><span class="p">(</span><span class="n">reader</span><span class="p">);</span>
-</pre></div>
-</div>
-</p>
-<p><div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classabase_1_1FileReader"><span class="std std-ref">FileReader</span></a></p>
-</div>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classabase_1_1BaseCommand"><span class="std std-ref">BaseCommand</span></a></p>
-</div>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classabase_1_1CompositeCommand"><span class="std std-ref">CompositeCommand</span></a></p>
-</div>
-</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>All commands support nested hierarchies through the <a class="reference internal" href="#classabase_1_1CompositeCommand"><span class="std std-ref">CompositeCommand</span></a> base </p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Translation support is built into the base command level</p>
-</div>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N5abase10FileLoggerE">
 <span id="_CPPv3N5abase10FileLoggerE"></span><span id="_CPPv2N5abase10FileLoggerE"></span><span id="abase::FileLogger"></span><span class="target" id="classabase_1_1FileLogger"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FileLogger</span></span></span><a class="headerlink" href="#_CPPv4N5abase10FileLoggerE" title="Link to this definition"></a><br /></dt>
-<dd><div class="breathe-sectiondef docutils container">
+<dd><div class="docutils container">
+<em>#include &lt;FileLogger.h&gt;</em></div>
+<p>Class used to log messages in a file. </p>
+<div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5abase10FileLogger10FileLoggerEv">
@@ -1923,7 +1931,6 @@
 <dt class="sig sig-object cpp">
 <span class="target" id="namespaceabase"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">abase</span></span></span><br /></dt>
 <dd><p>Header file containing file system operations and path manipulation utilities. </p>
-<p>Command system for input file processing.</p>
 <p>This header provides a set of functions to:<ul class="simple">
 <li><p>Check file permissions (readable/writable)</p></li>
 <li><p>Manipulate file paths (splitting, getting executable paths)</p></li>
@@ -1938,77 +1945,10 @@
 </pre></div>
 </div>
 </p>
-<p>This namespace contains a hierarchical command system for processing input files. It provides base classes and specialized command types for different data handling needs.</p>
-<p>The command hierarchy consists of:<ul class="simple">
-<li><p><a class="reference internal" href="#classabase_1_1BaseCommand"><span class="std std-ref">BaseCommand</span></a>: Abstract base class for all commands</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1CompositeCommand"><span class="std std-ref">CompositeCommand</span></a>: Intermediate class supporting child commands</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1SingleCommand"><span class="std std-ref">SingleCommand</span></a>: Command for handling string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1StringCommand"><span class="std std-ref">StringCommand</span></a>: Command for handling single string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1VectorStringCommand"><span class="std std-ref">VectorStringCommand</span></a>: Command for handling vectors of string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1MixStringCommand"><span class="std std-ref">MixStringCommand</span></a>: Command for handling a fixed number of string values</p></li>
-<li><p>NumericCommand&lt;T&gt;: Template command for handling numerical values</p></li>
-<li><p>ValueCommand&lt;T&gt;: Template command for handling single numerical values of type T</p></li>
-<li><p>VectorCommand&lt;T&gt;: Template command for handling vectors of numerical values of type T</p></li>
-<li><p>MixCommand&lt;T&gt;: Template command for handling a fixed number of numerical values of type T</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1TimeStepCommand"><span class="std std-ref">TimeStepCommand</span></a>: Command for handling time steps</p></li>
-</ul>
-</p>
-<p>Key features:<ul class="simple">
-<li><p>Hierarchical command structure</p></li>
-<li><p>Support for command translations</p></li>
-<li><p>Type-safe value handling through templates</p></li>
-<li><p>Flexible input file processing</p></li>
-</ul>
-</p>
-<p>Each command type serves a specific purpose:<ul class="simple">
-<li><p><a class="reference internal" href="#classabase_1_1BaseCommand"><span class="std std-ref">BaseCommand</span></a>: Provides core functionality and interface</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1CompositeCommand"><span class="std std-ref">CompositeCommand</span></a>: Manages child commands and their processing</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1SingleCommand"><span class="std std-ref">SingleCommand</span></a>: Handles string-based commands without values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1StringCommand"><span class="std std-ref">StringCommand</span></a>: Processes single string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1VectorStringCommand"><span class="std std-ref">VectorStringCommand</span></a>: Manages arrays/vectors of string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1MixStringCommand"><span class="std std-ref">MixStringCommand</span></a>: Handles a fixed number of string values</p></li>
-<li><p>NumericCommand&lt;T&gt;: Provides numerical value conversion support</p></li>
-<li><p>ValueCommand&lt;T&gt;: Processes single numerical values of any type</p></li>
-<li><p>VectorCommand&lt;T&gt;: Manages arrays/vectors of numerical values</p></li>
-<li><p>MixCommand&lt;T&gt;: Handles a fixed number of numerical values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1TimeStepCommand"><span class="std std-ref">TimeStepCommand</span></a>: Processes time steps</p></li>
-</ul>
-</p>
-<p>Common usage: <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">SingleCommand</span><span class="o">&gt;</span><span class="p">();</span>
-<span class="n">cmd</span><span class="o">-&gt;</span><span class="n">set_name</span><span class="p">(</span><span class="s">&quot;command_name&quot;</span><span class="p">);</span>
-<span class="n">cmd</span><span class="o">-&gt;</span><span class="n">read_input</span><span class="p">(</span><span class="n">reader</span><span class="p">);</span>
-</pre></div>
-</div>
-</p>
-<p><div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classabase_1_1FileReader"><span class="std std-ref">FileReader</span></a></p>
-</div>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classabase_1_1BaseCommand"><span class="std std-ref">BaseCommand</span></a></p>
-</div>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classabase_1_1CompositeCommand"><span class="std std-ref">CompositeCommand</span></a></p>
-</div>
-</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>All commands support nested hierarchies through the <a class="reference internal" href="#classabase_1_1CompositeCommand"><span class="std std-ref">CompositeCommand</span></a> base </p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Translation support is built into the base command level</p>
-</div>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N5abase14FileLineFilterE">
 <span id="_CPPv3N5abase14FileLineFilterE"></span><span id="_CPPv2N5abase14FileLineFilterE"></span><span id="abase::FileLineFilter"></span><span class="target" id="classabase_1_1FileLineFilter"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FileLineFilter</span></span></span><a class="headerlink" href="#_CPPv4N5abase14FileLineFilterE" title="Link to this definition"></a><br /></dt>
-<dd><div class="docutils container">
-<em>#include &lt;FileReader.h&gt;</em></div>
-<p>Provides utility functions for filtering lines of text. </p>
-<p>The <a class="reference internal" href="#classabase_1_1FileLineFilter"><span class="std std-ref">FileLineFilter</span></a> class contains static methods for performing common text filtering operations, such as escaping special characters in a regex pattern, generating a regex pattern for a comment delimiter, and filtering a line of text based on a set of delimiters. </p>
-<div class="breathe-sectiondef docutils container">
+<dd><div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5abase14FileLineFilter6filterERKNSt6stringE">
@@ -2077,7 +2017,9 @@
 <span id="_CPPv3N5abase10FileReaderE"></span><span id="_CPPv2N5abase10FileReaderE"></span><span id="abase::FileReader"></span><span class="target" id="classabase_1_1FileReader"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FileReader</span></span></span><a class="headerlink" href="#_CPPv4N5abase10FileReaderE" title="Link to this definition"></a><br /></dt>
 <dd><div class="docutils container">
 <em>#include &lt;FileReader.h&gt;</em></div>
-<p>Provides functionality for reading and navigating through a file line by line. </p>
+<p>Provides utility functions for filtering lines of text. </p>
+<p>Provides functionality for reading and navigating through a file line by line.</p>
+<p>The <a class="reference internal" href="#classabase_1_1FileLineFilter"><span class="std std-ref">FileLineFilter</span></a> class contains static methods for performing common text filtering operations, such as escaping special characters in a regex pattern, generating a regex pattern for a comment delimiter, and filtering a line of text based on a set of delimiters.</p>
 <p>The <a class="reference internal" href="#classabase_1_1FileReader"><span class="std std-ref">FileReader</span></a> class is responsible for reading a file and providing methods to access the words in the file.</p>
 <p>The class is designed to be thread-safe, with a mutex to ensure that multiple threads can safely access the file and buffer. </p>
 <div class="breathe-sectiondef docutils container">
@@ -2136,6 +2078,12 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
 <dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase10FileReader9prev_lineE">
+<span id="_CPPv3N5abase10FileReader9prev_lineE"></span><span id="_CPPv2N5abase10FileReader9prev_lineE"></span><span id="abase::FileReader::prev_line__ss"></span><span class="target" id="classabase_1_1FileReader_1ade820cc0c98f72c490fc6770cc5e8115"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">prev_line</span></span></span><a class="headerlink" href="#_CPPv4N5abase10FileReader9prev_lineE" title="Link to this definition"></a><br /></dt>
+<dd><p>previous line of the file (only used for error messages) </p>
+</dd></dl>
+
+<dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N5abase10FileReader4lineE">
 <span id="_CPPv3N5abase10FileReader4lineE"></span><span id="_CPPv2N5abase10FileReader4lineE"></span><span id="abase::FileReader::line__ss"></span><span class="target" id="classabase_1_1FileReader_1a60c69a82e815ed1cfc8b5d1943f8a885"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">line</span></span></span><a class="headerlink" href="#_CPPv4N5abase10FileReader4lineE" title="Link to this definition"></a><br /></dt>
 <dd><p>current line of the file </p>
@@ -2183,7 +2131,6 @@
 <dt class="sig sig-object cpp">
 <span class="target" id="namespaceabase"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">abase</span></span></span><br /></dt>
 <dd><p>Header file containing file system operations and path manipulation utilities. </p>
-<p>Command system for input file processing.</p>
 <p>This header provides a set of functions to:<ul class="simple">
 <li><p>Check file permissions (readable/writable)</p></li>
 <li><p>Manipulate file paths (splitting, getting executable paths)</p></li>
@@ -2198,69 +2145,6 @@
 </pre></div>
 </div>
 </p>
-<p>This namespace contains a hierarchical command system for processing input files. It provides base classes and specialized command types for different data handling needs.</p>
-<p>The command hierarchy consists of:<ul class="simple">
-<li><p><a class="reference internal" href="#classabase_1_1BaseCommand"><span class="std std-ref">BaseCommand</span></a>: Abstract base class for all commands</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1CompositeCommand"><span class="std std-ref">CompositeCommand</span></a>: Intermediate class supporting child commands</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1SingleCommand"><span class="std std-ref">SingleCommand</span></a>: Command for handling string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1StringCommand"><span class="std std-ref">StringCommand</span></a>: Command for handling single string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1VectorStringCommand"><span class="std std-ref">VectorStringCommand</span></a>: Command for handling vectors of string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1MixStringCommand"><span class="std std-ref">MixStringCommand</span></a>: Command for handling a fixed number of string values</p></li>
-<li><p>NumericCommand&lt;T&gt;: Template command for handling numerical values</p></li>
-<li><p>ValueCommand&lt;T&gt;: Template command for handling single numerical values of type T</p></li>
-<li><p>VectorCommand&lt;T&gt;: Template command for handling vectors of numerical values of type T</p></li>
-<li><p>MixCommand&lt;T&gt;: Template command for handling a fixed number of numerical values of type T</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1TimeStepCommand"><span class="std std-ref">TimeStepCommand</span></a>: Command for handling time steps</p></li>
-</ul>
-</p>
-<p>Key features:<ul class="simple">
-<li><p>Hierarchical command structure</p></li>
-<li><p>Support for command translations</p></li>
-<li><p>Type-safe value handling through templates</p></li>
-<li><p>Flexible input file processing</p></li>
-</ul>
-</p>
-<p>Each command type serves a specific purpose:<ul class="simple">
-<li><p><a class="reference internal" href="#classabase_1_1BaseCommand"><span class="std std-ref">BaseCommand</span></a>: Provides core functionality and interface</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1CompositeCommand"><span class="std std-ref">CompositeCommand</span></a>: Manages child commands and their processing</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1SingleCommand"><span class="std std-ref">SingleCommand</span></a>: Handles string-based commands without values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1StringCommand"><span class="std std-ref">StringCommand</span></a>: Processes single string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1VectorStringCommand"><span class="std std-ref">VectorStringCommand</span></a>: Manages arrays/vectors of string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1MixStringCommand"><span class="std std-ref">MixStringCommand</span></a>: Handles a fixed number of string values</p></li>
-<li><p>NumericCommand&lt;T&gt;: Provides numerical value conversion support</p></li>
-<li><p>ValueCommand&lt;T&gt;: Processes single numerical values of any type</p></li>
-<li><p>VectorCommand&lt;T&gt;: Manages arrays/vectors of numerical values</p></li>
-<li><p>MixCommand&lt;T&gt;: Handles a fixed number of numerical values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1TimeStepCommand"><span class="std std-ref">TimeStepCommand</span></a>: Processes time steps</p></li>
-</ul>
-</p>
-<p>Common usage: <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">SingleCommand</span><span class="o">&gt;</span><span class="p">();</span>
-<span class="n">cmd</span><span class="o">-&gt;</span><span class="n">set_name</span><span class="p">(</span><span class="s">&quot;command_name&quot;</span><span class="p">);</span>
-<span class="n">cmd</span><span class="o">-&gt;</span><span class="n">read_input</span><span class="p">(</span><span class="n">reader</span><span class="p">);</span>
-</pre></div>
-</div>
-</p>
-<p><div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classabase_1_1FileReader"><span class="std std-ref">FileReader</span></a></p>
-</div>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classabase_1_1BaseCommand"><span class="std std-ref">BaseCommand</span></a></p>
-</div>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classabase_1_1CompositeCommand"><span class="std std-ref">CompositeCommand</span></a></p>
-</div>
-</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>All commands support nested hierarchies through the <a class="reference internal" href="#classabase_1_1CompositeCommand"><span class="std std-ref">CompositeCommand</span></a> base </p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Translation support is built into the base command level</p>
-</div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
 <dl class="cpp function">
@@ -2420,7 +2304,6 @@
 <dt class="sig sig-object cpp">
 <span class="target" id="namespaceabase"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">abase</span></span></span><br /></dt>
 <dd><p>Header file containing file system operations and path manipulation utilities. </p>
-<p>Command system for input file processing.</p>
 <p>This header provides a set of functions to:<ul class="simple">
 <li><p>Check file permissions (readable/writable)</p></li>
 <li><p>Manipulate file paths (splitting, getting executable paths)</p></li>
@@ -2435,108 +2318,91 @@
 </pre></div>
 </div>
 </p>
-<p>This namespace contains a hierarchical command system for processing input files. It provides base classes and specialized command types for different data handling needs.</p>
-<p>The command hierarchy consists of:<ul class="simple">
-<li><p><a class="reference internal" href="#classabase_1_1BaseCommand"><span class="std std-ref">BaseCommand</span></a>: Abstract base class for all commands</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1CompositeCommand"><span class="std std-ref">CompositeCommand</span></a>: Intermediate class supporting child commands</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1SingleCommand"><span class="std std-ref">SingleCommand</span></a>: Command for handling string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1StringCommand"><span class="std std-ref">StringCommand</span></a>: Command for handling single string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1VectorStringCommand"><span class="std std-ref">VectorStringCommand</span></a>: Command for handling vectors of string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1MixStringCommand"><span class="std std-ref">MixStringCommand</span></a>: Command for handling a fixed number of string values</p></li>
-<li><p>NumericCommand&lt;T&gt;: Template command for handling numerical values</p></li>
-<li><p>ValueCommand&lt;T&gt;: Template command for handling single numerical values of type T</p></li>
-<li><p>VectorCommand&lt;T&gt;: Template command for handling vectors of numerical values of type T</p></li>
-<li><p>MixCommand&lt;T&gt;: Template command for handling a fixed number of numerical values of type T</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1TimeStepCommand"><span class="std std-ref">TimeStepCommand</span></a>: Command for handling time steps</p></li>
-</ul>
-</p>
-<p>Key features:<ul class="simple">
-<li><p>Hierarchical command structure</p></li>
-<li><p>Support for command translations</p></li>
-<li><p>Type-safe value handling through templates</p></li>
-<li><p>Flexible input file processing</p></li>
-</ul>
-</p>
-<p>Each command type serves a specific purpose:<ul class="simple">
-<li><p><a class="reference internal" href="#classabase_1_1BaseCommand"><span class="std std-ref">BaseCommand</span></a>: Provides core functionality and interface</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1CompositeCommand"><span class="std std-ref">CompositeCommand</span></a>: Manages child commands and their processing</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1SingleCommand"><span class="std std-ref">SingleCommand</span></a>: Handles string-based commands without values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1StringCommand"><span class="std std-ref">StringCommand</span></a>: Processes single string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1VectorStringCommand"><span class="std std-ref">VectorStringCommand</span></a>: Manages arrays/vectors of string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1MixStringCommand"><span class="std std-ref">MixStringCommand</span></a>: Handles a fixed number of string values</p></li>
-<li><p>NumericCommand&lt;T&gt;: Provides numerical value conversion support</p></li>
-<li><p>ValueCommand&lt;T&gt;: Processes single numerical values of any type</p></li>
-<li><p>VectorCommand&lt;T&gt;: Manages arrays/vectors of numerical values</p></li>
-<li><p>MixCommand&lt;T&gt;: Handles a fixed number of numerical values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1TimeStepCommand"><span class="std std-ref">TimeStepCommand</span></a>: Processes time steps</p></li>
-</ul>
-</p>
-<p>Common usage: <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">SingleCommand</span><span class="o">&gt;</span><span class="p">();</span>
-<span class="n">cmd</span><span class="o">-&gt;</span><span class="n">set_name</span><span class="p">(</span><span class="s">&quot;command_name&quot;</span><span class="p">);</span>
-<span class="n">cmd</span><span class="o">-&gt;</span><span class="n">read_input</span><span class="p">(</span><span class="n">reader</span><span class="p">);</span>
-</pre></div>
-</div>
-</p>
-<p><div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classabase_1_1FileReader"><span class="std std-ref">FileReader</span></a></p>
-</div>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classabase_1_1BaseCommand"><span class="std std-ref">BaseCommand</span></a></p>
-</div>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classabase_1_1CompositeCommand"><span class="std std-ref">CompositeCommand</span></a></p>
-</div>
-</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>All commands support nested hierarchies through the <a class="reference internal" href="#classabase_1_1CompositeCommand"><span class="std std-ref">CompositeCommand</span></a> base </p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Translation support is built into the base command level</p>
-</div>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N5abase11GlobalTimerE">
 <span id="_CPPv3N5abase11GlobalTimerE"></span><span id="_CPPv2N5abase11GlobalTimerE"></span><span id="abase::GlobalTimer"></span><span class="target" id="classabase_1_1GlobalTimer"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GlobalTimer</span></span></span><a class="headerlink" href="#_CPPv4N5abase11GlobalTimerE" title="Link to this definition"></a><br /></dt>
-<dd><div class="breathe-sectiondef docutils container">
+<dd><div class="docutils container">
+<em>#include &lt;GlobalTimer.h&gt;</em></div>
+<p>A class to manage and measure wall-clock and CPU time for named timers. </p>
+<div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5abase11GlobalTimer5startERKNSt6stringE">
 <span id="_CPPv3N5abase11GlobalTimer5startERKNSt6stringE"></span><span id="_CPPv2N5abase11GlobalTimer5startERKNSt6stringE"></span><span id="abase::GlobalTimer::start__ssCR"></span><span class="target" id="classabase_1_1GlobalTimer_1ada7616e7e72685ffb35f0de7acb9b293"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">start</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase11GlobalTimer5startERKNSt6stringE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>Starts the timer with the given name. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> – The name of the timer to start. </p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5abase11GlobalTimer4stopERKNSt6stringE">
 <span id="_CPPv3N5abase11GlobalTimer4stopERKNSt6stringE"></span><span id="_CPPv2N5abase11GlobalTimer4stopERKNSt6stringE"></span><span id="abase::GlobalTimer::stop__ssCR"></span><span class="target" id="classabase_1_1GlobalTimer_1a052b058f480730cfa7eaafb1e19d9337"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stop</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase11GlobalTimer4stopERKNSt6stringE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>Stops the timer with the given name. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> – The name of the timer to stop. </p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK5abase11GlobalTimer11getWallTimeERKNSt6stringE">
 <span id="_CPPv3NK5abase11GlobalTimer11getWallTimeERKNSt6stringE"></span><span id="_CPPv2NK5abase11GlobalTimer11getWallTimeERKNSt6stringE"></span><span id="abase::GlobalTimer::getWallTime__ssCRC"></span><span class="target" id="classabase_1_1GlobalTimer_1a6c97ec8810a7847d0dd5e6d1cafeff71"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getWallTime</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5abase11GlobalTimer11getWallTimeERKNSt6stringE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>Gets the total wall-clock time for the timer with the given name. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> – The name of the timer. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The total wall-clock time in seconds. </p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK5abase11GlobalTimer10getCPUTimeERKNSt6stringE">
 <span id="_CPPv3NK5abase11GlobalTimer10getCPUTimeERKNSt6stringE"></span><span id="_CPPv2NK5abase11GlobalTimer10getCPUTimeERKNSt6stringE"></span><span id="abase::GlobalTimer::getCPUTime__ssCRC"></span><span class="target" id="classabase_1_1GlobalTimer_1a80df5a90ec130fb3fdaf27bdb5ca503c"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getCPUTime</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5abase11GlobalTimer10getCPUTimeERKNSt6stringE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>Gets the total CPU time for the timer with the given name. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> – The name of the timer. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The total CPU time in seconds. </p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5abase11GlobalTimer5resetERKNSt6stringE">
 <span id="_CPPv3N5abase11GlobalTimer5resetERKNSt6stringE"></span><span id="_CPPv2N5abase11GlobalTimer5resetERKNSt6stringE"></span><span id="abase::GlobalTimer::reset__ssCR"></span><span class="target" id="classabase_1_1GlobalTimer_1a4b183cdfd97d8cfa70b7d3192c46eff8"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reset</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase11GlobalTimer5resetERKNSt6stringE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>Resets the timer with the given name. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> – The name of the timer to reset. </p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5abase11GlobalTimer8resetAllEv">
 <span id="_CPPv3N5abase11GlobalTimer8resetAllEv"></span><span id="_CPPv2N5abase11GlobalTimer8resetAllEv"></span><span id="abase::GlobalTimer::resetAll"></span><span class="target" id="classabase_1_1GlobalTimer_1ac112911e06fd8bd188d5329c474f02ab"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">resetAll</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase11GlobalTimer8resetAllEv" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>Resets all timers. </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5abase11GlobalTimer5printERKNSt6stringE">
 <span id="_CPPv3N5abase11GlobalTimer5printERKNSt6stringE"></span><span id="_CPPv2N5abase11GlobalTimer5printERKNSt6stringE"></span><span id="abase::GlobalTimer::print__ssCR"></span><span class="target" id="classabase_1_1GlobalTimer_1a678c42761da808fc3e9c526ae11beb85"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">print</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase11GlobalTimer5printERKNSt6stringE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>Prints the timing information for the timer with the given name. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> – The name of the timer to print. </p>
+</dd>
+</dl>
+</dd></dl>
 
 </div>
 <div class="breathe-sectiondef docutils container">
@@ -2562,7 +2428,8 @@
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N5abase11GlobalTimer6timersE">
 <span id="_CPPv3N5abase11GlobalTimer6timersE"></span><span id="_CPPv2N5abase11GlobalTimer6timersE"></span><span id="abase::GlobalTimer::timers__std::unordered_map:ss.TimerData:"></span><span class="target" id="classabase_1_1GlobalTimer_1a0da9911cb1194fd4bec26cb693db8c7b"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unordered_map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5abase11GlobalTimer9TimerDataE" title="abase::GlobalTimer::TimerData"><span class="n"><span class="pre">TimerData</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">timers</span></span></span><a class="headerlink" href="#_CPPv4N5abase11GlobalTimer6timersE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>A map of timer names to their data. </p>
+</dd></dl>
 
 </div>
 <dl class="cpp struct">
@@ -2573,27 +2440,32 @@
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N5abase11GlobalTimer9TimerData9wallStartE">
 <span id="_CPPv3N5abase11GlobalTimer9TimerData9wallStartE"></span><span id="_CPPv2N5abase11GlobalTimer9TimerData9wallStartE"></span><span id="abase::GlobalTimer::TimerData::wallStart__TimePoint"></span><span class="target" id="structabase_1_1GlobalTimer_1_1TimerData_1a48b39d7e359bef44b97a18548d1728fc"></span><a class="reference internal" href="#_CPPv4N5abase11GlobalTimer9TimePointE" title="abase::GlobalTimer::TimePoint"><span class="n"><span class="pre">TimePoint</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">wallStart</span></span></span><a class="headerlink" href="#_CPPv4N5abase11GlobalTimer9TimerData9wallStartE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>The start time of the wall-clock timer. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N5abase11GlobalTimer9TimerData8cpuStartE">
 <span id="_CPPv3N5abase11GlobalTimer9TimerData8cpuStartE"></span><span id="_CPPv2N5abase11GlobalTimer9TimerData8cpuStartE"></span><span id="abase::GlobalTimer::TimerData::cpuStart__std::chrono::time_point:std::chrono::steady_clock:"></span><span class="target" id="structabase_1_1GlobalTimer_1_1TimerData_1a9934fe7659b5b64e9b0fb4ae0cf1ffb6"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">chrono</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">time_point</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">chrono</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">steady_clock</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cpuStart</span></span></span><a class="headerlink" href="#_CPPv4N5abase11GlobalTimer9TimerData8cpuStartE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>The start time of the CPU timer. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N5abase11GlobalTimer9TimerData9wallTotalE">
 <span id="_CPPv3N5abase11GlobalTimer9TimerData9wallTotalE"></span><span id="_CPPv2N5abase11GlobalTimer9TimerData9wallTotalE"></span><span id="abase::GlobalTimer::TimerData::wallTotal__Duration"></span><span class="target" id="structabase_1_1GlobalTimer_1_1TimerData_1a63a4fb429686addf6f12861fe50dd474"></span><a class="reference internal" href="#_CPPv4N5abase11GlobalTimer8DurationE" title="abase::GlobalTimer::Duration"><span class="n"><span class="pre">Duration</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">wallTotal</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N5abase11GlobalTimer9TimerData9wallTotalE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>The total wall-clock time accumulated. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N5abase11GlobalTimer9TimerData8cpuTotalE">
 <span id="_CPPv3N5abase11GlobalTimer9TimerData8cpuTotalE"></span><span id="_CPPv2N5abase11GlobalTimer9TimerData8cpuTotalE"></span><span id="abase::GlobalTimer::TimerData::cpuTotal__Duration"></span><span class="target" id="structabase_1_1GlobalTimer_1_1TimerData_1a2741163a7a3c4114b43e727136e90840"></span><a class="reference internal" href="#_CPPv4N5abase11GlobalTimer8DurationE" title="abase::GlobalTimer::Duration"><span class="n"><span class="pre">Duration</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cpuTotal</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N5abase11GlobalTimer9TimerData8cpuTotalE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>The total CPU time accumulated. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N5abase11GlobalTimer9TimerData7runningE">
 <span id="_CPPv3N5abase11GlobalTimer9TimerData7runningE"></span><span id="_CPPv2N5abase11GlobalTimer9TimerData7runningE"></span><span id="abase::GlobalTimer::TimerData::running__b"></span><span class="target" id="structabase_1_1GlobalTimer_1_1TimerData_1ad83c04ffd41ae47a26c1c280ed658b1a"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">running</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="k"><span class="pre">false</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N5abase11GlobalTimer9TimerData7runningE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>Indicates whether the timer is currently running. </p>
+</dd></dl>
 
 </div>
 </dd></dl>
@@ -2769,7 +2641,6 @@
 <dt class="sig sig-object cpp">
 <span class="target" id="namespaceabase"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">abase</span></span></span><br /></dt>
 <dd><p>Header file containing file system operations and path manipulation utilities. </p>
-<p>Command system for input file processing.</p>
 <p>This header provides a set of functions to:<ul class="simple">
 <li><p>Check file permissions (readable/writable)</p></li>
 <li><p>Manipulate file paths (splitting, getting executable paths)</p></li>
@@ -2784,69 +2655,6 @@
 </pre></div>
 </div>
 </p>
-<p>This namespace contains a hierarchical command system for processing input files. It provides base classes and specialized command types for different data handling needs.</p>
-<p>The command hierarchy consists of:<ul class="simple">
-<li><p><a class="reference internal" href="#classabase_1_1BaseCommand"><span class="std std-ref">BaseCommand</span></a>: Abstract base class for all commands</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1CompositeCommand"><span class="std std-ref">CompositeCommand</span></a>: Intermediate class supporting child commands</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1SingleCommand"><span class="std std-ref">SingleCommand</span></a>: Command for handling string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1StringCommand"><span class="std std-ref">StringCommand</span></a>: Command for handling single string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1VectorStringCommand"><span class="std std-ref">VectorStringCommand</span></a>: Command for handling vectors of string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1MixStringCommand"><span class="std std-ref">MixStringCommand</span></a>: Command for handling a fixed number of string values</p></li>
-<li><p>NumericCommand&lt;T&gt;: Template command for handling numerical values</p></li>
-<li><p>ValueCommand&lt;T&gt;: Template command for handling single numerical values of type T</p></li>
-<li><p>VectorCommand&lt;T&gt;: Template command for handling vectors of numerical values of type T</p></li>
-<li><p>MixCommand&lt;T&gt;: Template command for handling a fixed number of numerical values of type T</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1TimeStepCommand"><span class="std std-ref">TimeStepCommand</span></a>: Command for handling time steps</p></li>
-</ul>
-</p>
-<p>Key features:<ul class="simple">
-<li><p>Hierarchical command structure</p></li>
-<li><p>Support for command translations</p></li>
-<li><p>Type-safe value handling through templates</p></li>
-<li><p>Flexible input file processing</p></li>
-</ul>
-</p>
-<p>Each command type serves a specific purpose:<ul class="simple">
-<li><p><a class="reference internal" href="#classabase_1_1BaseCommand"><span class="std std-ref">BaseCommand</span></a>: Provides core functionality and interface</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1CompositeCommand"><span class="std std-ref">CompositeCommand</span></a>: Manages child commands and their processing</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1SingleCommand"><span class="std std-ref">SingleCommand</span></a>: Handles string-based commands without values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1StringCommand"><span class="std std-ref">StringCommand</span></a>: Processes single string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1VectorStringCommand"><span class="std std-ref">VectorStringCommand</span></a>: Manages arrays/vectors of string values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1MixStringCommand"><span class="std std-ref">MixStringCommand</span></a>: Handles a fixed number of string values</p></li>
-<li><p>NumericCommand&lt;T&gt;: Provides numerical value conversion support</p></li>
-<li><p>ValueCommand&lt;T&gt;: Processes single numerical values of any type</p></li>
-<li><p>VectorCommand&lt;T&gt;: Manages arrays/vectors of numerical values</p></li>
-<li><p>MixCommand&lt;T&gt;: Handles a fixed number of numerical values</p></li>
-<li><p><a class="reference internal" href="#classabase_1_1TimeStepCommand"><span class="std std-ref">TimeStepCommand</span></a>: Processes time steps</p></li>
-</ul>
-</p>
-<p>Common usage: <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">SingleCommand</span><span class="o">&gt;</span><span class="p">();</span>
-<span class="n">cmd</span><span class="o">-&gt;</span><span class="n">set_name</span><span class="p">(</span><span class="s">&quot;command_name&quot;</span><span class="p">);</span>
-<span class="n">cmd</span><span class="o">-&gt;</span><span class="n">read_input</span><span class="p">(</span><span class="n">reader</span><span class="p">);</span>
-</pre></div>
-</div>
-</p>
-<p><div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classabase_1_1FileReader"><span class="std std-ref">FileReader</span></a></p>
-</div>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classabase_1_1BaseCommand"><span class="std std-ref">BaseCommand</span></a></p>
-</div>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classabase_1_1CompositeCommand"><span class="std std-ref">CompositeCommand</span></a></p>
-</div>
-</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>All commands support nested hierarchies through the <a class="reference internal" href="#classabase_1_1CompositeCommand"><span class="std std-ref">CompositeCommand</span></a> base </p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Translation support is built into the base command level</p>
-</div>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N5abase18TranslationManagerE">
 <span id="_CPPv3N5abase18TranslationManagerE"></span><span id="_CPPv2N5abase18TranslationManagerE"></span><span id="abase::TranslationManager"></span><span class="target" id="classabase_1_1TranslationManager"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TranslationManager</span></span></span><a class="headerlink" href="#_CPPv4N5abase18TranslationManagerE" title="Link to this definition"></a><br /></dt>
