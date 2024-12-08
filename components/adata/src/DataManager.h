@@ -3,6 +3,7 @@
 #include "ProblemDescription.h"
 #include "ProblemTorsor.h"
 #include "ProblemLoadstep.h"
+#include "ProblemTransient.h"
 
 namespace adata {
 
@@ -21,6 +22,7 @@ namespace adata {
             ProblemDescription description;
             ProblemTorsor torsor;
             std::vector<ProblemLoadstep> loadsteps;
+            std::vector<ProblemTransient> transients;
         /*
         protected:
             pb_fem_interface fem_interface;
@@ -40,6 +42,8 @@ namespace adata {
             /// @param filename name of the input file
             /// @param commands_tree_file file containing the commands tree definition
             void read_data(const std::string& filename, const std::string& commands_tree_file);
+            /// @brief Verify if the object is correctly initialized with consistent objects
+            void verify() const;
     };
 
 }

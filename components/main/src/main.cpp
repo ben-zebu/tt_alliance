@@ -119,6 +119,7 @@ void yaml_test() {
 
     adata::DataManager dataManager;
     dataManager.read_data(input_file, app_path + commands_tree);
+    dataManager.verify();
 
 }
 
