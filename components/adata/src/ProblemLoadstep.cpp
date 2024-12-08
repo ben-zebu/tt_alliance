@@ -4,11 +4,17 @@ using namespace adata;
 
 void ProblemLoadstep::init(std::shared_ptr<abase::BaseCommand> command, std::size_t nb_torsors) {
     _nb_torsors = nb_torsors;
+
+    // get the values associated to the pressure cards and convert to 0-based index
     command->get_values(pressure_cards);
+    for (std::size_t i = 0; i < pressure_cards.size(); ++i) pressure_cards[i] -= 1;
 
     abase::get_child_values(command, "KP", pressure_values);
     abase::get_child_value(command, "THERMAL", thermal_card);
     if (thermal_card > 0) {
+        // convert to 0-based index
+        thermal_card -= 1;
+        // try to get the value of the thermomechanical coefficient
         auto subcommand = command->get_child("THERMAL");
         auto khcommand = subcommand->get_child("KH");
         if (khcommand) khcommand->get_value(kh);
