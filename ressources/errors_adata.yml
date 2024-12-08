@@ -48,6 +48,10 @@
     en: "'GDP' and 'GVAR' keys must not be defined together for a transient !"
     fr: "Les clés 'GDP' et 'GVAR' ne peuvent être définies conjointement pour un transitoire !"
 
+# ProblemTable
+  ERROR_TABLE_UNORDERED_ABCISS:
+    en: "Unordered absciss values in table '{0}' !"
+    fr: "Valeurs d'abscisses non ordonnées dans la table '{0}' !"  
 
 # DataManager
   ERROR_MISSING_SECTION:

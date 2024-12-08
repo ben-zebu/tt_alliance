@@ -80,3 +80,11 @@
   ERROR_UNREADABLE_TIMESTEP:
     en: "Cannot read timestep numbers !"
     fr: "Impossible de lire les numéros d'instant !"
+
+  ERROR_UNREADABLE_TABLE:
+    en: "Cannot read table values !"
+    fr: "Impossible de lire les valeurs de la table !"
+
+  ERROR_TABLE_CONVERSION:
+    en: "Cannot convert table's pairs of values to float !"
+    fr: "Impossible de convertir les pairs de valeurs de la table en réel !"  

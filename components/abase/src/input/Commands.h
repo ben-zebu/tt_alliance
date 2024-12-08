@@ -70,7 +70,9 @@ namespace abase {
     /// @brief Base class for all commands
     class BaseCommand {
         protected:
+            /// @brief command name
             std::string _name = "";
+            /// @brief command translations
             std::unordered_map<std::string, std::vector<std::string>> translations;
             /// @brief read status
             bool _read_status = false;
@@ -383,6 +385,42 @@ namespace abase {
             /// @brief Get the values of the command
             /// @param values values associated to the command
             void get_values(std::vector<std::size_t>& values) const override { if (_read_status) values = _values; }
+    };
+
+    /// @class TableCommand
+    /// @brief Class used to read a table from the input file
+    class TableCommand : public CompositeCommand {
+        private:
+            /// @brief Convert table values from a sequence of strings
+            /// @param values sequence of strings
+            /// @param status status of the conversion
+            void convert(const std::vector<std::string>& values, bool& status);
+            /// @brief Extract all time steps from a sequence of strings
+            /// @param sequence extracted sequence
+            /// @param status status of the extraction
+            void split_sequence(const std::string& sequence, bool& status);
+        protected :
+            /// @brief table name
+            std::string _table_name;
+            /// @brief vector of time steps rank.
+            std::vector<double> _values;
+            /// @brief clear read data associated to the command
+            virtual void clear() { this->_read_status = false; _values.clear(); }
+
+        public:
+            TableCommand() = default;
+            virtual ~TableCommand() = default;
+            /// @brief Read input file and set the value of the command
+            /// @param reader file reader associated to the input file
+            /// @return a status code (0 for success and 1 for fail)
+            virtual std::size_t read_input(FileReader& reader, const CommandsCollector& collector) override;
+            /// @brief Get the table name
+            /// @param name name of the table
+            void get_value(std::string& name) const override { if (_read_status) name = _table_name; }
+            /// @brief Get the values of the command
+            /// @param values values associated to the command
+            void get_values(std::vector<double>& values) const override { if (_read_status) values = _values; }
+            
     };
 
     namespace {

@@ -329,9 +329,9 @@ std::vector<std::size_t> TimeStepCommand::split_sequence(const std::string& sequ
 }
 
 std::size_t TimeStepCommand::read_input(FileReader& reader, const CommandsCollector& collector) {
+    clear();
     std::string key = reader.get_word();
     if (!this->is_same_keyword(key)) return 1;
-    clear();
     reader.move();
 
     std::string str_value = reader.get_word();
@@ -354,6 +354,79 @@ std::size_t TimeStepCommand::read_input(FileReader& reader, const CommandsCollec
     if (!status) {
         std::string filecontext = reader.context_error();
         file_input_error(translate("ERROR_UNREADABLE_TIMESTEP"), filecontext);
+    }
+    _read_status = true;
+
+    std::size_t children_status = this->children_process(reader, collector);
+    return 0;
+}
+
+void TableCommand::convert(const std::vector<std::string>& values, bool& status) {
+    for (const auto& value : values) {
+        try {
+            _values.push_back( std::stod(value) );
+        } catch (const std::invalid_argument& e) {
+            status = false;
+            return;
+        } catch (const std::out_of_range& e) {
+            status = false;
+            return;
+        }
+    }
+}
+
+void TableCommand::split_sequence(const std::string& sequence, bool& status) {
+    std::vector<std::string> str_values = str::split(sequence);
+
+    bool is_name = (str_values[0].find("/") != std::string::npos);
+    if (is_name) {
+        _table_name = str_values[0];
+        convert(std::vector<std::string>(str_values.begin() + 1, str_values.end()), status);
+    } else {
+        // try a conversion ignoring the potential table name
+        convert(str_values, status);
+        // if failed and impaire number of values, try to extract the table name
+        if (!status && str_values.size() % 2 != 0) {
+            status = true;
+            _table_name = str_values[0];
+            convert(std::vector<std::string>(str_values.begin() + 1, str_values.end()), status);
+        }
+    }
+
+    // check if the number of values is pair
+    if (_values.size() % 2 != 0) status = false;
+}
+
+std::size_t TableCommand::read_input(FileReader& reader, const CommandsCollector& collector) {
+    clear();
+    std::string key = reader.get_word();
+    if (!this->is_same_keyword(key)) return 1;
+    reader.move();
+
+    // A table is defined by a name (optional) and a list of abciss and ordinates values.
+    std::string str_value = reader.get_word();
+    std::string sequence = "";
+    while (!str_value.empty() && !collector.is_command_name(str_value)) {
+        sequence += str_value + " ";
+        reader.move();
+        str_value = reader.get_word();
+    }
+
+    if (sequence.empty()) {
+        std::string filecontext = reader.context_error();
+        file_input_error(translate("ERROR_UNREADABLE_TABLE"), filecontext);
+    }
+
+    // collapse space around '/' character for name extraction
+    sequence = str::replace(sequence, " /", "/");
+    sequence = str::replace(sequence, "/ ", "/");
+
+    bool status = true;
+    split_sequence(sequence, status);
+
+    if (!status) {
+        std::string filecontext = reader.context_error();
+        file_input_error(translate("ERROR_TABLE_CONVERSION"), filecontext);
     }
     _read_status = true;
 
