@@ -113,7 +113,7 @@ TRANSIENT:
 
 TABLE:
   keys: {"fr": ["table", "table"], "en": ["table", "table"]}
-  type: single
+  type: table_array
 
 MATERIAL:
   keys: {"fr": ["mat", "materiau"], "en": ["mat", "material"]}

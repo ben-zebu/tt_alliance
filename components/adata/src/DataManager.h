@@ -4,6 +4,7 @@
 #include "ProblemTorsor.h"
 #include "ProblemLoadstep.h"
 #include "ProblemTransient.h"
+#include "ProblemTable.h"
 
 namespace adata {
 
@@ -23,6 +24,7 @@ namespace adata {
             ProblemTorsor torsor;
             std::vector<ProblemLoadstep> loadsteps;
             std::vector<ProblemTransient> transients;
+            std::vector<ProblemTable> tables;
         /*
         protected:
             pb_fem_interface fem_interface;

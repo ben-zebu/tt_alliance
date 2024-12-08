@@ -31,6 +31,13 @@ void DataManager::set_data(std::shared_ptr<abase::BaseCommand> command, std::str
         transient.verify(filecontext);
         transients.push_back(transient);
     }
+
+    if (name == "TABLE") {
+        ProblemTable table;
+        table.init(command, tables.size());
+        table.verify(filecontext);
+        tables.push_back(table);
+    }
 }
 
 
