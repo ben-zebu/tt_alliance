@@ -81,15 +81,15 @@ TRANSIENT:
 
   GROUP:
     keys: {"fr": ["grou", "groupe"], "en": ["grou", "group"]}
-    type: uint_array
+    type: string_array
 
     GDF:
       keys: {"fr": ["gdf", "gdf"], "en": ["gdf", "gdf"]}
-      type: uint_array
+      type: string_array
 
     GDP:
       keys: {"fr": ["gdp", "gdp"], "en": ["gdp", "gdp"]}
-      type: uint
+      type: string
 
   SINGLE:
     keys: {"fr": ["seul", "seul"], "en": ["sing", "single"]}
@@ -101,7 +101,7 @@ TRANSIENT:
 
   GVAR:
     keys: {"fr": ["gvar", "gvar"], "en": ["gvar", "gvar"]}
-    type: uint
+    type: string
 
   N3SM:
     keys: {"fr": ["n3sm", "n3sm"], "en": ["n3sm", "n3sm"]}

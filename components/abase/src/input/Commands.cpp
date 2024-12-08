@@ -88,11 +88,10 @@ std::size_t StringCommand::read_input(FileReader& reader, const CommandsCollecto
 }
 
 std::size_t VectorStringCommand::read_input(FileReader& reader, const CommandsCollector& collector) {
+    clear();
     std::string key = reader.get_word();
     if (!this->is_same_keyword(key)) return 1;
-    clear();
     reader.move();
-
 
     std::string str_value = reader.get_word();
     // Read the values until a command name is found.

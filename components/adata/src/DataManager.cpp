@@ -24,6 +24,13 @@ void DataManager::set_data(std::shared_ptr<abase::BaseCommand> command, std::str
         loadstep.verify(filecontext);
         loadsteps.push_back(loadstep);
     }
+
+    if (name == "TRANSIENT") {
+        ProblemTransient transient;
+        transient.init(command, transients.size(), loadsteps.size());
+        transient.verify(filecontext);
+        transients.push_back(transient);
+    }
 }
 
 
@@ -84,6 +91,36 @@ void DataManager::read_data(const std::string& filename, const std::string& comm
     if (reader.get_word().size() > 0 && cumul_status == 1) {
         std::string error_msg = translate("ERROR_DATA_UNKNOWN_COMMAND", reader.get_word());
         file_input_error(error_msg, reader.context_error());
+    }
+
+}
+
+void DataManager::verify() const {
+    /*
+    // check if cross-sections are defined
+    if (sections.size() == 0) {
+        std::string msg = translate("ERROR_MISSING_SECTION");
+        input_error(msg);
+    }
+    */
+
+    // check if transients are defined for category 2
+    if (description.category == 2 && transients.size() == 0) {
+        std::string msg = translate("ERROR_MISSING_TRANSIENT");
+        input_error(msg);
+    }
+
+    // check unicities of transient names
+    if (transients.size() > 0) {
+        std::vector<std::string> names;
+        for (const auto& transient : transients) {
+            if (std::find(names.begin(), names.end(), transient.name) != names.end()) {
+                std::string msg = translate("ERROR_DUPLICATE_TRANSIENT_NAME", transient.name);
+                input_error(msg);
+            } else {
+                names.push_back(transient.name);
+            }
+        }
     }
 
 }

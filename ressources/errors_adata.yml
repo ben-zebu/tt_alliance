@@ -5,9 +5,7 @@
     en: "Unknown command: '{0}' !"
     fr: "Commande inconnue : '{0}' !"
 
-#
-# ProblemDescription messages
-#
+# ProblemDescription
   CODE_EDITION_MISSING:
     en: "Code edition is required for category 2 !"
     fr: "L'édition du code est requise en catégorie 2 !"
@@ -16,6 +14,7 @@
     en: "Unknown edition '{0}' for code '{1}' !"
     fr: "Édition inconnue '{0}' pour le code '{1}' !"
 
+# ProblemLoadstep
   PRESSURE_CARDS_VALUES_MISMATCH:
     en: "Mismatch between numbers of pressure cards '{0}' and pressure values '{1}' !"
     fr: "Incohérence entre le nombre de cartes de pression '{0}' et le nombre de valeurs de pression '{1}' !"
@@ -23,3 +22,42 @@
   MISMATCH_COEFFICIENTS:
     en: "Mismatch with external loads coefficients: expected values '{0}' or '{1}' !"
     fr: "Incohérence avec les coefficients pour les efforts externes : valeurs attendues '{0}' ou '{1}' !"
+
+# ProblemTransient
+  ERROR_OUT_OF_RANGE_LOADSTEPS:
+    en: "Out of range loadstep '{0}' (maximal range '{1}') !"
+    fr: "Rang du chargement '{0}' en dehors de la plage autorisée (valeur maximale '{1}') !"
+
+  ERROR_GROUP_ALONE:
+    en: "'GROUP' and 'SINGLE' keys must not be defined together for a transient !"
+    fr: "Les clés 'GROUPE' et 'SEUL' ne peuvent être définies conjointement pour un transitoire !"
+
+  ERROR_CROSSING_TRANSIENTS:
+    en: "The crossing transient defined after 'GDP' key must be composed of 2 groups !"
+    fr: "Le transitoire de passage défni après la clé 'GDP' doit être composé de 2 groupes !"
+
+  ERROR_CROSSING_TRANSIENT_DEFINITION:
+    en: "Non consistant definition for the crossing transient ! The value '{0}' and '{1}' must be defined after the 'GROUP' key !"
+    fr: "Définition incorrecte pour le transitoire de passage ! Les valeurs '{0}' et '{1}' doivent être définies après la clé 'GROUPE' !"
+
+  ERROR_VARIANT_DEFINITION:
+    en: "'GVAR' and 'NVAR' keys must be defined together for a transient !"
+    fr: "Les clés 'GVAR' et 'NVAR' doivent être définies conjointement pour un transitoire !"
+  
+  ERROR_VARIANT_SHARED:
+    en: "'GDP' and 'GVAR' keys must not be defined together for a transient !"
+    fr: "Les clés 'GDP' et 'GVAR' ne peuvent être définies conjointement pour un transitoire !"
+
+
+# DataManager
+  ERROR_MISSING_SECTION:
+    en: "One or several sections must be defined !"
+    fr: "Un ou plusieurs sections doivent être définies !"
+
+  ERROR_MISSING_TRANSIENT:
+    en: "One or several transients must be defined for caterogy 2 analysis !"
+    fr: "Un ou plusieurs transitoires doivent être définis pour une analyse en catégorie 2 !"
+
+  ERROR_DUPLICATE_TRANSIENT_NAME:
+    en: "Duplicate transient name: '{0}' !"
+    fr: "Nom de transitoire défini plusieurs fois : '{0}' !"    
