@@ -9,8 +9,33 @@ Argument Parser
    :project: tt_alliance
 
 Data Manager
------------
+------------
 .. doxygenfile:: DataManager.h
+   :project: tt_alliance
+
+Problem Description
+-------------------
+.. doxygenfile:: ProblemDescription.h
+   :project: tt_alliance
+
+Problem LoadStep
+----------------
+.. doxygenfile:: ProblemLoadstep.h
+   :project: tt_alliance
+
+Problem Table
+-------------
+.. doxygenfile:: ProblemTable.h
+   :project: tt_alliance
+
+Problem Torsor
+--------------
+.. doxygenfile:: ProblemTorsor.h
+   :project: tt_alliance
+
+Problem Transient:
+------------------
+.. doxygenfile:: ProblemTransient.h
    :project: tt_alliance
 
 Output Resume
