@@ -1,6 +1,7 @@
 #include "Environment.h"
 
 #include "ProblemDescription.h"
+#include "ProblemPlate.h"
 #include "ProblemTorsor.h"
 #include "ProblemLoadstep.h"
 #include "ProblemTransient.h"
@@ -21,6 +22,7 @@ namespace adata {
 
         protected:
             ProblemDescription description;
+            ProblemPlate plate;
             ProblemTorsor torsor;
             std::vector<ProblemLoadstep> loadsteps;
             std::vector<ProblemTransient> transients;

@@ -13,6 +13,11 @@ void DataManager::set_data(std::shared_ptr<abase::BaseCommand> command, std::str
         description.verify(filecontext);
     }
 
+    if (name == "PLATE") {
+        plate.init(command, description.category);
+        plate.verify(filecontext);
+    }
+
     if (name == "TORSOR") {
         torsor.init(command);
         torsor.verify(filecontext);
