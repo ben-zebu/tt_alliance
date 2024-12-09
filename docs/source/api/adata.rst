@@ -23,6 +23,11 @@ Problem LoadStep
 .. doxygenfile:: ProblemLoadstep.h
    :project: tt_alliance
 
+Problem Plate
+-------------
+.. doxygenfile:: ProblemPlate.h
+   :project: tt_alliance
+
 Problem Table
 -------------
 .. doxygenfile:: ProblemTable.h

@@ -405,18 +405,14 @@ PLATE:
 
   SQUARE:
     keys: {"fr": ["carr", "carre"], "en": ["squa", "square"]}
-    type: uint
+    type: string_array
 
   TRIANGULAR:
     keys: {"fr": ["tria", "triangulaire"], "en": ["tria", "triangular"]}
-    type: uint
+    type: string_array
 
   BIDIM:
     keys: {"fr": ["2d", "2d"], "en": ["2d", "2d"]}
-    type: single
-
-  TDIF:
-    keys: {"fr": ["tdif", "tdif"], "en": ["tdif", "tdif"]}
     type: single
 
   DPHI:
@@ -434,6 +430,15 @@ PLATE:
   TMAX:
     keys: {"fr": ["tmax", "tmax"], "en": ["tmax", "tmax"]}
     type: real
+
+  PMIN:
+    keys: {"fr": ["pmin", "pmin"], "en": ["pmin", "pmin"]}
+    type: real
+
+  TMIN:
+    keys: {"fr": ["tmin", "tmin"], "en": ["tmin", "tmin"]}
+    type: real
+
 
   PTSINGLE:
     keys: {"fr": ["ptse", "ptseul"], "en": ["ptsi", "ptsingle"]}

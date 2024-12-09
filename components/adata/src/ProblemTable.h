@@ -22,7 +22,8 @@ namespace adata {
             /// @param command values read from the input file
             /// @param id rank associated to the table
             void init(std::shared_ptr<abase::BaseCommand> command, std::size_t id);
-
+            /// @brief Verify the coherence of object values
+            /// @param filecontext file content
             void verify(std::string& filecontext) const;
     };
 }
