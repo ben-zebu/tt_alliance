@@ -37,7 +37,7 @@ void ProblemPlate::init(const std::shared_ptr<abase::BaseCommand>& command, std:
     abase::get_child_values(command, "TRIANGULAR", triangular_type);
     if (triangular_type.empty() || triangular_type[0] != "undefined") {
         count_def++;
-        type = "tringular";
+        type = "triangular";
         if (!triangular_type.empty())  sub_case = triangular_type[0];
     } 
     // mutual exclusion between square and triangular type
