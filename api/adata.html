@@ -18,6 +18,7 @@
       <script src="../_static/documentation_options.js?v=347b672c"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -56,6 +57,31 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#data-manager">Data Manager</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5adata11DataManagerE"><code class="docutils literal notranslate"><span class="pre">adata::DataManager</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-description">Problem Description</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5adata18ProblemDescriptionE"><code class="docutils literal notranslate"><span class="pre">adata::ProblemDescription</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-loadstep">Problem LoadStep</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5adata15ProblemLoadstepE"><code class="docutils literal notranslate"><span class="pre">adata::ProblemLoadstep</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-plate">Problem Plate</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5adata11plate_angleE"><code class="docutils literal notranslate"><span class="pre">adata::plate_angle</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5adata12ProblemPlateE"><code class="docutils literal notranslate"><span class="pre">adata::ProblemPlate</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-table">Problem Table</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5adata12ProblemTableE"><code class="docutils literal notranslate"><span class="pre">adata::ProblemTable</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-torsor">Problem Torsor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5adata13ProblemTorsorE"><code class="docutils literal notranslate"><span class="pre">adata::ProblemTorsor</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-transient">Problem Transient:</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5adata16ProblemTransientE"><code class="docutils literal notranslate"><span class="pre">adata::ProblemTransient</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#output-resume">Output Resume</a><ul>
@@ -242,35 +268,40 @@
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N5adata11DataManager11descriptionE">
-<span id="_CPPv3N5adata11DataManager11descriptionE"></span><span id="_CPPv2N5adata11DataManager11descriptionE"></span><span id="adata::DataManager::description__ProblemDescription"></span><span class="target" id="classadata_1_1DataManager_1a7ae5821b145372f955dbc49879f14878"></span><span class="n"><span class="pre">ProblemDescription</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">description</span></span></span><a class="headerlink" href="#_CPPv4N5adata11DataManager11descriptionE" title="Link to this definition"></a><br /></dt>
+<span id="_CPPv3N5adata11DataManager11descriptionE"></span><span id="_CPPv2N5adata11DataManager11descriptionE"></span><span id="adata::DataManager::description__ProblemDescription"></span><span class="target" id="classadata_1_1DataManager_1a7ae5821b145372f955dbc49879f14878"></span><a class="reference internal" href="#_CPPv4N5adata18ProblemDescriptionE" title="adata::ProblemDescription"><span class="n"><span class="pre">ProblemDescription</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">description</span></span></span><a class="headerlink" href="#_CPPv4N5adata11DataManager11descriptionE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata11DataManager5plateE">
+<span id="_CPPv3N5adata11DataManager5plateE"></span><span id="_CPPv2N5adata11DataManager5plateE"></span><span id="adata::DataManager::plate__ProblemPlate"></span><span class="target" id="classadata_1_1DataManager_1acbdce3ff90bae8f888ebd319d9d4042c"></span><a class="reference internal" href="#_CPPv4N5adata12ProblemPlateE" title="adata::ProblemPlate"><span class="n"><span class="pre">ProblemPlate</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">plate</span></span></span><a class="headerlink" href="#_CPPv4N5adata11DataManager5plateE" title="Link to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N5adata11DataManager6torsorE">
-<span id="_CPPv3N5adata11DataManager6torsorE"></span><span id="_CPPv2N5adata11DataManager6torsorE"></span><span id="adata::DataManager::torsor__ProblemTorsor"></span><span class="target" id="classadata_1_1DataManager_1a3b6f8c486928d37d61a7d8076b5bc5ba"></span><span class="n"><span class="pre">ProblemTorsor</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">torsor</span></span></span><a class="headerlink" href="#_CPPv4N5adata11DataManager6torsorE" title="Link to this definition"></a><br /></dt>
+<span id="_CPPv3N5adata11DataManager6torsorE"></span><span id="_CPPv2N5adata11DataManager6torsorE"></span><span id="adata::DataManager::torsor__ProblemTorsor"></span><span class="target" id="classadata_1_1DataManager_1a3b6f8c486928d37d61a7d8076b5bc5ba"></span><a class="reference internal" href="#_CPPv4N5adata13ProblemTorsorE" title="adata::ProblemTorsor"><span class="n"><span class="pre">ProblemTorsor</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">torsor</span></span></span><a class="headerlink" href="#_CPPv4N5adata11DataManager6torsorE" title="Link to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N5adata11DataManager9loadstepsE">
-<span id="_CPPv3N5adata11DataManager9loadstepsE"></span><span id="_CPPv2N5adata11DataManager9loadstepsE"></span><span id="adata::DataManager::loadsteps__std::vector:ProblemLoadstep:"></span><span class="target" id="classadata_1_1DataManager_1a27941ea20dadc141bd9112531b9fd861"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">ProblemLoadstep</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">loadsteps</span></span></span><a class="headerlink" href="#_CPPv4N5adata11DataManager9loadstepsE" title="Link to this definition"></a><br /></dt>
+<span id="_CPPv3N5adata11DataManager9loadstepsE"></span><span id="_CPPv2N5adata11DataManager9loadstepsE"></span><span id="adata::DataManager::loadsteps__std::vector:ProblemLoadstep:"></span><span class="target" id="classadata_1_1DataManager_1a27941ea20dadc141bd9112531b9fd861"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N5adata15ProblemLoadstepE" title="adata::ProblemLoadstep"><span class="n"><span class="pre">ProblemLoadstep</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">loadsteps</span></span></span><a class="headerlink" href="#_CPPv4N5adata11DataManager9loadstepsE" title="Link to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N5adata11DataManager10transientsE">
-<span id="_CPPv3N5adata11DataManager10transientsE"></span><span id="_CPPv2N5adata11DataManager10transientsE"></span><span id="adata::DataManager::transients__std::vector:ProblemTransient:"></span><span class="target" id="classadata_1_1DataManager_1afc453781b97db588302502ac2b889c7c"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">ProblemTransient</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">transients</span></span></span><a class="headerlink" href="#_CPPv4N5adata11DataManager10transientsE" title="Link to this definition"></a><br /></dt>
+<span id="_CPPv3N5adata11DataManager10transientsE"></span><span id="_CPPv2N5adata11DataManager10transientsE"></span><span id="adata::DataManager::transients__std::vector:ProblemTransient:"></span><span class="target" id="classadata_1_1DataManager_1afc453781b97db588302502ac2b889c7c"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N5adata16ProblemTransientE" title="adata::ProblemTransient"><span class="n"><span class="pre">ProblemTransient</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">transients</span></span></span><a class="headerlink" href="#_CPPv4N5adata11DataManager10transientsE" title="Link to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N5adata11DataManager6tablesE">
-<span id="_CPPv3N5adata11DataManager6tablesE"></span><span id="_CPPv2N5adata11DataManager6tablesE"></span><span id="adata::DataManager::tables__std::vector:ProblemTable:"></span><span class="target" id="classadata_1_1DataManager_1a8b940a5da962d88b59c3f52541fa34b6"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">ProblemTable</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tables</span></span></span><a class="headerlink" href="#_CPPv4N5adata11DataManager6tablesE" title="Link to this definition"></a><br /></dt>
+<span id="_CPPv3N5adata11DataManager6tablesE"></span><span id="_CPPv2N5adata11DataManager6tablesE"></span><span id="adata::DataManager::tables__std::vector:ProblemTable:"></span><span class="target" id="classadata_1_1DataManager_1a8b940a5da962d88b59c3f52541fa34b6"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N5adata12ProblemTableE" title="adata::ProblemTable"><span class="n"><span class="pre">ProblemTable</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tables</span></span></span><a class="headerlink" href="#_CPPv4N5adata11DataManager6tablesE" title="Link to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-functions">Private Functions</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N5adata11DataManager8set_dataENSt10shared_ptrIN5abase11BaseCommandEEENSt6stringE">
-<span id="_CPPv3N5adata11DataManager8set_dataENSt10shared_ptrIN5abase11BaseCommandEEENSt6stringE"></span><span id="_CPPv2N5adata11DataManager8set_dataENSt10shared_ptrIN5abase11BaseCommandEEENSt6stringE"></span><span id="adata::DataManager::set_data__std::shared_ptr:abase::BaseCommand:.ss"></span><span class="target" id="classadata_1_1DataManager_1a0a7cd3c83b015095cad356a8e9d3238d"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_data</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="abase.html#_CPPv45abase" title="abase"><span class="n"><span class="pre">abase</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="abase.html#_CPPv4N5abase11BaseCommandE" title="abase::BaseCommand"><span class="n"><span class="pre">BaseCommand</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">command</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">filecontext</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5adata11DataManager8set_dataENSt10shared_ptrIN5abase11BaseCommandEEENSt6stringE" title="Link to this definition"></a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N5adata11DataManager8set_dataERKNSt10shared_ptrIN5abase11BaseCommandEEERKNSt6stringE">
+<span id="_CPPv3N5adata11DataManager8set_dataERKNSt10shared_ptrIN5abase11BaseCommandEEERKNSt6stringE"></span><span id="_CPPv2N5adata11DataManager8set_dataERKNSt10shared_ptrIN5abase11BaseCommandEEERKNSt6stringE"></span><span id="adata::DataManager::set_data__std::shared_ptr:abase::BaseCommand:CR.ssCR"></span><span class="target" id="classadata_1_1DataManager_1a28658d6d1c9c8971a8f4d62f25b67e48"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_data</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="abase.html#_CPPv45abase" title="abase"><span class="n"><span class="pre">abase</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="abase.html#_CPPv4N5abase11BaseCommandE" title="abase::BaseCommand"><span class="n"><span class="pre">BaseCommand</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">command</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filecontext</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5adata11DataManager8set_dataERKNSt10shared_ptrIN5abase11BaseCommandEEERKNSt6stringE" title="Link to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
@@ -288,6 +319,688 @@
 <dd class="field-even"><p>problem title as a vector of strings </p>
 </dd>
 </dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="problem-description">
+<h2>Problem Description<a class="headerlink" href="#problem-description" title="Link to this heading"></a></h2>
+<dl class="cpp type">
+<dt class="sig sig-object cpp">
+<span class="target" id="namespaceadata"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">adata</span></span></span><br /></dt>
+<dd><dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata18ProblemDescriptionE">
+<span id="_CPPv3N5adata18ProblemDescriptionE"></span><span id="_CPPv2N5adata18ProblemDescriptionE"></span><span id="adata::ProblemDescription"></span><span class="target" id="classadata_1_1ProblemDescription"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ProblemDescription</span></span></span><a class="headerlink" href="#_CPPv4N5adata18ProblemDescriptionE" title="Link to this definition"></a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata18ProblemDescription18ProblemDescriptionEv">
+<span id="_CPPv3N5adata18ProblemDescription18ProblemDescriptionEv"></span><span id="_CPPv2N5adata18ProblemDescription18ProblemDescriptionEv"></span><span id="adata::ProblemDescription::ProblemDescription"></span><span class="target" id="classadata_1_1ProblemDescription_1ae4816cbd362821dc3e7b2749ce2e1aa9"></span><span class="sig-name descname"><span class="n"><span class="pre">ProblemDescription</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5adata18ProblemDescription18ProblemDescriptionEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata18ProblemDescriptionD0Ev">
+<span id="_CPPv3N5adata18ProblemDescriptionD0Ev"></span><span id="_CPPv2N5adata18ProblemDescriptionD0Ev"></span><span id="adata::ProblemDescription::~ProblemDescription"></span><span class="target" id="classadata_1_1ProblemDescription_1a7cce049a9d0345aba50a4eea02ad8102"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~ProblemDescription</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5adata18ProblemDescriptionD0Ev" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata18ProblemDescription4initERKNSt10shared_ptrIN5abase11BaseCommandEEE">
+<span id="_CPPv3N5adata18ProblemDescription4initERKNSt10shared_ptrIN5abase11BaseCommandEEE"></span><span id="_CPPv2N5adata18ProblemDescription4initERKNSt10shared_ptrIN5abase11BaseCommandEEE"></span><span id="adata::ProblemDescription::init__std::shared_ptr:abase::BaseCommand:CR"></span><span class="target" id="classadata_1_1ProblemDescription_1adc137578e65647494494746d3ffa8f5b"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">init</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="abase.html#_CPPv45abase" title="abase"><span class="n"><span class="pre">abase</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="abase.html#_CPPv4N5abase11BaseCommandE" title="abase::BaseCommand"><span class="n"><span class="pre">BaseCommand</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">command</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5adata18ProblemDescription4initERKNSt10shared_ptrIN5abase11BaseCommandEEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Initialize the object with the values read from the input file. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>command</strong> – values read from the input file </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5adata18ProblemDescription6verifyERKNSt6stringE">
+<span id="_CPPv3NK5adata18ProblemDescription6verifyERKNSt6stringE"></span><span id="_CPPv2NK5adata18ProblemDescription6verifyERKNSt6stringE"></span><span id="adata::ProblemDescription::verify__ssCRC"></span><span class="target" id="classadata_1_1ProblemDescription_1ac2406c068899484b60058ad284ec5730"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">verify</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filecontext</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5adata18ProblemDescription6verifyERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Verify if the object is correctly initialized. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filecontext</strong> – context of the input file </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>status of the object initialization </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata18ProblemDescription9code_typeE">
+<span id="_CPPv3N5adata18ProblemDescription9code_typeE"></span><span id="_CPPv2N5adata18ProblemDescription9code_typeE"></span><span id="adata::ProblemDescription::code_type__ss"></span><span class="target" id="classadata_1_1ProblemDescription_1a57f64d1d44a62b552e8ddc791e3f4caf"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">code_type</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><a class="headerlink" href="#_CPPv4N5adata18ProblemDescription9code_typeE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata18ProblemDescription12code_editionE">
+<span id="_CPPv3N5adata18ProblemDescription12code_editionE"></span><span id="_CPPv2N5adata18ProblemDescription12code_editionE"></span><span id="adata::ProblemDescription::code_edition__ss"></span><span class="target" id="classadata_1_1ProblemDescription_1a16939d85085f0486135456b80a0e2f90"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">code_edition</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><a class="headerlink" href="#_CPPv4N5adata18ProblemDescription12code_editionE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata18ProblemDescription8categoryE">
+<span id="_CPPv3N5adata18ProblemDescription8categoryE"></span><span id="_CPPv2N5adata18ProblemDescription8categoryE"></span><span id="adata::ProblemDescription::category__std::s"></span><span class="target" id="classadata_1_1ProblemDescription_1aba3c6c66c7e7e31ec3903bdcf588731b"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">category</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5adata18ProblemDescription8categoryE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata18ProblemDescription11earthquakesE">
+<span id="_CPPv3N5adata18ProblemDescription11earthquakesE"></span><span id="_CPPv2N5adata18ProblemDescription11earthquakesE"></span><span id="adata::ProblemDescription::earthquakes__std::s"></span><span class="target" id="classadata_1_1ProblemDescription_1aacd759ba1b9a67fec86b4097c1c80194"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">earthquakes</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5adata18ProblemDescription11earthquakesE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata18ProblemDescription8languageE">
+<span id="_CPPv3N5adata18ProblemDescription8languageE"></span><span id="_CPPv2N5adata18ProblemDescription8languageE"></span><span id="adata::ProblemDescription::language__ss"></span><span class="target" id="classadata_1_1ProblemDescription_1a400fa544e7250a423a048d7836cfd314"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">language</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><a class="headerlink" href="#_CPPv4N5adata18ProblemDescription8languageE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata18ProblemDescription5unitsE">
+<span id="_CPPv3N5adata18ProblemDescription5unitsE"></span><span id="_CPPv2N5adata18ProblemDescription5unitsE"></span><span id="adata::ProblemDescription::units__ss"></span><span class="target" id="classadata_1_1ProblemDescription_1a43ee8d2ae934d7b5494cde5b43688cb8"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">units</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;mpa&quot;</span></span><a class="headerlink" href="#_CPPv4N5adata18ProblemDescription5unitsE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata18ProblemDescription7editionE">
+<span id="_CPPv3N5adata18ProblemDescription7editionE"></span><span id="_CPPv2N5adata18ProblemDescription7editionE"></span><span id="adata::ProblemDescription::edition__std::s"></span><span class="target" id="classadata_1_1ProblemDescription_1a0c6d798c7a8e657f0825099027e89f7f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">edition</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5adata18ProblemDescription7editionE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata18ProblemDescription6titlesE">
+<span id="_CPPv3N5adata18ProblemDescription6titlesE"></span><span id="_CPPv2N5adata18ProblemDescription6titlesE"></span><span id="adata::ProblemDescription::titles__std::vector:ss:"></span><span class="target" id="classadata_1_1ProblemDescription_1a42cf343626441957a228722e3a554492"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">titles</span></span></span><a class="headerlink" href="#_CPPv4N5adata18ProblemDescription6titlesE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="problem-loadstep">
+<h2>Problem LoadStep<a class="headerlink" href="#problem-loadstep" title="Link to this heading"></a></h2>
+<dl class="cpp type">
+<dt class="sig sig-object cpp">
+<span class="target" id="namespaceadata"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">adata</span></span></span><br /></dt>
+<dd><dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata15ProblemLoadstepE">
+<span id="_CPPv3N5adata15ProblemLoadstepE"></span><span id="_CPPv2N5adata15ProblemLoadstepE"></span><span id="adata::ProblemLoadstep"></span><span class="target" id="classadata_1_1ProblemLoadstep"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ProblemLoadstep</span></span></span><a class="headerlink" href="#_CPPv4N5adata15ProblemLoadstepE" title="Link to this definition"></a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata15ProblemLoadstep15ProblemLoadstepEv">
+<span id="_CPPv3N5adata15ProblemLoadstep15ProblemLoadstepEv"></span><span id="_CPPv2N5adata15ProblemLoadstep15ProblemLoadstepEv"></span><span id="adata::ProblemLoadstep::ProblemLoadstep"></span><span class="target" id="classadata_1_1ProblemLoadstep_1aaa79eb8996d4be1de473ad3b7d201110"></span><span class="sig-name descname"><span class="n"><span class="pre">ProblemLoadstep</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5adata15ProblemLoadstep15ProblemLoadstepEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata15ProblemLoadstepD0Ev">
+<span id="_CPPv3N5adata15ProblemLoadstepD0Ev"></span><span id="_CPPv2N5adata15ProblemLoadstepD0Ev"></span><span id="adata::ProblemLoadstep::~ProblemLoadstep"></span><span class="target" id="classadata_1_1ProblemLoadstep_1a2af05c92fde622a4c9784826cc1be845"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~ProblemLoadstep</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5adata15ProblemLoadstepD0Ev" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata15ProblemLoadstep4initERKNSt10shared_ptrIN5abase11BaseCommandEEENSt6size_tE">
+<span id="_CPPv3N5adata15ProblemLoadstep4initERKNSt10shared_ptrIN5abase11BaseCommandEEENSt6size_tE"></span><span id="_CPPv2N5adata15ProblemLoadstep4initERKNSt10shared_ptrIN5abase11BaseCommandEEENSt6size_tE"></span><span id="adata::ProblemLoadstep::init__std::shared_ptr:abase::BaseCommand:CR.std::s"></span><span class="target" id="classadata_1_1ProblemLoadstep_1a014c74f8dce555a5273a62533c78d5fb"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">init</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="abase.html#_CPPv45abase" title="abase"><span class="n"><span class="pre">abase</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="abase.html#_CPPv4N5abase11BaseCommandE" title="abase::BaseCommand"><span class="n"><span class="pre">BaseCommand</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">command</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">nb_torsors</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5adata15ProblemLoadstep4initERKNSt10shared_ptrIN5abase11BaseCommandEEENSt6size_tE" title="Link to this definition"></a><br /></dt>
+<dd><p>Initialize the object with the values read from the input file. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>command</strong> – values read from the input file </p></li>
+<li><p><strong>nb_torsors</strong> – number of external torsors </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5adata15ProblemLoadstep6verifyERKNSt6stringE">
+<span id="_CPPv3NK5adata15ProblemLoadstep6verifyERKNSt6stringE"></span><span id="_CPPv2NK5adata15ProblemLoadstep6verifyERKNSt6stringE"></span><span id="adata::ProblemLoadstep::verify__ssCRC"></span><span class="target" id="classadata_1_1ProblemLoadstep_1a0ead60890446a9f740b206d3bf41ec40"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">verify</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filecontext</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5adata15ProblemLoadstep6verifyERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Verify if the object is correctly initialized. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filecontext</strong> – context of the input file </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>status of the object initialization </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata15ProblemLoadstep14pressure_cardsE">
+<span id="_CPPv3N5adata15ProblemLoadstep14pressure_cardsE"></span><span id="_CPPv2N5adata15ProblemLoadstep14pressure_cardsE"></span><span id="adata::ProblemLoadstep::pressure_cards__std::vector:std::s:"></span><span class="target" id="classadata_1_1ProblemLoadstep_1af60ad0f1536d58ecf704b07b6cd26a5c"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pressure_cards</span></span></span><a class="headerlink" href="#_CPPv4N5adata15ProblemLoadstep14pressure_cardsE" title="Link to this definition"></a><br /></dt>
+<dd><p>Card ranks that contain stress values associated to pressure loads. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata15ProblemLoadstep15pressure_valuesE">
+<span id="_CPPv3N5adata15ProblemLoadstep15pressure_valuesE"></span><span id="_CPPv2N5adata15ProblemLoadstep15pressure_valuesE"></span><span id="adata::ProblemLoadstep::pressure_values__std::vector:double:"></span><span class="target" id="classadata_1_1ProblemLoadstep_1ac5d945eed53a6f3866cd27b9c7fbd6ce"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pressure_values</span></span></span><a class="headerlink" href="#_CPPv4N5adata15ProblemLoadstep15pressure_valuesE" title="Link to this definition"></a><br /></dt>
+<dd><p>pressure values associated to the pressure cards </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata15ProblemLoadstep12thermal_cardE">
+<span id="_CPPv3N5adata15ProblemLoadstep12thermal_cardE"></span><span id="_CPPv2N5adata15ProblemLoadstep12thermal_cardE"></span><span id="adata::ProblemLoadstep::thermal_card__std::s"></span><span class="target" id="classadata_1_1ProblemLoadstep_1a8a1e6c89a3304fdcd9bda40d812f7185"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">thermal_card</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5adata15ProblemLoadstep12thermal_cardE" title="Link to this definition"></a><br /></dt>
+<dd><p>Card rank that contains stress values associated to temperature loads. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata15ProblemLoadstep2khE">
+<span id="_CPPv3N5adata15ProblemLoadstep2khE"></span><span id="_CPPv2N5adata15ProblemLoadstep2khE"></span><span id="adata::ProblemLoadstep::kh__double"></span><span class="target" id="classadata_1_1ProblemLoadstep_1a7cc7e53b7bf15ded16f13444ab93e4d8"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">kh</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1.0</span></span><a class="headerlink" href="#_CPPv4N5adata15ProblemLoadstep2khE" title="Link to this definition"></a><br /></dt>
+<dd><p>Thermomechanical coefficient associated to the thermal card. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata15ProblemLoadstep6max_efE">
+<span id="_CPPv3N5adata15ProblemLoadstep6max_efE"></span><span id="_CPPv2N5adata15ProblemLoadstep6max_efE"></span><span id="adata::ProblemLoadstep::max_ef__std::vector:double:"></span><span class="target" id="classadata_1_1ProblemLoadstep_1acc581b1b5efa299f83199df116cfae5c"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">max_ef</span></span></span><a class="headerlink" href="#_CPPv4N5adata15ProblemLoadstep6max_efE" title="Link to this definition"></a><br /></dt>
+<dd><p>Maximum coefficients associated to external torsors, case without earthquake. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata15ProblemLoadstep6min_efE">
+<span id="_CPPv3N5adata15ProblemLoadstep6min_efE"></span><span id="_CPPv2N5adata15ProblemLoadstep6min_efE"></span><span id="adata::ProblemLoadstep::min_ef__std::vector:double:"></span><span class="target" id="classadata_1_1ProblemLoadstep_1ac353bba48befb90e3fdc1a2a46a3c36f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">min_ef</span></span></span><a class="headerlink" href="#_CPPv4N5adata15ProblemLoadstep6min_efE" title="Link to this definition"></a><br /></dt>
+<dd><p>Minimum coefficients associated to external torsors, case without earthquake. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata15ProblemLoadstep6max_ftE">
+<span id="_CPPv3N5adata15ProblemLoadstep6max_ftE"></span><span id="_CPPv2N5adata15ProblemLoadstep6max_ftE"></span><span id="adata::ProblemLoadstep::max_ft__std::vector:double:"></span><span class="target" id="classadata_1_1ProblemLoadstep_1a44606bbfc54ab0d3d83d2869dbc6a2e5"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">max_ft</span></span></span><a class="headerlink" href="#_CPPv4N5adata15ProblemLoadstep6max_ftE" title="Link to this definition"></a><br /></dt>
+<dd><p>Maximum coefficients associated to external torsors, case with earthquake. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata15ProblemLoadstep6min_ftE">
+<span id="_CPPv3N5adata15ProblemLoadstep6min_ftE"></span><span id="_CPPv2N5adata15ProblemLoadstep6min_ftE"></span><span id="adata::ProblemLoadstep::min_ft__std::vector:double:"></span><span class="target" id="classadata_1_1ProblemLoadstep_1ac94ea251588493b6215ff6f1cca04a24"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">min_ft</span></span></span><a class="headerlink" href="#_CPPv4N5adata15ProblemLoadstep6min_ftE" title="Link to this definition"></a><br /></dt>
+<dd><p>Minimum coefficients associated to external torsors, case with earthquake. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata15ProblemLoadstep22_mismatch_coefficientsE">
+<span id="_CPPv3N5adata15ProblemLoadstep22_mismatch_coefficientsE"></span><span id="_CPPv2N5adata15ProblemLoadstep22_mismatch_coefficientsE"></span><span id="adata::ProblemLoadstep::_mismatch_coefficients__b"></span><span class="target" id="classadata_1_1ProblemLoadstep_1a2a6f3adadb31544bc4c70d0213cb8311"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_mismatch_coefficients</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N5adata15ProblemLoadstep22_mismatch_coefficientsE" title="Link to this definition"></a><br /></dt>
+<dd><p>Mismatch between the number of external torsors and the number of coefficients. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata15ProblemLoadstep11_nb_torsorsE">
+<span id="_CPPv3N5adata15ProblemLoadstep11_nb_torsorsE"></span><span id="_CPPv2N5adata15ProblemLoadstep11_nb_torsorsE"></span><span id="adata::ProblemLoadstep::_nb_torsors__std::s"></span><span class="target" id="classadata_1_1ProblemLoadstep_1abceacd225276cb7c56cbdf985fb0ac66"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_nb_torsors</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5adata15ProblemLoadstep11_nb_torsorsE" title="Link to this definition"></a><br /></dt>
+<dd><p>Number of external torsors. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="problem-plate">
+<h2>Problem Plate<a class="headerlink" href="#problem-plate" title="Link to this heading"></a></h2>
+<dl class="cpp type">
+<dt class="sig sig-object cpp">
+<span class="target" id="namespaceadata"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">adata</span></span></span><br /></dt>
+<dd><dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata11plate_angleE">
+<span id="_CPPv3N5adata11plate_angleE"></span><span id="_CPPv2N5adata11plate_angleE"></span><span id="adata::plate_angle"></span><span class="target" id="structadata_1_1plate__angle"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">plate_angle</span></span></span><a class="headerlink" href="#_CPPv4N5adata11plate_angleE" title="Link to this definition"></a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata11plate_angle4initEddd">
+<span id="_CPPv3N5adata11plate_angle4initEddd"></span><span id="_CPPv2N5adata11plate_angle4initEddd"></span><span id="adata::plate_angle::init__double.double.double"></span><span class="target" id="structadata_1_1plate__angle_1a6c7099755818fbd881de25eecbd74da9"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">init</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">delta</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">max</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">min</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5adata11plate_angle4initEddd" title="Link to this definition"></a><br /></dt>
+<dd><p>initialize the object with the given values </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>delta</strong> – angle step </p></li>
+<li><p><strong>max</strong> – maximum angle value </p></li>
+<li><p><strong>min</strong> – minimum angle value (default 0.) </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata11plate_angle5deltaE">
+<span id="_CPPv3N5adata11plate_angle5deltaE"></span><span id="_CPPv2N5adata11plate_angle5deltaE"></span><span id="adata::plate_angle::delta__double"></span><span class="target" id="structadata_1_1plate__angle_1a92515c1a83f57a3ab51447f2054fc96c"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">delta</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.</span></span><a class="headerlink" href="#_CPPv4N5adata11plate_angle5deltaE" title="Link to this definition"></a><br /></dt>
+<dd><p>angle step </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata11plate_angle3maxE">
+<span id="_CPPv3N5adata11plate_angle3maxE"></span><span id="_CPPv2N5adata11plate_angle3maxE"></span><span id="adata::plate_angle::max__double"></span><span class="target" id="structadata_1_1plate__angle_1a26a0f82d9aac9ce3fe7a3f0456b4ed74"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">max</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">180.</span></span><a class="headerlink" href="#_CPPv4N5adata11plate_angle3maxE" title="Link to this definition"></a><br /></dt>
+<dd><p>maximum angle value </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata11plate_angle3minE">
+<span id="_CPPv3N5adata11plate_angle3minE"></span><span id="_CPPv2N5adata11plate_angle3minE"></span><span id="adata::plate_angle::min__double"></span><span class="target" id="structadata_1_1plate__angle_1a746c4b338fe3b6f34055cb2cd1e7fa9c"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">min</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.</span></span><a class="headerlink" href="#_CPPv4N5adata11plate_angle3minE" title="Link to this definition"></a><br /></dt>
+<dd><p>minimum angle value </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata11plate_angle6valuesE">
+<span id="_CPPv3N5adata11plate_angle6valuesE"></span><span id="_CPPv2N5adata11plate_angle6valuesE"></span><span id="adata::plate_angle::values__std::vector:double:"></span><span class="target" id="structadata_1_1plate__angle_1a36d9f80a4937a8500fd31086c4d2efa4"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">values</span></span></span><a class="headerlink" href="#_CPPv4N5adata11plate_angle6valuesE" title="Link to this definition"></a><br /></dt>
+<dd><p>list of angles values </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata12ProblemPlateE">
+<span id="_CPPv3N5adata12ProblemPlateE"></span><span id="_CPPv2N5adata12ProblemPlateE"></span><span id="adata::ProblemPlate"></span><span class="target" id="classadata_1_1ProblemPlate"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ProblemPlate</span></span></span><a class="headerlink" href="#_CPPv4N5adata12ProblemPlateE" title="Link to this definition"></a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata12ProblemPlate12ProblemPlateEv">
+<span id="_CPPv3N5adata12ProblemPlate12ProblemPlateEv"></span><span id="_CPPv2N5adata12ProblemPlate12ProblemPlateEv"></span><span id="adata::ProblemPlate::ProblemPlate"></span><span class="target" id="classadata_1_1ProblemPlate_1a6a47ca057b2eccf3dd7fbce00176752b"></span><span class="sig-name descname"><span class="n"><span class="pre">ProblemPlate</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5adata12ProblemPlate12ProblemPlateEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata12ProblemPlateD0Ev">
+<span id="_CPPv3N5adata12ProblemPlateD0Ev"></span><span id="_CPPv2N5adata12ProblemPlateD0Ev"></span><span id="adata::ProblemPlate::~ProblemPlate"></span><span class="target" id="classadata_1_1ProblemPlate_1a8c6e81c766c4ee2bb1268815f914cdb0"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~ProblemPlate</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5adata12ProblemPlateD0Ev" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata12ProblemPlate4initERKNSt10shared_ptrIN5abase11BaseCommandEEENSt6size_tE">
+<span id="_CPPv3N5adata12ProblemPlate4initERKNSt10shared_ptrIN5abase11BaseCommandEEENSt6size_tE"></span><span id="_CPPv2N5adata12ProblemPlate4initERKNSt10shared_ptrIN5abase11BaseCommandEEENSt6size_tE"></span><span id="adata::ProblemPlate::init__std::shared_ptr:abase::BaseCommand:CR.std::s"></span><span class="target" id="classadata_1_1ProblemPlate_1aab656fb50a22142026a9bc5e996387e2"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">init</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="abase.html#_CPPv45abase" title="abase"><span class="n"><span class="pre">abase</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="abase.html#_CPPv4N5abase11BaseCommandE" title="abase::BaseCommand"><span class="n"><span class="pre">BaseCommand</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">command</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">category</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5adata12ProblemPlate4initERKNSt10shared_ptrIN5abase11BaseCommandEEENSt6size_tE" title="Link to this definition"></a><br /></dt>
+<dd><p>Initialize the object with the values read from the input file. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>command</strong> – values read from the input file </p></li>
+<li><p><strong>category</strong> – analysis category </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5adata12ProblemPlate6verifyERKNSt6stringE">
+<span id="_CPPv3NK5adata12ProblemPlate6verifyERKNSt6stringE"></span><span id="_CPPv2NK5adata12ProblemPlate6verifyERKNSt6stringE"></span><span id="adata::ProblemPlate::verify__ssCRC"></span><span class="target" id="classadata_1_1ProblemPlate_1ae541f444341d26ff6084ef2815b976c3"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">verify</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filecontext</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5adata12ProblemPlate6verifyERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Verify the coherence of object values. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filecontext</strong> – file content </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5adata12ProblemPlate14get_3Sm_anglesEv">
+<span id="_CPPv3NK5adata12ProblemPlate14get_3Sm_anglesEv"></span><span id="_CPPv2NK5adata12ProblemPlate14get_3Sm_anglesEv"></span><span id="adata::ProblemPlate::get_3Sm_anglesC"></span><span class="target" id="classadata_1_1ProblemPlate_1a6d24eac7033c1733a3eea69673546c11"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_3Sm_angles</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5adata12ProblemPlate14get_3Sm_anglesEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Return the <span class="math notranslate nohighlight">\( \phi \)</span> angles used for 3 Sm analysis or primary stress analysis. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>3 Sm angles </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata12ProblemPlate2PhE">
+<span id="_CPPv3N5adata12ProblemPlate2PhE"></span><span id="_CPPv2N5adata12ProblemPlate2PhE"></span><span id="adata::ProblemPlate::Ph__std::pair:double.double:"></span><span class="target" id="classadata_1_1ProblemPlate_1a5b1c571b204b28e848322895ba710426"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Ph</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0.</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0.</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N5adata12ProblemPlate2PhE" title="Link to this definition"></a><br /></dt>
+<dd><p>store P/h ratio for primary and secondary side </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata12ProblemPlate4typeE">
+<span id="_CPPv3N5adata12ProblemPlate4typeE"></span><span id="_CPPv2N5adata12ProblemPlate4typeE"></span><span id="adata::ProblemPlate::type__ss"></span><span class="target" id="classadata_1_1ProblemPlate_1a727af5ef56f876f10cfb1cee1194c191"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">type</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><a class="headerlink" href="#_CPPv4N5adata12ProblemPlate4typeE" title="Link to this definition"></a><br /></dt>
+<dd><p>type of plate VER : square or triangular </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata12ProblemPlate8sub_caseE">
+<span id="_CPPv3N5adata12ProblemPlate8sub_caseE"></span><span id="_CPPv2N5adata12ProblemPlate8sub_caseE"></span><span id="adata::ProblemPlate::sub_case__ss"></span><span class="target" id="classadata_1_1ProblemPlate_1a1d1094fccd529c382071d0553d824a63"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sub_case</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><a class="headerlink" href="#_CPPv4N5adata12ProblemPlate8sub_caseE" title="Link to this definition"></a><br /></dt>
+<dd><p>sub case of the plate used for relocalization coefficients </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata12ProblemPlate5if_2DE">
+<span id="_CPPv3N5adata12ProblemPlate5if_2DE"></span><span id="_CPPv2N5adata12ProblemPlate5if_2DE"></span><span id="adata::ProblemPlate::if_2D__b"></span><span class="target" id="classadata_1_1ProblemPlate_1a91320e6e0656a242019f989a9decfe79"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">if_2D</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N5adata12ProblemPlate5if_2DE" title="Link to this definition"></a><br /></dt>
+<dd><p>boolean flag to check if the analysis is 2D </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata12ProblemPlate15if_single_angleE">
+<span id="_CPPv3N5adata12ProblemPlate15if_single_angleE"></span><span id="_CPPv2N5adata12ProblemPlate15if_single_angleE"></span><span id="adata::ProblemPlate::if_single_angle__b"></span><span class="target" id="classadata_1_1ProblemPlate_1affbdc5672cb96ff0ac9ddf4ac69dd67c"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">if_single_angle</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N5adata12ProblemPlate15if_single_angleE" title="Link to this definition"></a><br /></dt>
+<dd><p>boolean flag to check if the analysis is only a single angle </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata12ProblemPlate6if_3SmE">
+<span id="_CPPv3N5adata12ProblemPlate6if_3SmE"></span><span id="_CPPv2N5adata12ProblemPlate6if_3SmE"></span><span id="adata::ProblemPlate::if_3Sm__b"></span><span class="target" id="classadata_1_1ProblemPlate_1a71684bdc15e0dde718edba6886c62cc8"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">if_3Sm</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span><a class="headerlink" href="#_CPPv4N5adata12ProblemPlate6if_3SmE" title="Link to this definition"></a><br /></dt>
+<dd><p>boolean flag to check if the 3 Sm analysis must be performed </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata12ProblemPlate8categoryE">
+<span id="_CPPv3N5adata12ProblemPlate8categoryE"></span><span id="_CPPv2N5adata12ProblemPlate8categoryE"></span><span id="adata::ProblemPlate::category__std::s"></span><span class="target" id="classadata_1_1ProblemPlate_1af4e9c9e60dc9897ebe8d03335cb36447"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">category</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5adata12ProblemPlate8categoryE" title="Link to this definition"></a><br /></dt>
+<dd><p>category of the analysis </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata12ProblemPlate5thetaE">
+<span id="_CPPv3N5adata12ProblemPlate5thetaE"></span><span id="_CPPv2N5adata12ProblemPlate5thetaE"></span><span id="adata::ProblemPlate::theta__plate_angle"></span><span class="target" id="classadata_1_1ProblemPlate_1a36dd980b77acad842b7df9346cb447ea"></span><a class="reference internal" href="#_CPPv4N5adata11plate_angleE" title="adata::plate_angle"><span class="n"><span class="pre">plate_angle</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">theta</span></span></span><a class="headerlink" href="#_CPPv4N5adata12ProblemPlate5thetaE" title="Link to this definition"></a><br /></dt>
+<dd><p><span class="math notranslate nohighlight">\( \theta \)</span> angle parameters around the global Z axis (only for 2D analysis) </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata12ProblemPlate3phiE">
+<span id="_CPPv3N5adata12ProblemPlate3phiE"></span><span id="_CPPv2N5adata12ProblemPlate3phiE"></span><span id="adata::ProblemPlate::phi__plate_angle"></span><span class="target" id="classadata_1_1ProblemPlate_1a8717df9106e75e6b7c769e9f55ba9f54"></span><a class="reference internal" href="#_CPPv4N5adata11plate_angleE" title="adata::plate_angle"><span class="n"><span class="pre">plate_angle</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">phi</span></span></span><a class="headerlink" href="#_CPPv4N5adata12ProblemPlate3phiE" title="Link to this definition"></a><br /></dt>
+<dd><p><span class="math notranslate nohighlight">\( \phi \)</span> angle parameters around the drilling hole axis </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-functions">Private Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5adata12ProblemPlate10verify_phiERKNSt6stringE">
+<span id="_CPPv3NK5adata12ProblemPlate10verify_phiERKNSt6stringE"></span><span id="_CPPv2NK5adata12ProblemPlate10verify_phiERKNSt6stringE"></span><span id="adata::ProblemPlate::verify_phi__ssCRC"></span><span class="target" id="classadata_1_1ProblemPlate_1a6ea372fe966e0b1e709ed54b7f944c82"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">verify_phi</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filecontext</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5adata12ProblemPlate10verify_phiERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>control the coherence between <span class="math notranslate nohighlight">\( \phi \)</span> and remarkable angles </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filecontext</strong> – file content </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="problem-table">
+<h2>Problem Table<a class="headerlink" href="#problem-table" title="Link to this heading"></a></h2>
+<dl class="cpp type">
+<dt class="sig sig-object cpp">
+<span class="target" id="namespaceadata"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">adata</span></span></span><br /></dt>
+<dd><dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata12ProblemTableE">
+<span id="_CPPv3N5adata12ProblemTableE"></span><span id="_CPPv2N5adata12ProblemTableE"></span><span id="adata::ProblemTable"></span><span class="target" id="classadata_1_1ProblemTable"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ProblemTable</span></span></span><a class="headerlink" href="#_CPPv4N5adata12ProblemTableE" title="Link to this definition"></a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata12ProblemTable12ProblemTableEv">
+<span id="_CPPv3N5adata12ProblemTable12ProblemTableEv"></span><span id="_CPPv2N5adata12ProblemTable12ProblemTableEv"></span><span id="adata::ProblemTable::ProblemTable"></span><span class="target" id="classadata_1_1ProblemTable_1a4c853c899e35068ab2ba81ab01a79648"></span><span class="sig-name descname"><span class="n"><span class="pre">ProblemTable</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5adata12ProblemTable12ProblemTableEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata12ProblemTableD0Ev">
+<span id="_CPPv3N5adata12ProblemTableD0Ev"></span><span id="_CPPv2N5adata12ProblemTableD0Ev"></span><span id="adata::ProblemTable::~ProblemTable"></span><span class="target" id="classadata_1_1ProblemTable_1a830cb2d06df2056ba2fe9a993659d4e9"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~ProblemTable</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5adata12ProblemTableD0Ev" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata12ProblemTable4initERKNSt10shared_ptrIN5abase11BaseCommandEEENSt6size_tE">
+<span id="_CPPv3N5adata12ProblemTable4initERKNSt10shared_ptrIN5abase11BaseCommandEEENSt6size_tE"></span><span id="_CPPv2N5adata12ProblemTable4initERKNSt10shared_ptrIN5abase11BaseCommandEEENSt6size_tE"></span><span id="adata::ProblemTable::init__std::shared_ptr:abase::BaseCommand:CR.std::s"></span><span class="target" id="classadata_1_1ProblemTable_1a2681f5c585b7444b1f05f9c2acd63dd9"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">init</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="abase.html#_CPPv45abase" title="abase"><span class="n"><span class="pre">abase</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="abase.html#_CPPv4N5abase11BaseCommandE" title="abase::BaseCommand"><span class="n"><span class="pre">BaseCommand</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">command</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">id</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5adata12ProblemTable4initERKNSt10shared_ptrIN5abase11BaseCommandEEENSt6size_tE" title="Link to this definition"></a><br /></dt>
+<dd><p>Initialize the object with the values read from the input file. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>command</strong> – values read from the input file </p></li>
+<li><p><strong>id</strong> – rank associated to the table </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5adata12ProblemTable6verifyERKNSt6stringE">
+<span id="_CPPv3NK5adata12ProblemTable6verifyERKNSt6stringE"></span><span id="_CPPv2NK5adata12ProblemTable6verifyERKNSt6stringE"></span><span id="adata::ProblemTable::verify__ssCRC"></span><span class="target" id="classadata_1_1ProblemTable_1a9ca8aa587d9673e814d1c60f52667786"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">verify</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filecontext</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5adata12ProblemTable6verifyERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Verify the coherence of object values. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filecontext</strong> – file content </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata12ProblemTable4nameE">
+<span id="_CPPv3N5adata12ProblemTable4nameE"></span><span id="_CPPv2N5adata12ProblemTable4nameE"></span><span id="adata::ProblemTable::name__ss"></span><span class="target" id="classadata_1_1ProblemTable_1a88cc21fc1abaef715032dfec94d83005"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">name</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><a class="headerlink" href="#_CPPv4N5adata12ProblemTable4nameE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata12ProblemTable5tableE">
+<span id="_CPPv3N5adata12ProblemTable5tableE"></span><span id="_CPPv2N5adata12ProblemTable5tableE"></span><span id="adata::ProblemTable::table__amath::Table"></span><span class="target" id="classadata_1_1ProblemTable_1a38820caefc6795b97ed105e3d31ee4b4"></span><a class="reference internal" href="amath.html#_CPPv45amath" title="amath"><span class="n"><span class="pre">amath</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="amath.html#_CPPv4N5amath5TableE" title="amath::Table"><span class="n"><span class="pre">Table</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">table</span></span></span><a class="headerlink" href="#_CPPv4N5adata12ProblemTable5tableE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-functions">Private Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata12ProblemTable12default_nameENSt6size_tE">
+<span id="_CPPv3N5adata12ProblemTable12default_nameENSt6size_tE"></span><span id="_CPPv2N5adata12ProblemTable12default_nameENSt6size_tE"></span><span id="adata::ProblemTable::default_name__std::s"></span><span class="target" id="classadata_1_1ProblemTable_1a1af267d793316eb8f0dcae239260fe18"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">default_name</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">id</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5adata12ProblemTable12default_nameENSt6size_tE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="problem-torsor">
+<h2>Problem Torsor<a class="headerlink" href="#problem-torsor" title="Link to this heading"></a></h2>
+<dl class="cpp type">
+<dt class="sig sig-object cpp">
+<span class="target" id="namespaceadata"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">adata</span></span></span><br /></dt>
+<dd><dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata13ProblemTorsorE">
+<span id="_CPPv3N5adata13ProblemTorsorE"></span><span id="_CPPv2N5adata13ProblemTorsorE"></span><span id="adata::ProblemTorsor"></span><span class="target" id="classadata_1_1ProblemTorsor"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ProblemTorsor</span></span></span><a class="headerlink" href="#_CPPv4N5adata13ProblemTorsorE" title="Link to this definition"></a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata13ProblemTorsor13ProblemTorsorEv">
+<span id="_CPPv3N5adata13ProblemTorsor13ProblemTorsorEv"></span><span id="_CPPv2N5adata13ProblemTorsor13ProblemTorsorEv"></span><span id="adata::ProblemTorsor::ProblemTorsor"></span><span class="target" id="classadata_1_1ProblemTorsor_1a63932eedee4190c28ecf763a8f8019fb"></span><span class="sig-name descname"><span class="n"><span class="pre">ProblemTorsor</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5adata13ProblemTorsor13ProblemTorsorEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata13ProblemTorsorD0Ev">
+<span id="_CPPv3N5adata13ProblemTorsorD0Ev"></span><span id="_CPPv2N5adata13ProblemTorsorD0Ev"></span><span id="adata::ProblemTorsor::~ProblemTorsor"></span><span class="target" id="classadata_1_1ProblemTorsor_1a22f868345fd53fbe8a128ab683de038b"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~ProblemTorsor</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5adata13ProblemTorsorD0Ev" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata13ProblemTorsor4initERKNSt10shared_ptrIN5abase11BaseCommandEEE">
+<span id="_CPPv3N5adata13ProblemTorsor4initERKNSt10shared_ptrIN5abase11BaseCommandEEE"></span><span id="_CPPv2N5adata13ProblemTorsor4initERKNSt10shared_ptrIN5abase11BaseCommandEEE"></span><span id="adata::ProblemTorsor::init__std::shared_ptr:abase::BaseCommand:CR"></span><span class="target" id="classadata_1_1ProblemTorsor_1ab1cdae263eb05ddc6aa5cc130e806271"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">init</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="abase.html#_CPPv45abase" title="abase"><span class="n"><span class="pre">abase</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="abase.html#_CPPv4N5abase11BaseCommandE" title="abase::BaseCommand"><span class="n"><span class="pre">BaseCommand</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">command</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5adata13ProblemTorsor4initERKNSt10shared_ptrIN5abase11BaseCommandEEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Initialize the object with the values read from the input file. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>command</strong> – values read from the input file </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5adata13ProblemTorsor6verifyERKNSt6stringE">
+<span id="_CPPv3NK5adata13ProblemTorsor6verifyERKNSt6stringE"></span><span id="_CPPv2NK5adata13ProblemTorsor6verifyERKNSt6stringE"></span><span id="adata::ProblemTorsor::verify__ssCRC"></span><span class="target" id="classadata_1_1ProblemTorsor_1a98dc4f48cc9b0a554ad415b659f27474"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">verify</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filecontext</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5adata13ProblemTorsor6verifyERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Verify if the object is correctly initialized. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filecontext</strong> – context of the input file </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>status of the object initialization </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata13ProblemTorsor5cardsE">
+<span id="_CPPv3N5adata13ProblemTorsor5cardsE"></span><span id="_CPPv2N5adata13ProblemTorsor5cardsE"></span><span id="adata::ProblemTorsor::cards__std::vector:std::s:"></span><span class="target" id="classadata_1_1ProblemTorsor_1a259e22766f65b0f6b22136f406374bc0"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cards</span></span></span><a class="headerlink" href="#_CPPv4N5adata13ProblemTorsor5cardsE" title="Link to this definition"></a><br /></dt>
+<dd><p>Rank of each card that contains stress values associated to external torsors. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="problem-transient">
+<h2>Problem Transient:<a class="headerlink" href="#problem-transient" title="Link to this heading"></a></h2>
+<dl class="cpp type">
+<dt class="sig sig-object cpp">
+<span class="target" id="namespaceadata"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">adata</span></span></span><br /></dt>
+<dd><dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata16ProblemTransientE">
+<span id="_CPPv3N5adata16ProblemTransientE"></span><span id="_CPPv2N5adata16ProblemTransientE"></span><span id="adata::ProblemTransient"></span><span class="target" id="classadata_1_1ProblemTransient"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ProblemTransient</span></span></span><a class="headerlink" href="#_CPPv4N5adata16ProblemTransientE" title="Link to this definition"></a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata16ProblemTransient16ProblemTransientEv">
+<span id="_CPPv3N5adata16ProblemTransient16ProblemTransientEv"></span><span id="_CPPv2N5adata16ProblemTransient16ProblemTransientEv"></span><span id="adata::ProblemTransient::ProblemTransient"></span><span class="target" id="classadata_1_1ProblemTransient_1a8d900cbf39ce86b661dbe9ce3bc5a1bf"></span><span class="sig-name descname"><span class="n"><span class="pre">ProblemTransient</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5adata16ProblemTransient16ProblemTransientEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata16ProblemTransientD0Ev">
+<span id="_CPPv3N5adata16ProblemTransientD0Ev"></span><span id="_CPPv2N5adata16ProblemTransientD0Ev"></span><span id="adata::ProblemTransient::~ProblemTransient"></span><span class="target" id="classadata_1_1ProblemTransient_1adaf09f56b08163fec706427ee347ab5a"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~ProblemTransient</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5adata16ProblemTransientD0Ev" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata16ProblemTransient4initERKNSt10shared_ptrIN5abase11BaseCommandEEENSt6size_tENSt6size_tE">
+<span id="_CPPv3N5adata16ProblemTransient4initERKNSt10shared_ptrIN5abase11BaseCommandEEENSt6size_tENSt6size_tE"></span><span id="_CPPv2N5adata16ProblemTransient4initERKNSt10shared_ptrIN5abase11BaseCommandEEENSt6size_tENSt6size_tE"></span><span id="adata::ProblemTransient::init__std::shared_ptr:abase::BaseCommand:CR.std::s.std::s"></span><span class="target" id="classadata_1_1ProblemTransient_1aa7a4bc6b2613236357679b341209c36d"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">init</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="abase.html#_CPPv45abase" title="abase"><span class="n"><span class="pre">abase</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="abase.html#_CPPv4N5abase11BaseCommandE" title="abase::BaseCommand"><span class="n"><span class="pre">BaseCommand</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">command</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">id</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">nb_loadsteps</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5adata16ProblemTransient4initERKNSt10shared_ptrIN5abase11BaseCommandEEENSt6size_tENSt6size_tE" title="Link to this definition"></a><br /></dt>
+<dd><p>Initialize the object with the values read from the input file. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>command</strong> – values read from the input file </p></li>
+<li><p><strong>id</strong> – rank associated to the transient </p></li>
+<li><p><strong>nb_torsors</strong> – number of external torsors </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5adata16ProblemTransient6verifyERKNSt6stringE">
+<span id="_CPPv3NK5adata16ProblemTransient6verifyERKNSt6stringE"></span><span id="_CPPv2NK5adata16ProblemTransient6verifyERKNSt6stringE"></span><span id="adata::ProblemTransient::verify__ssCRC"></span><span class="target" id="classadata_1_1ProblemTransient_1ae45c67f9a8d0087cf5eb29bead79429a"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">verify</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filecontext</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5adata16ProblemTransient6verifyERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Verify if the object is correctly initialized. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filecontext</strong> – context of the input file </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>status of the object initialization </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata16ProblemTransient4nameE">
+<span id="_CPPv3N5adata16ProblemTransient4nameE"></span><span id="_CPPv2N5adata16ProblemTransient4nameE"></span><span id="adata::ProblemTransient::name__ss"></span><span class="target" id="classadata_1_1ProblemTransient_1a5b973e9d8713a0936570b6416df20b57"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">name</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><a class="headerlink" href="#_CPPv4N5adata16ProblemTransient4nameE" title="Link to this definition"></a><br /></dt>
+<dd><p>transient name </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata16ProblemTransient9nb_cyclesE">
+<span id="_CPPv3N5adata16ProblemTransient9nb_cyclesE"></span><span id="_CPPv2N5adata16ProblemTransient9nb_cyclesE"></span><span id="adata::ProblemTransient::nb_cycles__std::s"></span><span class="target" id="classadata_1_1ProblemTransient_1a034d824838c54c03a10ded22a902123b"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">nb_cycles</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5adata16ProblemTransient9nb_cyclesE" title="Link to this definition"></a><br /></dt>
+<dd><p>number of cycles associated to the transient </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata16ProblemTransient9loadstepsE">
+<span id="_CPPv3N5adata16ProblemTransient9loadstepsE"></span><span id="_CPPv2N5adata16ProblemTransient9loadstepsE"></span><span id="adata::ProblemTransient::loadsteps__std::vector:std::s:"></span><span class="target" id="classadata_1_1ProblemTransient_1a38c85e9a0b405d1fb8cb1975111c6de5"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">loadsteps</span></span></span><a class="headerlink" href="#_CPPv4N5adata16ProblemTransient9loadstepsE" title="Link to this definition"></a><br /></dt>
+<dd><p>time steps associated to the transient </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata16ProblemTransient6groupsE">
+<span id="_CPPv3N5adata16ProblemTransient6groupsE"></span><span id="_CPPv2N5adata16ProblemTransient6groupsE"></span><span id="adata::ProblemTransient::groups__std::vector:ss:"></span><span class="target" id="classadata_1_1ProblemTransient_1ae41137748a46448a80ca36e9448eaa91"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">groups</span></span></span><a class="headerlink" href="#_CPPv4N5adata16ProblemTransient6groupsE" title="Link to this definition"></a><br /></dt>
+<dd><p>transient’s groups </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata16ProblemTransient18crossing_transientE">
+<span id="_CPPv3N5adata16ProblemTransient18crossing_transientE"></span><span id="_CPPv2N5adata16ProblemTransient18crossing_transientE"></span><span id="adata::ProblemTransient::crossing_transient__std::vector:ss:"></span><span class="target" id="classadata_1_1ProblemTransient_1aee94c5d7bb294ef115ff3cae56b3db5d"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">crossing_transient</span></span></span><a class="headerlink" href="#_CPPv4N5adata16ProblemTransient18crossing_transientE" title="Link to this definition"></a><br /></dt>
+<dd><p>defined the crossing groups </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata16ProblemTransient12shared_groupE">
+<span id="_CPPv3N5adata16ProblemTransient12shared_groupE"></span><span id="_CPPv2N5adata16ProblemTransient12shared_groupE"></span><span id="adata::ProblemTransient::shared_group__ss"></span><span class="target" id="classadata_1_1ProblemTransient_1a8a00ec7b09a9b863abb030c1f60ab434"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">shared_group</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><a class="headerlink" href="#_CPPv4N5adata16ProblemTransient12shared_groupE" title="Link to this definition"></a><br /></dt>
+<dd><p>shared group </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata16ProblemTransient13variant_groupE">
+<span id="_CPPv3N5adata16ProblemTransient13variant_groupE"></span><span id="_CPPv2N5adata16ProblemTransient13variant_groupE"></span><span id="adata::ProblemTransient::variant_group__ss"></span><span class="target" id="classadata_1_1ProblemTransient_1adede2dd90e53a92652b041feaa9c40d3"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">variant_group</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><a class="headerlink" href="#_CPPv4N5adata16ProblemTransient13variant_groupE" title="Link to this definition"></a><br /></dt>
+<dd><p>variant group </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata16ProblemTransient14variant_cyclesE">
+<span id="_CPPv3N5adata16ProblemTransient14variant_cyclesE"></span><span id="_CPPv2N5adata16ProblemTransient14variant_cyclesE"></span><span id="adata::ProblemTransient::variant_cycles__std::s"></span><span class="target" id="classadata_1_1ProblemTransient_1a5c5e9d3dc13de56603f7aa06f675b537"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">variant_cycles</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5adata16ProblemTransient14variant_cyclesE" title="Link to this definition"></a><br /></dt>
+<dd><p>number of cycles for the variant group </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata16ProblemTransient8is_aloneE">
+<span id="_CPPv3N5adata16ProblemTransient8is_aloneE"></span><span id="_CPPv2N5adata16ProblemTransient8is_aloneE"></span><span id="adata::ProblemTransient::is_alone__b"></span><span class="target" id="classadata_1_1ProblemTransient_1a12ae05cadf0552f138905ff1fcbdce22"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">is_alone</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span><a class="headerlink" href="#_CPPv4N5adata16ProblemTransient8is_aloneE" title="Link to this definition"></a><br /></dt>
+<dd><p>defined if the transient is alone </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata16ProblemTransient6is_3smE">
+<span id="_CPPv3N5adata16ProblemTransient6is_3smE"></span><span id="_CPPv2N5adata16ProblemTransient6is_3smE"></span><span id="adata::ProblemTransient::is_3sm__b"></span><span class="target" id="classadata_1_1ProblemTransient_1afb22720470fbc61b115eaec99ea95b7d"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">is_3sm</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span><a class="headerlink" href="#_CPPv4N5adata16ProblemTransient6is_3smE" title="Link to this definition"></a><br /></dt>
+<dd><p>defined if the transient must be used for 3Sm analysis </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata16ProblemTransient18is_thermal_ratchetE">
+<span id="_CPPv3N5adata16ProblemTransient18is_thermal_ratchetE"></span><span id="_CPPv2N5adata16ProblemTransient18is_thermal_ratchetE"></span><span id="adata::ProblemTransient::is_thermal_ratchet__b"></span><span class="target" id="classadata_1_1ProblemTransient_1a49f63f04f666f5c1f05d85d50ff8e31d"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">is_thermal_ratchet</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span><a class="headerlink" href="#_CPPv4N5adata16ProblemTransient18is_thermal_ratchetE" title="Link to this definition"></a><br /></dt>
+<dd><p>defined if the transient must be used for thermal ratchet </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-functions">Private Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5adata16ProblemTransient13max_loadstespEv">
+<span id="_CPPv3NK5adata16ProblemTransient13max_loadstespEv"></span><span id="_CPPv2NK5adata16ProblemTransient13max_loadstespEv"></span><span id="adata::ProblemTransient::max_loadstespC"></span><span class="target" id="classadata_1_1ProblemTransient_1af0abc109b77d9bf91993955a6f81b196"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">max_loadstesp</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5adata16ProblemTransient13max_loadstespEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the maximum rank associated to loadsteps. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata16ProblemTransient12default_nameENSt6size_tE">
+<span id="_CPPv3N5adata16ProblemTransient12default_nameENSt6size_tE"></span><span id="_CPPv2N5adata16ProblemTransient12default_nameENSt6size_tE"></span><span id="adata::ProblemTransient::default_name__std::s"></span><span class="target" id="classadata_1_1ProblemTransient_1a80639e7e7df15389c348bdb93b2d035b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">default_name</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">id</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5adata16ProblemTransient12default_nameENSt6size_tE" title="Link to this definition"></a><br /></dt>
+<dd><p>define a default name for the transient: “TR_” + id </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id</strong> – rank associated to the transient </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata16ProblemTransient13_nb_loadstepsE">
+<span id="_CPPv3N5adata16ProblemTransient13_nb_loadstepsE"></span><span id="_CPPv2N5adata16ProblemTransient13_nb_loadstepsE"></span><span id="adata::ProblemTransient::_nb_loadsteps__std::s"></span><span class="target" id="classadata_1_1ProblemTransient_1a22c1526b1fdeba39ad1cd58fa16295db"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_nb_loadsteps</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5adata16ProblemTransient13_nb_loadstepsE" title="Link to this definition"></a><br /></dt>
+<dd><p>maximum excepted rank associated to time steps </p>
 </dd></dl>
 
 </div>
