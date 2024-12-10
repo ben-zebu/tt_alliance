@@ -6,31 +6,44 @@ using namespace adata;
 
 void plate_angle::init(double delta, double max, double min) {
     this->delta = delta;
-    this->max = max;
-    this->min = min;
+    this->max = std::max(max, min);
+    this->min = std::min(max, min);
     this->values.clear();
-    for (double i = min; i <= max; i += delta) {
-        this->values.push_back(i);
+    if (delta > 0.) {
+        for (double i = this->min; i <= this->max; i += delta) {
+            this->values.push_back(i);
+        }
     }
 }
 
-void ProblemPlate::init(std::shared_ptr<abase::BaseCommand> command, std::size_t category) {
+void ProblemPlate::init(const std::shared_ptr<abase::BaseCommand>& command, std::size_t category) {
     this->category = category;
 
-    // get the type of the analysis
-    std::string square_type = "default";
-    abase::get_child_value(command, "SQUARE", square_type);
-    std::string triangular_type = "default";
-    abase::get_child_value(command, "TRIANGULAR", triangular_type);
-    if (square_type == "default" && triangular_type == "default") {
-        input_error("ERROR_PLATE_UNDEFINED_TYPE");
-    } else if (square_type != "default") {
+    // get the type of the analysis : keywords SQUARE or TRIANGULAR can be followed by a subcase definition for 
+    // category 2 analysis 
+    // --> used of VectorStringCommand class to read potential values as subcase definition
+    //
+    std::size_t count_def = 0;
+    // check square type
+    std::vector<std::string> square_type = { "undefined" };
+    abase::get_child_values(command, "SQUARE", square_type);
+    if (square_type.empty() || square_type[0] != "undefined") {
+        count_def++;
         type = "square";
-        if (!square_type.empty())  sub_case = square_type;
-    } else {
-        type = "triangular";
-        if (!triangular_type.empty())  sub_case = triangular_type;
-    }
+        if (!square_type.empty())  sub_case = square_type[0];
+    } 
+    // check triangular type
+    std::vector<std::string> triangular_type = { "undefined" };
+    abase::get_child_values(command, "TRIANGULAR", triangular_type);
+    if (triangular_type.empty() || triangular_type[0] != "undefined") {
+        count_def++;
+        type = "tringular";
+        if (!triangular_type.empty())  sub_case = triangular_type[0];
+    } 
+    // mutual exclusion between square and triangular type
+    if (count_def != 1) {
+        input_error(translate("ERROR_PLATE_UNDEFINED_TYPE"));
+    } 
 
     // check if the analysis is 2D
     std::string value = "";
@@ -67,13 +80,22 @@ void ProblemPlate::init(std::shared_ptr<abase::BaseCommand> command, std::size_t
 
 }
 
-void ProblemPlate::verify(std::string& filecontext) const {
-
-
+void ProblemPlate::verify(const std::string& filecontext) const {
+    // check if the subcase of the plate is defined
+    if (category == 2 && sub_case.empty()) {
+        std::string msg = translate("ERROR_PLATE_UNDEFINED_SUBCASE");
+        file_input_error(msg, filecontext);
+    }
 
     // For 2D analysis, theta values must be defined
     if (if_2D && theta.values.empty()) {
         std::string msg = translate("ERROR_EMPTY_THETA");
+        file_input_error(msg, filecontext);
+    }
+
+    // For 3D analysis, theta values must be empty
+    if (!if_2D && theta.values.size() > 0) {
+        std::string msg = translate("ERROR_THETA_NOT_EMPTY");
         file_input_error(msg, filecontext);
     }
 
@@ -91,7 +113,6 @@ void ProblemPlate::verify_phi(const std::string& filecontext) const {
         }
     }
 }
-
 
 std::vector<double> ProblemPlate::get_3Sm_angles() const {
     if (!if_3Sm) return {};

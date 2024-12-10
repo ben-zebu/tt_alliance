@@ -401,7 +401,7 @@ CHAIN:
 
 PLATE:
   keys: {"fr": ["plaq", "plaque"], "en": ["plat", "plate"]}
-  type: single
+  type: real_array
 
   SQUARE:
     keys: {"fr": ["carr", "carre"], "en": ["squa", "square"]}

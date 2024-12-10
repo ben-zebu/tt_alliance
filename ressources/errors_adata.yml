@@ -28,9 +28,17 @@
     en: "Undefined or incoherent plate type definition !"
     fr: "Type de plaque non défini ou incohérent !"
 
+  ERROR_PLATE_UNDEFINED_SUBCASE:
+    en: "In category 2, the subcase associated to the plate type must be defined !"
+    fr: "En catégorie 2, le sous-cas associé au type de plaque doit être défini !"
+
   ERROR_EMPTY_THETA:
     en: "Theta angles must be defined for 2D analysis !"
     fr: "Les angles theta doivent être définis pour une analyse 2D !"
+
+  ERROR_THETA_NOT_EMPTY:
+    en: "Theta angles must not be defined for 3D analysis !"
+    fr: "Les angles theta ne doivent pas être définis pour une analyse 3D !"
 
   ERROR_MISMATCH_PHI_3SM:
     en: "Mismatch between phi angles and those required for 3 Sm analysis. Angle '{0}' is not present in phi angles !"

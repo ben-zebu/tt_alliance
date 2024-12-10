@@ -16,8 +16,8 @@ namespace adata {
         /// @brief list of angles values
         std::vector<double> values;
 
-        plate_angle() = default;
-        virtual ~plate_angle() = default;
+        //plate_angle() = default;
+        //virtual ~plate_angle() = default;
         /// @brief initialize the object with the given values
         /// @param delta angle step
         /// @param max maximum angle value
@@ -59,10 +59,10 @@ namespace adata {
             /// @brief Initialize the object with the values read from the input file
             /// @param command values read from the input file
             /// @param category analysis category
-            void init(std::shared_ptr<abase::BaseCommand> command, std::size_t category);
+            void init(const std::shared_ptr<abase::BaseCommand>& command, std::size_t category);
             /// @brief Verify the coherence of object values
             /// @param filecontext file content
-            void verify(std::string& filecontext) const;
+            void verify(const std::string& filecontext) const;
 
             /// @brief Return the \f$ \phi \f$ angles used for 3 Sm analysis or primary stress analysis
             /// @return 3 Sm angles
