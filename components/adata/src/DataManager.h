@@ -1,6 +1,7 @@
 #include "Environment.h"
 
 #include "ProblemDescription.h"
+#include "ProblemPlate.h"
 #include "ProblemTorsor.h"
 #include "ProblemLoadstep.h"
 #include "ProblemTransient.h"
@@ -10,7 +11,7 @@ namespace adata {
 
     class DataManager {
         private:
-            void set_data(std::shared_ptr<abase::BaseCommand> command, std::string filecontext);
+            void set_data(const std::shared_ptr<abase::BaseCommand>& command, const std::string& filecontext);
 
 
             /// @brief Read the title of the problem in the input file
@@ -21,6 +22,7 @@ namespace adata {
 
         protected:
             ProblemDescription description;
+            ProblemPlate plate;
             ProblemTorsor torsor;
             std::vector<ProblemLoadstep> loadsteps;
             std::vector<ProblemTransient> transients;

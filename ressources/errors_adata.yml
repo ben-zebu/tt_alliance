@@ -23,6 +23,28 @@
     en: "Mismatch with external loads coefficients: expected values '{0}' or '{1}' !"
     fr: "Incohérence avec les coefficients pour les efforts externes : valeurs attendues '{0}' ou '{1}' !"
 
+# ProblemPlate
+  ERROR_PLATE_UNDEFINED_TYPE:
+    en: "Undefined or incoherent plate type definition !"
+    fr: "Type de plaque non défini ou incohérent !"
+
+  ERROR_PLATE_UNDEFINED_SUBCASE:
+    en: "In category 2, the subcase associated to the plate type must be defined !"
+    fr: "En catégorie 2, le sous-cas associé au type de plaque doit être défini !"
+
+  ERROR_EMPTY_THETA:
+    en: "Theta angles must be defined for 2D analysis !"
+    fr: "Les angles theta doivent être définis pour une analyse 2D !"
+
+  ERROR_THETA_NOT_EMPTY:
+    en: "Theta angles must not be defined for 3D analysis !"
+    fr: "Les angles theta ne doivent pas être définis pour une analyse 3D !"
+
+  ERROR_MISMATCH_PHI_3SM:
+    en: "Mismatch between phi angles and those required for 3 Sm analysis. Angle '{0}' is not present in phi angles !"
+    fr: "Incohérence entre les angles phi et ceux requis pour l'analyse 3 Sm. L'angle '{0}' est non présent dans les angles phi !"
+
+
 # ProblemTransient
   ERROR_OUT_OF_RANGE_LOADSTEPS:
     en: "Out of range loadstep '{0}' (maximal range '{1}') !"

@@ -49,12 +49,12 @@ namespace adata {
             /// @param command values read from the input file
             /// @param id rank associated to the transient
             /// @param nb_torsors number of external torsors
-            void init(std::shared_ptr<abase::BaseCommand> command, std::size_t id, std::size_t nb_loadsteps);
+            void init(const std::shared_ptr<abase::BaseCommand>& command, std::size_t id, std::size_t nb_loadsteps);
 
             /// @brief Verify if the object is correctly initialized
             /// @param filecontext context of the input file
             /// @return status of the object initialization
-            void verify(std::string& filecontext) const;
+            void verify(const std::string& filecontext) const;
     };
 
 }

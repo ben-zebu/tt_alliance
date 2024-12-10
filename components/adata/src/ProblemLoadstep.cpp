@@ -2,7 +2,7 @@
 
 using namespace adata;
 
-void ProblemLoadstep::init(std::shared_ptr<abase::BaseCommand> command, std::size_t nb_torsors) {
+void ProblemLoadstep::init(const std::shared_ptr<abase::BaseCommand>& command, std::size_t nb_torsors) {
     _nb_torsors = nb_torsors;
 
     // get the values associated to the pressure cards and convert to 0-based index
@@ -55,7 +55,7 @@ void ProblemLoadstep::init(std::shared_ptr<abase::BaseCommand> command, std::siz
     }
 }
 
-void ProblemLoadstep::verify(std::string& filecontext) const {
+void ProblemLoadstep::verify(const std::string& filecontext) const {
     // check if the number of pressure cards is equal to the number of pressure values
     if (pressure_cards.size() != pressure_values.size()) {
         std::string nb_cards = std::to_string(pressure_cards.size());

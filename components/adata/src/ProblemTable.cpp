@@ -4,7 +4,7 @@
 
 using namespace adata;
 
-void ProblemTable::init(std::shared_ptr<abase::BaseCommand> command, std::size_t id) {
+void ProblemTable::init(const std::shared_ptr<abase::BaseCommand>& command, std::size_t id) {
 
     // get the name of the table
     name = "";
@@ -26,7 +26,7 @@ void ProblemTable::init(std::shared_ptr<abase::BaseCommand> command, std::size_t
 
 }
 
-void ProblemTable::verify(std::string& filecontext) const {
+void ProblemTable::verify(const std::string& filecontext) const {
     // check if the table abciss is ordered
     std::vector<double> abciss = table.get_xrange();
     if (!std::is_sorted(abciss.begin(), abciss.end())) {

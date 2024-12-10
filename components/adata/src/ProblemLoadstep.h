@@ -37,12 +37,12 @@ namespace adata {
             /// @brief Initialize the object with the values read from the input file
             /// @param command values read from the input file
             /// @param nb_torsors number of external torsors
-            void init(std::shared_ptr<abase::BaseCommand> command, std::size_t nb_torsors);
+            void init(const std::shared_ptr<abase::BaseCommand>& command, std::size_t nb_torsors);
 
             /// @brief Verify if the object is correctly initialized
             /// @param filecontext context of the input file
             /// @return status of the object initialization
-            void verify(std::string& filecontext) const;
+            void verify(const std::string& filecontext) const;
     };
 
 }

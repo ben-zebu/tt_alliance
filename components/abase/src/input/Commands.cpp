@@ -88,9 +88,9 @@ std::size_t StringCommand::read_input(FileReader& reader, const CommandsCollecto
 }
 
 std::size_t VectorStringCommand::read_input(FileReader& reader, const CommandsCollector& collector) {
-    clear();
     std::string key = reader.get_word();
     if (!this->is_same_keyword(key)) return 1;
+    clear();
     reader.move();
 
     std::string str_value = reader.get_word();
@@ -329,9 +329,9 @@ std::vector<std::size_t> TimeStepCommand::split_sequence(const std::string& sequ
 }
 
 std::size_t TimeStepCommand::read_input(FileReader& reader, const CommandsCollector& collector) {
-    clear();
     std::string key = reader.get_word();
     if (!this->is_same_keyword(key)) return 1;
+    clear();
     reader.move();
 
     std::string str_value = reader.get_word();
@@ -398,9 +398,9 @@ void TableCommand::split_sequence(const std::string& sequence, bool& status) {
 }
 
 std::size_t TableCommand::read_input(FileReader& reader, const CommandsCollector& collector) {
-    clear();
     std::string key = reader.get_word();
     if (!this->is_same_keyword(key)) return 1;
+    clear();
     reader.move();
 
     // A table is defined by a name (optional) and a list of abciss and ordinates values.
