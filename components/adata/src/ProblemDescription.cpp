@@ -2,7 +2,7 @@
 
 using namespace adata;
 
-void ProblemDescription::init(std::shared_ptr<abase::BaseCommand> command) {
+void ProblemDescription::init(const std::shared_ptr<abase::BaseCommand>& command) {
     command->get_value(code_type);
     code_type = str::uppercase(code_type);
 
@@ -14,7 +14,7 @@ void ProblemDescription::init(std::shared_ptr<abase::BaseCommand> command) {
     abase::get_child_value(command, "UNITS", units);
 }
 
-void ProblemDescription::verify(std::string& filecontext) const {
+void ProblemDescription::verify(const std::string& filecontext) const {
     // check if the code edition is defined in category 2
     if (category == 2 && code_edition.empty() ) {
         file_input_error(translate("CODE_EDITION_MISSING"), filecontext);

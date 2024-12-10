@@ -11,7 +11,7 @@ namespace adata {
 
     class DataManager {
         private:
-            void set_data(std::shared_ptr<abase::BaseCommand> command, std::string filecontext);
+            void set_data(const std::shared_ptr<abase::BaseCommand>& command, const std::string& filecontext);
 
 
             /// @brief Read the title of the problem in the input file

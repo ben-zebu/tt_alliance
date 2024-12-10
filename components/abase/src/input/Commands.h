@@ -430,7 +430,7 @@ namespace abase {
         /// @param child_name child command name
         /// @param value value associated to the child command
         template<typename T>
-        void get_child_value(std::shared_ptr<abase::BaseCommand> command, const std::string& child_name, T& value) {
+        void get_child_value(const std::shared_ptr<abase::BaseCommand>& command, const std::string& child_name, T& value) {
             auto sub = command->get_child(child_name);
             if (sub) sub->get_value(value);
         }
@@ -441,7 +441,7 @@ namespace abase {
         /// @param child_name child command name
         /// @param values vector of values associated to the child command
         template<typename T>
-        void get_child_values(std::shared_ptr<abase::BaseCommand> command, const std::string& child_name, std::vector<T>& values) {
+        void get_child_values(const std::shared_ptr<abase::BaseCommand>& command, const std::string& child_name, std::vector<T>& values) {
             auto sub = command->get_child(child_name);
             if (sub) sub->get_values(values);
         }

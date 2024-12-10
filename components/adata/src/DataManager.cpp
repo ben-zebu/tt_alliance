@@ -5,7 +5,7 @@
 
 using namespace adata;
 
-void DataManager::set_data(std::shared_ptr<abase::BaseCommand> command, std::string filecontext) {
+void DataManager::set_data(const std::shared_ptr<abase::BaseCommand>& command, const std::string& filecontext) {
     std::string name = command->get_name();
 
     if (name == "CODE") {

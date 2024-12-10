@@ -12,7 +12,7 @@ std::size_t ProblemTransient::max_loadstesp() const {
     return max;
 }
 
-void ProblemTransient::init(std::shared_ptr<abase::BaseCommand> command, std::size_t id, std::size_t nb_loadsteps) {
+void ProblemTransient::init(const std::shared_ptr<abase::BaseCommand>& command, std::size_t id, std::size_t nb_loadsteps) {
 
     _nb_loadsteps = nb_loadsteps;
 
@@ -56,7 +56,7 @@ void ProblemTransient::init(std::shared_ptr<abase::BaseCommand> command, std::si
 
 }
 
-void ProblemTransient::verify(std::string& filecontext) const {
+void ProblemTransient::verify(const std::string& filecontext) const {
     // check loadsteps indices
     if (max_loadstesp() >= _nb_loadsteps) {
         std::string max = std::to_string(max_loadstesp() + 1);
