@@ -433,3 +433,26 @@ std::size_t TableCommand::read_input(FileReader& reader, const CommandsCollector
     std::size_t children_status = this->children_process(reader, collector);
     return 0;
 }
+
+std::size_t FileCommand::read_input(FileReader& reader, const CommandsCollector& collector) {
+    std::string key = reader.get_word();
+    if (!this->is_same_keyword(key)) return 1;
+    clear();
+    reader.move();
+
+    // extract string sequence after the keyword in order to build the file name
+    std::string str_value = reader.get_word();
+    std::string line = reader.get_line();
+    std::size_t pos = line.find(str_value);
+
+    _value = line.substr(pos);
+    if (_value.empty()) {
+        std::string filecontext = reader.context_error();
+        file_input_error(translate("ERROR_FILE_EXTRACTION"), filecontext);
+    }
+
+    reader.move_line();
+    _read_status = true;
+    return 0;
+}
+

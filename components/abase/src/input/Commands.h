@@ -423,6 +423,28 @@ namespace abase {
             
     };
 
+    /// @class FileCommand
+    /// @brief Class used to read the name of a file from the input file 
+    class FileCommand : public CompositeCommand {
+        protected :
+            /// @brief file name
+            std::string _value;
+            /// @brief clear read data associated to the command
+            virtual void clear() { _read_status = false; _value = ""; }
+
+        public:
+            FileCommand() = default;
+            virtual ~FileCommand() = default;
+            /// @brief Read input file and set the value of the command
+            /// @param reader file reader associated to the input file
+            /// @return a status code (0 for success and 1 for fail)
+            virtual std::size_t read_input(FileReader& reader, const CommandsCollector& collector) override;
+            /// @brief Get the table name
+            /// @param name name of the table
+            void get_value(std::string& name) const override { if (_read_status) name = _value; }            
+    };
+
+
     namespace {
         /// @brief Get the value of a child command
         /// @tparam T type of the value 

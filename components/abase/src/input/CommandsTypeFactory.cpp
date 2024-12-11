@@ -45,6 +45,7 @@ namespace {
             CommandsTypeFactory::register_creator("uint_mix", []() { return std::make_shared<MixCommand<std::size_t>>(); });
             CommandsTypeFactory::register_creator("time_array", []() { return std::make_shared<TimeStepCommand>(); });
             CommandsTypeFactory::register_creator("table_array", []() { return std::make_shared<TableCommand>(); });
+            CommandsTypeFactory::register_creator("file", []() { return std::make_shared<FileCommand>(); });
         }
     } registerCommands;
 }
