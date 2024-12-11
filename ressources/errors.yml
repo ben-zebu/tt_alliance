@@ -88,3 +88,7 @@
   ERROR_TABLE_CONVERSION:
     en: "Cannot convert table's pairs of values to float !"
     fr: "Impossible de convertir les pairs de valeurs de la table en réel !"  
+
+  ERROR_FILE_EXTRACTION:
+    en: "Cannot extract a 'readable' file name !"
+    fr: "Impossible d'extraire un nom 'lisible' de fichier !"

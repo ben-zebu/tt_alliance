@@ -8,6 +8,11 @@ using namespace adata;
 void DataManager::set_data(const std::shared_ptr<abase::BaseCommand>& command, const std::string& filecontext) {
     std::string name = command->get_name();
 
+    if (name == "FEM_FILE") {
+        fem_interface.init(command);
+        fem_interface.verify(filecontext);
+    } 
+
     if (name == "CODE") {
         description.init(command);
         description.verify(filecontext);

@@ -15,8 +15,11 @@ void ProblemDescription::init(const std::shared_ptr<abase::BaseCommand>& command
 }
 
 void ProblemDescription::verify(const std::string& filecontext) const {
+    // Version control is only required for catgory 2
+    if (category != 2) return;
+
     // check if the code edition is defined in category 2
-    if (category == 2 && code_edition.empty() ) {
+    if (code_edition.empty() ) {
         file_input_error(translate("CODE_EDITION_MISSING"), filecontext);
     }
 

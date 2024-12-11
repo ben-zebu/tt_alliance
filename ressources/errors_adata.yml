@@ -14,6 +14,15 @@
     en: "Unknown edition '{0}' for code '{1}' !"
     fr: "Édition inconnue '{0}' pour le code '{1}' !"
 
+# ProblemFemInterface
+  ERROR_PATH_FEM_FILE:
+    en: "Cannot find the FEM file '{0}' !"
+    fr: "Impossible de trouver le fichier FEM '{0}' !"
+
+  ERROR_UNKNOWN_FEM_FILE:
+    en: "Unknown or unreadable FEM file '{0}' !"
+    fr: "Fichier FEM inconnu ou illisible '{0}' !"
+
 # ProblemLoadstep
   PRESSURE_CARDS_VALUES_MISMATCH:
     en: "Mismatch between numbers of pressure cards '{0}' and pressure values '{1}' !"
