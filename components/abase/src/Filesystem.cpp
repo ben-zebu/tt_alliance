@@ -34,12 +34,12 @@ bool abase::is_file_writable(const std::string& filename) {
 }
 
 
-std::string abase::getExecutablePath(const std::string& cmd) {
+std::string abase::getAbsolutePath(const std::string& cmd) {
     return fs::absolute(cmd);
 }
 
 std::string abase::getAppPath(const std::string& cmd) {
-    std::string exe_path = abase::getExecutablePath(cmd);
+    std::string exe_path = abase::getAbsolutePath(cmd);
 
     auto [path, exe] = abase::splitPath(exe_path);
     auto [project, exe_dir] = abase::splitPath(path);

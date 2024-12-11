@@ -1,7 +1,7 @@
 ---
-FIND:
+FEM_FILE:
   keys: {"fr": ["rech", "rechercher"], "en": ["find", "find"]}
-  type: string_array
+  type: file
 
 CODE:
   keys: {"fr": ["rccm", "rccm"], "en": ["asme", "asme"]}

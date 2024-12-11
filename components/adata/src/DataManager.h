@@ -1,18 +1,23 @@
 #include "Environment.h"
 
 #include "ProblemDescription.h"
-#include "ProblemPlate.h"
-#include "ProblemTorsor.h"
+#include "ProblemFemInterface.h"
 #include "ProblemLoadstep.h"
-#include "ProblemTransient.h"
+// #include "ProblemMaterial.h"
+#include "ProblemPlate.h"
+// #include "ProblemSection.h"
 #include "ProblemTable.h"
+#include "ProblemTorsor.h"
+#include "ProblemTransient.h"
 
 namespace adata {
 
     class DataManager {
         private:
+            /// @brief Convert read data from input file into data objects
+            /// @param command read data from the input file
+            /// @param filecontext file context
             void set_data(const std::shared_ptr<abase::BaseCommand>& command, const std::string& filecontext);
-
 
             /// @brief Read the title of the problem in the input file
             /// @param reader file reader associated to the input file
@@ -21,24 +26,16 @@ namespace adata {
             std::vector<std::string> read_title(abase::FileReader& reader, const abase::CommandsCollector& collector);
 
         protected:
+            ProblemFemInterface fem_interface;
             ProblemDescription description;
             ProblemPlate plate;
             ProblemTorsor torsor;
             std::vector<ProblemLoadstep> loadsteps;
             std::vector<ProblemTransient> transients;
             std::vector<ProblemTable> tables;
-        /*
-        protected:
-            pb_fem_interface fem_interface;
-            pb_description description;
-            pb_plate plate_description;
-            pb_torsor torsor;
-            std::vector<pb_loadstep> loadsteps;
-            std::vector<pb_transient> transients;
-            std::vector<pb_table> tables;
-            std::vector<pb_material> materials;
-            std::vector<pb_section> sections;
-        */
+            // std::vector<ProblemMaterial> materials;
+            // std::vector<ProblemSection> sections;
+
         public:
             DataManager() = default;
             ~DataManager() = default;
