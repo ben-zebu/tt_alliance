@@ -63,6 +63,10 @@
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5adata18ProblemDescriptionE"><code class="docutils literal notranslate"><span class="pre">adata::ProblemDescription</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-fem-interface">Problem FEM Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5adata19ProblemFemInterfaceE"><code class="docutils literal notranslate"><span class="pre">adata::ProblemFemInterface</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#problem-loadstep">Problem LoadStep</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5adata15ProblemLoadstepE"><code class="docutils literal notranslate"><span class="pre">adata::ProblemLoadstep</span></code></a></li>
 </ul>
@@ -267,6 +271,11 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
 <dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata11DataManager13fem_interfaceE">
+<span id="_CPPv3N5adata11DataManager13fem_interfaceE"></span><span id="_CPPv2N5adata11DataManager13fem_interfaceE"></span><span id="adata::DataManager::fem_interface__ProblemFemInterface"></span><span class="target" id="classadata_1_1DataManager_1ab8317c31f1aff6582e39d00fd8ffac50"></span><a class="reference internal" href="#_CPPv4N5adata19ProblemFemInterfaceE" title="adata::ProblemFemInterface"><span class="n"><span class="pre">ProblemFemInterface</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fem_interface</span></span></span><a class="headerlink" href="#_CPPv4N5adata11DataManager13fem_interfaceE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N5adata11DataManager11descriptionE">
 <span id="_CPPv3N5adata11DataManager11descriptionE"></span><span id="_CPPv2N5adata11DataManager11descriptionE"></span><span id="adata::DataManager::description__ProblemDescription"></span><span class="target" id="classadata_1_1DataManager_1a7ae5821b145372f955dbc49879f14878"></span><a class="reference internal" href="#_CPPv4N5adata18ProblemDescriptionE" title="adata::ProblemDescription"><span class="n"><span class="pre">ProblemDescription</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">description</span></span></span><a class="headerlink" href="#_CPPv4N5adata11DataManager11descriptionE" title="Link to this definition"></a><br /></dt>
 <dd></dd></dl>
@@ -302,7 +311,16 @@
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5adata11DataManager8set_dataERKNSt10shared_ptrIN5abase11BaseCommandEEERKNSt6stringE">
 <span id="_CPPv3N5adata11DataManager8set_dataERKNSt10shared_ptrIN5abase11BaseCommandEEERKNSt6stringE"></span><span id="_CPPv2N5adata11DataManager8set_dataERKNSt10shared_ptrIN5abase11BaseCommandEEERKNSt6stringE"></span><span id="adata::DataManager::set_data__std::shared_ptr:abase::BaseCommand:CR.ssCR"></span><span class="target" id="classadata_1_1DataManager_1a28658d6d1c9c8971a8f4d62f25b67e48"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_data</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="abase.html#_CPPv45abase" title="abase"><span class="n"><span class="pre">abase</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="abase.html#_CPPv4N5abase11BaseCommandE" title="abase::BaseCommand"><span class="n"><span class="pre">BaseCommand</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">command</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filecontext</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5adata11DataManager8set_dataERKNSt10shared_ptrIN5abase11BaseCommandEEERKNSt6stringE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>Convert read data from input file into data objects. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>command</strong> – read data from the input file </p></li>
+<li><p><strong>filecontext</strong> – file context </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5adata11DataManager10read_titleERN5abase10FileReaderERKN5abase17CommandsCollectorE">
@@ -414,6 +432,77 @@
 <dt class="sig sig-object cpp" id="_CPPv4N5adata18ProblemDescription6titlesE">
 <span id="_CPPv3N5adata18ProblemDescription6titlesE"></span><span id="_CPPv2N5adata18ProblemDescription6titlesE"></span><span id="adata::ProblemDescription::titles__std::vector:ss:"></span><span class="target" id="classadata_1_1ProblemDescription_1a42cf343626441957a228722e3a554492"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">titles</span></span></span><a class="headerlink" href="#_CPPv4N5adata18ProblemDescription6titlesE" title="Link to this definition"></a><br /></dt>
 <dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="problem-fem-interface">
+<h2>Problem FEM Interface<a class="headerlink" href="#problem-fem-interface" title="Link to this heading"></a></h2>
+<dl class="cpp type">
+<dt class="sig sig-object cpp">
+<span class="target" id="namespaceadata"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">adata</span></span></span><br /></dt>
+<dd><dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata19ProblemFemInterfaceE">
+<span id="_CPPv3N5adata19ProblemFemInterfaceE"></span><span id="_CPPv2N5adata19ProblemFemInterfaceE"></span><span id="adata::ProblemFemInterface"></span><span class="target" id="classadata_1_1ProblemFemInterface"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ProblemFemInterface</span></span></span><a class="headerlink" href="#_CPPv4N5adata19ProblemFemInterfaceE" title="Link to this definition"></a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata19ProblemFemInterface19ProblemFemInterfaceEv">
+<span id="_CPPv3N5adata19ProblemFemInterface19ProblemFemInterfaceEv"></span><span id="_CPPv2N5adata19ProblemFemInterface19ProblemFemInterfaceEv"></span><span id="adata::ProblemFemInterface::ProblemFemInterface"></span><span class="target" id="classadata_1_1ProblemFemInterface_1aa6befddc53e0b7d0c5d42edde8c726e9"></span><span class="sig-name descname"><span class="n"><span class="pre">ProblemFemInterface</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5adata19ProblemFemInterface19ProblemFemInterfaceEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata19ProblemFemInterfaceD0Ev">
+<span id="_CPPv3N5adata19ProblemFemInterfaceD0Ev"></span><span id="_CPPv2N5adata19ProblemFemInterfaceD0Ev"></span><span id="adata::ProblemFemInterface::~ProblemFemInterface"></span><span class="target" id="classadata_1_1ProblemFemInterface_1a53e3d925978433c68ad4607d615279e0"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~ProblemFemInterface</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5adata19ProblemFemInterfaceD0Ev" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata19ProblemFemInterface4initERKNSt10shared_ptrIN5abase11BaseCommandEEE">
+<span id="_CPPv3N5adata19ProblemFemInterface4initERKNSt10shared_ptrIN5abase11BaseCommandEEE"></span><span id="_CPPv2N5adata19ProblemFemInterface4initERKNSt10shared_ptrIN5abase11BaseCommandEEE"></span><span id="adata::ProblemFemInterface::init__std::shared_ptr:abase::BaseCommand:CR"></span><span class="target" id="classadata_1_1ProblemFemInterface_1a4c55cf68a7374bc3da14125131d0f9cc"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">init</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="abase.html#_CPPv45abase" title="abase"><span class="n"><span class="pre">abase</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="abase.html#_CPPv4N5abase11BaseCommandE" title="abase::BaseCommand"><span class="n"><span class="pre">BaseCommand</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">command</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5adata19ProblemFemInterface4initERKNSt10shared_ptrIN5abase11BaseCommandEEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Initialize the object with the values read from the input file. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>command</strong> – values read from the input file </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5adata19ProblemFemInterface6verifyERKNSt6stringE">
+<span id="_CPPv3NK5adata19ProblemFemInterface6verifyERKNSt6stringE"></span><span id="_CPPv2NK5adata19ProblemFemInterface6verifyERKNSt6stringE"></span><span id="adata::ProblemFemInterface::verify__ssCRC"></span><span class="target" id="classadata_1_1ProblemFemInterface_1aa4309e1e66bb966f3e8ec9e391d9163f"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">verify</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filecontext</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5adata19ProblemFemInterface6verifyERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Verify the coherence of object values. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filecontext</strong> – file content </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata19ProblemFemInterface8filenameE">
+<span id="_CPPv3N5adata19ProblemFemInterface8filenameE"></span><span id="_CPPv2N5adata19ProblemFemInterface8filenameE"></span><span id="adata::ProblemFemInterface::filename__ss"></span><span class="target" id="classadata_1_1ProblemFemInterface_1a1b6594b60e0156588ee361fb809c8586"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">filename</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><a class="headerlink" href="#_CPPv4N5adata19ProblemFemInterface8filenameE" title="Link to this definition"></a><br /></dt>
+<dd><p>name of the FEM file </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-functions">Private Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5adata19ProblemFemInterface20set_fem_results_fileERKNSt6stringE">
+<span id="_CPPv3N5adata19ProblemFemInterface20set_fem_results_fileERKNSt6stringE"></span><span id="_CPPv2N5adata19ProblemFemInterface20set_fem_results_fileERKNSt6stringE"></span><span id="adata::ProblemFemInterface::set_fem_results_file__ssCR"></span><span class="target" id="classadata_1_1ProblemFemInterface_1acf678e5bd3b44d759f215742d80eca9b"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_fem_results_file</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sequence</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5adata19ProblemFemInterface20set_fem_results_fileERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>build fem results file name and check if the file exists </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sequence</strong> – list of file names </p>
+</dd>
+</dl>
+</dd></dl>
 
 </div>
 </dd></dl>

@@ -18,6 +18,11 @@ Problem Description
 .. doxygenfile:: ProblemDescription.h
    :project: tt_alliance
 
+Problem FEM Interface
+---------------------
+.. doxygenfile:: ProblemFemInterface.h
+   :project: tt_alliance
+
 Problem LoadStep
 ----------------
 .. doxygenfile:: ProblemLoadstep.h

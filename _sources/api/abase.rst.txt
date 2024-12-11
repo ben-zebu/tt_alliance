@@ -8,6 +8,15 @@ Commands
 .. doxygenfile:: Commands.h
    :project: tt_alliance
 
+.. doxygenfile:: CommandsNumerics.h
+   :project: tt_alliance
+
+.. doxygenfile:: CommandsSpecial.h
+   :project: tt_alliance
+
+.. doxygenfile:: CommandsString.h
+   :project: tt_alliance
+
 Commands Collector
 ------------------
 .. doxygenfile:: CommandsCollector.h
