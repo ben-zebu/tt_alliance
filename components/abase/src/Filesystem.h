@@ -31,10 +31,10 @@ namespace abase {
     /// @return writable status
     bool is_file_writable(const std::string& filename);
 
-    /// @brief Return the path of the executable file
-    /// @param cmd Executable file (relative path)
-    /// @return Absolute path of the executable file
-    std::string getExecutablePath(const std::string& cmd);
+    /// @brief Return the absolute path of a file
+    /// @param cmd relative path to a file
+    /// @return Absolute path to the file
+    std::string getAbsolutePath(const std::string& cmd);
     
     /// @brief Return the main path of the application
     /// @param cmd Executable file (relative path)
