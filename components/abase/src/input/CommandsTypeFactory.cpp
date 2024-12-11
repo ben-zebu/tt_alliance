@@ -1,4 +1,8 @@
 #include "Commands.h"
+#include "CommandsNumerics.h"
+#include "CommandsSpecial.h"
+#include "CommandsString.h"
+
 #include "Environment.h"
 #include "CommandsTypeFactory.h"
 
