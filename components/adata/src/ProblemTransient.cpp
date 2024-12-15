@@ -34,7 +34,6 @@ void ProblemTransient::init(const std::shared_ptr<abase::BaseCommand>& command, 
         auto grp_cmd = command->get_child("GROUP");
         abase::get_child_values(grp_cmd, "GDF", crossing_transient);
         abase::get_child_value(grp_cmd, "GDP", shared_group);
-        std::cout << "crossing_transient: " << crossing_transient.size() << std::endl;
     }
 
     // get the variant group and its number of cycles
