@@ -27,6 +27,7 @@
 #include "CommandsCollector.h"
 
 #include "DataManager.h"
+#include "FatigueLawCollector.h"
 #include "Initiate.h"
 
 amath::StressStates generateStressStates(const std::size_t numStates, const std::size_t numTorsors) {
@@ -117,10 +118,19 @@ void yaml_test() {
     std::string app_path = get_parser_value<std::string>("application_path");
     std::string commands_tree = "/etc/alliance_commands_tree.yml";
 
-    adata::DataManager dataManager;
-    dataManager.read_data(input_file, app_path + commands_tree);
-    dataManager.verify();
+    // adata::DataManager dataManager;
+    // dataManager.read_data(input_file, app_path + commands_tree);
+    // dataManager.verify();
 
+    adata::FatigueLawCollector lawCollector;
+    std::string materials_tree = app_path + "/etc/material_commands.yml";
+    std::string fatigue_law_input = app_path + "/etc/tabular_fatigue_laws.dat";
+    lawCollector.read_data(fatigue_law_input, materials_tree);
+
+    std::shared_ptr<adata::FatigueLaw> law = lawCollector.get_law("1", "rccm", "2020");
+    std::shared_ptr<adata::FatigueLaw> a_copy = law->clone();
+    std::cout << "Endurance limit: " << law->endurance_limit() << std::endl;
+    std::cout << "Allowable cycles: " << law->allowable_cycles(240) << std::endl;
 }
 
 int main(int argc, char* argv[]) {
