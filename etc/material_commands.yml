@@ -1,0 +1,146 @@
+---
+TABULAR_FATIGUE_LAW:
+  keys: {"en": ["tabular_fatigue_law", "tabular_fatigue_law"]}
+  type: single
+
+  LAW_ID:
+    keys: {"en": ["law_id", "law_id"]}
+    type: string
+
+  DESCRIPTION:
+    keys: {"en": ["description", "description"]}
+    type: string
+
+  RCCM:
+    keys: {"en": ["rccm", "rccm"]}
+    type: single
+    DESCRIPTION:
+      keys: {"en": ["description", "description"]}
+      type: string
+    EDITION:
+      keys: {"en": ["edition", "edition"]}
+      type: string_array
+
+  ASME:
+    keys: {"en": ["asme", "asme"]}
+    type: single
+    DESCRIPTION:
+      keys: {"en": ["description", "description"]}
+      type: string
+    EDITION:
+      keys: {"en": ["edition", "edition"]}
+      type: string_array
+
+  EREF:
+    keys: {"en": ["eref", "eref"]}
+    type: real
+  N_RATIO:
+    keys: {"en": ["n_ratio", "n_ratio"]}
+    type: real
+
+  NA:
+    keys: {"en": ["na", "na"]}
+    type: real_array
+  SA:
+    keys: {"en": ["sa", "sa"]}
+    type: real_array
+
+POWER_FATIGUE_LAW:
+  keys: {"en": ["power_fatigue_law", "power_fatigue_law"]}
+  type: single
+
+  LAW_ID:
+    keys: {"en": ["law_id", "law_id"]}
+    type: string
+
+  DESCRIPTION:
+    keys: {"en": ["description", "description"]}
+    type: string
+
+  RCCM:
+    keys: {"en": ["rccm", "rccm"]}
+    type: single
+    DESCRIPTION:
+      keys: {"en": ["description", "description"]}
+      type: string
+    EDITION:
+      keys: {"en": ["edition", "edition"]}
+      type: string_array
+
+  ASME:
+    keys: {"en": ["asme", "asme"]}
+    type: single
+    DESCRIPTION:
+      keys: {"en": ["description", "description"]}
+      type: string
+    EDITION:
+      keys: {"en": ["edition", "edition"]}
+      type: string_array
+
+  EREF:
+    keys: {"en": ["eref", "eref"]}
+    type: real
+  N_RATIO:
+    keys: {"en": ["n_ratio", "n_ratio"]}
+    type: real
+  SEQ:
+    keys: {"en": ["seq", "seq"]}
+    type: real
+
+  ALPHA:
+    keys: {"en": ["alpha", "alpha"]}
+    type: real
+  BETA:
+    keys: {"en": ["beta", "beta"]}
+    type: real
+
+POLYNOMIAL_FATIGUE_LAW:
+  keys: {"en": ["polynomial_fatigue_law", "polynomial_fatigue_law"]}
+  type: single
+
+  LAW_ID:
+    keys: {"en": ["law_id", "law_id"]}
+    type: string
+
+  DESCRIPTION:
+    keys: {"en": ["description", "description"]}
+    type: string
+
+  RCCM:
+    keys: {"en": ["rccm", "rccm"]}
+    type: single
+    DESCRIPTION:
+      keys: {"en": ["description", "description"]}
+      type: string
+    EDITION:
+      keys: {"en": ["edition", "edition"]}
+      type: string_array
+
+  ASME:
+    keys: {"en": ["asme", "asme"]}
+    type: single
+    DESCRIPTION:
+      keys: {"en": ["description", "description"]}
+      type: string
+    EDITION:
+      keys: {"en": ["edition", "edition"]}
+      type: string_array
+
+  EREF:
+    keys: {"en": ["eref", "eref"]}
+    type: real
+  N_RATIO:
+    keys: {"en": ["n_ratio", "n_ratio"]}
+    type: real
+  SEQ:
+    keys: {"en": ["seq", "seq"]}
+    type: real
+    
+  COEFFICIENTS:
+    keys: {"en": ["coefficients", "coefficients"]}
+    type: real_array
+
+
+RETURN:
+  keys: {"fr": ["reto", "retour"], "en": ["retu", "return"]}
+  type: single

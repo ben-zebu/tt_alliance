@@ -1,0 +1,44 @@
+---
+  DICTIONNARY_FORMAT: True
+
+  ERROR_FATIGUE_LAW_FILE:
+    en: "Cannot find or read fatigue laws definitions from file '{0}' !"
+    fr: "Impossible de lire le fichier de définitions de lois de fatigue '{0}' !"
+
+  FATIGUE_LAW_KEY_NOT_FOUND:
+    en: "Undefined '{0}' type for fatigue law '{1}' !"
+    fr: "'{0}' non défini pour la loi de fatigue '{1}' !"
+
+  FATIGUE_LAW_TYPE_UNKNOWN:
+    en: "Unknown fatigue law type '{0}' !"
+    fr: "Type de loi de fatigue '{0}' inconnu !"
+
+  ERROR_UNKNOWN_FATIGUE_LAW:
+    en: "Cannot find fatigue law with id '{0}' !"
+    fr: "La loi de fatigue '{0}' est inconnue !"
+
+  FATIGUE_LAW_CONFLICT:
+    en: "Several fatigue laws with '{0}' id and same description cannot be defined !"
+    fr: "Plusieurs lois de fatigue avec le même identifiant '{0}' et la même description ne peuvent être définies !"
+
+  ERROR_FATIGUE_LAW_ID:
+    en: "Fatigue law id is not defined !"
+    fr: "L'identifiant de la loi de fatigue n'est pas défini !"
+ 
+  ERROR_FATIGUE_LAW_PARAMETER:
+    en: "The parameter '{0}' associated to the fatigue law '{1}' must be strictly positive !"
+    fr: "Le paramètre '{0}' associé à la loi de fatigue '{1}' doit être strictement positif !"
+
+  ERROR_FATIGUE_LAW_TABLE_SIZE:
+    en: "Fatigue law '{0}' table size must be greater than 1 !"
+    fr: "La taille de la table de la loi de fatigue '{0}' doit être supérieure à 1 !"
+
+  ERROR_FATIGUE_LAW_TABLE_XMIN:
+    en: "The minimal number of cycle associated to the fatigue law '{0}' must be higher or equal to 1 !"
+    fr: "Le nombre minimal de cycles associé à la loi de fatigue '{0}' doit être supérieur ou égal à 1 !"
+
+  ERROR_FATIGUE_LAW_TABLE_YMIN:
+    en: "The minimal stress associated to the fatigue law '{0}' must be higher or equal to 0 !"
+    fr: "La contrainte minimale associée à la loi de fatigue '{0}' doit être supérieure ou égale à 0 !"
+
+    
