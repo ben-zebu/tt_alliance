@@ -80,7 +80,6 @@ void CommandsCollector::loadCommandsFromFile(const std::string& filename) {
     // Check the file type and status before loading
     if ( !is_file_readable(filename) ) {
         error(translate("ERROR_FACTORY_FILE", filename));
-        throw std::invalid_argument("Cannot read the file " + filename + " !");
     }
 
     // Clear previous commands

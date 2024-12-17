@@ -98,9 +98,12 @@ double Table::get_linear_yvalue(double x) const {
         throw std::runtime_error("Invalid abciss value");
     }
 
-    for (size_t i = 0; i < xvalues.size() - 1; ++i) {
-        if (x >= xvalues[i] && x <= xvalues[i + 1]) {
-            if (xvalues[i + 1] == xvalues[i]) { std::runtime_error("Infinite slope"); }
+    for (std::size_t i = 0; i < xvalues.size() - 1; ++i) {
+        xmax = std::max(xvalues[i], xvalues[i + 1]);
+        xmin = std::min(xvalues[i], xvalues[i + 1]);
+
+        if (xmin <= x && x <= xmax) {
+            if (xmax == xmin) { std::runtime_error("Infinite slope"); }
             double slope = (yvalues[i + 1] - yvalues[i]) / (xvalues[i + 1] - xvalues[i]);
             return yvalues[i] + slope * (x - xvalues[i]);
         }
@@ -117,9 +120,12 @@ double Table::get_linear_xvalue(double y) const {
         throw std::runtime_error("Invalid ordinate value");
     }
 
-    for (size_t i = 0; i < yvalues.size() - 1; ++i) {
-        if (y >= yvalues[i] && y <= yvalues[i + 1]) {
-            if (yvalues[i + 1] == yvalues[i]) { std::runtime_error("Infinite slope"); }
+    for (std::size_t i = 0; i < yvalues.size() - 1; ++i) {
+        ymax = std::max(yvalues[i], yvalues[i + 1]);
+        ymin = std::min(yvalues[i], yvalues[i + 1]);
+
+        if (ymin <= y && y <= ymax) {
+            if (ymin == ymax) { std::runtime_error("Infinite slope"); }
             double slope = (xvalues[i + 1] - xvalues[i]) / (yvalues[i + 1] - yvalues[i]);
             return xvalues[i] + slope * (y - yvalues[i]);
         }
@@ -136,9 +142,12 @@ double Table::get_logarithmic_yvalue(double x) const {
         throw std::runtime_error("Invalid abciss value");
     }
 
-    for (size_t i = 0; i < xvalues.size() - 1; ++i) {
-        if (x >= xvalues[i] && x <= xvalues[i + 1]) {
-            if (xvalues[i + 1] == xvalues[i]) { std::runtime_error("Infinite slope"); }
+    for (std::size_t i = 0; i < xvalues.size() - 1; ++i) {
+        xmax = std::max(xvalues[i], xvalues[i + 1]);
+        xmin = std::min(xvalues[i], xvalues[i + 1]);
+
+        if (xmin <= x && x <= xmax) {
+            if (xmax == xmin) { std::runtime_error("Infinite slope"); }
             double slope = (std::log(yvalues[i + 1]) - std::log(yvalues[i]));
             slope /= (std::log(xvalues[i + 1]) - std::log(xvalues[i]));
             return std::exp(std::log(yvalues[i]) + slope * (std::log(x) - std::log(xvalues[i])));
@@ -156,9 +165,12 @@ double Table::get_logarithmic_xvalue(double y) const {
         throw std::runtime_error("Invalid ordinate value");
     }
 
-    for (size_t i = 0; i < yvalues.size() - 1; ++i) {
-        if (y >= yvalues[i] && y <= yvalues[i + 1]) {
-            if (yvalues[i + 1] == yvalues[i]) { std::runtime_error("Infinite slope"); }
+    for (std::size_t i = 0; i < yvalues.size() - 1; ++i) {
+        ymax = std::max(yvalues[i], yvalues[i + 1]);
+        ymin = std::min(yvalues[i], yvalues[i + 1]);
+
+        if (ymin <= y && y <= ymax) {
+            if (ymin == ymax) { std::runtime_error("Infinite slope"); }
             double slope = (std::log(xvalues[i + 1]) - std::log(xvalues[i]));
             slope /= (std::log(yvalues[i + 1]) - std::log(yvalues[i]));
             return std::exp(std::log(xvalues[i]) + slope * (std::log(y) - std::log(yvalues[i])));
