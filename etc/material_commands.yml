@@ -160,10 +160,14 @@ BASE_MATERIAL:
     keys: {"en": ["correction", "correction"]}
     type: string
 
+  KF:
+    keys: {"en": ["kf", "kf"]}
+    type: real
+
   M_FACTOR:
     keys: {"en": ["m_factor", "m_factor"]}
     type: real
-    
+
   N_FACTOR:
     keys: {"en": ["n_factor", "n_factor"]}
     type: real
