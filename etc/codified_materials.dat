@@ -1,0 +1,62 @@
+# Matériau 1 : acier faiblement alliés
+#  par défaut, la loi de fatigue n° 1 est utilisée. En fonction de la valeur
+#  de Su, la loi n° 2 peut être utilisée ou une combinaison des deux.
+BASE_MATERIAL
+    * material_id 1
+    * fatigue_law_id 1
+    * steel_type low-alloy
+    * m_factor 2.
+    * n_factor 0.2  
+    
+# Matériau 2 : acier faiblement alliés sans calcul du facteur d'usage
+BASE_MATERIAL
+    * material_id 2
+    * steel_type low-alloy
+    * m_factor 2.
+    * n_factor 0.2  
+
+# Matériau 3 : acier au carbone
+#  loi de fatigue identique au matériau 1
+BASE_MATERIAL
+   * material_id  3
+   * fatigue_law_id 1
+   * steel_type carbon
+   * m_factor 3.
+   * n_factor 0.2
+
+# Matériau 4 : inox
+#  loi de fatigue suivant RCCM ZI.4.2 ou ASME I.9.2.1
+BASE_MATERIAL
+   * material_id  4 
+   * fatigue_law_id 4
+   * steel_type stainless
+   * m_factor 1.7
+   * n_factor 0.3
+
+# Matériau 5 : acier boulonnerie courbe <= 2.7 Sm
+#  pas de correction de Ke (m=0 et n=1)
+BASE_MATERIAL
+   * material_id  5 
+   * fatigue_law_id 5
+   * steel_type fastener
+   * m_factor 0.
+   * n_factor 1.
+
+# Matériau 6 : acier boulonnerie courbe à 3*Sm
+#  pas de correction de Ke (m=0 et n=1)
+BASE_MATERIAL
+   * material_id  6 
+   * fatigue_law_id 6
+   * steel_type fastener
+   * m_factor 0.
+   * n_factor 1.
+
+# Matériau 7 : acier boulonnerie avec choix automatique de la courbe de fatigue
+#  par défaut, on utilise la courbe <= 2.7*Sm
+#  pas de correction de Ke (m=0 et n=1)
+BASE_MATERIAL
+   * material_id  7 
+   * fatigue_law_id 5
+   * steel_type fastener
+   * m_factor 0.
+   * n_factor 1.

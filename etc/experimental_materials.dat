@@ -1,0 +1,103 @@
+# Matériau 20 : GV et pressu - goujon côté écrou - loi 1
+BASE_MATERIAL
+    * material_id 20
+    * fatigue_law_id 20
+    * correction goodman
+    * Kf 4.05
+
+# Matériau 21 : GV et pressu - goujon côté écrou - loi 2
+BASE_MATERIAL
+    * material_id 21
+    * fatigue_law_id 21
+    * correction goodman
+    * Kf 4.05
+
+# Matériau 22 : GV et pressu - goujon côté douille 
+BASE_MATERIAL
+    * material_id 22
+    * fatigue_law_id 22
+    * correction goodman
+    * Kf 3.20
+
+# Matériau 23 : GV et pressu - taraudage de l'écrou 
+BASE_MATERIAL
+    * material_id 23
+    * fatigue_law_id 23
+    * correction goodman
+    * Kf 4.05
+
+# Matériau 24 : GV et pressu - taraudage de la douille
+BASE_MATERIAL
+    * material_id 24
+    * fatigue_law_id 24
+    * correction goodman
+    * Kf 3.20
+
+# Matériau 25 : Cuves 900 et 1300 - goujon 40NCDV0703
+BASE_MATERIAL
+    * material_id 25
+    * fatigue_law_id 25
+    * correction goodman
+    * Kf 4.0
+
+# Matériau 26 : Cuves 900 et 1300 - bride 16MND5
+BASE_MATERIAL
+    * material_id 25
+    * fatigue_law_id 25
+    * correction goodman
+    * Kf 4.0
+
+# Matériau 27 : Cuve OL3, goujon 40NCDV0703
+BASE_MATERIAL
+    * material_id 26
+    * fatigue_law_id 26
+    * correction peterson
+    * Kf 4.0
+
+# Matériau 28 : Cuve OL3,  bride 16MND5
+BASE_MATERIAL
+    * material_id 27
+    * fatigue_law_id 27
+    * correction peterson
+    * Kf 4.0
+
+BASE_MATERIAL
+    * material_id 28
+    * fatigue_law_id 28
+    * correction peterson
+    * Kf 4.0
+
+# Matériau 29 : GV et pressu - goujon 42CDV4 (M52 x 4) - côté écrou taraudage
+BASE_MATERIAL
+    * material_id 29
+    * fatigue_law_id 29
+    * correction goodman
+    * Kf 4.335
+
+# Matériau 30 : GV et pressu - goujon 42CDV4 (M52 x 4) - côté bride
+BASE_MATERIAL
+    * material_id 30
+    * fatigue_law_id 30
+    * correction goodman
+    * Kf 3.335
+
+# Matériau 31 : GV et pressu - taraudage bride 18MND5
+BASE_MATERIAL
+    * material_id 31
+    * fatigue_law_id 31
+    * correction goodman
+    * Kf 3.335
+
+# Matériau 32 : courbe trou de drain pour 16°
+BASE_MATERIAL
+    * material_id 32
+    * fatigue_law_id 32
+    * correction goodman
+    * Kf 1.0
+
+# Matériau 33 : courbe trou de drain pour 58°
+BASE_MATERIAL
+    * material_id 33
+    * fatigue_law_id 33
+    * correction goodman
+    * Kf 1.0
