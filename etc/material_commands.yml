@@ -141,7 +141,7 @@ POLYNOMIAL_FATIGUE_LAW:
     type: real_array
 
 BASE_MATERIAL:
-  keys: {"en": {"base_material", "base_material"}}
+  keys: {"en": ["base_material", "base_material"]}
   type: single
 
   MATERIAL_ID:
@@ -171,7 +171,6 @@ BASE_MATERIAL:
   N_FACTOR:
     keys: {"en": ["n_factor", "n_factor"]}
     type: real
-
 
 RETURN:
   keys: {"fr": ["reto", "retour"], "en": ["retu", "return"]}
