@@ -57,7 +57,9 @@ namespace abase {
             /// @brief buffer of string for current line
             std::vector<std::string> buffer;
             /// @brief current position on the current line (which word)
-            std::size_t word_rk;
+            std::size_t word_rk = 0;
+            /// @brief current line number (only used for error messages)
+            std::size_t line_number = 0;
             
             /// @brief file name
             std::string filename;

@@ -38,6 +38,7 @@ FileReader::FileReader(const std::string& input_name) : filename(input_name) {
     if (!input.is_open()) {
         error(translate("ERROR_OPEN_FILE", input_name));
     }
+    line_number = 0;
 }
 
 std::string FileReader::get_word() {
@@ -69,6 +70,7 @@ void FileReader::buffer_update() {
     
     // read next not empty line
     while(std::getline(input, line)) {
+        line_number++;
         buffer = FileLineFilter::filter(line);
         if (!buffer.empty()) break;
     }
@@ -77,5 +79,6 @@ void FileReader::buffer_update() {
 
 std::string FileReader::context_error() const {
     std::string expected_line = (word_rk == 0 ? prev_line : line );
-    return translate("ERROR_FILE_FOOTER", {filename, expected_line});
+    std::string line_rk = (word_rk == 0 ? std::to_string(line_number - 1) : std::to_string(line_number));
+    return translate("ERROR_FILE_FOOTER", {filename, line_rk, expected_line});
 }
