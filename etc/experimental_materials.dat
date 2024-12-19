@@ -42,25 +42,19 @@ BASE_MATERIAL
 
 # Matériau 26 : Cuves 900 et 1300 - bride 16MND5
 BASE_MATERIAL
-    * material_id 25
-    * fatigue_law_id 25
-    * correction goodman
-    * Kf 4.0
-
-# Matériau 27 : Cuve OL3, goujon 40NCDV0703
-BASE_MATERIAL
     * material_id 26
     * fatigue_law_id 26
     * correction peterson
     * Kf 4.0
 
-# Matériau 28 : Cuve OL3,  bride 16MND5
+# Matériau 27 : Cuve OL3, goujon 40NCDV0703
 BASE_MATERIAL
     * material_id 27
     * fatigue_law_id 27
     * correction peterson
     * Kf 4.0
 
+# Matériau 28 : Cuve OL3,  bride 16MND5
 BASE_MATERIAL
     * material_id 28
     * fatigue_law_id 28
@@ -89,20 +83,20 @@ BASE_MATERIAL
     * Kf 3.335
 
 # Matériau 32 : courbe trou de drain pour 16°
-DRAIN_BASE_MATERIAL
+DRAIN_MATERIAL
     * material_id 32
     * fatigue_law_id 32
     * correction goodman
     * Kf 1.0
-    * DHa  16 20 32 43 58
-    * DHTresca 6.9392 6.2661 4.6864 3.7205 3.0696
-    * DHSaRatio 1.245
-    * DHSaLim 288
+    * angles  16 20 32 43 58
+    * stress_intensities 6.9392 6.2661 4.6864 3.7205 3.0696
+    * stress_ratio 1.245
+    * stress_limit 288
 
 # Matériau 33 : courbe trou de drain pour 58°
-DRAIN_BASE_MATERIAL
+DRAIN_MATERIAL
     * material_id 33
     * fatigue_law_id 33
     * correction goodman
     * Kf 1.0
-    * DHSaLim 462
+    * stress_limit 462
