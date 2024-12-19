@@ -10,11 +10,14 @@ namespace abase {
         protected :
             /// @brief keyword read from the input fila associated to the command
             std::string _value;
-            /// @brief clear read data associated to the command
-            virtual void clear() { _read_status = false; _value = ""; }
+
         public :
             SingleCommand() = default;
             virtual ~SingleCommand() = default;
+
+            /// @brief clear read data associated to the command
+            virtual void clear() { _read_status = false; _value = ""; children_clear(); }
+
             /// @brief Read input file and set the value of the command
             /// @param reader file reader associated to the input file
             /// @return a status code (0 for success and 1 for fail)
@@ -44,12 +47,14 @@ namespace abase {
         protected :
             /// @brief vector of time steps rank.
             std::vector<std::size_t> _values;
-            /// @brief clear read data associated to the command
-            virtual void clear() { this->_read_status = false; _values.clear(); }
 
         public:
             TimeStepCommand() = default;
             virtual ~TimeStepCommand() = default;
+
+            /// @brief clear read data associated to the command
+            virtual void clear() { this->_read_status = false; _values.clear(); children_clear(); } 
+
             /// @brief Read input file and set the value of the command
             /// @param reader file reader associated to the input file
             /// @return a status code (0 for success and 1 for fail)
@@ -76,12 +81,14 @@ namespace abase {
             std::string _table_name;
             /// @brief vector of time steps rank.
             std::vector<double> _values;
-            /// @brief clear read data associated to the command
-            virtual void clear() { this->_read_status = false; _values.clear(); }
 
         public:
             TableCommand() = default;
             virtual ~TableCommand() = default;
+
+            /// @brief clear read data associated to the command
+            virtual void clear() { this->_read_status = false; _values.clear(); children_clear(); } 
+
             /// @brief Read input file and set the value of the command
             /// @param reader file reader associated to the input file
             /// @return a status code (0 for success and 1 for fail)
@@ -101,12 +108,14 @@ namespace abase {
         protected :
             /// @brief file name
             std::string _value;
-            /// @brief clear read data associated to the command
-            virtual void clear() { _read_status = false; _value = ""; }
 
         public:
             FileCommand() = default;
             virtual ~FileCommand() = default;
+
+            /// @brief clear read data associated to the command
+            virtual void clear() { _read_status = false; _value = ""; children_clear(); }
+
             /// @brief Read input file and set the value of the command
             /// @param reader file reader associated to the input file
             /// @return a status code (0 for success and 1 for fail)

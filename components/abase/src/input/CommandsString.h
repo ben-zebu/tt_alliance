@@ -10,12 +10,14 @@ namespace abase {
         protected :
             /// @brief Value associated to the command
             std::string _value;
-            /// @brief clear read data associated to the command
-            virtual void clear() { _read_status = false; _value = ""; }
 
         public :
             StringCommand() = default;
             virtual ~StringCommand() = default;
+
+            /// @brief clear read data associated to the command
+            virtual void clear() { _read_status = false; _value = ""; children_clear(); }
+
             /// @brief Read input file and set the value of the command
             /// @param reader file reader associated to the input file
             /// @return a status code (0 for success and 1 for fail)
@@ -32,12 +34,14 @@ namespace abase {
         protected :
             /// @brief Value associated to the command
             std::vector<std::string> _values;
-            /// @brief clear read data associated to the command
-            virtual void clear() { _read_status = false; _values.clear(); }
 
         public :
             VectorStringCommand() = default;
             virtual ~VectorStringCommand() = default;
+
+            /// @brief clear read data associated to the command
+            virtual void clear() { _read_status = false; _values.clear(); children_clear(); }   
+
             /// @brief Read input file and set the value of the command
             /// @param reader file reader associated to the input file
             /// @return a status code (0 for success and 1 for fail)
@@ -56,12 +60,14 @@ namespace abase {
             std::vector<std::string> _values;
             /// @brief Number of values to read
             std::size_t _n_values;
-            /// @brief clear read data associated to the command
-            virtual void clear() { _read_status = false; _values.clear(); _n_values = 0; }
 
         public :
             MixStringCommand() = default;
             virtual ~MixStringCommand() = default;
+
+            /// @brief clear read data associated to the command
+            virtual void clear() { _read_status = false; _values.clear(); _n_values = 0; children_clear(); }
+
             /// @brief Read input file and set the value of the command
             /// @param reader file reader associated to the input file
             /// @return a status code (0 for success and 1 for fail)
