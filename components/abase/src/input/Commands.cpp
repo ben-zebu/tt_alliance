@@ -56,3 +56,9 @@ std::shared_ptr<BaseCommand> CompositeCommand::get_child(const std::string& name
     }
     return nullptr;
 }
+
+void CompositeCommand::children_clear() {
+    for (auto& child : _children) {
+        child->clear();
+    }
+}

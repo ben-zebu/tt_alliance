@@ -1,4 +1,5 @@
 #include "Environment.h"
+#include "DataCollector.h"
 
 #include "ProblemDescription.h"
 #include "ProblemFemInterface.h"
@@ -12,13 +13,8 @@
 
 namespace adata {
 
-    class DataManager {
+    class DataManager : public abase::DataCollector {
         private:
-            /// @brief Convert read data from input file into data objects
-            /// @param command read data from the input file
-            /// @param filecontext file context
-            void set_data(const std::shared_ptr<abase::BaseCommand>& command, const std::string& filecontext);
-
             /// @brief Read the title of the problem in the input file
             /// @param reader file reader associated to the input file
             /// @param collector commands collector used to read the input file
@@ -26,6 +22,18 @@ namespace adata {
             std::vector<std::string> read_title(abase::FileReader& reader, const abase::CommandsCollector& collector);
 
         protected:
+            /// @brief Convert read data from input file into data objects
+            /// @param command read data from the input file
+            /// @param filecontext file context
+            virtual void set_data(const std::shared_ptr<abase::BaseCommand>& command, const std::string& filecontext);
+
+            /// @brief Read special line without any command
+            /// @param command_name name of the command linked to the special line
+            /// @param reader file reader associated to the input file
+            /// @param collector commands collector used to read the input file
+            virtual void read_special_line(const std::string& command_name, abase::FileReader& reader, 
+                                           const abase::CommandsCollector& collector);
+
             ProblemFemInterface fem_interface;
             ProblemDescription description;
             ProblemPlate plate;
@@ -39,10 +47,7 @@ namespace adata {
         public:
             DataManager() = default;
             ~DataManager() = default;
-            /// @brief Function used to read the input file based on a commands collector
-            /// @param filename name of the input file
-            /// @param commands_tree_file file containing the commands tree definition
-            void read_data(const std::string& filename, const std::string& commands_tree_file);
+            
             /// @brief Verify if the object is correctly initialized with consistent objects
             void verify() const;
     };

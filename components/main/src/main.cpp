@@ -28,6 +28,7 @@
 
 #include "DataManager.h"
 #include "FatigueLawCollector.h"
+#include "BaseMaterialCollector.h"
 #include "Initiate.h"
 
 amath::StressStates generateStressStates(const std::size_t numStates, const std::size_t numTorsors) {
@@ -116,7 +117,7 @@ void benchmark() {
 void yaml_test() {
     std::string input_file = get_parser_value<std::string>("input_file");
     std::string app_path = get_parser_value<std::string>("application_path");
-    std::string commands_tree = "/etc/alliance_commands_tree.yml";
+    std::string commands_tree = "/etc/alliance_commands.yml";
 
     // adata::DataManager dataManager;
     // dataManager.read_data(input_file, app_path + commands_tree);
@@ -124,13 +125,22 @@ void yaml_test() {
 
     adata::FatigueLawCollector lawCollector;
     std::string materials_tree = app_path + "/etc/material_commands.yml";
-    std::string fatigue_law_input = app_path + "/etc/tabular_fatigue_laws.dat";
+    std::string fatigue_law_input = app_path + "/etc/codified_fatigue_laws.dat";
+    lawCollector.read_data(fatigue_law_input, materials_tree);
+    fatigue_law_input = app_path + "/etc/experimental_fatigue_laws.dat";
     lawCollector.read_data(fatigue_law_input, materials_tree);
 
     std::shared_ptr<adata::FatigueLaw> law = lawCollector.get_law("1", "rccm", "2020");
     std::shared_ptr<adata::FatigueLaw> a_copy = law->clone();
     std::cout << "Endurance limit: " << law->endurance_limit() << std::endl;
     std::cout << "Allowable cycles: " << law->allowable_cycles(240) << std::endl;
+
+
+    adata::BaseMaterialCollector materialCollector;
+    materialCollector.read_data(app_path + "/etc/codified_materials.dat", materials_tree);
+    materialCollector.read_data(app_path + "/etc/experimental_materials.dat", materials_tree);
+    std::shared_ptr<adata::BaseMaterial> material = materialCollector.get_material("32");
+    std::cout << "Material id: " << material->material_id << std::endl;
 }
 
 int main(int argc, char* argv[]) {

@@ -63,9 +63,10 @@ void FatigueLaw::set_generic_parameters(const std::shared_ptr<abase::BaseCommand
     abase::get_child_value(command, "N_RATIO", N_ratio);
 
     // single case description
+    this->descriptions.clear();
     std::string title = ""; 
     abase::get_child_value(command, "DESCRIPTION", title);
-    if (!title.empty()) descriptions["description"] = title;
+    if (!title.empty()) this->descriptions["description"] = title;
     
     // code case description
     for (const auto& code : {"rccm", "asme"}) {
@@ -74,7 +75,7 @@ void FatigueLaw::set_generic_parameters(const std::shared_ptr<abase::BaseCommand
         
         std::string description = "";
         abase::get_child_value(code_cmd, "DESCRIPTION", description);
-        if (!description.empty()) descriptions[str::lowercase(code)] = description;
+        if (!description.empty()) this->descriptions[str::lowercase(code)] = description;
 
         std::vector<std::string> editions;
         abase::get_child_values(code_cmd, "EDITION", editions);
@@ -125,7 +126,7 @@ void TabularFatigueLaw::init(const std::shared_ptr<abase::BaseCommand>& command)
     abase::get_child_values(command, "NA", xvalues);
     abase::get_child_values(command, "SA", yvalues);
 
-    table = amath::Table(xvalues, yvalues);
+    if (xvalues.size() > 0 && yvalues.size() > 0) table = amath::Table(xvalues, yvalues);
 }
 
 void TabularFatigueLaw::verify(const std::string& filecontext) const {
@@ -167,6 +168,9 @@ std::size_t PowerFatigueLaw::allowable_cycles(double Sa) const {
 }
 
 void PowerFatigueLaw::init(const std::shared_ptr<abase::BaseCommand>& command) {
+    // Young modulus is not used in this law
+    Ec = UNSET_YOUNG_MODULUS;
+
     set_generic_parameters(command);
     
     abase::get_child_value(command, "SEQ", Seq);
@@ -243,8 +247,12 @@ std::size_t PolynomialFatigueLaw::allowable_cycles(double Sa) const {
 }
 
 void PolynomialFatigueLaw::init(const std::shared_ptr<abase::BaseCommand>& command) {
+    // Young modulus is not used in this law
+    Ec = UNSET_YOUNG_MODULUS;
+
     set_generic_parameters(command);
 
+    abase::get_child_value(command, "BETA", beta);
     abase::get_child_value(command, "SEQ", Seq);
     abase::get_child_values(command, "COEFFICIENTS", coefficients);
 }

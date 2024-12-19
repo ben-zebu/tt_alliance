@@ -135,13 +135,16 @@ POLYNOMIAL_FATIGUE_LAW:
   SEQ:
     keys: {"en": ["seq", "seq"]}
     type: real
+  BETA:
+    keys: {"en": ["beta", "beta"]}
+    type: real
 
   COEFFICIENTS:
     keys: {"en": ["coefficients", "coefficients"]}
     type: real_array
 
 BASE_MATERIAL:
-  keys: {"en": {"base_material", "base_material"}}
+  keys: {"en": ["base_material", "base_material"]}
   type: single
 
   MATERIAL_ID:
@@ -160,14 +163,65 @@ BASE_MATERIAL:
     keys: {"en": ["correction", "correction"]}
     type: string
 
+  KF:
+    keys: {"en": ["kf", "kf"]}
+    type: real
+
   M_FACTOR:
     keys: {"en": ["m_factor", "m_factor"]}
     type: real
-    
+
   N_FACTOR:
     keys: {"en": ["n_factor", "n_factor"]}
     type: real
 
+DRAIN_MATERIAL:
+  keys: {"en": ["drain_material", "drain_material"]}
+  type: single
+
+  MATERIAL_ID:
+    keys: {"en": ["material_id", "material_id"]}
+    type: string
+
+  FATIGUE_LAW_ID:
+    keys: {"en": ["fatigue_law_id", "fatigue_law_id"]}
+    type: string
+
+  STEEL_TYPE:
+    keys: {"en": ["steel_type", "steel_type"]}
+    type: string
+  
+  CORRECTION:
+    keys: {"en": ["correction", "correction"]}
+    type: string
+
+  KF:
+    keys: {"en": ["kf", "kf"]}
+    type: real
+
+  M_FACTOR:
+    keys: {"en": ["m_factor", "m_factor"]}
+    type: real
+
+  N_FACTOR:
+    keys: {"en": ["n_factor", "n_factor"]}
+    type: real
+
+  STRESS_LIMIT:
+    keys: {"en": ["stress_limit", "stress_limit"]}
+    type: real
+
+  STRESS_RATIO:
+    keys: {"en": ["stress_ratio", "stress_ratio"]}
+    type: real
+
+  ANGLES:
+    keys: {"en": ["angles", "angles"]}
+    type: real_array
+
+  STRESS_INTENSITIES:
+    keys: {"en": ["stress_intensities", "stress_intensities"]}
+    type: real_array
 
 RETURN:
   keys: {"fr": ["reto", "retour"], "en": ["retu", "return"]}

@@ -42,8 +42,8 @@
     fr: "Clé inconnue '{0}' dans la configuration du programme !"
 
   ERROR_FILE_FOOTER:
-    en: "File: '{0}'\nLine: {1}"
-    fr: "Fichier : '{0}'\nLigne : {1}"
+    en: "File: '{0}'\nLine {1}: {2}"
+    fr: "Fichier : '{0}'\nLigne {1} : {2}"
 
   ERROR_READ_VECTOR_VALUES:
     en: "Cannot read ${0} values associated to the command '{1}' !"

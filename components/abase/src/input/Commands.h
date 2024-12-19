@@ -76,13 +76,14 @@ namespace abase {
             /// @brief read status
             bool _read_status = false;
 
-            /// @brief clear read data associated to the command
-            virtual void clear() { _read_status = false; }
-
         public:
             BaseCommand() = default;
             BaseCommand(const std::string& name) : _name(name) {}
             virtual ~BaseCommand() = default;
+
+            /// @brief clear read data associated to the command
+            virtual void clear() { _read_status = false; }
+
             /// @brief Read the input file and set the values of the command
             /// @return Action status (0 for succes and 1 for failded)
             virtual std::size_t read_input(FileReader& reader, const CommandsCollector& collector) = 0;
@@ -153,6 +154,9 @@ namespace abase {
 
             /// @brief Read input process for all children
             virtual std::size_t children_process(FileReader& reader, const CommandsCollector& collector);
+
+            /// @brief clear read data if all children
+            void children_clear();
 
         public:
             CompositeCommand() = default;
