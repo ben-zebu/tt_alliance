@@ -135,7 +135,10 @@ POLYNOMIAL_FATIGUE_LAW:
   SEQ:
     keys: {"en": ["seq", "seq"]}
     type: real
-
+  BETA:
+    keys: {"en": ["beta", "beta"]}
+    type: real
+    
   COEFFICIENTS:
     keys: {"en": ["coefficients", "coefficients"]}
     type: real_array

@@ -7,6 +7,9 @@
 #include "Table.h"
 
 namespace adata {
+
+    /// @brief Value used as a flag to check if the Young modulus has been defined or not for experimental fatigue laws
+    inline constexpr double UNSET_YOUNG_MODULUS = 1.;
     
     class FatigueLaw {
         protected:
@@ -133,6 +136,7 @@ namespace adata {
     class PolynomialFatigueLaw : public FatigueLaw {
         protected:
             std::vector<double> coefficients;
+            double beta = 0.;
             double Seq = 0.;
         public:
 
