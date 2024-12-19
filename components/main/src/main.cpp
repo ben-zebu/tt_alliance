@@ -28,6 +28,7 @@
 
 #include "DataManager.h"
 #include "FatigueLawCollector.h"
+#include "BaseMaterialCollector.h"
 #include "Initiate.h"
 
 amath::StressStates generateStressStates(const std::size_t numStates, const std::size_t numTorsors) {
@@ -133,6 +134,13 @@ void yaml_test() {
     std::shared_ptr<adata::FatigueLaw> a_copy = law->clone();
     std::cout << "Endurance limit: " << law->endurance_limit() << std::endl;
     std::cout << "Allowable cycles: " << law->allowable_cycles(240) << std::endl;
+
+
+    adata::BaseMaterialCollector materialCollector;
+    materialCollector.read_data(app_path + "/etc/codified_materials.dat", materials_tree);
+    materialCollector.read_data(app_path + "/etc/experimental_materials.dat", materials_tree);
+    std::shared_ptr<adata::BaseMaterial> material = materialCollector.get_material("32");
+    std::cout << "Material id: " << material->material_id << std::endl;
 }
 
 int main(int argc, char* argv[]) {
