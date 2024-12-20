@@ -118,27 +118,25 @@ void yaml_test() {
     std::string input_file = get_parser_value<std::string>("input_file");
     std::string app_path = get_parser_value<std::string>("application_path");
 
+    std::string material_commands = app_path + "/" +  get_parser_value<std::string>("material_commands");
+    std::string material_files = get_parser_value<std::string>("material_files");
+    std::string fatigue_law_files = get_parser_value<std::string>("fatigue_law_files");
+
     adata::FatigueLawCollector lawCollector;
-    std::string materials_tree = app_path + "/etc/material_commands.yml";
-    std::string fatigue_law_input = app_path + "/etc/codified_fatigue_laws.dat";
-    lawCollector.read_data(fatigue_law_input, materials_tree);
-    fatigue_law_input = app_path + "/etc/experimental_fatigue_laws.dat";
-    lawCollector.read_data(fatigue_law_input, materials_tree);
-
-    std::shared_ptr<adata::FatigueLaw> law = lawCollector.get_law("1", "rccm", "2020");
-    std::shared_ptr<adata::FatigueLaw> a_copy = law->clone();
-    std::cout << "Endurance limit: " << law->endurance_limit() << std::endl;
-    std::cout << "Allowable cycles: " << law->allowable_cycles(240) << std::endl;
-
+    std::vector<std::string> files = str::split(str::replace(fatigue_law_files, ",", " "));
+    for (const auto& file : files) {
+        lawCollector.read_data(app_path + "/" + file, material_commands);
+    }
 
     adata::BaseMaterialCollector materialCollector;
-    materialCollector.read_data(app_path + "/etc/codified_materials.dat", materials_tree);
-    materialCollector.read_data(app_path + "/etc/experimental_materials.dat", materials_tree);
-    std::shared_ptr<adata::BaseMaterial> material = materialCollector.get_material("32");
-    std::cout << "Material id: " << material->material_id << std::endl;
+    files = str::split(str::replace(material_files, ",", " "));
+    for (const auto& file : files) {
+        materialCollector.read_data(app_path + "/" + file, material_commands);
+    }
 
+    std::string input_commands = app_path + "/" +  get_parser_value<std::string>("input_commands");
     adata::DataManager dataManager;
-    dataManager.read_data(input_file, app_path + "/etc/alliance_commands.yml");
+    dataManager.read_data(input_file, input_commands);
     dataManager.verify();
 }
 
