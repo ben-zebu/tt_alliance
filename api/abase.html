@@ -55,6 +55,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4I0EN5abase14NumericCommandE"><code class="docutils literal notranslate"><span class="pre">abase::NumericCommand</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4I0EN5abase12ValueCommandE"><code class="docutils literal notranslate"><span class="pre">abase::ValueCommand</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4I0EN5abase13VectorCommandE"><code class="docutils literal notranslate"><span class="pre">abase::VectorCommand</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5abase18CoefficientCommandE"><code class="docutils literal notranslate"><span class="pre">abase::CoefficientCommand</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5abase11FileCommandE"><code class="docutils literal notranslate"><span class="pre">abase::FileCommand</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5abase13SingleCommandE"><code class="docutils literal notranslate"><span class="pre">abase::SingleCommand</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5abase12TableCommandE"><code class="docutils literal notranslate"><span class="pre">abase::TableCommand</span></code></a></li>
@@ -195,13 +196,8 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N5abase11BaseCommand11BaseCommandEv">
-<span id="_CPPv3N5abase11BaseCommand11BaseCommandEv"></span><span id="_CPPv2N5abase11BaseCommand11BaseCommandEv"></span><span id="abase::BaseCommand::BaseCommand"></span><span class="target" id="classabase_1_1BaseCommand_1a081bf6d50ece20fac5f668f052af6d7e"></span><span class="sig-name descname"><span class="n"><span class="pre">BaseCommand</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5abase11BaseCommand11BaseCommandEv" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5abase11BaseCommand11BaseCommandERKNSt6stringE">
-<span id="_CPPv3N5abase11BaseCommand11BaseCommandERKNSt6stringE"></span><span id="_CPPv2N5abase11BaseCommand11BaseCommandERKNSt6stringE"></span><span id="abase::BaseCommand::BaseCommand__ssCR"></span><span class="target" id="classabase_1_1BaseCommand_1ae72c8aed3de7c6b54a687828ae91287d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">BaseCommand</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase11BaseCommand11BaseCommandERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<span id="_CPPv3N5abase11BaseCommand11BaseCommandERKNSt6stringE"></span><span id="_CPPv2N5abase11BaseCommand11BaseCommandERKNSt6stringE"></span><span id="abase::BaseCommand::BaseCommand__ssCR"></span><span class="target" id="classabase_1_1BaseCommand_1a2fdfdeaf2762c83f281996335838718e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">BaseCommand</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">type</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase11BaseCommand11BaseCommandERKNSt6stringE" title="Link to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
@@ -222,6 +218,17 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Action status (0 for succes and 1 for failded) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5abase11BaseCommand8get_typeEv">
+<span id="_CPPv3NK5abase11BaseCommand8get_typeEv"></span><span id="_CPPv2NK5abase11BaseCommand8get_typeEv"></span><span id="abase::BaseCommand::get_typeC"></span><span class="target" id="classabase_1_1BaseCommand_1a72c2766b6fce1e4598142a139cbc49e9"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_type</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5abase11BaseCommand8get_typeEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the type of the command. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the command type </p>
 </dd>
 </dl>
 </dd></dl>
@@ -278,6 +285,17 @@
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>pointer to the child command </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5abase11BaseCommand18get_children_namesEv">
+<span id="_CPPv3NK5abase11BaseCommand18get_children_namesEv"></span><span id="_CPPv2NK5abase11BaseCommand18get_children_namesEv"></span><span id="abase::BaseCommand::get_children_namesC"></span><span class="target" id="classabase_1_1BaseCommand_1a88c35bccc8ace9a0711b2c87fd568bb0"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_children_names</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK5abase11BaseCommand18get_children_namesEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the child command names (pure virtual) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of children’s name </p>
 </dd>
 </dl>
 </dd></dl>
@@ -402,6 +420,12 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
 <dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase11BaseCommand5_typeE">
+<span id="_CPPv3N5abase11BaseCommand5_typeE"></span><span id="_CPPv2N5abase11BaseCommand5_typeE"></span><span id="abase::BaseCommand::_type__ss"></span><span class="target" id="classabase_1_1BaseCommand_1a57334e6dcc3cf243e5a90a93b883b9c8"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_type</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><a class="headerlink" href="#_CPPv4N5abase11BaseCommand5_typeE" title="Link to this definition"></a><br /></dt>
+<dd><p>command type </p>
+</dd></dl>
+
+<dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N5abase11BaseCommand5_nameE">
 <span id="_CPPv3N5abase11BaseCommand5_nameE"></span><span id="_CPPv2N5abase11BaseCommand5_nameE"></span><span id="abase::BaseCommand::_name__ss"></span><span class="target" id="classabase_1_1BaseCommand_1aec9a6b8ba6c1ba6c2cdb7f8ce4a501e4"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_name</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><a class="headerlink" href="#_CPPv4N5abase11BaseCommand5_nameE" title="Link to this definition"></a><br /></dt>
 <dd><p>command name </p>
@@ -428,12 +452,12 @@
 <dd><div class="docutils container">
 <em>#include &lt;Commands.h&gt;</em></div>
 <p>Command class used to add children of the current command. </p>
-<p>Subclassed by <a class="reference internal" href="#classabase_1_1FileCommand"><span class="std std-ref">abase::FileCommand</span></a>, <a class="reference internal" href="#classabase_1_1MixStringCommand"><span class="std std-ref">abase::MixStringCommand</span></a>, <a class="reference internal" href="#classabase_1_1NumericCommand"><span class="std std-ref">abase::NumericCommand&lt; T &gt;</span></a>, <a class="reference internal" href="#classabase_1_1SingleCommand"><span class="std std-ref">abase::SingleCommand</span></a>, <a class="reference internal" href="#classabase_1_1StringCommand"><span class="std std-ref">abase::StringCommand</span></a>, <a class="reference internal" href="#classabase_1_1TableCommand"><span class="std std-ref">abase::TableCommand</span></a>, <a class="reference internal" href="#classabase_1_1TimeStepCommand"><span class="std std-ref">abase::TimeStepCommand</span></a>, <a class="reference internal" href="#classabase_1_1VectorStringCommand"><span class="std std-ref">abase::VectorStringCommand</span></a></p>
+<p>Subclassed by <a class="reference internal" href="#classabase_1_1CoefficientCommand"><span class="std std-ref">abase::CoefficientCommand</span></a>, <a class="reference internal" href="#classabase_1_1FileCommand"><span class="std std-ref">abase::FileCommand</span></a>, <a class="reference internal" href="#classabase_1_1MixStringCommand"><span class="std std-ref">abase::MixStringCommand</span></a>, <a class="reference internal" href="#classabase_1_1NumericCommand"><span class="std std-ref">abase::NumericCommand&lt; T &gt;</span></a>, <a class="reference internal" href="#classabase_1_1SingleCommand"><span class="std std-ref">abase::SingleCommand</span></a>, <a class="reference internal" href="#classabase_1_1StringCommand"><span class="std std-ref">abase::StringCommand</span></a>, <a class="reference internal" href="#classabase_1_1TableCommand"><span class="std std-ref">abase::TableCommand</span></a>, <a class="reference internal" href="#classabase_1_1TimeStepCommand"><span class="std std-ref">abase::TimeStepCommand</span></a>, <a class="reference internal" href="#classabase_1_1VectorStringCommand"><span class="std std-ref">abase::VectorStringCommand</span></a></p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N5abase16CompositeCommand16CompositeCommandEv">
-<span id="_CPPv3N5abase16CompositeCommand16CompositeCommandEv"></span><span id="_CPPv2N5abase16CompositeCommand16CompositeCommandEv"></span><span id="abase::CompositeCommand::CompositeCommand"></span><span class="target" id="classabase_1_1CompositeCommand_1ac0f3d1f1045684fbfb810f551e9124e8"></span><span class="sig-name descname"><span class="n"><span class="pre">CompositeCommand</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5abase16CompositeCommand16CompositeCommandEv" title="Link to this definition"></a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N5abase16CompositeCommand16CompositeCommandERKNSt6stringE">
+<span id="_CPPv3N5abase16CompositeCommand16CompositeCommandERKNSt6stringE"></span><span id="_CPPv2N5abase16CompositeCommand16CompositeCommandERKNSt6stringE"></span><span id="abase::CompositeCommand::CompositeCommand__ssCR"></span><span class="target" id="classabase_1_1CompositeCommand_1a3380d9b51c7b9a97a15be532296ff1ac"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CompositeCommand</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">type</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase16CompositeCommand16CompositeCommandERKNSt6stringE" title="Link to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
@@ -476,6 +500,17 @@
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>status of the comparison </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5abase16CompositeCommand18get_children_namesEv">
+<span id="_CPPv3NK5abase16CompositeCommand18get_children_namesEv"></span><span id="_CPPv2NK5abase16CompositeCommand18get_children_namesEv"></span><span id="abase::CompositeCommand::get_children_namesC"></span><span class="target" id="classabase_1_1CompositeCommand_1ae4d36d22e218428ca2ae31f5198c09e1"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_children_names</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5abase16CompositeCommand18get_children_namesEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Return the list of children’s name. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of children’s name </p>
 </dd>
 </dl>
 </dd></dl>
@@ -536,8 +571,8 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N5abase10MixCommand10MixCommandEv">
-<span id="_CPPv3N5abase10MixCommand10MixCommandEv"></span><span id="_CPPv2N5abase10MixCommand10MixCommandEv"></span><span id="abase::MixCommand::MixCommand"></span><span class="target" id="classabase_1_1MixCommand_1a7bf8bf6ed060afa2b4eb5739174fc736"></span><span class="sig-name descname"><span class="n"><span class="pre">MixCommand</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5abase10MixCommand10MixCommandEv" title="Link to this definition"></a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N5abase10MixCommand10MixCommandERKNSt6stringE">
+<span id="_CPPv3N5abase10MixCommand10MixCommandERKNSt6stringE"></span><span id="_CPPv2N5abase10MixCommand10MixCommandERKNSt6stringE"></span><span id="abase::MixCommand::MixCommand__ssCR"></span><span class="target" id="classabase_1_1MixCommand_1a41ed84c226f82caa98261da4f6bc1c9c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MixCommand</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">type</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase10MixCommand10MixCommandERKNSt6stringE" title="Link to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
@@ -604,8 +639,8 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N5abase14NumericCommand14NumericCommandEv">
-<span id="_CPPv3N5abase14NumericCommand14NumericCommandEv"></span><span id="_CPPv2N5abase14NumericCommand14NumericCommandEv"></span><span id="abase::NumericCommand::NumericCommand"></span><span class="target" id="classabase_1_1NumericCommand_1af37281654fb4e4593d07c46d0a76f154"></span><span class="sig-name descname"><span class="n"><span class="pre">NumericCommand</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5abase14NumericCommand14NumericCommandEv" title="Link to this definition"></a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N5abase14NumericCommand14NumericCommandERKNSt6stringE">
+<span id="_CPPv3N5abase14NumericCommand14NumericCommandERKNSt6stringE"></span><span id="_CPPv2N5abase14NumericCommand14NumericCommandERKNSt6stringE"></span><span id="abase::NumericCommand::NumericCommand__ssCR"></span><span class="target" id="classabase_1_1NumericCommand_1a573e21229ee96b441b4205f00036a4a9"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">NumericCommand</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">type</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase14NumericCommand14NumericCommandERKNSt6stringE" title="Link to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
@@ -633,8 +668,8 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N5abase12ValueCommand12ValueCommandEv">
-<span id="_CPPv3N5abase12ValueCommand12ValueCommandEv"></span><span id="_CPPv2N5abase12ValueCommand12ValueCommandEv"></span><span id="abase::ValueCommand::ValueCommand"></span><span class="target" id="classabase_1_1ValueCommand_1a6e4570eadc8c26205446609110321023"></span><span class="sig-name descname"><span class="n"><span class="pre">ValueCommand</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5abase12ValueCommand12ValueCommandEv" title="Link to this definition"></a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N5abase12ValueCommand12ValueCommandERKNSt6stringE">
+<span id="_CPPv3N5abase12ValueCommand12ValueCommandERKNSt6stringE"></span><span id="_CPPv2N5abase12ValueCommand12ValueCommandERKNSt6stringE"></span><span id="abase::ValueCommand::ValueCommand__ssCR"></span><span class="target" id="classabase_1_1ValueCommand_1a316155f0c4db87edff117d1896923987"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ValueCommand</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">type</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase12ValueCommand12ValueCommandERKNSt6stringE" title="Link to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
@@ -694,8 +729,8 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N5abase13VectorCommand13VectorCommandEv">
-<span id="_CPPv3N5abase13VectorCommand13VectorCommandEv"></span><span id="_CPPv2N5abase13VectorCommand13VectorCommandEv"></span><span id="abase::VectorCommand::VectorCommand"></span><span class="target" id="classabase_1_1VectorCommand_1ae0438e50fa5636e337de9e53b9a01e67"></span><span class="sig-name descname"><span class="n"><span class="pre">VectorCommand</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5abase13VectorCommand13VectorCommandEv" title="Link to this definition"></a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N5abase13VectorCommand13VectorCommandERKNSt6stringE">
+<span id="_CPPv3N5abase13VectorCommand13VectorCommandERKNSt6stringE"></span><span id="_CPPv2N5abase13VectorCommand13VectorCommandERKNSt6stringE"></span><span id="abase::VectorCommand::VectorCommand__ssCR"></span><span class="target" id="classabase_1_1VectorCommand_1a3f02de7212532f3bed43c9e0a06763df"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">VectorCommand</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">type</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase13VectorCommand13VectorCommandERKNSt6stringE" title="Link to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
@@ -767,6 +802,119 @@
 </div>
 </p>
 <dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase18CoefficientCommandE">
+<span id="_CPPv3N5abase18CoefficientCommandE"></span><span id="_CPPv2N5abase18CoefficientCommandE"></span><span id="abase::CoefficientCommand"></span><span class="target" id="classabase_1_1CoefficientCommand"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CoefficientCommand</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv45abase" title="abase"><span class="n"><span class="pre">abase</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5abase16CompositeCommandE" title="abase::CompositeCommand"><span class="n"><span class="pre">CompositeCommand</span></span></a><a class="headerlink" href="#_CPPv4N5abase18CoefficientCommandE" title="Link to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;CommandsSpecial.h&gt;</em></div>
+<p>Class used to read a coefficient from the input file. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase18CoefficientCommand18CoefficientCommandERKNSt6stringE">
+<span id="_CPPv3N5abase18CoefficientCommand18CoefficientCommandERKNSt6stringE"></span><span id="_CPPv2N5abase18CoefficientCommand18CoefficientCommandERKNSt6stringE"></span><span id="abase::CoefficientCommand::CoefficientCommand__ssCR"></span><span class="target" id="classabase_1_1CoefficientCommand_1a4e3ec39c5fb36c08b53f305dd5d14922"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CoefficientCommand</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">type</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase18CoefficientCommand18CoefficientCommandERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase18CoefficientCommandD0Ev">
+<span id="_CPPv3N5abase18CoefficientCommandD0Ev"></span><span id="_CPPv2N5abase18CoefficientCommandD0Ev"></span><span id="abase::CoefficientCommand::~CoefficientCommand"></span><span class="target" id="classabase_1_1CoefficientCommand_1a30bcd04986d9a83f6ec8fe2b506a7cc8"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~CoefficientCommand</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5abase18CoefficientCommandD0Ev" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase18CoefficientCommand5clearEv">
+<span id="_CPPv3N5abase18CoefficientCommand5clearEv"></span><span id="_CPPv2N5abase18CoefficientCommand5clearEv"></span><span id="abase::CoefficientCommand::clear"></span><span class="target" id="classabase_1_1CoefficientCommand_1ac53bf631a00f3e5ae80c6e030e080266"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clear</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase18CoefficientCommand5clearEv" title="Link to this definition"></a><br /></dt>
+<dd><p>clear read data associated to the command </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase18CoefficientCommand10read_inputER10FileReaderRK17CommandsCollector">
+<span id="_CPPv3N5abase18CoefficientCommand10read_inputER10FileReaderRK17CommandsCollector"></span><span id="_CPPv2N5abase18CoefficientCommand10read_inputER10FileReaderRK17CommandsCollector"></span><span id="abase::CoefficientCommand::read_input__FileReaderR.CommandsCollectorCR"></span><span class="target" id="classabase_1_1CoefficientCommand_1ad771e3974d1fb4ce5c3d05f323b06e8b"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">read_input</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N5abase10FileReaderE" title="abase::FileReader"><span class="n"><span class="pre">FileReader</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">reader</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5abase17CommandsCollectorE" title="abase::CommandsCollector"><span class="n"><span class="pre">CommandsCollector</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">collector</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N5abase18CoefficientCommand10read_inputER10FileReaderRK17CommandsCollector" title="Link to this definition"></a><br /></dt>
+<dd><p>Read input file and set the value of the command. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>reader</strong> – file reader associated to the input file </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a status code (0 for success and 1 for fail) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5abase18CoefficientCommand9get_valueERNSt6stringE">
+<span id="_CPPv3NK5abase18CoefficientCommand9get_valueERNSt6stringE"></span><span id="_CPPv2NK5abase18CoefficientCommand9get_valueERNSt6stringE"></span><span id="abase::CoefficientCommand::get_value__ssRC"></span><span class="target" id="classabase_1_1CoefficientCommand_1a8e6b1be317ccd1612c31e46172ee9888"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_value</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK5abase18CoefficientCommand9get_valueERNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the table name associated to the coefficient. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> – name of the table </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5abase18CoefficientCommand10get_valuesERNSt6vectorIdEE">
+<span id="_CPPv3NK5abase18CoefficientCommand10get_valuesERNSt6vectorIdEE"></span><span id="_CPPv2NK5abase18CoefficientCommand10get_valuesERNSt6vectorIdEE"></span><span id="abase::CoefficientCommand::get_values__std::vector:double:RC"></span><span class="target" id="classabase_1_1CoefficientCommand_1a743567d3f74f11d46532d06e9477ffdb"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_values</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">values</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK5abase18CoefficientCommand10get_valuesERNSt6vectorIdEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the values of the command associated to the coefficient. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>values</strong> – values associated to the command </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase18CoefficientCommand11_table_nameE">
+<span id="_CPPv3N5abase18CoefficientCommand11_table_nameE"></span><span id="_CPPv2N5abase18CoefficientCommand11_table_nameE"></span><span id="abase::CoefficientCommand::_table_name__ss"></span><span class="target" id="classabase_1_1CoefficientCommand_1abf93c2c1404a674497246a652eaa3edc"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_table_name</span></span></span><a class="headerlink" href="#_CPPv4N5abase18CoefficientCommand11_table_nameE" title="Link to this definition"></a><br /></dt>
+<dd><p>table name associated to the coefficient </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase18CoefficientCommand7_valuesE">
+<span id="_CPPv3N5abase18CoefficientCommand7_valuesE"></span><span id="_CPPv2N5abase18CoefficientCommand7_valuesE"></span><span id="abase::CoefficientCommand::_values__std::vector:double:"></span><span class="target" id="classabase_1_1CoefficientCommand_1ac62f806bdfddf346b0a90b12f83f9239"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_values</span></span></span><a class="headerlink" href="#_CPPv4N5abase18CoefficientCommand7_valuesE" title="Link to this definition"></a><br /></dt>
+<dd><p>Values associated to the coefficient (expected size is 0 or 1) </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-functions">Private Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase18CoefficientCommand7convertERKNSt6vectorINSt6stringEEERb">
+<span id="_CPPv3N5abase18CoefficientCommand7convertERKNSt6vectorINSt6stringEEERb"></span><span id="_CPPv2N5abase18CoefficientCommand7convertERKNSt6vectorINSt6stringEEERb"></span><span id="abase::CoefficientCommand::convert__std::vector:ss:CR.bR"></span><span class="target" id="classabase_1_1CoefficientCommand_1aa41214b3db2a6b90b82a812bbfe53c9d"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">convert</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">values</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">status</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase18CoefficientCommand7convertERKNSt6vectorINSt6stringEEERb" title="Link to this definition"></a><br /></dt>
+<dd><p>Convert coefficient values from a sequence of strings. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>values</strong> – sequence of strings </p></li>
+<li><p><strong>status</strong> – status of the conversion </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>position of the table name in the sequence (after keyword ‘TABLE’) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase18CoefficientCommand14split_sequenceERKNSt6stringERKNSt6stringERKNSt6stringE">
+<span id="_CPPv3N5abase18CoefficientCommand14split_sequenceERKNSt6stringERKNSt6stringERKNSt6stringE"></span><span id="_CPPv2N5abase18CoefficientCommand14split_sequenceERKNSt6stringERKNSt6stringERKNSt6stringE"></span><span id="abase::CoefficientCommand::split_sequence__ssCR.ssCR.ssCR"></span><span class="target" id="classabase_1_1CoefficientCommand_1a35f83a7dd8116dcddd1bf5107758c74e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">split_sequence</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sequence</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">key</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filecontext</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase18CoefficientCommand14split_sequenceERKNSt6stringERKNSt6stringERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Extract all time steps from a sequence of strings. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sequence</strong> – extracted sequence </p></li>
+<li><p><strong>key</strong> – key associated to the coefficient </p></li>
+<li><p><strong>filecontext</strong> – file context for error message </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N5abase11FileCommandE">
 <span id="_CPPv3N5abase11FileCommandE"></span><span id="_CPPv2N5abase11FileCommandE"></span><span id="abase::FileCommand"></span><span class="target" id="classabase_1_1FileCommand"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FileCommand</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv45abase" title="abase"><span class="n"><span class="pre">abase</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5abase16CompositeCommandE" title="abase::CompositeCommand"><span class="n"><span class="pre">CompositeCommand</span></span></a><a class="headerlink" href="#_CPPv4N5abase11FileCommandE" title="Link to this definition"></a><br /></dt>
 <dd><div class="docutils container">
@@ -775,8 +923,8 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N5abase11FileCommand11FileCommandEv">
-<span id="_CPPv3N5abase11FileCommand11FileCommandEv"></span><span id="_CPPv2N5abase11FileCommand11FileCommandEv"></span><span id="abase::FileCommand::FileCommand"></span><span class="target" id="classabase_1_1FileCommand_1ab2e607d2f0685cd85958b43208920f97"></span><span class="sig-name descname"><span class="n"><span class="pre">FileCommand</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5abase11FileCommand11FileCommandEv" title="Link to this definition"></a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N5abase11FileCommand11FileCommandERKNSt6stringE">
+<span id="_CPPv3N5abase11FileCommand11FileCommandERKNSt6stringE"></span><span id="_CPPv2N5abase11FileCommand11FileCommandERKNSt6stringE"></span><span id="abase::FileCommand::FileCommand__ssCR"></span><span class="target" id="classabase_1_1FileCommand_1a4e89918391baab93bf5e6f4cce62b2ef"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FileCommand</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">type</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase11FileCommand11FileCommandERKNSt6stringE" title="Link to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
@@ -836,8 +984,8 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N5abase13SingleCommand13SingleCommandEv">
-<span id="_CPPv3N5abase13SingleCommand13SingleCommandEv"></span><span id="_CPPv2N5abase13SingleCommand13SingleCommandEv"></span><span id="abase::SingleCommand::SingleCommand"></span><span class="target" id="classabase_1_1SingleCommand_1a6ed50c9d69200278ca5b1217445cab06"></span><span class="sig-name descname"><span class="n"><span class="pre">SingleCommand</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5abase13SingleCommand13SingleCommandEv" title="Link to this definition"></a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N5abase13SingleCommand13SingleCommandERKNSt6stringE">
+<span id="_CPPv3N5abase13SingleCommand13SingleCommandERKNSt6stringE"></span><span id="_CPPv2N5abase13SingleCommand13SingleCommandERKNSt6stringE"></span><span id="abase::SingleCommand::SingleCommand__ssCR"></span><span class="target" id="classabase_1_1SingleCommand_1a515d8a0ed6cd36e68a86d51a06bc5da3"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SingleCommand</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">type</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase13SingleCommand13SingleCommandERKNSt6stringE" title="Link to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
@@ -853,7 +1001,7 @@
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5abase13SingleCommand10read_inputER10FileReaderRK17CommandsCollector">
-<span id="_CPPv3N5abase13SingleCommand10read_inputER10FileReaderRK17CommandsCollector"></span><span id="_CPPv2N5abase13SingleCommand10read_inputER10FileReaderRK17CommandsCollector"></span><span id="abase::SingleCommand::read_input__FileReaderR.CommandsCollectorCR"></span><span class="target" id="classabase_1_1SingleCommand_1a860888b51c8896292ebe09b05d45f585"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">read_input</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N5abase10FileReaderE" title="abase::FileReader"><span class="n"><span class="pre">FileReader</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">reade</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5abase17CommandsCollectorE" title="abase::CommandsCollector"><span class="n"><span class="pre">CommandsCollector</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">collector</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N5abase13SingleCommand10read_inputER10FileReaderRK17CommandsCollector" title="Link to this definition"></a><br /></dt>
+<span id="_CPPv3N5abase13SingleCommand10read_inputER10FileReaderRK17CommandsCollector"></span><span id="_CPPv2N5abase13SingleCommand10read_inputER10FileReaderRK17CommandsCollector"></span><span id="abase::SingleCommand::read_input__FileReaderR.CommandsCollectorCR"></span><span class="target" id="classabase_1_1SingleCommand_1ad69d1cb5bd6b3d4ff67daae4350ad61e"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">read_input</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N5abase10FileReaderE" title="abase::FileReader"><span class="n"><span class="pre">FileReader</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">reader</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5abase17CommandsCollectorE" title="abase::CommandsCollector"><span class="n"><span class="pre">CommandsCollector</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">collector</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N5abase13SingleCommand10read_inputER10FileReaderRK17CommandsCollector" title="Link to this definition"></a><br /></dt>
 <dd><p>Read input file and set the value of the command. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -897,8 +1045,8 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N5abase12TableCommand12TableCommandEv">
-<span id="_CPPv3N5abase12TableCommand12TableCommandEv"></span><span id="_CPPv2N5abase12TableCommand12TableCommandEv"></span><span id="abase::TableCommand::TableCommand"></span><span class="target" id="classabase_1_1TableCommand_1a279c8ed76b200a005c0992d90121fd7d"></span><span class="sig-name descname"><span class="n"><span class="pre">TableCommand</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5abase12TableCommand12TableCommandEv" title="Link to this definition"></a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N5abase12TableCommand12TableCommandERKNSt6stringE">
+<span id="_CPPv3N5abase12TableCommand12TableCommandERKNSt6stringE"></span><span id="_CPPv2N5abase12TableCommand12TableCommandERKNSt6stringE"></span><span id="abase::TableCommand::TableCommand__ssCR"></span><span class="target" id="classabase_1_1TableCommand_1a9d25f702a1ea0cfce994893bd84ef05e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TableCommand</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">type</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase12TableCommand12TableCommandERKNSt6stringE" title="Link to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
@@ -1006,8 +1154,8 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N5abase15TimeStepCommand15TimeStepCommandEv">
-<span id="_CPPv3N5abase15TimeStepCommand15TimeStepCommandEv"></span><span id="_CPPv2N5abase15TimeStepCommand15TimeStepCommandEv"></span><span id="abase::TimeStepCommand::TimeStepCommand"></span><span class="target" id="classabase_1_1TimeStepCommand_1a09e0449d4f914e910f03d0116c5c4e11"></span><span class="sig-name descname"><span class="n"><span class="pre">TimeStepCommand</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5abase15TimeStepCommand15TimeStepCommandEv" title="Link to this definition"></a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N5abase15TimeStepCommand15TimeStepCommandERKNSt6stringE">
+<span id="_CPPv3N5abase15TimeStepCommand15TimeStepCommandERKNSt6stringE"></span><span id="_CPPv2N5abase15TimeStepCommand15TimeStepCommandERKNSt6stringE"></span><span id="abase::TimeStepCommand::TimeStepCommand__ssCR"></span><span class="target" id="classabase_1_1TimeStepCommand_1acf30dd841f7b3d223229cbad8d5d5c4b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TimeStepCommand</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">type</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase15TimeStepCommand15TimeStepCommandERKNSt6stringE" title="Link to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
@@ -1126,8 +1274,8 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N5abase16MixStringCommand16MixStringCommandEv">
-<span id="_CPPv3N5abase16MixStringCommand16MixStringCommandEv"></span><span id="_CPPv2N5abase16MixStringCommand16MixStringCommandEv"></span><span id="abase::MixStringCommand::MixStringCommand"></span><span class="target" id="classabase_1_1MixStringCommand_1a696d7da78d47ab25815068f6b4fc08c6"></span><span class="sig-name descname"><span class="n"><span class="pre">MixStringCommand</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5abase16MixStringCommand16MixStringCommandEv" title="Link to this definition"></a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N5abase16MixStringCommand16MixStringCommandERKNSt6stringE">
+<span id="_CPPv3N5abase16MixStringCommand16MixStringCommandERKNSt6stringE"></span><span id="_CPPv2N5abase16MixStringCommand16MixStringCommandERKNSt6stringE"></span><span id="abase::MixStringCommand::MixStringCommand__ssCR"></span><span class="target" id="classabase_1_1MixStringCommand_1a5b438bc314b46b3b6b85e2e8f70a23f2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MixStringCommand</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">type</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase16MixStringCommand16MixStringCommandERKNSt6stringE" title="Link to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
@@ -1193,8 +1341,8 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N5abase13StringCommand13StringCommandEv">
-<span id="_CPPv3N5abase13StringCommand13StringCommandEv"></span><span id="_CPPv2N5abase13StringCommand13StringCommandEv"></span><span id="abase::StringCommand::StringCommand"></span><span class="target" id="classabase_1_1StringCommand_1a017e2459d57cc2b37bd8cc5f17ffb248"></span><span class="sig-name descname"><span class="n"><span class="pre">StringCommand</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5abase13StringCommand13StringCommandEv" title="Link to this definition"></a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N5abase13StringCommand13StringCommandERKNSt6stringE">
+<span id="_CPPv3N5abase13StringCommand13StringCommandERKNSt6stringE"></span><span id="_CPPv2N5abase13StringCommand13StringCommandERKNSt6stringE"></span><span id="abase::StringCommand::StringCommand__ssCR"></span><span class="target" id="classabase_1_1StringCommand_1ac8cba5c9e6c6866a3ba2550876505514"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">StringCommand</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">type</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase13StringCommand13StringCommandERKNSt6stringE" title="Link to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
@@ -1254,8 +1402,8 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N5abase19VectorStringCommand19VectorStringCommandEv">
-<span id="_CPPv3N5abase19VectorStringCommand19VectorStringCommandEv"></span><span id="_CPPv2N5abase19VectorStringCommand19VectorStringCommandEv"></span><span id="abase::VectorStringCommand::VectorStringCommand"></span><span class="target" id="classabase_1_1VectorStringCommand_1a04f96aa6ce9e8d0f6c5cf31089f07f7f"></span><span class="sig-name descname"><span class="n"><span class="pre">VectorStringCommand</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5abase19VectorStringCommand19VectorStringCommandEv" title="Link to this definition"></a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N5abase19VectorStringCommand19VectorStringCommandERKNSt6stringE">
+<span id="_CPPv3N5abase19VectorStringCommand19VectorStringCommandERKNSt6stringE"></span><span id="_CPPv2N5abase19VectorStringCommand19VectorStringCommandERKNSt6stringE"></span><span id="abase::VectorStringCommand::VectorStringCommand__ssCR"></span><span class="target" id="classabase_1_1VectorStringCommand_1a0c3727800406e09f046725c0e0c8c991"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">VectorStringCommand</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">type</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase19VectorStringCommand19VectorStringCommandERKNSt6stringE" title="Link to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
@@ -1374,6 +1522,20 @@
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5abase17CommandsCollector27get_command_name_by_keywordERKNSt6stringE">
+<span id="_CPPv3NK5abase17CommandsCollector27get_command_name_by_keywordERKNSt6stringE"></span><span id="_CPPv2NK5abase17CommandsCollector27get_command_name_by_keywordERKNSt6stringE"></span><span id="abase::CommandsCollector::get_command_name_by_keyword__ssCRC"></span><span class="target" id="classabase_1_1CommandsCollector_1aa34af21adf3c7d1eb55e0c4c358d27ec"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_command_name_by_keyword</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">keyword</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5abase17CommandsCollector27get_command_name_by_keywordERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the command name associated to a given keyword. The translation is taken into account. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>keyword</strong> – command keyword </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the command object </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5abase17CommandsCollector18get_commands_namesEv">
 <span id="_CPPv3N5abase17CommandsCollector18get_commands_namesEv"></span><span id="_CPPv2N5abase17CommandsCollector18get_commands_namesEv"></span><span id="abase::CommandsCollector::get_commands_names"></span><span class="target" id="classabase_1_1CommandsCollector_1acc038020d6cf45b90589296753e4141b"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_commands_names</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase17CommandsCollector18get_commands_namesEv" title="Link to this definition"></a><br /></dt>
 <dd><p>Get the list of all commands names. </p>
@@ -1401,7 +1563,8 @@
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5abase17CommandsCollector5clearEv">
 <span id="_CPPv3N5abase17CommandsCollector5clearEv"></span><span id="_CPPv2N5abase17CommandsCollector5clearEv"></span><span id="abase::CommandsCollector::clear"></span><span class="target" id="classabase_1_1CommandsCollector_1afee184abed08b46f260e8bca04e76e2d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clear</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase17CommandsCollector5clearEv" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>Clear all commands. </p>
+</dd></dl>
 
 </div>
 <div class="breathe-sectiondef docutils container">
