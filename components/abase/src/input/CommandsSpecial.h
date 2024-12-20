@@ -109,7 +109,8 @@ namespace abase {
             /// @brief Convert coefficient values from a sequence of strings
             /// @param values sequence of strings
             /// @param status status of the conversion
-            void convert(const std::vector<std::string>& values, bool& status);
+            /// @return position of the table name in the sequence (after keyword 'TABLE')
+            std::size_t convert(const std::vector<std::string>& values, bool& status);
             /// @brief Extract all time steps from a sequence of strings
             /// @param sequence extracted sequence
             /// @param key key associated to the coefficient

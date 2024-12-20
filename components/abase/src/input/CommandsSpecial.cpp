@@ -196,34 +196,32 @@ std::size_t TableCommand::read_input(FileReader& reader, const CommandsCollector
     return 0;
 }
 
-void CoefficientCommand::convert(const std::vector<std::string>& values, bool& status) {
+std::size_t CoefficientCommand::convert(const std::vector<std::string>& values, bool& status) {
+    std::size_t pos = 0;
     for (const auto& value : values) {
+        pos++;
+        if (value == "TABLE") break;
         try {
             _values.push_back( std::stod(value) );
         } catch (const std::invalid_argument& e) {
             status = false;
-            return;
+            return pos;
         } catch (const std::out_of_range& e) {
             status = false;
-            return;
+            return pos;
         }
     }
+    return pos;
 }
 
 void CoefficientCommand::split_sequence(const std::string& sequence, const std::string& key, 
                                         const std::string& filecontext) {
     std::vector<std::string> str_values = str::split(sequence);
-
-    auto it = std::find(str_values.begin(), str_values.end(), "TABLE");
-    std::size_t pos = (it != str_values.end()) ? std::distance(str_values.begin(), it) : std::string::npos;
-    // Vérifier si pos ou pos - 1
     bool status = true;
-    convert(std::vector<std::string>(str_values.begin(), str_values.begin() + pos), status);
+    std::size_t table_pos = convert(str_values, status);
 
     // Set the table name if it exists
-    if (pos < str_values.size() - 1) {
-        _table_name = str_values[pos + 1];
-    }
+    if (table_pos < str_values.size()) _table_name = str_values[table_pos];
     
     // Only 1 or 0 value are expected
     if (_values.size() > 1) {
@@ -257,7 +255,7 @@ std::size_t CoefficientCommand::read_input(FileReader& reader, const CommandsCol
     std::string sequence = "";
     while (!str_value.empty()) {
         std::string cmd_name = collector.get_command_name_by_keyword(str_value);
-        if (!cmd_name.empty() && cmd_name != "TABLE") break;
+        if (collector.is_command_name(str_value) && cmd_name != "TABLE") break;
 
         if (cmd_name.empty()) {
             sequence += str_value + " ";
