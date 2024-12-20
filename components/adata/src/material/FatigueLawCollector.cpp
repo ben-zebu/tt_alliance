@@ -15,7 +15,7 @@ void FatigueLawCollector::set_data(const std::shared_ptr<abase::BaseCommand>& co
     // create the fatigue law object
     std::shared_ptr<FatigueLaw> new_law = create_law(name);
     if (new_law == nullptr) {
-        input_error(translate("FATIGUE_LAW_TYPE_UNKNOWN", name));
+        file_input_error(translate("FATIGUE_LAW_TYPE_UNKNOWN", name), filecontext);
     }
 
     // initialize the fatigue law object

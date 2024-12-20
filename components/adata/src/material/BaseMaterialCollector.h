@@ -4,14 +4,16 @@
 #include "DataCollector.h"
 #include "Environment.h"
 #include "BaseMaterial.h"
+#include "DrainMaterial.h"
 
 namespace adata {
 
     class BaseMaterialCollector : public abase::DataCollector {
         private:
             /// @brief Create a material object
+            /// @param type material type
             /// @return material object
-            std::shared_ptr<BaseMaterial> create_material() const;
+            std::shared_ptr<BaseMaterial> create_material(const std::string& type) const;
 
         protected:
             /// @brief Convert read data from input file into data objects

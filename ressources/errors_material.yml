@@ -41,6 +41,10 @@
     en: "The minimal stress associated to the fatigue law '{0}' must be higher or equal to 0 !"
     fr: "La contrainte minimale associée à la loi de fatigue '{0}' doit être supérieure ou égale à 0 !"
 
+  MATERIAL_TYPE_UNKNOWN:
+    en: "Unknown material type '{0}' !"
+    fr: "Type de matériau '{0}' inconnu !"
+
   ERROR_DRAIN_MATERIAL_LIMIT:
     en: "The limite allowable stress for the fatigue law associated to the material '{0}' must be defined !"
     fr: "La contrainte limite admissible pour la loi de fatigue associée au matériau '{0}' doit être définie !" 
