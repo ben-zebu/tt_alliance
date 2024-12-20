@@ -55,3 +55,7 @@ void ProblemMaterial::init(const std::shared_ptr<abase::BaseCommand>& command, s
     }
 
 }
+
+void ProblemMaterial::verify(const std::string& filecontext) const {
+    // TODO: implement the verification of the material
+}

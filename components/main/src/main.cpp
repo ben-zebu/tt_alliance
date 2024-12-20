@@ -117,11 +117,6 @@ void benchmark() {
 void yaml_test() {
     std::string input_file = get_parser_value<std::string>("input_file");
     std::string app_path = get_parser_value<std::string>("application_path");
-    std::string commands_tree = "/etc/alliance_commands.yml";
-
-    // adata::DataManager dataManager;
-    // dataManager.read_data(input_file, app_path + commands_tree);
-    // dataManager.verify();
 
     adata::FatigueLawCollector lawCollector;
     std::string materials_tree = app_path + "/etc/material_commands.yml";
@@ -141,6 +136,10 @@ void yaml_test() {
     materialCollector.read_data(app_path + "/etc/experimental_materials.dat", materials_tree);
     std::shared_ptr<adata::BaseMaterial> material = materialCollector.get_material("32");
     std::cout << "Material id: " << material->material_id << std::endl;
+
+    adata::DataManager dataManager;
+    dataManager.read_data(input_file, app_path + "/etc/alliance_commands.yml");
+    dataManager.verify();
 }
 
 int main(int argc, char* argv[]) {
