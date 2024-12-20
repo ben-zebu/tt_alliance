@@ -35,6 +35,14 @@ bool CompositeCommand::is_command_name(const std::string& name) {
     return false;
 }
 
+std::vector<std::string> CompositeCommand::get_children_names() const {
+    std::vector<std::string> names;
+    for (auto& child : _children) {
+        names.push_back(child->get_name());
+    }
+    return names;
+}
+
 std::size_t CompositeCommand::children_process(FileReader& reader, const CommandsCollector& collector) {
     std::size_t status = 0;
     while(status == 0 && reader.get_word().size() > 0) {

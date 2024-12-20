@@ -2,13 +2,20 @@
 
 using namespace adata;
 
-std::shared_ptr<BaseMaterial> BaseMaterialCollector::create_material() const {
-    return std::make_shared<BaseMaterial>();
+std::shared_ptr<BaseMaterial> BaseMaterialCollector::create_material(const std::string& type) const {
+    if (type == "BASE_MATERIAL") return std::make_shared<BaseMaterial>();
+    if (type == "DRAIN_MATERIAL") return std::make_shared<DrainMaterial>();
+    return nullptr;
 }
 
 void BaseMaterialCollector::set_data(const std::shared_ptr<abase::BaseCommand>& command, const std::string& filecontext) {
+    std::string name = command->get_name();
+
     // create the material object
-    std::shared_ptr<BaseMaterial> new_material = create_material();
+    std::shared_ptr<BaseMaterial> new_material = create_material(name);
+    if (new_material == nullptr) {
+        file_input_error(translate("MATERIAL_TYPE_UNKNOWN", name), filecontext);
+    }
 
     // initialize the material object
     new_material->init(command);

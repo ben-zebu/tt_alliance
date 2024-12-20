@@ -69,6 +69,8 @@ namespace abase {
     /// @brief Base class for all commands
     class BaseCommand {
         protected:
+            /// @brief command type
+            std::string _type = "";
             /// @brief command name
             std::string _name = "";
             /// @brief command translations
@@ -77,8 +79,8 @@ namespace abase {
             bool _read_status = false;
 
         public:
-            BaseCommand() = default;
-            BaseCommand(const std::string& name) : _name(name) {}
+            //BaseCommand() = default;
+            BaseCommand(const std::string& type) : _type(type) {};
             virtual ~BaseCommand() = default;
 
             /// @brief clear read data associated to the command
@@ -87,6 +89,9 @@ namespace abase {
             /// @brief Read the input file and set the values of the command
             /// @return Action status (0 for succes and 1 for failded)
             virtual std::size_t read_input(FileReader& reader, const CommandsCollector& collector) = 0;
+            /// @brief  Get the type of the command
+            /// @return the command type
+            std::string get_type() const { return _type; }
             /// @brief Set the name of the command
             void set_name(const std::string& name) { _name = name; }
             /// @brief Returns the name of the command
@@ -106,6 +111,9 @@ namespace abase {
             /// @param name child command name
             /// @return pointer to the child command
             virtual std::shared_ptr<BaseCommand> get_child(const std::string& name) = 0;
+            /// @brief Get the child command names (pure virtual)
+            /// @return list of children's name
+            virtual std::vector<std::string> get_children_names() const = 0;
 
             /// @brief Check if the command is the same as the given keyword
             /// @param a_key a word to compare with the command name
@@ -159,7 +167,7 @@ namespace abase {
             void children_clear();
 
         public:
-            CompositeCommand() = default;
+            CompositeCommand(const std::string& type) : BaseCommand(type) {};
             virtual ~CompositeCommand() = default;
             /// @brief Add a child command to the current one
             /// @param child the sub command to add
@@ -174,7 +182,9 @@ namespace abase {
             /// @param name name to check
             /// @return status of the comparison
             bool is_command_name(const std::string& name) override;
-
+            /// @brief Return the list of children's name
+            /// @return list of children's name
+            std::vector<std::string> get_children_names() const;
     };
 
     namespace {

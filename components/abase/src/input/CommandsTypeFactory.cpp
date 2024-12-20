@@ -34,22 +34,23 @@ bool CommandsTypeFactory::register_creator(const std::string& name, std::functio
 namespace {
     struct RegisterCommands {
         RegisterCommands() {
-            CommandsTypeFactory::register_creator("single", []() { return std::make_shared<SingleCommand>(); });
-            CommandsTypeFactory::register_creator("string", []() { return std::make_shared<StringCommand>(); });
-            CommandsTypeFactory::register_creator("int", []() { return std::make_shared<ValueCommand<int>>(); });
-            CommandsTypeFactory::register_creator("real", []() { return std::make_shared<ValueCommand<double>>(); });
-            CommandsTypeFactory::register_creator("uint", []() { return std::make_shared<ValueCommand<std::size_t>>(); });
-            CommandsTypeFactory::register_creator("string_array", []() { return std::make_shared<VectorStringCommand>(); });
-            CommandsTypeFactory::register_creator("int_array", []() { return std::make_shared<VectorCommand<int>>(); });
-            CommandsTypeFactory::register_creator("real_array", []() { return std::make_shared<VectorCommand<double>>(); });
-            CommandsTypeFactory::register_creator("uint_array", []() { return std::make_shared<VectorCommand<std::size_t>>(); });
-            CommandsTypeFactory::register_creator("string_mix", []() { return std::make_shared<MixStringCommand>(); });
-            CommandsTypeFactory::register_creator("int_mix", []() { return std::make_shared<MixCommand<int>>(); });
-            CommandsTypeFactory::register_creator("real_mix", []() { return std::make_shared<MixCommand<double>>(); });
-            CommandsTypeFactory::register_creator("uint_mix", []() { return std::make_shared<MixCommand<std::size_t>>(); });
-            CommandsTypeFactory::register_creator("time_array", []() { return std::make_shared<TimeStepCommand>(); });
-            CommandsTypeFactory::register_creator("table_array", []() { return std::make_shared<TableCommand>(); });
-            CommandsTypeFactory::register_creator("file", []() { return std::make_shared<FileCommand>(); });
+            CommandsTypeFactory::register_creator("single", []() { return std::make_shared<SingleCommand>("single"); });
+            CommandsTypeFactory::register_creator("string", []() { return std::make_shared<StringCommand>("string"); });
+            CommandsTypeFactory::register_creator("int", []() { return std::make_shared<ValueCommand<int>>("int"); });
+            CommandsTypeFactory::register_creator("real", []() { return std::make_shared<ValueCommand<double>>("real"); });
+            CommandsTypeFactory::register_creator("uint", []() { return std::make_shared<ValueCommand<std::size_t>>("uint"); });
+            CommandsTypeFactory::register_creator("string_array", []() { return std::make_shared<VectorStringCommand>("string_array"); });
+            CommandsTypeFactory::register_creator("int_array", []() { return std::make_shared<VectorCommand<int>>("int_array"); });
+            CommandsTypeFactory::register_creator("real_array", []() { return std::make_shared<VectorCommand<double>>("real_array"); });
+            CommandsTypeFactory::register_creator("uint_array", []() { return std::make_shared<VectorCommand<std::size_t>>("uint_array"); });
+            CommandsTypeFactory::register_creator("string_mix", []() { return std::make_shared<MixStringCommand>("string_mix"); });
+            CommandsTypeFactory::register_creator("int_mix", []() { return std::make_shared<MixCommand<int>>("int_mix"); });
+            CommandsTypeFactory::register_creator("real_mix", []() { return std::make_shared<MixCommand<double>>("real_mix"); });
+            CommandsTypeFactory::register_creator("uint_mix", []() { return std::make_shared<MixCommand<std::size_t>>("uint_mix"); });
+            CommandsTypeFactory::register_creator("time_array", []() { return std::make_shared<TimeStepCommand>("time_array"); });
+            CommandsTypeFactory::register_creator("table_array", []() { return std::make_shared<TableCommand>("table_array"); });
+            CommandsTypeFactory::register_creator("coefficient", []() { return std::make_shared<CoefficientCommand>("coefficient"); });
+            CommandsTypeFactory::register_creator("file", []() { return std::make_shared<FileCommand>("file"); });
         }
     } registerCommands;
 }

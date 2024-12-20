@@ -142,7 +142,7 @@ void TableCommand::split_sequence(const std::string& sequence, bool& status) {
 
     bool is_name = (str_values[0].find("/") != std::string::npos);
     if (is_name) {
-        _table_name = str_values[0];
+        _table_name = str_values[0].substr(0, str_values[0].find("/"));
         convert(std::vector<std::string>(str_values.begin() + 1, str_values.end()), status);
     } else {
         // try a conversion ignoring the potential table name
@@ -150,7 +150,7 @@ void TableCommand::split_sequence(const std::string& sequence, bool& status) {
         // if failed and impaire number of values, try to extract the table name
         if (!status && str_values.size() % 2 != 0) {
             status = true;
-            _table_name = str_values[0];
+            _table_name = str_values[0].substr(0, str_values[0].find("/"));
             convert(std::vector<std::string>(str_values.begin() + 1, str_values.end()), status);
         }
     }
@@ -196,6 +196,86 @@ std::size_t TableCommand::read_input(FileReader& reader, const CommandsCollector
     return 0;
 }
 
+std::size_t CoefficientCommand::convert(const std::vector<std::string>& values, bool& status) {
+    std::size_t pos = 0;
+    for (const auto& value : values) {
+        pos++;
+        if (value == "TABLE") break;
+        try {
+            _values.push_back( std::stod(value) );
+        } catch (const std::invalid_argument& e) {
+            status = false;
+            return pos;
+        } catch (const std::out_of_range& e) {
+            status = false;
+            return pos;
+        }
+    }
+    return pos;
+}
+
+void CoefficientCommand::split_sequence(const std::string& sequence, const std::string& key, 
+                                        const std::string& filecontext) {
+    std::vector<std::string> str_values = str::split(sequence);
+    bool status = true;
+    std::size_t table_pos = convert(str_values, status);
+
+    // Set the table name if it exists
+    if (table_pos < str_values.size()) _table_name = str_values[table_pos];
+    
+    // Only 1 or 0 value are expected
+    if (_values.size() > 1) {
+        std::string msg = translate("ERROR_COEFFICIENT_SIZE", {key, std::to_string(_values.size())} );
+        file_input_error(msg, filecontext);
+    }
+
+    // check if the coefficient is negative for table name definition
+    if (_values.size() == 1 && _values[0] < 0) {
+        if (!_table_name.empty()) {
+            std::string msg = translate("ERROR_COEFFICIENT_NAME", {key, _table_name, std::to_string(_values[0])});
+            file_input_error(msg, filecontext);
+        }
+        _table_name = std::abs(_values[0]);
+    }
+
+    if (_values.size() == 0 && _table_name.empty()) {
+        file_input_error(translate("ERROR_UNREADABLE_COEFFICIENT", key), filecontext);
+    }
+
+}
+
+std::size_t CoefficientCommand::read_input(FileReader& reader, const CommandsCollector& collector) {
+    std::string key = reader.get_word();
+    if (!this->is_same_keyword(key)) return 1;
+    clear();
+    reader.move();
+
+    // A table is defined by a name (optional) and a list of abciss and ordinates values.
+    std::string str_value = reader.get_word();
+    std::string sequence = "";
+    while (!str_value.empty()) {
+        std::string cmd_name = collector.get_command_name_by_keyword(str_value);
+        if (collector.is_command_name(str_value) && cmd_name != "TABLE") break;
+
+        if (cmd_name.empty()) {
+            sequence += str_value + " ";
+        } else {
+            sequence += cmd_name + " ";
+        }
+        reader.move();
+        str_value = reader.get_word();
+    }
+
+    std::string filecontext = reader.context_error();
+    if (sequence.empty()) file_input_error(translate("ERROR_UNREADABLE_COEFFICIENT", key), filecontext);
+    split_sequence(sequence, key, filecontext);
+
+    _read_status = true;
+
+    std::size_t children_status = this->children_process(reader, collector);
+    return 0;
+}
+
 std::size_t FileCommand::read_input(FileReader& reader, const CommandsCollector& collector) {
     std::string key = reader.get_word();
     if (!this->is_same_keyword(key)) return 1;
@@ -217,4 +297,3 @@ std::size_t FileCommand::read_input(FileReader& reader, const CommandsCollector&
     _read_status = true;
     return 0;
 }
-

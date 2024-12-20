@@ -125,55 +125,59 @@ MATERIAL:
 
   EE:
     keys: {"fr": ["ee", "ee"], "en": ["ee", "ee"]}
-    type: real
+    type: coefficient
 
   SM:
     keys: {"fr": ["sm", "sm"], "en": ["sm", "sm"]}
-    type: real
+    type: coefficient
 
   SU:
     keys: {"fr": ["su", "su"], "en": ["su", "su"]}
-    type: real
+    type: coefficient
 
   SCY:
     keys: {"fr": ["scy", "scy"], "en": ["scy", "scy"]}
-    type: real
-
-  LAW:
-    keys: {"fr": ["loi", "loi"], "en": ["law", "law"]}
-    type: uint
-
-  KETABLE:
-    keys: {"fr": ["keta", "ketable"], "en": ["keta", "ketable"]}
-    type: string
+    type: coefficient
 
   SY:
     keys: {"fr": ["sy", "sy"], "en": ["sy", "sy"]}
-    type: real
+    type: coefficient
 
   SYG:
     keys: {"fr": ["syg", "syg"], "en": ["syg", "syg"]}
-    type: real
+    type: coefficient
+
+  LAW:
+    keys: {"fr": ["loi", "loi"], "en": ["law", "law"]}
+    type: string
+
+  KETABLE:
+    keys: {"fr": ["keta", "ketable"], "en": ["keta", "ketable"]}
+    type: string_array
 
   EREF:
     keys: {"fr": ["eref", "eref"], "en": ["eref", "eref"]}
     type: real
 
-    TYPM:
-      keys: {"fr": ["typm", "typm"], "en": ["typm", "typm"]}
-      type: uint
+  TYPM:
+    keys: {"fr": ["typm", "typm"], "en": ["typm", "typm"]}
+    type: string
 
-    FACTOR:
-      keys: {"fr": ["fact", "facteur"], "en": ["fact", "factor"]}
-      type: real
+  KF:
+    keys: 
+      "fr": ["fact", "facteur"] 
+      "en": ["fact", "factor"]
+      "fr_var": ["kf", "kf"]
+      "en_var": ["kf", "kf"]
+    type: real
 
-    CORRECTION:
-      keys: {"fr": ["corre", "correction"], "en": ["corre", "correction"]}
-      type: uint
+  CORRECTION:
+    keys: {"fr": ["corre", "correction"], "en": ["corre", "correction"]}
+    type: string
 
-    TABLE:
-      keys: {"fr": ["tabl", "table"], "en": ["tabl", "table"]}
-      type: string
+  TABLE:
+    keys: {"fr": ["tabl", "table"], "en": ["tabl", "table"]}
+    type: string
 
 CHAIN:
   keys: {"fr": ["chai", "chaine"], "en": ["chai", "chain"]}
