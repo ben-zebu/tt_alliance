@@ -12,7 +12,7 @@ namespace abase {
             std::pair<T, bool> convert_value(const std::string& key, FileReader& reader);
 
         public:
-            NumericCommand() = default;
+            NumericCommand(const std::string& type) : CompositeCommand(type) {};
             virtual ~NumericCommand() = default;
 
     };
@@ -26,7 +26,7 @@ namespace abase {
             T _value;
 
         public :
-            ValueCommand() = default;
+            ValueCommand(const std::string& type) : NumericCommand<T>(type) {};
             virtual ~ValueCommand() = default;
 
             /// @brief clear read data associated to the command
@@ -51,7 +51,7 @@ namespace abase {
             std::vector<T> _values;
 
         public :
-            VectorCommand() = default;
+            VectorCommand(const std::string& type) : NumericCommand<T>(type) {};
             virtual ~VectorCommand() = default;
 
             /// @brief clear read data associated to the command
@@ -77,7 +77,7 @@ namespace abase {
             std::size_t _n_values;
 
         public :
-            MixCommand() = default;
+            MixCommand(const std::string& type) : NumericCommand<T>(type) {};
             virtual ~MixCommand() = default;
 
             /// @brief clear read data associated to the command

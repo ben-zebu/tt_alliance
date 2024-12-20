@@ -102,6 +102,14 @@ std::shared_ptr<BaseCommand> CommandsCollector::get_command(const std::string& n
     return commands[name];
 }
 
+std::string CommandsCollector::get_command_name_by_keyword(const std::string& keyword) const {
+    for (const auto& command : commands) {
+        if (command.second->is_same_keyword(keyword)) 
+            return command.second->get_name();
+    }
+    return "";
+}
+
 std::vector<std::string> CommandsCollector::get_commands_names() {
     std::vector<std::string> names;
     for (const auto& command : commands) {

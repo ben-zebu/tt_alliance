@@ -12,7 +12,7 @@ namespace abase {
             std::string _value;
 
         public :
-            StringCommand() = default;
+            StringCommand(const std::string& type) : CompositeCommand(type) {};
             virtual ~StringCommand() = default;
 
             /// @brief clear read data associated to the command
@@ -36,7 +36,7 @@ namespace abase {
             std::vector<std::string> _values;
 
         public :
-            VectorStringCommand() = default;
+            VectorStringCommand(const std::string& type) : CompositeCommand(type) {};
             virtual ~VectorStringCommand() = default;
 
             /// @brief clear read data associated to the command
@@ -62,7 +62,7 @@ namespace abase {
             std::size_t _n_values;
 
         public :
-            MixStringCommand() = default;
+            MixStringCommand(const std::string& type) : CompositeCommand(type) {};
             virtual ~MixStringCommand() = default;
 
             /// @brief clear read data associated to the command
