@@ -9,33 +9,7 @@
 #include "StressContainer.h"
 #include "TorsorCombination.h"
 
-namespace amath {
-
-    /*
-    /// \brief Represents a stress intensity.
-    struct StressIntensity {
-        /// \brief The stress intensity.
-        double Si = 0.;
-        /// \brief The load number associated with the stress intensity.
-        std::size_t load = 0;
-        /// \brief The torsor combination number associated with the stress intensity.
-        std::size_t torsor = 0;
-    };
-
-    /// \brief Represents a stress range.
-    struct StressRange {
-        /// \brief The stresss range.
-        double Sr = 0.;
-        /// \brief The mean stress.
-        double Smean = 0.;
-        /// \brief The maximum ratio between stress range and a coefficient.
-        double ratio = 0.;
-        /// \brief The load numbers associated with the stress range and the mean stress.
-        std::size_t loads[2] = {0, 0};
-        /// \brief The torsor combination numbers associated with the stress range and the mean stress.
-        std::size_t torsors[2] = {0, 0};
-    };
-    */
+namespace amath {    
 
     /// \brief Represents a collection of stress states.
     ///
