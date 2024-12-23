@@ -35,18 +35,18 @@ namespace amath {
         double ratio = 0.;
         /// \brief The load numbers associated with the stress range and the mean stress.
         combi_ranks loads = {0, 0};
-        /// \brief The torsor combination numbers associated with the stress range and the mean stress.
-        combi_ranks torsors = {0, 0};
+        /// \brief The torsor combination rank associated with the stress range and the mean stress.
+        std::size_t torsor = 0;
         /// \brief Temperatures associated to loads given the stress range
         std::pair<double, double> temperatures = {0., 0.};
 
         // Function to set values
-        void set(double range_val, double mean_val, double ratio_val, combi_ranks loads_val, combi_ranks torsors_val) {
+        void set(double range_val, double mean_val, double ratio_val, combi_ranks loads_val, std::size_t torsor_val) {
             range = range_val;
             mean = mean_val;
             ratio = ratio_val;
             loads = loads_val;
-            torsors = torsors_val;
+            torsor = torsor_val;
         }
     };
 
@@ -64,7 +64,7 @@ namespace amath {
             /// \brief The load numbers associated with the stress range and the mean stress.
             combi_ranks _loads_ = {0, 0};
             /// \brief The torsor combination numbers associated with the stress range and the mean stress.
-            combi_ranks _torsors_ = {0, 0};
+            std::size_t _torsor_ = 0;
             /// \brief Temperatures associated to loads given the stress range
             std::pair<double, double> _temperatures_ = {0., 0.};
 
@@ -107,13 +107,16 @@ namespace amath {
             /// @param range vector composed of equivalent stress range intensity, ratio with a coefficient and the 
             /// mean stress
             /// @param load loads' ranks associated to the stress intensity
-            /// @param torsor torsor combinations' ranks associated to the stress intensity
-            void set_range(const std::vector<double>& range, const combi_ranks& load, const combi_ranks& torsor);
+            /// @param torsor torsor combination rank associated to the stress intensity
+            void set_range(const std::vector<double>& range, const combi_ranks& load, const std::size_t torsor);
 
             /// @brief Set the temperatures associated to the stress range
             /// @param T1 temperature associated to the first load
             /// @param T2 temperature associated to the second load
             void set_temperatures(const double& T1, const double& T2);
+            /// @brief Set the mean stress associated to the stress range
+            /// @param mean value of mean stress
+            void set_mean_stress(const double& mean) { _mean_ = mean; }
 
             /// @brief Update internals parameters for maximal stress intensity
             /// @param other a stess range

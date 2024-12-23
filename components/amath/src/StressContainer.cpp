@@ -9,7 +9,7 @@ StressContainer::StressContainer(const StressContainer& other) {
     this->_ratio_ = other._ratio_;
     this->_mean_ = other._mean_;
     this->_loads_ = other._loads_;
-    this->_torsors_ = other._torsors_;
+    this->_torsor_ = other._torsor_;
     this->_temperatures_ = other._temperatures_;
 }
 
@@ -19,7 +19,7 @@ StressContainer& StressContainer::operator=(const StressContainer& other) {
         this->_ratio_ = other._ratio_;
         this->_mean_ = other._mean_;
         this->_loads_ = other._loads_;
-        this->_torsors_ = other._torsors_;
+        this->_torsor_ = other._torsor_;
         this->_temperatures_ = other._temperatures_;
     }
     return *this;
@@ -54,11 +54,10 @@ void StressContainer::set_intensity(const double& intensity, const std::size_t l
     this->_ratio_ = intensity;
     this->_loads_.first = load;
     this->_loads_.second = load;
-    this->_torsors_.first = torsor;
-    this->_torsors_.second = torsor;
+    this->_torsor_ = torsor;
 }
 
-void StressContainer::set_range(const std::vector<double>& range, const combi_ranks& loads, const combi_ranks& torsors) {
+void StressContainer::set_range(const std::vector<double>& range, const combi_ranks& loads, const std::size_t torsor) {
     std::size_t sz = range.size();
     assert(sz <= 3 && "Cannot set StressContainer due to vector size");
     switch (sz) {
@@ -82,7 +81,7 @@ void StressContainer::set_range(const std::vector<double>& range, const combi_ra
     }
 
     this->_loads_ = loads;
-    this->_torsors_ = torsors;
+    this->_torsor_ = torsor;
 }
 
 void StressContainer::set_temperatures(const double& T1, const double& T2) {
@@ -96,12 +95,12 @@ void StressContainer::store_max(const StressContainer& other) {
 
 StressIntensity StressContainer::get_intensity() const {
     StressIntensity result;
-    result.set(_intensity_, _loads_.first, _torsors_.first);
+    result.set(_intensity_, _loads_.first, _torsor_);
     return result;
 }
 
 StressRange StressContainer::get_range() const {
     StressRange result;
-    result.set(_intensity_, _mean_, _ratio_, _loads_, _torsors_);
+    result.set(_intensity_, _mean_, _ratio_, _loads_, _torsor_);
     return result;
 }

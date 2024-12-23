@@ -72,7 +72,7 @@ StressContainer StressStates::stress_intensity(const std::vector<size_t>& states
                 torsors_manager.get_coef(rk, t, coefs);
                 Stotal = std::inner_product(coefs.begin(), coefs.end(), Torsors.begin(), Stotal);            
             }
-            _maximum_equivalent_stress_(Sc_max, Stotal, 1., loads);
+            _maximum_equivalent_stress_(Sc_max, Stotal, 1., loads, t);
         }
     }
     return Sc_max;
@@ -105,14 +105,14 @@ StressContainer StressStates::stress_range_ratio(const Combination& explorer, co
                 torsors_manager.get_diff_coef(ranks, t, coefs);
                 Stotal = std::inner_product(coefs.begin(), coefs.end(), Torsors.begin(), Stotal);
             }
-            _maximum_equivalent_stress_(Sc_max, Stotal, cc, ranks);
+            _maximum_equivalent_stress_(Sc_max, Stotal, cc, ranks, t);
         }
     }
 
     // Determine the mean stress associated with the maximum stress range
-    /*
-        TODO:
-    */
+    double mean = compute_mean_stress(Sc_max);
+    Sc_max.set_mean_stress(mean);
+
     return Sc_max;
 }
 
@@ -145,7 +145,7 @@ void StressStates::_check_() {
     }
 }
 
-void StressStates::_maximum_equivalent_stress_(StressContainer& Sr_max, const Stress& Sr, const double coef, const combi_ranks& loads) {
+void StressStates::_maximum_equivalent_stress_(StressContainer& Sr_max, const Stress& Sr, const double coef, const combi_ranks& loads, const std::size_t torsor) {
     double ratio_max = 0.;
     if (equivalent_stress_method == "tresca") {
         ratio_max = Sr.tresca() / coef;
@@ -162,9 +162,22 @@ void StressStates::_maximum_equivalent_stress_(StressContainer& Sr_max, const St
     }
 
     if (ratio_max > Sr_max.get_ratio()) {
-        Sr_max.set_range({ratio_max * coef, ratio_max}, loads, {0,0});
+        Sr_max.set_range({ratio_max * coef, ratio_max}, loads, torsor);
         Sr_max.set_temperatures(Temperatures[loads.first], Temperatures[loads.second]);
     }
+}
+
+double StressStates::compute_mean_stress(const StressContainer& Sr_max) const {
+    StressRange Sr = Sr_max.get_range();
+    Stress mean_stress = PrimaryStresses[Sr.loads.first] + PrimaryStresses[Sr.loads.second];
+
+    if ( torsors_manager.is_activate() ) {
+        std::vector<double> coefs( nb_torsors() );
+        torsors_manager.get_sum_coef(Sr.loads, Sr.torsor, coefs);
+        mean_stress = std::inner_product(coefs.begin(), coefs.end(), Torsors.begin(), mean_stress);
+    }
+    
+    return (equivalent_stress_method == "mises") ? mean_stress.mises() : mean_stress.tresca();
 }
 
 double StressStates::get_interpolated_coeffient(const Coefficient& coefficient, const combi_ranks& ranks) const {
