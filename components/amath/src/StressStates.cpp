@@ -162,7 +162,8 @@ void StressStates::_maximum_equivalent_stress_(StressContainer& Sr_max, const St
     }
 
     if (ratio_max > Sr_max.get_ratio()) {
-        Sr_max.set_range({ratio_max * coef, ratio_max}, loads, {0,0});    
+        Sr_max.set_range({ratio_max * coef, ratio_max}, loads, {0,0});
+        Sr_max.set_temperatures(Temperatures[loads.first], Temperatures[loads.second]);
     }
 }
 

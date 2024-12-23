@@ -10,6 +10,7 @@ StressContainer::StressContainer(const StressContainer& other) {
     this->_mean_ = other._mean_;
     this->_loads_ = other._loads_;
     this->_torsors_ = other._torsors_;
+    this->_temperatures_ = other._temperatures_;
 }
 
 StressContainer& StressContainer::operator=(const StressContainer& other) {
@@ -19,6 +20,7 @@ StressContainer& StressContainer::operator=(const StressContainer& other) {
         this->_mean_ = other._mean_;
         this->_loads_ = other._loads_;
         this->_torsors_ = other._torsors_;
+        this->_temperatures_ = other._temperatures_;
     }
     return *this;
 }
@@ -81,6 +83,11 @@ void StressContainer::set_range(const std::vector<double>& range, const combi_ra
 
     this->_loads_ = loads;
     this->_torsors_ = torsors;
+}
+
+void StressContainer::set_temperatures(const double& T1, const double& T2) {
+    _temperatures_.first = T1;
+    _temperatures_.second = T2;
 }
 
 void StressContainer::store_max(const StressContainer& other) {

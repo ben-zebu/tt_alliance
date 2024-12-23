@@ -37,6 +37,8 @@ namespace amath {
         combi_ranks loads = {0, 0};
         /// \brief The torsor combination numbers associated with the stress range and the mean stress.
         combi_ranks torsors = {0, 0};
+        /// \brief Temperatures associated to loads given the stress range
+        std::pair<double, double> temperatures = {0., 0.};
 
         // Function to set values
         void set(double range_val, double mean_val, double ratio_val, combi_ranks loads_val, combi_ranks torsors_val) {
@@ -62,7 +64,9 @@ namespace amath {
             /// \brief The load numbers associated with the stress range and the mean stress.
             combi_ranks _loads_ = {0, 0};
             /// \brief The torsor combination numbers associated with the stress range and the mean stress.
-            combi_ranks _torsors_ = {0, 0};        
+            combi_ranks _torsors_ = {0, 0};
+            /// \brief Temperatures associated to loads given the stress range
+            std::pair<double, double> _temperatures_ = {0., 0.};
 
         private :
 
@@ -105,6 +109,11 @@ namespace amath {
             /// @param load loads' ranks associated to the stress intensity
             /// @param torsor torsor combinations' ranks associated to the stress intensity
             void set_range(const std::vector<double>& range, const combi_ranks& load, const combi_ranks& torsor);
+
+            /// @brief Set the temperatures associated to the stress range
+            /// @param T1 temperature associated to the first load
+            /// @param T2 temperature associated to the second load
+            void set_temperatures(const double& T1, const double& T2);
 
             /// @brief Update internals parameters for maximal stress intensity
             /// @param other a stess range
