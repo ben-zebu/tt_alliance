@@ -67,7 +67,8 @@ void TorsorCombination::get_coef(std::size_t state, std::size_t tcomb, std::vect
     }
 }
 
-void TorsorCombination::get_diff_coef(combi_ranks states, std::size_t tcomb, std::vector<double>& coefficients) const {
+void TorsorCombination::get_combi_coef(combi_ranks states, std::size_t tcomb, const std::pair<double,double>& cl, 
+                                       std::vector<double>& coefficients) const {
     double c1_max, c1_min;
     double c2_max, c2_min;
 
@@ -86,20 +87,28 @@ void TorsorCombination::get_diff_coef(combi_ranks states, std::size_t tcomb, std
             continue;
         } 
 
-        c1_max = (*ptr_coef_max)[states.first][rk];
-        c1_min = (*ptr_coef_min)[states.first][rk];
+        c1_max = cl.first*(*ptr_coef_max)[states.first][rk];
+        c1_min = cl.first*(*ptr_coef_min)[states.first][rk];
 
-        c2_max = (*ptr_coef_max)[states.second][rk];
-        c2_min = (*ptr_coef_min)[states.second][rk];
+        c2_max = cl.second*(*ptr_coef_max)[states.second][rk];
+        c2_min = cl.second*(*ptr_coef_min)[states.second][rk];
 
         if (constant_coefficients(states, i)) {
-            coefficients[rk] = c1_max - c2_max;
+            coefficients[rk] = c1_max + c2_max;
         }
         else {
-            coefficients[rk] = (tree_rk % 2 == 0) ? c1_max - c2_min : c1_min - c2_max;
+            coefficients[rk] = (tree_rk % 2 == 0) ? c1_max + c2_min : c1_min + c2_max;
             tree_rk /= 2;
         }
     }
+}
+
+void TorsorCombination::get_diff_coef(combi_ranks states, std::size_t tcomb, std::vector<double>& coefficients) const {
+    get_combi_coef(states, tcomb, {1., -1.}, coefficients);
+}
+
+void TorsorCombination::get_sum_coef(combi_ranks states, std::size_t tcomb, std::vector<double>& coefficients) const {
+    get_combi_coef(states, tcomb, {1., 1.}, coefficients);
 }
 
 std::size_t TorsorCombination::nb_combinaisons(std::size_t state) const {

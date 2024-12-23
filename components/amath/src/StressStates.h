@@ -22,11 +22,17 @@ namespace amath {
             void _check_();
 
             /// \brief Maximum equivalent stress determination
-            /// \param[out] Sc_max The maximum stress range or stress intensity.
+            /// \param[out] Sr_max The maximum stress range or stress intensity.
             /// \param stress The stress state.
             /// \param coef The coefficient used to compute the stress range ratio.
             /// \param loads The load numbers associated with the stress range.
-            void _maximum_equivalent_stress_(StressContainer& Sr_max, const Stress& stress, const double coef, const combi_ranks& loads);
+            /// \param torsor The torsor combination rank associated with the stress range.
+            void _maximum_equivalent_stress_(StressContainer& Sr_max, const Stress& stress, const double coef, 
+                                             const combi_ranks& loads, const std::size_t torsor);
+            /// \brief Determine the mean stress associated to a stress range
+            /// \param Sr_max The maximum stress range.
+            /// \return mean stress
+            double compute_mean_stress(const StressContainer& Sr_max) const;
             /// @brief Return the maximum interpoletd coefficient for 2 states. Temperature of each state is used to
             /// determine the interpolated value
             /// @param coefficient coefficient used for interpolation

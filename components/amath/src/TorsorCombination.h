@@ -54,6 +54,14 @@ namespace amath {
             /// @param states pair of state
             /// @param torsor_rk torsor rank
             bool constant_coefficients(const combi_ranks& states, std::size_t torsor_rk) const;
+
+            /// @brief Return the difference or the sum of coefficients for a pair of states and a torsor's combination. 
+            /// @param states pair of states
+            /// @param tcomb torsor's combinations
+            /// @param cl coefficients used for linear combinations of torsors's coefficient. 
+            /// The couple \f$ (1,1) $\f represents a sum and the couple \f$ (1,-1) $\f represents a difference and 
+            /// @param[out] coefficients list of coefficients
+            void get_combi_coef(combi_ranks states, std::size_t tcomb, const std::pair<double,double>& cl, std::vector<double>& coefficients) const;
             
         protected:
             /// @brief vector of active torsors
@@ -93,6 +101,11 @@ namespace amath {
             /// @param tcomb torsor's combinations
             /// @param[out] coefficients list of coefficients
             void get_diff_coef(combi_ranks states, std::size_t tcomb, std::vector<double>& coefficients) const;
+            /// @brief Return the sum of coefficients for a pair of states and a torsor's combination. 
+            /// @param states pair of states
+            /// @param tcomb torsor's combinations
+            /// @param[out] coefficients list of coefficients
+            void get_sum_coef(combi_ranks states, std::size_t tcomb, std::vector<double>& coefficients) const;
 
             /// @brief Return the number of torsor's combinations for a state
             /// @param state current state
