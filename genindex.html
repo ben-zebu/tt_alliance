@@ -729,8 +729,6 @@
 </li>
       <li><a href="api/adata.html#_CPPv4N5adata11plate_angle3minE">adata::plate_angle::min (C++ member)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/adata.html#_CPPv4N5adata11plate_angle6valuesE">adata::plate_angle::values (C++ member)</a>
 </li>
       <li><a href="api/adata.html#_CPPv4N5adata20PolynomialFatigueLawE">adata::PolynomialFatigueLaw (C++ class)</a>
@@ -739,6 +737,8 @@
 </li>
       <li><a href="api/adata.html#_CPPv4NK5adata20PolynomialFatigueLaw16allowable_stressENSt6size_tE">adata::PolynomialFatigueLaw::allowable_stress (C++ function)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/adata.html#_CPPv4N5adata20PolynomialFatigueLaw4betaE">adata::PolynomialFatigueLaw::beta (C++ member)</a>
 </li>
       <li><a href="api/adata.html#_CPPv4NK5adata20PolynomialFatigueLaw5cloneEv">adata::PolynomialFatigueLaw::clone (C++ function)</a>
@@ -1163,7 +1163,9 @@
 </li>
       <li><a href="api/amath.html#_CPPv4N5amath15StressContainer7_ratio_E">amath::StressContainer::_ratio_ (C++ member)</a>
 </li>
-      <li><a href="api/amath.html#_CPPv4N5amath15StressContainer9_torsors_E">amath::StressContainer::_torsors_ (C++ member)</a>
+      <li><a href="api/amath.html#_CPPv4N5amath15StressContainer14_temperatures_E">amath::StressContainer::_temperatures_ (C++ member)</a>
+</li>
+      <li><a href="api/amath.html#_CPPv4N5amath15StressContainer8_torsor_E">amath::StressContainer::_torsor_ (C++ member)</a>
 </li>
       <li><a href="api/amath.html#_CPPv4NK5amath15StressContainer13get_intensityEv">amath::StressContainer::get_intensity (C++ function)</a>
 </li>
@@ -1187,7 +1189,11 @@
 </li>
       <li><a href="api/amath.html#_CPPv4N5amath15StressContainer13set_intensityERKdKNSt6size_tEKNSt6size_tE">amath::StressContainer::set_intensity (C++ function)</a>
 </li>
-      <li><a href="api/amath.html#_CPPv4N5amath15StressContainer9set_rangeERKNSt6vectorIdEERK11combi_ranksRK11combi_ranks">amath::StressContainer::set_range (C++ function)</a>
+      <li><a href="api/amath.html#_CPPv4N5amath15StressContainer15set_mean_stressERKd">amath::StressContainer::set_mean_stress (C++ function)</a>
+</li>
+      <li><a href="api/amath.html#_CPPv4N5amath15StressContainer9set_rangeERKNSt6vectorIdEERK11combi_ranksKNSt6size_tE">amath::StressContainer::set_range (C++ function)</a>
+</li>
+      <li><a href="api/amath.html#_CPPv4N5amath15StressContainer16set_temperaturesERKdRKd">amath::StressContainer::set_temperatures (C++ function)</a>
 </li>
       <li><a href="api/amath.html#_CPPv4N5amath15StressContainer9store_maxERK15StressContainer">amath::StressContainer::store_max (C++ function)</a>
 </li>
@@ -1213,15 +1219,17 @@
 </li>
       <li><a href="api/amath.html#_CPPv4N5amath11StressRange5ratioE">amath::StressRange::ratio (C++ member)</a>
 </li>
-      <li><a href="api/amath.html#_CPPv4N5amath11StressRange3setEddd11combi_ranks11combi_ranks">amath::StressRange::set (C++ function)</a>
+      <li><a href="api/amath.html#_CPPv4N5amath11StressRange3setEddd11combi_ranksNSt6size_tE">amath::StressRange::set (C++ function)</a>
 </li>
-      <li><a href="api/amath.html#_CPPv4N5amath11StressRange7torsorsE">amath::StressRange::torsors (C++ member)</a>
+      <li><a href="api/amath.html#_CPPv4N5amath11StressRange12temperaturesE">amath::StressRange::temperatures (C++ member)</a>
+</li>
+      <li><a href="api/amath.html#_CPPv4N5amath11StressRange6torsorE">amath::StressRange::torsor (C++ member)</a>
 </li>
       <li><a href="api/amath.html#_CPPv4N5amath12StressStatesE">amath::StressStates (C++ class)</a>
 </li>
       <li><a href="api/amath.html#_CPPv4N5amath12StressStates7_check_Ev">amath::StressStates::_check_ (C++ function)</a>
 </li>
-      <li><a href="api/amath.html#_CPPv4N5amath12StressStates27_maximum_equivalent_stress_ER15StressContainerRK6StressKdRK11combi_ranks">amath::StressStates::_maximum_equivalent_stress_ (C++ function)</a>
+      <li><a href="api/amath.html#_CPPv4N5amath12StressStates27_maximum_equivalent_stress_ER15StressContainerRK6StressKdRK11combi_ranksKNSt6size_tE">amath::StressStates::_maximum_equivalent_stress_ (C++ function)</a>
 </li>
       <li><a href="api/amath.html#_CPPv4N5amath12StressStates10add_stressERK6StressRK6Stress">amath::StressStates::add_stress (C++ function)</a>
 </li>
@@ -1236,6 +1244,8 @@
       <li><a href="api/amath.html#_CPPv4N5amath12StressStates15CoefficientsMaxE">amath::StressStates::CoefficientsMax (C++ member)</a>
 </li>
       <li><a href="api/amath.html#_CPPv4N5amath12StressStates15CoefficientsMinE">amath::StressStates::CoefficientsMin (C++ member)</a>
+</li>
+      <li><a href="api/amath.html#_CPPv4NK5amath12StressStates19compute_mean_stressERK15StressContainer">amath::StressStates::compute_mean_stress (C++ function)</a>
 </li>
       <li><a href="api/amath.html#_CPPv4N5amath12StressStates24equivalent_stress_methodE">amath::StressStates::equivalent_stress_method (C++ member)</a>
 </li>
@@ -1325,7 +1335,11 @@
 </li>
       <li><a href="api/amath.html#_CPPv4NK5amath17TorsorCombination8get_coefENSt6size_tENSt6size_tERNSt6vectorIdEE">amath::TorsorCombination::get_coef (C++ function)</a>
 </li>
+      <li><a href="api/amath.html#_CPPv4NK5amath17TorsorCombination14get_combi_coefE11combi_ranksNSt6size_tERKNSt4pairIddEERNSt6vectorIdEE">amath::TorsorCombination::get_combi_coef (C++ function)</a>
+</li>
       <li><a href="api/amath.html#_CPPv4NK5amath17TorsorCombination13get_diff_coefE11combi_ranksNSt6size_tERNSt6vectorIdEE">amath::TorsorCombination::get_diff_coef (C++ function)</a>
+</li>
+      <li><a href="api/amath.html#_CPPv4NK5amath17TorsorCombination12get_sum_coefE11combi_ranksNSt6size_tERNSt6vectorIdEE">amath::TorsorCombination::get_sum_coef (C++ function)</a>
 </li>
       <li><a href="api/amath.html#_CPPv4NK5amath17TorsorCombination11is_activateEv">amath::TorsorCombination::is_activate (C++ function)</a>
 </li>
