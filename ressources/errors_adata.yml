@@ -53,6 +53,9 @@
     en: "Mismatch between phi angles and those required for 3 Sm analysis. Angle '{0}' is not present in phi angles !"
     fr: "Incohérence entre les angles phi et ceux requis pour l'analyse 3 Sm. L'angle '{0}' est non présent dans les angles phi !"
 
+  UNKNOWN_RELOCALIZATION_COEFFICIENT:
+    en: "The key '{0}' is not a correct relocalization coefficient !"
+    fr: "La clé '{0}' ne correspond pas à un coefficient de relocalisation !"
 
 # ProblemTransient
   ERROR_OUT_OF_RANGE_LOADSTEPS:
