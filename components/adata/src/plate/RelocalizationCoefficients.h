@@ -20,6 +20,13 @@ namespace adata {
 
         public:
 
+            RelocalizationCoefficients() = default;
+            virtual ~RelocalizationCoefficients() = default;
+
+            /// @brief Get the number of relocalisation coefficients stored in the object
+            /// @return number of relocalisation coefficients
+            std::size_t size() { return _coefficients_.size(); }
+
             /// @brief Set values of \f$ a_{\phi} \f$ for several angles
             void set_a_phi(std::vector<double> angles, std::vector<double> coefs);
             /// @brief Set values of \f$ b_{\phi} \f$ for several angles

@@ -3,6 +3,7 @@
 #include "Commands.h"
 #include "Environment.h"
 #include "FileReader.h"
+#include "RelocalizationCoefficients.h"
 
 namespace adata {
 
@@ -16,8 +17,6 @@ namespace adata {
         /// @brief list of angles values
         std::vector<double> values;
 
-        //plate_angle() = default;
-        //virtual ~plate_angle() = default;
         /// @brief initialize the object with the given values
         /// @param delta angle step
         /// @param max maximum angle value
@@ -30,7 +29,12 @@ namespace adata {
             /// @brief control the coherence between \f$ \phi \f$ and remarkable angles
             /// @param filecontext file content
             void verify_phi(const std::string& filecontext) const;
-            
+
+            /// @brief Initialize the object dedicated to user's relocalizaztion coefficients with the values read
+            /// from the input file
+            /// @param command values read from the input file
+            void init_user_coefficients(const std::shared_ptr<abase::BaseCommand>& command);
+
         public:
             /// @brief store P/h ratio for primary and secondary side
             std::pair<double, double> Ph = {0., 0.};
@@ -52,6 +56,9 @@ namespace adata {
             plate_angle theta;
             /// @brief \f$ \phi \f$ angle parameters around the drilling hole axis
             plate_angle phi;
+
+            /// @brief User's relocalisation coefficients
+            RelocalizationCoefficients user_coefficients;
 
             ProblemPlate() = default;
             virtual ~ProblemPlate() = default;

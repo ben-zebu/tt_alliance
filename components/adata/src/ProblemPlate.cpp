@@ -16,6 +16,23 @@ void plate_angle::init(double delta, double max, double min) {
     }
 }
 
+
+void ProblemPlate::init_user_coefficients(const std::shared_ptr<abase::BaseCommand>& command) {
+    std::vector<double> angles;
+    std::vector<double> coefs;
+
+    abase::get_child_values(command, "ANGLE", angles);
+    for (const auto& key : {"APHI", "BPHI", "CPHI"}) {
+        coefs.clear();
+        abase::get_child_values(command, key, coefs);
+        if (angles.size() * coefs.size() > 0) {
+            if (key == "APHI") user_coefficients.set_a_phi(angles, coefs);
+            if (key == "BPHI") user_coefficients.set_b_phi(angles, coefs);
+            if (key == "CPHI") user_coefficients.set_c_phi(angles, coefs);
+        }
+    }
+}
+
 void ProblemPlate::init(const std::shared_ptr<abase::BaseCommand>& command, std::size_t category) {
     this->category = category;
 
@@ -67,6 +84,11 @@ void ProblemPlate::init(const std::shared_ptr<abase::BaseCommand>& command, std:
     abase::get_child_value(command, "DPHI", phi.delta);
     abase::get_child_value(command, "PMAX", phi.max);
     abase::get_child_value(command, "PMIN", phi.min);
+
+    // Set user coefficients
+    std::size_t nang = 0;
+    abase::get_child_value(command, "ANGLE", nang);
+    if (nang > 0) init_user_coefficients(command->get_child("ANGLE"));
 
     // build intermediate angles values
     theta.init(theta.delta, theta.max, theta.min);
