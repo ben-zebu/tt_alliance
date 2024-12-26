@@ -3,9 +3,10 @@
 #include "Commands.h"
 #include "Environment.h"
 #include "FileReader.h"
-#include "RelocalizationCoefficients.h"
 
 namespace adata {
+
+    class RelocalizationCoefficients;
 
     struct plate_angle {
         /// @brief angle step

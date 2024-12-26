@@ -16,12 +16,19 @@ namespace adata {
             /// @brief Values of relocalisation coefficients for a list of angles. The possible
             /// keys are: "a_phi", "b_phi" or "c_phi" 
             std::unordered_map<std::string, amath::Table> _coefficients_;
+            /// @brief type of lattice
+            std::string _type_ = "";
 
         public:
 
             RelocalizationCoefficients() = default;
             virtual ~RelocalizationCoefficients() = default;
 
+            /// @brief Get the type of relocalisation coefficients
+            std::string get_type() const { return _type_; }
+            /// @brief Set the type of relocalisation coefficients
+            /// @param a_type type of relocalisation coefficients
+            void set_type(const std::string& a_type) { _type_ = a_type; }
             /// @brief Get the number of relocalisation coefficients stored in the object
             /// @return number of relocalisation coefficients
             std::size_t size() { return _coefficients_.size(); }
@@ -49,6 +56,7 @@ namespace adata {
             /// @brief Clone the current object
             /// @return shared pointer to the cloned object
             std::shared_ptr<RelocalizationCoefficients> clone() const;
-
+            /// @brief Set periodic coefficients if necesssary
+            void set_periodic_conditions();
     };
 }

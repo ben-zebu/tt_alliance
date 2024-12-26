@@ -1,6 +1,8 @@
 #include <algorithm>
 
+#include "plate/RelocalizationCoefficients.h"
 #include "ProblemPlate.h"
+
 
 using namespace adata;
 
@@ -34,6 +36,10 @@ void ProblemPlate::init_user_coefficients(const std::shared_ptr<abase::BaseComma
             if (key == "CPHI") user_coefficients->set_c_phi(angles, coefs);
         }
     }
+
+    // add periodic conditions
+    user_coefficients->set_type(type);
+    user_coefficients->set_periodic_conditions();
 }
 
 void ProblemPlate::init(const std::shared_ptr<abase::BaseCommand>& command, std::size_t category) {
