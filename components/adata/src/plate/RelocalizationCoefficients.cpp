@@ -35,3 +35,11 @@ double RelocalizationCoefficients::get_b_phi(const double& angle) const {
 double RelocalizationCoefficients::get_c_phi(const double& angle) const {
     return get_relocalization_coef(angle, "c_phi");
 }
+
+std::shared_ptr<RelocalizationCoefficients> RelocalizationCoefficients::clone() const {
+    std::shared_ptr<RelocalizationCoefficients> clone = std::make_shared<RelocalizationCoefficients>();
+    for (const auto& coef : _coefficients_) {
+        clone->_coefficients_[coef.first] = amath::Table(coef.second);
+    }
+    return clone;
+}

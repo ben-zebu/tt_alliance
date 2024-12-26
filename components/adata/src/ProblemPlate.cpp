@@ -16,19 +16,22 @@ void plate_angle::init(double delta, double max, double min) {
     }
 }
 
-
 void ProblemPlate::init_user_coefficients(const std::shared_ptr<abase::BaseCommand>& command) {
+    // build object
+    user_coefficients = std::make_shared<RelocalizationCoefficients>();
+    
+    // Get angles values
     std::vector<double> angles;
-    std::vector<double> coefs;
-
     abase::get_child_values(command, "ANGLE", angles);
+
+    // Get relocalisation coefficients
     for (const auto& key : {"APHI", "BPHI", "CPHI"}) {
-        coefs.clear();
+        std::vector<double> coefs;
         abase::get_child_values(command, key, coefs);
         if (angles.size() * coefs.size() > 0) {
-            if (key == "APHI") user_coefficients.set_a_phi(angles, coefs);
-            if (key == "BPHI") user_coefficients.set_b_phi(angles, coefs);
-            if (key == "CPHI") user_coefficients.set_c_phi(angles, coefs);
+            if (key == "APHI") user_coefficients->set_a_phi(angles, coefs);
+            if (key == "BPHI") user_coefficients->set_b_phi(angles, coefs);
+            if (key == "CPHI") user_coefficients->set_c_phi(angles, coefs);
         }
     }
 }

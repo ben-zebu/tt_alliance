@@ -58,7 +58,7 @@ namespace adata {
             plate_angle phi;
 
             /// @brief User's relocalisation coefficients
-            RelocalizationCoefficients user_coefficients;
+            std::shared_ptr<RelocalizationCoefficients> user_coefficients = nullptr;
 
             ProblemPlate() = default;
             virtual ~ProblemPlate() = default;

@@ -17,7 +17,6 @@ namespace adata {
             /// keys are: "a_phi", "b_phi" or "c_phi" 
             std::unordered_map<std::string, amath::Table> _coefficients_;
 
-
         public:
 
             RelocalizationCoefficients() = default;
@@ -46,6 +45,10 @@ namespace adata {
             /// @param angle given angle
             /// @return Value of \f$ c_{\phi}            
             double get_c_phi(const double& angle) const;
+
+            /// @brief Clone the current object
+            /// @return shared pointer to the cloned object
+            std::shared_ptr<RelocalizationCoefficients> clone() const;
 
     };
 }
