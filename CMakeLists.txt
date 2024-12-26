@@ -21,6 +21,9 @@ include(${CMAKE_SOURCE_DIR}/cmake/externals.cmake)
 # Include common CMake functions
 include(${CMAKE_SOURCE_DIR}/cmake/common.cmake)
 
+# Add verbose ouput
+# SET(CMAKE_VERBOSE_MAKEFILE ON)
+
 # Add subdirectories
 add_subdirectory(components/abase)
 add_subdirectory(components/amath)
