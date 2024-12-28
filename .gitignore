@@ -5,6 +5,9 @@ release/*
 debug/*
 include/*
 
+# alliance debugger
+.alliance_debugger
+
 # Build folders for by cmake
 build_debug/*
 build_release/*
@@ -12,10 +15,6 @@ build_release/*
 # doxygen + breathe + sphinx documentation
 docs/build/*
 docs/source/Doxyfile
-
-# tinyxml2 library
-externals/xml/docs/*
-externals/xml/lib/*
 
 # externals packages
 *.zip
