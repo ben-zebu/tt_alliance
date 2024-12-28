@@ -57,6 +57,10 @@
     en: "The key '{0}' is not a correct relocalization coefficient !"
     fr: "La clé '{0}' ne correspond pas à un coefficient de relocalisation !"
 
+  ERROR_USER_COEFFICIENTS_SIZE:
+    en: "The number of user coefficients {0} must be equal to the number of angles: '{1}' values are expected !"
+    fr: "Le nombre de coefficients utilisateur {0} doit être égal au nombre d'angles : '{1}' valeurs sont attendues !"
+
 # ProblemTransient
   ERROR_OUT_OF_RANGE_LOADSTEPS:
     en: "Out of range loadstep '{0}' (maximal range '{1}') !"

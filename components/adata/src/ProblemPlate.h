@@ -25,11 +25,29 @@ namespace adata {
         void init(double delta, double max, double min = 0.);
     };
 
+    struct local_coefficients {
+        /// @brief list of angles values
+        std::vector<double> angles;
+        /// @brief list of \f$ a_{phi} \f$ coefficients
+        std::vector<double> a_phi;
+        /// @brief list of \f$ b_{phi} \f$ coefficients
+        std::vector<double> b_phi;
+        /// @brief list of \f$ c_{phi} \f$ coefficients
+        std::vector<double> c_phi;
+
+        /// @brief Clear the object values
+        void clear();
+    };
+
     class ProblemPlate {
         private :
             /// @brief control the coherence between \f$ \phi \f$ and remarkable angles
-            /// @param filecontext file content
+            /// @param filecontext file context
             void verify_phi(const std::string& filecontext) const;
+
+            /// @brief control the coherence between user's relocalization coefficients
+            /// @param filecontext file context
+            void verify_user_coefficients(const std::string& filecontext) const;
 
             /// @brief Initialize the object dedicated to user's relocalizaztion coefficients with the values read
             /// from the input file
@@ -59,7 +77,7 @@ namespace adata {
             plate_angle phi;
 
             /// @brief User's relocalisation coefficients
-            std::shared_ptr<RelocalizationCoefficients> user_coefficients = nullptr;
+            local_coefficients user_coefficients;
 
             ProblemPlate() = default;
             virtual ~ProblemPlate() = default;

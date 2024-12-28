@@ -1,8 +1,6 @@
 #include <algorithm>
 
-#include "plate/RelocalizationCoefficients.h"
 #include "ProblemPlate.h"
-
 
 using namespace adata;
 
@@ -18,28 +16,20 @@ void plate_angle::init(double delta, double max, double min) {
     }
 }
 
+void local_coefficients::clear() {
+    angles.clear();
+    a_phi.clear();
+    b_phi.clear();
+    c_phi.clear();
+}
+
 void ProblemPlate::init_user_coefficients(const std::shared_ptr<abase::BaseCommand>& command) {
-    // build object
-    user_coefficients = std::make_shared<RelocalizationCoefficients>();
-    
-    // Get angles values
-    std::vector<double> angles;
-    abase::get_child_values(command, "ANGLE", angles);
+    user_coefficients.clear();
 
-    // Get relocalisation coefficients
-    for (const auto& key : {"APHI", "BPHI", "CPHI"}) {
-        std::vector<double> coefs;
-        abase::get_child_values(command, key, coefs);
-        if (angles.size() * coefs.size() > 0) {
-            if (key == "APHI") user_coefficients->set_a_phi(angles, coefs);
-            if (key == "BPHI") user_coefficients->set_b_phi(angles, coefs);
-            if (key == "CPHI") user_coefficients->set_c_phi(angles, coefs);
-        }
-    }
-
-    // add periodic conditions
-    user_coefficients->set_type(type);
-    user_coefficients->set_periodic_conditions();
+    abase::get_child_values(command, "ANGLE", user_coefficients.angles);
+    abase::get_child_values(command, "APHI", user_coefficients.a_phi);
+    abase::get_child_values(command, "BPHI", user_coefficients.b_phi);
+    abase::get_child_values(command, "CPHI", user_coefficients.c_phi);
 }
 
 void ProblemPlate::init(const std::shared_ptr<abase::BaseCommand>& command, std::size_t category) {
@@ -96,8 +86,8 @@ void ProblemPlate::init(const std::shared_ptr<abase::BaseCommand>& command, std:
 
     // Set user coefficients
     std::size_t nang = 0;
-    abase::get_child_value(command, "ANGLE", nang);
-    if (nang > 0) init_user_coefficients(command->get_child("ANGLE"));
+    abase::get_child_value(command, "NANG", nang);
+    if (nang > 0) init_user_coefficients(command->get_child("NANG"));
 
     // build intermediate angles values
     theta.init(theta.delta, theta.max, theta.min);
@@ -133,6 +123,9 @@ void ProblemPlate::verify(const std::string& filecontext) const {
     // check coherence between phi and 3Sm angles
     if (category == 2 && if_3Sm) verify_phi(filecontext);
 
+    // check coherence between user's relocalization coefficients
+    verify_user_coefficients(filecontext);
+
 }
 
 void ProblemPlate::verify_phi(const std::string& filecontext) const {
@@ -143,6 +136,28 @@ void ProblemPlate::verify_phi(const std::string& filecontext) const {
             file_input_error(msg, filecontext);
         }
     }
+}
+
+void ProblemPlate::verify_user_coefficients(const std::string& filecontext) const {
+    // check if the user coefficients are defined for category 2 analysis
+    if (category != 2 || user_coefficients.angles.empty()) return;
+
+    std::string coef_msg = "";
+    if (user_coefficients.angles.size() != user_coefficients.a_phi.size()) {
+        coef_msg = coef_msg.empty() ? "a_phi" : ", a_phi";
+    }
+    if (user_coefficients.angles.size() != user_coefficients.b_phi.size()) {
+        coef_msg = coef_msg.empty() ? "b_phi" : ", b_phi";
+    }
+    if (user_coefficients.angles.size() != user_coefficients.c_phi.size()) {
+        coef_msg = coef_msg.empty() ? "c_phi" : ", c_phi";
+    }
+    
+    if (coef_msg.size() > 0) {
+        std::string str_nang = std::to_string(user_coefficients.angles.size());
+        std::string msg = translate("ERROR_USER_COEFFICIENTS_SIZE", {coef_msg, str_nang});
+        file_input_error(msg, filecontext);
+    }    
 }
 
 std::vector<double> ProblemPlate::get_3Sm_angles() const {
