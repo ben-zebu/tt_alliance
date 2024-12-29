@@ -2,9 +2,9 @@
 
 using namespace adata;
 
-std::string ProblemMaterial::_get_correction_name(const std::string& int_correction) const {
+std::string ProblemMaterial::get_correction_name(const std::string& int_correction) const {
     std::string correction = str::lowercase(int_correction);
-    for (const auto& [key, value] : _correction_map) {
+    for (const auto& [key, value] : _correction_map_) {
         if (key == correction || value == correction ) {
             return key;
         }
@@ -46,7 +46,7 @@ void ProblemMaterial::init(const std::shared_ptr<abase::BaseCommand>& command, s
     // Get the type of mean stress correction
     std::string read_correction;
     abase::get_child_value(command, "CORRECTION", read_correction);
-    if (!read_correction.empty()) correction = _get_correction_name(read_correction);
+    if (!read_correction.empty()) correction = get_correction_name(read_correction);
 
     // Set coefficients parameters
     for (auto& name : command->get_children_names()) {

@@ -14,14 +14,16 @@ namespace adata {
             void default_name(std::size_t id) { name = "MATERIAL_" + std::to_string(id); };
 
             /// @brief Map used to convert the mean stress correction integer into an explicit string
-            std::unordered_map<std::string, std::string> _correction_map = {
+            std::unordered_map<std::string, std::string> _correction_map_ = {
                 {"none", "1"}, {"goodman", "2"}, {"gerber", "3"}, {"peterson", "4"}, {"haigh", "5"}
             };
             /// @brief Convert the mean stress correction integer or string into an explicit formated string
             /// @param int_correction mean stress correction integeror string
             /// @return mean stress correction string
-            std::string _get_correction_name(const std::string& int_correction) const;
+            std::string get_correction_name(const std::string& int_correction) const;
 
+            /// @brief Set material parameters from the input command
+            /// @param command input command
             void set_material_parameters(const std::shared_ptr<abase::BaseCommand>& command);
 
         public :
@@ -36,7 +38,6 @@ namespace adata {
             ///  - "MAX" : maximum value of 2 timesteps
             std::string EcE_type = "MEAN";
 
-            std::unordered_map<std::string, amath::LinearCoefficient> material_parameters;
             /// @brief Map used to store the input values for all coefficients that defined the material. The different
             /// keys are:
             ///  - "EE" : Young modulus \f$ E \f$
