@@ -1,6 +1,6 @@
 # main/CMakeLists.txt
 project(tt_alliance)
-create_executable(alliance.exe ${CMAKE_CURRENT_SOURCE_DIR}/src)
+create_executable(alliance.exe ${CMAKE_CURRENT_SOURCE_DIR})
 target_link_libraries(alliance.exe adata amath abase)
 
 # Define installation directories for release and debug configurations
