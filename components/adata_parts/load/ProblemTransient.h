@@ -4,7 +4,7 @@
 #include "Commands.h"
 #include "FileReader.h"
 
-namespace adata {
+namespace adata::parts {
 
     class ProblemTransient {
         private:

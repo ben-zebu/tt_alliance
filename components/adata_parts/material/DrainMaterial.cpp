@@ -1,6 +1,6 @@
 #include "DrainMaterial.h"
 
-using namespace adata;
+using namespace adata::parts;
 
 DrainMaterial& DrainMaterial::operator=(const DrainMaterial& material) {
     if (this != &material) {

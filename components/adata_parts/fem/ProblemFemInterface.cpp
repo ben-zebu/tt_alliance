@@ -2,7 +2,7 @@
 
 #include "ProblemFemInterface.h"
 
-using namespace adata;
+using namespace adata::parts;
 
 void ProblemFemInterface::set_fem_results_file(const std::string& sequence) {
     std::vector<std::string> str_values = str::split(sequence);

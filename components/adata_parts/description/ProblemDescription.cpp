@@ -1,6 +1,6 @@
 #include "ProblemDescription.h"
 
-using namespace adata;
+using namespace adata::parts;
 
 void ProblemDescription::init(const std::shared_ptr<abase::BaseCommand>& command) {
     command->get_value(code_type);

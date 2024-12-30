@@ -4,9 +4,7 @@
 #include "Environment.h"
 #include "FileReader.h"
 
-namespace adata {
-
-    class RelocalizationCoefficients;
+namespace adata::parts {
 
     struct plate_angle {
         /// @brief angle step

@@ -1,6 +1,6 @@
 #include "ProblemTorsor.h"
 
-using namespace adata;
+using namespace adata::parts;
 
 void ProblemTorsor::init(const std::shared_ptr<abase::BaseCommand>& command) {
     command->get_values(cards);

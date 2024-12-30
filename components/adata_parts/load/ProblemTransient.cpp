@@ -2,7 +2,7 @@
 
 #include "ProblemTransient.h"
 
-using namespace adata;
+using namespace adata::parts;
 
 std::size_t ProblemTransient::max_loadstesp() const {
     std::size_t max = 0;

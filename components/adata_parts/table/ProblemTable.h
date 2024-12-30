@@ -5,14 +5,19 @@
 #include "Environment.h"
 #include "FileReader.h"
 
-namespace adata {
+namespace adata::parts {
 
+    /// @class ProblemTable
+    /// @brief Table of values read from the input file
     class ProblemTable {
         private:
+            /// @brief Default name for the table
             void default_name(std::size_t id) { name = "TABLE_" + std::to_string(id); };
             
         public:
+            /// @brief Name of the table
             std::string name = "";
+            /// @brief Table of values
             amath::Table table;
 
             ProblemTable() = default;

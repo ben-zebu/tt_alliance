@@ -4,7 +4,7 @@
 
 #include "FatigueLaw.h"
 
-using namespace adata;
+using namespace adata::parts;
 
 //
 // Fatigue Law

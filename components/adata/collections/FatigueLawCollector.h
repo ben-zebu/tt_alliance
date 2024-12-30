@@ -7,6 +7,8 @@
 
 namespace adata {
 
+    using namespace adata::parts;
+    
     class FatigueLawCollector : public abase::DataCollector {
         private:
             /// @brief Create a fatigue law object based on the type

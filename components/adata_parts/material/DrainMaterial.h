@@ -2,7 +2,7 @@
 
 #include "BaseMaterial.h"
 
-namespace adata {
+namespace adata::parts {
 
     class DrainMaterial : public BaseMaterial {
         protected:

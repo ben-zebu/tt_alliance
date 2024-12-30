@@ -13,6 +13,8 @@
 
 namespace adata {
 
+    using namespace adata::parts;
+
     class DataManager : public abase::DataCollector {
         private:
             /// @brief Read the title of the problem in the input file

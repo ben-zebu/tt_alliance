@@ -3,9 +3,10 @@
 #include "Environment.h"
 #include "Table.h"
 
-namespace adata {
+namespace adata::parts {
 
-    class RelocalizationCoefficients {
+    /// @brief Class to store relocalisation coefficients for perforated plates
+    class RelocalisationCoefficients {
         protected :
             /// @brief Return the relocalisation coefficient associated to a given angle
             /// @param angle given angle
@@ -21,8 +22,8 @@ namespace adata {
 
         public:
 
-            RelocalizationCoefficients() = default;
-            virtual ~RelocalizationCoefficients() = default;
+            RelocalisationCoefficients() = default;
+            virtual ~RelocalisationCoefficients() = default;
 
             /// @brief Get the type of relocalisation coefficients
             std::string get_type() const { return _type_; }
@@ -55,7 +56,7 @@ namespace adata {
 
             /// @brief Clone the current object
             /// @return shared pointer to the cloned object
-            std::shared_ptr<RelocalizationCoefficients> clone() const;
+            std::shared_ptr<RelocalisationCoefficients> clone() const;
             /// @brief Set periodic coefficients if necesssary
             void set_periodic_conditions();
     };

@@ -2,7 +2,7 @@
 
 #include "ProblemTable.h"
 
-using namespace adata;
+using namespace adata::parts;
 
 void ProblemTable::init(const std::shared_ptr<abase::BaseCommand>& command, std::size_t id) {
 

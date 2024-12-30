@@ -1,6 +1,6 @@
 #include "ProblemLoadstep.h"
 
-using namespace adata;
+using namespace adata::parts;
 
 void ProblemLoadstep::init(const std::shared_ptr<abase::BaseCommand>& command, std::size_t nb_torsors) {
     _nb_torsors = nb_torsors;

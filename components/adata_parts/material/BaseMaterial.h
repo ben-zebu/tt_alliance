@@ -6,7 +6,7 @@
 
 #include "FatigueLaw.h"
 
-namespace adata {
+namespace adata::parts {
 
     /// @brief Base class for material properties
     class BaseMaterial {

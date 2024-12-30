@@ -1,6 +1,6 @@
 #include "ProblemSection.h"
 
-using namespace adata;
+using namespace adata::parts;
 
 void ProblemSection::set_material_parameters(const std::shared_ptr<abase::BaseCommand>& command) {
     // get the name of the coefficient

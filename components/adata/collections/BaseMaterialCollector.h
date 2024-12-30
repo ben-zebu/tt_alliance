@@ -8,6 +8,8 @@
 
 namespace adata {
 
+    using namespace adata::parts;
+
     class BaseMaterialCollector : public abase::DataCollector {
         private:
             /// @brief Create a material object

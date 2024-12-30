@@ -1,6 +1,6 @@
 #include "ProblemSectionCoefficient.h"
 
-using namespace adata;
+using namespace adata::parts;
 
 void StressCoefficient::set_default_values() {
     if (values.empty()) values.resize(expected_size, 1.);

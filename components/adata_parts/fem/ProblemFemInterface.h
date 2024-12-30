@@ -4,8 +4,10 @@
 #include "Environment.h"
 #include "FileReader.h"
 
-namespace adata {
-
+namespace adata::parts {
+    
+    /// @class ProblemFemInterface
+    /// @brief Interface to the finite element results file 
     class ProblemFemInterface {
         private:
             /// @brief build fem results file name and check if the file exists

@@ -2,7 +2,7 @@
 
 #include "ProblemPlate.h"
 
-using namespace adata;
+using namespace adata::parts;
 
 void plate_angle::init(double delta, double max, double min) {
     this->delta = delta;

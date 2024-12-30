@@ -1,6 +1,6 @@
 #include "ProblemMaterial.h"
 
-using namespace adata;
+using namespace adata::parts;
 
 std::string ProblemMaterial::get_correction_name(const std::string& int_correction) const {
     std::string correction = str::lowercase(int_correction);

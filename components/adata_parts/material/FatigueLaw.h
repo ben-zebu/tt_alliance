@@ -6,7 +6,7 @@
 #include "FileReader.h"
 #include "Table.h"
 
-namespace adata {
+namespace adata::parts {
 
     /// @brief Value used as a flag to check if the Young modulus has been defined or not for experimental fatigue laws
     inline constexpr double UNSET_YOUNG_MODULUS = 1.;

@@ -1,6 +1,6 @@
 #include "BaseMaterial.h"
 
-using namespace adata;
+using namespace adata::parts;
 
 BaseMaterial& BaseMaterial::operator=(const BaseMaterial& material) {
     if (this != &material) {
