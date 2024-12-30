@@ -179,8 +179,12 @@ MATERIAL:
     keys: {"fr": ["tabl", "table"], "en": ["tabl", "table"]}
     type: string
 
-CHAIN:
-  keys: {"fr": ["chai", "chaine"], "en": ["chai", "chain"]}
+SECTION:
+  keys: 
+    "fr": ["chai", "chaine"] 
+    "en": ["chai", "chain"]
+    "fr_var": ["sect", "section"]
+    "en_var": ["sect", "section"]
   type: uint_array
 
   MATERIAL:

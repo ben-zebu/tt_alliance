@@ -92,6 +92,14 @@
     fr: "Valeurs d'abscisses non ordonnées dans la table '{0}' !"  
 
 # ProblemSection
+  ERROR_SECTION_MISSING_ID:
+    en: "The section ID by its rank or name must be defined !"
+    fr: "L'identifiant de la section via son rang ou son nom doit être défini !"
+
+  ERROR_SECTION_BOTH_ID_NAME:
+    en: "The section ID must be defined by its rank '{0}' or its name '{1}', not both !"
+    fr: "L'identifiant de la section doit être défini par son rang '{0}' ou son nom '{1}', pas les deux !"
+
   ERROR_SECTION_COEFFICIENTS:
     en: "The number of values for the coefficient '{0}' is not correct: '{1}' values are expected !"
     fr: "Le nombre de valeurs pour le coefficient '{0}' n'est pas correct : '{1}' valeurs sont attendues !"

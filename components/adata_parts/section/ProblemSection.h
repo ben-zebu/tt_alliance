@@ -8,6 +8,9 @@
 
 namespace adata::parts {
 
+    /// @brief Value used as a flag to check if a std::size_t value has been defined or not
+    static constexpr std::size_t UNDEFINED_SIZE_T = std::numeric_limits<std::size_t>::max();
+
     struct StressCoefficientContainer {
         PKCoefficient pk;
         KFCoefficient kf;
@@ -34,14 +37,17 @@ namespace adata::parts {
             /// @brief Set the material definitions from the input command 
             /// @param command input command
             void set_material_definition(const std::shared_ptr<abase::BaseCommand>& command);
+            /// @brief Set special parameters from the input command
+            /// @param command input command
+            void set_special_parameters(const std::shared_ptr<abase::BaseCommand>& command);
 
         protected:
             /// @brief Category of the problem
-            std::size_t _category_ = 0;
+            std::size_t _category_ = UNDEFINED_SIZE_T;
 
         public :
             /// @brief Rank of th section in FEM Interface (default value is the maximum value of std::size_t)
-            std::size_t fem_rank = std::numeric_limits<std::size_t>::max();
+            std::size_t fem_rank = UNDEFINED_SIZE_T;
             /// @brief Name of the section
             std::string name = "";
             /// @brief internal name of the section (based on its rank from the input file)
