@@ -8,6 +8,13 @@ Argument Parser
 .. doxygenfile:: ArgumentParser.h
    :project: tt_alliance
 
+Collections
+-----------
+.. doxygenfile:: BaseMaterialCollector.h
+   :project: tt_alliance
+.. doxygenfile:: FatigueLawCollector.h
+   :project: tt_alliance
+
 Data Manager
 ------------
 .. doxygenfile:: DataManager.h

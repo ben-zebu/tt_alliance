@@ -3,6 +3,16 @@
 adata parts components
 ======================
 
+Description
+-----------
+.. doxygenfile:: ProblemDescription.h
+   :project: tt_alliance
+
+FEM Interface
+-------------
+.. doxygenfile:: ProblemFemInterface.h
+   :project: tt_alliance
+
 Material
 --------
 .. doxygenfile:: BaseMaterial.h
@@ -16,42 +26,41 @@ Material
 .. doxygenfile:: FatigueLawCollector.h
    :project: tt_alliance
 
-Problem Description
--------------------
-.. doxygenfile:: ProblemDescription.h
-   :project: tt_alliance
-
-Problem FEM Interface
----------------------
-.. doxygenfile:: ProblemFemInterface.h
-   :project: tt_alliance
-
-Problem LoadStep
-----------------
+Load
+----
 .. doxygenfile:: ProblemLoadstep.h
    :project: tt_alliance
+.. doxygenfile:: ProblemTorsor.h
+   :project: tt_alliance
+.. doxygenfile:: ProblemTransient.h
+   :project: tt_alliance
 
-Problem Material
-----------------
+Material
+--------
+.. doxygenfile:: BaseMaterial.h
+   :project: tt_alliance
+.. doxygenfile:: DrainMaterial.h
+   :project: tt_alliance
+.. doxygenfile:: FatigueLaw.h
+   :project: tt_alliance
 .. doxygenfile:: ProblemMaterial.h
    :project: tt_alliance
 
-Problem Plate
--------------
+Plate
+-----
 .. doxygenfile:: ProblemPlate.h
    :project: tt_alliance
+.. doxygenfile:: RelocalisationCoefficients.h
+   :project: tt_alliance
 
-Problem Table
--------------
+Section
+-------
+.. doxygenfile:: ProblemSection.h
+   :project: tt_alliance
+.. doxygenfile:: ProblemSectionCoefficient.h
+   :project: tt_alliance
+
+Table
+-----
 .. doxygenfile:: ProblemTable.h
-   :project: tt_alliance
-
-Problem Torsor
---------------
-.. doxygenfile:: ProblemTorsor.h
-   :project: tt_alliance
-
-Problem Transient:
-------------------
-.. doxygenfile:: ProblemTransient.h
    :project: tt_alliance
