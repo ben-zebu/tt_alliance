@@ -8,6 +8,7 @@ void StressCoefficient::set_default_values() {
 
 void StressCoefficient::init(const std::shared_ptr<abase::BaseCommand>& command) {
     abase::get_child_values(command, name, values);
+    set_default_values();
 }
 
 void StressCoefficient::verify(const std::string& filecontext) const {
@@ -15,13 +16,6 @@ void StressCoefficient::verify(const std::string& filecontext) const {
         std::string msg = translate("ERROR_SECTION_COEFFICIENTS", {name, std::to_string(expected_size)});
         file_input_error(filecontext, msg);
     }
-}
-
-void StressCoefficient::init_and_verify(const std::shared_ptr<abase::BaseCommand>& command, 
-                                        const std::string& filecontext) {
-    init(command);
-    set_default_values();
-    verify(filecontext);
 }
 
 void OvalCoefficient::set_other_values() {
@@ -34,10 +28,7 @@ void OvalCoefficient::set_other_values() {
     }
 }
 
-void OvalCoefficient::init_and_verify(const std::shared_ptr<abase::BaseCommand>& command, 
-                                      const std::string& filecontext) {
-    init(command);
-    set_default_values();
+void OvalCoefficient::init(const std::shared_ptr<abase::BaseCommand>& command) {
+    StressCoefficient::init(command);
     set_other_values();
-    verify(filecontext);
 }

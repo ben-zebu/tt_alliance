@@ -28,12 +28,6 @@ namespace adata::parts {
             virtual void init(const std::shared_ptr<abase::BaseCommand>& command);
             /// @brief Verify the coherence of the material definition
             virtual void verify(const std::string& filecontext) const;
-            /// @brief Initialize the object with the values read from the input file and verify the coherence of 
-            /// the material definition. This function is a combination of the init, verify and set_default_values
-            /// functions.
-            /// @param command command read from the input file
-            /// @param filecontext file context for error message
-            virtual void init_and_verify(const std::shared_ptr<abase::BaseCommand>& command, const std::string& filecontext);
     };
 
     class PKCoefficient : public StressCoefficient {
@@ -82,12 +76,9 @@ namespace adata::parts {
             OvalCoefficient() = default;
             virtual ~OvalCoefficient() = default;
 
-            /// @brief Initialize the object with the values read from the input file and verify the coherence of 
-            /// the material definition. This function is a combination of the init, verify and set_default_values
-            /// functions.
+            /// @brief Initialize the object with the values read from the input file
             /// @param command command read from the input file
-            /// @param filecontext file context for error message
-            virtual void init_and_verify(const std::shared_ptr<abase::BaseCommand>& command, const std::string& filecontext);            
+            virtual void init(const std::shared_ptr<abase::BaseCommand>& command);           
     };
 
     class PMBCoefficient : public StressCoefficient {
