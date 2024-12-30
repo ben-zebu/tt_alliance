@@ -91,6 +91,11 @@
     en: "Unordered absciss values in table '{0}' !"
     fr: "Valeurs d'abscisses non ordonnées dans la table '{0}' !"  
 
+# ProblemSection
+  ERROR_SECTION_COEFFICIENTS:
+    en: "The number of values for the coefficient '{0}' is not correct: '{1}' values are expected !"
+    fr: "Le nombre de valeurs pour le coefficient '{0}' n'est pas correct : '{1}' valeurs sont attendues !"
+
 # DataManager
   ERROR_MISSING_SECTION:
     en: "One or several sections must be defined !"
@@ -102,4 +107,4 @@
 
   ERROR_DUPLICATE_TRANSIENT_NAME:
     en: "Duplicate transient name: '{0}' !"
-    fr: "Nom de transitoire défini plusieurs fois : '{0}' !"    
+    fr: "Nom de transitoire défini plusieurs fois : '{0}' !"
