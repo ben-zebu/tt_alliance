@@ -32,11 +32,11 @@ namespace adata {
             /// @brief Base material id associate to the object
             std::string base_material_id = "";
             /// @brief Type of temperature dependence for \f$ \frac{E_c}{E} \f$ calculation. The expected values are:
-            ///  - "NONE" : no temperature dependence
-            ///  - "MEAN" : mean value of 2 timesteps
-            ///  - "MIN" : minimum value of 2 timesteps
-            ///  - "MAX" : maximum value of 2 timesteps
-            std::string EcE_type = "MEAN";
+            ///  - "none" : no temperature dependence
+            ///  - "mean" : mean value of 2 timesteps
+            ///  - "min" : minimum value of 2 timesteps
+            ///  - "max" : maximum value of 2 timesteps
+            std::string EcE_type = "mean";
 
             /// @brief Map used to store the input values for all coefficients that defined the material. The different
             /// keys are:

@@ -6,7 +6,7 @@
 #include "ProblemLoadstep.h"
 #include "ProblemMaterial.h"
 #include "ProblemPlate.h"
-// #include "ProblemSection.h"
+#include "ProblemSection.h"
 #include "ProblemTable.h"
 #include "ProblemTorsor.h"
 #include "ProblemTransient.h"
@@ -42,7 +42,7 @@ namespace adata {
             std::vector<ProblemTransient> transients;
             std::vector<ProblemTable> tables;
             std::vector<ProblemMaterial> materials;
-            // std::vector<ProblemSection> sections;
+            std::vector<ProblemSection> sections;
 
         public:
             DataManager() = default;
