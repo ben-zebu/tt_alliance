@@ -57,24 +57,7 @@ void ProblemSection::set_material_definition(const std::shared_ptr<abase::BaseCo
     }
 }
 
-void ProblemSection::init(const std::shared_ptr<abase::BaseCommand>& command, std::size_t id, std::size_t category) {
-    // Set the category of the section
-    _category_ = category;
-    // Set the internal name of the section
-    default_name(id);
-    // get the fem rank of the section
-    std::vector<std::size_t> uint_values;
-    command->get_values(uint_values);
-    if (uint_values.size() == 1) fem_rank = uint_values[0];
-    // get the fem name of the section
-    abase::get_child_value(command, "NAME", name);
-
-    // Set the material definition
-    set_material_definition(command);
-    
-    // Set the stress coefficients
-    stress_coefficients.init(command);
-
+void ProblemSection::set_special_parameters(const std::shared_ptr<abase::BaseCommand>& command) {
     // Get the type of temperature dependence for Ec/E calculation
     for (const auto& type : {"none", "mean", "min", "max"}) {
         std::string key = "T" + str::uppercase(type);
@@ -94,9 +77,40 @@ void ProblemSection::init(const std::shared_ptr<abase::BaseCommand>& command, st
     str_value = "";
     abase::get_child_value(command, "MISES", str_value);
     if (!str_value.empty()) mises_criterion = true;
+}
 
+void ProblemSection::init(const std::shared_ptr<abase::BaseCommand>& command, std::size_t id, std::size_t category) {
+    // Set the category of the section
+    _category_ = category;
+    // Set the internal name of the section
+    default_name(id);
+    // get the fem rank of the section
+    std::vector<std::size_t> uint_values;
+    command->get_values(uint_values);
+    if (uint_values.size() == 1) fem_rank = uint_values[0];
+    // get the fem name of the section
+    abase::get_child_value(command, "NAME", name);
+
+    // Set the material definition
+    set_material_definition(command);
+    
+    // Set the stress coefficients
+    stress_coefficients.init(command);
+
+    // Set special parameters
+    set_special_parameters(command);
 }
 
 void ProblemSection::verify(const std::string& filecontext) const {
+    if (fem_rank == UNDEFINED_SIZE_T && name.empty()) {
+        std::string msg = translate("ERROR_SECTION_MISSING_ID");
+        file_input_error(filecontext, msg);
+    }
+
+    if (fem_rank != UNDEFINED_SIZE_T && name.size() > 0) {
+        std::string msg = translate("ERROR_SECTION_BOTH_ID_NAME", {std::to_string(fem_rank), name});
+        file_input_error(filecontext, msg);
+    }
+
     stress_coefficients.verify(filecontext);
 }

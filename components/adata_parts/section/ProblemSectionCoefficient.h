@@ -15,7 +15,8 @@ namespace adata::parts {
             /// @brief Values associated to the coefficient
             std::vector<double> values;
 
-            StressCoefficient() = default;
+            StressCoefficient(const std::string& a_name, std::size_t a_expected_size) 
+                              : name(a_name), expected_size(a_expected_size) {};
             virtual ~StressCoefficient() = default;
 
             /// @brief clear read data associated to the command
@@ -32,35 +33,17 @@ namespace adata::parts {
 
     class PKCoefficient : public StressCoefficient {
         public:
-            /// @brief table name associated to the coefficient
-            std::string name = "PK";
-            /// @brief expected size of values
-            std::size_t expected_size = 12;
-
-            PKCoefficient() = default;
-            virtual ~PKCoefficient() = default;
+            PKCoefficient() : StressCoefficient("PK", 12) {};
     };
 
     class KFCoefficient : public StressCoefficient {
         public:
-            /// @brief table name associated to the coefficient
-            std::string name = "KF";
-            /// @brief expected size of values
-            std::size_t expected_size = 6;
-
-            KFCoefficient() = default;
-            virtual ~KFCoefficient() = default;
+            KFCoefficient() : StressCoefficient("KF", 6) {};
     };
 
     class KMCoefficient : public StressCoefficient {
         public:
-            /// @brief table name associated to the coefficient
-            std::string name = "KM";
-            /// @brief expected size of values
-            std::size_t expected_size = 6;
-
-            KMCoefficient() = default;
-            virtual ~KMCoefficient() = default;
+            KMCoefficient() : StressCoefficient("KM", 6) {};
     };
 
     class OvalCoefficient : public StressCoefficient {
@@ -68,13 +51,7 @@ namespace adata::parts {
             /// @brief set values for the coefficient based on specific rules
             void set_other_values();
         public:
-            /// @brief table name associated to the coefficient
-            std::string name = "OVAL";
-            /// @brief expected size of values
-            std::size_t expected_size = 5;
-
-            OvalCoefficient() = default;
-            virtual ~OvalCoefficient() = default;
+            OvalCoefficient() : StressCoefficient("KM", 6) {};
 
             /// @brief Initialize the object with the values read from the input file
             /// @param command command read from the input file
@@ -83,13 +60,7 @@ namespace adata::parts {
 
     class PMBCoefficient : public StressCoefficient {
         public:
-            /// @brief table name associated to the coefficient
-            std::string name = "PMB";
-            /// @brief expected size of values
-            std::size_t expected_size = 3;
-
-            PMBCoefficient() = default;
-            virtual ~PMBCoefficient() = default;
+            PMBCoefficient() : StressCoefficient("PMB", 6) {};
     };
 
 }

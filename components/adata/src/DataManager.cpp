@@ -53,6 +53,13 @@ void DataManager::set_data(const std::shared_ptr<abase::BaseCommand>& command, c
         materials.push_back(material);
     }
 
+    if (name == "SECTION") {
+        ProblemSection section;
+        section.init(command, sections.size(), description.category);
+        section.verify(filecontext);
+        sections.push_back(section);
+    }
+
 }
 
 std::vector<std::string> DataManager::read_title(abase::FileReader& reader, const abase::CommandsCollector& collector) {
