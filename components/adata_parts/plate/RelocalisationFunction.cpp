@@ -54,6 +54,7 @@ std::vector<double> RelocalisationFunction::build_interpolated_values(const std:
         double coef_T2 = T2.get_yvalue(angle, "linear");
         interpolated_values.push_back(coef_T1 + ph_ratio * (coef_T2 - coef_T1));
     }
+    return interpolated_values;
 }
 
 void RelocalisationFunction::set_a_phi(std::vector<double> angles, std::vector<double> coefs) {
