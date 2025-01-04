@@ -4,6 +4,8 @@
 #include "Environment.h"
 #include "FileReader.h"
 
+#include "PlateCoefficients.h"
+
 namespace adata::parts {
 
     struct plate_angle {
@@ -21,20 +23,6 @@ namespace adata::parts {
         /// @param max maximum angle value
         /// @param min minimum angle value (default 0.)
         void init(double delta, double max, double min = 0.);
-    };
-
-    struct local_coefficients {
-        /// @brief list of angles values
-        std::vector<double> angles;
-        /// @brief list of \f$ a_{phi} \f$ coefficients
-        std::vector<double> a_phi;
-        /// @brief list of \f$ b_{phi} \f$ coefficients
-        std::vector<double> b_phi;
-        /// @brief list of \f$ c_{phi} \f$ coefficients
-        std::vector<double> c_phi;
-
-        /// @brief Clear the object values
-        void clear();
     };
 
     class ProblemPlate {
@@ -75,7 +63,7 @@ namespace adata::parts {
             plate_angle phi;
 
             /// @brief User's relocalisation coefficients
-            local_coefficients user_coefficients;
+            PlateCoefficients user_coefficients;
 
             ProblemPlate() = default;
             virtual ~ProblemPlate() = default;

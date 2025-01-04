@@ -16,20 +16,9 @@ void plate_angle::init(double delta, double max, double min) {
     }
 }
 
-void local_coefficients::clear() {
-    angles.clear();
-    a_phi.clear();
-    b_phi.clear();
-    c_phi.clear();
-}
 
 void ProblemPlate::init_user_coefficients(const std::shared_ptr<abase::BaseCommand>& command) {
-    user_coefficients.clear();
-
-    abase::get_child_values(command, "ANGLE", user_coefficients.angles);
-    abase::get_child_values(command, "APHI", user_coefficients.a_phi);
-    abase::get_child_values(command, "BPHI", user_coefficients.b_phi);
-    abase::get_child_values(command, "CPHI", user_coefficients.c_phi);
+    user_coefficients.init(command);
 }
 
 void ProblemPlate::init(const std::shared_ptr<abase::BaseCommand>& command, std::size_t category) {
@@ -142,22 +131,7 @@ void ProblemPlate::verify_user_coefficients(const std::string& filecontext) cons
     // check if the user coefficients are defined for category 2 analysis
     if (category != 2 || user_coefficients.angles.empty()) return;
 
-    std::string coef_msg = "";
-    if (user_coefficients.angles.size() != user_coefficients.a_phi.size()) {
-        coef_msg = coef_msg.empty() ? "a_phi" : ", a_phi";
-    }
-    if (user_coefficients.angles.size() != user_coefficients.b_phi.size()) {
-        coef_msg = coef_msg.empty() ? "b_phi" : ", b_phi";
-    }
-    if (user_coefficients.angles.size() != user_coefficients.c_phi.size()) {
-        coef_msg = coef_msg.empty() ? "c_phi" : ", c_phi";
-    }
-    
-    if (coef_msg.size() > 0) {
-        std::string str_nang = std::to_string(user_coefficients.angles.size());
-        std::string msg = translate("ERROR_USER_COEFFICIENTS_SIZE", {coef_msg, str_nang});
-        file_input_error(msg, filecontext);
-    }    
+    user_coefficients.verify(filecontext);   
 }
 
 std::vector<double> ProblemPlate::get_3Sm_angles() const {
