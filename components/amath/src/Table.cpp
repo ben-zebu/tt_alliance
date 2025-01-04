@@ -1,7 +1,9 @@
+#include <algorithm>
 #include <cmath>
 #include <limits>
 #include <stdexcept>
 
+#include "List.h"
 #include "Table.h"
 
 using namespace amath;
@@ -32,6 +34,33 @@ Table& Table::operator=(const Table& table) {
         yvalues = table.yvalues;
     }
     return *this;
+}
+
+void Table::expand(const std::vector<double>& abciss, const std::vector<double>& ordinates) {
+    std::vector<double> xvalues_tmp = amath::merge_and_sort_unique(xvalues, abciss);
+    std::vector<double> yvalues_tmp(xvalues_tmp.size(), 0.);
+
+    for (std::size_t i=0; i < xvalues_tmp.size(); ++i) {
+        // find the index of the abciss value in the original table
+        auto it_ori = std::find(xvalues.begin(), xvalues.end(), xvalues_tmp[i]);
+        std::size_t index = std::distance(xvalues_tmp.begin(), it_ori);        
+        if (index < xvalues.size()) {
+            yvalues_tmp[i] = yvalues[index];
+            continue;
+        }
+
+        // find the index of the abciss value in the new values
+        auto it_new = std::find(abciss.begin(), abciss.end(), xvalues_tmp[i]);
+        index = std::distance(abciss.begin(), it_new);
+        if (index < abciss.size()) {
+            yvalues_tmp[i] = ordinates[index];
+        }
+    }
+
+    // update the table
+    xvalues = xvalues_tmp;
+    yvalues = yvalues_tmp;
+    _check_();
 }
 
 std::vector<double> Table::get_xrange() const {
