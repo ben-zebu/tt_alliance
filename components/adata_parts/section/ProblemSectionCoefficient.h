@@ -58,9 +58,23 @@ namespace adata::parts {
             virtual void init(const std::shared_ptr<abase::BaseCommand>& command);           
     };
 
+    class KHCoefficient : public StressCoefficient {
+        public:
+            KHCoefficient() : StressCoefficient("KH", 2) {};
+    };
+
+    class MBCoefficient : public StressCoefficient {
+        public:
+            MBCoefficient() : StressCoefficient("MB", 2) {};
+    };
+
     class PMBCoefficient : public StressCoefficient {
         public:
             PMBCoefficient() : StressCoefficient("PMB", 6) {};
     };
 
+    class BTCoefficient : public StressCoefficient {
+        public:
+            BTCoefficient() : StressCoefficient("BT", 6) {};
+    };
 }
