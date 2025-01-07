@@ -15,8 +15,11 @@ namespace adata::parts {
         PKCoefficient pk;
         KFCoefficient kf;
         KMCoefficient km;
+        KHCoefficient kh;
         OvalCoefficient oval;
+        MBCoefficient mb;
         PMBCoefficient pmb;
+        BTCoefficient bt;
 
         // @brief Initialize the object with the values read from the input file
         /// @param command command read from the input file
