@@ -21,10 +21,11 @@ void StressCoefficient::verify(const std::string& filecontext) const {
 void OvalCoefficient::set_other_values() {
     if (values.size() == 1) values.resize(expected_size, values[0]);
     if (values.size() == 2) {
-        // TODO
-    }
-    if (values.size() == 4) {
-        // TODO
+        double Slin = values[0];
+        double Stot = values[1];
+        values.resize(expected_size);
+        values[0] = values[4] = Stot;
+        values[1] = values[2] = values[3] = Slin;
     }
 }
 

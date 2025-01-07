@@ -51,7 +51,7 @@ namespace adata::parts {
             /// @brief set values for the coefficient based on specific rules
             void set_other_values();
         public:
-            OvalCoefficient() : StressCoefficient("KM", 6) {};
+            OvalCoefficient() : StressCoefficient("OVAL", 5) {};
 
             /// @brief Initialize the object with the values read from the input file
             /// @param command command read from the input file
