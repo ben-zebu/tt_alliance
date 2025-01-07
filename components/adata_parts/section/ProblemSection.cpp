@@ -6,16 +6,22 @@ void StressCoefficientContainer::init(const std::shared_ptr<abase::BaseCommand>&
     pk.init(command);
     kf.init(command);
     km.init(command);
+    kh.init(command);
     oval.init(command);
+    mb.init(command);
     pmb.init(command);
+    bt.init(command);
 }
 
 void StressCoefficientContainer::verify(const std::string& filecontext) const {
     pk.verify(filecontext);
     kf.verify(filecontext);
     km.verify(filecontext);
+    kh.verify(filecontext);
     oval.verify(filecontext);
+    mb.verify(filecontext);
     pmb.verify(filecontext);
+    bt.verify(filecontext);
 }
 
 void ProblemSection::set_material_parameters(const std::shared_ptr<abase::BaseCommand>& command) {
