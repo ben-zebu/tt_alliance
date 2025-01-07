@@ -13,23 +13,23 @@ PLATE_FUNCTION:
 
   PH:
     keys: {"en": ["ph", "ph"]}
-    type: real
+    type: real_array
 
-    ANGLE:
-      keys: {"en": ["angle", "angle"]}
-      type: real_array
+  ANGLE:
+    keys: {"en": ["angle", "angles"]}
+    type: real_array
 
-    APHI:
-      keys: {"en": ["aphi", "aphi"]}
-      type: real_array
+  APHI:
+    keys: {"en": ["aphi", "aphi"]}
+    type: real_array
 
-    BPHI:
-      keys: {"en": ["bphi", "bphi"]}
-      type: real_array
+  BPHI:
+    keys: {"en": ["bphi", "bphi"]}
+    type: real_array
 
-    CPHI:
-      keys: {"en": ["cphi", "cphi"]}
-      type: real_array
+  CPHI:
+    keys: {"en": ["cphi", "cphi"]}
+    type: real_array
 
 RETURN:
   keys: {"en": ["retu", "return"]}

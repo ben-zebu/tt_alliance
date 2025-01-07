@@ -461,7 +461,7 @@ PLATE:
     type: uint
 
     ANGLE:
-      keys: {"fr": ["ang", "angle"], "en": ["ang", "angle"]}
+      keys: {"fr": ["ang", "angle"], "en": ["ang", "angles"]}
       type: real_array
 
     APHI:

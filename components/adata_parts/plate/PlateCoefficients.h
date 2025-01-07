@@ -12,6 +12,11 @@ namespace adata::parts {
         private :      
 
         public:
+            /// @brief Identification of the function (only used for the collector)
+            std::string function_id;
+            /// @brief Description of the function (only used for the collector)
+            std::string description;
+
             /// @brief \f$ P/h \f$ ratio
             double Ph = 0.;
             /// @brief list of angles values
