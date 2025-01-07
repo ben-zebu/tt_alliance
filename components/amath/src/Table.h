@@ -60,6 +60,11 @@ namespace amath {
             /// \brief Copy constructor for the Table class with = operator.
             Table& operator=(const Table& table);
             
+            /// \brief Expand the table with other values.
+            /// \param[in] abciss additional abciss values.
+            /// \param[in] ordinates additional ordinates values.
+            void expand(const std::vector<double>& abciss, const std::vector<double>& ordinates);
+
             /// \brief Return the size of the table.
             /// \return The size of the table.
             size_t size() const { return xvalues.size(); }
@@ -81,6 +86,12 @@ namespace amath {
             /// \brief Return the range ordinates value.
             /// \return The range ordinates value.
             std::vector<double> get_yrange() const;
+            /// \brief Return the abciss values.
+            /// \return The abciss values.
+            std::vector<double> get_xvalues() const { return xvalues; }
+            /// \brief Return the ordinates values.
+            /// \return The ordinates values.
+            std::vector<double> get_yvalues() const { return yvalues; }
 
             /// \brief Return the interpolated ordinate at a given abciss value.
             /// \param[in] x The abciss value.

@@ -1,0 +1,36 @@
+---
+PLATE_FUNCTION:
+  keys: {"en": ["plate_function", "plate_function"]}
+  type: single
+
+  FUNCTION_ID:
+    keys: {"en": ["function_id", "function_id"]}
+    type: string
+
+  DESCRIPTION:
+    keys: {"en": ["description", "description"]}
+    type: string
+
+  PH:
+    keys: {"en": ["ph", "ph"]}
+    type: real_array
+
+  ANGLE:
+    keys: {"en": ["angle", "angles"]}
+    type: real_array
+
+  APHI:
+    keys: {"en": ["aphi", "aphi"]}
+    type: real_array
+
+  BPHI:
+    keys: {"en": ["bphi", "bphi"]}
+    type: real_array
+
+  CPHI:
+    keys: {"en": ["cphi", "cphi"]}
+    type: real_array
+
+RETURN:
+  keys: {"en": ["retu", "return"]}
+  type: single
