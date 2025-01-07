@@ -29,6 +29,7 @@
 #include "DataManager.h"
 #include "FatigueLawCollector.h"
 #include "BaseMaterialCollector.h"
+#include "PlateCoefficientsCollector.h"
 #include "Initiate.h"
 
 amath::StressStates generateStressStates(const std::size_t numStates, const std::size_t numTorsors) {
@@ -117,6 +118,11 @@ void benchmark() {
 void yaml_test() {
     std::string input_file = get_parser_value<std::string>("input_file");
     std::string app_path = get_parser_value<std::string>("application_path");
+
+    std::string plate_functions_commands = app_path + "/etc/plate_commands.yml";
+    std::string plate_functions_files = app_path + "/etc/plate_multfct.dat";
+    adata::PlateCoefficientsCollector plateCollector;
+    plateCollector.read_data(plate_functions_files, plate_functions_commands);
 
     std::string material_commands = app_path + "/" +  get_parser_value<std::string>("material_commands");
     std::string material_files = get_parser_value<std::string>("material_files");
