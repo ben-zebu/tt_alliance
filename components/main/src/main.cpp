@@ -119,17 +119,20 @@ void yaml_test() {
     std::string input_file = get_parser_value<std::string>("input_file");
     std::string app_path = get_parser_value<std::string>("application_path");
 
-    std::string plate_functions_commands = app_path + "/etc/plate_commands.yml";
-    std::string plate_functions_files = app_path + "/etc/plate_multfct.dat";
+    std::string plate_functions_commands = app_path + "/" +  get_parser_value<std::string>("plate_commands");
+    std::string plate_functions_files = get_parser_value<std::string>("plate_files");
     adata::PlateCoefficientsCollector plateCollector;
-    plateCollector.read_data(plate_functions_files, plate_functions_commands);
-
+    std::vector<std::string> files = str::split(str::replace(plate_functions_files, ",", " "));
+    for (const auto& file : files) {
+        plateCollector.read_data(app_path + "/" + file, plate_functions_commands);
+    }
+    
     std::string material_commands = app_path + "/" +  get_parser_value<std::string>("material_commands");
     std::string material_files = get_parser_value<std::string>("material_files");
     std::string fatigue_law_files = get_parser_value<std::string>("fatigue_law_files");
 
     adata::FatigueLawCollector lawCollector;
-    std::vector<std::string> files = str::split(str::replace(fatigue_law_files, ",", " "));
+    files = str::split(str::replace(fatigue_law_files, ",", " "));
     for (const auto& file : files) {
         lawCollector.read_data(app_path + "/" + file, material_commands);
     }
