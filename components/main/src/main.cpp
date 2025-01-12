@@ -27,9 +27,7 @@
 #include "CommandsCollector.h"
 
 #include "DataManager.h"
-#include "FatigueLawCollector.h"
-#include "BaseMaterialCollector.h"
-#include "PlateCoefficientsCollector.h"
+#include "Collections.h"
 #include "Initiate.h"
 
 amath::StressStates generateStressStates(const std::size_t numStates, const std::size_t numTorsors) {
@@ -116,33 +114,11 @@ void benchmark() {
 }
 
 void yaml_test() {
-    std::string input_file = get_parser_value<std::string>("input_file");
+
+    adata::Collections global_collections = adata::Collections();
+
     std::string app_path = get_parser_value<std::string>("application_path");
-
-    std::string plate_functions_commands = app_path + "/" +  get_parser_value<std::string>("plate_commands");
-    std::string plate_functions_files = get_parser_value<std::string>("plate_files");
-    adata::PlateCoefficientsCollector plateCollector;
-    std::vector<std::string> files = str::split(str::replace(plate_functions_files, ",", " "));
-    for (const auto& file : files) {
-        plateCollector.read_data(app_path + "/" + file, plate_functions_commands);
-    }
-    
-    std::string material_commands = app_path + "/" +  get_parser_value<std::string>("material_commands");
-    std::string material_files = get_parser_value<std::string>("material_files");
-    std::string fatigue_law_files = get_parser_value<std::string>("fatigue_law_files");
-
-    adata::FatigueLawCollector lawCollector;
-    files = str::split(str::replace(fatigue_law_files, ",", " "));
-    for (const auto& file : files) {
-        lawCollector.read_data(app_path + "/" + file, material_commands);
-    }
-
-    adata::BaseMaterialCollector materialCollector;
-    files = str::split(str::replace(material_files, ",", " "));
-    for (const auto& file : files) {
-        materialCollector.read_data(app_path + "/" + file, material_commands);
-    }
-
+    std::string input_file = get_parser_value<std::string>("input_file");
     std::string input_commands = app_path + "/" +  get_parser_value<std::string>("input_commands");
     adata::DataManager dataManager;
     dataManager.read_data(input_file, input_commands);
