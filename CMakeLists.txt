@@ -27,7 +27,6 @@ include(${CMAKE_SOURCE_DIR}/cmake/common.cmake)
 # Add subdirectories
 add_subdirectory(components/abase)
 add_subdirectory(components/amath)
-add_subdirectory(components/adata_parts)
 add_subdirectory(components/adata)
 add_subdirectory(components/main)
 
