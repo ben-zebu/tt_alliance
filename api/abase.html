@@ -82,6 +82,10 @@
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5abase12ConfigParserE"><code class="docutils literal notranslate"><span class="pre">abase::ConfigParser</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#data-collector">Data Collector</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5abase13DataCollectorE"><code class="docutils literal notranslate"><span class="pre">abase::DataCollector</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#environment">Environment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#error-manager">Error Manager</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv45errorKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">error()</span></code></a></li>
@@ -133,7 +137,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="adata.html">adata components</a></li>
-<li class="toctree-l2"><a class="reference internal" href="adata_parts.html">adata parts components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adata.html#adata-parts-components">adata parts components</a></li>
 <li class="toctree-l2"><a class="reference internal" href="amath.html">amath components</a></li>
 <li class="toctree-l2"><a class="reference internal" href="main.html">main components</a></li>
 </ul>
@@ -1902,6 +1906,108 @@
 <dt class="sig sig-object cpp" id="_CPPv4N5abase12ConfigParser5mutexE">
 <span id="_CPPv3N5abase12ConfigParser5mutexE"></span><span id="_CPPv2N5abase12ConfigParser5mutexE"></span><span id="abase::ConfigParser::mutex__std::mutex"></span><span class="target" id="classabase_1_1ConfigParser_1a632b38357f6088d91f289bc468e82a92"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">mutex</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mutex</span></span></span><a class="headerlink" href="#_CPPv4N5abase12ConfigParser5mutexE" title="Link to this definition"></a><br /></dt>
 <dd><p>Mutex to ensure thread safety. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="data-collector">
+<h2>Data Collector<a class="headerlink" href="#data-collector" title="Link to this heading"></a></h2>
+<dl class="cpp type">
+<dt class="sig sig-object cpp">
+<span class="target" id="namespaceabase"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">abase</span></span></span><br /></dt>
+<dd><p>Header file containing file system operations and path manipulation utilities. </p>
+<p>This header provides a set of functions to:<ul class="simple">
+<li><p>Check file permissions (readable/writable)</p></li>
+<li><p>Manipulate file paths (splitting, getting executable paths)</p></li>
+<li><p>File system operations (listing files, removing files/directories)</p></li>
+<li><p>Path resolution (executable and application paths)</p></li>
+</ul>
+</p>
+<p>The functions in this header file are designed to work with standard string paths and provide common file system operations in a platform-independent way.</p>
+<p>Example usage: <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">execPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">abase</span><span class="o">::</span><span class="n">getExecutablePath</span><span class="p">(</span><span class="s">&quot;myapp&quot;</span><span class="p">);</span>
+<span class="k">auto</span><span class="w"> </span><span class="p">[</span><span class="n">head</span><span class="p">,</span><span class="w"> </span><span class="n">tail</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">abase</span><span class="o">::</span><span class="n">splitPath</span><span class="p">(</span><span class="s">&quot;/path/to/file&quot;</span><span class="p">);</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">canWrite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">abase</span><span class="o">::</span><span class="n">is_file_writable</span><span class="p">(</span><span class="s">&quot;config.txt&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</p>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase13DataCollectorE">
+<span id="_CPPv3N5abase13DataCollectorE"></span><span id="_CPPv2N5abase13DataCollectorE"></span><span id="abase::DataCollector"></span><span class="target" id="classabase_1_1DataCollector"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DataCollector</span></span></span><a class="headerlink" href="#_CPPv4N5abase13DataCollectorE" title="Link to this definition"></a><br /></dt>
+<dd><p>Subclassed by <a class="reference internal" href="adata.html#classadata_1_1BaseMaterialCollector"><span class="std std-ref">adata::BaseMaterialCollector</span></a>, <a class="reference internal" href="adata.html#classadata_1_1DataManager"><span class="std std-ref">adata::DataManager</span></a>, <a class="reference internal" href="adata.html#classadata_1_1FatigueLawCollector"><span class="std std-ref">adata::FatigueLawCollector</span></a>, adata::PlateCoefficientsCollector</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase13DataCollector13DataCollectorEv">
+<span id="_CPPv3N5abase13DataCollector13DataCollectorEv"></span><span id="_CPPv2N5abase13DataCollector13DataCollectorEv"></span><span id="abase::DataCollector::DataCollector"></span><span class="target" id="classabase_1_1DataCollector_1a33f54d588c827ff2ba49a503a89e3be1"></span><span class="sig-name descname"><span class="n"><span class="pre">DataCollector</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5abase13DataCollector13DataCollectorEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase13DataCollectorD0Ev">
+<span id="_CPPv3N5abase13DataCollectorD0Ev"></span><span id="_CPPv2N5abase13DataCollectorD0Ev"></span><span id="abase::DataCollector::~DataCollector"></span><span class="target" id="classabase_1_1DataCollector_1a7692638eba0b8f2049e149d1d560345c"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~DataCollector</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5abase13DataCollectorD0Ev" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase13DataCollector9read_dataERKNSt6stringERKNSt6stringE">
+<span id="_CPPv3N5abase13DataCollector9read_dataERKNSt6stringERKNSt6stringE"></span><span id="_CPPv2N5abase13DataCollector9read_dataERKNSt6stringERKNSt6stringE"></span><span id="abase::DataCollector::read_data__ssCR.ssCR"></span><span class="target" id="classabase_1_1DataCollector_1aae836e6839e9022fde97dd72e1a23c34"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">read_data</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filename</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">commands_tree_file</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase13DataCollector9read_dataERKNSt6stringERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Function used to read the input file based on a commands collector. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> – name of the input file </p></li>
+<li><p><strong>commands_tree_file</strong> – file containing the commands tree definition </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5abase13DataCollector6verifyEv">
+<span id="_CPPv3NK5abase13DataCollector6verifyEv"></span><span id="_CPPv2NK5abase13DataCollector6verifyEv"></span><span id="abase::DataCollector::verifyC"></span><span class="target" id="classabase_1_1DataCollector_1a5bbc03526b9702dedd08d19bb44d5372"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">verify</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5abase13DataCollector6verifyEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Verify if the object is correctly initialized with consistent objects. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default, empty implementation </p>
+</div>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-functions">Protected Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase13DataCollector8set_dataERKNSt10shared_ptrI11BaseCommandEERKNSt6stringE">
+<span id="_CPPv3N5abase13DataCollector8set_dataERKNSt10shared_ptrI11BaseCommandEERKNSt6stringE"></span><span id="_CPPv2N5abase13DataCollector8set_dataERKNSt10shared_ptrI11BaseCommandEERKNSt6stringE"></span><span id="abase::DataCollector::set_data__std::shared_ptr:BaseCommand:CR.ssCR"></span><span class="target" id="classabase_1_1DataCollector_1a5a7863b4414c8868f1893a30a9b19db0"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_data</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N5abase11BaseCommandE" title="abase::BaseCommand"><span class="n"><span class="pre">BaseCommand</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">command</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filecontext</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5abase13DataCollector8set_dataERKNSt10shared_ptrI11BaseCommandEERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Convert read data from input file into data objects. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>command</strong> – read data from the input file </p></li>
+<li><p><strong>filecontext</strong> – file context </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase13DataCollector17read_special_lineERKNSt6stringER10FileReaderRK17CommandsCollector">
+<span id="_CPPv3N5abase13DataCollector17read_special_lineERKNSt6stringER10FileReaderRK17CommandsCollector"></span><span id="_CPPv2N5abase13DataCollector17read_special_lineERKNSt6stringER10FileReaderRK17CommandsCollector"></span><span id="abase::DataCollector::read_special_line__ssCR.FileReaderR.CommandsCollectorCR"></span><span class="target" id="classabase_1_1DataCollector_1a281251f8dab7c4a36cb1fa0e3cddc78e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">read_special_line</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">command_name</span></span>, <a class="reference internal" href="#_CPPv4N5abase10FileReaderE" title="abase::FileReader"><span class="n"><span class="pre">FileReader</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">reader</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5abase17CommandsCollectorE" title="abase::CommandsCollector"><span class="n"><span class="pre">CommandsCollector</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">collector</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase13DataCollector17read_special_lineERKNSt6stringER10FileReaderRK17CommandsCollector" title="Link to this definition"></a><br /></dt>
+<dd><p>Read special line without any command. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default, empty implementation </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>command_name</strong> – name of the command linked to the special line </p></li>
+<li><p><strong>reader</strong> – file reader associated to the input file </p></li>
+<li><p><strong>collector</strong> – commands collector used to read the input file </p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 </div>

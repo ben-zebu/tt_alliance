@@ -35,6 +35,11 @@ Configuration Parser
 .. doxygenfile:: ConfigParser.h
    :project: tt_alliance
 
+Data Collector
+--------------
+.. doxygenfile:: DataCollector.h
+   :project: tt_alliance
+
 Environment
 -----------
 .. doxygenfile:: Environment.h
