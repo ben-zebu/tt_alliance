@@ -26,8 +26,7 @@
 #include "ConfigParser.h"
 #include "CommandsCollector.h"
 
-#include "DataManager.h"
-#include "Collections.h"
+#include "MechanicalProblem.h"
 #include "Initiate.h"
 
 amath::StressStates generateStressStates(const std::size_t numStates, const std::size_t numTorsors) {
@@ -114,15 +113,8 @@ void benchmark() {
 }
 
 void yaml_test() {
-
-    adata::Collections global_collections = adata::Collections();
-
-    std::string app_path = get_parser_value<std::string>("application_path");
-    std::string input_file = get_parser_value<std::string>("input_file");
-    std::string input_commands = app_path + "/" +  get_parser_value<std::string>("input_commands");
-    adata::DataManager dataManager;
-    dataManager.read_data(input_file, input_commands);
-    dataManager.verify();
+    amech::MechanicalProblem problem = amech::MechanicalProblem();
+    problem.init();
 }
 
 int main(int argc, char* argv[]) {
