@@ -3,6 +3,7 @@
 #include "Collections.h"
 #include "DataManager.h"
 #include "Environment.h"
+#include "OutputResume.h"
 
 namespace amech {
 
@@ -20,6 +21,8 @@ namespace amech {
 
 
         public :
+
+            OutputResume output_resume;
 
             MechanicalProblem() = default;
             virtual ~MechanicalProblem() = default;
