@@ -16,3 +16,8 @@
   READ_INPUT_DATA:
     en: "... read input data: {0}"
     fr: "... lecture mise en données : {0}"
+
+
+  TIME_SUMMARY:
+    en: "TIME SUMMARY:\n  - cpu time     = {0} s\n  - elapsed time = {1} s"
+    fr: "INFORMATIONS TEMPORELLES :\n  - temps cpu   = {0} s\n  - temps total = {1} s"

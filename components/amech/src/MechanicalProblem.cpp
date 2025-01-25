@@ -1,6 +1,12 @@
+#include "GlobalTimer.h"
 #include "MechanicalProblem.h"
 
 using namespace amech;
+
+void MechanicalProblem::init_output_resume() {
+    std::string input_file = get_parser_value<std::string>("input_file");
+    output_resume.init(input_file); 
+}
 
 void MechanicalProblem::read_input_data() {
     std::string app_path = get_parser_value<std::string>("application_path");
@@ -20,13 +26,28 @@ void MechanicalProblem::set_physical_data() {
 }
 
 void MechanicalProblem::init() {
-
-    std::string input_file = get_parser_value<std::string>("input_file");
-    output_resume.init(input_file); 
+    // Initialize the output resume file and folder
+    init_output_resume();
 
     // Read the physical data from the ressources files
     set_physical_data();
 
     // Read the user input data
     read_input_data();
+}
+
+void MechanicalProblem::verify() {
+
+}
+
+void MechanicalProblem::solve() {
+
+}
+
+void MechanicalProblem::close() {
+    // stop global timer
+    stop_timer("global_timer");
+    std::pair<std::string, std::string> global_times = get_timer("global_timer");
+    std::string msg = translate("TIME_SUMMARY", {global_times.first, global_times.second});
+    output_resume.write(msg);
 }

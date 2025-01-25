@@ -8,6 +8,13 @@
 namespace amech {
 
     class MechanicalProblem {
+        private :
+            /// @brief Set output resume file and folder.
+            void init_output_resume();
+            /// @brief Set the physical data collection.
+            void set_physical_data();
+            /// @brief Read the user input data.
+            void read_input_data();
 
         protected :
             /// @brief Collection of physical data readed from ressources files.
@@ -21,7 +28,7 @@ namespace amech {
 
 
         public :
-
+            /// @brief Output resume file and folder.
             OutputResume output_resume;
 
             MechanicalProblem() = default;
@@ -29,14 +36,12 @@ namespace amech {
 
             /// @brief Initialize the mechanical problem.
             void init();
-
-            /// @brief Set the physical data collection.
-            void set_physical_data();
-
-            /// @brief Read the user input data.
-            void read_input_data();
-
-            //virtual void solve() = 0;
+            /// @brief Verify the integrity of the mechanical problem.
+            void verify();
+            /// @brief Solve the mechanical problem.
+            void solve();
+            /// @brief Close the mechanical problem.
+            void close();
 
     };
 
