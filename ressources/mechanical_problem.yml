@@ -1,0 +1,18 @@
+---
+  DICTIONNARY_FORMAT: True
+
+  PROGRAM:
+    en: "   PROGRAM: {0}"
+    fr: "   PROGRAMME : {0}"
+  
+  VERSION:
+    en: "   VERSION: {0}"
+    fr: "   VERSION   : {0}"
+
+  HOST_AND_DATE:
+    en: "   -- {0} -- computed on {1}"
+    fr: "   -- {0} -- exécuté sur {1}"
+
+  READ_INPUT_DATA:
+    en: "... read input data: {0}"
+    fr: "... lecture mise en données : {0}"

@@ -37,6 +37,10 @@
     en: "Cannot open file '{0}' !"
     fr: "Ouverture impossible du fichier '{0}' !"
 
+  ERROR_CREATE_DIRECTORY:
+    en: "Cannot create directory '{0}' !"
+    fr: "Impossible de créer le répertoire '{0}' !"
+
   UNKNOW_CONFIG_KEY:
     en: "Unknown key '{0}' in program configuration !"
     fr: "Clé inconnue '{0}' dans la configuration du programme !"
