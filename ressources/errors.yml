@@ -17,6 +17,10 @@
     en: "FILE_INPUT_ERROR"
     fr: "ERREUR MISE EN DONNEES"
 
+  ERROR_SIZE_T_CONVERT:
+    en: "Cannot convert value to unsigned integer: {0}"
+    fr: "Conversion impossible en nombre entier positif : {0}"
+
   ERROR_INTEGER_CONVERT:
     en: "Cannot convert value to integer: {0}"
     fr: "Conversion impossible en nombre entier : {0}"

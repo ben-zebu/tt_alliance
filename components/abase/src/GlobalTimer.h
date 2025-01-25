@@ -4,7 +4,12 @@
 #include <unordered_map>
 #include <limits>
 
+#include "String.h"
+
 namespace abase {
+
+    /// @brief The precision of the timer output (string representation).
+    const std::size_t TIME_PRECISION = 3;
 
     ///
     /// @class GlobalTimer
@@ -95,3 +100,11 @@ inline void print_timer(const std::string& name) {
     abase::globalTimer.print(name);
 }
 
+inline std::pair<std::string, std::string> get_timer(const std::string& name) {
+    double cpu_time = abase::globalTimer.getCPUTime(name);
+    double wall_time = abase::globalTimer.getWallTime(name);
+
+    std::string first = str::to_string(cpu_time, abase::TIME_PRECISION);
+    std::string second = str::to_string(wall_time, abase::TIME_PRECISION);
+    return std::make_pair(first, second);
+}

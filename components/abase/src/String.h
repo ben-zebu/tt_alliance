@@ -13,6 +13,9 @@
 /// for common operations such as trimming whitespace, and case conversion.
 namespace str {
 
+    /// @brief value used to represent an unset precision for double conversion to string
+    const double UNSET_STRING_PRECISION = 20;
+
     /// @brief Remove leading and trailing spaces from a string
     /// @param str the string to trim
     /// @return the trimmed string
@@ -37,4 +40,10 @@ namespace str {
     /// @param n the maximum number of replacements to make (0 for all)
     /// @return the modified string
     std::string replace(const std::string& str, const std::string& from, const std::string& to, std::size_t n = 0);
+
+    /// @brief Convert a double to a string with a specified precision
+    /// @param value double value to convert
+    /// @param precision precision of the conversion
+    /// @return string representation of the double
+    std::string to_string(const double value, const std::size_t precision = UNSET_STRING_PRECISION);
 }
