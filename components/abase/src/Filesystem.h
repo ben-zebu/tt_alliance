@@ -68,5 +68,8 @@ namespace abase {
     /// @return removal status
     bool remove_all(const std::string& foldername);
 
-
+    /// @brief Create a directory in the file system
+    /// @param foldername the folder to create
+    /// @return creation status
+    bool create_directory(const std::string& foldername);
 }
