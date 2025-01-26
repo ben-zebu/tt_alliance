@@ -73,3 +73,14 @@ std::string str::to_string(const double value, const std::size_t precision) {
     oss << std::fixed << std::setprecision(p) << value;
     return oss.str();
 }
+
+std::string str::to_string_exp(const double value, const std::size_t precision) {
+    std::size_t p = precision;
+    if (precision == UNSET_STRING_PRECISION) {
+        p = get_parser_value<std::size_t>("std_digit");
+    }
+
+    std::ostringstream oss;
+    oss << std::scientific << std::setprecision(p) << value;
+    return oss.str();
+}

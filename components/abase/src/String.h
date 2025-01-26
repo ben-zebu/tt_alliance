@@ -46,4 +46,11 @@ namespace str {
     /// @param precision precision of the conversion
     /// @return string representation of the double
     std::string to_string(const double value, const std::size_t precision = UNSET_STRING_PRECISION);
+
+    /// @brief Convert a double to a string with a specified precision in scientific format
+    /// @param value double value to convert
+    /// @param precision precision of the conversion
+    /// @return string representation of the double
+    std::string to_string_exp(const double value, const std::size_t precision = UNSET_STRING_PRECISION);
+
 }
