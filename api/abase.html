@@ -114,12 +114,17 @@
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5abase8splitExtERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">abase::splitExt()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5abase6removeERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">abase::remove()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5abase10remove_allERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">abase::remove_all()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5abase16create_directoryERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">abase::create_directory()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#global-timer">Global Timer</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv411start_timerRKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">start_timer()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv410stop_timerRKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">stop_timer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv415stop_all_timersv"><code class="docutils literal notranslate"><span class="pre">stop_all_timers()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv411print_timerRKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">print_timer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv49get_timerRKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">get_timer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv414get_all_timersv"><code class="docutils literal notranslate"><span class="pre">get_all_timers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5abase14TIME_PRECISIONE"><code class="docutils literal notranslate"><span class="pre">abase::TIME_PRECISION</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N5abase11GlobalTimerE"><code class="docutils literal notranslate"><span class="pre">abase::GlobalTimer</span></code></a></li>
 </ul>
 </li>
@@ -2660,6 +2665,20 @@
 </dl>
 </dd></dl>
 
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase16create_directoryERKNSt6stringE">
+<span id="_CPPv3N5abase16create_directoryERKNSt6stringE"></span><span id="_CPPv2N5abase16create_directoryERKNSt6stringE"></span><span id="abase::create_directory__ssCR"></span><span class="target" id="namespaceabase_1a2f3ef4b62673925f60b3d3d1d69b6321"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">create_directory</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">foldername</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase16create_directoryERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Create a directory in the file system. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>foldername</strong> – the folder to create </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>creation status </p>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 </dd></dl>
 
@@ -2679,8 +2698,23 @@
 <dd></dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv415stop_all_timersv">
+<span id="_CPPv315stop_all_timersv"></span><span id="_CPPv215stop_all_timersv"></span><span id="stop_all_timers"></span><span class="target" id="GlobalTimer_8h_1ad73c3e351fa73295762b4932b597e55e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stop_all_timers</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415stop_all_timersv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv411print_timerRKNSt6stringE">
 <span id="_CPPv311print_timerRKNSt6stringE"></span><span id="_CPPv211print_timerRKNSt6stringE"></span><span id="print_timer__ssCR"></span><span class="target" id="GlobalTimer_8h_1a70b288a41846aa921b1204efd39b2922"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">print_timer</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv411print_timerRKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv49get_timerRKNSt6stringE">
+<span id="_CPPv39get_timerRKNSt6stringE"></span><span id="_CPPv29get_timerRKNSt6stringE"></span><span id="get_timer__ssCR"></span><span class="target" id="GlobalTimer_8h_1ac2eea7ca71d58d6c5569f52c724077c7"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_timer</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49get_timerRKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv414get_all_timersv">
+<span id="_CPPv314get_all_timersv"></span><span id="_CPPv214get_all_timersv"></span><span id="get_all_timers"></span><span class="target" id="GlobalTimer_8h_1a41574aa700b31d63b71cecce926b76eb"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unordered_map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_all_timers</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414get_all_timersv" title="Link to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -2702,6 +2736,15 @@
 </pre></div>
 </div>
 </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-variables">Variables</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase14TIME_PRECISIONE">
+<span id="_CPPv3N5abase14TIME_PRECISIONE"></span><span id="_CPPv2N5abase14TIME_PRECISIONE"></span><span id="abase::TIME_PRECISION__std::sC"></span><span class="target" id="namespaceabase_1a11fc21095dc434b3dd6b13acce20a86d"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TIME_PRECISION</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">3</span></span><a class="headerlink" href="#_CPPv4N5abase14TIME_PRECISIONE" title="Link to this definition"></a><br /></dt>
+<dd><p>The precision of the timer output (string representation). </p>
+</dd></dl>
+
+</div>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N5abase11GlobalTimerE">
 <span id="_CPPv3N5abase11GlobalTimerE"></span><span id="_CPPv2N5abase11GlobalTimerE"></span><span id="abase::GlobalTimer"></span><span class="target" id="classabase_1_1GlobalTimer"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GlobalTimer</span></span></span><a class="headerlink" href="#_CPPv4N5abase11GlobalTimerE" title="Link to this definition"></a><br /></dt>
@@ -2730,6 +2773,12 @@
 <dd class="field-odd"><p><strong>name</strong> – The name of the timer to stop. </p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase11GlobalTimer8stop_allEv">
+<span id="_CPPv3N5abase11GlobalTimer8stop_allEv"></span><span id="_CPPv2N5abase11GlobalTimer8stop_allEv"></span><span id="abase::GlobalTimer::stop_all"></span><span class="target" id="classabase_1_1GlobalTimer_1a817283e4a15f9145d293576e6928f2c8"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stop_all</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase11GlobalTimer8stop_allEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Stops all timers. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -2784,6 +2833,31 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>name</strong> – The name of the timer to print. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase11GlobalTimer9get_timerERKNSt6stringE">
+<span id="_CPPv3N5abase11GlobalTimer9get_timerERKNSt6stringE"></span><span id="_CPPv2N5abase11GlobalTimer9get_timerERKNSt6stringE"></span><span id="abase::GlobalTimer::get_timer__ssCR"></span><span class="target" id="classabase_1_1GlobalTimer_1ab6f06d141f1b1d8f15601078910d93ff"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_timer</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase11GlobalTimer9get_timerERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Gets the timing information for the timer with the given name. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> – The name of the timer to get. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A pair of strings representing the CPU and wall-clock times. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5abase11GlobalTimer14get_all_timersEv">
+<span id="_CPPv3N5abase11GlobalTimer14get_all_timersEv"></span><span id="_CPPv2N5abase11GlobalTimer14get_all_timersEv"></span><span id="abase::GlobalTimer::get_all_timers"></span><span class="target" id="classabase_1_1GlobalTimer_1a255ff33c4cb80c18870e1c8fb6d235d4"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unordered_map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_all_timers</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5abase11GlobalTimer14get_all_timersEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Gets the timing information for all timers. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A map of pairs of strings representing the CPU and wall-clock times. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -2962,6 +3036,49 @@
 <dd class="field-even"><p>the modified string </p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3str9to_stringEKdKNSt6size_tE">
+<span id="_CPPv3N3str9to_stringEKdKNSt6size_tE"></span><span id="_CPPv2N3str9to_stringEKdKNSt6size_tE"></span><span id="str::to_string__doubleC.std::sC"></span><span class="target" id="namespacestr_1a3a697729f19cb2aa39148880d681631f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">to_string</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">precision</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N3str22UNSET_STRING_PRECISIONE" title="str::UNSET_STRING_PRECISION"><span class="n"><span class="pre">UNSET_STRING_PRECISION</span></span></a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3str9to_stringEKdKNSt6size_tE" title="Link to this definition"></a><br /></dt>
+<dd><p>Convert a double to a string with a specified precision. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> – double value to convert </p></li>
+<li><p><strong>precision</strong> – precision of the conversion </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>string representation of the double </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3str13to_string_expEKdKNSt6size_tE">
+<span id="_CPPv3N3str13to_string_expEKdKNSt6size_tE"></span><span id="_CPPv2N3str13to_string_expEKdKNSt6size_tE"></span><span id="str::to_string_exp__doubleC.std::sC"></span><span class="target" id="namespacestr_1aaa09a6252630f3d25cc6163ad4f85123"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">to_string_exp</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">precision</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N3str22UNSET_STRING_PRECISIONE" title="str::UNSET_STRING_PRECISION"><span class="n"><span class="pre">UNSET_STRING_PRECISION</span></span></a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3str13to_string_expEKdKNSt6size_tE" title="Link to this definition"></a><br /></dt>
+<dd><p>Convert a double to a string with a specified precision in scientific format. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> – double value to convert </p></li>
+<li><p><strong>precision</strong> – precision of the conversion </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>string representation of the double </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-variables">Variables</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3str22UNSET_STRING_PRECISIONE">
+<span id="_CPPv3N3str22UNSET_STRING_PRECISIONE"></span><span id="_CPPv2N3str22UNSET_STRING_PRECISIONE"></span><span id="str::UNSET_STRING_PRECISION__doubleC"></span><span class="target" id="namespacestr_1ab2fa47a38fd1cbe078b76d219f757a5f"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">UNSET_STRING_PRECISION</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">20</span></span><a class="headerlink" href="#_CPPv4N3str22UNSET_STRING_PRECISIONE" title="Link to this definition"></a><br /></dt>
+<dd><p>value used to represent an unset precision for double conversion to string </p>
 </dd></dl>
 
 </div>
