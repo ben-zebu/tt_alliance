@@ -21,3 +21,11 @@
   TIME_SUMMARY:
     en: "TIME SUMMARY:\n  - cpu time     = {0} s\n  - elapsed time = {1} s"
     fr: "INFORMATIONS TEMPORELLES :\n  - temps cpu   = {0} s\n  - temps total = {1} s"
+
+  INTERNAL_TIME_METRICS:
+    en: "INTERNAL TIME METRICS:"
+    fr: "METRIQUES TEMPORELLES INTERNES :"
+  
+  TIME_METRICS:
+    en: "  - {0}: cpu time = {1} s, elapsed time = {2} s"
+    fr: "  - {0} :temps cpu = {1} s, temps total = {2} s"
