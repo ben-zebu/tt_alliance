@@ -28,5 +28,6 @@ include(${CMAKE_SOURCE_DIR}/cmake/common.cmake)
 add_subdirectory(components/abase)
 add_subdirectory(components/amath)
 add_subdirectory(components/adata)
+add_subdirectory(components/amech)
 add_subdirectory(components/main)
 

@@ -1,0 +1,31 @@
+---
+  DICTIONNARY_FORMAT: True
+
+  PROGRAM:
+    en: "   PROGRAM: {0}"
+    fr: "   PROGRAMME : {0}"
+  
+  VERSION:
+    en: "   VERSION: {0}"
+    fr: "   VERSION   : {0}"
+
+  HOST_AND_DATE:
+    en: "   -- {0} -- computed on {1}"
+    fr: "   -- {0} -- exécuté sur {1}"
+
+  READ_INPUT_DATA:
+    en: "... read input data: {0}"
+    fr: "... lecture mise en données : {0}"
+
+
+  TIME_SUMMARY:
+    en: "TIME SUMMARY:\n  - cpu time     = {0} s\n  - elapsed time = {1} s"
+    fr: "INFORMATIONS TEMPORELLES :\n  - temps cpu   = {0} s\n  - temps total = {1} s"
+
+  INTERNAL_TIME_METRICS:
+    en: "INTERNAL TIME METRICS:"
+    fr: "METRIQUES TEMPORELLES INTERNES :"
+  
+  TIME_METRICS:
+    en: "  - {0}: cpu time = {1} s, elapsed time = {2} s"
+    fr: "  - {0} :temps cpu = {1} s, temps total = {2} s"

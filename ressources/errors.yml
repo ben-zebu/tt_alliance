@@ -17,6 +17,10 @@
     en: "FILE_INPUT_ERROR"
     fr: "ERREUR MISE EN DONNEES"
 
+  ERROR_SIZE_T_CONVERT:
+    en: "Cannot convert value to unsigned integer: {0}"
+    fr: "Conversion impossible en nombre entier positif : {0}"
+
   ERROR_INTEGER_CONVERT:
     en: "Cannot convert value to integer: {0}"
     fr: "Conversion impossible en nombre entier : {0}"
@@ -36,6 +40,10 @@
   ERROR_OPEN_FILE:
     en: "Cannot open file '{0}' !"
     fr: "Ouverture impossible du fichier '{0}' !"
+
+  ERROR_CREATE_DIRECTORY:
+    en: "Cannot create directory '{0}' !"
+    fr: "Impossible de créer le répertoire '{0}' !"
 
   UNKNOW_CONFIG_KEY:
     en: "Unknown key '{0}' in program configuration !"

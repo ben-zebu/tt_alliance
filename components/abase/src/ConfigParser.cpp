@@ -44,11 +44,21 @@ std::string ConfigParser::trim(const std::string& str) const {
 }
 
 template<>
+std::size_t ConfigParser::_convertValue_<std::size_t>(const std::string& value) const {
+    try {
+        return std::stoul(value);
+    } catch (const std::exception& e) {
+        error(translate("ERROR_SIZE_T_CONVERT", value));
+    }
+    return 0;
+}
+
+template<>
 int ConfigParser::_convertValue_<int>(const std::string& value) const {
     try {
         return std::stoi(value);
     } catch (const std::exception& e) {
-        error(translate("INTEGER_CONVERT", value));
+        error(translate("ERROR_INTEGER_CONVERT", value));
     }
     return 0;
 }
@@ -64,7 +74,7 @@ float ConfigParser::_convertValue_<float>(const std::string& value) const {
     try {
         return std::stof(value);
     } catch (const std::exception& e) {
-        error(translate("FLOAT_CONVERT", value));
+        error(translate("ERROR_FLOAT_CONVERT", value));
     }
     return 0.;
 }
@@ -120,6 +130,7 @@ T ConfigParser::getValue(const std::string& key) const {
 }
 
 template float ConfigParser::getValue<float>(const std::string&) const;
+template std::size_t ConfigParser::getValue<std::size_t>(const std::string&) const;
 template int ConfigParser::getValue<int>(const std::string&) const;
 template bool ConfigParser::getValue<bool>(const std::string&) const;
 template std::string ConfigParser::getValue<std::string>(const std::string&) const;

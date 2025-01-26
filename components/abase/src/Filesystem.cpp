@@ -85,3 +85,7 @@ bool abase::remove_all(const std::string& foldername) {
     std::uintmax_t count = fs::remove_all(foldername);
     return (count > 0) ? true : false;
 }
+
+bool abase::create_directory(const std::string& foldername) {
+    return fs::create_directory(foldername);
+}

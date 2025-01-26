@@ -30,6 +30,11 @@ void GlobalTimer::stop(const std::string& name) {
     timer.running = false;
 }
 
+void GlobalTimer::stop_all() {
+    for (auto& timer : timers) {
+        if (timer.second.running) stop(timer.first);
+    }
+}
 
 double GlobalTimer::getWallTime(const std::string& name) const {
     auto it = timers.find(name);
@@ -60,7 +65,6 @@ void GlobalTimer::print(const std::string& name) {
     std::cout << elapsed_message << std::endl;
 }
 
-
 void GlobalTimer::reset(const std::string& name) {
     auto it = timers.find(name);
     if (it != timers.end()) {
@@ -72,3 +76,16 @@ void GlobalTimer::resetAll() {
     timers.clear();
 }
 
+std::pair<std::string, std::string> GlobalTimer::get_timer(const std::string& name) {
+    std::string cpu_time = str::to_string(getCPUTime(name), abase::TIME_PRECISION);
+    std::string wall_time = str::to_string(getWallTime(name), abase::TIME_PRECISION);
+    return std::make_pair(cpu_time, wall_time);
+}
+
+std::unordered_map<std::string, std::pair<std::string, std::string>> GlobalTimer::get_all_timers() {
+    std::unordered_map<std::string, std::pair<std::string, std::string>> result;
+    for (const auto& timer : timers) {
+        result[timer.first] = get_timer(timer.first);
+    }
+    return result;
+}
