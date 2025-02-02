@@ -1,4 +1,5 @@
 #include "Filesystem.h"
+#include "GlobalTimer.h"
 #include "OutputResume.h"
 #include "System.h"
 
@@ -71,5 +72,28 @@ void OutputResume::write_header() {
     write(header_line);
     write(header);
     write(header_line + "\n");
+
+}
+
+void OutputResume::write_timers() {
+    // stop all timers and get the timing information
+    stop_all_timers();
+    std::unordered_map<std::string, std::pair<std::string,std::string>> all_times = get_all_timers();
+
+    // print the global timer information
+    std::string msg = translate("TIME_SUMMARY", {all_times["global_timer"].first, all_times["global_timer"].second});
+    write("\n" + msg);
+
+    // print all timers information
+    msg = "";
+    for (const auto& timer : all_times) {
+        if (timer.first == "global_timer") continue;
+        if (msg.size() > 0) msg += "\n";
+        msg += translate("TIME_METRICS", {timer.first, timer.second.first, timer.second.second});
+    }
+    if (msg.size() > 0) {
+        msg = "\n" + translate("INTERNAL_TIME_METRICS") + "\n" + msg;
+        write(msg);
+    }
 
 }

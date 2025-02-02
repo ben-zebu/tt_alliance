@@ -26,11 +26,10 @@ namespace amech {
             /// @brief Input data readed from the user input files.
             std::shared_ptr<adata::DataManager> input_data = nullptr;
 
-
-        public :
             /// @brief Output resume file and folder.
             OutputResume output_resume;
 
+        public :
             MechanicalProblem() = default;
             virtual ~MechanicalProblem() = default;
 
@@ -44,7 +43,5 @@ namespace amech {
             void close();
 
     };
-
-
 
 }

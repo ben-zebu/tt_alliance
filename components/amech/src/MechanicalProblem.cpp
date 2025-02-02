@@ -47,29 +47,6 @@ void MechanicalProblem::solve() {
 }
 
 void MechanicalProblem::close() {
-    // stop all timers and get the timing information
-    stop_all_timers();
-    std::unordered_map<std::string, std::pair<std::string,std::string>> all_times = get_all_timers();
-
-    // print the global timer information
-    std::string msg = translate("TIME_SUMMARY", {all_times["global_timer"].first, all_times["global_timer"].second});
-    output_resume.write("\n" + msg);
-
-    // print all timers information
-    msg = "";
-    for (const auto& timer : all_times) {
-        if (timer.first == "global_timer") continue;
-        if (msg.size() > 0) msg += "\n";
-        msg += translate("TIME_METRICS", {timer.first, timer.second.first, timer.second.second});
-    }
-    if (msg.size() > 0) {
-        msg = "\n" + translate("INTERNAL_TIME_METRICS") + "\n" + msg;
-        output_resume.write(msg);
-    }
-
-
-    // double test_val = 10000000;
-    // std::cout << "Test value: " << str::to_string(test_val, 4) << std::endl;
-    // std::cout << "Test value: " << str::to_string_exp(test_val, 4) << std::endl;
-
+    // Stop and write the timers    
+    output_resume.write_timers();
 }
