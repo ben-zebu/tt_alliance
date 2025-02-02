@@ -35,7 +35,7 @@ class OutputResume {
         virtual ~OutputResume() = default;
 
         /// @brief Method used to initialize the output file. The name of the output file is based on the input file
-        /// @param filename name of the input file 
+        /// @param filename name of the input file
         void init(const std::string& filename);
 
         /// @brief Method that determine the name of the resume file based on the input file
@@ -53,4 +53,6 @@ class OutputResume {
         void write(const std::string& message);
         /// @brief Method used to print the header in the main output file
         void write_header();
+        /// @brief Method used to print timers resume
+        void write_timers();
 };
