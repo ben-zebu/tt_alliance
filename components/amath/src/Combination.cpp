@@ -17,6 +17,11 @@ Combination::Combination(const std::vector<std::size_t>& ranks) {
     sort_ranks();
 }
 
+Combination::Combination(const std::vector<std::size_t>& rks_1, const std::vector<std::size_t>& rks_2) {
+    this->ranks = rks_1;
+    this->ranks.insert(this->ranks.end(), rks_2.begin(), rks_2.end());
+}
+
 Combination::Combination(const Combination& combination) {
     this->ranks = combination.ranks;
 }
@@ -35,22 +40,43 @@ void Combination::sort_ranks() {
 }
 
 //
-// SquareCombination methods
+// RectangularCombination methods
 //
-SquareCombination& SquareCombination::operator=(const SquareCombination& combination) {
+
+RectangularCombination::RectangularCombination(const std::vector<std::size_t>& ranks) : Combination(ranks) {
+    nb_rows = ranks.size();
+    nb_columns = ranks.size();
+    set_cached_size();
+}
+
+RectangularCombination::RectangularCombination(const std::vector<std::size_t>& rks_1, 
+                                               const std::vector<std::size_t>& rks_2) : Combination(rks_1, rks_2) {
+    nb_rows = rks_1.size();
+    nb_columns = rks_2.size();
+    set_cached_size();
+}
+
+RectangularCombination& RectangularCombination::operator=(const RectangularCombination& combination) {
     if (this != &combination) {
         this->ranks = combination.ranks;
+        this->nb_rows = combination.nb_rows;
+        this->nb_columns = combination.nb_columns;
     }
     set_cached_size();
     return *this;
 }
 
-std::size_t SquareCombination::operator()(const std::size_t& row, const std::size_t& column) const {
-    return row * ranks.size() + column;
+std::size_t RectangularCombination::operator()(const std::size_t& row, const std::size_t& column) const {
+    return row * nb_columns + column;
 }
 
-std::vector<std::size_t> SquareCombination::get_ranks(const std::size_t& combination) const {
-    return {combination / ranks.size(), combination % ranks.size()};
+combi_ranks RectangularCombination::get_ranks(const std::size_t& combination) const {
+    return {combination / nb_columns, combination % nb_columns};
+}
+
+void RectangularCombination::ranks_by_ptr(const std::size_t& combination, combi_ranks& ranks) const {
+    ranks.first = combination / nb_columns;
+    ranks.second = combination % nb_columns;
 }
 
 //
@@ -111,18 +137,18 @@ std::size_t TriangularCombination::operator()(const std::size_t& row, const std:
     return combination_for_line(p, n) + q - n;
 }
 
-std::vector<std::size_t> TriangularCombination::get_ranks(const std::size_t& combination) const {
-    combi_ranks oranks;
-    ranks_by_ptr(combination, oranks);
-    return {oranks.first, oranks.second};
+combi_ranks TriangularCombination::get_ranks(const std::size_t& combination) const {
+    combi_ranks ranks;
+    ranks_by_ptr(combination, ranks);
+    return {ranks.first, ranks.second};
 }
 
-void TriangularCombination::ranks_by_ptr(const std::size_t& combination, combi_ranks& oranks) const {
-    std::size_t n = ranks.size();
+void TriangularCombination::ranks_by_ptr(const std::size_t& combination, combi_ranks& ranks) const {
+    std::size_t n = this->ranks.size();
     std::size_t p = line_for_combination(combination, n);
     std::size_t q = n + combination - combination_for_line(p, n);
     if (p >= n || q >= n) {
         throw std::runtime_error("Undetermined ranks associated to a combination !");
     }
-    oranks = {p, q};
+    ranks = {p, q};
 }

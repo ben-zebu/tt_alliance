@@ -36,6 +36,10 @@ namespace amath {
             /// \brief Constructor.
             /// \param ranks Vector of ranks.
             Combination(const std::vector<std::size_t>& ranks);
+            /// \brief Constructor based on 2 vector of ranks.
+            /// \param rks_1 First vector of ranks.
+            /// \param rks_2 Second vector of ranks.
+            Combination(const std::vector<std::size_t>& rks_1, const std::vector<std::size_t>& rks_2);
             /// \brief Copy constructor.
             /// \param combination Combination to copy.
             Combination(const Combination& combination);
@@ -56,41 +60,55 @@ namespace amath {
             /// \brief Return the row and column indices associated to a combination.
             /// \param combination Combination.
             /// \return indices associated to the given combination.
-            virtual std::vector<std::size_t> get_ranks(const std::size_t& combination) const = 0;
-            
+            virtual combi_ranks get_ranks(const std::size_t& combination) const = 0;
+            /// \brief Return by pointer the row and column indices associated to a combination.
+            /// \param combination Combination.
+            /// \return indices associated to the given combination.
             virtual void ranks_by_ptr(const std::size_t& combination, combi_ranks& ranks) const = 0;
     };
 
-    /** \brief Class used to manage all possible ranks' combinations given by a vector of ranks.
+    /*!
+     * \brief Class used to manage all possible ranks' combinations given by a vector of ranks. These ranks can be 
+     * provided from two separate vectors.
      *
-     * \details All combination are given by a matrix representation with a size equal to vector of ranks.
-     * Its representation is the following matrix:
+     * \details All combination are given by a NxM matrix representation. The number of rows is equal to the size of 
+     * the first vector. The number of columns is equal to the size of the second vector. 
+     * The representation is the following matrix:
      *     \f{eqnarray*}{  
      *         \left [ \begin{array}{cccc}
-     *             (0,0)   & (0,1)   &  ...    & (0,n-1) \\
-     *             (1,0)   & (1,1)   &  ...    & (1,n-1) \\
-     *             (2,0)   & (2,1)   & (2,2)   & (2,n-1) \\
-     *             (n-1,0) & (n-1,1) & (n-1,2) & (n-1,n-1) 
+     *             (0,0)   & (0,1)   &  ...    & (0,m-1) \\
+     *             (1,0)   & (1,1)   &  ...    & (1,m-1) \\
+     *             (2,0)   & (2,1)   & (2,2)   & (2,m-1) \\
+     *             (n-1,0) & (n-1,1) & (n-1,2) & (n-1,m-1) 
      *          \end{array} \right ] 
      *     \f} 
      */
-    class SquareCombination : public Combination {
+    class RectangularCombination : public Combination {
         private:
+            /// \brief number of rows
+            std::size_t nb_rows = 0;
+            /// \brief number of columns
+            std::size_t nb_columns = 0;
+
             /// \brief  Store the number of combinations
-            virtual void set_cached_size() { cached_size = ranks.size() * ranks.size(); };
+            virtual void set_cached_size() { cached_size = nb_rows * nb_columns; };
 
         public:
             /// \brief Constructor.
             /// \param ranks Vector of ranks.
-            SquareCombination(const std::vector<std::size_t>& ranks) : Combination(ranks) {}; 
+            RectangularCombination(const std::vector<std::size_t>& ranks);
+            /// \brief Constructor based on 2 vector of ranks.
+            /// \param rks_1 First vector of ranks.
+            /// \param rks_2 Second vector of ranks.
+            RectangularCombination(const std::vector<std::size_t>& rks_1, const std::vector<std::size_t>& rks_2);
             /// \brief Copy constructor.
             /// \param combination Combination to copy.
-            SquareCombination(const SquareCombination& combination) : Combination(combination) {};
+            RectangularCombination(const RectangularCombination& combination);
             /// \brief Copy constructor.
             /// \param combination Combination to copy.
-            SquareCombination& operator=(const SquareCombination& combination);
+            RectangularCombination& operator=(const RectangularCombination& combination);
 
-            /// \brief Return the combination associated to the given indices..
+            /// \brief Return the combination associated to the given indices
             /// \param row Row index.
             /// \param column Column index.
             /// \return Combination associated to the given indices.
@@ -99,7 +117,11 @@ namespace amath {
             /// \brief Return the row and column indices associated to a combination.
             /// \param combination Combination.
             /// \return indices associated to the given combination.
-            virtual std::vector<std::size_t> get_ranks(const std::size_t& combination) const;        
+            virtual combi_ranks get_ranks(const std::size_t& combination) const;
+            /// \brief Return by pointer the row and column indices associated to a combination.
+            /// \param combination Combination.
+            /// \return indices associated to the given combination.
+            void ranks_by_ptr(const std::size_t& combination, combi_ranks& ranks) const;
     };
 
     /*!
@@ -188,7 +210,7 @@ namespace amath {
             /// \brief Return the row and column indices associated to a combination.
             /// \param combination Combination.
             /// \return indices associated to the given combination.
-            virtual std::vector<std::size_t> get_ranks(const std::size_t& combination) const;
+            virtual combi_ranks get_ranks(const std::size_t& combination) const;
             /// \brief Return by pointer the row and column indices associated to a combination.
             /// \param combination Combination.
             /// \return indices associated to the given combination.
