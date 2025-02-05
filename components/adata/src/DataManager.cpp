@@ -109,3 +109,13 @@ void DataManager::verify() const {
     }
 
 }
+
+
+const ProblemTransient& DataManager::get_transient(const std::string& name) const {
+    for (const auto& transient : transients) {
+        if (transient.name == name) return transient;
+    }
+
+    error(translate("CANNOT_FIND_TRANSIENT_BY_NAME", name));
+    return transients[0];
+}
