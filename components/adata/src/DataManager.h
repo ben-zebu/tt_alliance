@@ -68,6 +68,11 @@ namespace adata {
             /// @param name transient name
             /// @return reference to the transient
             const ProblemTransient& get_transient(const std::string& name) const;
+            /// @brief Return a reference to a transient
+            /// @param rank transient rank
+            /// @return reference to the transient
+            const ProblemTransient& get_transient(const std::size_t rank) const;
+
     };
 
 }
