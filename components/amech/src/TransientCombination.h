@@ -7,6 +7,8 @@
 namespace amech {
 
     class TransientCombination {
+        private :
+
         protected :
             /// @brief Input data readed from the user input files.
             std::shared_ptr<adata::DataManager> input_data = nullptr;
@@ -38,21 +40,19 @@ namespace amech {
             amath::RectangularCombination fictive_combination(std::size_t trk, std::size_t pivot_rank) const;
 
 
-            /// @brief Return the list of common groups of two transients
-            /// @param trk1 rank of the first transient
-            /// @param trk2 rank of the second transient
-            /// @return list of common groups
-            std::vector<std::string> common_groups(std::size_t trk1, std::size_t trk2) const;
+            /// @brief Return the list of common groups of several transients
+            /// @param transient_ranks ranks of the transients
+            /// @return list of common groups for all transients
+            std::vector<std::string> common_groups(const std::vector<std::size_t>& transient_ranks) const;
             /// @brief Return the list of crossing transient that can be used to combine the transient
             /// @param trk1 rank of the first transient
             /// @param trk2 rank of the second transient
             /// @return list of crossing transients
             std::vector<std::string> crossing_transients(std::size_t trk1, std::size_t trk2) const;
-            /// @brief Check if two transients are in the same shared group
-            /// @param trk1 rank of the first transient
-            /// @param trk2 rank of the second transient
-            /// @return true if the two transients are in the same shared group
-            bool is_shared_group(std::size_t trk1, std::size_t trk2) const;
+            /// @brief Check if several transients are in the same shared group
+            /// @param transient_ranks ranks of the transients
+            /// @return true if all transients are in the same shared group
+            bool is_shared_group(const std::vector<std::size_t>& transient_ranks) const;
 
     };
     
