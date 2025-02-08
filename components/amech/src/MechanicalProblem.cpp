@@ -36,6 +36,10 @@ void MechanicalProblem::init() {
     start_timer("read_input_data");
     read_input_data();
     stop_timer("read_input_data");
+
+    // Create Mechanical objects: transient, section, ...
+    const adata::ProblemTransient transient = input_data->get_transient(0);
+    std::cout << "Transient name: " << transient.name << std::endl;
 }
 
 void MechanicalProblem::verify() {

@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Environment.h"
 #include "DataCollector.h"
 
@@ -52,6 +54,27 @@ namespace adata {
             
             /// @brief Verify if the object is correctly initialized with consistent objects
             void verify() const;
+
+            /// @brief Return the number of transients
+            std::size_t nb_transients() const { return transients.size(); }
+            /// @brief Return the number of loadsteps
+            std::size_t nb_loadsteps() const { return loadsteps.size(); }
+            /// @brief Return the number of materials
+            std::size_t nb_materials() const { return materials.size(); }
+            /// @brief Return the number of sections
+            std::size_t nb_sections() const { return sections.size(); }
+            /// @brief Return the number of tables
+            std::size_t nb_tables() const { return tables.size(); }
+
+            /// @brief Return a reference to a transient
+            /// @param name transient name
+            /// @return reference to the transient
+            const ProblemTransient& get_transient(const std::string& name) const;
+            /// @brief Return a reference to a transient
+            /// @param rank transient rank
+            /// @return reference to the transient
+            const ProblemTransient& get_transient(const std::size_t rank) const;
+
     };
 
 }

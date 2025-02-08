@@ -116,3 +116,11 @@
   ERROR_DUPLICATE_TRANSIENT_NAME:
     en: "Duplicate transient name: '{0}' !"
     fr: "Nom de transitoire défini plusieurs fois : '{0}' !"
+
+  CANNOT_FIND_TRANSIENT_BY_NAME:
+    en: "Cannot find the transient with name '{0}' !"
+    fr: "Impossible de trouver le transitoire avec le nom '{0}' !"
+
+  CANNOT_FIND_TRANSIENT_BY_RANK:
+    en: "Cannot find the transient with rank '{0}' !"
+    fr: "Impossible de trouver le transitoire avec le rang '{0}' !"
